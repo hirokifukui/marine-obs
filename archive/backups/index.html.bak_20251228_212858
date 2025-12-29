@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marine-obs.org | Coral Thermal Stress Monitor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --header-bg: #1a1f2e;
+            --header-text: #ffffff;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-card: #ffffff;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --accent-teal: #2b6cb0;
+            --accent-coral: #c53030;
+            --accent-warm: #c05621;
+            --accent-green: #2f855a;
+            --border: #e2e8f0;
+            --shadow: 0 1px 3px rgba(0,0,0,0.08);
+            --chart-line-1: #2b6cb0;
+            --chart-line-2: #c05621;
+            --chart-line-3: #2f855a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        body.ja {
+            font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
+        }
+
+        /* Header - Dark brand bar */
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 0.75rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #4fd1c5 0%, #2b6cb0 100%);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lang-switch {
+            font-size: 0.8rem;
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .lang-switch button {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.6);
+            cursor: pointer;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .lang-switch button:hover {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .lang-switch button.active {
+            color: #ffffff;
+            background: rgba(255,255,255,0.15);
+        }
+
+        /* Main content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+        }
+
+        /* Hero - simple text */
+        .hero {
+            margin-bottom: 2.5rem;
+        }
+
+        .hero h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        body.ja .hero h1 {
+            font-size: 1.5rem;
+            letter-spacing: 0;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 720px;
+            line-height: 1.7;
+        }
+
+        body.ja .hero-subtitle {
+            line-height: 1.9;
+        }
+
+        /* Section titles */
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        /* KPI Cards */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .kpi-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .kpi-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .kpi-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+
+        .kpi-value.highlight { color: var(--accent-teal); }
+        .kpi-value.warning { color: var(--accent-warm); }
+        .kpi-value.alert { color: var(--accent-coral); }
+
+        .kpi-context {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .kpi-unit {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-left: 0.15rem;
+        }
+
+        /* Chart cards */
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .chart-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            box-shadow: var(--shadow);
+        }
+
+        .chart-header {
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .chart-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .chart-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .chart-container {
+            height: 200px;
+            position: relative;
+        }
+
+        .chart-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .chart-line {
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .chart-line-1 { stroke: var(--chart-line-1); }
+        .chart-line-2 { stroke: var(--chart-line-2); }
+        .chart-line-3 { stroke: var(--chart-line-3); }
+
+        .chart-grid-line {
+            stroke: #e2e8f0;
+            stroke-width: 1;
+        }
+
+        .chart-label {
+            fill: var(--text-muted);
+            font-size: 10px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .chart-legend {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        .legend-line {
+            width: 16px;
+            height: 2px;
+        }
+
+        .legend-line-1 { background: var(--chart-line-1); }
+        .legend-line-2 { background: var(--chart-line-2); }
+        .legend-line-3 { background: var(--chart-line-3); }
+
+        /* Info section */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .info-card h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 0.75rem;
+        }
+
+        body.ja .info-card p {
+            line-height: 1.9;
+        }
+
+        .info-card a {
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .info-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Data sources list */
+        .source-list {
+            list-style: none;
+        }
+
+        .source-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.85rem;
+        }
+
+        .source-item:last-child {
+            border-bottom: none;
+        }
+
+        .source-name {
+            color: var(--text-secondary);
+        }
+
+        .source-badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .source-badge.active {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .source-badge.pending {
+            background: #feebc8;
+            color: #744210;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-teal);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            header { padding: 0.75rem 1rem; }
+            main { padding: 1.5rem 1rem; }
+            .nav-links { display: none; }
+            .chart-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Language toggle */
+        [data-lang="ja"] { display: none; }
+        body.ja [data-lang="en"] { display: none; }
+        body.ja [data-lang="ja"] { display: block; }
+        span[data-lang="ja"], span[data-lang="en"] { display: inline; }
+        body.ja span[data-lang="en"] { display: none; }
+        body:not(.ja) span[data-lang="ja"] { display: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">🪸</div>
+                <span>marine-obs.org</span>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#data">
+                        <span data-lang="en">Data</span>
+                        <span data-lang="ja">データ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#about">
+                        <span data-lang="en">About</span>
+                        <span data-lang="ja">このサイトについて</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#sources">
+                        <span data-lang="en">Sources</span>
+                        <span data-lang="ja">データソース</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button id="lang-en" class="active">EN</button>
+                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <button id="lang-ja">日本語</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 data-lang="en">Tracking Coral Thermal Stress with Satellite Observations</h1>
+            <h1 data-lang="ja">衛星観測によるサンゴ礁熱ストレスの追跡</h1>
+            
+            <p class="hero-subtitle" data-lang="en">
+                Sea surface temperatures are rising in Okinawa and Ogasawara. This dashboard brings together satellite data from NOAA and NASA to visualize bleaching risk for coral reefs in Japan.
+            </p>
+            <p class="hero-subtitle" data-lang="ja">
+                沖縄・小笠原の海水温は上昇を続けています。このダッシュボードは、NOAAとNASAの衛星データをもとに、日本のサンゴ礁における白化リスクを可視化します。
+            </p>
+        </section>
+
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Sesoko Island SST</span>
+                    <span data-lang="ja">瀬底島 海水温</span>
+                </div>
+                <div class="kpi-value highlight">29.1<span class="kpi-unit">℃</span></div>
+                <div class="kpi-context">
+                    <span data-lang="en">Dec 27, 2024</span>
+                    <span data-lang="ja">2024年12月27日</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Peak DHW 2024</span>
+                    <span data-lang="ja">2024年 最大DHW</span>
+                </div>
+                <div class="kpi-value warning">8.2</div>
+                <div class="kpi-context">
+                    <span data-lang="en">Bleaching Alert Level 1</span>
+                    <span data-lang="ja">白化警報レベル1</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">MMM Baseline</span>
+                    <span data-lang="ja">基準値 (MMM)</span>
+                </div>
+                <div class="kpi-value">29.0<span class="kpi-unit">℃</span></div>
+                <div class="kpi-context">
+                    <span data-lang="en">Maximum Monthly Mean</span>
+                    <span data-lang="ja">月別最高平均水温</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Data Coverage</span>
+                    <span data-lang="ja">データ期間</span>
+                </div>
+                <div class="kpi-value">22<span class="kpi-unit" data-lang="en">yrs</span><span class="kpi-unit" data-lang="ja">年分</span></div>
+                <div class="kpi-context">
+                    <span data-lang="en">2002–2024 · 16,496 records</span>
+                    <span data-lang="ja">2002〜2024年 · 16,496件</span>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="section-title" id="data">
+            <span data-lang="en">Indicators of Change</span>
+            <span data-lang="ja">変化の指標</span>
+        </h2>
+
+        <section class="chart-grid">
+            <div class="chart-card">
+                <div class="chart-header">
+                    <div class="chart-title">
+                        <span data-lang="en">Annual Peak DHW</span>
+                        <span data-lang="ja">年間最大DHW</span>
+                    </div>
+                    <div class="chart-subtitle">
+                        <span data-lang="en">Degree Heating Weeks · Sesoko & Manza</span>
+                        <span data-lang="ja">熱ストレス指標 · 瀬底・万座</span>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <svg class="chart-svg" viewBox="0 0 400 160" preserveAspectRatio="xMidYMid meet">
+                        <g class="chart-grid-lines">
+                            <line class="chart-grid-line" x1="40" y1="20" x2="380" y2="20" />
+                            <line class="chart-grid-line" x1="40" y1="55" x2="380" y2="55" />
+                            <line class="chart-grid-line" x1="40" y1="90" x2="380" y2="90" />
+                            <line class="chart-grid-line" x1="40" y1="125" x2="380" y2="125" />
+                        </g>
+                        
+                        <text class="chart-label" x="35" y="24" text-anchor="end">12</text>
+                        <text class="chart-label" x="35" y="59" text-anchor="end">8</text>
+                        <text class="chart-label" x="35" y="94" text-anchor="end">4</text>
+                        <text class="chart-label" x="35" y="129" text-anchor="end">0</text>
+                        
+                        <text class="chart-label" x="55" y="145">2002</text>
+                        <text class="chart-label" x="140" y="145">2010</text>
+                        <text class="chart-label" x="235" y="145">2017</text>
+                        <text class="chart-label" x="355" y="145">2024</text>
+                        
+                        <!-- Sesoko -->
+                        <path class="chart-line chart-line-1" d="
+                            M55,110 L70,115 L85,105 L100,118 L115,112 L130,120 L145,110
+                            L160,100 L175,112 L190,105 L205,110 L220,115 L235,90
+                            L250,65 L265,100 L280,95 L295,105 L310,80 L325,60
+                            L340,70 L355,55 L370,35
+                        " />
+                        
+                        <!-- Manza -->
+                        <path class="chart-line chart-line-2" d="
+                            M55,105 L70,112 L85,100 L100,115 L115,108 L130,118 L145,105
+                            L160,95 L175,108 L190,100 L205,105 L220,112 L235,85
+                            L250,58 L265,95 L280,90 L295,100 L310,75 L325,55
+                            L340,65 L355,50 L370,30
+                        " />
+                    </svg>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <span class="legend-line legend-line-1"></span>
+                        <span data-lang="en">Sesoko</span>
+                        <span data-lang="ja">瀬底</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-line legend-line-2"></span>
+                        <span data-lang="en">Manza</span>
+                        <span data-lang="ja">万座</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-header">
+                    <div class="chart-title">
+                        <span data-lang="en">Sea Surface Temperature</span>
+                        <span data-lang="ja">海水温の推移</span>
+                    </div>
+                    <div class="chart-subtitle">
+                        <span data-lang="en">Monthly Mean · Sesoko Island</span>
+                        <span data-lang="ja">月平均 · 瀬底島</span>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <svg class="chart-svg" viewBox="0 0 400 160" preserveAspectRatio="xMidYMid meet">
+                        <g class="chart-grid-lines">
+                            <line class="chart-grid-line" x1="40" y1="20" x2="380" y2="20" />
+                            <line class="chart-grid-line" x1="40" y1="55" x2="380" y2="55" />
+                            <line class="chart-grid-line" x1="40" y1="90" x2="380" y2="90" />
+                            <line class="chart-grid-line" x1="40" y1="125" x2="380" y2="125" />
+                        </g>
+                        
+                        <text class="chart-label" x="35" y="24" text-anchor="end">30</text>
+                        <text class="chart-label" x="35" y="59" text-anchor="end">27</text>
+                        <text class="chart-label" x="35" y="94" text-anchor="end">24</text>
+                        <text class="chart-label" x="35" y="129" text-anchor="end">21</text>
+                        
+                        <text class="chart-label" x="55" y="145">Jan</text>
+                        <text class="chart-label" x="135" y="145">Apr</text>
+                        <text class="chart-label" x="215" y="145">Jul</text>
+                        <text class="chart-label" x="295" y="145">Oct</text>
+                        <text class="chart-label" x="365" y="145">Dec</text>
+                        
+                        <!-- 2024 -->
+                        <path class="chart-line chart-line-1" d="
+                            M55,85 L82,90 L109,95 L136,80 L163,60 L190,35
+                            L217,20 L244,18 L271,25 L298,45 L325,65 L352,80 L370,85
+                        " />
+                        
+                        <!-- 2023 -->
+                        <path class="chart-line chart-line-3" d="
+                            M55,90 L82,95 L109,100 L136,85 L163,65 L190,42
+                            L217,28 L244,25 L271,32 L298,52 L325,70 L352,85 L370,90
+                        " />
+                    </svg>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <span class="legend-line legend-line-1"></span>
+                        <span>2024</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-line legend-line-3"></span>
+                        <span>2023</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-grid" id="about">
+            <div class="info-card">
+                <h3>
+                    <span data-lang="en">About this project</span>
+                    <span data-lang="ja">このプロジェクトについて</span>
+                </h3>
+                
+                <div data-lang="en">
+                    <p>
+                        A personal project by a psychiatrist who dives 100+ times a year. After witnessing the 2024 bleaching event firsthand, I started tracking the data.
+                    </p>
+                    <p>
+                        This site translates and visualizes NOAA Coral Reef Watch and NASA satellite data for divers and researchers in Japan. It does not propose original thresholds—it presents established science with honesty about satellite-ground discrepancies.
+                    </p>
+                    <p>
+                        The data series can be used freely with attribution to the original sources.
+                    </p>
+                    <a href="#">Read more →</a>
+                </div>
+                
+                <div data-lang="ja">
+                    <p>
+                        年間100本以上潜る精神科医による個人プロジェクトです。2024年の白化を目の当たりにしたことをきっかけに、データを追い始めました。
+                    </p>
+                    <p>
+                        NOAAとNASAの衛星データを、日本のダイバー・研究者向けに翻訳・可視化します。独自の閾値は主張せず、衛星と現地の乖離も正直にお伝えします。
+                    </p>
+                    <p>
+                        データは原典を明記のうえ、自由にご利用いただけます。
+                    </p>
+                    <a href="#">詳しく見る →</a>
+                </div>
+            </div>
+            
+            <div class="info-card" id="sources">
+                <h3>
+                    <span data-lang="en">Data Sources</span>
+                    <span data-lang="ja">データソース</span>
+                </h3>
+                <ul class="source-list">
+                    <li class="source-item">
+                        <span class="source-name">NOAA Coral Reef Watch</span>
+                        <span class="source-badge active">
+                            <span data-lang="en">Active</span>
+                            <span data-lang="ja">運用中</span>
+                        </span>
+                    </li>
+                    <li class="source-item">
+                        <span class="source-name">NASA MUR SST</span>
+                        <span class="source-badge active">
+                            <span data-lang="en">Active</span>
+                            <span data-lang="ja">運用中</span>
+                        </span>
+                    </li>
+                    <li class="source-item">
+                        <span class="source-name">
+                            <span data-lang="en">Monitoring Sites 1000</span>
+                            <span data-lang="ja">モニタリングサイト1000</span>
+                        </span>
+                        <span class="source-badge pending">2025</span>
+                    </li>
+                    <li class="source-item">
+                        <span class="source-name">
+                            <span data-lang="en">Turbidity Logger</span>
+                            <span data-lang="ja">濁度計</span>
+                        </span>
+                        <span class="source-badge pending">
+                            <span data-lang="en">TBD</span>
+                            <span data-lang="ja">検討中</span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <span data-lang="en">© 2024 marine-obs.org · Independent research project</span>
+                <span data-lang="ja">© 2024 marine-obs.org · 個人プロジェクト</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">GitHub</a>
+                <a href="#">Ko-fi</a>
+                <a href="#">
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="ja">お問い合わせ</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const body = document.body;
+        const btnEn = document.getElementById('lang-en');
+        const btnJa = document.getElementById('lang-ja');
+
+        function setLang(lang) {
+            if (lang === 'ja') {
+                body.classList.add('ja');
+                btnJa.classList.add('active');
+                btnEn.classList.remove('active');
+                document.documentElement.lang = 'ja';
+            } else {
+                body.classList.remove('ja');
+                btnEn.classList.add('active');
+                btnJa.classList.remove('active');
+                document.documentElement.lang = 'en';
+            }
+            localStorage.setItem('lang', lang);
+        }
+
+        btnEn.addEventListener('click', () => setLang('en'));
+        btnJa.addEventListener('click', () => setLang('ja'));
+
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang) {
+            setLang(savedLang);
+        } else if (navigator.language.startsWith('ja')) {
+            setLang('ja');
+        }
+    </script>
+</body>
+</html>

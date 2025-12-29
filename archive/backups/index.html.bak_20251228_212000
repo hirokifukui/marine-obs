@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marine-obs.org | Coral Thermal Stress Monitor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Dark theme (default) */
+            --bg-primary: #0f1419;
+            --bg-secondary: #1a1f2e;
+            --bg-card: #1e2536;
+            --text-primary: #e8eaed;
+            --text-secondary: #9aa0a6;
+            --text-muted: #5f6368;
+            --accent-teal: #4fd1c5;
+            --accent-coral: #f56565;
+            --accent-warm: #ed8936;
+            --border: #2d3748;
+            --shadow: 0 4px 24px rgba(0,0,0,0.3);
+            --nav-bg: rgba(15, 20, 25, 0.85);
+        }
+
+        body.light {
+            --bg-primary: #f7f8fa;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --accent-teal: #319795;
+            --accent-coral: #e53e3e;
+            --accent-warm: #dd6b20;
+            --border: #e2e8f0;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+            --nav-bg: rgba(247, 248, 250, 0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.ja {
+            font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            background: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        .logo span {
+            color: var(--accent-teal);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lang-switch {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-switch button, .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.85rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .lang-switch button:hover, .theme-toggle:hover {
+            color: var(--text-primary);
+            background: var(--border);
+        }
+
+        .lang-switch button.active {
+            color: var(--accent-teal);
+            background: rgba(79, 209, 197, 0.1);
+        }
+
+        body.light .lang-switch button.active {
+            background: rgba(49, 151, 149, 0.1);
+        }
+
+        .theme-toggle {
+            font-size: 1.1rem;
+            padding: 0.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-teal);
+            margin-bottom: 1rem;
+            padding: 0.4rem 0.8rem;
+            background: rgba(79, 209, 197, 0.1);
+            border-radius: 4px;
+        }
+
+        body.light .hero-label {
+            background: rgba(49, 151, 149, 0.1);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+
+        body.ja .hero h1 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            letter-spacing: 0;
+            line-height: 1.4;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 540px;
+            line-height: 1.7;
+        }
+
+        body.ja .hero-subtitle {
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        /* KPI Cards */
+        .kpi-section {
+            padding: 2rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .kpi-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.3s, border-color 0.3s;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .kpi-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        body.ja .kpi-label {
+            text-transform: none;
+            letter-spacing: 0.02em;
+        }
+
+        .kpi-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .kpi-value.teal { color: var(--accent-teal); }
+        .kpi-value.warm { color: var(--accent-warm); }
+        .kpi-value.coral { color: var(--accent-coral); }
+
+        .kpi-context {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .kpi-unit {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            margin-left: 0.25rem;
+        }
+
+        /* Chart Section */
+        .chart-section {
+            padding: 3rem 2rem 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .section-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .chart-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            height: 320px;
+            position: relative;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .chart-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .chart-line {
+            fill: none;
+            stroke: var(--accent-teal);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .chart-area {
+            fill: url(#tealGradient);
+            opacity: 0.3;
+        }
+
+        body.light .chart-area {
+            fill: url(#tealGradientLight);
+        }
+
+        .chart-grid line {
+            stroke: var(--border);
+            stroke-width: 1;
+        }
+
+        .chart-label {
+            fill: var(--text-muted);
+            font-size: 11px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .chart-dot {
+            fill: var(--accent-teal);
+            r: 4;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .chart-container:hover .chart-dot {
+            opacity: 1;
+        }
+
+        .threshold-line {
+            stroke: var(--accent-coral);
+            stroke-width: 1;
+            stroke-dasharray: 6 4;
+            opacity: 0.6;
+        }
+
+        .threshold-label {
+            fill: var(--accent-coral);
+            font-size: 10px;
+            opacity: 0.8;
+        }
+
+        /* Status Section */
+        .status-section {
+            padding: 0 2rem 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .status-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .status-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .status-card h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-icon {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-teal);
+        }
+
+        .status-icon.pending {
+            background: var(--accent-warm);
+        }
+
+        .data-source {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-source:last-child {
+            border-bottom: none;
+        }
+
+        .source-name {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .source-status {
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .source-status.active {
+            background: rgba(79, 209, 197, 0.15);
+            color: var(--accent-teal);
+        }
+
+        body.light .source-status.active {
+            background: rgba(49, 151, 149, 0.12);
+        }
+
+        .source-status.pending {
+            background: rgba(237, 137, 54, 0.15);
+            color: var(--accent-warm);
+        }
+
+        body.light .source-status.pending {
+            background: rgba(221, 107, 32, 0.12);
+        }
+
+        .about-preview p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        body.ja .about-preview p {
+            line-height: 2;
+        }
+
+        .about-preview a {
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .about-preview a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            margin-top: 2rem;
+            transition: border-color 0.3s;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-left {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-teal);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero, .kpi-card, .chart-container, .status-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .kpi-card:nth-child(2) { animation-delay: 0.1s; }
+        .kpi-card:nth-child(3) { animation-delay: 0.2s; }
+        .chart-container { animation-delay: 0.3s; }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            nav { padding: 1rem; }
+            .hero { padding: 8rem 1.5rem 3rem; }
+            .kpi-section, .chart-section, .status-section {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            .nav-links { display: none; }
+        }
+
+        /* Language toggle */
+        [data-lang="ja"] { display: none; }
+        body.ja [data-lang="en"] { display: none; }
+        body.ja [data-lang="ja"] { display: block; }
+        span[data-lang="ja"], span[data-lang="en"] { display: inline; }
+        body.ja span[data-lang="en"] { display: none; }
+        body:not(.ja) span[data-lang="ja"] { display: none; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">marine-obs<span>.org</span></div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#data">
+                        <span data-lang="en">Data</span>
+                        <span data-lang="ja">データ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#about">
+                        <span data-lang="en">About</span>
+                        <span data-lang="ja">このサイトについて</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#sources">
+                        <span data-lang="en">Sources</span>
+                        <span data-lang="ja">データソース</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <div class="lang-switch">
+                    <button id="lang-en" class="active">EN</button>
+                    <span>/</span>
+                    <button id="lang-ja">日本語</button>
+                </div>
+                <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+                    <span class="theme-icon">☀️</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <span class="hero-label" data-lang="en">Pilot Project</span>
+        <span class="hero-label" data-lang="ja">パイロット版</span>
+        
+        <h1 data-lang="en">Coral Thermal Stress Monitor</h1>
+        <h1 data-lang="ja">サンゴ礁熱ストレスモニター</h1>
+        
+        <p class="hero-subtitle" data-lang="en">
+            Tracking sea surface temperatures in Okinawa and Ogasawara. 
+            Visualizing bleaching risk through NOAA satellite data.
+        </p>
+        <p class="hero-subtitle" data-lang="ja">
+            沖縄・小笠原の海水温を追跡し、<br>
+            白化リスクを可視化する市民科学プロジェクト。
+        </p>
+    </section>
+
+    <section class="kpi-section">
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Sesoko Island SST</span>
+                    <span data-lang="ja">瀬底島 海水温</span>
+                </div>
+                <div class="kpi-value teal">29.1<span class="kpi-unit">℃</span></div>
+                <div class="kpi-context">
+                    <span data-lang="en">Dec 27, 2024 · MMM: 29.0℃</span>
+                    <span data-lang="ja">2024年12月27日 · 基準値: 29.0℃</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Peak DHW 2024</span>
+                    <span data-lang="ja">2024年 最大DHW</span>
+                </div>
+                <div class="kpi-value warm">8.2</div>
+                <div class="kpi-context">
+                    <span data-lang="en">Bleaching Alert Level 1</span>
+                    <span data-lang="ja">白化警報レベル1</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Data Coverage</span>
+                    <span data-lang="ja">データ期間</span>
+                </div>
+                <div class="kpi-value coral">22<span class="kpi-unit" data-lang="en">yrs</span><span class="kpi-unit" data-lang="ja">年</span></div>
+                <div class="kpi-context">
+                    <span data-lang="en">2002 – 2024 · 16,496 records</span>
+                    <span data-lang="ja">2002〜2024年 · 16,496件</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chart-section" id="data">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span data-lang="en">Annual Peak DHW · Sesoko Island</span>
+                <span data-lang="ja">年間最大DHW · 瀬底島</span>
+            </h2>
+            <span class="section-subtitle">
+                <span data-lang="en">Degree Heating Weeks (2002–2024)</span>
+                <span data-lang="ja">熱ストレス指標（2002〜2024年）</span>
+            </span>
+        </div>
+        <div class="chart-container">
+            <svg class="chart-svg" viewBox="0 0 800 240" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                    <linearGradient id="tealGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#4fd1c5;stop-opacity:0.4" />
+                        <stop offset="100%" style="stop-color:#4fd1c5;stop-opacity:0" />
+                    </linearGradient>
+                    <linearGradient id="tealGradientLight" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#319795;stop-opacity:0.25" />
+                        <stop offset="100%" style="stop-color:#319795;stop-opacity:0" />
+                    </linearGradient>
+                </defs>
+                
+                <g class="chart-grid">
+                    <line x1="60" y1="40" x2="780" y2="40" />
+                    <line x1="60" y1="90" x2="780" y2="90" />
+                    <line x1="60" y1="140" x2="780" y2="140" />
+                    <line x1="60" y1="190" x2="780" y2="190" />
+                </g>
+                
+                <text class="chart-label" x="50" y="44" text-anchor="end">12</text>
+                <text class="chart-label" x="50" y="94" text-anchor="end">8</text>
+                <text class="chart-label" x="50" y="144" text-anchor="end">4</text>
+                <text class="chart-label" x="50" y="194" text-anchor="end">0</text>
+                
+                <line class="threshold-line" x1="60" y1="140" x2="780" y2="140" />
+                <text class="threshold-label" x="785" y="144">Alert</text>
+                
+                <text class="chart-label" x="92" y="220">02</text>
+                <text class="chart-label" x="215" y="220">07</text>
+                <text class="chart-label" x="340" y="220">12</text>
+                <text class="chart-label" x="465" y="220">17</text>
+                <text class="chart-label" x="590" y="220">21</text>
+                <text class="chart-label" x="748" y="220">24</text>
+                
+                <path class="chart-area" d="
+                    M92,165 
+                    L123,172 L154,158 L185,175 L216,168 L247,180 L278,165 
+                    L309,155 L340,170 L371,162 L402,168 L433,175 L464,145
+                    L495,110 L526,155 L557,148 L588,160 L619,125 L650,105
+                    L681,115 L712,98 L743,75
+                    L743,190 L92,190 Z
+                " />
+                
+                <path class="chart-line" d="
+                    M92,165 
+                    L123,172 L154,158 L185,175 L216,168 L247,180 L278,165 
+                    L309,155 L340,170 L371,162 L402,168 L433,175 L464,145
+                    L495,110 L526,155 L557,148 L588,160 L619,125 L650,105
+                    L681,115 L712,98 L743,75
+                " />
+                
+                <circle class="chart-dot" cx="464" cy="145" r="5" />
+                <circle class="chart-dot" cx="650" cy="105" r="5" />
+                <circle class="chart-dot" cx="743" cy="75" r="5" />
+            </svg>
+        </div>
+    </section>
+
+    <section class="status-section" id="about">
+        <div class="status-grid">
+            <div class="status-card about-preview">
+                <h3>
+                    <span class="status-icon"></span>
+                    <span data-lang="en">About this project</span>
+                    <span data-lang="ja">このプロジェクトについて</span>
+                </h3>
+                
+                <div data-lang="en">
+                    <p>
+                        A personal project by a psychiatrist who dives 100+ times a year. 
+                        After witnessing the 2024 bleaching event firsthand, 
+                        I started tracking the data.
+                    </p>
+                    <p>
+                        This site translates and visualizes NOAA Coral Reef Watch 
+                        and NASA satellite data for divers and researchers in Japan. 
+                        It does not propose original thresholds—it presents 
+                        established science with honesty about satellite-ground discrepancies.
+                    </p>
+                    <a href="#">Read more →</a>
+                </div>
+                
+                <div data-lang="ja">
+                    <p>
+                        年間100本以上潜る精神科医による個人プロジェクトです。
+                        2024年の白化を目の当たりにしたことをきっかけに、
+                        データを追い始めました。
+                    </p>
+                    <p>
+                        NOAAとNASAの衛星データを、
+                        日本のダイバー・研究者向けに翻訳・可視化します。
+                        独自の閾値は主張せず、
+                        衛星と現地の乖離も正直にお伝えします。
+                    </p>
+                    <a href="#">詳しく見る →</a>
+                </div>
+            </div>
+            
+            <div class="status-card" id="sources">
+                <h3>
+                    <span class="status-icon pending"></span>
+                    <span data-lang="en">Data Sources</span>
+                    <span data-lang="ja">データソース</span>
+                </h3>
+                <div class="data-source">
+                    <span class="source-name">NOAA Coral Reef Watch</span>
+                    <span class="source-status active">
+                        <span data-lang="en">Active</span>
+                        <span data-lang="ja">運用中</span>
+                    </span>
+                </div>
+                <div class="data-source">
+                    <span class="source-name">NASA MUR SST</span>
+                    <span class="source-status active">
+                        <span data-lang="en">Active</span>
+                        <span data-lang="ja">運用中</span>
+                    </span>
+                </div>
+                <div class="data-source">
+                    <span class="source-name">
+                        <span data-lang="en">Monitoring Sites 1000</span>
+                        <span data-lang="ja">モニタリングサイト1000</span>
+                    </span>
+                    <span class="source-status pending">2025</span>
+                </div>
+                <div class="data-source">
+                    <span class="source-name">
+                        <span data-lang="en">Turbidity Logger</span>
+                        <span data-lang="ja">濁度計</span>
+                    </span>
+                    <span class="source-status pending">
+                        <span data-lang="en">TBD</span>
+                        <span data-lang="ja">検討中</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <span data-lang="en">© 2024 marine-obs.org · Independent research project</span>
+                <span data-lang="ja">© 2024 marine-obs.org · 個人プロジェクト</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">GitHub</a>
+                <a href="#">Ko-fi</a>
+                <a href="#">
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="ja">お問い合わせ</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const body = document.body;
+        const btnEn = document.getElementById('lang-en');
+        const btnJa = document.getElementById('lang-ja');
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+
+        // Language
+        function setLang(lang) {
+            if (lang === 'ja') {
+                body.classList.add('ja');
+                btnJa.classList.add('active');
+                btnEn.classList.remove('active');
+                document.documentElement.lang = 'ja';
+            } else {
+                body.classList.remove('ja');
+                btnEn.classList.add('active');
+                btnJa.classList.remove('active');
+                document.documentElement.lang = 'en';
+            }
+            localStorage.setItem('lang', lang);
+        }
+
+        btnEn.addEventListener('click', () => setLang('en'));
+        btnJa.addEventListener('click', () => setLang('ja'));
+
+        // Theme
+        function setTheme(theme) {
+            if (theme === 'light') {
+                body.classList.add('light');
+                themeIcon.textContent = '🌙';
+            } else {
+                body.classList.remove('light');
+                themeIcon.textContent = '☀️';
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isLight = body.classList.contains('light');
+            setTheme(isLight ? 'dark' : 'light');
+        });
+
+        // Initialize
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang) {
+            setLang(savedLang);
+        } else if (navigator.language.startsWith('ja')) {
+            setLang('ja');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+            setTheme('light');
+        }
+    </script>
+</body>
+</html>
