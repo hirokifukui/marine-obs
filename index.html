@@ -1255,10 +1255,12 @@ body:not(.ja) .diver-cta-card.coming-soon .title::after {
 
 .hero-footer {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
     flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 3vh;
+    justify-content: flex-end;
+    padding-bottom: 2vh;
+    padding-right: 3vw;
+    width: 100%;
 }
 
 .hero-tagline {
@@ -1332,6 +1334,11 @@ body.ja .hero-tagline-sub {
 }
 
 @media (max-width: 768px) {
+    .hero-footer {
+        justify-content: center;
+        padding-right: 0;
+        padding-bottom: 3vh;
+    }
     .hero-tagline {
         font-size: 2rem;
     }
