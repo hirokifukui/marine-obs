@@ -1044,119 +1044,6 @@
             </div>
         </section>
 
-        <!-- ===== SECTION: Three Scales ===== -->
-        <section class="content-section">
-            <h2>
-                <span data-lang="en">Three Scales of Prediction</span>
-                <span data-lang="ja">予測の3つのスケール</span>
-            </h2>
-            
-            <p class="hierarchy-intro" data-lang="en">
-                Coral spawning prediction works like a series of nested clocks. Each scale narrows down the timing with increasing precision.
-            </p>
-            <p class="hierarchy-intro" data-lang="ja">
-                サンゴの産卵予測は、入れ子になった時計のように機能します。各スケールが、より高い精度でタイミングを絞り込んでいきます。
-            </p>
-            
-            <div class="hierarchy-grid">
-                <div class="hierarchy-card season">
-                    <div class="hierarchy-scale">
-                        <span data-lang="en">Seasonal</span>
-                        <span data-lang="ja">季節スケール</span>
-                    </div>
-                    <div class="hierarchy-question">
-                        <span data-lang="en">Which month?</span>
-                        <span data-lang="ja">何月に産卵？</span>
-                    </div>
-                    <div class="hierarchy-factors">
-                        <span data-lang="en">Rate of SST change<br>+ Wind patterns</span>
-                        <span data-lang="ja">水温変化率<br>+ 風場パターン</span>
-                    </div>
-                    <div class="hierarchy-precision">± 2 weeks</div>
-                    <div class="hierarchy-citation">Keith et al. 2016</div>
-                </div>
-                <div class="hierarchy-card lunar">
-                    <div class="hierarchy-scale">
-                        <span data-lang="en">Lunar</span>
-                        <span data-lang="ja">月スケール</span>
-                    </div>
-                    <div class="hierarchy-question">
-                        <span data-lang="en">Which neap tide?</span>
-                        <span data-lang="ja">どの小潮で？</span>
-                    </div>
-                    <div class="hierarchy-factors">
-                        <span data-lang="en">Light gap ≈ Neap tide</span>
-                        <span data-lang="ja">光のギャップ ≒ 小潮期</span>
-                    </div>
-                    <div class="hierarchy-precision">± 3 days</div>
-                    <div class="hierarchy-citation">Lin et al. 2021 + This site</div>
-                </div>
-                <div class="hierarchy-card daily">
-                    <div class="hierarchy-scale">
-                        <span data-lang="en">Daily</span>
-                        <span data-lang="ja">日スケール</span>
-                    </div>
-                    <div class="hierarchy-question">
-                        <span data-lang="en">What time?</span>
-                        <span data-lang="ja">何時に産卵？</span>
-                    </div>
-                    <div class="hierarchy-factors">
-                        <span data-lang="en">Sunset offset<br>(species-specific)</span>
-                        <span data-lang="ja">日没後オフセット<br>(種特異的)</span>
-                    </div>
-                    <div class="hierarchy-precision">± 30 min</div>
-                    <div class="hierarchy-citation">Babcock et al. 1986</div>
-                </div>
-            </div>
-            
-            <div class="story-box">
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">
-                    <span data-lang="en">The "lunar scale" card above reflects this site's reinterpretation. Traditional research focused on "dark period duration" (light measurement); we propose that "neap tide" (tidal measurement) may be the operationally relevant variable. Both describe the same lunar phase positions.</span>
-                    <span data-lang="ja">上の「月スケール」カードは本サイトの再解釈を反映しています。従来研究は「暗黒期間の長さ」（光の計測）に注目してきましたが、私たちは「小潮」（潮汐の計測）が運用上の関連変数である可能性を提案します。両者は同じ月相位置を記述しています。</span>
-                </p>
-            </div>
-        </section>
-
-        <!-- ===== SECTION: Light Gap Theory ===== -->
-        <section class="content-section">
-            <h2>
-                <span data-lang="en">The Established Theory: Light Gap Triggers Spawning</span>
-                <span data-lang="ja">従来の理解：光のギャップが産卵を引き起こす</span>
-            </h2>
-            
-            <div class="story-box">
-                <p class="story-lead" data-lang="en">
-                    For decades, researchers noticed corals spawn "5-8 days after full moon." But <em>why</em> this timing? Lin et al. (2021, PNAS) provided a breakthrough answer.
-                </p>
-                <p class="story-lead" data-lang="ja">
-                    長年、研究者たちはサンゴが「満月後5-8日」に産卵することに気づいていました。しかし<em>なぜ</em>このタイミングなのか？ Lin et al. (2021, PNAS) が画期的な答えを提供しました。
-                </p>
-                
-                <div class="qa-block">
-                    <div class="qa-question" data-lang="en">What is the "light gap"?</div>
-                    <div class="qa-question" data-lang="ja">「光のギャップ」とは？</div>
-                    <div class="qa-answer">
-                        <span data-lang="en">The dark period between sunset and moonrise. Around last quarter moon (lunar day 22), the moon rises late at night, creating a long dark window after sunset. This extended darkness appears to be the trigger signal.</span>
-                        <span data-lang="ja">日没から月の出までの暗黒期間のこと。下弦（月齢22頃）では月が夜遅くに昇るため、日没後に長い暗黒の窓が生まれます。この延長された暗闇がトリガー信号となるようです。</span>
-                    </div>
-                </div>
-                
-                <div class="qa-block">
-                    <div class="qa-question" data-lang="en">Why does the light gap matter?</div>
-                    <div class="qa-question" data-lang="ja">なぜ光のギャップが重要なのか？</div>
-                    <div class="qa-answer">
-                        <span data-lang="en">Corals possess cryptochrome photoreceptors sensitive to moonlight. The duration of post-sunset darkness—not the moon's brightness per se—appears to be what corals measure. Longer dark gap = higher spawning probability.</span>
-                        <span data-lang="ja">サンゴは月光に感受性を持つクリプトクロム光受容体を持っています。月の明るさそのものではなく、日没後の暗黒の長さをサンゴは測っているようです。暗黒期間が長いほど産卵確率が上がります。</span>
-                    </div>
-                </div>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.9; margin-top: 1rem;">
-                <span data-lang="en">This elegant theory explains why spawning clusters around the last quarter moon. But as we'll see, it doesn't explain <em>everything</em>—particularly spawning events around the <em>first</em> quarter moon.</span>
-                <span data-lang="ja">この優雅な理論は、なぜ産卵が下弦周辺に集中するのかを説明します。しかし後述するように、すべてを説明するわけではありません——特に<em>上弦</em>周辺での産卵イベントを。</span>
-            </p>
-        </section>
-
         <!-- ===== DISCOVERY: Neap Tide Hypothesis ===== -->
         <section class="content-section">
             <h2>
@@ -1300,6 +1187,79 @@
                     <span data-lang="en"> The "dark period" theory and the "neap tide" hypothesis are not competing explanations—they describe the <em>same lunar phase positions</em> using different physical quantities. By utilizing the lunar cycle, corals simultaneously gain optimal light conditions (for triggering) and optimal tidal conditions (for fertilization). This is an evolutionarily refined strategy: <em>one cue, multiple adaptive benefits</em>.</span>
                     <span data-lang="ja"> 「暗黒期間」理論と「小潮」仮説は競合する説明ではありません——<em>同じ月相位置</em>を異なる物理量で記述しています。月相サイクルを利用することで、サンゴは光環境（トリガー用）と潮汐環境（受精用）の両面で最適な条件を同時に獲得しています。これは進化的に洗練された戦略です：<em>単一のキューで複数の適応的利益を得る</em>。</span>
                 </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION: Three Scales ===== -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Three Scales of Prediction</span>
+                <span data-lang="ja">予測の3つのスケール</span>
+            </h2>
+            
+            <p class="hierarchy-intro" data-lang="en">
+                Coral spawning prediction works like a series of nested clocks. Each scale narrows down the timing with increasing precision.
+            </p>
+            <p class="hierarchy-intro" data-lang="ja">
+                サンゴの産卵予測は、入れ子になった時計のように機能します。各スケールが、より高い精度でタイミングを絞り込んでいきます。
+            </p>
+            
+            <div class="hierarchy-grid">
+                <div class="hierarchy-card season">
+                    <div class="hierarchy-scale">
+                        <span data-lang="en">Seasonal</span>
+                        <span data-lang="ja">季節スケール</span>
+                    </div>
+                    <div class="hierarchy-question">
+                        <span data-lang="en">Which month?</span>
+                        <span data-lang="ja">何月に産卵？</span>
+                    </div>
+                    <div class="hierarchy-factors">
+                        <span data-lang="en">Rate of SST change<br>+ Wind patterns</span>
+                        <span data-lang="ja">水温変化率<br>+ 風場パターン</span>
+                    </div>
+                    <div class="hierarchy-precision">± 2 weeks</div>
+                    <div class="hierarchy-citation">Keith et al. 2016</div>
+                </div>
+                <div class="hierarchy-card lunar">
+                    <div class="hierarchy-scale">
+                        <span data-lang="en">Lunar</span>
+                        <span data-lang="ja">月スケール</span>
+                    </div>
+                    <div class="hierarchy-question">
+                        <span data-lang="en">Which neap tide?</span>
+                        <span data-lang="ja">どの小潮で？</span>
+                    </div>
+                    <div class="hierarchy-factors">
+                        <span data-lang="en">Light gap ≈ Neap tide</span>
+                        <span data-lang="ja">光のギャップ ≒ 小潮期</span>
+                    </div>
+                    <div class="hierarchy-precision">± 3 days</div>
+                    <div class="hierarchy-citation">Lin et al. 2021 + This site</div>
+                </div>
+                <div class="hierarchy-card daily">
+                    <div class="hierarchy-scale">
+                        <span data-lang="en">Daily</span>
+                        <span data-lang="ja">日スケール</span>
+                    </div>
+                    <div class="hierarchy-question">
+                        <span data-lang="en">What time?</span>
+                        <span data-lang="ja">何時に産卵？</span>
+                    </div>
+                    <div class="hierarchy-factors">
+                        <span data-lang="en">Sunset offset<br>(species-specific)</span>
+                        <span data-lang="ja">日没後オフセット<br>(種特異的)</span>
+                    </div>
+                    <div class="hierarchy-precision">± 30 min</div>
+                    <div class="hierarchy-citation">Babcock et al. 1986</div>
+                </div>
+            </div>
+            
+            <div class="story-box">
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                    <span data-lang="en">The "lunar scale" card above reflects this site's reinterpretation. Traditional research focused on "dark period duration" (light measurement); we propose that "neap tide" (tidal measurement) may be the operationally relevant variable. Both describe the same lunar phase positions.</span>
+                    <span data-lang="ja">上の「月スケール」カードは本サイトの再解釈を反映しています。従来研究は「暗黒期間の長さ」（光の計測）に注目してきましたが、私たちは「小潮」（潮汐の計測）が運用上の関連変数である可能性を提案します。両者は同じ月相位置を記述しています。</span>
+                </p>
             </div>
         </section>
 
