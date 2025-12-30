@@ -383,29 +383,43 @@
         .hero-section {
             background: linear-gradient(135deg, #dc2626, #0891b2);
             color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-            margin-bottom: 0;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
         }
-
-        .hero-section .hero-main { margin-bottom: 1.5rem; }
-        .hero-section .hero-icon { font-size: 3.5rem; margin-bottom: 0.75rem; }
-        .hero-section .hero-tagline { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; }
-        body.ja .hero-section .hero-tagline { font-size: 1.3rem; }
-        .hero-section .hero-subtitle { font-size: 1rem; opacity: 0.9; margin-bottom: 1rem; }
-        .hero-section .hero-stat {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            margin-top: 0.5rem;
-        }
-        .hero-section .hero-stat .number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.25rem;
+        .hero-main { text-align: center; margin-bottom: 1.5rem; }
+        .hero-icon { font-size: 3.5rem; margin-bottom: 0.75rem; }
+        .hero-tagline {
+            font-size: 1.5rem;
             font-weight: 600;
+            margin-bottom: 1rem;
         }
-        .hero-section .hero-stat .label {
+        body.ja .hero-tagline { font-size: 1.3rem; }
+        .hero-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        .hero-stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .hero-stat-card {
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            text-align: center;
+        }
+        .hero-stat-card .number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.75rem;
+            font-weight: 600;
+            display: block;
+        }
+        .hero-stat-card .label {
             font-size: 0.85rem;
             opacity: 0.9;
             margin-top: 0.25rem;
@@ -557,27 +571,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-main">
-            <div class="hero-icon">🔥❄️</div>
-            <div class="hero-tagline">
-                <span data-lang="en">Both Extremes Matter</span>
-                <span data-lang="ja">両極端が問題</span>
-            </div>
-            <div class="hero-subtitle">
-                <span data-lang="en">High temperatures trigger bleaching. Cold snaps cause mortality.</span>
-                <span data-lang="ja">高温は白化を引き起こし、低温は死亡の原因となる。</span>
-            </div>
-            <div class="hero-stat">
-                <span class="number">
-                    <span data-lang="en">2024: Manza 36 hot | Ogasawara 49 cold</span>
-                    <span data-lang="ja">2024年：万座36高温日 | 小笠原49低温日</span>
-                </span>
-            </div>
-        </div>
-    </section>
-
     <main>
         <nav class="breadcrumb">
             <a href="index.html">Home</a> / 
@@ -605,6 +598,37 @@
                 </span>
             </p>
         </div>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-main">
+                <div class="hero-icon">🔥❄️</div>
+                <div class="hero-tagline">
+                    <span data-lang="en">Both Extremes Matter</span>
+                    <span data-lang="ja">両極端が問題</span>
+                </div>
+                <div class="hero-subtitle">
+                    <span data-lang="en">High temperatures trigger bleaching. Cold snaps cause mortality.</span>
+                    <span data-lang="ja">高温は白化を引き起こし、低温は死亡の原因となる</span>
+                </div>
+            </div>
+            <div class="hero-stats-row">
+                <div class="hero-stat-card">
+                    <span class="number" style="color: #fca5a5;">36</span>
+                    <span class="label">
+                        <span data-lang="en">Manza hot days (2024)</span>
+                        <span data-lang="ja">万座高温日 (2024)</span>
+                    </span>
+                </div>
+                <div class="hero-stat-card">
+                    <span class="number" style="color: #67e8f9;">49</span>
+                    <span class="label">
+                        <span data-lang="en">Ogasawara cold days (2024)</span>
+                        <span data-lang="ja">小笠原低温日 (2024)</span>
+                    </span>
+                </div>
+            </div>
+        </section>
 
         <!-- 2025 Summary -->
         <div class="summary-grid">
