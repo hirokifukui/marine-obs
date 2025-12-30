@@ -31,7 +31,6 @@
             --alert-border: #c05621;
             --warning-bg: #fffbeb;
             --warning-border: #d69e2e;
-            --hot-color: #dc2626;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -449,164 +448,6 @@
             text-align: center;
             margin-top: 0.5rem;
         }
-
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(135deg, #dc2626, #c05621);
-            color: white;
-            padding: 2.5rem 2rem;
-            border-radius: 12px;
-            margin-bottom: 2.5rem;
-        }
-        .hero-main { text-align: center; margin-bottom: 1.5rem; }
-        .hero-icon { font-size: 3.5rem; margin-bottom: 0.75rem; }
-        .hero-tagline {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        body.ja .hero-tagline { font-size: 1.3rem; }
-        .hero-subtitle {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-        }
-        .hero-stats-row {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-        .hero-stat-card {
-            background: rgba(255,255,255,0.15);
-            border-radius: 8px;
-            padding: 1rem 1.5rem;
-            text-align: center;
-        }
-        .hero-stat-card .number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.75rem;
-            font-weight: 600;
-            display: block;
-        }
-        .hero-stat-card .label {
-            font-size: 0.85rem;
-            opacity: 0.9;
-            margin-top: 0.25rem;
-        }
-        .hero-stat-card .site-name-hero {
-            font-size: 0.75rem;
-            opacity: 0.8;
-            margin-bottom: 0.25rem;
-        }
-
-        /* Story box */
-        .story-box {
-            background: #fffbeb;
-            border: 1px solid #fde68a;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        .story-box .story-lead {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-        .story-box p {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            line-height: 1.9;
-        }
-        .story-box p:last-child { margin-bottom: 0; }
-
-        /* Insight cards */
-        .insight-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        .insight-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-        }
-        .insight-card.limitation { border-left: 4px solid #f59e0b; }
-        .insight-card.acclimatization { border-left: 4px solid var(--accent-green); }
-        .insight-card h3 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .insight-card.limitation h3 { color: #d97706; }
-        .insight-card.acclimatization h3 { color: var(--accent-green); }
-        .insight-card p {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-        .insight-card .citation {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-top: 0.75rem;
-            font-style: italic;
-        }
-
-        /* References section */
-        .references-section { margin-top: 2rem; }
-        .references-section h2 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-        }
-        .ref-category { margin-bottom: 1.5rem; }
-        .ref-category h3 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--accent-teal);
-            margin-bottom: 0.75rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-        .ref-list { list-style: none; }
-        .ref-list li {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            padding: 0.5rem 0;
-            line-height: 1.6;
-        }
-        .ref-list a {
-            color: var(--accent-teal);
-            text-decoration: none;
-        }
-        .ref-list a:hover { text-decoration: underline; }
-
-        /* SVG Diagram */
-        .diagram-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            box-shadow: var(--shadow);
-        }
-        .diagram-caption {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-align: center;
-            margin-top: 0.75rem;
-        }
     </style>
 </head>
 <body>
@@ -635,7 +476,7 @@
         <div class="page-header">
             <h1>
                 <span data-lang="en">Degree Heating Weeks (DHW)</span>
-                <span data-lang="ja">DHW（積算熱ストレス指標）</span>
+                <span data-lang="ja">DHW（熱ストレス指標）</span>
             </h1>
             <p class="lead">
                 <span data-lang="en">
@@ -651,72 +492,69 @@
             </p>
         </div>
 
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-main">
-                <div class="hero-icon">🌡️📈</div>
-                <div class="hero-tagline">
-                    <span data-lang="en">2024: Record Thermal Stress in Okinawa</span>
-                    <span data-lang="ja">2024年：沖縄で記録的な熱ストレス</span>
-                </div>
-                <div class="hero-subtitle">
-                    <span data-lang="en">DHW measures accumulated heat stress—the silent killer of coral reefs</span>
-                    <span data-lang="ja">DHWは蓄積熱ストレスを測定—サンゴ礁の見えない脅威</span>
-                </div>
+        <!-- 2024 Alert -->
+        <div class="card alert-card">
+            <div class="card-title">
+                <span data-lang="en">⚠️ 2024: Record Thermal Stress at Manza</span>
+                <span data-lang="ja">⚠️ 2024年：万座で記録的な熱ストレス</span>
             </div>
-            <div class="hero-stats-row">
-                <div class="hero-stat-card">
-                    <div class="site-name-hero">
+            <div class="kpi-comparison">
+                <div class="kpi-item highlight">
+                    <div class="site-name">
+                        <span class="site-dot" style="background:var(--manza)"></span>
                         <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
                     </div>
-                    <span class="number">7.53</span>
-                    <span class="label">
+                    <div class="value">7.53</div>
+                    <div class="context">
                         <span data-lang="en">Highest in 22 years</span>
-                        <span data-lang="ja">22年間最高</span>
-                    </span>
+                        <span data-lang="ja">22年間で最高</span>
+                    </div>
                 </div>
-                <div class="hero-stat-card">
-                    <div class="site-name-hero">
+                <div class="kpi-item">
+                    <div class="site-name">
+                        <span class="site-dot" style="background:var(--sesoko)"></span>
                         <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
                     </div>
-                    <span class="number">4.45</span>
-                    <span class="label">
+                    <div class="value">4.45</div>
+                    <div class="context">
                         <span data-lang="en">Alert Level 1 exceeded</span>
-                        <span data-lang="ja">Alert Level 1超過</span>
-                    </span>
+                        <span data-lang="ja">警報レベル1超過</span>
+                    </div>
                 </div>
-                <div class="hero-stat-card">
-                    <div class="site-name-hero">
+                <div class="kpi-item">
+                    <div class="site-name">
+                        <span class="site-dot" style="background:var(--ogasawara)"></span>
                         <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
                     </div>
-                    <span class="number">1.24</span>
-                    <span class="label">
+                    <div class="value">1.24</div>
+                    <div class="context">
                         <span data-lang="en">Relatively mild</span>
                         <span data-lang="ja">比較的穏やか</span>
-                    </span>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Story Box -->
-        <div class="story-box">
-            <p class="story-lead">
-                <span data-lang="en">Why does accumulated heat matter more than a single hot day?</span>
-                <span data-lang="ja">なぜ蓄積熱が1日の高温より重要なのか？</span>
-            </p>
-            <p>
-                <span data-lang="en">
-                    Corals can tolerate brief temperature spikes, but sustained heat exposure disrupts 
-                    the symbiosis with their algal partners. DHW tracks cumulative thermal stress over 
-                    the past 12 weeks, predicting bleaching risk before visible damage occurs. 
-                    The threshold DHW ≥ 4 indicates likely bleaching; DHW ≥ 8 indicates likely mortality.
-                </span>
-                <span data-lang="ja">
-                    サンゴは短時間の高温スパイクには耐えられますが、持続的な熱曝露は共生藻との関係を破壊します。
-                    DHWは過去12週間の累積熱ストレスを追跡し、目に見える被害が発生する前に白化リスクを予測します。
-                    DHW ≥ 4で白化の可能性、DHW ≥ 8で死亡の可能性を示します。
-                </span>
-            </p>
+            <div class="observation-box">
+                <div class="obs-title">
+                    📋 <span data-lang="en">Field Observation</span><span data-lang="ja">現地観察</span>
+                </div>
+                <p>
+                    <span data-lang="en">
+                        In September 2024, we observed extensive coral bleaching at Manza. 
+                        The DHW of 7.53 was the highest recorded since our monitoring began in 2003, 
+                        surpassing even the 2016-2017 global bleaching event (DHW 5.26–6.68).
+                        In contrast, 2025 showed only mild bleaching with limited progression, 
+                        possibly indicating short-term acclimatization following the 2024 stress.
+                    </span>
+                    <span data-lang="ja">
+                        2024年9月、万座で広範なサンゴの白化を観察しました。
+                        DHW 7.53は2003年のモニタリング開始以来最高値で、
+                        2016-2017年の世界的白化イベント（DHW 5.26-6.68）をも上回りました。
+                        一方、2025年は軽度の白化にとどまり、進行も限定的でした。
+                        これは2024年のストレス後の短期的な馴化を示唆している可能性があります。
+                    </span>
+                </p>
+            </div>
         </div>
 
         <!-- What is DHW -->
@@ -749,44 +587,6 @@
                     DHWが高いほど、蓄積されたストレスと白化リスクが大きくなります。
                 </span>
             </p>
-
-            <!-- DHW Calculation Diagram -->
-            <div class="diagram-container">
-                <svg viewBox="0 0 700 180" style="width: 100%; max-width: 700px; height: auto;">
-                    <!-- Background zones -->
-                    <rect x="50" y="20" width="600" height="40" fill="#fef2f2" opacity="0.5"/>
-                    <rect x="50" y="60" width="600" height="100" fill="#f0fdf4" opacity="0.3"/>
-                    
-                    <!-- MMM + 1°C threshold line -->
-                    <line x1="50" y1="60" x2="650" y2="60" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,4"/>
-                    <text x="660" y="65" font-size="10" fill="#ef4444">MMM + 1°C</text>
-                    
-                    <!-- Temperature curve (example) -->
-                    <path d="M 50 120 Q 100 100 150 80 Q 200 40 250 35 Q 300 30 350 45 Q 400 55 450 70 Q 500 90 550 100 Q 600 110 650 115" 
-                          fill="none" stroke="#c05621" stroke-width="3"/>
-                    
-                    <!-- DHW accumulation area (above threshold) -->
-                    <path d="M 130 60 Q 150 50 200 40 Q 250 30 300 30 Q 350 35 400 50 Q 420 58 430 60 L 130 60 Z" 
-                          fill="#dc2626" opacity="0.3"/>
-                    
-                    <!-- Annotations -->
-                    <text x="50" y="15" font-size="11" fill="#718096">
-                        <tspan data-lang="en">Temperature above MMM+1°C accumulates as DHW</tspan>
-                        <tspan data-lang="ja">MMM+1°Cを超える温度がDHWとして蓄積</tspan>
-                    </text>
-                    <text x="265" y="50" font-size="10" fill="#dc2626" font-weight="600">DHW</text>
-                    
-                    <!-- Week markers -->
-                    <text x="50" y="175" font-size="9" fill="#718096">Week 1</text>
-                    <text x="200" y="175" font-size="9" fill="#718096">Week 4</text>
-                    <text x="350" y="175" font-size="9" fill="#718096">Week 8</text>
-                    <text x="500" y="175" font-size="9" fill="#718096">Week 12</text>
-                </svg>
-                <p class="diagram-caption">
-                    <span data-lang="en">DHW = Sum of (SST − Bleaching Threshold) for each week where SST > threshold, over 12 weeks</span>
-                    <span data-lang="ja">DHW = 12週間で閾値を超えた各週の（SST − 白化閾値）の合計</span>
-                </p>
-            </div>
         </section>
 
         <!-- NOAA Alert Levels -->
@@ -836,160 +636,6 @@
                         <span data-lang="ja">死亡の可能性</span>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Limitations and Refinements -->
-        <section class="content-section">
-            <h2>
-                <span data-lang="en">Limitations and Refinements of DHW</span>
-                <span data-lang="ja">DHWの限界と再定義</span>
-            </h2>
-            <p>
-                <span data-lang="en">
-                    While DHW is a powerful predictor, recent research reveals important limitations. 
-                    The standard thresholds (DHW 4/8) are global averages that may not accurately predict 
-                    bleaching at regional scales. Several studies suggest the need for localized calibration.
-                </span>
-                <span data-lang="ja">
-                    DHWは強力な予測指標ですが、最近の研究では重要な限界が明らかになっています。
-                    標準閾値（DHW 4/8）はグローバル平均であり、地域スケールでの白化を正確に予測できない可能性があります。
-                    いくつかの研究では、地域ごとの調整の必要性が示唆されています。
-                </span>
-            </p>
-
-            <div class="insight-grid">
-                <div class="insight-card limitation">
-                    <h3>
-                        ⚠️ <span data-lang="en">Regional Threshold Variation</span><span data-lang="ja">地域による閾値変動</span>
-                    </h3>
-                    <p>
-                        <span data-lang="en">
-                            Reducing the 1°C warming cutoff to 0.4°C and adjusting accumulation to 11 weeks 
-                            improved global forecast skill by 70%. Optimal thresholds vary by ocean basin, 
-                            and the bleaching threshold has risen at 0.19 DHW/year since 1998.
-                        </span>
-                        <span data-lang="ja">
-                            1°Cの温暖化カットオフを0.4°Cに下げ、蓄積期間を11週間に調整すると、
-                            グローバル予測精度が70%向上しました。最適閾値は海洋盆地ごとに異なり、
-                            白化閾値は1998年以降、年0.19 DHWずつ上昇しています。
-                        </span>
-                    </p>
-                    <p class="citation">Whitaker & DeCarlo 2024, Coral Reefs</p>
-                </div>
-
-                <div class="insight-card limitation">
-                    <h3>
-                        📊 <span data-lang="en">Projection Overestimation</span><span data-lang="ja">予測の過大評価</span>
-                    </h3>
-                    <p>
-                        <span data-lang="en">
-                            DHM (Degree Heating Months)-based projections may overestimate coral bleaching 
-                            and mortality. Actual responses depend on thermal history, local adaptation, 
-                            and the rate of temperature change, not just accumulated heat.
-                        </span>
-                        <span data-lang="ja">
-                            DHM（月単位積算熱）に基づく予測は、サンゴの白化と死亡率を過大評価する可能性があります。
-                            実際の応答は、蓄積熱だけでなく、熱履歴、局所適応、温度変化率に依存します。
-                        </span>
-                    </p>
-                    <p class="citation">Mason et al. 2025, Nature Geoscience</p>
-                </div>
-
-                <div class="insight-card limitation">
-                    <h3>
-                        🔬 <span data-lang="en">Experimental Standardization</span><span data-lang="ja">実験の標準化</span>
-                    </h3>
-                    <p>
-                        <span data-lang="en">
-                            eDHW (experimental DHW) provides a standardized metric for comparing 
-                            thermal stress across laboratory studies. This allows reconciliation of 
-                            variable experimental conditions in bleaching research.
-                        </span>
-                        <span data-lang="ja">
-                            eDHW（実験用DHW）は、実験室研究間で熱ストレスを比較するための標準化指標を提供します。
-                            これにより、白化研究における様々な実験条件の整合が可能になります。
-                        </span>
-                    </p>
-                    <p class="citation">Leggat et al. 2022, J Environmental Management</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Thermal History and Acclimatization -->
-        <section class="content-section">
-            <h2>
-                <span data-lang="en">Thermal History and Acclimatization</span>
-                <span data-lang="ja">熱履歴と順応</span>
-            </h2>
-            <p>
-                <span data-lang="en">
-                    Recent research suggests that corals can develop short-term heat tolerance 
-                    after surviving thermal stress events. This "thermal memory" may explain why 
-                    the same DHW level produces different outcomes in different years.
-                </span>
-                <span data-lang="ja">
-                    最近の研究では、サンゴは熱ストレスイベントを生き延びた後、
-                    短期的な耐熱性を獲得する可能性があることが示唆されています。
-                    この「熱記憶」が、同じDHWレベルでも年によって異なる結果が生じる理由を説明するかもしれません。
-                </span>
-            </p>
-
-            <div class="insight-grid">
-                <div class="insight-card acclimatization">
-                    <h3>
-                        🔄 <span data-lang="en">Sesoko 2016→2017</span><span data-lang="ja">瀬底 2016→2017</span>
-                    </h3>
-                    <p>
-                        <span data-lang="en">
-                            In 2017, despite higher DHW than 2016, the same coral colonies at Sesoko 
-                            showed reduced bleaching. This indicates possible acclimatization 
-                            from the previous year's stress—a short-term improvement in heat tolerance.
-                        </span>
-                        <span data-lang="ja">
-                            2017年のDHWは2016年より高かったにもかかわらず、瀬底の同じサンゴ群体の白化は減少しました。
-                            これは前年のストレス経験による馴化—短期的な耐熱性の向上—を示唆しています。
-                        </span>
-                    </p>
-                    <p class="citation">Singh et al. 2023, PeerJ</p>
-                </div>
-
-                <div class="insight-card acclimatization">
-                    <h3>
-                        📈 <span data-lang="en">Rising Bleaching Threshold</span><span data-lang="ja">上昇する白化閾値</span>
-                    </h3>
-                    <p>
-                        <span data-lang="en">
-                            Global analysis of 3,351 sites shows that the onset of coral bleaching 
-                            has occurred at ~0.5°C higher SST in the last decade compared to the previous decade. 
-                            This suggests some populations may have adapted or thermally susceptible genotypes declined.
-                        </span>
-                        <span data-lang="ja">
-                            3,351地点のグローバル分析では、サンゴ白化の発生温度が過去10年間で
-                            前の10年間と比較して約0.5°C高くなっていることが示されました。
-                            これは一部の集団が適応した、または熱感受性の高い遺伝子型が減少した可能性を示唆しています。
-                        </span>
-                    </p>
-                    <p class="citation">Sully et al. 2019, Nature Communications</p>
-                </div>
-            </div>
-
-            <div class="observation-box">
-                <div class="obs-title">
-                    📋 <span data-lang="en">Our 2024→2025 Observation</span><span data-lang="ja">2024→2025年の観察</span>
-                </div>
-                <p>
-                    <span data-lang="en">
-                        Following the severe 2024 event (DHW 7.53 at Manza), 2025 showed only mild bleaching 
-                        with limited progression (DHW 2.2). This pattern mirrors Singh et al.'s findings at Sesoko, 
-                        suggesting that surviving colonies may have enhanced thermal tolerance—at least temporarily.
-                    </span>
-                    <span data-lang="ja">
-                        深刻だった2024年イベント（万座でDHW 7.53）の後、2025年は軽度の白化にとどまり、
-                        進行も限定的でした（DHW 2.2）。このパターンはSingh et al.の瀬底での発見と一致しており、
-                        生き残った群体が—少なくとも一時的に—耐熱性を高めた可能性を示唆しています。
-                    </span>
-                </p>
             </div>
         </section>
 
@@ -1081,6 +727,41 @@
             </p>
         </section>
 
+        <!-- Thermal History -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">The Role of Thermal History</span>
+                <span data-lang="ja">熱履歴の重要性</span>
+            </h2>
+            <p>
+                <span data-lang="en">
+                    Recent research suggests that corals can develop short-term heat tolerance 
+                    after surviving thermal stress events. Singh et al. (2023) found that in 2017, 
+                    despite higher DHW than 2016, the same coral colonies showed reduced bleaching—
+                    indicating possible acclimatization from the previous year's stress.
+                </span>
+                <span data-lang="ja">
+                    最近の研究では、サンゴは熱ストレスイベントを生き延びた後、
+                    短期的な耐熱性を獲得する可能性があることが示唆されています。
+                    Singh et al.（2023）は、2017年のDHWが2016年より高かったにもかかわらず、
+                    同じサンゴ群体の白化が減少したことを発見しました。
+                    これは前年のストレス経験による馴化の可能性を示しています。
+                </span>
+            </p>
+            <p>
+                <span data-lang="en">
+                    Our 2025 observations may reflect this pattern: following the severe 2024 event, 
+                    the limited bleaching in 2025 (DHW 2.2 at Manza) could indicate that 
+                    surviving colonies have enhanced thermal tolerance—at least temporarily.
+                </span>
+                <span data-lang="ja">
+                    2025年の観察結果もこのパターンを反映している可能性があります。
+                    深刻だった2024年の後、2025年の白化が限定的（万座でDHW 2.2）だったことは、
+                    生き残った群体が—少なくとも一時的に—耐熱性を高めた可能性を示唆しています。
+                </span>
+            </p>
+        </section>
+
         <!-- Data Source -->
         <section class="content-section">
             <h2>
@@ -1102,61 +783,17 @@
                     NOAA Coral Reef Watch → Methodology
                 </a>
             </div>
-        </section>
 
-        <!-- References Section -->
-        <section class="references-section">
-            <h2>
-                <span data-lang="en">References</span>
-                <span data-lang="ja">参考文献</span>
-            </h2>
-            
-            <div class="ref-category">
-                <h3>
-                    <span data-lang="en">Foundation Studies</span>
-                    <span data-lang="ja">基盤研究</span>
-                </h3>
-                <ul class="ref-list">
-                    <li>Liu G et al. (2014) Reef-scale thermal stress monitoring of coral ecosystems. <em>Remote Sensing of Environment</em> 140:104-114. <a href="https://doi.org/10.1016/j.rse.2013.08.036" target="_blank">DOI</a></li>
-                    <li>Sully S et al. (2019) A global analysis of coral bleaching over the past two decades. <em>Nature Communications</em> 10:1264. <a href="https://doi.org/10.1038/s41467-019-09238-2" target="_blank">DOI</a></li>
-                </ul>
-            </div>
-            
-            <div class="ref-category">
-                <h3>
-                    <span data-lang="en">Threshold Optimization</span>
-                    <span data-lang="ja">閾値最適化</span>
-                </h3>
-                <ul class="ref-list">
-                    <li>Whitaker H & DeCarlo TM (2024) Re(de)fining degree-heating week: coral bleaching variability necessitates regional and temporal optimization. <em>Coral Reefs</em> 43:1081-1094. <a href="https://doi.org/10.1007/s00338-024-02512-w" target="_blank">DOI</a></li>
-                    <li>Liu B et al. (2024) Optimization of thermal stress thresholds on regional coral bleaching monitoring. <em>Frontiers in Marine Science</em> 11:1438087. <a href="https://doi.org/10.3389/fmars.2024.1438087" target="_blank">DOI</a></li>
-                    <li>Mason RAB et al. (2025) Coral bleaching and mortality overestimated in projections based on Degree Heating Months. <em>Nature Geoscience</em>. <a href="https://doi.org/10.1038/s41561-024-01635-7" target="_blank">DOI</a></li>
-                </ul>
-            </div>
-            
-            <div class="ref-category">
-                <h3>
-                    <span data-lang="en">Thermal History & Acclimatization</span>
-                    <span data-lang="ja">熱履歴と順応</span>
-                </h3>
-                <ul class="ref-list">
-                    <li>Singh T et al. (2023) Short-term improvement of heat tolerance in naturally growing <em>Acropora</em> corals in Okinawa. <em>PeerJ</em> 11:e14629. <a href="https://doi.org/10.7717/peerj.14629" target="_blank">DOI</a></li>
-                    <li>Guest JR et al. (2012) Contrasting patterns of coral bleaching susceptibility in 2010 suggest an adaptive response to thermal stress. <em>PLoS ONE</em> 7:e33353. <a href="https://doi.org/10.1371/journal.pone.0033353" target="_blank">DOI</a></li>
-                    <li>Grottoli AG et al. (2014) The cumulative impact of annual coral bleaching can turn some coral species winners into losers. <em>Global Change Biology</em> 20:3823-3833. <a href="https://doi.org/10.1111/gcb.12658" target="_blank">DOI</a></li>
-                    <li>Leggat W et al. (2022) Experiment Degree Heating Week (eDHW) as a novel metric to reconcile and validate past and future global coral bleaching studies. <em>Journal of Environmental Management</em> 301:113919. <a href="https://doi.org/10.1016/j.jenvman.2021.113919" target="_blank">DOI</a></li>
-                </ul>
-            </div>
-            
-            <div class="ref-category">
-                <h3>
-                    <span data-lang="en">Regional Studies (Sesoko)</span>
-                    <span data-lang="ja">地域研究（瀬底）</span>
-                </h3>
-                <ul class="ref-list">
-                    <li>Sakai K et al. (2019) Coral community dynamics and environmental conditions at Sesoko Island. <em>Galaxea, Journal of Coral Reef Studies</em> 21:15-23.</li>
-                    <li>Singh T et al. (2022) Long-term trends and seasonal variations in environmental conditions in Sesoko Island. <em>Galaxea, Journal of Coral Reef Studies</em> 24:S14. <a href="https://doi.org/10.3755/galaxea.g2021_s14o" target="_blank">DOI</a></li>
-                    <li>Harii S et al. (2022) Coral reef research in Sesoko Island - 50 years anniversary. <em>Galaxea, Journal of Coral Reef Studies</em> 24:1-11. <a href="https://doi.org/10.3755/galaxea.24.1_1" target="_blank">DOI</a></li>
-                </ul>
+            <div class="source-info" style="margin-top: 1rem;">
+                <strong>
+                    <span data-lang="en">Key References</span>
+                    <span data-lang="ja">主要参考文献</span>
+                </strong><br>
+                <span style="font-size: 0.7rem; line-height: 1.8;">
+                    • Sakai K, et al. (2019) Coral bleaching and recovery during the 2016 and 2017 events at Sesoko Island, Okinawa.<br>
+                    • Singh S, et al. (2023) Short-term heat tolerance in corals.<br>
+                    • Sully S, et al. (2019) A global analysis of coral bleaching over the past two decades. <em>Nature Communications</em>.
+                </span>
             </div>
         </section>
 
