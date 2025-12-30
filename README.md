@@ -28,6 +28,7 @@
 | sst.html | SST詳細（水温解説、高温・低温両方） | ✅ 完成 |
 | extreme.html | 極端日数詳細（高温・低温チャート） | ✅ 完成 |
 | dhw.html | DHW詳細（2024年記録、瀬底研究引用） | ✅ 完成 |
+| species.html | 種別脆弱性（勝者と敗者、16論文レビュー） | ✅ 完成 |
 
 ### トップページ構成（index.html）
 
@@ -39,7 +40,7 @@
 ├─────────────────────────────────────┤
 │  6枚ダッシュボードカード             │
 │  [SST] [極端日数] [DHW]             │  ← 各詳細ページへリンク
-│  [種別] [モニ1000] [濁度] ← SOON    │
+│  [種別] [モニ1000] [濁度]           │  ← 種別 ✅ 完成 / 他2枚 SOON
 ├─────────────────────────────────────┤
 │  データソース                        │
 ├─────────────────────────────────────┤
@@ -76,11 +77,19 @@
 - 小笠原の低温脆弱性を強調
 - 2003-2025年のチャート（2系列）
 
+### species.html（種別脆弱性）**NEW**
+- **勝者と敗者の構造**: Acropora/Montipora（敗者）vs Porites/Galaxea（勝者）
+- 白化感受性を決める3因子: 形態・組織厚、共生藻タイプ、マイクロバイオーム
+- 回復動態: Boom-Bust型（ミドリイシ）vs 緩やかな衰退型
+- 大規模白化事例: モルディブ2016、沖縄・本部2002、ムーレア1991-2007
+- ダイバーへの観察ポイント
+- 16本の査読論文に基づく（Zoteroコレクション: ThermalStress-Bleaching）
+
 ---
 
 ## 対象地点
 
-**カード表示順序：SST → 極端日数 → DHW**
+**カード表示順序：SST → 極端日数 → DHW → 種別脆弱性**
 
 | コード | 名称 | 座標 | MMM |
 |--------|------|------|-----|
@@ -124,6 +133,7 @@ marine-obs/
 ├── sst.html            # SST詳細ページ
 ├── dhw.html            # DHW詳細ページ
 ├── extreme.html        # 極端日数詳細ページ
+├── species.html        # 種別脆弱性ページ **NEW**
 ├── hero.jpg            # ヒーロー背景（iStock 965393632）
 ├── diving.jpg          # Aboutページ用画像
 ├── logo.png            # ロゴ
@@ -167,6 +177,12 @@ marine-obs/
 | Saxby et al. 2003 | Montipora低温ストレス | sst.html |
 | Sakai et al. 2019 | 瀬底島2016年白化・死亡率 | dhw.html |
 | Singh et al. 2023 | 短期熱順応・熱履歴効果 | dhw.html |
+| van Woesik et al. 2011 | Winners and losers（14年追跡） | species.html |
+| McClanahan et al. 2004 | 分類群が白化応答の52%を説明 | species.html |
+| Sampayo et al. 2008 | 共生藻亜クレードによる耐性差異 | species.html |
+| Pratchett et al. 2013 | ムーレア繰り返し白化 | species.html |
+| Morais et al. 2021 | Boom-bust vs protracted decline | species.html |
+| Pisapia et al. 2019 | モルディブ2016年白化 | species.html |
 
 Zoteroコレクション: `ThermalStress-Bleaching` (RIIHGD8I)
 
@@ -207,16 +223,17 @@ Vercelが自動検知して約1分でデプロイ完了。
 
 ### 優先度：高
 1. ~~詳細ページ作成（dhw.html, sst.html, extreme.html）~~ ✅ 完了
-2. 用語解説（Glossary）の充実
-3. 6カードの残り3枚（種別脆弱性、モニ1000、濁度）
+2. ~~種別脆弱性ページ（species.html）~~ ✅ 完了
+3. 用語解説（Glossary）の充実
+4. 6カードの残り2枚（モニ1000、濁度）
 
 ### 優先度：中
-4. 観察報告フォームの実装
-5. レスポンシブ調整（モバイル表示）
+5. 観察報告フォームの実装
+6. レスポンシブ調整（モバイル表示）
 
 ### 優先度：低
-6. 静的JSON生成のGitHub Actions化
-7. 地点拡張（モルディブ、タイなど）
+7. 静的JSON生成のGitHub Actions化
+8. 地点拡張（モルディブ、タイなど）
 
 ---
 
@@ -235,15 +252,15 @@ Vercelが自動検知して約1分でデプロイ完了。
 
 | 日付 | 変更内容 |
 |------|----------|
+| 2025-12-30 | **species.html完成**: 種別脆弱性ページ新規作成、index.htmlからリンク |
 | 2025-12-30 | 詳細ページ3枚完成（sst.html, dhw.html, extreme.html） |
 | 2025-12-30 | トップページUI整理: KPIカード削除、6枚カードをヒーロー直下に移動 |
 | 2025-12-30 | カード順序変更: SST → 極端日数 → DHW |
 | 2025-12-30 | extreme_days.json に2025年データ追加 |
 | 2025-12-30 | グローバル引用追加（Sully 2019, El-Khaled 2025, Saxby 2003, Singh 2023） |
 | 2025-12-30 | SST日次更新をGitHub Actions化 |
+| 2025-12-30 | ダイバー向けページ拡張: 装備ガイド、サンゴ熱ストレス追加 |
 
 ---
 
 *最終更新: 2025-12-30*
-
-| 2025-12-30 | ダイバー向けページ拡張: 装備ガイド、サンゴ熱ストレス（SST/MMM比較、2024年DHWピーク表示）追加 |
