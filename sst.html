@@ -921,6 +921,7 @@
         async function loadCurrentSST() {
             try {
                 const response = await fetch('data/sst_recent.json');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const data = await response.json();
                 
                 ['manza', 'sesoko', 'ogasawara'].forEach(site => {
@@ -938,6 +939,7 @@
                         diffEl.className = 'sst-diff ' + (diff > 1 ? 'above' : diff < -1 ? 'below' : 'neutral');
                     }
                 });
+                console.log('✓ loadCurrentSST completed');
             } catch (e) {
                 console.error('Failed to load SST data:', e);
             }
@@ -947,23 +949,30 @@
         async function loadExtremeDays() {
             try {
                 const response = await fetch('data/extreme_days.json');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const data = await response.json();
                 
                 ['manza', 'sesoko', 'ogasawara'].forEach(site => {
                     // Hot days (2024)
-                    const hotData = data.hot_days[site];
-                    const hot2024 = hotData.find(d => d.year === 2024);
-                    if (hot2024) {
-                        document.getElementById(`days-hot-${site}`).textContent = hot2024.days;
+                    const hotData = data.hot_days?.[site];
+                    if (hotData) {
+                        const hot2024 = hotData.find(d => d.year === 2024);
+                        const hotEl = document.getElementById(`days-hot-${site}`);
+                        if (hotEl) {
+                            hotEl.textContent = hot2024 ? hot2024.days : 0;
+                        }
                     }
                     
                     // Cold days (2025)
-                    const coldData = data.cold_days[site];
-                    const cold2025 = coldData.find(d => d.year === 2025);
-                    if (cold2025) {
-                        document.getElementById(`days-cold-${site}`).textContent = cold2025.days;
+                    const coldData = data.cold_days?.[site];
+                    if (coldData) {
+                        const cold2025 = coldData.find(d => d.year === 2025);
+                        const coldEl = document.getElementById(`days-cold-${site}`);
+                        if (coldEl) {
+                            coldEl.textContent = cold2025 ? cold2025.days : 0;
+                        }
                         // Also update inline text for Ogasawara
-                        if (site === 'ogasawara') {
+                        if (site === 'ogasawara' && cold2025) {
                             const inlineEl = document.getElementById('cold-ogasawara-inline');
                             const inlineElJa = document.getElementById('cold-ogasawara-inline-ja');
                             if (inlineEl) inlineEl.textContent = cold2025.days;
@@ -971,6 +980,7 @@
                         }
                     }
                 });
+                console.log('✓ loadExtremeDays completed');
             } catch (e) {
                 console.error('Failed to load extreme days data:', e);
             }
@@ -980,7 +990,12 @@
         async function renderSSTChart() {
             try {
                 const response = await fetch('data/sst_recent.json');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const data = await response.json();
+                
+                if (!data.manza || data.manza.length === 0) {
+                    throw new Error('No manza data');
+                }
                 
                 const labels = data.manza.map(d => d.date.slice(5));
                 
@@ -1046,6 +1061,7 @@
                         }
                     }
                 });
+                console.log('✓ renderSSTChart completed');
             } catch (e) {
                 console.error('Failed to render SST chart:', e);
             }
@@ -1055,7 +1071,12 @@
         async function renderClimChart() {
             try {
                 const response = await fetch('data/monthly_clim.json');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const data = await response.json();
+                
+                if (!data.manza || data.manza.length === 0) {
+                    throw new Error('No manza climatology data');
+                }
                 
                 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
                 
@@ -1120,16 +1141,24 @@
                         }
                     }
                 });
+                console.log('✓ renderClimChart completed');
             } catch (e) {
                 console.error('Failed to render climatology chart:', e);
             }
         }
 
-        // Initialize
-        loadCurrentSST();
-        loadExtremeDays();
-        renderSSTChart();
-        renderClimChart();
+        // Initialize with better error handling
+        console.log('SST page initializing...');
+        Promise.all([
+            loadCurrentSST(),
+            loadExtremeDays(),
+            renderSSTChart(),
+            renderClimChart()
+        ]).then(() => {
+            console.log('✓ All data loaded successfully');
+        }).catch(e => {
+            console.error('Initialization error:', e);
+        });
     </script>
 </body>
 </html>
