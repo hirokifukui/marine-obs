@@ -32,8 +32,6 @@
             --disruption-red: #ef4444;
             --disruption-light: #fef2f2;
             --disruption-border: #fecaca;
-            --story-bg: #fffbeb;
-            --story-border: #fde68a;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,7 +40,7 @@
             font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
             background: var(--bg-secondary);
             color: var(--text-primary);
-            line-height: 1.8;
+            line-height: 1.6;
             min-height: 100vh;
         }
 
@@ -108,7 +106,7 @@
 
         /* Main */
         main {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 2.5rem 2rem;
         }
@@ -124,7 +122,7 @@
             text-decoration: none;
         }
 
-        /* ===== HERO SECTION ===== */
+        /* ===== HERO SECTION (Enhanced) ===== */
         .hero-section {
             background: linear-gradient(135deg, var(--spawning-purple), #a855f7);
             color: white;
@@ -252,11 +250,11 @@
 
         /* ===== CONTENT SECTIONS ===== */
         .content-section {
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .content-section h2 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 1rem;
             color: var(--text-primary);
@@ -270,79 +268,11 @@
             box-shadow: var(--shadow);
         }
 
-        /* ===== STORY BOXES (New) ===== */
-        .story-box {
-            background: var(--story-bg);
-            border: 1px solid var(--story-border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .story-box .story-lead {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-
-        .story-box p {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            line-height: 1.9;
-        }
-
-        .story-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        .story-box .highlight {
-            background: rgba(139, 92, 246, 0.15);
-            padding: 0.15rem 0.4rem;
-            border-radius: 3px;
-            font-weight: 500;
-        }
-
-        .story-box .emphasis {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* Question-Answer format */
-        .qa-block {
-            margin-bottom: 1.5rem;
-        }
-
-        .qa-question {
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--spawning-purple);
-            margin-bottom: 0.5rem;
-        }
-
-        .qa-answer {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.9;
-            padding-left: 1rem;
-            border-left: 3px solid var(--spawning-border);
-        }
-
-        /* ===== HIERARCHY SECTION ===== */
-        .hierarchy-intro {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.9;
-        }
-
+        /* ===== SECTION 1: Environmental Cue Hierarchy ===== */
         .hierarchy-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
-            margin-bottom: 1.5rem;
         }
 
         @media (max-width: 768px) {
@@ -412,7 +342,7 @@
             font-style: italic;
         }
 
-        /* ===== MOLECULE SECTION ===== */
+        /* ===== SECTION 2: Molecular Cascade (4-Wave Model) ===== */
         .molecule-section {
             background: var(--molecule-light);
             border: 1px solid var(--molecule-border);
@@ -421,10 +351,10 @@
         }
 
         .molecule-intro {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.9;
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
         }
 
         .wave-timeline {
@@ -489,39 +419,31 @@
         }
 
         .wave-desc {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         .molecule-insight {
             background: rgba(59, 130, 246, 0.1);
             border-left: 3px solid var(--molecule-blue);
-            padding: 1rem 1.25rem;
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
+            padding: 0.75rem 1rem;
+            margin-top: 1.25rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
             border-radius: 0 4px 4px 0;
-            line-height: 1.8;
         }
 
         .molecule-insight strong {
             color: var(--molecule-blue);
         }
 
-        /* ===== DISRUPTION SECTION ===== */
+        /* ===== SECTION 3: Anthropogenic Disruption ===== */
         .disruption-section {
             background: var(--disruption-light);
             border: 1px solid var(--disruption-border);
             border-radius: 8px;
             padding: 1.5rem;
-        }
-
-        .disruption-intro {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.9;
         }
 
         .disruption-grid {
@@ -538,7 +460,7 @@
             background: white;
             border: 1px solid var(--disruption-border);
             border-radius: 6px;
-            padding: 1.25rem;
+            padding: 1rem;
         }
 
         .disruption-icon {
@@ -562,27 +484,26 @@
         }
 
         .disruption-desc {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         .disruption-warning {
             background: rgba(239, 68, 68, 0.1);
             border-left: 3px solid var(--disruption-red);
-            padding: 1rem 1.25rem;
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
+            padding: 0.75rem 1rem;
+            margin-top: 1.25rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
             border-radius: 0 4px 4px 0;
-            line-height: 1.8;
         }
 
         .disruption-warning strong {
             color: var(--disruption-red);
         }
 
-        /* ===== CALENDAR ===== */
+        /* ===== SECTION 4: Spawning Calendar ===== */
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
@@ -626,7 +547,7 @@
 
         .calendar-day.peak .time-hint { color: white; }
 
-        /* ===== INTERFACE PLACEHOLDER ===== */
+        /* ===== SECTION 5: Prediction Interface (Placeholder) ===== */
         .interface-placeholder {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             border: 2px dashed var(--accent-teal);
@@ -663,7 +584,7 @@
             color: var(--text-secondary);
         }
 
-        /* ===== INSIGHTS BOX ===== */
+        /* ===== For Divers ===== */
         .insights-box {
             background: linear-gradient(135deg, var(--spawning-light) 0%, #fef7ff 100%);
             border: 1px solid var(--spawning-border);
@@ -696,24 +617,23 @@
         .insights-list li:last-child { border-bottom: none; }
         .insights-list .label { font-weight: 600; color: var(--text-primary); }
 
-        /* ===== REFERENCES ===== */
+        /* ===== References ===== */
         .source-info {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
-            padding: 1.25rem;
+            padding: 1rem;
             background: var(--bg-secondary);
             border-radius: 6px;
-            line-height: 1.8;
         }
 
         .source-info a { color: var(--accent-teal); text-decoration: none; }
         .source-info a:hover { text-decoration: underline; }
-        .source-info ul { margin-top: 0.75rem; padding-left: 1.25rem; }
-        .source-info li { margin-bottom: 0.5rem; }
+        .source-info ul { margin-top: 0.5rem; padding-left: 1.25rem; }
+        .source-info li { margin-bottom: 0.35rem; }
 
         /* Footer */
         footer {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 2rem;
             text-align: center;
@@ -728,12 +648,11 @@
         [data-lang="ja"] { display: none; }
         body.ja [data-lang="en"] { display: none; }
         body.ja [data-lang="ja"] { display: inline; }
-        div[data-lang="ja"], li[data-lang="ja"], p[data-lang="ja"], span.block[data-lang="ja"] { display: none; }
-        body.ja div[data-lang="en"], body.ja li[data-lang="en"], body.ja p[data-lang="en"], body.ja span.block[data-lang="en"] { display: none; }
+        div[data-lang="ja"], li[data-lang="ja"], p[data-lang="ja"] { display: none; }
+        body.ja div[data-lang="en"], body.ja li[data-lang="en"], body.ja p[data-lang="en"] { display: none; }
         body.ja div[data-lang="ja"] { display: block; }
         body.ja li[data-lang="ja"] { display: list-item; }
         body.ja p[data-lang="ja"] { display: block; }
-        body.ja span.block[data-lang="ja"] { display: block; }
     </style>
 </head>
 <body>
@@ -757,7 +676,7 @@
             <span data-lang="ja">サンゴ産卵予測</span>
         </nav>
 
-        <!-- ===== HERO ===== -->
+        <!-- ===== HERO: Enhanced Prediction ===== -->
         <section class="hero-section">
             <div class="hero-main">
                 <div class="hero-icon">🌙</div>
@@ -777,15 +696,18 @@
                 <div class="countdown" id="countdown"></div>
             </div>
 
+            <!-- Dark Period Visualization -->
             <div class="dark-period-viz">
                 <div class="dark-period-title">
-                    <span data-lang="en">Dark Period: The Spawning Trigger</span>
-                    <span data-lang="ja">暗黒期間：産卵のトリガー</span>
+                    <span data-lang="en">Dark Period: Spawning Trigger Window</span>
+                    <span data-lang="ja">暗黒期間：産卵トリガーウィンドウ</span>
                 </div>
                 <div class="dark-period-bar">
                     <div class="time-label">19:24<br><span style="font-size:0.6rem; opacity:0.7">sunset</span></div>
                     <div class="bar-container">
+                        <!-- Dark period: 19:24 - 23:07 = 3h43m, total bar = 4h -->
                         <div class="bar-dark" style="left: 0; width: 93%;"></div>
+                        <!-- Spawning peak: 21:00-23:00 within dark period -->
                         <div class="bar-spawning" style="left: 40%; width: 50%;"></div>
                     </div>
                     <div class="time-label">23:07<br><span style="font-size:0.6rem; opacity:0.7">moonrise</span></div>
@@ -805,51 +727,12 @@
             </div>
         </section>
 
-        <!-- ===== INTRODUCTION: Why can we predict? ===== -->
-        <section class="content-section">
-            <h2>
-                <span data-lang="en">Why Can We Predict the Exact Minute?</span>
-                <span data-lang="ja">なぜ「分単位」で予測できるのか</span>
-            </h2>
-            
-            <div class="story-box">
-                <p class="story-lead" data-lang="en">
-                    "Sunset at 19:24. Moonrise at 23:07. Dark period of 3 hours 43 minutes. Therefore, spawning peaks at 21:42."
-                </p>
-                <p class="story-lead" data-lang="ja">
-                    「日没19:24、月の出23:07、暗黒期間3時間43分。だから21:42に産卵する」
-                </p>
-                
-                <p data-lang="en">
-                    This logical chain is not speculation—it's based on 22 peer-reviewed studies from labs around the world. Coral spawning, once thought to be triggered simply by the full moon, is now understood as a <span class="highlight">precisely orchestrated event</span> that integrates multiple environmental cues across different time scales.
-                </p>
-                <p data-lang="ja">
-                    この論理の連鎖は推測ではありません。世界中の研究機関による22本の査読論文に基づいています。かつて「満月がトリガー」と考えられていたサンゴの産卵は、今では<span class="highlight">複数の環境シグナルを階層的に統合する精緻なイベント</span>として理解されています。
-                </p>
-                
-                <p data-lang="en">
-                    What's remarkable is that this prediction doesn't just identify the date—it identifies the <span class="emphasis">hour and minute</span>. And the mechanism behind it reveals something profound: corals are not passive organisms reacting to their environment. They are <span class="emphasis">active agents running an internal program</span> that begins two weeks before spawning night.
-                </p>
-                <p data-lang="ja">
-                    驚くべきは、この予測が日付だけでなく<span class="emphasis">時刻と分</span>まで特定できること。そしてそのメカニズムは深遠な事実を明らかにします——サンゴは環境に受動的に反応する生物ではない。産卵夜の2週間前から<span class="emphasis">内部プログラムを能動的に走らせている存在</span>なのです。
-                </p>
-            </div>
-        </section>
-
         <!-- ===== SECTION 1: Environmental Cue Hierarchy ===== -->
         <section class="content-section">
             <h2>
-                <span data-lang="en">Three Scales of Prediction</span>
-                <span data-lang="ja">予測の3つのスケール</span>
+                <span data-lang="en">Environmental Cue Hierarchy</span>
+                <span data-lang="ja">環境キュー階層モデル</span>
             </h2>
-            
-            <p class="hierarchy-intro" data-lang="en">
-                Coral spawning prediction works like a series of nested clocks. Each scale narrows down the timing with increasing precision.
-            </p>
-            <p class="hierarchy-intro" data-lang="ja">
-                サンゴの産卵予測は、入れ子になった時計のように機能します。各スケールが、より高い精度でタイミングを絞り込んでいきます。
-            </p>
-            
             <div class="hierarchy-grid">
                 <div class="hierarchy-card season">
                     <div class="hierarchy-scale">
@@ -861,7 +744,7 @@
                         <span data-lang="ja">何月に産卵？</span>
                     </div>
                     <div class="hierarchy-factors">
-                        <span data-lang="en">Rate of SST change<br>+ Wind patterns</span>
+                        <span data-lang="en">SST rate of change<br>+ Wind pattern</span>
                         <span data-lang="ja">水温変化率<br>+ 風場パターン</span>
                     </div>
                     <div class="hierarchy-precision">± 2 weeks</div>
@@ -900,55 +783,18 @@
                     <div class="hierarchy-citation">Babcock et al. 1986</div>
                 </div>
             </div>
-            
-            <div class="story-box">
-                <div class="qa-block">
-                    <div class="qa-question" data-lang="en">Why "rate of change" rather than absolute temperature?</div>
-                    <div class="qa-question" data-lang="ja">なぜ「絶対温度」ではなく「変化率」なのか？</div>
-                    <div class="qa-answer">
-                        <span data-lang="en">Keith et al. (2016) analyzed spawning records across the Indo-Pacific and found that rapid warming (not high temperature itself) is the best predictor of spawning month. This makes biological sense: corals need to detect <em>seasonal transition</em>, not just heat.</span>
-                        <span data-lang="ja">Keith et al. (2016) はインド太平洋全域の産卵記録を分析し、産卵月の最良予測因子は高温そのものではなく<em>急激な昇温</em>であることを発見しました。これは生物学的に理にかなっています——サンゴは単なる暑さではなく、<em>季節の変わり目</em>を検知する必要があるからです。</span>
-                    </div>
-                </div>
-                
-                <div class="qa-block">
-                    <div class="qa-question" data-lang="en">What is the "dark period" and why does it matter?</div>
-                    <div class="qa-question" data-lang="ja">「暗黒期間」とは何か、なぜ重要なのか？</div>
-                    <div class="qa-answer">
-                        <span data-lang="en">Lin et al. (2021, PNAS) discovered that corals don't simply respond to moonlight—they respond to the <em>duration of darkness</em> between sunset and moonrise. After full moon, each night the moon rises later, extending this dark window. When the dark period reaches an optimal length (2-4 hours), spawning is triggered. This elegant mechanism ensures mass synchronization: all corals on a reef experience the same astronomical conditions.</span>
-                        <span data-lang="ja">Lin et al. (2021, PNAS) は、サンゴが単に月光に反応するのではなく、日没から月の出までの<em>暗黒の持続時間</em>に反応することを発見しました。満月後、毎晩月の出が遅くなり、この暗いウィンドウが長くなります。暗黒期間が最適な長さ（2〜4時間）に達すると、産卵がトリガーされます。このエレガントなメカニズムが、リーフ上のすべてのサンゴが同じ天文条件を経験することで、大規模な同期を保証しています。</span>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- ===== SECTION 2: Molecular Cascade ===== -->
         <section class="content-section">
             <h2>
-                <span data-lang="en">Inside the Coral: A Two-Week Countdown</span>
-                <span data-lang="ja">サンゴの体内：2週間のカウントダウン</span>
+                <span data-lang="en">From Molecule to Behavior: The 4-Wave Model</span>
+                <span data-lang="ja">分子から行動へ：4波モデル</span>
             </h2>
-            
-            <div class="story-box">
-                <p class="story-lead" data-lang="en">
-                    If corals are "just responding to the moon," how do species in completely different ocean basins—with different moonrise times, different water temperatures, different day lengths—all manage to spawn successfully?
-                </p>
-                <p class="story-lead" data-lang="ja">
-                    もしサンゴが「単に月に反応している」だけなら、月の出時刻も水温も日長も異なる、まったく別の海域の種が、なぜすべて産卵に成功できるのでしょうか？
-                </p>
-                
-                <p data-lang="en">
-                    The answer came from RNA sequencing. Yoshioka et al. (2025) tracked gene expression in <em>Acropora</em> corals over the two weeks before spawning and discovered something remarkable: <span class="highlight">the internal countdown operates independently of moonlight</span>.
-                </p>
-                <p data-lang="ja">
-                    その答えはRNA解析から得られました。Yoshioka et al. (2025) は産卵前の2週間にわたって<em>ミドリイシ</em>の遺伝子発現を追跡し、驚くべきことを発見しました——<span class="highlight">内部のカウントダウンは月光から独立して作動している</span>のです。
-                </p>
-            </div>
-            
             <div class="molecule-section">
                 <p class="molecule-intro">
-                    <span data-lang="en">The spawning program unfolds in four distinct waves, each activating different molecular pathways:</span>
-                    <span data-lang="ja">産卵プログラムは4つの波として展開し、それぞれ異なる分子経路を活性化します：</span>
+                    <span data-lang="en">Coral spawning is not a passive response to environmental cues. RNA-Seq analysis reveals an intricate internal program that unfolds over two weeks before spawning night.</span>
+                    <span data-lang="ja">サンゴの産卵は環境キューへの受動的反応ではない。RNA-Seq解析により、産卵夜の2週間前から展開する精緻な内部プログラムが明らかになった。</span>
                 </p>
                 <div class="wave-timeline">
                     <div class="wave-item">
@@ -958,8 +804,8 @@
                             <span data-lang="ja">第1波：コロニー間通信</span>
                         </div>
                         <div class="wave-desc">
-                            <span data-lang="en">Receptor functions activate. Prostaglandin secretion begins chemical "conversations" between nearby colonies—ensuring neighbors spawn together.</span>
-                            <span data-lang="ja">受容体機能が活性化。プロスタグランジン分泌により、近隣コロニー間で化学的な「会話」が始まります——隣人同士が一緒に産卵するための準備です。</span>
+                            <span data-lang="en">Receptor functions activate. Prostaglandin secretion begins inter-colony signaling.</span>
+                            <span data-lang="ja">受容体機能が活性化。プロスタグランジン分泌でコロニー間シグナル開始。</span>
                         </div>
                     </div>
                     <div class="wave-item">
@@ -969,8 +815,8 @@
                             <span data-lang="ja">第2波：配偶子形成</span>
                         </div>
                         <div class="wave-desc">
-                            <span data-lang="en">TGF-β signaling and kinase cascades drive sperm formation. The molecular machinery of reproduction is being assembled.</span>
-                            <span data-lang="ja">TGF-βシグナリングとキナーゼカスケードが精子形成を駆動。生殖の分子機構が組み立てられていきます。</span>
+                            <span data-lang="en">TGF-β signaling and kinase cascades drive sperm formation.</span>
+                            <span data-lang="ja">TGF-βシグナリングとキナーゼカスケードが精子形成を駆動。</span>
                         </div>
                     </div>
                     <div class="wave-item">
@@ -980,27 +826,27 @@
                             <span data-lang="ja">第3波：バンドル準備</span>
                         </div>
                         <div class="wave-desc">
-                            <span data-lang="en">Sperm undergo capacitation (final maturation). Materials for egg-sperm bundles are assembled and staged for release.</span>
-                            <span data-lang="ja">精子がcapacitation（最終成熟）を経験。卵精子バンドルの材料が組み立てられ、放出のためにスタンバイします。</span>
+                            <span data-lang="en">Sperm capacitation. Egg-sperm bundle materials assembled.</span>
+                            <span data-lang="ja">精子capacitation。卵精子バンドル材料が組み立てられる。</span>
                         </div>
                     </div>
                     <div class="wave-item final">
                         <div class="wave-timing">T − 0</div>
                         <div class="wave-title">
-                            <span data-lang="en">Wave 4: The Trigger</span>
-                            <span data-lang="ja">第4波：トリガー</span>
+                            <span data-lang="en">Wave 4: Spawning Cascade</span>
+                            <span data-lang="ja">第4波：産卵カスケード</span>
                         </div>
                         <div class="wave-desc">
-                            <span data-lang="en">Transcription factor ELF1 activates the final cascade. Synchronized release begins across the reef.</span>
-                            <span data-lang="ja">転写因子ELF1が最終カスケードを活性化。リーフ全体で同期した放出が始まります。</span>
+                            <span data-lang="en">Transcription factor ELF1 activates → synchronized release.</span>
+                            <span data-lang="ja">転写因子ELF1活性化 → 同期放出。</span>
                         </div>
                     </div>
                 </div>
                 <div class="molecule-insight">
-                    <strong><span data-lang="en">The Key Insight:</span><span data-lang="ja">重要な洞察：</span></strong>
-                    <span data-lang="en"> This molecular program runs on an internal clock that <em>does not require moonlight to function</em>. The moon acts as a synchronization signal—a "start button"—but the program itself is autonomous. This explains why <em>Acropora</em> corals have colonized oceans worldwide, from the tropics to subtropical zones, despite vastly different lunar and light conditions.</span>
-                    <span data-lang="ja"> この分子プログラムは<em>月光がなくても機能する</em>内部時計で動いています。月は同期シグナル——「スタートボタン」——として機能しますが、プログラム自体は自律的です。これが、<em>ミドリイシ</em>属が熱帯から亜熱帯まで、まったく異なる月光・光条件にもかかわらず、世界中の海に進出できた理由を説明しています。</span>
-                    <br><span style="font-size: 0.75rem; opacity: 0.8;">— Yoshioka et al. 2025, Molecular Ecology</span>
+                    <strong><span data-lang="en">Key Insight:</span><span data-lang="ja">重要な知見：</span></strong>
+                    <span data-lang="en"> This system operates <em>independently of moonlight</em>, explaining why Acropora successfully spawns across diverse global environments.</span>
+                    <span data-lang="ja"> この系は<em>月光非依存</em>で機能し、ミドリイシ属が多様な地球環境で産卵に成功する理由を説明する。</span>
+                    <br><span style="font-size: 0.7rem; opacity: 0.8;">— Yoshioka et al. 2025, Molecular Ecology</span>
                 </div>
             </div>
         </section>
@@ -1008,65 +854,44 @@
         <!-- ===== SECTION 3: Anthropogenic Disruption ===== -->
         <section class="content-section">
             <h2>
-                <span data-lang="en">The Silent Threat: When Synchrony Breaks</span>
-                <span data-lang="ja">沈黙の脅威：同期が崩れるとき</span>
+                <span data-lang="en">Anthropogenic Disruption</span>
+                <span data-lang="ja">人為的攪乱</span>
             </h2>
-            
-            <div class="story-box">
-                <p class="story-lead" data-lang="en">
-                    Coral bleaching is visible. Mass mortality is visible. But there's another threat to coral reefs that leaves no visible trace—until it's too late.
-                </p>
-                <p class="story-lead" data-lang="ja">
-                    サンゴの白化は目に見えます。大量死も目に見えます。しかしサンゴ礁には、目に見える痕跡を残さないもうひとつの脅威があります——手遅れになるまで。
-                </p>
-                
-                <p data-lang="en">
-                    <span class="emphasis">Spawning synchrony</span>—the precise coordination that allows millions of coral colonies to release gametes within the same hour—is being disrupted by human activity. And unlike bleaching, <span class="highlight">this disruption is invisible</span>.
-                </p>
-                <p data-lang="ja">
-                    <span class="emphasis">産卵の同期性</span>——数百万のサンゴコロニーが同じ時間内に配偶子を放出することを可能にする精密な協調——が、人間活動によって攪乱されています。そして白化と異なり、<span class="highlight">この攪乱は目に見えない</span>のです。
-                </p>
-            </div>
-            
             <div class="disruption-section">
-                <p class="disruption-intro">
-                    <span data-lang="en">Two major studies have documented how human development is altering coral reproduction:</span>
-                    <span data-lang="ja">2つの主要な研究が、人間の開発がサンゴの繁殖をどのように変えているかを記録しています：</span>
-                </p>
                 <div class="disruption-grid">
                     <div class="disruption-card">
                         <div class="disruption-icon">💡</div>
                         <div class="disruption-title">
-                            <span data-lang="en">Artificial Light at Night</span>
-                            <span data-lang="ja">夜間人工光 (ALAN)</span>
+                            <span data-lang="en">Light Pollution (ALAN)</span>
+                            <span data-lang="ja">光害 (ALAN)</span>
                         </div>
-                        <div class="disruption-stat">1–3 days shift</div>
+                        <div class="disruption-stat">1–3 days</div>
                         <div class="disruption-desc">
-                            <span data-lang="en">Davies et al. (2023) analyzed 2,135 spawning observations against underwater light pollution maps. Corals exposed to artificial light spawn <em>earlier</em>—closer to full moon—because the perceived "dark period" is shortened.</span>
-                            <span data-lang="ja">Davies et al. (2023) は2,135件の産卵観察を水中光害マップと照合。人工光に曝されたサンゴは<em>早く</em>産卵します——満月に近いタイミングで。認知される「暗黒期間」が短縮されるためです。</span>
+                            <span data-lang="en">Shift toward full moon. Artificial light shortens the perceived "dark period," advancing spawning timing.</span>
+                            <span data-lang="ja">満月方向へシフト。人工光が「暗黒期間」を短縮し、産卵タイミングが早まる。</span>
                         </div>
                     </div>
                     <div class="disruption-card">
                         <div class="disruption-icon">🔇</div>
                         <div class="disruption-title">
-                            <span data-lang="en">Desynchronization</span>
-                            <span data-lang="ja">脱同期化</span>
+                            <span data-lang="en">Silent Threat</span>
+                            <span data-lang="ja">沈黙の脅威</span>
                         </div>
                         <div class="disruption-stat">
-                            <span data-lang="en">No visible sign</span>
-                            <span data-lang="ja">目に見える兆候なし</span>
+                            <span data-lang="en">Invisible</span>
+                            <span data-lang="ja">不可視</span>
                         </div>
                         <div class="disruption-desc">
-                            <span data-lang="en">Shlesinger & Loya (2019, Science) documented a "silent decline." When individual colonies spawn at slightly different times, fertilization rates collapse—even if all corals appear healthy.</span>
-                            <span data-lang="ja">Shlesinger & Loya (2019, Science) は「沈黙の衰退」を記録しました。個々のコロニーがわずかに異なるタイミングで産卵すると、すべてのサンゴが健康に見えても、受精率は崩壊します。</span>
+                            <span data-lang="en">Unlike bleaching, synchrony loss has no visible signs. Gamete release timing diverges → fertilization failure.</span>
+                            <span data-lang="ja">白化と異なり、同期性崩壊は目に見えない。配偶子放出タイミングがズレ → 受精失敗。</span>
                         </div>
                     </div>
                 </div>
                 <div class="disruption-warning">
-                    <strong><span data-lang="en">Why This Matters for Monitoring:</span><span data-lang="ja">なぜモニタリングが重要か：</span></strong>
-                    <span data-lang="en"> You can count live coral cover. You can measure bleaching. But you cannot see fertilization failure. The only way to detect reproductive decline is to <em>predict, observe, and record</em> spawning events over many years. This is why long-term monitoring—not just snapshots—is essential for understanding reef health.</span>
-                    <span data-lang="ja"> 生きたサンゴの被度は数えられます。白化も測定できます。しかし受精失敗は見えません。繁殖の衰退を検出する唯一の方法は、何年にもわたって産卵イベントを<em>予測し、観察し、記録する</em>ことです。これが、スナップショットではなく長期モニタリングが、リーフの健康を理解するために不可欠な理由です。</span>
-                    <br><span style="font-size: 0.75rem; opacity: 0.8;">— Davies et al. 2023, Nature Communications; Shlesinger & Loya 2019, Science</span>
+                    <strong><span data-lang="en">High-risk regions:</span><span data-lang="ja">高リスク地域：</span></strong>
+                    <span data-lang="en"> Red Sea, Persian Gulf, and other rapidly developing coastal areas. 2,135 spawning observations analyzed.</span>
+                    <span data-lang="ja"> 紅海、ペルシャ湾など沿岸開発が進む地域。2,135件の産卵観察を解析。</span>
+                    <br><span style="font-size: 0.7rem; opacity: 0.8;">— Davies et al. 2023, Nature Communications; Shlesinger & Loya 2019, Science</span>
                 </div>
             </div>
         </section>
@@ -1077,14 +902,6 @@
                 <span data-lang="en">Spawning Calendar (June 2026)</span>
                 <span data-lang="ja">産卵カレンダー（2026年6月）</span>
             </h2>
-            
-            <p class="hierarchy-intro" data-lang="en">
-                Each day in the spawning window shows the predicted peak time. Note how times shift earlier as the dark period optimizes around day 5-6 after full moon.
-            </p>
-            <p class="hierarchy-intro" data-lang="ja">
-                産卵ウィンドウ内の各日に予測ピーク時刻を表示。満月後5-6日目に暗黒期間が最適化されるにつれ、時刻が早くなることに注目してください。
-            </p>
-            
             <div class="card">
                 <div class="calendar-grid">
                     <div class="calendar-header"><span data-lang="en">Sun</span><span data-lang="ja">日</span></div>
@@ -1138,7 +955,7 @@
             </div>
         </section>
 
-        <!-- ===== SECTION 5: Interface Placeholder ===== -->
+        <!-- ===== SECTION 5: Prediction Interface Placeholder ===== -->
         <section class="content-section">
             <h2>
                 <span data-lang="en">Interactive Prediction (Coming Soon)</span>
@@ -1146,14 +963,14 @@
             </h2>
             <div class="interface-placeholder">
                 <h3>🔮 Real-time Calculation Engine</h3>
-                <p data-lang="en">Select location, date, and species to calculate spawning predictions with confidence intervals.</p>
-                <p data-lang="ja">地点・日付・種を選択して、信頼区間付きの産卵予測を計算。</p>
+                <p data-lang="en">Select location, date, and species to get precise spawning predictions with confidence intervals.</p>
+                <p data-lang="ja">地点・日付・種を選択して、信頼区間付きの精密な産卵予測を取得。</p>
                 <div class="interface-features">
                     <div class="interface-feature">📍 Multi-location</div>
-                    <div class="interface-feature">🌅 Sunset/moonrise</div>
+                    <div class="interface-feature">🌅 SunCalc integration</div>
                     <div class="interface-feature">🌡️ SST correction</div>
                     <div class="interface-feature">📊 Confidence %</div>
-                    <div class="interface-feature">📅 Multi-year</div>
+                    <div class="interface-feature">📅 Multi-year forecast</div>
                 </div>
             </div>
         </section>
@@ -1161,38 +978,33 @@
         <!-- ===== For Divers ===== -->
         <section class="content-section">
             <h2>
-                <span data-lang="en">For Divers: Observation Guide</span>
-                <span data-lang="ja">ダイバー向け：観察ガイド</span>
+                <span data-lang="en">For Divers</span>
+                <span data-lang="ja">ダイバーへの示唆</span>
             </h2>
             <div class="insights-box">
                 <div class="box-title">
-                    🤿 <span data-lang="en">Planning Your Dive</span><span data-lang="ja">ダイビング計画</span>
+                    🤿 <span data-lang="en">Observation Guide</span><span data-lang="ja">観察ガイド</span>
                 </div>
                 <ul class="insights-list">
                     <li>
                         <span class="label"><span data-lang="en">Recommended Stay:</span><span data-lang="ja">推奨滞在:</span></span>
-                        <span data-lang="en"> June 4-8, 2026 (5 nights) — covers the full spawning window</span>
-                        <span data-lang="ja"> 2026年6月4日〜8日（5泊）— 産卵ウィンドウ全体をカバー</span>
+                        <span data-lang="en"> June 4-8, 2026 (5 nights)</span>
+                        <span data-lang="ja"> 2026年6月4日〜8日（5泊）</span>
                     </li>
                     <li>
                         <span class="label"><span data-lang="en">Peak Night:</span><span data-lang="ja">ピーク:</span></span>
-                        <span data-lang="en"> June 6 — enter water by 21:00, peak activity around 21:42</span>
-                        <span data-lang="ja"> 6月6日 — 21:00までにエントリー、21:42頃にピーク活動</span>
-                    </li>
-                    <li>
-                        <span class="label"><span data-lang="en">Depth:</span><span data-lang="ja">水深:</span></span>
-                        <span data-lang="en"> 3-8m, shallow reef flats with table corals (Acropora)</span>
-                        <span data-lang="ja"> 3-8m、テーブルサンゴ（ミドリイシ）のある浅いリーフ</span>
+                        <span data-lang="en"> June 6, enter water by 21:00, peak activity ~21:42</span>
+                        <span data-lang="ja"> 6月6日、21:00までにエントリー、ピーク活動 ~21:42</span>
                     </li>
                     <li>
                         <span class="label"><span data-lang="en">Equipment:</span><span data-lang="ja">機材:</span></span>
-                        <span data-lang="en"> Red light filter recommended (minimizes disturbance to spawning corals)</span>
-                        <span data-lang="ja"> 赤色フィルター推奨（産卵サンゴへの刺激を軽減）</span>
+                        <span data-lang="en"> Red light filter (minimizes coral stimulation)</span>
+                        <span data-lang="ja"> 赤色フィルター推奨（サンゴへの刺激を軽減）</span>
                     </li>
                     <li>
-                        <span class="label"><span data-lang="en">What to Look For:</span><span data-lang="ja">観察ポイント:</span></span>
-                        <span data-lang="en"> Egg-sperm bundles rising like "underwater snow" — the event lasts 30-60 minutes</span>
-                        <span data-lang="ja"> 「水中の雪」のように浮上する卵精子バンドル — イベントは30-60分続きます</span>
+                        <span class="label"><span data-lang="en">Observation Points:</span><span data-lang="ja">観察ポイント:</span></span>
+                        <span data-lang="en"> Shallow reef 3-8m, table corals (Acropora)</span>
+                        <span data-lang="ja"> 浅いリーフ 3-8m、テーブルサンゴ（ミドリイシ）</span>
                     </li>
                 </ul>
             </div>
@@ -1205,65 +1017,22 @@
                 <span data-lang="ja">参考文献</span>
             </h2>
             <div class="source-info">
-                <strong><span data-lang="en">This page synthesizes the following peer-reviewed studies:</span><span data-lang="ja">このページは以下の査読論文を統合しています：</span></strong>
-                
-                <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">
-                    <span data-lang="en">Spawning Triggers & Environmental Cues</span>
-                    <span data-lang="ja">産卵トリガーと環境キュー</span>
-                </p>
+                <strong><span data-lang="en">Key Literature (22 papers):</span><span data-lang="ja">主要文献（22本）:</span></strong>
                 <ul>
-                    <li>Lin C-H et al. (2021) Moonrise timing is key for synchronized spawning in coral <i>Dipsastraea speciosa</i>. <i>PNAS</i>. <a href="https://doi.org/10.1073/pnas.2101985118" target="_blank">doi:10.1073/pnas.2101985118</a></li>
-                    <li>de la Torre Cerro R et al. (2025) Evaluating the role of moonlight-darkness dynamics as proximate spawning cues in an <i>Acropora</i> coral. <i>Coral Reefs</i>. <a href="https://doi.org/10.1007/s00338-025-02618-9" target="_blank">doi:10.1007/s00338-025-02618-9</a></li>
-                    <li>Komoto H et al. (2022) An External Coincidence Model for the Lunar Cycle Reveals Circadian Phase-Dependent Moonlight Effects on Coral Spawning. <i>J Biol Rhythms</i>. <a href="https://doi.org/10.1177/07487304221135916" target="_blank">doi:10.1177/07487304221135916</a></li>
-                    <li>Keith SA et al. (2016) Coral mass spawning predicted by rapid seasonal rise in ocean temperature. <i>Proc R Soc B</i>. <a href="https://doi.org/10.1098/rspb.2016.0011" target="_blank">doi:10.1098/rspb.2016.0011</a></li>
-                    <li>van Woesik R (2009) Calm before the spawn: global coral spawning patterns are explained by regional wind fields. <i>Proc R Soc B</i>. <a href="https://doi.org/10.1098/rspb.2009.1524" target="_blank">doi:10.1098/rspb.2009.1524</a></li>
-                    <li>Sakai Y et al. (2020) Environmental factors explain spawning day deviation from full moon in <i>Acropora</i>. <i>Biol Lett</i>. <a href="https://doi.org/10.1098/rsbl.2019.0760" target="_blank">doi:10.1098/rsbl.2019.0760</a></li>
+                    <li><strong>Lin et al. 2021</strong> – PNAS: Dark period as spawning trigger</li>
+                    <li><strong>Yoshioka et al. 2025</strong> – Mol Ecol: 4-wave molecular cascade</li>
+                    <li><strong>Davies et al. 2023</strong> – Nat Comms: Light pollution effects (2,135 obs)</li>
+                    <li><strong>Shlesinger & Loya 2019</strong> – Science: Synchrony loss as silent threat</li>
+                    <li><strong>Keith et al. 2016</strong> – SST rate of change as seasonal predictor</li>
+                    <li><strong>Sakai et al. 2024</strong> – R Soc Open Sci: Churaumi 15-year data</li>
+                    <li><strong>Levy et al. 2007</strong> – Science: Cryptochrome moonlight detection</li>
                 </ul>
-                
-                <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">
-                    <span data-lang="en">Molecular Mechanisms</span>
-                    <span data-lang="ja">分子メカニズム</span>
-                </p>
-                <ul>
-                    <li>Yoshioka Y et al. (2025) Time-Series RNA-Seq of <i>Acropora tenuis</i> Reveals Molecular Waves Leading to Synchronous Mass Spawning. <i>Mol Ecol</i>. <a href="https://doi.org/10.1111/mec.70054" target="_blank">doi:10.1111/mec.70054</a></li>
-                    <li>Levy O et al. (2007) Light-Responsive Cryptochromes from a Simple Multicellular Animal, the Coral <i>Acropora millepora</i>. <i>Science</i>. <a href="https://doi.org/10.1126/science.1145432" target="_blank">doi:10.1126/science.1145432</a></li>
-                    <li>Kaniewska P et al. (2015) Signaling cascades and the importance of moonlight in coral broadcast mass spawning. <i>eLife</i>. <a href="https://doi.org/10.7554/elife.09991" target="_blank">doi:10.7554/elife.09991</a></li>
-                </ul>
-                
-                <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">
-                    <span data-lang="en">Anthropogenic Impacts</span>
-                    <span data-lang="ja">人為的影響</span>
-                </p>
-                <ul>
-                    <li>Davies TW et al. (2023) Global disruption of coral broadcast spawning associated with artificial light at night. <i>Nat Commun</i>. <a href="https://doi.org/10.1038/s41467-023-38070-y" target="_blank">doi:10.1038/s41467-023-38070-y</a></li>
-                    <li>Shlesinger T & Loya Y (2019) Breakdown in spawning synchrony: A silent threat to coral persistence. <i>Science</i>. <a href="https://doi.org/10.1126/science.aax0110" target="_blank">doi:10.1126/science.aax0110</a></li>
-                </ul>
-                
-                <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">
-                    <span data-lang="en">Regional Studies & Long-term Records</span>
-                    <span data-lang="ja">地域研究と長期記録</span>
-                </p>
-                <ul>
-                    <li>Sakai Y et al. (2024) Long-term aquarium records delineate the synchronized spawning strategy of <i>Acropora</i> corals. <i>R Soc Open Sci</i>. <a href="https://doi.org/10.1098/rsos.240183" target="_blank">doi:10.1098/rsos.240183</a></li>
-                    <li>Baird AH et al. (2021) An Indo-Pacific coral spawning database. <i>Sci Data</i>. <a href="https://doi.org/10.1038/s41597-020-00793-8" target="_blank">doi:10.1038/s41597-020-00793-8</a></li>
-                    <li>Foster T et al. (2018) Split spawning realigns coral reproduction with optimal environmental windows. <i>Nat Commun</i>. <a href="https://doi.org/10.1038/s41467-018-03175-2" target="_blank">doi:10.1038/s41467-018-03175-2</a></li>
-                    <li>Monfared MAA et al. (2023) Coral spawning patterns of <i>Acropora</i> across two Maldivian reef ecosystems. <i>PeerJ</i>. <a href="https://doi.org/10.7717/peerj.16315" target="_blank">doi:10.7717/peerj.16315</a></li>
-                    <li>Sheridan K et al. (2025) Synchrony on the reef: how environmental factors shape coral spawning patterns in <i>Acropora</i> corals in the Maldives. <i>PeerJ</i>. <a href="https://doi.org/10.7717/peerj.19447" target="_blank">doi:10.7717/peerj.19447</a></li>
-                    <li>Errington AJF et al. (2025) Multi-specific coral spawning and monsoonal transitions: assemblage-level observations from Baa Atoll, Maldives. <i>Front Mar Sci</i>. <a href="https://doi.org/10.3389/fmars.2025.1646721" target="_blank">doi:10.3389/fmars.2025.1646721</a></li>
-                    <li>Gouezo M et al. (2020) Multispecific coral spawning events and extended breeding periods on an equatorial reef. <i>Coral Reefs</i>. <a href="https://doi.org/10.1007/s00338-020-01941-7" target="_blank">doi:10.1007/s00338-020-01941-7</a></li>
-                    <li>Moritz C et al. (2025) Shining a light on daytime coral spawning synchrony across oceans. <i>bioRxiv</i>. <a href="https://doi.org/10.1101/2025.03.23.643993" target="_blank">doi:10.1101/2025.03.23.643993</a></li>
-                </ul>
-                
-                <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">
-                    <span data-lang="en">Methodology</span>
-                    <span data-lang="ja">方法論</span>
-                </p>
-                <ul>
-                    <li>Craggs J et al. (2017) Inducing broadcast coral spawning ex situ: Closed system mesocosm design and husbandry protocol. <i>Ecol Evol</i>. <a href="https://doi.org/10.1002/ece3.3538" target="_blank">doi:10.1002/ece3.3538</a></li>
-                    <li>Koukoumaftsis L et al. (2025) Controlled out-of-season spawning of reef-forming corals using offset environmental cues. <i>Proc R Soc B</i>. <a href="https://doi.org/10.1098/rspb.2025.1558" target="_blank">doi:10.1098/rspb.2025.1558</a></li>
-                </ul>
+                <br>
+                <span data-lang="en">Full collection: <a href="#">Zotero Coral Spawning (H6VQ6NK9)</a></span>
+                <span data-lang="ja">完全な文献リスト: <a href="#">Zotero Coral Spawning (H6VQ6NK9)</a></span>
             </div>
         </section>
+
     </main>
 
     <footer>
