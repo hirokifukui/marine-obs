@@ -27,23 +27,30 @@
             --manza: #c05621;
             --sesoko: #2b6cb0;
             --ogasawara: #2f855a;
+            --sst-hero: #2b6cb0;
+            --sst-light: #ebf8ff;
+            --sst-border: #bee3f8;
+            --heat-red: #c53030;
+            --heat-light: #fff5f5;
+            --heat-border: #feb2b2;
+            --cold-teal: #0987a0;
+            --cold-light: #e6fffa;
+            --cold-border: #81e6d9;
+            --adapt-purple: #6b46c1;
+            --adapt-light: #f5f3ff;
+            --adapt-border: #d6bcfa;
+            --story-bg: #fffbeb;
+            --story-border: #fde68a;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
             background: var(--bg-secondary);
             color: var(--text-primary);
-            line-height: 1.6;
+            line-height: 1.8;
             min-height: 100vh;
         }
-
-        body.ja {
-            font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
-        }
-
-        /* Header */
+        body.ja { font-family: 'Noto Sans JP', 'DM Sans', sans-serif; }
         header {
             background: var(--header-bg);
             color: var(--header-text);
@@ -52,7 +59,6 @@
             top: 0;
             z-index: 100;
         }
-
         .header-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -60,42 +66,28 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             font-weight: 600;
             font-size: 0.95rem;
-            letter-spacing: -0.01em;
             display: flex;
             align-items: center;
             gap: 0.75rem;
             text-decoration: none;
             color: inherit;
         }
-
         .logo-icon {
-            overflow: hidden;
             width: 28px;
             height: 28px;
             background: linear-gradient(135deg, #5b9a94 0%, #2b6cb0 100%);
             border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
+            overflow: hidden;
         }
-
-        .header-controls {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
+        .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
         .lang-switch {
             font-size: 0.8rem;
             display: flex;
             gap: 0.25rem;
         }
-
         .lang-switch button {
             background: none;
             border: none;
@@ -106,166 +98,245 @@
             border-radius: 4px;
             transition: all 0.2s;
         }
-
         .lang-switch button:hover { color: rgba(255,255,255,0.9); }
         .lang-switch button.active { color: #ffffff; background: rgba(255,255,255,0.15); }
-
-        /* Main */
         main {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 2.5rem 2rem;
         }
-
-        /* Breadcrumb */
         .breadcrumb {
             font-size: 0.8rem;
             color: var(--text-muted);
             margin-bottom: 1.5rem;
         }
-
         .breadcrumb a {
             color: var(--accent-teal);
             text-decoration: none;
         }
-
-        .breadcrumb a:hover { text-decoration: underline; }
-
-        /* Page header */
-        .page-header {
+        .hero-section {
+            background: linear-gradient(135deg, var(--sst-hero), #4299e1);
+            color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
             margin-bottom: 2.5rem;
         }
-
-        .page-header h1 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.75rem;
-        }
-
-        body.ja .page-header h1 {
+        .hero-main { text-align: center; margin-bottom: 2rem; }
+        .hero-icon { font-size: 3.5rem; margin-bottom: 0.75rem; }
+        .hero-tagline {
             font-size: 1.5rem;
-            letter-spacing: 0;
-        }
-
-        .page-header .lead {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            max-width: 720px;
-        }
-
-        body.ja .page-header .lead {
-            line-height: 2;
-        }
-
-        /* Cards */
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow);
-        }
-
-        .card-title {
-            font-size: 0.9rem;
             font-weight: 600;
-            color: var(--text-primary);
             margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border);
         }
-
-        /* KPI row */
-        .kpi-row {
+        body.ja .hero-tagline { font-size: 1.3rem; }
+        .hero-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        .sst-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
+            margin-top: 1.5rem;
         }
-
         @media (max-width: 640px) {
-            .kpi-row { grid-template-columns: 1fr; }
+            .sst-grid { grid-template-columns: 1fr; }
         }
-
-        .kpi-item {
-            text-align: center;
+        .sst-card {
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
             padding: 1rem;
-            border-radius: 6px;
-            background: var(--bg-secondary);
+            text-align: center;
         }
-
-        .kpi-item .site-name {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-bottom: 0.35rem;
+        .sst-location {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.4rem;
         }
-
         .site-dot {
             width: 8px;
             height: 8px;
             border-radius: 50%;
         }
-
-        .kpi-item .value {
+        .sst-value {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 1.75rem;
+            font-size: 2rem;
             font-weight: 500;
-            color: var(--text-primary);
         }
-
-        .kpi-item .unit {
+        .sst-diff {
             font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .kpi-item .context {
-            font-size: 0.7rem;
-            color: var(--text-muted);
             margin-top: 0.25rem;
         }
-
-        .kpi-item .diff {
-            font-size: 0.75rem;
-            margin-top: 0.25rem;
-        }
-
-        .diff.above { color: var(--accent-warm); }
-        .diff.below { color: var(--accent-teal); }
-
-        /* Content sections */
-        .content-section {
-            margin-bottom: 2rem;
-        }
-
+        .sst-diff.above { color: #fed7d7; }
+        .sst-diff.below { color: #c6f6d5; }
+        .sst-diff.neutral { color: rgba(255,255,255,0.8); }
+        .content-section { margin-bottom: 3rem; }
         .content-section h2 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 1rem;
             color: var(--text-primary);
         }
-
-        .content-section p {
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+        .story-box {
+            background: var(--story-bg);
+            border: 1px solid var(--story-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .story-box .story-lead {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .story-box p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.9;
+        }
+        .story-box p:last-child { margin-bottom: 0; }
+        .story-box .highlight {
+            background: rgba(43, 108, 176, 0.15);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        .story-box .emphasis {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .qa-block { margin-bottom: 1.5rem; }
+        .qa-question {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .qa-question.heat { color: var(--heat-red); }
+        .qa-question.cold { color: var(--cold-teal); }
+        .qa-question.adapt { color: var(--adapt-purple); }
+        .qa-answer {
+            font-size: 0.95rem;
             color: var(--text-secondary);
             line-height: 1.9;
-            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--border);
         }
-
-        body.ja .content-section p {
-            line-height: 2.1;
+        .qa-answer.heat { border-left-color: var(--heat-border); }
+        .qa-answer.cold { border-left-color: var(--cold-border); }
+        .qa-answer.adapt { border-left-color: var(--adapt-border); }
+        .heat-section {
+            background: var(--heat-light);
+            border: 1px solid var(--heat-border);
+            border-radius: 8px;
+            padding: 1.5rem;
         }
-
-        /* Chart */
+        .cold-section {
+            background: var(--cold-light);
+            border: 1px solid var(--cold-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        .adapt-section {
+            background: var(--adapt-light);
+            border: 1px solid var(--adapt-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        .section-intro {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+        .insight-box {
+            border-left: 3px solid;
+            padding: 1rem 1.25rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-radius: 0 4px 4px 0;
+            line-height: 1.8;
+        }
+        .insight-box.heat {
+            background: rgba(197, 48, 48, 0.1);
+            border-left-color: var(--heat-red);
+        }
+        .insight-box.cold {
+            background: rgba(9, 135, 160, 0.1);
+            border-left-color: var(--cold-teal);
+        }
+        .insight-box.adapt {
+            background: rgba(107, 70, 193, 0.1);
+            border-left-color: var(--adapt-purple);
+        }
+        .insight-box strong.heat { color: var(--heat-red); }
+        .insight-box strong.cold { color: var(--cold-teal); }
+        .insight-box strong.adapt { color: var(--adapt-purple); }
+        .wave-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .wave-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--adapt-purple), var(--accent-teal));
+            border-radius: 2px;
+        }
+        .wave-item {
+            position: relative;
+            margin-bottom: 1.25rem;
+            padding-left: 1rem;
+        }
+        .wave-item:last-child { margin-bottom: 0; }
+        .wave-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0.35rem;
+            width: 14px;
+            height: 14px;
+            background: var(--adapt-purple);
+            border-radius: 50%;
+            border: 3px solid var(--adapt-light);
+        }
+        .wave-timing {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--adapt-purple);
+            margin-bottom: 0.25rem;
+        }
+        .wave-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+        .wave-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
         .chart-container {
             height: 280px;
             position: relative;
         }
-
         .chart-legend {
             display: flex;
             justify-content: center;
@@ -273,7 +344,6 @@
             margin-top: 1rem;
             flex-wrap: wrap;
         }
-
         .legend-item {
             display: flex;
             align-items: center;
@@ -281,60 +351,87 @@
             font-size: 0.75rem;
             color: var(--text-secondary);
         }
-
         .legend-line {
             width: 16px;
             height: 3px;
             border-radius: 2px;
         }
-
         .legend-manza { background: var(--manza); }
         .legend-sesoko { background: var(--sesoko); }
         .legend-ogasawara { background: var(--ogasawara); }
-
-        /* Reference table */
-        .ref-table {
+        .legend-mmm { background: #e53e3e; }
+        .legend-clim {
+            background: repeating-linear-gradient(
+                90deg,
+                var(--text-muted),
+                var(--text-muted) 3px,
+                transparent 3px,
+                transparent 6px
+            );
+        }
+        .threshold-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
-
-        .ref-table th, .ref-table td {
-            padding: 0.6rem 0.75rem;
-            text-align: left;
+        .threshold-table th,
+        .threshold-table td {
+            padding: 0.75rem;
+            text-align: center;
             border-bottom: 1px solid var(--border);
         }
-
-        .ref-table th {
-            font-weight: 600;
-            color: var(--text-primary);
+        .threshold-table th {
             background: var(--bg-secondary);
+            font-weight: 600;
+            font-size: 0.8rem;
         }
-
-        .ref-table td {
+        .threshold-table .site-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+        .insights-box {
+            background: linear-gradient(135deg, var(--sst-light) 0%, #f0f9ff 100%);
+            border: 1px solid var(--sst-border);
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+        .insights-box .box-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--sst-hero);
+        }
+        .insights-list {
+            list-style: none;
+        }
+        .insights-list li {
+            padding: 0.5rem 0;
+            font-size: 0.85rem;
             color: var(--text-secondary);
+            line-height: 1.7;
+            border-bottom: 1px solid rgba(43, 108, 176, 0.1);
         }
-
-        /* Source info */
+        .insights-list li:last-child { border-bottom: none; }
+        .insights-list .label { font-weight: 600; color: var(--text-primary); }
         .source-info {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            padding: 1rem;
+            padding: 1.25rem;
             background: var(--bg-secondary);
             border-radius: 6px;
-            margin-top: 1rem;
+            line-height: 1.8;
         }
-
-        .source-info a {
-            color: var(--accent-teal);
-            text-decoration: none;
-        }
-
+        .source-info a { color: var(--accent-teal); text-decoration: none; }
         .source-info a:hover { text-decoration: underline; }
-
-        /* Footer */
+        .source-info ul { margin-top: 0.75rem; padding-left: 1.25rem; }
+        .source-info li { margin-bottom: 0.5rem; }
         footer {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
             text-align: center;
@@ -342,61 +439,28 @@
             color: var(--text-muted);
             border-top: 1px solid var(--border);
         }
-
-        footer a {
-            color: var(--accent-teal);
-            text-decoration: none;
-        }
-
-        /* Language toggle */
+        footer a { color: var(--accent-teal); text-decoration: none; }
         [data-lang="ja"] { display: none; }
         body.ja [data-lang="en"] { display: none; }
         body.ja [data-lang="ja"] { display: inline; }
-
-        /* Recent trend mini chart */
-        .trend-chart-container {
-            height: 180px;
-            position: relative;
-        }
-
-        /* Update badge */
-        .update-badge {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            background: var(--bg-secondary);
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            margin-left: auto;
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .card-header .card-title {
-            margin: 0;
-            padding: 0;
-            border: none;
-        }
+        div[data-lang="ja"], li[data-lang="ja"], p[data-lang="ja"], span.block[data-lang="ja"] { display: none; }
+        body.ja div[data-lang="en"], body.ja li[data-lang="en"], body.ja p[data-lang="en"], body.ja span.block[data-lang="en"] { display: none; }
+        body.ja div[data-lang="ja"] { display: block; }
+        body.ja li[data-lang="ja"] { display: list-item; }
+        body.ja p[data-lang="ja"] { display: block; }
+        body.ja span.block[data-lang="ja"] { display: block; }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
-                <div class="logo-icon"><img src="logo.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="logo-icon"><img src="logo.png" alt="logo"></div>
                 <span data-lang="en">marine-obs.org</span><span data-lang="ja">海の定点観測</span>
             </a>
-            <div class="header-controls">
-                <div class="lang-switch">
-                    <button onclick="setLang('en')" id="lang-en" class="active">EN</button>
-                    <button onclick="setLang('ja')" id="lang-ja">JA</button>
-                </div>
+            <div class="lang-switch">
+                <button onclick="setLang('en')" id="lang-en" class="active">EN</button>
+                <button onclick="setLang('ja')" id="lang-ja">JA</button>
             </div>
         </div>
     </header>
@@ -404,243 +468,424 @@
     <main>
         <nav class="breadcrumb">
             <a href="index.html">Home</a> / 
-            <span data-lang="en">SST</span>
+            <span data-lang="en">Sea Surface Temperature</span>
             <span data-lang="ja">海水温</span>
         </nav>
 
-        <div class="page-header">
-            <h1>
-                <span data-lang="en">Sea Surface Temperature (SST)</span>
-                <span data-lang="ja">海水温（SST）</span>
-            </h1>
-            <p class="lead">
-                <span data-lang="en">
-                    Sea Surface Temperature is the most fundamental indicator for coral reef health. 
-                    Corals can only survive within a narrow temperature range—too hot or too cold, 
-                    and they suffer stress that can lead to bleaching and mortality.
-                </span>
-                <span data-lang="ja">
-                    海水温はサンゴ礁の健康状態を示す最も基本的な指標です。
-                    サンゴは狭い温度範囲でしか生きられません。高すぎても低すぎても、
-                    ストレスを受け、白化や死亡につながる可能性があります。
-                </span>
-            </p>
-        </div>
-
-        <!-- Current SST -->
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title">
-                    <span data-lang="en">Current SST</span>
-                    <span data-lang="ja">現在の海水温</span>
+        <!-- ===== HERO ===== -->
+        <section class="hero-section">
+            <div class="hero-main">
+                <div class="hero-icon">🌡️</div>
+                <div class="hero-tagline">
+                    <span data-lang="en">A 1°C difference can be lethal for corals.</span>
+                    <span data-lang="ja">サンゴにとって1°Cは致命的になりうる</span>
                 </div>
-                <span class="update-badge" id="sst-update-date">--</span>
+                <div class="hero-subtitle">
+                    <span data-lang="en">Real-time monitoring from NASA MUR SST (1km resolution)</span>
+                    <span data-lang="ja">NASA MUR SST（1km解像度）によるリアルタイム監視</span>
+                </div>
             </div>
-            <div class="kpi-row" id="current-sst">
-                <!-- Populated by JS -->
-            </div>
-        </div>
 
-        <!-- Recent trend -->
-        <div class="card">
-            <div class="card-title">
-                <span data-lang="en">30-Day Trend</span>
-                <span data-lang="ja">直近30日の推移</span>
+            <div class="sst-grid">
+                <div class="sst-card">
+                    <div class="sst-location">
+                        <span class="site-dot" style="background: var(--manza);"></span>
+                        <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
+                    </div>
+                    <div class="sst-value" id="sst-manza">--.-°C</div>
+                    <div class="sst-diff neutral" id="diff-manza">-- vs MMM</div>
+                </div>
+                <div class="sst-card">
+                    <div class="sst-location">
+                        <span class="site-dot" style="background: var(--sesoko);"></span>
+                        <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
+                    </div>
+                    <div class="sst-value" id="sst-sesoko">--.-°C</div>
+                    <div class="sst-diff neutral" id="diff-sesoko">-- vs MMM</div>
+                </div>
+                <div class="sst-card">
+                    <div class="sst-location">
+                        <span class="site-dot" style="background: var(--ogasawara);"></span>
+                        <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
+                    </div>
+                    <div class="sst-value" id="sst-ogasawara">--.-°C</div>
+                    <div class="sst-diff neutral" id="diff-ogasawara">-- vs MMM</div>
+                </div>
             </div>
-            <div class="trend-chart-container">
-                <canvas id="trendChart"></canvas>
-            </div>
-            <div class="chart-legend">
-                <div class="legend-item"><span class="legend-line legend-manza"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                <div class="legend-item"><span class="legend-line legend-sesoko"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                <div class="legend-item"><span class="legend-line legend-ogasawara"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
-            </div>
-        </div>
-
-        <!-- Explanation -->
-        <section class="content-section">
-            <h2>
-                <span data-lang="en">What is SST?</span>
-                <span data-lang="ja">SSTとは</span>
-            </h2>
-            <p>
-                <span data-lang="en">
-                    SST (Sea Surface Temperature) is the water temperature measured at or near the ocean's surface. 
-                    For coral reef monitoring, we use satellite-derived SST data that provides daily measurements 
-                    at high spatial resolution (1km).
-                </span>
-                <span data-lang="ja">
-                    SST（Sea Surface Temperature：海面水温）は、海洋の表面付近で測定される水温です。
-                    サンゴ礁のモニタリングでは、高い空間解像度（1km）で日次測定を提供する
-                    衛星由来のSSTデータを使用しています。
-                </span>
-            </p>
         </section>
 
-        <!-- Temperature tolerance -->
+        <!-- ===== WHY 1°C MATTERS ===== -->
         <section class="content-section">
             <h2>
-                <span data-lang="en">A Narrow Window for Survival</span>
-                <span data-lang="ja">生存できる狭い温度帯</span>
+                <span data-lang="en">Why Does 1°C Matter?</span>
+                <span data-lang="ja">なぜ1°Cが問題なのか</span>
             </h2>
-            <p>
-                <span data-lang="en">
-                    Corals thrive within a narrow temperature range—typically 23–29°C for most reef-building species. 
-                    Temperatures beyond this window, whether too high or too low, can cause bleaching and mortality.
-                </span>
-                <span data-lang="ja">
-                    サンゴは狭い温度範囲でしか生きられません。造礁サンゴの多くは23-29℃の間で繁栄します。
-                    この範囲を超える水温は、高くても低くても、白化や死亡を引き起こす可能性があります。
-                </span>
-            </p>
-
-            <h3 style="font-size: 0.95rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--accent-warm);">
-                <span data-lang="en">🔥 Too Hot</span>
-                <span data-lang="ja">🔥 高すぎる水温</span>
-            </h3>
-            <p>
-                <span data-lang="en">
-                    Elevated temperatures cause corals to expel their symbiotic algae (zooxanthellae), 
-                    resulting in bleaching. A global analysis of 3,351 reef sites found that bleaching 
-                    was most common where thermal anomalies were both intense and frequent 
-                    (Sully et al., 2019, <em>Nature Communications</em>).
-                </span>
-                <span data-lang="ja">
-                    高水温はサンゴから共生藻（褐虫藻）を放出させ、白化を引き起こします。
-                    世界81カ国・3,351地点のサンゴ礁を分析した研究では、
-                    高温異常が強く頻繁に起こる場所ほど白化が多発することが明らかになりました
-                    （Sully et al., 2019, <em>Nature Communications</em>）。
-                </span>
-            </p>
-
-            <h3 style="font-size: 0.95rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--accent-teal);">
-                <span data-lang="en">❄️ Too Cold</span>
-                <span data-lang="ja">❄️ 低すぎる水温</span>
-            </h3>
-            <p>
-                <span data-lang="en">
-                    Cold stress is an underrecognized threat. When temperatures fall below ~16–18°C, 
-                    corals can suffer "cold bleaching" and become vulnerable to secondary infections.
-                    Recent research has established standardized metrics for cold tolerance thresholds, 
-                    finding species-specific vulnerability patterns 
-                    (El-Khaled et al., 2025, <em>Communications Biology</em>; Saxby et al., 2003).
-                </span>
-                <span data-lang="ja">
-                    低温ストレスは見過ごされがちな脅威です。
-                    水温が約16-18℃以下に低下すると、サンゴは「低温白化」を起こし、二次感染に脆弱になります。
-                    最近の研究では、低温耐性の標準化された指標が確立され、
-                    種ごとに異なる脆弱性パターンが明らかになっています
-                    （El-Khaled et al., 2025, <em>Communications Biology</em>; Saxby et al., 2003）。
-                </span>
-            </p>
-
-            <p style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-secondary); border-radius: 6px; font-size: 0.85rem;">
-                <span data-lang="en">
-                    <strong>→ For a more detailed analysis of accumulated thermal stress, see <a href="dhw.html" style="color: var(--accent-teal);">DHW (Degree Heating Weeks)</a>.</strong>
-                </span>
-                <span data-lang="ja">
-                    <strong>→ 蓄積された熱ストレスのより詳細な分析については、<a href="dhw.html" style="color: var(--accent-teal);">DHW（熱ストレス指標）</a>をご覧ください。</strong>
-                </span>
-            </p>
+            
+            <div class="story-box">
+                <p class="story-lead" data-lang="en">
+                    Reef-building corals survive within a narrow thermal range of 23–29°C. Just as a human body temperature rising from 36.5°C to 38.5°C signals serious illness, <span class="highlight">a 1°C anomaly in seawater can trigger coral bleaching</span>.
+                </p>
+                <p class="story-lead" data-lang="ja">
+                    造礁サンゴは23〜29°Cという狭い温度帯で生存しています。人間の体温が36.5°Cから38.5°Cに上昇すれば深刻な病気の兆候であるように、<span class="highlight">海水の1°C異常がサンゴの白化を引き起こす</span>可能性があります。
+                </p>
+                
+                <p data-lang="en">
+                    Sully et al. (2019) analyzed bleaching observations from <span class="emphasis">3,351 reef sites across 81 countries</span> and found that temperature is the primary driver of bleaching probability. Their global analysis demonstrated that even reefs with high biodiversity and good water quality cannot escape thermal stress when temperatures exceed local thresholds.
+                </p>
+                <p data-lang="ja">
+                    Sully et al. (2019) は<span class="emphasis">81ヶ国3,351地点</span>の白化観察を分析し、温度が白化確率の主要な決定因子であることを明らかにしました。高い生物多様性と良好な水質を持つリーフでさえ、温度が地域の閾値を超えると熱ストレスから逃れられないことを示しました。
+                </p>
+            </div>
         </section>
 
-        <!-- Monthly climatology -->
-        <div class="card">
-            <div class="card-title">
+        <!-- ===== HEAT STRESS ===== -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Heat Stress: The Bleaching Threshold</span>
+                <span data-lang="ja">高温ストレス：白化閾値</span>
+            </h2>
+            
+            <div class="heat-section">
+                <p class="section-intro">
+                    <span data-lang="en">The operational definition of "thermal stress" for corals is based on a simple but powerful metric: MMM + 1°C.</span>
+                    <span data-lang="ja">サンゴの「熱ストレス」の運用定義は、シンプルながら強力な指標に基づいています：MMM + 1°C。</span>
+                </p>
+                
+                <div class="qa-block">
+                    <div class="qa-question heat">
+                        <span data-lang="en">What is MMM and why +1°C?</span>
+                        <span data-lang="ja">MMMとは何か、なぜ+1°Cなのか？</span>
+                    </div>
+                    <div class="qa-answer heat">
+                        <span data-lang="en"><strong>MMM (Maximum Monthly Mean)</strong> is the highest monthly average SST from the climatology (typically 1985-2012). The +1°C threshold was established by NOAA Coral Reef Watch based on extensive field validation: when SST exceeds MMM by 1°C or more, bleaching probability rises sharply. This is not a biological constant but an <em>operational threshold</em> that has proven predictive across diverse reef systems.</span>
+                        <span data-lang="ja"><strong>MMM（Maximum Monthly Mean）</strong>は気候学的な月平均SSTの最高値（通常1985-2012年）です。+1°Cの閾値はNOAA Coral Reef Watchが広範なフィールド検証に基づいて設定しました：SSTがMMMを1°C以上超えると、白化確率が急激に上昇します。これは生物学的定数ではなく、多様なリーフシステムで予測力が実証された<em>運用閾値</em>です。</span>
+                    </div>
+                </div>
+                
+                <div class="qa-block">
+                    <div class="qa-question heat">
+                        <span data-lang="en">Does a brief spike cause bleaching?</span>
+                        <span data-lang="ja">一時的なスパイクは白化を引き起こすか？</span>
+                    </div>
+                    <div class="qa-answer heat">
+                        <span data-lang="en">Duration matters as much as intensity. A single day above threshold rarely causes mass bleaching; it's the <em>accumulation</em> of thermal stress that damages coral-zooxanthellae symbiosis. This is why NOAA developed <strong>DHW (Degree Heating Weeks)</strong>—a metric that integrates both intensity and duration. DHW ≥ 4 typically triggers significant bleaching; DHW ≥ 8 often causes mortality. <a href="dhw.html">→ See our DHW page</a></span>
+                        <span data-lang="ja">持続時間は強度と同様に重要です。閾値を超える1日だけで大規模白化が起こることは稀です。サンゴ-褐虫藻共生を損傷するのは熱ストレスの<em>蓄積</em>です。NOAAが<strong>DHW（Degree Heating Weeks）</strong>を開発した理由がこれです。DHW ≥ 4で通常有意な白化が発生、DHW ≥ 8で死滅が頻発します。<a href="dhw.html">→ DHWページを見る</a></span>
+                    </div>
+                </div>
+                
+                <div class="insight-box heat">
+                    <strong class="heat"><span data-lang="en">Hughes et al. (2017) GBR Study:</span><span data-lang="ja">Hughes et al. (2017) GBR研究：</span></strong>
+                    <span data-lang="en"> During the 2016 Great Barrier Reef bleaching event, 91% of reefs experienced some bleaching. The study showed that bleaching severity scaled predictably with cumulative heat exposure, with the northern GBR (highest DHW) suffering 67% coral mortality.</span>
+                    <span data-lang="ja"> 2016年グレートバリアリーフ白化イベントでは、91%のリーフで何らかの白化が発生。この研究は、白化の深刻度が累積熱曝露と予測可能にスケールすることを示し、最もDHWが高かった北部GBRでは67%のサンゴが死滅しました。</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== COLD STRESS ===== -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Cold Stress: The Overlooked Threat</span>
+                <span data-lang="ja">低温ストレス：見過ごされた脅威</span>
+            </h2>
+            
+            <div class="cold-section">
+                <p class="section-intro">
+                    <span data-lang="en">While heat stress dominates headlines, cold stress can be equally devastating—particularly at subtropical reef margins like Ogasawara.</span>
+                    <span data-lang="ja">熱ストレスがニュースを席巻する一方、低温ストレスも同様に壊滅的となりえます——特に小笠原のような亜熱帯リーフ縁辺では。</span>
+                </p>
+                
+                <div class="qa-block">
+                    <div class="qa-question cold">
+                        <span data-lang="en">At what temperature does cold bleaching occur?</span>
+                        <span data-lang="ja">何度で低温白化が起こるか？</span>
+                    </div>
+                    <div class="qa-answer cold">
+                        <span data-lang="en">Saxby et al. (2003) documented cold bleaching in <em>Acropora</em> at 14°C, and Rich et al. (2022) reported bleaching in Red Sea corals below 16°C. The threshold varies by species and thermal history, but <strong>16–18°C</strong> is generally considered the danger zone for most Indo-Pacific corals.</span>
+                        <span data-lang="ja">Saxby et al. (2003) は14°Cで<em>Acropora</em>の低温白化を記録し、Rich et al. (2022) は紅海のサンゴで16°C以下での白化を報告しています。閾値は種と温度履歴によって異なりますが、ほとんどのインド太平洋サンゴでは<strong>16〜18°C</strong>が一般的に危険域とされています。</span>
+                    </div>
+                </div>
+                
+                <div class="qa-block">
+                    <div class="qa-question cold">
+                        <span data-lang="en">Why is Ogasawara vulnerable?</span>
+                        <span data-lang="ja">なぜ小笠原は脆弱なのか？</span>
+                    </div>
+                    <div class="qa-answer cold">
+                        <span data-lang="en">Ogasawara sits at latitude 27°N—the northern limit of reef formation in the Pacific. Winter SST regularly drops below 20°C for extended periods: <strong id="cold-ogasawara-inline">49</strong> days below 20°C in 2025 so far. While Okinawan reefs rarely experience prolonged cold, Ogasawara corals face chronic low-temperature stress that may limit recovery from summer heat events.</span>
+                        <span data-lang="ja">小笠原は北緯27°—太平洋のサンゴ礁形成北限に位置します。冬季SSTは長期間20°C未満に下がります：<strong>2025年はこれまで<span id="cold-ogasawara-inline-ja">49</span>日間20°C未満</strong>。沖縄のリーフが長期の低温を経験することは稀ですが、小笠原のサンゴは夏の高温イベントからの回復を制限する可能性のある慢性的な低温ストレスに直面しています。</span>
+                    </div>
+                </div>
+                
+                <div class="insight-box cold">
+                    <strong class="cold"><span data-lang="en">El-Khaled et al. (2025) ED50 Metrics:</span><span data-lang="ja">El-Khaled et al. (2025) ED50指標：</span></strong>
+                    <span data-lang="en"> Recent research has developed standardized "ED50" metrics (temperature at which 50% photosynthetic efficiency is lost) for both heat and cold tolerance. This allows direct comparison of thermal sensitivity across species and populations—a breakthrough for predicting which corals can survive climate extremes.</span>
+                    <span data-lang="ja"> 最近の研究では、高温と低温の両方の耐性について標準化された「ED50」指標（光合成効率が50%失われる温度）が開発されました。これにより、種や集団間の熱感受性を直接比較できるようになり、気候極端からどのサンゴが生き残れるかを予測する上でのブレークスルーとなっています。</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ADAPTATION ===== -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Adaptation: Can Corals Adjust?</span>
+                <span data-lang="ja">適応：サンゴは順応できるか？</span>
+            </h2>
+            
+            <div class="adapt-section">
+                <p class="section-intro">
+                    <span data-lang="en">The question of whether corals can adapt to warming oceans is one of the most urgent in reef science. Research reveals a complex picture spanning three timescales:</span>
+                    <span data-lang="ja">サンゴが温暖化する海に適応できるかという問いは、リーフ科学で最も緊急な課題の一つです。研究は3つの時間スケールにまたがる複雑な構図を明らかにしています：</span>
+                </p>
+                
+                <div class="wave-timeline">
+                    <div class="wave-item">
+                        <div class="wave-timing">
+                            <span data-lang="en">Days to Weeks</span>
+                            <span data-lang="ja">数日〜数週間</span>
+                        </div>
+                        <div class="wave-title">
+                            <span data-lang="en">Short-term Acclimatization</span>
+                            <span data-lang="ja">短期的順化</span>
+                        </div>
+                        <div class="wave-desc">
+                            <span data-lang="en">Singh et al. (2023) showed that <em>Acropora</em> in Okinawa can improve heat tolerance after brief pre-exposure to elevated temperatures. This "thermal priming" doesn't change genetics but upregulates stress-response pathways.</span>
+                            <span data-lang="ja">Singh et al. (2023) は沖縄の<em>Acropora</em>が高温への短期前曝露後に耐熱性を向上させることを示しました。この「熱プライミング」は遺伝子を変えませんが、ストレス応答経路をアップレギュレートします。</span>
+                        </div>
+                    </div>
+                    <div class="wave-item">
+                        <div class="wave-timing">
+                            <span data-lang="en">Months</span>
+                            <span data-lang="ja">数ヶ月</span>
+                        </div>
+                        <div class="wave-title">
+                            <span data-lang="en">Seasonal Threshold Shifts</span>
+                            <span data-lang="ja">季節的閾値シフト</span>
+                        </div>
+                        <div class="wave-desc">
+                            <span data-lang="en">García et al. (2024) documented that bleaching thresholds shift seasonally—corals are more tolerant in late summer than early summer, suggesting physiological adjustment to ambient conditions.</span>
+                            <span data-lang="ja">García et al. (2024) は白化閾値が季節的に変動することを記録しました——サンゴは夏初めより夏終わりの方が耐性が高く、周囲条件への生理的順応を示唆しています。</span>
+                        </div>
+                    </div>
+                    <div class="wave-item">
+                        <div class="wave-timing">
+                            <span data-lang="en">Generations</span>
+                            <span data-lang="ja">世代</span>
+                        </div>
+                        <div class="wave-title">
+                            <span data-lang="en">Genetic Adaptation</span>
+                            <span data-lang="ja">遺伝的適応</span>
+                        </div>
+                        <div class="wave-desc">
+                            <span data-lang="en">Brown et al. (2024) found that habitat heterogeneity—reefs with varied thermal microenvironments—harbor greater genetic diversity for thermal tolerance. Drury et al. (2022) confirmed that thermal tolerance is heritable, offering hope for selective breeding in restoration programs.</span>
+                            <span data-lang="ja">Brown et al. (2024) は生息地の不均一性——多様な熱微環境を持つリーフ——がより大きな熱耐性の遺伝的多様性を持つことを発見しました。Drury et al. (2022) は熱耐性が遺伝性であることを確認し、復元プログラムでの選択的育種に希望を与えています。</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="insight-box adapt">
+                    <strong class="adapt"><span data-lang="en">The Pace Problem:</span><span data-lang="ja">ペースの問題：</span></strong>
+                    <span data-lang="en"> Coral generation times (5-10 years) cannot keep pace with the rate of ocean warming (~0.2°C per decade). Acclimatization may buy time, but without emissions reductions, even adapted corals will eventually face conditions beyond any biological threshold.</span>
+                    <span data-lang="ja"> サンゴの世代時間（5〜10年）は海洋温暖化の速度（約0.2°C/10年）に追いつくことができません。順化は時間を稼ぐかもしれませんが、排出削減なしには、適応したサンゴでさえ最終的にはあらゆる生物学的閾値を超える条件に直面することになります。</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 30-DAY TREND ===== -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">30-Day SST Trend</span>
+                <span data-lang="ja">30日間SST推移</span>
+            </h2>
+            <div class="card">
+                <div class="chart-container">
+                    <canvas id="sstChart"></canvas>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <span class="legend-line legend-manza"></span>
+                        <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-line legend-sesoko"></span>
+                        <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-line legend-ogasawara"></span>
+                        <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-line legend-mmm"></span>
+                        <span data-lang="en">MMM+1°C (Bleaching)</span><span data-lang="ja">MMM+1°C（白化）</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MONTHLY CLIMATOLOGY ===== -->
+        <section class="content-section">
+            <h2>
                 <span data-lang="en">Monthly Climatology (2002-2024)</span>
-                <span data-lang="ja">月別平年値（2002-2024年）</span>
+                <span data-lang="ja">月別気候学的平均（2002-2024）</span>
+            </h2>
+            <div class="card">
+                <div class="chart-container">
+                    <canvas id="climChart"></canvas>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <span class="legend-line legend-manza"></span>
+                        <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-line legend-sesoko"></span>
+                        <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-line legend-ogasawara"></span>
+                        <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
+                    </div>
+                </div>
             </div>
-            <div class="chart-container">
-                <canvas id="climChart"></canvas>
-            </div>
-            <div class="chart-legend">
-                <div class="legend-item"><span class="legend-line legend-manza"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                <div class="legend-item"><span class="legend-line legend-sesoko"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                <div class="legend-item"><span class="legend-line legend-ogasawara"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
-            </div>
-        </div>
+        </section>
 
-        <!-- Key thresholds -->
+        <!-- ===== THRESHOLD TABLE ===== -->
         <section class="content-section">
             <h2>
-                <span data-lang="en">Key Thresholds</span>
-                <span data-lang="ja">重要な閾値</span>
+                <span data-lang="en">Key Thresholds by Site</span>
+                <span data-lang="ja">サイト別主要閾値</span>
             </h2>
-            <div class="card" style="margin-top: 1rem;">
-                <table class="ref-table">
+            <div class="card">
+                <table class="threshold-table">
                     <thead>
                         <tr>
                             <th><span data-lang="en">Metric</span><span data-lang="ja">指標</span></th>
-                            <th><span data-lang="en">Value</span><span data-lang="ja">値</span></th>
-                            <th><span data-lang="en">Meaning</span><span data-lang="ja">意味</span></th>
+                            <th>
+                                <div class="site-header">
+                                    <span class="site-dot" style="background: var(--manza);"></span>
+                                    <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="site-header">
+                                    <span class="site-dot" style="background: var(--sesoko);"></span>
+                                    <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="site-header">
+                                    <span class="site-dot" style="background: var(--ogasawara);"></span>
+                                    <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
+                                </div>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>MMM</td>
-                            <td>
-                                <span data-lang="en">Manza/Sesoko: 29.0°C<br>Ogasawara: 28.5°C</span>
-                                <span data-lang="ja">万座・瀬底: 29.0°C<br>小笠原: 28.5°C</span>
-                            </td>
-                            <td>
-                                <span data-lang="en">Maximum Monthly Mean - the warmest monthly average SST</span>
-                                <span data-lang="ja">最暖月平均 - 最も暖かい月の平均SST</span>
-                            </td>
+                            <td>28.9°C</td>
+                            <td>28.8°C</td>
+                            <td>28.3°C</td>
                         </tr>
                         <tr>
-                            <td><span data-lang="en">Bleaching threshold</span><span data-lang="ja">白化閾値</span></td>
-                            <td>MMM + 1°C</td>
-                            <td>
-                                <span data-lang="en">SST above this level indicates thermal stress</span>
-                                <span data-lang="ja">この水準を超えると熱ストレスを示す</span>
-                            </td>
+                            <td><span data-lang="en">Bleaching Threshold</span><span data-lang="ja">白化閾値</span> (MMM+1)</td>
+                            <td>29.9°C</td>
+                            <td>29.8°C</td>
+                            <td>29.3°C</td>
                         </tr>
                         <tr>
-                            <td><span data-lang="en">High temp day</span><span data-lang="ja">高温日</span></td>
-                            <td>≥30°C</td>
-                            <td>
-                                <span data-lang="en">Days with SST at or above 30°C</span>
-                                <span data-lang="ja">SST 30°C以上の日</span>
-                            </td>
+                            <td><span data-lang="en">Days ≥30°C (2024)</span><span data-lang="ja">30°C以上日数 (2024)</span></td>
+                            <td id="days-hot-manza">--</td>
+                            <td id="days-hot-sesoko">--</td>
+                            <td id="days-hot-ogasawara">--</td>
                         </tr>
                         <tr>
-                            <td><span data-lang="en">Low temp day</span><span data-lang="ja">低温日</span></td>
-                            <td>≤20°C</td>
-                            <td>
-                                <span data-lang="en">Days with SST at or below 20°C (cold stress)</span>
-                                <span data-lang="ja">SST 20°C以下の日（低温ストレス）</span>
-                            </td>
+                            <td><span data-lang="en">Days &lt;20°C (2025)</span><span data-lang="ja">20°C未満日数 (2025)</span></td>
+                            <td id="days-cold-manza">--</td>
+                            <td id="days-cold-sesoko">--</td>
+                            <td id="days-cold-ogasawara">--</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- Data source -->
+        <!-- ===== MONITORING SIGNIFICANCE ===== -->
         <section class="content-section">
             <h2>
-                <span data-lang="en">Data Source</span>
-                <span data-lang="ja">データソース</span>
+                <span data-lang="en">Why Long-term Monitoring Matters</span>
+                <span data-lang="ja">長期モニタリングの意義</span>
             </h2>
-            <div class="source-info">
-                <strong>NASA MUR SST</strong><br>
-                <span data-lang="en">
-                    Multi-scale Ultra-high Resolution SST Analysis. 
-                    Daily, 1km resolution global dataset combining satellite and in-situ observations.
-                    <br><em>Note: Satellite data is typically available with a 2-3 day delay.</em>
-                </span>
-                <span data-lang="ja">
-                    多重スケール超高解像度SST解析。
-                    衛星観測と現地観測を組み合わせた、日次・1km解像度のグローバルデータセット。
-                    <br><em>※ 衛星データは通常2-3日遅れで公開されます。</em>
-                </span>
-                <br><br>
-                <a href="https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1" target="_blank">
-                    NASA PO.DAAC → MUR SST Dataset
-                </a>
+            <div class="insights-box">
+                <div class="box-title">
+                    📊 <span data-lang="en">The 30-Year Perspective</span><span data-lang="ja">30年の視点</span>
+                </div>
+                <ul class="insights-list">
+                    <li data-lang="en">
+                        <span class="label">Singh et al. (2022) Sesoko Study:</span> 30 years of environmental monitoring at Sesoko Station (1989-2019) revealed that DHW events have become more frequent and intense since 2014, with 2016 and 2017 recording the highest thermal stress in the station's history.
+                    </li>
+                    <li data-lang="ja">
+                        <span class="label">Singh et al. (2022) 瀬底研究：</span> 瀬底ステーションでの30年間の環境モニタリング（1989-2019）により、2014年以降DHWイベントがより頻繁かつ強烈になり、2016年と2017年にステーション史上最高の熱ストレスを記録したことが明らかになりました。
+                    </li>
+                    <li data-lang="en">
+                        <span class="label">Trend Detection:</span> Single-year observations cannot distinguish climate signal from interannual variability. Only multi-decadal records can identify whether bleaching thresholds are shifting—and in which direction.
+                    </li>
+                    <li data-lang="ja">
+                        <span class="label">トレンド検出：</span> 単年の観測では気候シグナルを年々変動から区別できません。白化閾値がシフトしているかどうか——そしてどの方向にシフトしているか——を特定できるのは数十年のデータのみです。
+                    </li>
+                    <li data-lang="en">
+                        <span class="label">Baseline Establishment:</span> Every day of monitoring adds value. Today's "current" data becomes tomorrow's historical baseline—essential for detecting adaptation or regime shifts.
+                    </li>
+                    <li data-lang="ja">
+                        <span class="label">ベースライン確立：</span> 毎日のモニタリングが価値を積み上げます。今日の「現在の」データは明日の歴史的ベースラインになります——適応やレジームシフトを検出するために不可欠です。
+                    </li>
+                </ul>
             </div>
         </section>
 
+        <!-- ===== REFERENCES ===== -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">References</span>
+                <span data-lang="ja">参考文献</span>
+            </h2>
+            <div class="source-info">
+                <strong><span data-lang="en">Thermal Thresholds & Bleaching</span><span data-lang="ja">温度閾値と白化</span></strong>
+                <ul>
+                    <li>Sully S et al. (2019) A global analysis of coral bleaching over the past two decades. <i>Nat Commun</i>. <a href="https://doi.org/10.1038/s41467-019-09238-2" target="_blank">doi:10.1038/s41467-019-09238-2</a></li>
+                    <li>Hughes TP et al. (2017) Global warming and recurrent mass bleaching of corals. <i>Nature</i>. <a href="https://doi.org/10.1038/nature21707" target="_blank">doi:10.1038/nature21707</a></li>
+                    <li>El-Khaled YC et al. (2025) Cold and heat bleaching thresholds. <i>Comms Bio</i>. <a href="https://doi.org/10.1038/s42003-025-07650-3" target="_blank">doi:10.1038/s42003-025-07650-3</a></li>
+                    <li>Evensen NR et al. (2023) CBASS: Standardized thermal tolerance assessment. <i>L&amp;O Methods</i>. <a href="https://doi.org/10.1002/lom3.10555" target="_blank">doi:10.1002/lom3.10555</a></li>
+                </ul>
+                
+                <strong style="display:block; margin-top:1rem;"><span data-lang="en">Adaptation & Acclimatization</span><span data-lang="ja">適応と順化</span></strong>
+                <ul>
+                    <li>Singh N et al. (2023) Short-term heat tolerance in Okinawa <i>Acropora</i>. <i>PeerJ</i>. <a href="https://doi.org/10.7717/peerj.15421" target="_blank">doi:10.7717/peerj.15421</a></li>
+                    <li>García FC et al. (2024) Seasonal variation in thermal thresholds. <i>Comms Bio</i>. <a href="https://doi.org/10.1038/s42003-024-05846-7" target="_blank">doi:10.1038/s42003-024-05846-7</a></li>
+                    <li>Brown KT et al. (2024) Habitat heterogeneity and thermal tolerance. <i>Coral Reefs</i>. <a href="https://doi.org/10.1007/s00338-024-02478-x" target="_blank">doi:10.1007/s00338-024-02478-x</a></li>
+                    <li>Drury C et al. (2022) Intrapopulation adaptive variance. <i>Comms Bio</i>. <a href="https://doi.org/10.1038/s42003-022-03428-3" target="_blank">doi:10.1038/s42003-022-03428-3</a></li>
+                </ul>
+                
+                <strong style="display:block; margin-top:1rem;"><span data-lang="en">Cold Stress</span><span data-lang="ja">低温ストレス</span></strong>
+                <ul>
+                    <li>Saxby T et al. (2003) Photosynthetic responses of coral to cold. <i>J Exp Mar Biol Ecol</i>. <a href="https://doi.org/10.1016/S0022-0981(03)00137-6" target="_blank">doi:10.1016/S0022-0981(03)00137-6</a></li>
+                    <li>Rich WA et al. (2022) Cold bleaching in the Red Sea. <i>Ecol Evol</i>. <a href="https://doi.org/10.1002/ece3.9564" target="_blank">doi:10.1002/ece3.9564</a></li>
+                </ul>
+                
+                <strong style="display:block; margin-top:1rem;"><span data-lang="en">Long-term Monitoring</span><span data-lang="ja">長期モニタリング</span></strong>
+                <ul>
+                    <li>Singh N et al. (2022) 30-year environmental monitoring at Sesoko Station. <i>Galaxea</i>. <a href="https://doi.org/10.3755/galaxea.G2022_5" target="_blank">doi:10.3755/galaxea.G2022_5</a></li>
+                    <li>Manullang CY et al. (2020) Temperature and pCO2 responses. <i>PeerJ</i>. <a href="https://doi.org/10.7717/peerj.8385" target="_blank">doi:10.7717/peerj.8385</a></li>
+                </ul>
+                
+                <p style="margin-top: 1rem;">
+                    <strong><span data-lang="en">Data Source:</span><span data-lang="ja">データソース：</span></strong>
+                    <span data-lang="en">NASA MUR SST (1km resolution, daily, ~2-3 day delay)</span>
+                    <span data-lang="ja">NASA MUR SST（1km解像度、日次、約2-3日遅延）</span>
+                    <br>
+                    <a href="https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1" target="_blank">podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1</a>
+                </p>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -659,253 +904,232 @@
             document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
             localStorage.setItem('lang', lang);
         }
-
-        // Restore language preference
         const savedLang = localStorage.getItem('lang');
         if (savedLang) setLang(savedLang);
 
-        // Site colors
-        const COLORS = {
-            manza: '#c05621',
-            sesoko: '#2b6cb0',
-            ogasawara: '#2f855a'
-        };
-
-        // Site MMM values
+        // MMM values for each site
         const MMM = {
-            manza: 29.0,
-            sesoko: 29.0,
-            ogasawara: 28.5
+            manza: 28.9,
+            sesoko: 28.8,
+            ogasawara: 28.3
         };
 
-        // Load data and render
-        async function init() {
+        // Chart instances
+        let sstChart, climChart;
+
+        // Fetch and display current SST
+        async function loadCurrentSST() {
             try {
-                const [recentRes, climRes] = await Promise.all([
-                    fetch('data/sst_recent.json'),
-                    fetch('data/monthly_clim.json')
-                ]);
+                const response = await fetch('data/sst_recent.json');
+                const data = await response.json();
                 
-                const recent = await recentRes.json();
-                const clim = await climRes.json();
-                
-                renderCurrentSST(recent);
-                renderTrendChart(recent);
-                renderClimChart(clim);
-            } catch (err) {
-                console.error('Failed to load data:', err);
-            }
-        }
-
-        function renderCurrentSST(data) {
-            const container = document.getElementById('current-sst');
-            const sites = ['manza', 'sesoko', 'ogasawara'];
-            const siteNames = {
-                manza: { en: 'Manza', ja: '万座' },
-                sesoko: { en: 'Sesoko', ja: '瀬底' },
-                ogasawara: { en: 'Ogasawara', ja: '小笠原' }
-            };
-
-            // Get latest date from data
-            const latestDate = data.manza[data.manza.length - 1].date;
-            const dateObj = new Date(latestDate);
-            const dateStrEn = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-            const dateStrJa = dateObj.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
-            
-            document.getElementById('sst-update-date').innerHTML = `
-                <span data-lang="en">Latest: ${dateStrEn}</span>
-                <span data-lang="ja">最新データ: ${dateStrJa}</span>
-            `;
-            // Re-apply language
-            const lang = localStorage.getItem('lang') || 'en';
-            if (lang === 'ja') {
-                document.getElementById('sst-update-date').querySelectorAll('[data-lang="en"]').forEach(el => el.style.display = 'none');
-                document.getElementById('sst-update-date').querySelectorAll('[data-lang="ja"]').forEach(el => el.style.display = 'inline');
-            }
-
-            // Get current month for climatology comparison
-            const currentMonth = dateObj.getMonth() + 1;
-
-            let html = '';
-            sites.forEach(site => {
-                const siteData = data[site];
-                const latest = siteData[siteData.length - 1];
-                const sst = latest.sst;
-
-                // Get monthly clim for comparison (approximate)
-                const diff = sst - MMM[site];
-                const diffClass = diff > 0 ? 'above' : 'below';
-                const diffText = diff > 0 ? `+${diff.toFixed(1)}` : diff.toFixed(1);
-
-                html += `
-                    <div class="kpi-item">
-                        <div class="site-name">
-                            <span class="site-dot" style="background:${COLORS[site]}"></span>
-                            <span data-lang="en">${siteNames[site].en}</span>
-                            <span data-lang="ja">${siteNames[site].ja}</span>
-                        </div>
-                        <div class="value">${sst.toFixed(1)}<span class="unit">°C</span></div>
-                        <div class="diff ${diffClass}">
-                            <span data-lang="en">${diffText}°C vs MMM</span>
-                            <span data-lang="ja">MMM比 ${diffText}°C</span>
-                        </div>
-                    </div>
-                `;
-            });
-
-            container.innerHTML = html;
-            // Re-apply language to new content
-            if (localStorage.getItem('lang') === 'ja') {
-                container.querySelectorAll('[data-lang="en"]').forEach(el => el.style.display = 'none');
-                container.querySelectorAll('[data-lang="ja"]').forEach(el => el.style.display = 'inline');
-            }
-        }
-
-        function renderTrendChart(data) {
-            const ctx = document.getElementById('trendChart').getContext('2d');
-            
-            const labels = data.manza.map(d => {
-                const date = new Date(d.date);
-                return `${date.getMonth() + 1}/${date.getDate()}`;
-            });
-
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Manza',
-                            data: data.manza.map(d => d.sst),
-                            borderColor: COLORS.manza,
-                            backgroundColor: 'transparent',
-                            borderWidth: 2,
-                            tension: 0.3,
-                            pointRadius: 0
-                        },
-                        {
-                            label: 'Sesoko',
-                            data: data.sesoko.map(d => d.sst),
-                            borderColor: COLORS.sesoko,
-                            backgroundColor: 'transparent',
-                            borderWidth: 2,
-                            tension: 0.3,
-                            pointRadius: 0
-                        },
-                        {
-                            label: 'Ogasawara',
-                            data: data.ogasawara.map(d => d.sst),
-                            borderColor: COLORS.ogasawara,
-                            backgroundColor: 'transparent',
-                            borderWidth: 2,
-                            tension: 0.3,
-                            pointRadius: 0
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false }
-                    },
-                    scales: {
-                        x: {
-                            grid: { display: false },
-                            ticks: { 
-                                font: { size: 10 },
-                                maxTicksLimit: 10
-                            }
-                        },
-                        y: {
-                            grid: { color: '#e2e8f0' },
-                            ticks: { 
-                                font: { size: 10 },
-                                callback: v => v + '°C'
-                            }
-                        }
-                    },
-                    interaction: {
-                        intersect: false,
-                        mode: 'index'
+                ['manza', 'sesoko', 'ogasawara'].forEach(site => {
+                    const siteData = data[site];
+                    if (siteData && siteData.length > 0) {
+                        const latest = siteData[siteData.length - 1];
+                        const sst = latest.sst;
+                        const diff = sst - MMM[site];
+                        
+                        document.getElementById(`sst-${site}`).textContent = sst.toFixed(1) + '°C';
+                        
+                        const diffEl = document.getElementById(`diff-${site}`);
+                        const sign = diff >= 0 ? '+' : '';
+                        diffEl.textContent = `${sign}${diff.toFixed(1)}°C vs MMM`;
+                        diffEl.className = 'sst-diff ' + (diff > 1 ? 'above' : diff < -1 ? 'below' : 'neutral');
                     }
-                }
-            });
+                });
+            } catch (e) {
+                console.error('Failed to load SST data:', e);
+            }
         }
 
-        function renderClimChart(data) {
-            const ctx = document.getElementById('climChart').getContext('2d');
-            
-            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: months,
-                    datasets: [
-                        {
-                            label: 'Manza',
-                            data: data.manza.map(d => d.avg_sst),
-                            borderColor: COLORS.manza,
-                            backgroundColor: 'transparent',
-                            borderWidth: 2,
-                            tension: 0.4,
-                            pointRadius: 3,
-                            pointBackgroundColor: COLORS.manza
-                        },
-                        {
-                            label: 'Sesoko',
-                            data: data.sesoko.map(d => d.avg_sst),
-                            borderColor: COLORS.sesoko,
-                            backgroundColor: 'transparent',
-                            borderWidth: 2,
-                            tension: 0.4,
-                            pointRadius: 3,
-                            pointBackgroundColor: COLORS.sesoko
-                        },
-                        {
-                            label: 'Ogasawara',
-                            data: data.ogasawara.map(d => d.avg_sst),
-                            borderColor: COLORS.ogasawara,
-                            backgroundColor: 'transparent',
-                            borderWidth: 2,
-                            tension: 0.4,
-                            pointRadius: 3,
-                            pointBackgroundColor: COLORS.ogasawara
+        // Load extreme days data
+        async function loadExtremeDays() {
+            try {
+                const response = await fetch('data/extreme_days.json');
+                const data = await response.json();
+                
+                ['manza', 'sesoko', 'ogasawara'].forEach(site => {
+                    // Hot days (2024)
+                    const hotData = data.hot_days[site];
+                    const hot2024 = hotData.find(d => d.year === 2024);
+                    if (hot2024) {
+                        document.getElementById(`days-hot-${site}`).textContent = hot2024.days;
+                    }
+                    
+                    // Cold days (2025)
+                    const coldData = data.cold_days[site];
+                    const cold2025 = coldData.find(d => d.year === 2025);
+                    if (cold2025) {
+                        document.getElementById(`days-cold-${site}`).textContent = cold2025.days;
+                        // Also update inline text for Ogasawara
+                        if (site === 'ogasawara') {
+                            const inlineEl = document.getElementById('cold-ogasawara-inline');
+                            const inlineElJa = document.getElementById('cold-ogasawara-inline-ja');
+                            if (inlineEl) inlineEl.textContent = cold2025.days;
+                            if (inlineElJa) inlineElJa.textContent = cold2025.days;
                         }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false }
-                    },
-                    scales: {
-                        x: {
-                            grid: { display: false },
-                            ticks: { font: { size: 11 } }
-                        },
-                        y: {
-                            grid: { color: '#e2e8f0' },
-                            ticks: { 
-                                font: { size: 10 },
-                                callback: v => v + '°C'
+                    }
+                });
+            } catch (e) {
+                console.error('Failed to load extreme days data:', e);
+            }
+        }
+
+        // Render 30-day trend chart
+        async function renderSSTChart() {
+            try {
+                const response = await fetch('data/sst_recent.json');
+                const data = await response.json();
+                
+                const labels = data.manza.map(d => d.date.slice(5));
+                
+                const ctx = document.getElementById('sstChart').getContext('2d');
+                sstChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: 'Manza',
+                                data: data.manza.map(d => d.sst),
+                                borderColor: '#c05621',
+                                backgroundColor: 'transparent',
+                                borderWidth: 2,
+                                pointRadius: 0,
+                                tension: 0.3
                             },
-                            min: 20,
-                            max: 30
-                        }
+                            {
+                                label: 'Sesoko',
+                                data: data.sesoko.map(d => d.sst),
+                                borderColor: '#2b6cb0',
+                                backgroundColor: 'transparent',
+                                borderWidth: 2,
+                                pointRadius: 0,
+                                tension: 0.3
+                            },
+                            {
+                                label: 'Ogasawara',
+                                data: data.ogasawara.map(d => d.sst),
+                                borderColor: '#2f855a',
+                                backgroundColor: 'transparent',
+                                borderWidth: 2,
+                                pointRadius: 0,
+                                tension: 0.3
+                            },
+                            {
+                                label: 'Bleaching Threshold',
+                                data: Array(labels.length).fill(29.8),
+                                borderColor: '#e53e3e',
+                                borderWidth: 1,
+                                borderDash: [5, 5],
+                                pointRadius: 0,
+                                fill: false
+                            }
+                        ]
                     },
-                    interaction: {
-                        intersect: false,
-                        mode: 'index'
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            x: {
+                                grid: { display: false }
+                            },
+                            y: {
+                                min: 18,
+                                max: 32,
+                                grid: { color: '#e2e8f0' }
+                            }
+                        }
                     }
-                }
-            });
+                });
+            } catch (e) {
+                console.error('Failed to render SST chart:', e);
+            }
+        }
+
+        // Render climatology chart
+        async function renderClimChart() {
+            try {
+                const response = await fetch('data/monthly_clim.json');
+                const data = await response.json();
+                
+                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                
+                // Extract avg_sst values from array of objects
+                const manzaData = data.manza.map(d => d.avg_sst);
+                const sesokoData = data.sesoko.map(d => d.avg_sst);
+                const ogasawaraData = data.ogasawara.map(d => d.avg_sst);
+                
+                const ctx = document.getElementById('climChart').getContext('2d');
+                climChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: months,
+                        datasets: [
+                            {
+                                label: 'Manza',
+                                data: manzaData,
+                                borderColor: '#c05621',
+                                backgroundColor: 'rgba(192, 86, 33, 0.1)',
+                                borderWidth: 2,
+                                pointRadius: 3,
+                                fill: true,
+                                tension: 0.4
+                            },
+                            {
+                                label: 'Sesoko',
+                                data: sesokoData,
+                                borderColor: '#2b6cb0',
+                                backgroundColor: 'rgba(43, 108, 176, 0.1)',
+                                borderWidth: 2,
+                                pointRadius: 3,
+                                fill: true,
+                                tension: 0.4
+                            },
+                            {
+                                label: 'Ogasawara',
+                                data: ogasawaraData,
+                                borderColor: '#2f855a',
+                                backgroundColor: 'rgba(47, 133, 90, 0.1)',
+                                borderWidth: 2,
+                                pointRadius: 3,
+                                fill: true,
+                                tension: 0.4
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            x: {
+                                grid: { display: false }
+                            },
+                            y: {
+                                min: 18,
+                                max: 32,
+                                grid: { color: '#e2e8f0' }
+                            }
+                        }
+                    }
+                });
+            } catch (e) {
+                console.error('Failed to render climatology chart:', e);
+            }
         }
 
         // Initialize
-        init();
+        loadCurrentSST();
+        loadExtremeDays();
+        renderSSTChart();
+        renderClimChart();
     </script>
 </body>
 </html>
