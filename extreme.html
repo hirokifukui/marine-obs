@@ -64,7 +64,7 @@
 
         .logo {
             font-weight: 600;
-            font-size: 0.75rem;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
             gap: 0.75rem;
@@ -73,6 +73,7 @@
         }
 
         .logo-icon {
+            overflow: hidden;
             width: 28px;
             height: 28px;
             background: linear-gradient(135deg, #5b9a94 0%, #2b6cb0 100%);
@@ -383,8 +384,8 @@
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
-                <span class="logo-icon">🌊</span>
-                marine-obs.org
+                <div class="logo-icon"><img src="logo.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <span data-lang="en">marine-obs.org</span><span data-lang="ja">海の定点観測</span>
             </a>
             <div class="header-controls">
                 <div class="lang-switch">
