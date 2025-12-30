@@ -1471,47 +1471,7 @@ body.ja .hero-tagline-sub {
 <!-- Six Card Section - Marine Identity -->
 <section class="six-card-section">
   <div class="six-card-grid">
-    <!-- Card 1: DHW（積算熱ストレス）- 3地点 -->
-    <div class="six-card status-alert">
-      <span class="six-card-badge badge-alert">
-        <span data-lang="en">Alert</span>
-        <span data-lang="ja">警報</span>
-      </span>
-      <div class="six-card-chart">
-        <canvas id="chart-dhw-trend"></canvas>
-        <div class="six-card-wave">
-          <svg viewBox="0 0 1200 20" preserveAspectRatio="none">
-            <path d="M0,10 Q150,0 300,10 T600,10 T900,10 T1200,10 L1200,20 L0,20 Z" fill="#ffffff"/>
-          </svg>
-        </div>
-      </div>
-      <div class="six-card-body">
-        <div class="six-card-title">
-          <span data-lang="en">Degree Heating Weeks</span>
-          <span data-lang="ja">積算熱ストレス (DHW)</span>
-        </div>
-        <div class="six-card-location">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span data-lang="en">Sesoko · Manza · Ogasawara</span>
-          <span data-lang="ja">瀬底・万座・小笠原</span>
-        </div>
-        <div class="six-card-latest">
-          <span data-lang="en">2025 Peak: 0.6 / 2.2 / 2.8</span>
-          <span data-lang="ja">2025年ピーク: 0.6 / 2.2 / 2.8</span>
-        </div>
-        <div class="six-card-desc">
-          <span data-lang="en">Manza exceeded Watch Level (DHW 4). Annual peak comparison across 3 sites.</span>
-          <span data-lang="ja">万座が注意レベル（DHW 4）を超過。3地点の年別ピークを比較。</span>
-        </div>
-        <a href="dhw.html" class="six-card-btn">
-          <span data-lang="en">Explore data</span>
-          <span data-lang="ja">データを見る</span>
-          <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- Card 2: SST（海水温）- 3地点 -->
+    <!-- Card 1: SST（海水温）- 3地点 -->
     <div class="six-card status-warning">
       <span class="six-card-badge badge-watch">
         <span data-lang="en">Watch</span>
@@ -1551,11 +1511,11 @@ body.ja .hero-tagline-sub {
       </div>
     </div>
 
-    <!-- Card 3: 極端日数 - 3地点 -->
-    <div class="six-card">
-      <span class="six-card-badge badge-safe">
-        <span data-lang="en">Normal</span>
-        <span data-lang="ja">平常</span>
+    <!-- Card 2: 極端日数 - 3地点 -->
+    <div class="six-card status-warning">
+      <span class="six-card-badge badge-watch">
+        <span data-lang="en">Watch</span>
+        <span data-lang="ja">注意</span>
       </span>
       <div class="six-card-chart">
         <canvas id="extremeChartMini"></canvas>
@@ -1580,10 +1540,50 @@ body.ja .hero-tagline-sub {
           <span data-lang="ja">2025年: 🔥 4/14/4 高温 · ❄️ 0/0/49 低温</span>
         </div>
         <div class="six-card-desc">
-          <span data-lang="en">Days ≥30°C (hot) and ≤20°C (cold). Ogasawara shows distinct cold-water pattern.</span>
-          <span data-lang="ja">30℃以上（高温）と20℃以下（低温）の日数。小笠原は低温パターンが特徴的。</span>
+          <span data-lang="en">Ogasawara: 49 cold days—potential cold stress risk. Both heat and cold threaten corals.</span>
+          <span data-lang="ja">小笠原49日の低温—低温ストレスリスクあり。高温も低温もサンゴの脅威に。</span>
         </div>
         <a href="extreme.html" class="six-card-btn">
+          <span data-lang="en">Explore data</span>
+          <span data-lang="ja">データを見る</span>
+          <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 3: DHW（積算熱ストレス）- 3地点 -->
+    <div class="six-card status-alert">
+      <span class="six-card-badge badge-alert">
+        <span data-lang="en">Alert</span>
+        <span data-lang="ja">警報</span>
+      </span>
+      <div class="six-card-chart">
+        <canvas id="chart-dhw-trend"></canvas>
+        <div class="six-card-wave">
+          <svg viewBox="0 0 1200 20" preserveAspectRatio="none">
+            <path d="M0,10 Q150,0 300,10 T600,10 T900,10 T1200,10 L1200,20 L0,20 Z" fill="#ffffff"/>
+          </svg>
+        </div>
+      </div>
+      <div class="six-card-body">
+        <div class="six-card-title">
+          <span data-lang="en">Degree Heating Weeks</span>
+          <span data-lang="ja">積算熱ストレス (DHW)</span>
+        </div>
+        <div class="six-card-location">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span data-lang="en">Sesoko · Manza · Ogasawara</span>
+          <span data-lang="ja">瀬底・万座・小笠原</span>
+        </div>
+        <div class="six-card-latest">
+          <span data-lang="en">2025 Peak: 0.6 / 2.2 / 2.8</span>
+          <span data-lang="ja">2025年ピーク: 0.6 / 2.2 / 2.8</span>
+        </div>
+        <div class="six-card-desc">
+          <span data-lang="en">Manza exceeded Watch Level (DHW 4). Annual peak comparison across 3 sites.</span>
+          <span data-lang="ja">万座が注意レベル（DHW 4）を超過。3地点の年別ピークを比較。</span>
+        </div>
+        <a href="dhw.html" class="six-card-btn">
           <span data-lang="en">Explore data</span>
           <span data-lang="ja">データを見る</span>
           <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
@@ -1736,7 +1736,7 @@ body.ja .hero-tagline-sub {
             <div class="about-content">
                 <div data-lang="en">
                     <h1>About MarineObservations</h1>
-                    <img src="diving.jpg" alt="Diving observation" style="width: 100%; max-width: 500px; border-radius: 12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="hero.jpg" alt="Diving observation" style="width: 100%; max-width: 500px; border-radius: 12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                     
                     <h2>What I saw</h2>
                     <p>In the summer of 2024, I went diving in Onna Village, Okinawa. What I saw underwater stopped me cold: coral, bleached white, stretching across the reef. Not in patches—everywhere. The coral that local communities had spent years cultivating was gone.</p>
@@ -1765,7 +1765,7 @@ body.ja .hero-tagline-sub {
 
                 <div data-lang="ja">
                     <h1>MarineObservationsについて</h1>
-                    <img src="diving.jpg" alt="海洋観測の様子" style="width: 100%; max-width: 500px; border-radius: 12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="hero.jpg" alt="海洋観測の様子" style="width: 100%; max-width: 500px; border-radius: 12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
 
                     <h2>海に潜る瞬間</h2>
                     <p>東京で暮らしていると、自然を身体で感じる機会はほとんどない。だからこそ、海に潜った瞬間の感覚は格別である。一本目のエントリーで水中に入ると、全身の細胞が目を覚ますような感覚が走る。重力から解放され、聞こえるのは自分の呼吸音だけ。その感覚を求めて、私は潜り続けてきた。</p>
