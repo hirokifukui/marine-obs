@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHW - Degree Heating Weeks | marine-obs.org</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --header-bg: #1a1f2e;
+            --header-text: #ffffff;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-card: #ffffff;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --accent-teal: #2b6cb0;
+            --accent-coral: #996060;
+            --accent-warm: #c05621;
+            --accent-green: #2f855a;
+            --border: #e2e8f0;
+            --shadow: 0 1px 3px rgba(0,0,0,0.08);
+            --manza: #c05621;
+            --sesoko: #2b6cb0;
+            --ogasawara: #2f855a;
+            --alert-bg: #fef2f2;
+            --alert-border: #c05621;
+            --warning-bg: #fffbeb;
+            --warning-border: #d69e2e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        body.ja {
+            font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 0.75rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #5b9a94 0%, #2b6cb0 100%);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lang-switch {
+            font-size: 0.8rem;
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .lang-switch button {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.6);
+            cursor: pointer;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .lang-switch button:hover { color: rgba(255,255,255,0.9); }
+        .lang-switch button.active { color: #ffffff; background: rgba(255,255,255,0.15); }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .breadcrumb a {
+            color: var(--accent-teal);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        .page-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .page-header h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        body.ja .page-header h1 {
+            font-size: 1.5rem;
+            letter-spacing: 0;
+        }
+
+        .page-header .lead {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 720px;
+        }
+
+        body.ja .page-header .lead {
+            line-height: 2;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .card-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Alert card for 2024 */
+        .alert-card {
+            background: var(--alert-bg);
+            border: 1px solid var(--alert-border);
+            border-left: 4px solid var(--alert-border);
+        }
+
+        .alert-card .card-title {
+            color: var(--accent-warm);
+        }
+
+        /* DHW level indicators */
+        .dhw-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .dhw-level {
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .dhw-level.watch {
+            background: #fefce8;
+            border: 1px solid #facc15;
+        }
+
+        .dhw-level.warning {
+            background: #fff7ed;
+            border: 1px solid #f97316;
+        }
+
+        .dhw-level.alert1 {
+            background: #fef2f2;
+            border: 1px solid #ef4444;
+        }
+
+        .dhw-level.alert2 {
+            background: #fdf2f8;
+            border: 1px solid #be185d;
+        }
+
+        .dhw-level .level-name {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .dhw-level .level-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .dhw-level .level-desc {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* KPI comparison */
+        .kpi-comparison {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 640px) {
+            .kpi-comparison { grid-template-columns: 1fr; }
+        }
+
+        .kpi-item {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 6px;
+            background: var(--bg-secondary);
+        }
+
+        .kpi-item.highlight {
+            background: #fef2f2;
+            border: 1px solid var(--accent-warm);
+        }
+
+        .kpi-item .site-name {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.35rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+
+        .site-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .kpi-item .value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .kpi-item.highlight .value {
+            color: var(--accent-warm);
+        }
+
+        .kpi-item .context {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .content-section {
+            margin-bottom: 2rem;
+        }
+
+        .content-section h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .content-section h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .content-section p {
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        body.ja .content-section p {
+            line-height: 2.1;
+        }
+
+        .chart-container {
+            height: 300px;
+            position: relative;
+        }
+
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .legend-line {
+            width: 16px;
+            height: 3px;
+            border-radius: 2px;
+        }
+
+        .legend-manza { background: var(--manza); }
+        .legend-sesoko { background: var(--sesoko); }
+        .legend-ogasawara { background: var(--ogasawara); }
+
+        /* Reference table */
+        .ref-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+
+        .ref-table th, .ref-table td {
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .ref-table th {
+            font-weight: 600;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+        }
+
+        .ref-table td {
+            color: var(--text-secondary);
+        }
+
+        .source-info {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+
+        .source-info a {
+            color: var(--accent-teal);
+            text-decoration: none;
+        }
+
+        .source-info a:hover { text-decoration: underline; }
+
+        /* Observation box */
+        .observation-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #d69e2e;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        .observation-box .obs-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #92400e;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .observation-box p {
+            color: #78350f;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--accent-teal);
+            text-decoration: none;
+        }
+
+        [data-lang="ja"] { display: none; }
+        body.ja [data-lang="en"] { display: none; }
+        body.ja [data-lang="ja"] { display: inline; }
+
+        /* Threshold line annotation */
+        .threshold-note {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌊</span>
+                marine-obs.org
+            </a>
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button onclick="setLang('en')" id="lang-en" class="active">EN</button>
+                    <button onclick="setLang('ja')" id="lang-ja">JA</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> / 
+            <span data-lang="en">DHW</span>
+            <span data-lang="ja">DHW</span>
+        </nav>
+
+        <div class="page-header">
+            <h1>
+                <span data-lang="en">Degree Heating Weeks (DHW)</span>
+                <span data-lang="ja">DHW（熱ストレス指標）</span>
+            </h1>
+            <p class="lead">
+                <span data-lang="en">
+                    DHW measures accumulated thermal stress over time. 
+                    While a single hot day may not harm corals, sustained heat accumulates 
+                    and can trigger mass bleaching events. DHW captures this cumulative effect.
+                </span>
+                <span data-lang="ja">
+                    DHWは時間経過に伴う熱ストレスの蓄積を測定します。
+                    1日の高温だけではサンゴに大きな害はありませんが、持続的な高温は蓄積され、
+                    大規模な白化イベントを引き起こす可能性があります。DHWはこの累積効果を捉えます。
+                </span>
+            </p>
+        </div>
+
+        <!-- 2024 Alert -->
+        <div class="card alert-card">
+            <div class="card-title">
+                <span data-lang="en">⚠️ 2024: Record Thermal Stress at Manza</span>
+                <span data-lang="ja">⚠️ 2024年：万座で記録的な熱ストレス</span>
+            </div>
+            <div class="kpi-comparison">
+                <div class="kpi-item highlight">
+                    <div class="site-name">
+                        <span class="site-dot" style="background:var(--manza)"></span>
+                        <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
+                    </div>
+                    <div class="value">7.53</div>
+                    <div class="context">
+                        <span data-lang="en">Highest in 22 years</span>
+                        <span data-lang="ja">22年間で最高</span>
+                    </div>
+                </div>
+                <div class="kpi-item">
+                    <div class="site-name">
+                        <span class="site-dot" style="background:var(--sesoko)"></span>
+                        <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
+                    </div>
+                    <div class="value">4.45</div>
+                    <div class="context">
+                        <span data-lang="en">Alert Level 1 exceeded</span>
+                        <span data-lang="ja">警報レベル1超過</span>
+                    </div>
+                </div>
+                <div class="kpi-item">
+                    <div class="site-name">
+                        <span class="site-dot" style="background:var(--ogasawara)"></span>
+                        <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
+                    </div>
+                    <div class="value">1.24</div>
+                    <div class="context">
+                        <span data-lang="en">Relatively mild</span>
+                        <span data-lang="ja">比較的穏やか</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="observation-box">
+                <div class="obs-title">
+                    📋 <span data-lang="en">Field Observation</span><span data-lang="ja">現地観察</span>
+                </div>
+                <p>
+                    <span data-lang="en">
+                        In September 2024, we observed extensive coral bleaching at Manza. 
+                        The DHW of 7.53 was the highest recorded since our monitoring began in 2003, 
+                        surpassing even the 2016-2017 global bleaching event (DHW 5.26–6.68).
+                        In contrast, 2025 showed only mild bleaching with limited progression, 
+                        possibly indicating short-term acclimatization following the 2024 stress.
+                    </span>
+                    <span data-lang="ja">
+                        2024年9月、万座で広範なサンゴの白化を観察しました。
+                        DHW 7.53は2003年のモニタリング開始以来最高値で、
+                        2016-2017年の世界的白化イベント（DHW 5.26-6.68）をも上回りました。
+                        一方、2025年は軽度の白化にとどまり、進行も限定的でした。
+                        これは2024年のストレス後の短期的な馴化を示唆している可能性があります。
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <!-- What is DHW -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">What is DHW?</span>
+                <span data-lang="ja">DHWとは</span>
+            </h2>
+            <p>
+                <span data-lang="en">
+                    DHW (Degree Heating Weeks) is a metric developed by NOAA Coral Reef Watch 
+                    to quantify accumulated thermal stress on corals. It measures how much heat 
+                    has built up over the past 12 weeks above the bleaching threshold (MMM + 1°C).
+                </span>
+                <span data-lang="ja">
+                    DHW（Degree Heating Weeks：度週）は、サンゴへの累積熱ストレスを定量化するために
+                    NOAA Coral Reef Watchが開発した指標です。過去12週間で白化閾値（MMM + 1°C）を
+                    超えた熱がどれだけ蓄積されたかを測定します。
+                </span>
+            </p>
+            <p>
+                <span data-lang="en">
+                    The unit is °C-weeks. For example, 1°C above threshold for 4 weeks = 4 DHW, 
+                    or 2°C above threshold for 2 weeks = 4 DHW. The higher the DHW, 
+                    the greater the accumulated stress and bleaching risk.
+                </span>
+                <span data-lang="ja">
+                    単位は°C-weeks（度週）です。例えば、閾値を1°C超える状態が4週間続くと4 DHW、
+                    2°C超える状態が2週間続いても4 DHWとなります。
+                    DHWが高いほど、蓄積されたストレスと白化リスクが大きくなります。
+                </span>
+            </p>
+        </section>
+
+        <!-- NOAA Alert Levels -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">NOAA Bleaching Alert Levels</span>
+                <span data-lang="ja">NOAA白化警報レベル</span>
+            </h2>
+            <div class="dhw-levels">
+                <div class="dhw-level watch">
+                    <div class="level-name">
+                        <span data-lang="en">Watch</span><span data-lang="ja">注意</span>
+                    </div>
+                    <div class="level-value">0 < DHW < 4</div>
+                    <div class="level-desc">
+                        <span data-lang="en">Stress accumulating</span>
+                        <span data-lang="ja">ストレス蓄積中</span>
+                    </div>
+                </div>
+                <div class="dhw-level warning">
+                    <div class="level-name">
+                        <span data-lang="en">Warning</span><span data-lang="ja">警告</span>
+                    </div>
+                    <div class="level-value">DHW ≥ 4</div>
+                    <div class="level-desc">
+                        <span data-lang="en">Bleaching likely</span>
+                        <span data-lang="ja">白化の可能性</span>
+                    </div>
+                </div>
+                <div class="dhw-level alert1">
+                    <div class="level-name">
+                        <span data-lang="en">Alert 1</span><span data-lang="ja">警報1</span>
+                    </div>
+                    <div class="level-value">DHW ≥ 4</div>
+                    <div class="level-desc">
+                        <span data-lang="en">+ HotSpot ≥ 1°C</span>
+                        <span data-lang="ja">+ HotSpot ≥ 1°C</span>
+                    </div>
+                </div>
+                <div class="dhw-level alert2">
+                    <div class="level-name">
+                        <span data-lang="en">Alert 2</span><span data-lang="ja">警報2</span>
+                    </div>
+                    <div class="level-value">DHW ≥ 8</div>
+                    <div class="level-desc">
+                        <span data-lang="en">Mortality likely</span>
+                        <span data-lang="ja">死亡の可能性</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Annual DHW Chart -->
+        <div class="card">
+            <div class="card-title">
+                <span data-lang="en">Annual Peak DHW (2003–2024)</span>
+                <span data-lang="ja">年間最大DHW（2003–2024年）</span>
+            </div>
+            <div class="chart-container">
+                <canvas id="dhwChart"></canvas>
+            </div>
+            <div class="chart-legend">
+                <div class="legend-item"><span class="legend-line legend-manza"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
+                <div class="legend-item"><span class="legend-line legend-sesoko"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
+                <div class="legend-item"><span class="legend-line legend-ogasawara"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
+            </div>
+            <div class="threshold-note">
+                <span data-lang="en">Red dashed line: Alert Level 1 threshold (DHW = 4)</span>
+                <span data-lang="ja">赤破線：警報レベル1の閾値（DHW = 4）</span>
+            </div>
+        </div>
+
+        <!-- Research at Sesoko -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Research Findings: Sesoko Island</span>
+                <span data-lang="ja">研究知見：瀬底島</span>
+            </h2>
+            <p>
+                <span data-lang="en">
+                    Long-term monitoring at Sesoko Island, Okinawa provides valuable insights 
+                    into how local DHW values relate to actual bleaching damage.
+                </span>
+                <span data-lang="ja">
+                    沖縄・瀬底島での長期モニタリングは、現地のDHW値と実際の白化被害との関係について
+                    貴重な知見を提供しています。
+                </span>
+            </p>
+
+            <div class="card" style="margin-top: 1rem;">
+                <table class="ref-table">
+                    <thead>
+                        <tr>
+                            <th><span data-lang="en">Year</span><span data-lang="ja">年</span></th>
+                            <th><span data-lang="en">Local DHW</span><span data-lang="ja">現地DHW</span></th>
+                            <th><span data-lang="en">Impact</span><span data-lang="ja">影響</span></th>
+                            <th><span data-lang="en">Source</span><span data-lang="ja">出典</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1998</td>
+                            <td>10.6</td>
+                            <td>
+                                <span data-lang="en">Near-total mortality</span>
+                                <span data-lang="ja">ほぼ全滅</span>
+                            </td>
+                            <td>Sakai et al. 2019</td>
+                        </tr>
+                        <tr>
+                            <td>2016</td>
+                            <td>3.3</td>
+                            <td>
+                                <span data-lang="en"><em>Acropora</em> 41.5% mortality</span>
+                                <span data-lang="ja"><em>ミドリイシ</em> 41.5%死亡</span>
+                            </td>
+                            <td>Sakai et al. 2019</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>
+                <span data-lang="en">Satellite vs. Local Measurements</span>
+                <span data-lang="ja">衛星データと現地測定の乖離</span>
+            </h3>
+            <p>
+                <span data-lang="en">
+                    Satellite-derived DHW can differ significantly from in-situ measurements. 
+                    In 2016, the satellite DHW (8.25) was 2.5× higher than the locally measured DHW (3.3). 
+                    Our data uses satellite measurements, so actual thermal stress may be lower than indicated.
+                </span>
+                <span data-lang="ja">
+                    衛星由来のDHWは現地測定値と大きく異なることがあります。
+                    2016年の場合、衛星DHW（8.25）は現地測定DHW（3.3）の2.5倍高い値でした。
+                    当サイトのデータは衛星測定値を使用しているため、実際の熱ストレスは表示より低い可能性があります。
+                </span>
+            </p>
+        </section>
+
+        <!-- Thermal History -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">The Role of Thermal History</span>
+                <span data-lang="ja">熱履歴の重要性</span>
+            </h2>
+            <p>
+                <span data-lang="en">
+                    Recent research suggests that corals can develop short-term heat tolerance 
+                    after surviving thermal stress events. Singh et al. (2023) found that in 2017, 
+                    despite higher DHW than 2016, the same coral colonies showed reduced bleaching—
+                    indicating possible acclimatization from the previous year's stress.
+                </span>
+                <span data-lang="ja">
+                    最近の研究では、サンゴは熱ストレスイベントを生き延びた後、
+                    短期的な耐熱性を獲得する可能性があることが示唆されています。
+                    Singh et al.（2023）は、2017年のDHWが2016年より高かったにもかかわらず、
+                    同じサンゴ群体の白化が減少したことを発見しました。
+                    これは前年のストレス経験による馴化の可能性を示しています。
+                </span>
+            </p>
+            <p>
+                <span data-lang="en">
+                    Our 2025 observations may reflect this pattern: following the severe 2024 event, 
+                    the limited bleaching in 2025 (DHW 2.2 at Manza) could indicate that 
+                    surviving colonies have enhanced thermal tolerance—at least temporarily.
+                </span>
+                <span data-lang="ja">
+                    2025年の観察結果もこのパターンを反映している可能性があります。
+                    深刻だった2024年の後、2025年の白化が限定的（万座でDHW 2.2）だったことは、
+                    生き残った群体が—少なくとも一時的に—耐熱性を高めた可能性を示唆しています。
+                </span>
+            </p>
+        </section>
+
+        <!-- Data Source -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Data Sources</span>
+                <span data-lang="ja">データソース</span>
+            </h2>
+            <div class="source-info">
+                <strong>DHW Calculation</strong><br>
+                <span data-lang="en">
+                    DHW is calculated from NASA MUR SST data using NOAA Coral Reef Watch methodology. 
+                    We use site-specific MMM values derived from 2002-2024 climatology.
+                </span>
+                <span data-lang="ja">
+                    DHWはNASA MUR SSTデータを用いてNOAA Coral Reef Watchの方法論で計算しています。
+                    2002-2024年の気候値から導出した地点別MMM値を使用しています。
+                </span>
+                <br><br>
+                <a href="https://coralreefwatch.noaa.gov/product/5km/methodology.php" target="_blank">
+                    NOAA Coral Reef Watch → Methodology
+                </a>
+            </div>
+
+            <div class="source-info" style="margin-top: 1rem;">
+                <strong>
+                    <span data-lang="en">Key References</span>
+                    <span data-lang="ja">主要参考文献</span>
+                </strong><br>
+                <span style="font-size: 0.7rem; line-height: 1.8;">
+                    • Sakai K, et al. (2019) Coral bleaching and recovery during the 2016 and 2017 events at Sesoko Island, Okinawa.<br>
+                    • Singh S, et al. (2023) Short-term heat tolerance in corals.<br>
+                    • Sully S, et al. (2019) A global analysis of coral bleaching over the past two decades. <em>Nature Communications</em>.
+                </span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <a href="index.html">← 
+            <span data-lang="en">Back to Home</span>
+            <span data-lang="ja">ホームに戻る</span>
+        </a>
+        <p style="margin-top: 0.5rem;">© 2025 marine-obs.org</p>
+    </footer>
+
+    <script>
+        // Language toggle
+        function setLang(lang) {
+            document.body.classList.toggle('ja', lang === 'ja');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
+            localStorage.setItem('lang', lang);
+        }
+
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang) setLang(savedLang);
+
+        const COLORS = {
+            manza: '#c05621',
+            sesoko: '#2b6cb0',
+            ogasawara: '#2f855a'
+        };
+
+        async function init() {
+            try {
+                const res = await fetch('data/dhw_annual_peak.json');
+                const data = await res.json();
+                renderDHWChart(data);
+            } catch (err) {
+                console.error('Failed to load data:', err);
+            }
+        }
+
+        function renderDHWChart(data) {
+            const ctx = document.getElementById('dhwChart').getContext('2d');
+            
+            const years = data.manza.map(d => d.year);
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: years,
+                    datasets: [
+                        {
+                            label: 'Manza',
+                            data: data.manza.map(d => d.peak_dhw),
+                            backgroundColor: COLORS.manza + 'cc',
+                            borderColor: COLORS.manza,
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Sesoko',
+                            data: data.sesoko.map(d => d.peak_dhw),
+                            backgroundColor: COLORS.sesoko + 'cc',
+                            borderColor: COLORS.sesoko,
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Ogasawara',
+                            data: data.ogasawara.map(d => d.peak_dhw),
+                            backgroundColor: COLORS.ogasawara + 'cc',
+                            borderColor: COLORS.ogasawara,
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        annotation: {
+                            annotations: {
+                                threshold: {
+                                    type: 'line',
+                                    yMin: 4,
+                                    yMax: 4,
+                                    borderColor: '#ef4444',
+                                    borderWidth: 2,
+                                    borderDash: [6, 6]
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: { 
+                                font: { size: 9 },
+                                maxRotation: 45
+                            }
+                        },
+                        y: {
+                            grid: { color: '#e2e8f0' },
+                            ticks: { 
+                                font: { size: 10 }
+                            },
+                            min: 0,
+                            max: 10
+                        }
+                    }
+                },
+                plugins: [{
+                    id: 'thresholdLine',
+                    afterDraw: (chart) => {
+                        const ctx = chart.ctx;
+                        const yScale = chart.scales.y;
+                        const xScale = chart.scales.x;
+                        
+                        const y = yScale.getPixelForValue(4);
+                        
+                        ctx.save();
+                        ctx.beginPath();
+                        ctx.setLineDash([6, 6]);
+                        ctx.strokeStyle = '#ef4444';
+                        ctx.lineWidth = 2;
+                        ctx.moveTo(xScale.left, y);
+                        ctx.lineTo(xScale.right, y);
+                        ctx.stroke();
+                        ctx.restore();
+                    }
+                }]
+            });
+        }
+
+        init();
+    </script>
+</body>
+</html>
