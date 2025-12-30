@@ -2741,226 +2741,176 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Diver Page Enhancements Script -->
 <script>
 (function() {
-    // Constants for gear recommendations
     const GEAR_RECS = {
         ja: [
-            { min: 28, gear: '3mm または ラッシュガード', note: '暖かい海、軽装で十分' },
-            { min: 26, gear: '3mm ウェット', note: '快適なコンディション' },
-            { min: 24, gear: '5mm ウェット', note: '標準的な保温が必要' },
-            { min: 22, gear: '5mm + フードベスト', note: '追加の保温を推奨' },
-            { min: 20, gear: '5mm ツーピース', note: '重ね着を検討' },
-            { min: 0, gear: 'ドライスーツ推奨', note: '低水温' }
+            { min: 28, gear: '3mm または ラッシュガード', note: '暖かい海' },
+            { min: 26, gear: '3mm ウェット', note: '快適' },
+            { min: 24, gear: '5mm ウェット', note: '標準的な保温' },
+            { min: 22, gear: '5mm + フードベスト', note: '保温強化' },
+            { min: 20, gear: '5mm ツーピース', note: '重ね着推奨' },
+            { min: 0, gear: 'ドライスーツ', note: '低水温' }
         ],
         en: [
-            { min: 28, gear: '3mm or rashguard', note: 'Warm waters' },
+            { min: 28, gear: '3mm / rashguard', note: 'Warm' },
             { min: 26, gear: '3mm wetsuit', note: 'Comfortable' },
-            { min: 24, gear: '5mm wetsuit', note: 'Standard protection' },
-            { min: 22, gear: '5mm + hood vest', note: 'Extra insulation' },
-            { min: 20, gear: '5mm two-piece', note: 'Consider layers' },
-            { min: 0, gear: 'Dry suit recommended', note: 'Cold water' }
+            { min: 24, gear: '5mm wetsuit', note: 'Standard' },
+            { min: 22, gear: '5mm + hood vest', note: 'Extra warmth' },
+            { min: 20, gear: '5mm two-piece', note: 'Layer up' },
+            { min: 0, gear: 'Dry suit', note: 'Cold' }
         ]
     };
 
     function getGearRec(temp, lang) {
         const recs = GEAR_RECS[lang] || GEAR_RECS.en;
-        for (const r of recs) {
-            if (temp >= r.min) return r;
-        }
+        for (const r of recs) if (temp >= r.min) return r;
         return recs[recs.length - 1];
     }
 
-    // Condition score (0-100)
     function calcScore(wave, wind, swell) {
         let s = 100;
-        if (wave > 2.0) s -= 50;
-        else if (wave > 1.5) s -= 35;
-        else if (wave > 1.0) s -= 20;
-        else if (wave > 0.7) s -= 10;
-        
-        if (wind > 12) s -= 40;
-        else if (wind > 10) s -= 25;
-        else if (wind > 8) s -= 15;
-        else if (wind > 5) s -= 5;
-        
-        if (swell > 1.5) s -= 20;
-        else if (swell > 1.0) s -= 10;
+        if (wave > 2.0) s -= 50; else if (wave > 1.5) s -= 35; else if (wave > 1.0) s -= 20; else if (wave > 0.7) s -= 10;
+        if (wind > 12) s -= 40; else if (wind > 10) s -= 25; else if (wind > 8) s -= 15; else if (wind > 5) s -= 5;
+        if (swell > 1.5) s -= 20; else if (swell > 1.0) s -= 10;
         return Math.max(0, Math.min(100, s));
     }
 
     function getStatus(score, isJa) {
-        if (score >= 70) return { cls: 'good', txt: isJa ? '良好' : 'Good', advice: isJa ? 'ダイビングに適したコンディション' : 'Good conditions for diving' };
-        if (score >= 40) return { cls: 'caution', txt: isJa ? '注意' : 'Caution', advice: isJa ? '現地ショップに確認を' : 'Check with local operators' };
-        return { cls: 'warning', txt: isJa ? '厳しい' : 'Challenging', advice: isJa ? '延期または別ポイントの検討を' : 'Consider postponing' };
+        if (score >= 70) return { cls: 'good', txt: isJa ? '良好' : 'Good', advice: isJa ? 'ダイビングに適したコンディション' : 'Good for diving' };
+        if (score >= 40) return { cls: 'caution', txt: isJa ? '注意' : 'Caution', advice: isJa ? '現地ショップに確認を' : 'Check locally' };
+        return { cls: 'warning', txt: isJa ? '厳しい' : 'Hard', advice: isJa ? '延期または別ポイント検討' : 'Consider postponing' };
     }
 
     function windDir(deg, isJa) {
-        const dirs = isJa ? ['北','北東','東','南東','南','南西','西','北西'] : ['N','NE','E','SE','S','SW','W','NW'];
-        return dirs[Math.round(deg / 45) % 8];
+        const d = isJa ? ['北','北東','東','南東','南','南西','西','北西'] : ['N','NE','E','SE','S','SW','W','NW'];
+        return d[Math.round(deg / 45) % 8];
     }
 
     function getDHWStatus(dhw, isJa) {
         if (dhw < 1) return { cls: 'safe', txt: isJa ? 'ストレスなし' : 'No Stress' };
         if (dhw < 4) return { cls: 'watch', txt: isJa ? '注意' : 'Watch' };
-        if (dhw < 8) return { cls: 'warning', txt: isJa ? '警報Lv1' : 'Alert Lv1' };
-        return { cls: 'alert', txt: isJa ? '警報Lv2' : 'Alert Lv2' };
+        if (dhw < 8) return { cls: 'warning', txt: isJa ? '警報Lv1' : 'Alert 1' };
+        return { cls: 'alert', txt: isJa ? '警報Lv2' : 'Alert 2' };
     }
 
-    // Main render function
-    async function renderDiverEnhancements() {
-        const isJa = document.body.classList.contains('ja');
-        
-        // Fetch marine data (reuse existing data structure)
-        const SUPABASE_URL = 'https://pegiuiblpliainpdggfj.supabase.co';
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlZ2l1aWJscGxpYWlucGRnZ2ZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU1MzQ2NDIsImV4cCI6MjA0MTExMDY0Mn0.aYOqLgBtMGp1CU1JhzFnPjfFJxPgIkFGG8DyuU18NpE';
-        
-        try {
-            const res = await fetch(`${SUPABASE_URL}/rest/v1/marine_weather?order=datetime.desc&limit=500`, {
-                headers: { 'apikey': SUPABASE_KEY }
+    // Extract data from existing marine monitor cards
+    function extractMarineData() {
+        const cards = document.querySelectorAll('.marine-summary-card');
+        const data = [];
+        cards.forEach(card => {
+            const locEl = card.querySelector('.marine-location');
+            const items = card.querySelectorAll('.marine-summary-item');
+            if (!locEl || items.length < 3) return;
+            
+            const loc = locEl.textContent.trim();
+            let temp = null, wave = null, wind = null, windD = '';
+            
+            items.forEach(item => {
+                const val = item.querySelector('.value')?.textContent || '';
+                const label = item.querySelector('.label')?.textContent || '';
+                if (label.includes('水温') || label.includes('Water')) {
+                    temp = parseFloat(val);
+                } else if (label.includes('波') || label.includes('Wave')) {
+                    wave = parseFloat(val);
+                } else if (label.includes('風') || label.includes('Wind')) {
+                    const m = val.match(/([\d.]+)\s*m\/s\s*(.+)?/);
+                    if (m) { wind = parseFloat(m[1]); windD = m[2] || ''; }
+                }
             });
-            const raw = await res.json();
             
-            // Group by location
-            const byLoc = {};
-            for (const r of raw) {
-                if (!byLoc[r.location]) byLoc[r.location] = [];
-                byLoc[r.location].push(r);
+            if (loc && temp !== null) {
+                data.push({ loc, temp, wave: wave || 0, wind: wind || 0, windD, swell: 0 });
             }
-            
-            const locs = [
-                { id: 'sesoko', ja: '瀬底', en: 'Sesoko', mmm: 29.0 },
-                { id: 'manza', ja: '万座', en: 'Manza', mmm: 29.0 },
-                { id: 'ogasawara', ja: '小笠原', en: 'Ogasawara', mmm: 28.5 }
-            ];
-            
-            // === CONDITION CARDS ===
-            const condContainer = document.getElementById('condition-cards-container');
-            if (condContainer) {
-                let html = '';
-                for (const loc of locs) {
-                    const data = byLoc[loc.id] || [];
-                    if (data.length === 0) continue;
-                    
-                    // Today's data
-                    const today = new Date().toISOString().slice(0, 10);
-                    const todayData = data.filter(d => d.datetime && d.datetime.startsWith(today));
-                    if (todayData.length === 0) continue;
-                    
-                    const waveMax = Math.max(...todayData.map(d => d.wave_height || 0));
-                    const windMax = Math.max(...todayData.map(d => d.wind_speed || 0));
-                    const swellMax = Math.max(...todayData.map(d => d.swell_height || 0));
-                    const waterTemp = todayData[0].water_temperature;
-                    const windDirAvg = todayData.reduce((s, d) => s + (d.wind_direction || 0), 0) / todayData.length;
-                    
-                    const score = calcScore(waveMax, windMax, swellMax);
-                    const st = getStatus(score, isJa);
-                    const name = isJa ? loc.ja : loc.en;
-                    
-                    html += `
-                    <div class="condition-card">
-                        <div class="condition-header">
-                            <span class="condition-location">${name}</span>
-                            <span class="condition-status">
-                                <span class="status-dot ${st.cls}"></span>
-                                ${st.txt}
-                            </span>
-                        </div>
-                        <div class="condition-bar-container">
-                            <div class="condition-bar ${st.cls}" style="width: ${score}%"></div>
-                        </div>
-                        <div class="condition-summary">
-                            <div class="condition-item"><span class="label">${isJa ? '波' : 'Wave'}</span><span class="value">${waveMax.toFixed(1)}m</span></div>
-                            <div class="condition-item"><span class="label">${isJa ? 'うねり' : 'Swell'}</span><span class="value">${swellMax.toFixed(1)}m</span></div>
-                            <div class="condition-item"><span class="label">${isJa ? '風' : 'Wind'}</span><span class="value">${windMax.toFixed(0)}m/s ${windDir(windDirAvg, isJa)}</span></div>
-                            <div class="condition-item"><span class="label">${isJa ? '水温' : 'Water'}</span><span class="value">${waterTemp?.toFixed(1) || '-'}°C</span></div>
-                        </div>
-                        <div class="condition-advice">
-                            <span class="condition-advice-icon">💡</span>
-                            <span>${st.advice}</span>
-                        </div>
-                    </div>`;
-                }
-                condContainer.innerHTML = html || `<div style="color:var(--text-muted)">${isJa ? 'データなし' : 'No data'}</div>`;
-            }
-            
-            // === CORAL STRESS ===
-            const coralGrid = document.getElementById('coral-stress-grid');
-            if (coralGrid) {
-                let html = '';
-                const month = new Date().getMonth() + 1;
+        });
+        return data;
+    }
+
+    function render() {
+        const isJa = document.body.classList.contains('ja');
+        const marineData = extractMarineData();
+        
+        if (marineData.length === 0) {
+            // Retry after a bit if marine data not loaded yet
+            setTimeout(render, 1000);
+            return;
+        }
+        
+        // === CONDITION CARDS ===
+        const condContainer = document.getElementById('condition-cards-container');
+        if (condContainer) {
+            let html = '';
+            for (const d of marineData) {
+                const score = calcScore(d.wave, d.wind, d.swell);
+                const st = getStatus(score, isJa);
                 
-                for (const loc of locs) {
-                    const data = byLoc[loc.id] || [];
-                    const latestTemp = data.length > 0 ? data[0].water_temperature : null;
-                    
-                    // DHW is 0 in winter (Nov-May), estimate in summer
-                    let dhw = 0;
-                    if (month >= 6 && month <= 10 && latestTemp) {
-                        dhw = Math.max(0, (latestTemp - loc.mmm) * 2);
-                    }
-                    
-                    const st = getDHWStatus(dhw, isJa);
-                    const name = isJa ? loc.ja : loc.en;
-                    
-                    html += `
-                    <div class="coral-stress-card">
-                        <div class="coral-stress-location">${name}</div>
-                        <div class="coral-stress-dhw ${st.cls}">${dhw.toFixed(1)} °C-weeks</div>
-                        <div class="coral-stress-label">DHW</div>
-                        <div class="coral-stress-status ${st.cls}">${st.txt}</div>
-                    </div>`;
-                }
-                coralGrid.innerHTML = html;
+                html += `
+                <div class="condition-card">
+                    <div class="condition-header">
+                        <span class="condition-location">${d.loc}</span>
+                        <span class="condition-status"><span class="status-dot ${st.cls}"></span>${st.txt}</span>
+                    </div>
+                    <div class="condition-bar-container">
+                        <div class="condition-bar ${st.cls}" style="width:${score}%"></div>
+                    </div>
+                    <div class="condition-summary">
+                        <span class="condition-item"><span class="label">${isJa?'波':'Wave'}</span><span class="value">${d.wave.toFixed(1)}m</span></span>
+                        <span class="condition-item"><span class="label">${isJa?'風':'Wind'}</span><span class="value">${d.wind.toFixed(0)}m/s ${d.windD}</span></span>
+                        <span class="condition-item"><span class="label">${isJa?'水温':'Temp'}</span><span class="value">${d.temp.toFixed(1)}°C</span></span>
+                    </div>
+                    <div class="condition-advice"><span>💡</span><span>${st.advice}</span></div>
+                </div>`;
             }
+            condContainer.innerHTML = html || `<div style="color:var(--text-muted)">${isJa?'データなし':'No data'}</div>`;
+        }
+        
+        // === CORAL STRESS ===
+        const coralGrid = document.getElementById('coral-stress-grid');
+        if (coralGrid) {
+            const month = new Date().getMonth() + 1;
+            const mmm = { '瀬底': 29, 'Sesoko': 29, '万座': 29, 'Manza': 29, '小笠原': 28.5, 'Ogasawara': 28.5 };
+            let html = '';
             
-            // === GEAR GUIDE ===
-            const gearGrid = document.getElementById('gear-guide-grid');
-            if (gearGrid) {
-                let html = '';
-                const gearLocs = [
-                    { ids: ['sesoko', 'manza'], ja: '沖縄（瀬底・万座）', en: 'Okinawa' },
-                    { ids: ['ogasawara'], ja: '小笠原', en: 'Ogasawara' }
-                ];
+            for (const d of marineData) {
+                let dhw = 0;
+                const mmmVal = mmm[d.loc] || 29;
+                if (month >= 6 && month <= 10) dhw = Math.max(0, (d.temp - mmmVal) * 2);
+                const st = getDHWStatus(dhw, isJa);
                 
-                for (const gl of gearLocs) {
-                    let temp = null;
-                    for (const id of gl.ids) {
-                        const data = byLoc[id] || [];
-                        if (data.length > 0 && data[0].water_temperature) {
-                            temp = data[0].water_temperature;
-                            break;
-                        }
-                    }
-                    if (!temp) continue;
-                    
-                    const rec = getGearRec(temp, isJa ? 'ja' : 'en');
-                    const name = isJa ? gl.ja : gl.en;
-                    
-                    html += `
-                    <div class="gear-location">
-                        <div class="gear-location-name">
-                            ${name}
-                            <span class="gear-location-temp">${temp.toFixed(1)}°C</span>
-                        </div>
-                        <div class="gear-recommendation">
-                            <strong>${rec.gear}</strong><br>
-                            ${rec.note}
-                        </div>
-                    </div>`;
-                }
-                gearGrid.innerHTML = html || `<div style="color:var(--text-muted)">${isJa ? 'データなし' : 'No data'}</div>`;
+                html += `
+                <div class="coral-stress-card">
+                    <div class="coral-stress-location">${d.loc}</div>
+                    <div class="coral-stress-dhw ${st.cls}">${dhw.toFixed(1)}</div>
+                    <div class="coral-stress-label">°C-weeks</div>
+                    <div class="coral-stress-status ${st.cls}">${st.txt}</div>
+                </div>`;
             }
+            coralGrid.innerHTML = html;
+        }
+        
+        // === GEAR GUIDE ===
+        const gearGrid = document.getElementById('gear-guide-grid');
+        if (gearGrid) {
+            // Group by region
+            const okinawa = marineData.find(d => d.loc.includes('瀬底') || d.loc.includes('万座') || d.loc.includes('Sesoko') || d.loc.includes('Manza'));
+            const ogasawara = marineData.find(d => d.loc.includes('小笠原') || d.loc.includes('Ogasawara'));
             
-        } catch (err) {
-            console.error('Diver enhancements error:', err);
+            let html = '';
+            if (okinawa) {
+                const rec = getGearRec(okinawa.temp, isJa ? 'ja' : 'en');
+                html += `<div class="gear-location"><div class="gear-location-name">${isJa?'沖縄':'Okinawa'} <span class="gear-location-temp">${okinawa.temp.toFixed(1)}°C</span></div><div class="gear-recommendation"><strong>${rec.gear}</strong><br>${rec.note}</div></div>`;
+            }
+            if (ogasawara) {
+                const rec = getGearRec(ogasawara.temp, isJa ? 'ja' : 'en');
+                html += `<div class="gear-location"><div class="gear-location-name">${isJa?'小笠原':'Ogasawara'} <span class="gear-location-temp">${ogasawara.temp.toFixed(1)}°C</span></div><div class="gear-recommendation"><strong>${rec.gear}</strong><br>${rec.note}</div></div>`;
+            }
+            gearGrid.innerHTML = html || `<div style="color:var(--text-muted)">${isJa?'データなし':'No data'}</div>`;
         }
     }
 
-    // Initialize
+    // Wait for marine monitor to load, then render
     document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(renderDiverEnhancements, 800);
+        setTimeout(render, 1500);
         
-        // Re-render on language change
-        const observer = new MutationObserver(() => renderDiverEnhancements());
+        const observer = new MutationObserver(() => setTimeout(render, 500));
         observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
     });
 })();
