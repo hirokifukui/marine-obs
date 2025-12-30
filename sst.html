@@ -415,13 +415,13 @@
             <p class="lead">
                 <span data-lang="en">
                     Sea Surface Temperature is the most fundamental indicator for coral reef health. 
-                    When water temperatures exceed the seasonal maximum that corals have adapted to, 
-                    thermal stress accumulates and can trigger coral bleaching.
+                    Corals can only survive within a narrow temperature range—too hot or too cold, 
+                    and they suffer stress that can lead to bleaching and mortality.
                 </span>
                 <span data-lang="ja">
                     海水温はサンゴ礁の健康状態を示す最も基本的な指標です。
-                    サンゴが適応してきた季節的な最高水温を超えると、熱ストレスが蓄積され、
-                    白化現象を引き起こす可能性があります。
+                    サンゴは狭い温度範囲でしか生きられません。高すぎても低すぎても、
+                    ストレスを受け、白化や死亡につながる可能性があります。
                 </span>
             </p>
         </div>
@@ -626,10 +626,12 @@
                 <span data-lang="en">
                     Multi-scale Ultra-high Resolution SST Analysis. 
                     Daily, 1km resolution global dataset combining satellite and in-situ observations.
+                    <br><em>Note: Satellite data is typically available with a 2-3 day delay.</em>
                 </span>
                 <span data-lang="ja">
                     多重スケール超高解像度SST解析。
                     衛星観測と現地観測を組み合わせた、日次・1km解像度のグローバルデータセット。
+                    <br><em>※ 衛星データは通常2-3日遅れで公開されます。</em>
                 </span>
                 <br><br>
                 <a href="https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1" target="_blank">
@@ -710,8 +712,8 @@
             const dateStrJa = dateObj.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
             
             document.getElementById('sst-update-date').innerHTML = `
-                <span data-lang="en">${dateStrEn}</span>
-                <span data-lang="ja">${dateStrJa}</span>
+                <span data-lang="en">Latest: ${dateStrEn}</span>
+                <span data-lang="ja">最新データ: ${dateStrJa}</span>
             `;
             // Re-apply language
             const lang = localStorage.getItem('lang') || 'en';
