@@ -23,15 +23,15 @@
             --accent-green: #2f855a;
             --border: #e2e8f0;
             --shadow: 0 1px 3px rgba(0,0,0,0.08);
-            --hot-color: #dc2626;
-            --cold-color: #0891b2;
-            --loser-bg: #fef2f2;
-            --loser-border: #fecaca;
-            --winner-bg: #f0fdf4;
-            --winner-border: #bbf7d0;
             --spawning-purple: #8b5cf6;
             --spawning-light: #f5f3ff;
             --spawning-border: #ddd6fe;
+            --molecule-blue: #3b82f6;
+            --molecule-light: #eff6ff;
+            --molecule-border: #bfdbfe;
+            --disruption-red: #ef4444;
+            --disruption-light: #fef2f2;
+            --disruption-border: #fecaca;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -44,9 +44,7 @@
             min-height: 100vh;
         }
 
-        body.ja {
-            font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
-        }
+        body.ja { font-family: 'Noto Sans JP', 'DM Sans', sans-serif; }
 
         /* Header */
         header {
@@ -69,7 +67,6 @@
         .logo {
             font-weight: 600;
             font-size: 0.95rem;
-            letter-spacing: -0.01em;
             display: flex;
             align-items: center;
             gap: 0.75rem;
@@ -78,22 +75,14 @@
         }
 
         .logo-icon {
-            overflow: hidden;
             width: 28px;
             height: 28px;
             background: linear-gradient(135deg, #5b9a94 0%, #2b6cb0 100%);
             border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
+            overflow: hidden;
         }
 
-        .header-controls {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+        .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
 
         .lang-switch {
             font-size: 0.8rem;
@@ -122,7 +111,6 @@
             padding: 2.5rem 2rem;
         }
 
-        /* Breadcrumb */
         .breadcrumb {
             font-size: 0.8rem;
             color: var(--text-muted);
@@ -134,65 +122,133 @@
             text-decoration: none;
         }
 
-        .breadcrumb a:hover { text-decoration: underline; }
-
-        /* Hero Section */
+        /* ===== HERO SECTION (Enhanced) ===== */
         .hero-section {
             background: linear-gradient(135deg, var(--spawning-purple), #a855f7);
             color: white;
-            text-align: center;
-            padding: 3rem 2rem;
+            padding: 2.5rem 2rem;
             border-radius: 12px;
             margin-bottom: 2.5rem;
         }
 
-        .hero-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
+        .hero-main {
+            text-align: center;
+            margin-bottom: 2rem;
         }
+
+        .hero-icon { font-size: 3.5rem; margin-bottom: 0.75rem; }
 
         .prediction-date {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
         }
 
-        body.ja .prediction-date {
-            font-size: 2rem;
+        body.ja .prediction-date { font-size: 1.8rem; }
+
+        .prediction-time-precise {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
         }
 
-        .prediction-time {
-            font-size: 1.5rem;
+        .prediction-time-range {
+            font-size: 1rem;
+            opacity: 0.9;
             margin-bottom: 0.5rem;
-            opacity: 0.95;
         }
 
         .prediction-location {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-        }
-
-        .confidence-level {
             font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .confidence-level .stars {
-            color: #fbbf24;
+            opacity: 0.85;
+            margin-bottom: 1rem;
         }
 
         .countdown {
-            font-size: 1.1rem;
+            font-size: 1rem;
             background: rgba(255,255,255,0.2);
-            padding: 0.75rem 1.5rem;
+            padding: 0.6rem 1.25rem;
             border-radius: 8px;
             display: inline-block;
-            backdrop-filter: blur(4px);
         }
 
-        /* Content sections */
+        /* Dark Period Visualization */
+        .dark-period-viz {
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .dark-period-title {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+
+        .dark-period-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .time-label {
+            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .bar-container {
+            flex: 1;
+            height: 24px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar-dark {
+            position: absolute;
+            height: 100%;
+            background: linear-gradient(90deg, #1e1b4b, #312e81);
+            border-radius: 4px;
+        }
+
+        .bar-spawning {
+            position: absolute;
+            height: 100%;
+            background: #fbbf24;
+            opacity: 0.9;
+        }
+
+        .dark-period-legend {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 0.75rem;
+            opacity: 0.85;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+        }
+
+        .legend-dot.dark { background: #312e81; }
+        .legend-dot.spawning { background: #fbbf24; }
+
+        /* ===== CONTENT SECTIONS ===== */
         .content-section {
             margin-bottom: 2.5rem;
         }
@@ -204,59 +260,250 @@
             color: var(--text-primary);
         }
 
-        /* Cards */
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 1.5rem;
-            margin-bottom: 1.5rem;
             box-shadow: var(--shadow);
         }
 
-        /* Factors grid */
-        .factors-grid {
+        /* ===== SECTION 1: Environmental Cue Hierarchy ===== */
+        .hierarchy-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
         }
 
         @media (max-width: 768px) {
-            .factors-grid { grid-template-columns: repeat(2, 1fr); }
+            .hierarchy-grid { grid-template-columns: 1fr; }
         }
 
-        @media (max-width: 480px) {
-            .factors-grid { grid-template-columns: 1fr; }
-        }
-
-        .factor-card {
+        .hierarchy-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 1.25rem;
             text-align: center;
             box-shadow: var(--shadow);
+            position: relative;
         }
 
-        .factor-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+        .hierarchy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 8px 8px 0 0;
         }
 
-        .factor-title {
+        .hierarchy-card.season::before { background: var(--accent-warm); }
+        .hierarchy-card.lunar::before { background: var(--spawning-purple); }
+        .hierarchy-card.daily::before { background: var(--accent-green); }
+
+        .hierarchy-scale {
+            font-size: 0.7rem;
             font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.35rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            opacity: 0.6;
+        }
+
+        .hierarchy-question {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
             color: var(--text-primary);
         }
 
-        .factor-card p {
+        .hierarchy-factors {
             font-size: 0.8rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
             line-height: 1.5;
         }
 
-        /* Calendar */
+        .hierarchy-precision {
+            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--bg-secondary);
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .hierarchy-citation {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-style: italic;
+        }
+
+        /* ===== SECTION 2: Molecular Cascade (4-Wave Model) ===== */
+        .molecule-section {
+            background: var(--molecule-light);
+            border: 1px solid var(--molecule-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .molecule-intro {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
+        }
+
+        .wave-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .wave-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--molecule-blue), var(--spawning-purple));
+            border-radius: 2px;
+        }
+
+        .wave-item {
+            position: relative;
+            margin-bottom: 1.25rem;
+            padding-left: 1rem;
+        }
+
+        .wave-item:last-child { margin-bottom: 0; }
+
+        .wave-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0.35rem;
+            width: 14px;
+            height: 14px;
+            background: var(--molecule-blue);
+            border-radius: 50%;
+            border: 3px solid var(--molecule-light);
+        }
+
+        .wave-item.final::before {
+            background: var(--spawning-purple);
+            width: 18px;
+            height: 18px;
+            left: -1.6rem;
+        }
+
+        .wave-timing {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--molecule-blue);
+            margin-bottom: 0.25rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .wave-item.final .wave-timing {
+            color: var(--spawning-purple);
+        }
+
+        .wave-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .wave-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .molecule-insight {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 3px solid var(--molecule-blue);
+            padding: 0.75rem 1rem;
+            margin-top: 1.25rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .molecule-insight strong {
+            color: var(--molecule-blue);
+        }
+
+        /* ===== SECTION 3: Anthropogenic Disruption ===== */
+        .disruption-section {
+            background: var(--disruption-light);
+            border: 1px solid var(--disruption-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .disruption-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        @media (max-width: 600px) {
+            .disruption-grid { grid-template-columns: 1fr; }
+        }
+
+        .disruption-card {
+            background: white;
+            border: 1px solid var(--disruption-border);
+            border-radius: 6px;
+            padding: 1rem;
+        }
+
+        .disruption-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .disruption-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            color: var(--disruption-red);
+        }
+
+        .disruption-stat {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .disruption-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .disruption-warning {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 3px solid var(--disruption-red);
+            padding: 0.75rem 1rem;
+            margin-top: 1.25rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .disruption-warning strong {
+            color: var(--disruption-red);
+        }
+
+        /* ===== SECTION 4: Spawning Calendar ===== */
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
@@ -275,86 +522,69 @@
 
         .calendar-day {
             text-align: center;
-            padding: 0.6rem 0.25rem;
+            padding: 0.5rem 0.25rem;
             border: 1px solid var(--border);
             border-radius: 6px;
             font-size: 0.8rem;
-            min-height: 50px;
+            min-height: 55px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
 
-        .calendar-day.empty {
-            border: none;
-            background: transparent;
-        }
+        .calendar-day.empty { border: none; background: transparent; }
+        .calendar-day.fullmoon { background: #fef3c7; border-color: #fcd34d; }
+        .calendar-day.spawning-window { background: var(--spawning-light); border-color: var(--spawning-border); }
+        .calendar-day.peak { background: var(--spawning-purple); color: white; border-color: var(--spawning-purple); font-weight: 600; }
 
-        .calendar-day.fullmoon {
-            background: #fef3c7;
-            border-color: #fcd34d;
-        }
-
-        .calendar-day.spawning-window {
-            background: var(--spawning-light);
-            border-color: var(--spawning-border);
-        }
-
-        .calendar-day.peak {
-            background: var(--spawning-purple);
-            color: white;
-            border-color: var(--spawning-purple);
-            font-weight: 600;
-        }
-
-        .calendar-day .prob {
+        .calendar-day .time-hint {
             font-size: 0.6rem;
-            margin-top: 0.25rem;
-            color: #fbbf24;
+            margin-top: 0.2rem;
+            font-family: 'JetBrains Mono', monospace;
+            opacity: 0.8;
         }
 
-        .calendar-day.peak .prob {
-            color: white;
+        .calendar-day.peak .time-hint { color: white; }
+
+        /* ===== SECTION 5: Prediction Interface (Placeholder) ===== */
+        .interface-placeholder {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 2px dashed var(--accent-teal);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
         }
 
-        /* Timeline */
-        .timeline {
-            border-left: 3px solid var(--spawning-purple);
-            padding-left: 1.5rem;
-            margin-left: 0.5rem;
+        .interface-placeholder h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-teal);
         }
 
-        .timeline-item {
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -1.85rem;
-            top: 0.25rem;
-            width: 12px;
-            height: 12px;
-            background: var(--spawning-purple);
-            border-radius: 50%;
-            border: 2px solid var(--bg-secondary);
-        }
-
-        .timeline-title {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--spawning-purple);
-            margin-bottom: 0.25rem;
-        }
-
-        .timeline-item p {
+        .interface-placeholder p {
             font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .interface-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .interface-feature {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 0.4rem 0.75rem;
+            font-size: 0.75rem;
             color: var(--text-secondary);
         }
 
-        /* Insights box */
+        /* ===== For Divers ===== */
         .insights-box {
             background: linear-gradient(135deg, var(--spawning-light) 0%, #fef7ff 100%);
             border: 1px solid var(--spawning-border);
@@ -384,16 +614,10 @@
             border-bottom: 1px solid rgba(139, 92, 246, 0.1);
         }
 
-        .insights-list li:last-child {
-            border-bottom: none;
-        }
+        .insights-list li:last-child { border-bottom: none; }
+        .insights-list .label { font-weight: 600; color: var(--text-primary); }
 
-        .insights-list .label {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* Source info */
+        /* ===== References ===== */
         .source-info {
             font-size: 0.75rem;
             color: var(--text-muted);
@@ -402,21 +626,10 @@
             border-radius: 6px;
         }
 
-        .source-info a {
-            color: var(--accent-teal);
-            text-decoration: none;
-        }
-
+        .source-info a { color: var(--accent-teal); text-decoration: none; }
         .source-info a:hover { text-decoration: underline; }
-
-        .source-info ul {
-            margin-top: 0.5rem;
-            padding-left: 1.25rem;
-        }
-
-        .source-info li {
-            margin-bottom: 0.35rem;
-        }
+        .source-info ul { margin-top: 0.5rem; padding-left: 1.25rem; }
+        .source-info li { margin-bottom: 0.35rem; }
 
         /* Footer */
         footer {
@@ -429,16 +642,12 @@
             border-top: 1px solid var(--border);
         }
 
-        footer a {
-            color: var(--accent-teal);
-            text-decoration: none;
-        }
+        footer a { color: var(--accent-teal); text-decoration: none; }
 
         /* Language toggle */
         [data-lang="ja"] { display: none; }
         body.ja [data-lang="en"] { display: none; }
         body.ja [data-lang="ja"] { display: inline; }
-
         div[data-lang="ja"], li[data-lang="ja"], p[data-lang="ja"] { display: none; }
         body.ja div[data-lang="en"], body.ja li[data-lang="en"], body.ja p[data-lang="en"] { display: none; }
         body.ja div[data-lang="ja"] { display: block; }
@@ -450,14 +659,12 @@
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
-                <div class="logo-icon"><img src="logo.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="logo-icon"><img src="logo.png" alt="logo"></div>
                 <span data-lang="en">marine-obs.org</span><span data-lang="ja">海の定点観測</span>
             </a>
-            <div class="header-controls">
-                <div class="lang-switch">
-                    <button onclick="setLang('en')" id="lang-en" class="active">EN</button>
-                    <button onclick="setLang('ja')" id="lang-ja">JA</button>
-                </div>
+            <div class="lang-switch">
+                <button onclick="setLang('en')" id="lang-en" class="active">EN</button>
+                <button onclick="setLang('ja')" id="lang-ja">JA</button>
             </div>
         </div>
     </header>
@@ -469,73 +676,227 @@
             <span data-lang="ja">サンゴ産卵予測</span>
         </nav>
 
-        <!-- Hero Section -->
+        <!-- ===== HERO: Enhanced Prediction ===== -->
         <section class="hero-section">
-            <div class="hero-icon">🌙</div>
-            <div class="prediction-date">
-                <span data-lang="en">June 6, 2026 (Sat)</span>
-                <span data-lang="ja">2026年6月6日（土）</span>
+            <div class="hero-main">
+                <div class="hero-icon">🌙</div>
+                <div class="prediction-date">
+                    <span data-lang="en">June 6, 2026 (Sat)</span>
+                    <span data-lang="ja">2026年6月6日（土）</span>
+                </div>
+                <div class="prediction-time-precise">21:42 ± 23min</div>
+                <div class="prediction-time-range">
+                    <span data-lang="en">Window: 21:00 – 23:00</span>
+                    <span data-lang="ja">産卵ウィンドウ: 21:00 – 23:00</span>
+                </div>
+                <div class="prediction-location">
+                    <span data-lang="en">Onna Village, Okinawa · Acropora spp.</span>
+                    <span data-lang="ja">沖縄県恩納村 · ミドリイシ属</span>
+                </div>
+                <div class="countdown" id="countdown"></div>
             </div>
-            <div class="prediction-time">21:00 - 23:00</div>
-            <div class="prediction-location">
-                <span data-lang="en">Onna Village, Okinawa · Acropora spp.</span>
-                <span data-lang="ja">沖縄県恩納村 · ミドリイシ属</span>
+
+            <!-- Dark Period Visualization -->
+            <div class="dark-period-viz">
+                <div class="dark-period-title">
+                    <span data-lang="en">Dark Period: Spawning Trigger Window</span>
+                    <span data-lang="ja">暗黒期間：産卵トリガーウィンドウ</span>
+                </div>
+                <div class="dark-period-bar">
+                    <div class="time-label">19:24<br><span style="font-size:0.6rem; opacity:0.7">sunset</span></div>
+                    <div class="bar-container">
+                        <!-- Dark period: 19:24 - 23:07 = 3h43m, total bar = 4h -->
+                        <div class="bar-dark" style="left: 0; width: 93%;"></div>
+                        <!-- Spawning peak: 21:00-23:00 within dark period -->
+                        <div class="bar-spawning" style="left: 40%; width: 50%;"></div>
+                    </div>
+                    <div class="time-label">23:07<br><span style="font-size:0.6rem; opacity:0.7">moonrise</span></div>
+                </div>
+                <div class="dark-period-legend">
+                    <div class="legend-item">
+                        <div class="legend-dot dark"></div>
+                        <span data-lang="en">Dark Period (3h43m)</span>
+                        <span data-lang="ja">暗黒期間 (3時間43分)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot spawning"></div>
+                        <span data-lang="en">Spawning Window</span>
+                        <span data-lang="ja">産卵ウィンドウ</span>
+                    </div>
+                </div>
             </div>
-            <div class="confidence-level">
-                <span data-lang="en">Confidence: </span>
-                <span data-lang="ja">信頼度: </span>
-                <span class="stars">★★★★★</span> Primary
-            </div>
-            <div class="countdown" id="countdown"></div>
         </section>
 
-        <!-- Why This Date? -->
+        <!-- ===== SECTION 1: Environmental Cue Hierarchy ===== -->
         <section class="content-section">
             <h2>
-                <span data-lang="en">Why This Date?</span>
-                <span data-lang="ja">なぜこの日？</span>
+                <span data-lang="en">Environmental Cue Hierarchy</span>
+                <span data-lang="ja">環境キュー階層モデル</span>
             </h2>
-            <div class="factors-grid">
-                <div class="factor-card">
-                    <div class="factor-icon">🌡️</div>
-                    <div class="factor-title">
-                        <span data-lang="en">Water Temp</span>
-                        <span data-lang="ja">水温</span>
+            <div class="hierarchy-grid">
+                <div class="hierarchy-card season">
+                    <div class="hierarchy-scale">
+                        <span data-lang="en">Seasonal</span>
+                        <span data-lang="ja">季節スケール</span>
                     </div>
-                    <p data-lang="en">29°C+ sustained opens spawning window</p>
-                    <p data-lang="ja">29°C以上継続で産卵Window</p>
+                    <div class="hierarchy-question">
+                        <span data-lang="en">Which month?</span>
+                        <span data-lang="ja">何月に産卵？</span>
+                    </div>
+                    <div class="hierarchy-factors">
+                        <span data-lang="en">SST rate of change<br>+ Wind pattern</span>
+                        <span data-lang="ja">水温変化率<br>+ 風場パターン</span>
+                    </div>
+                    <div class="hierarchy-precision">± 2 weeks</div>
+                    <div class="hierarchy-citation">Keith et al. 2016</div>
                 </div>
-                <div class="factor-card">
-                    <div class="factor-icon">🌕</div>
-                    <div class="factor-title">
-                        <span data-lang="en">Full Moon</span>
-                        <span data-lang="ja">満月</span>
+                <div class="hierarchy-card lunar">
+                    <div class="hierarchy-scale">
+                        <span data-lang="en">Lunar</span>
+                        <span data-lang="ja">月スケール</span>
                     </div>
-                    <p data-lang="en">June 1, 2026</p>
-                    <p data-lang="ja">2026年6月1日</p>
+                    <div class="hierarchy-question">
+                        <span data-lang="en">Which night?</span>
+                        <span data-lang="ja">満月から何日後？</span>
+                    </div>
+                    <div class="hierarchy-factors">
+                        <span data-lang="en">Dark period duration<br>(sunset → moonrise)</span>
+                        <span data-lang="ja">暗黒期間の長さ<br>(日没→月の出)</span>
+                    </div>
+                    <div class="hierarchy-precision">± 3 days</div>
+                    <div class="hierarchy-citation">Lin et al. 2021 (PNAS)</div>
                 </div>
-                <div class="factor-card">
-                    <div class="factor-icon">🌑</div>
-                    <div class="factor-title">
-                        <span data-lang="en">Dark Period</span>
-                        <span data-lang="ja">暗黒期間</span>
+                <div class="hierarchy-card daily">
+                    <div class="hierarchy-scale">
+                        <span data-lang="en">Daily</span>
+                        <span data-lang="ja">日スケール</span>
                     </div>
-                    <p data-lang="en">NAFM 5 = June 6</p>
-                    <p data-lang="ja">満月後5日 = 6月6日</p>
-                </div>
-                <div class="factor-card">
-                    <div class="factor-icon">🌙</div>
-                    <div class="factor-title">
-                        <span data-lang="en">Moonrise</span>
-                        <span data-lang="ja">月の出</span>
+                    <div class="hierarchy-question">
+                        <span data-lang="en">What time?</span>
+                        <span data-lang="ja">何時に産卵？</span>
                     </div>
-                    <p data-lang="en">Late moonrise optimal</p>
-                    <p data-lang="ja">遅い月の出が最適</p>
+                    <div class="hierarchy-factors">
+                        <span data-lang="en">Sunset offset<br>(species-specific)</span>
+                        <span data-lang="ja">日没後オフセット<br>(種特異的)</span>
+                    </div>
+                    <div class="hierarchy-precision">± 30 min</div>
+                    <div class="hierarchy-citation">Babcock et al. 1986</div>
                 </div>
             </div>
         </section>
 
-        <!-- Spawning Calendar -->
+        <!-- ===== SECTION 2: Molecular Cascade ===== -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">From Molecule to Behavior: The 4-Wave Model</span>
+                <span data-lang="ja">分子から行動へ：4波モデル</span>
+            </h2>
+            <div class="molecule-section">
+                <p class="molecule-intro">
+                    <span data-lang="en">Coral spawning is not a passive response to environmental cues. RNA-Seq analysis reveals an intricate internal program that unfolds over two weeks before spawning night.</span>
+                    <span data-lang="ja">サンゴの産卵は環境キューへの受動的反応ではない。RNA-Seq解析により、産卵夜の2週間前から展開する精緻な内部プログラムが明らかになった。</span>
+                </p>
+                <div class="wave-timeline">
+                    <div class="wave-item">
+                        <div class="wave-timing">T − 14 days</div>
+                        <div class="wave-title">
+                            <span data-lang="en">Wave 1: Colony Communication</span>
+                            <span data-lang="ja">第1波：コロニー間通信</span>
+                        </div>
+                        <div class="wave-desc">
+                            <span data-lang="en">Receptor functions activate. Prostaglandin secretion begins inter-colony signaling.</span>
+                            <span data-lang="ja">受容体機能が活性化。プロスタグランジン分泌でコロニー間シグナル開始。</span>
+                        </div>
+                    </div>
+                    <div class="wave-item">
+                        <div class="wave-timing">T − 7~14 days</div>
+                        <div class="wave-title">
+                            <span data-lang="en">Wave 2: Gametogenesis</span>
+                            <span data-lang="ja">第2波：配偶子形成</span>
+                        </div>
+                        <div class="wave-desc">
+                            <span data-lang="en">TGF-β signaling and kinase cascades drive sperm formation.</span>
+                            <span data-lang="ja">TGF-βシグナリングとキナーゼカスケードが精子形成を駆動。</span>
+                        </div>
+                    </div>
+                    <div class="wave-item">
+                        <div class="wave-timing">T − 7 days</div>
+                        <div class="wave-title">
+                            <span data-lang="en">Wave 3: Bundle Preparation</span>
+                            <span data-lang="ja">第3波：バンドル準備</span>
+                        </div>
+                        <div class="wave-desc">
+                            <span data-lang="en">Sperm capacitation. Egg-sperm bundle materials assembled.</span>
+                            <span data-lang="ja">精子capacitation。卵精子バンドル材料が組み立てられる。</span>
+                        </div>
+                    </div>
+                    <div class="wave-item final">
+                        <div class="wave-timing">T − 0</div>
+                        <div class="wave-title">
+                            <span data-lang="en">Wave 4: Spawning Cascade</span>
+                            <span data-lang="ja">第4波：産卵カスケード</span>
+                        </div>
+                        <div class="wave-desc">
+                            <span data-lang="en">Transcription factor ELF1 activates → synchronized release.</span>
+                            <span data-lang="ja">転写因子ELF1活性化 → 同期放出。</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="molecule-insight">
+                    <strong><span data-lang="en">Key Insight:</span><span data-lang="ja">重要な知見：</span></strong>
+                    <span data-lang="en"> This system operates <em>independently of moonlight</em>, explaining why Acropora successfully spawns across diverse global environments.</span>
+                    <span data-lang="ja"> この系は<em>月光非依存</em>で機能し、ミドリイシ属が多様な地球環境で産卵に成功する理由を説明する。</span>
+                    <br><span style="font-size: 0.7rem; opacity: 0.8;">— Yoshioka et al. 2025, Molecular Ecology</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 3: Anthropogenic Disruption ===== -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Anthropogenic Disruption</span>
+                <span data-lang="ja">人為的攪乱</span>
+            </h2>
+            <div class="disruption-section">
+                <div class="disruption-grid">
+                    <div class="disruption-card">
+                        <div class="disruption-icon">💡</div>
+                        <div class="disruption-title">
+                            <span data-lang="en">Light Pollution (ALAN)</span>
+                            <span data-lang="ja">光害 (ALAN)</span>
+                        </div>
+                        <div class="disruption-stat">1–3 days</div>
+                        <div class="disruption-desc">
+                            <span data-lang="en">Shift toward full moon. Artificial light shortens the perceived "dark period," advancing spawning timing.</span>
+                            <span data-lang="ja">満月方向へシフト。人工光が「暗黒期間」を短縮し、産卵タイミングが早まる。</span>
+                        </div>
+                    </div>
+                    <div class="disruption-card">
+                        <div class="disruption-icon">🔇</div>
+                        <div class="disruption-title">
+                            <span data-lang="en">Silent Threat</span>
+                            <span data-lang="ja">沈黙の脅威</span>
+                        </div>
+                        <div class="disruption-stat">
+                            <span data-lang="en">Invisible</span>
+                            <span data-lang="ja">不可視</span>
+                        </div>
+                        <div class="disruption-desc">
+                            <span data-lang="en">Unlike bleaching, synchrony loss has no visible signs. Gamete release timing diverges → fertilization failure.</span>
+                            <span data-lang="ja">白化と異なり、同期性崩壊は目に見えない。配偶子放出タイミングがズレ → 受精失敗。</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="disruption-warning">
+                    <strong><span data-lang="en">High-risk regions:</span><span data-lang="ja">高リスク地域：</span></strong>
+                    <span data-lang="en"> Red Sea, Persian Gulf, and other rapidly developing coastal areas. 2,135 spawning observations analyzed.</span>
+                    <span data-lang="ja"> 紅海、ペルシャ湾など沿岸開発が進む地域。2,135件の産卵観察を解析。</span>
+                    <br><span style="font-size: 0.7rem; opacity: 0.8;">— Davies et al. 2023, Nature Communications; Shlesinger & Loya 2019, Science</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 4: Spawning Calendar ===== -->
         <section class="content-section">
             <h2>
                 <span data-lang="en">Spawning Calendar (June 2026)</span>
@@ -543,7 +904,6 @@
             </h2>
             <div class="card">
                 <div class="calendar-grid">
-                    <!-- Headers -->
                     <div class="calendar-header"><span data-lang="en">Sun</span><span data-lang="ja">日</span></div>
                     <div class="calendar-header"><span data-lang="en">Mon</span><span data-lang="ja">月</span></div>
                     <div class="calendar-header"><span data-lang="en">Tue</span><span data-lang="ja">火</span></div>
@@ -552,25 +912,22 @@
                     <div class="calendar-header"><span data-lang="en">Fri</span><span data-lang="ja">金</span></div>
                     <div class="calendar-header"><span data-lang="en">Sat</span><span data-lang="ja">土</span></div>
                     
-                    <!-- Week 1: June 2026 starts on Monday -->
                     <div class="calendar-day empty"></div>
-                    <div class="calendar-day fullmoon">1<div class="prob">🌕</div></div>
+                    <div class="calendar-day fullmoon">1<div class="time-hint">🌕</div></div>
                     <div class="calendar-day">2</div>
-                    <div class="calendar-day spawning-window">3<div class="prob">★☆☆☆☆</div></div>
-                    <div class="calendar-day spawning-window">4<div class="prob">★★☆☆☆</div></div>
-                    <div class="calendar-day spawning-window">5<div class="prob">★★★☆☆</div></div>
-                    <div class="calendar-day peak">6<div class="prob">★★★★★</div></div>
+                    <div class="calendar-day spawning-window">3<div class="time-hint">22:30</div></div>
+                    <div class="calendar-day spawning-window">4<div class="time-hint">22:15</div></div>
+                    <div class="calendar-day spawning-window">5<div class="time-hint">21:55</div></div>
+                    <div class="calendar-day peak">6<div class="time-hint">21:42</div></div>
                     
-                    <!-- Week 2 -->
-                    <div class="calendar-day spawning-window">7<div class="prob">★★★★☆</div></div>
-                    <div class="calendar-day spawning-window">8<div class="prob">★★★☆☆</div></div>
-                    <div class="calendar-day spawning-window">9<div class="prob">★★☆☆☆</div></div>
+                    <div class="calendar-day spawning-window">7<div class="time-hint">21:50</div></div>
+                    <div class="calendar-day spawning-window">8<div class="time-hint">22:05</div></div>
+                    <div class="calendar-day spawning-window">9<div class="time-hint">22:20</div></div>
                     <div class="calendar-day">10</div>
                     <div class="calendar-day">11</div>
                     <div class="calendar-day">12</div>
                     <div class="calendar-day">13</div>
                     
-                    <!-- Week 3 -->
                     <div class="calendar-day">14</div>
                     <div class="calendar-day">15</div>
                     <div class="calendar-day">16</div>
@@ -579,7 +936,6 @@
                     <div class="calendar-day">19</div>
                     <div class="calendar-day">20</div>
                     
-                    <!-- Week 4 -->
                     <div class="calendar-day">21</div>
                     <div class="calendar-day">22</div>
                     <div class="calendar-day">23</div>
@@ -588,7 +944,6 @@
                     <div class="calendar-day">26</div>
                     <div class="calendar-day">27</div>
                     
-                    <!-- Week 5 -->
                     <div class="calendar-day">28</div>
                     <div class="calendar-day">29</div>
                     <div class="calendar-day">30</div>
@@ -600,40 +955,27 @@
             </div>
         </section>
 
-        <!-- Prediction Update Schedule -->
+        <!-- ===== SECTION 5: Prediction Interface Placeholder ===== -->
         <section class="content-section">
             <h2>
-                <span data-lang="en">Prediction Update Schedule</span>
-                <span data-lang="ja">予測更新スケジュール</span>
+                <span data-lang="en">Interactive Prediction (Coming Soon)</span>
+                <span data-lang="ja">インタラクティブ予測（準備中）</span>
             </h2>
-            <div class="card">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-title">
-                            T-60: <span data-lang="en">Early April 2026</span><span data-lang="ja">2026年4月上旬</span>
-                        </div>
-                        <p data-lang="en">Initial prediction based on astronomical data (lunar cycles, historical patterns)</p>
-                        <p data-lang="ja">天文データに基づく初期予測（月齢サイクル、過去パターン）</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-title">
-                            T-30: <span data-lang="en">Early May 2026</span><span data-lang="ja">2026年5月上旬</span>
-                        </div>
-                        <p data-lang="en">Water temperature correction applied (±4 days per 1°C deviation)</p>
-                        <p data-lang="ja">水温補正適用（1°C偏差あたり±4日）</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-title">
-                            T-7: <span data-lang="en">Late May 2026</span><span data-lang="ja">2026年5月下旬</span>
-                        </div>
-                        <p data-lang="en">Final confirmation based on weather forecast (precipitation, wind)</p>
-                        <p data-lang="ja">気象予報に基づく最終確認（降水量、風速）</p>
-                    </div>
+            <div class="interface-placeholder">
+                <h3>🔮 Real-time Calculation Engine</h3>
+                <p data-lang="en">Select location, date, and species to get precise spawning predictions with confidence intervals.</p>
+                <p data-lang="ja">地点・日付・種を選択して、信頼区間付きの精密な産卵予測を取得。</p>
+                <div class="interface-features">
+                    <div class="interface-feature">📍 Multi-location</div>
+                    <div class="interface-feature">🌅 SunCalc integration</div>
+                    <div class="interface-feature">🌡️ SST correction</div>
+                    <div class="interface-feature">📊 Confidence %</div>
+                    <div class="interface-feature">📅 Multi-year forecast</div>
                 </div>
             </div>
         </section>
 
-        <!-- For Divers -->
+        <!-- ===== For Divers ===== -->
         <section class="content-section">
             <h2>
                 <span data-lang="en">For Divers</span>
@@ -650,41 +992,44 @@
                         <span data-lang="ja"> 2026年6月4日〜8日（5泊）</span>
                     </li>
                     <li>
+                        <span class="label"><span data-lang="en">Peak Night:</span><span data-lang="ja">ピーク:</span></span>
+                        <span data-lang="en"> June 6, enter water by 21:00, peak activity ~21:42</span>
+                        <span data-lang="ja"> 6月6日、21:00までにエントリー、ピーク活動 ~21:42</span>
+                    </li>
+                    <li>
                         <span class="label"><span data-lang="en">Equipment:</span><span data-lang="ja">機材:</span></span>
-                        <span data-lang="en"> Red light filter recommended (minimizes coral stimulation)</span>
+                        <span data-lang="en"> Red light filter (minimizes coral stimulation)</span>
                         <span data-lang="ja"> 赤色フィルター推奨（サンゴへの刺激を軽減）</span>
                     </li>
                     <li>
                         <span class="label"><span data-lang="en">Observation Points:</span><span data-lang="ja">観察ポイント:</span></span>
-                        <span data-lang="en"> Shallow reef areas, 3-8m depth, table corals (Acropora)</span>
-                        <span data-lang="ja"> 浅いリーフ、水深3-8m、テーブルサンゴ（ミドリイシ）</span>
-                    </li>
-                    <li>
-                        <span class="label"><span data-lang="en">Spawning Time:</span><span data-lang="ja">産卵時刻:</span></span>
-                        <span data-lang="en"> 21:00-23:00 (2-4 hours after sunset)</span>
-                        <span data-lang="ja"> 21:00-23:00（日没後2-4時間）</span>
+                        <span data-lang="en"> Shallow reef 3-8m, table corals (Acropora)</span>
+                        <span data-lang="ja"> 浅いリーフ 3-8m、テーブルサンゴ（ミドリイシ）</span>
                     </li>
                 </ul>
             </div>
         </section>
 
-        <!-- Data Sources -->
+        <!-- ===== References ===== -->
         <section class="content-section">
             <h2>
                 <span data-lang="en">References</span>
-                <span data-lang="ja">データソース</span>
+                <span data-lang="ja">参考文献</span>
             </h2>
             <div class="source-info">
-                <span data-lang="en"><strong>Key Literature:</strong></span>
-                <span data-lang="ja"><strong>主要文献:</strong></span>
+                <strong><span data-lang="en">Key Literature (22 papers):</span><span data-lang="ja">主要文献（22本）:</span></strong>
                 <ul>
-                    <li>Sakai et al. 2024 - Royal Society Open Science (Churaumi Aquarium 15-year data)</li>
-                    <li>Lin et al. 2021 - PNAS (Moonlight trigger mechanism)</li>
-                    <li>Foster et al. 2018 - Nature Communications (Split spawning)</li>
+                    <li><strong>Lin et al. 2021</strong> – PNAS: Dark period as spawning trigger</li>
+                    <li><strong>Yoshioka et al. 2025</strong> – Mol Ecol: 4-wave molecular cascade</li>
+                    <li><strong>Davies et al. 2023</strong> – Nat Comms: Light pollution effects (2,135 obs)</li>
+                    <li><strong>Shlesinger & Loya 2019</strong> – Science: Synchrony loss as silent threat</li>
+                    <li><strong>Keith et al. 2016</strong> – SST rate of change as seasonal predictor</li>
+                    <li><strong>Sakai et al. 2024</strong> – R Soc Open Sci: Churaumi 15-year data</li>
+                    <li><strong>Levy et al. 2007</strong> – Science: Cryptochrome moonlight detection</li>
                 </ul>
                 <br>
-                <span data-lang="en">Full collection: Zotero CoralSpawning (H6VQ6NK9)</span>
-                <span data-lang="ja">完全な文献リスト: Zotero CoralSpawning (H6VQ6NK9)</span>
+                <span data-lang="en">Full collection: <a href="#">Zotero Coral Spawning (H6VQ6NK9)</a></span>
+                <span data-lang="ja">完全な文献リスト: <a href="#">Zotero Coral Spawning (H6VQ6NK9)</a></span>
             </div>
         </section>
 
@@ -699,7 +1044,6 @@
     </footer>
 
     <script>
-        // Language toggle
         function setLang(lang) {
             document.body.classList.toggle('ja', lang === 'ja');
             document.getElementById('lang-en').classList.toggle('active', lang === 'en');
@@ -708,32 +1052,25 @@
             updateCountdown();
         }
 
-        // Restore language preference
         const savedLang = localStorage.getItem('lang');
         if (savedLang) setLang(savedLang);
 
-        // Countdown
         function updateCountdown() {
-            const targetDate = new Date('2026-06-06T21:00:00+09:00');
+            const targetDate = new Date('2026-06-06T21:42:00+09:00');
             const now = new Date();
             const diff = targetDate - now;
+            
+            const el = document.getElementById('countdown');
+            const isJa = document.body.classList.contains('ja');
             
             if (diff > 0) {
                 const days = Math.floor(diff / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                
-                const el = document.getElementById('countdown');
-                const isJa = document.body.classList.contains('ja');
-                
-                if (isJa) {
-                    el.textContent = `あと ${days}日 ${hours}時間 ${minutes}分`;
-                } else {
-                    el.textContent = `${days}d ${hours}h ${minutes}m remaining`;
-                }
+                el.textContent = isJa 
+                    ? `あと ${days}日 ${hours}時間 ${minutes}分`
+                    : `${days}d ${hours}h ${minutes}m remaining`;
             } else {
-                const el = document.getElementById('countdown');
-                const isJa = document.body.classList.contains('ja');
                 el.textContent = isJa ? '産卵期間中！' : 'Spawning in progress!';
             }
         }
