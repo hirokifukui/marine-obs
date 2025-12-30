@@ -1250,8 +1250,6 @@ body:not(.ja) .diver-cta-card.coming-soon .title::after {
 }
 
 
-
-
 /* Hero Impact Version */
 .hero-impact {
     min-height: 100vh;
@@ -1470,55 +1468,200 @@ body.ja .hero-tagline-sub {
                 </div>
             </section>
 
-            <h2 class="section-title">
-                <span data-lang="en">Indicators of Change</span>
-                <span data-lang="ja">変化の指標</span>
-            </h2>
+<!-- Six Card Section - Marine Identity -->
+<section class="six-card-section">
+  <div class="six-card-grid">
+    <!-- Card 1: DHW（積算熱ストレス）- 3地点 -->
+    <div class="six-card status-alert">
+      <span class="six-card-badge badge-alert">
+        <span data-lang="en">Alert</span>
+        <span data-lang="ja">警報</span>
+      </span>
+      <div class="six-card-chart">
+        <canvas id="chart-dhw-trend"></canvas>
+        <div class="six-card-wave">
+          <svg viewBox="0 0 1200 20" preserveAspectRatio="none">
+            <path d="M0,10 Q150,0 300,10 T600,10 T900,10 T1200,10 L1200,20 L0,20 Z" fill="#ffffff"/>
+          </svg>
+        </div>
+      </div>
+      <div class="six-card-body">
+        <div class="six-card-title">
+          <span data-lang="en">Degree Heating Weeks</span>
+          <span data-lang="ja">積算熱ストレス (DHW)</span>
+        </div>
+        <div class="six-card-location">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span data-lang="en">Sesoko · Manza · Ogasawara</span>
+          <span data-lang="ja">瀬底・万座・小笠原</span>
+        </div>
+        <div class="six-card-latest">
+          <span data-lang="en">2025 Peak: 0.6 / 2.2 / 2.8</span>
+          <span data-lang="ja">2025年ピーク: 0.6 / 2.2 / 2.8</span>
+        </div>
+        <div class="six-card-desc">
+          <span data-lang="en">Manza exceeded Watch Level (DHW 4). Annual peak comparison across 3 sites.</span>
+          <span data-lang="ja">万座が注意レベル（DHW 4）を超過。3地点の年別ピークを比較。</span>
+        </div>
+        <a href="dhw.html" class="six-card-btn">
+          <span data-lang="en">Explore data</span>
+          <span data-lang="ja">データを見る</span>
+          <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        </a>
+      </div>
+    </div>
 
-            <section class="chart-grid">
-                <div class="chart-card">
-                    <div class="chart-header">
-                        <div class="chart-title">
-                            <span data-lang="en">Annual Peak DHW</span>
-                            <span data-lang="ja">年間最大DHW</span>
-                        </div>
-                        <div class="chart-subtitle">
-                            <span data-lang="en">Degree Heating Weeks · 3 Sites</span>
-                            <span data-lang="ja">熱ストレス指標 · 3地点</span>
-                        </div>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="dhwChart"></canvas>
-                    </div>
-                    <div class="chart-legend">
-                        <div class="legend-item"><span class="legend-line legend-line-1"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                        <div class="legend-item"><span class="legend-line legend-line-2"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                        <div class="legend-item"><span class="legend-line legend-line-3"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
-                    </div>
-                </div>
-                <div class="chart-card">
-                    <div class="chart-header">
-                        <div class="chart-title">
-                            <span data-lang="en">Extreme Temperature Days</span>
-                            <span data-lang="ja">極端水温日数</span>
-                        </div>
-                        <div class="chart-subtitle">
-                            <span data-lang="en">Days ≥30°C · 3 Sites</span>
-                            <span data-lang="ja">30℃以上の日数 · 3地点</span>
-                        </div>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="extremeChart"></canvas>
-                    </div>
-                    <div class="chart-legend">
-                        <div class="legend-item"><span class="legend-line legend-line-1"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                        <div class="legend-item"><span class="legend-line legend-line-2"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                        <div class="legend-item"><span class="legend-line legend-line-3"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
-                    </div>
-                </div>
-            </section>
+    <!-- Card 2: SST（海水温）- 3地点 -->
+    <div class="six-card status-warning">
+      <span class="six-card-badge badge-watch">
+        <span data-lang="en">Watch</span>
+        <span data-lang="ja">注意</span>
+      </span>
+      <div class="six-card-chart">
+        <canvas id="chart-sst-compare"></canvas>
+        <div class="six-card-wave">
+          <svg viewBox="0 0 1200 20" preserveAspectRatio="none">
+            <path d="M0,10 Q150,0 300,10 T600,10 T900,10 T1200,10 L1200,20 L0,20 Z" fill="#ffffff"/>
+          </svg>
+        </div>
+      </div>
+      <div class="six-card-body">
+        <div class="six-card-title">
+          <span data-lang="en">Sea Surface Temperature</span>
+          <span data-lang="ja">海水温 (SST)</span>
+        </div>
+        <div class="six-card-location">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span data-lang="en">Sesoko · Manza · Ogasawara</span>
+          <span data-lang="ja">瀬底・万座・小笠原</span>
+        </div>
+        <div class="six-card-latest">
+          <span data-lang="en">Latest: 23.6 / 23.6 / 23.4°C</span>
+          <span data-lang="ja">最新: 23.6 / 23.6 / 23.4°C</span>
+        </div>
+        <div class="six-card-desc">
+          <span data-lang="en">Monthly climatology comparison. Okinawa peaks in August, Ogasawara in September.</span>
+          <span data-lang="ja">月別気候値の比較。沖縄は8月、小笠原は9月にピーク。</span>
+        </div>
+        <a href="sst.html" class="six-card-btn">
+          <span data-lang="en">Explore data</span>
+          <span data-lang="ja">データを見る</span>
+          <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 3: 極端日数 - 3地点 -->
+    <div class="six-card">
+      <span class="six-card-badge badge-safe">
+        <span data-lang="en">Normal</span>
+        <span data-lang="ja">平常</span>
+      </span>
+      <div class="six-card-chart">
+        <canvas id="extremeChartMini"></canvas>
+        <div class="six-card-wave">
+          <svg viewBox="0 0 1200 20" preserveAspectRatio="none">
+            <path d="M0,10 Q150,0 300,10 T600,10 T900,10 T1200,10 L1200,20 L0,20 Z" fill="#ffffff"/>
+          </svg>
+        </div>
+      </div>
+      <div class="six-card-body">
+        <div class="six-card-title">
+          <span data-lang="en">Extreme Temperature Days</span>
+          <span data-lang="ja">極端水温日数</span>
+        </div>
+        <div class="six-card-location">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span data-lang="en">Sesoko · Manza · Ogasawara</span>
+          <span data-lang="ja">瀬底・万座・小笠原</span>
+        </div>
+        <div class="six-card-latest">
+          <span data-lang="en">2025: 🔥 4/14/4 hot · ❄️ 0/0/49 cold</span>
+          <span data-lang="ja">2025年: 🔥 4/14/4 高温 · ❄️ 0/0/49 低温</span>
+        </div>
+        <div class="six-card-desc">
+          <span data-lang="en">Days ≥30°C (hot) and ≤20°C (cold). Ogasawara shows distinct cold-water pattern.</span>
+          <span data-lang="ja">30℃以上（高温）と20℃以下（低温）の日数。小笠原は低温パターンが特徴的。</span>
+        </div>
+        <a href="extreme.html" class="six-card-btn">
+          <span data-lang="en">Explore data</span>
+          <span data-lang="ja">データを見る</span>
+          <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 4: 種別脆弱性 (Coming Soon) -->
+    <div class="six-card coming-soon">
+      <div class="six-card-chart">
+        <span class="coming-soon-label">COMING SOON</span>
+      </div>
+      <div class="six-card-body">
+        <div class="six-card-title">
+          <span data-lang="en">Species Vulnerability</span>
+          <span data-lang="ja">種別脆弱性</span>
+        </div>
+        <div class="six-card-location">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span data-lang="en">Acropora · Montipora · Porites</span>
+          <span data-lang="ja">ミドリイシ・コモンサンゴ・ハマサンゴ</span>
+        </div>
+        <div class="six-card-desc">
+          <span data-lang="en">Differential bleaching susceptibility by coral genus. Winners vs. losers framework.</span>
+          <span data-lang="ja">サンゴ属ごとの白化感受性の違い。勝者と敗者の構造。</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: モニ1000 (Coming Soon) -->
+    <div class="six-card coming-soon">
+      <div class="six-card-chart">
+        <span class="coming-soon-label">COMING SOON</span>
+      </div>
+      <div class="six-card-body">
+        <div class="six-card-title">
+          <span data-lang="en">Monitoring Sites 1000</span>
+          <span data-lang="ja">モニタリングサイト1000</span>
+        </div>
+        <div class="six-card-location">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span data-lang="en">Nationwide, Japan</span>
+          <span data-lang="ja">全国</span>
+        </div>
+        <div class="six-card-desc">
+          <span data-lang="en">Integration with Japan's national coral reef monitoring network (MOE).</span>
+          <span data-lang="ja">環境省モニタリングサイト1000サンゴ礁調査との連携。</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6: 濁度観測 (Coming Soon) -->
+    <div class="six-card coming-soon">
+      <div class="six-card-chart">
+        <span class="coming-soon-label">COMING SOON</span>
+      </div>
+      <div class="six-card-body">
+        <div class="six-card-title">
+          <span data-lang="en">Turbidity Monitoring</span>
+          <span data-lang="ja">濁度観測</span>
+        </div>
+        <div class="six-card-location">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span data-lang="en">Okinawa coastal stations</span>
+          <span data-lang="ja">沖縄沿岸観測点</span>
+        </div>
+        <div class="six-card-desc">
+          <span data-lang="en">In-situ NTU measurements and satellite Kd(490) for sediment stress assessment.</span>
+          <span data-lang="ja">実測NTUと衛星Kd(490)による堆積物ストレス評価。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
+
+            
 
 
             <section class="info-grid" style="grid-template-columns: 1fr;">
@@ -1816,196 +1959,7 @@ body.ja .hero-tagline-sub {
             setLang('ja');
         }
     </script>
-<!-- Six Card Section - Marine Identity -->
-<section class="six-card-section">
-  <div class="six-card-grid">
-    <!-- Card 1: DHW（積算熱ストレス）- 3地点 -->
-    <div class="six-card status-alert">
-      <span class="six-card-badge badge-alert">
-        <span data-lang="en">Alert</span>
-        <span data-lang="ja">警報</span>
-      </span>
-      <div class="six-card-chart">
-        <canvas id="chart-dhw-trend"></canvas>
-        <div class="six-card-wave">
-          <svg viewBox="0 0 1200 20" preserveAspectRatio="none">
-            <path d="M0,10 Q150,0 300,10 T600,10 T900,10 T1200,10 L1200,20 L0,20 Z" fill="#ffffff"/>
-          </svg>
-        </div>
-      </div>
-      <div class="six-card-body">
-        <div class="six-card-title">
-          <span data-lang="en">Degree Heating Weeks</span>
-          <span data-lang="ja">積算熱ストレス (DHW)</span>
-        </div>
-        <div class="six-card-location">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span data-lang="en">Sesoko · Manza · Ogasawara</span>
-          <span data-lang="ja">瀬底・万座・小笠原</span>
-        </div>
-        <div class="six-card-latest">
-          <span data-lang="en">2025 Peak: 0.6 / 2.2 / 2.8</span>
-          <span data-lang="ja">2025年ピーク: 0.6 / 2.2 / 2.8</span>
-        </div>
-        <div class="six-card-desc">
-          <span data-lang="en">Manza exceeded Watch Level (DHW 4). Annual peak comparison across 3 sites.</span>
-          <span data-lang="ja">万座が注意レベル（DHW 4）を超過。3地点の年別ピークを比較。</span>
-        </div>
-        <a href="dhw.html" class="six-card-btn">
-          <span data-lang="en">Explore data</span>
-          <span data-lang="ja">データを見る</span>
-          <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-        </a>
-      </div>
-    </div>
 
-    <!-- Card 2: SST（海水温）- 3地点 -->
-    <div class="six-card status-warning">
-      <span class="six-card-badge badge-watch">
-        <span data-lang="en">Watch</span>
-        <span data-lang="ja">注意</span>
-      </span>
-      <div class="six-card-chart">
-        <canvas id="chart-sst-compare"></canvas>
-        <div class="six-card-wave">
-          <svg viewBox="0 0 1200 20" preserveAspectRatio="none">
-            <path d="M0,10 Q150,0 300,10 T600,10 T900,10 T1200,10 L1200,20 L0,20 Z" fill="#ffffff"/>
-          </svg>
-        </div>
-      </div>
-      <div class="six-card-body">
-        <div class="six-card-title">
-          <span data-lang="en">Sea Surface Temperature</span>
-          <span data-lang="ja">海水温 (SST)</span>
-        </div>
-        <div class="six-card-location">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span data-lang="en">Sesoko · Manza · Ogasawara</span>
-          <span data-lang="ja">瀬底・万座・小笠原</span>
-        </div>
-        <div class="six-card-latest">
-          <span data-lang="en">Latest: 23.6 / 23.6 / 23.4°C</span>
-          <span data-lang="ja">最新: 23.6 / 23.6 / 23.4°C</span>
-        </div>
-        <div class="six-card-desc">
-          <span data-lang="en">Monthly climatology comparison. Okinawa peaks in August, Ogasawara in September.</span>
-          <span data-lang="ja">月別気候値の比較。沖縄は8月、小笠原は9月にピーク。</span>
-        </div>
-        <a href="sst.html" class="six-card-btn">
-          <span data-lang="en">Explore data</span>
-          <span data-lang="ja">データを見る</span>
-          <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- Card 3: 極端日数 - 3地点 -->
-    <div class="six-card">
-      <span class="six-card-badge badge-safe">
-        <span data-lang="en">Normal</span>
-        <span data-lang="ja">平常</span>
-      </span>
-      <div class="six-card-chart">
-        <canvas id="extremeChartMini"></canvas>
-        <div class="six-card-wave">
-          <svg viewBox="0 0 1200 20" preserveAspectRatio="none">
-            <path d="M0,10 Q150,0 300,10 T600,10 T900,10 T1200,10 L1200,20 L0,20 Z" fill="#ffffff"/>
-          </svg>
-        </div>
-      </div>
-      <div class="six-card-body">
-        <div class="six-card-title">
-          <span data-lang="en">Extreme Temperature Days</span>
-          <span data-lang="ja">極端水温日数</span>
-        </div>
-        <div class="six-card-location">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span data-lang="en">Sesoko · Manza · Ogasawara</span>
-          <span data-lang="ja">瀬底・万座・小笠原</span>
-        </div>
-        <div class="six-card-latest">
-          <span data-lang="en">2025: 🔥 4/14/4 hot · ❄️ 0/0/49 cold</span>
-          <span data-lang="ja">2025年: 🔥 4/14/4 高温 · ❄️ 0/0/49 低温</span>
-        </div>
-        <div class="six-card-desc">
-          <span data-lang="en">Days ≥30°C (hot) and ≤20°C (cold). Ogasawara shows distinct cold-water pattern.</span>
-          <span data-lang="ja">30℃以上（高温）と20℃以下（低温）の日数。小笠原は低温パターンが特徴的。</span>
-        </div>
-        <a href="extreme.html" class="six-card-btn">
-          <span data-lang="en">Explore data</span>
-          <span data-lang="ja">データを見る</span>
-          <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- Card 4: 種別脆弱性 (Coming Soon) -->
-    <div class="six-card coming-soon">
-      <div class="six-card-chart">
-        <span class="coming-soon-label">COMING SOON</span>
-      </div>
-      <div class="six-card-body">
-        <div class="six-card-title">
-          <span data-lang="en">Species Vulnerability</span>
-          <span data-lang="ja">種別脆弱性</span>
-        </div>
-        <div class="six-card-location">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span data-lang="en">Acropora · Montipora · Porites</span>
-          <span data-lang="ja">ミドリイシ・コモンサンゴ・ハマサンゴ</span>
-        </div>
-        <div class="six-card-desc">
-          <span data-lang="en">Differential bleaching susceptibility by coral genus. Winners vs. losers framework.</span>
-          <span data-lang="ja">サンゴ属ごとの白化感受性の違い。勝者と敗者の構造。</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 5: モニ1000 (Coming Soon) -->
-    <div class="six-card coming-soon">
-      <div class="six-card-chart">
-        <span class="coming-soon-label">COMING SOON</span>
-      </div>
-      <div class="six-card-body">
-        <div class="six-card-title">
-          <span data-lang="en">Monitoring Sites 1000</span>
-          <span data-lang="ja">モニタリングサイト1000</span>
-        </div>
-        <div class="six-card-location">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span data-lang="en">Nationwide, Japan</span>
-          <span data-lang="ja">全国</span>
-        </div>
-        <div class="six-card-desc">
-          <span data-lang="en">Integration with Japan's national coral reef monitoring network (MOE).</span>
-          <span data-lang="ja">環境省モニタリングサイト1000サンゴ礁調査との連携。</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 6: 濁度観測 (Coming Soon) -->
-    <div class="six-card coming-soon">
-      <div class="six-card-chart">
-        <span class="coming-soon-label">COMING SOON</span>
-      </div>
-      <div class="six-card-body">
-        <div class="six-card-title">
-          <span data-lang="en">Turbidity Monitoring</span>
-          <span data-lang="ja">濁度観測</span>
-        </div>
-        <div class="six-card-location">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span data-lang="en">Okinawa coastal stations</span>
-          <span data-lang="ja">沖縄沿岸観測点</span>
-        </div>
-        <div class="six-card-desc">
-          <span data-lang="en">In-situ NTU measurements and satellite Kd(490) for sediment stress assessment.</span>
-          <span data-lang="ja">実測NTUと衛星Kd(490)による堆積物ストレス評価。</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- SST Chart Data (Generated from NASA MUR SST 2002-2024) -->
 <script>
