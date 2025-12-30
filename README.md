@@ -299,3 +299,7 @@ Vercelが自動検知して約1分でデプロイ完了。
 | spawning_v2.html | v2バックアップ |
 | spawning_old.html | v1（初期版） |
 
+
+| 2025-12-30 | **spawning.html完成**: サンゴ産卵予測ページ新規作成（22論文ベース） |
+| 2025-12-30 | **sst.htmlデバッグ解決**: DOMContentLoaded問題 → GitHub Pages再デプロイで解決 |
+| 2025-12-30 | フォルダ整理: バックアップファイル5件をarchive/に移動 |

@@ -245,90 +245,6 @@
             border-top: 1px dashed var(--border);
         }
 
-        /* Hero section */
-        .hero-section {
-            background: linear-gradient(135deg, #996060, #c05621);
-            color: white;
-            padding: 2.5rem 2rem;
-            border-radius: 12px;
-            margin-bottom: 2.5rem;
-        }
-
-        .hero-main { text-align: center; margin-bottom: 1.5rem; }
-        .hero-icon { font-size: 3.5rem; margin-bottom: 0.75rem; }
-
-        .hero-tagline {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        body.ja .hero-tagline { font-size: 1.3rem; }
-
-        .hero-subtitle {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-        }
-
-        .hero-stat {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            margin-top: 0.5rem;
-        }
-
-        .hero-stat .number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2rem;
-            font-weight: 600;
-        }
-
-        .hero-stat .label {
-            font-size: 0.85rem;
-            opacity: 0.9;
-            margin-top: 0.25rem;
-        }
-
-        /* Story box */
-        .story-box {
-            background: #fffbeb;
-            border: 1px solid #fde68a;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .story-box .story-lead {
-            font-size: 1.05rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        body.ja .story-box .story-lead { line-height: 2; }
-
-        .story-box p {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            line-height: 1.9;
-        }
-
-        .story-box p:last-child { margin-bottom: 0; }
-
-        .story-box .highlight {
-            background: linear-gradient(transparent 60%, #fde68a 60%);
-            padding: 0 0.2rem;
-        }
-
-        .story-box .emphasis {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
         /* Content sections */
         .content-section {
             margin-bottom: 2rem;
@@ -619,57 +535,23 @@
             <span data-lang="ja">種別脆弱性</span>
         </nav>
 
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-main">
-                <div class="hero-icon">🧬</div>
-                <div class="hero-tagline">
-                    <span data-lang="en">Taxonomy explains 52% of bleaching response</span>
-                    <span data-lang="ja">分類群が白化応答の52%を説明する</span>
-                </div>
-                <div class="hero-subtitle">
-                    <span data-lang="en">14-year tracking reveals persistent "winners and losers"</span>
-                    <span data-lang="ja">14年間の追跡が示す「勝者と敗者」の構造的持続性</span>
-                </div>
-                <div class="hero-stat">
-                    <div class="number">1998</div>
-                    <div class="label">
-                        <span data-lang="en">Okinawa mass bleaching — origin of the framework</span>
-                        <span data-lang="ja">沖縄大規模白化 — フレームワークの起源</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Introduction story box -->
-        <section class="content-section">
-            <div class="story-box">
-                <p class="story-lead" data-lang="en">
-                    Why does one coral bleach while its neighbor remains unaffected? This is not coincidence. 
-                    <span class="highlight">Morphology, symbiont genotype, and microbiome</span> — 
-                    three layers of adaptive strategy determine "winners and losers" under thermal stress.
-                </p>
-                <p class="story-lead" data-lang="ja">
-                    なぜ同じリーフで、ある種は白化し、隣の種は無傷なのか。これは偶然ではありません。
-                    <span class="highlight">形態、共生藻の遺伝子型、マイクロバイオーム</span>という
-                    三層の適応戦略が、熱ストレス下での「勝者と敗者」を分けます。
-                </p>
-
-                <p data-lang="en">
-                    The seminal 1998 Okinawa bleaching event revealed a striking pattern: branching Acropora suffered 
-                    <span class="emphasis">85% cover loss</span>, while massive Porites showed less than 10% decline 
-                    (Loya et al., 2001). This observation gave birth to the "winners and losers" framework 
-                    — now one of the most cited concepts in coral reef science with over 1,500 citations.
-                </p>
-                <p data-lang="ja">
-                    1998年の沖縄大規模白化は衝撃的なパターンを明らかにしました。分岐型のミドリイシは
-                    <span class="emphasis">被度85%の減少</span>を被った一方、塊状のハマサンゴは10%未満の減少に留まりました
-                    （Loya et al., 2001）。この観察から「勝者と敗者」のフレームワークが生まれ、
-                    現在では1,500以上の引用を持つサンゴ礁科学の最重要概念の一つとなっています。
-                </p>
-            </div>
-        </section>
-
+        <div class="page-header">
+            <h1>
+                <span data-lang="en">Species Vulnerability</span>
+                <span data-lang="ja">種別脆弱性</span>
+            </h1>
+            <p class="lead">
+                <span data-lang="en">
+                    Coral bleaching susceptibility varies dramatically among genera, creating a pattern 
+                    of "winners and losers." Understanding these differences sharpens the resolution 
+                    of what we observe underwater.
+                </span>
+                <span data-lang="ja">
+                    サンゴの白化感受性は属によって大きく異なり、「勝者と敗者」の構造を形成します。
+                    この違いを知ることで、水中での観察の解像度が上がります。
+                </span>
+            </p>
+        </div>
 
         <!-- Winners and Losers -->
         <div class="card">
@@ -846,88 +728,18 @@
                 </div>
             </div>
 
-            <!-- Morphology comparison diagram -->
-            <div class="card" style="margin-top: 1.5rem;">
-                <div style="text-align: center; margin-bottom: 1rem;">
-                    <span data-lang="en" style="font-weight: 600; font-size: 0.9rem;">Tissue Thickness & Light Exposure</span>
-                    <span data-lang="ja" style="font-weight: 600; font-size: 0.9rem;">組織厚と光曝露の関係</span>
+            <!-- Morphology illustration - COMING SOON -->
+            <div class="coming-soon">
+                <div class="badge">COMING SOON</div>
+                <div class="title">
+                    <span data-lang="en">Morphology Comparison Illustration</span>
+                    <span data-lang="ja">形態比較イラスト</span>
                 </div>
-                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                    <!-- Branching coral -->
-                    <div style="text-align: center;">
-                        <svg width="140" height="160" viewBox="0 0 140 160">
-                            <!-- Branch structure -->
-                            <path d="M70 140 L70 100 L50 60 M70 100 L90 60 M70 80 L55 50 M70 80 L85 50" 
-                                  stroke="#c05621" stroke-width="8" fill="none" stroke-linecap="round"/>
-                            <!-- Thin tissue layer -->
-                            <path d="M70 140 L70 100 L50 60 M70 100 L90 60 M70 80 L55 50 M70 80 L85 50" 
-                                  stroke="#feb2b2" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.5"/>
-                            <!-- Light arrows hitting branches -->
-                            <path d="M30 30 L48 48" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowhead)"/>
-                            <path d="M70 20 L70 45" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowhead)"/>
-                            <path d="M110 30 L92 48" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowhead)"/>
-                            <!-- Arrowhead marker -->
-                            <defs>
-                                <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                                    <path d="M0,0 L6,3 L0,6 Z" fill="#fbbf24"/>
-                                </marker>
-                            </defs>
-                            <!-- Tissue thickness indicator -->
-                            <line x1="95" y1="75" x2="105" y2="75" stroke="#dc2626" stroke-width="2"/>
-                            <text x="108" y="78" font-size="9" fill="#dc2626">~1mm</text>
-                        </svg>
-                        <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem;">
-                            <div style="font-weight: 600; color: #c05621;">
-                                <span data-lang="en">Branching</span><span data-lang="ja">分岐型</span>
-                            </div>
-                            <div style="font-size: 0.7rem; font-style: italic;">Acropora</div>
-                            <div style="font-size: 0.7rem; margin-top: 0.25rem;">
-                                <span data-lang="en">Thin tissue · High exposure</span>
-                                <span data-lang="ja">薄い組織・高曝露</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Massive coral -->
-                    <div style="text-align: center;">
-                        <svg width="140" height="160" viewBox="0 0 140 160">
-                            <!-- Massive structure -->
-                            <ellipse cx="70" cy="110" rx="50" ry="35" fill="#2f855a" opacity="0.8"/>
-                            <ellipse cx="70" cy="105" rx="45" ry="30" fill="#48bb78" opacity="0.6"/>
-                            <!-- Thick tissue layer representation -->
-                            <ellipse cx="70" cy="100" rx="40" ry="25" fill="#9ae6b4" opacity="0.4"/>
-                            <!-- Light arrows - some blocked -->
-                            <path d="M30 30 L45 55" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowhead2)"/>
-                            <path d="M70 20 L70 60" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowhead2)" opacity="0.5"/>
-                            <path d="M110 30 L95 55" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowhead2)"/>
-                            <!-- Blocked light indicator -->
-                            <text x="75" y="50" font-size="8" fill="#666">⊘</text>
-                            <defs>
-                                <marker id="arrowhead2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                                    <path d="M0,0 L6,3 L0,6 Z" fill="#fbbf24"/>
-                                </marker>
-                            </defs>
-                            <!-- Tissue thickness indicator -->
-                            <line x1="115" y1="95" x2="125" y2="95" stroke="#2f855a" stroke-width="2"/>
-                            <text x="108" y="88" font-size="9" fill="#2f855a">5-10mm</text>
-                        </svg>
-                        <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem;">
-                            <div style="font-weight: 600; color: #2f855a;">
-                                <span data-lang="en">Massive</span><span data-lang="ja">塊状</span>
-                            </div>
-                            <div style="font-size: 0.7rem; font-style: italic;">Porites</div>
-                            <div style="font-size: 0.7rem; margin-top: 0.25rem;">
-                                <span data-lang="en">Thick tissue · Buffered</span>
-                                <span data-lang="ja">厚い組織・緩衝</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: var(--text-muted);">
-                    <span data-lang="en">☀️ = Light stress on symbionts · Thicker tissue buffers photodamage</span>
-                    <span data-lang="ja">☀️ = 共生藻への光ストレス・厚い組織は光損傷を緩衝</span>
+                <div class="desc">
+                    <span data-lang="en">Cross-section diagrams comparing branching vs. massive coral tissue thickness</span>
+                    <span data-lang="ja">分岐型 vs 塊状サンゴの組織厚を比較する断面図</span>
                 </div>
             </div>
-
         </section>
 
         <!-- Recovery dynamics -->
@@ -992,72 +804,18 @@
                 </div>
             </div>
 
-            <!-- Recovery dynamics chart -->
-            <div class="card" style="margin-top: 1.5rem;">
-                <div style="text-align: center; margin-bottom: 1rem;">
-                    <span data-lang="en" style="font-weight: 600; font-size: 0.9rem;">Recovery Patterns Over Time</span>
-                    <span data-lang="ja" style="font-weight: 600; font-size: 0.9rem;">時間経過に伴う回復パターン</span>
+            <!-- Recovery chart - COMING SOON -->
+            <div class="coming-soon">
+                <div class="badge">COMING SOON</div>
+                <div class="title">
+                    <span data-lang="en">Recovery Dynamics Chart</span>
+                    <span data-lang="ja">回復動態チャート</span>
                 </div>
-                <svg width="100%" height="200" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet">
-                    <!-- Background grid -->
-                    <defs>
-                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e2e8f0" stroke-width="0.5"/>
-                        </pattern>
-                    </defs>
-                    <rect width="360" height="160" x="30" y="20" fill="url(#grid)"/>
-                    
-                    <!-- Axes -->
-                    <line x1="30" y1="180" x2="390" y2="180" stroke="#718096" stroke-width="1"/>
-                    <line x1="30" y1="20" x2="30" y2="180" stroke="#718096" stroke-width="1"/>
-                    
-                    <!-- Axis labels -->
-                    <text x="210" y="198" font-size="10" fill="#718096" text-anchor="middle">
-                        <tspan data-lang="en">Time (years)</tspan><tspan data-lang="ja">時間（年）</tspan>
-                    </text>
-                    <text x="12" y="100" font-size="10" fill="#718096" text-anchor="middle" transform="rotate(-90, 12, 100)">
-                        <tspan data-lang="en">Cover %</tspan><tspan data-lang="ja">被度%</tspan>
-                    </text>
-                    
-                    <!-- Bleaching events markers -->
-                    <rect x="70" y="20" width="2" height="160" fill="#dc2626" opacity="0.2"/>
-                    <rect x="200" y="20" width="2" height="160" fill="#dc2626" opacity="0.2"/>
-                    <rect x="300" y="20" width="2" height="160" fill="#dc2626" opacity="0.2"/>
-                    <text x="71" y="15" font-size="8" fill="#dc2626">🔥</text>
-                    <text x="201" y="15" font-size="8" fill="#dc2626">🔥</text>
-                    <text x="301" y="15" font-size="8" fill="#dc2626">🔥</text>
-                    
-                    <!-- Boom-Bust pattern (Acropora) - orange -->
-                    <path d="M30 60 
-                             L70 60 L80 150 L120 80 L160 50 L200 50 
-                             L210 140 L250 90 L280 60 L300 60
-                             L310 160 L350 110 L380 80" 
-                          fill="none" stroke="#c05621" stroke-width="2.5" stroke-linecap="round"/>
-                    
-                    <!-- Protracted decline pattern (Other genera) - teal -->
-                    <path d="M30 50 
-                             L70 50 L90 70 L130 65 L170 75 L200 75 
-                             L220 90 L260 95 L280 100 L300 100
-                             L320 115 L360 125 L380 130" 
-                          fill="none" stroke="#2b6cb0" stroke-width="2.5" stroke-linecap="round"/>
-                    
-                    <!-- Legend -->
-                    <rect x="240" y="30" width="145" height="50" fill="white" stroke="#e2e8f0" rx="4"/>
-                    <line x1="250" y1="45" x2="275" y2="45" stroke="#c05621" stroke-width="2.5"/>
-                    <text x="280" y="48" font-size="9" fill="#4a5568">
-                        <tspan data-lang="en">Boom-Bust (Acropora)</tspan><tspan data-lang="ja">Boom-Bust型</tspan>
-                    </text>
-                    <line x1="250" y1="65" x2="275" y2="65" stroke="#2b6cb0" stroke-width="2.5"/>
-                    <text x="280" y="68" font-size="9" fill="#4a5568">
-                        <tspan data-lang="en">Protracted (Others)</tspan><tspan data-lang="ja">緩やかな衰退型</tspan>
-                    </text>
-                </svg>
-                <div style="text-align: center; margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-muted);">
-                    <span data-lang="en">🔥 = Bleaching event · Acropora shows rapid recovery but remains vulnerable to next event</span>
-                    <span data-lang="ja">🔥 = 白化イベント・ミドリイシは急速に回復するが次のイベントに脆弱</span>
+                <div class="desc">
+                    <span data-lang="en">Time-series visualization of Boom-Bust vs. Protracted Decline patterns</span>
+                    <span data-lang="ja">Boom-Bust型 vs 緩やかな衰退型の時系列可視化</span>
                 </div>
             </div>
-
 
             <h3>
                 <span data-lang="en">Selection Through Repeated Bleaching</span>
@@ -1179,61 +937,28 @@
             </div>
         </section>
 
-        <!-- References -->
+        <!-- Data source -->
         <section class="content-section">
             <h2>
                 <span data-lang="en">References</span>
-                <span data-lang="ja">参考文献</span>
+                <span data-lang="ja">データソース</span>
             </h2>
             <div class="source-info">
-                <strong><span data-lang="en">This page synthesizes the following peer-reviewed studies:</span><span data-lang="ja">このページは以下の査読論文を統合しています：</span></strong>
-                
-                <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">
-                    <span data-lang="en">Foundational Studies — Winners & Losers Framework</span>
-                    <span data-lang="ja">基盤研究 — 勝者と敗者フレームワーク</span>
-                </p>
+                <span data-lang="en"><strong>Key Literature:</strong></span>
+                <span data-lang="ja"><strong>主要参考文献：</strong></span>
                 <ul>
-                    <li>Loya Y et al. (2001) Coral bleaching: the winners and the losers. <i>Ecol Lett</i>. <a href="https://doi.org/10.1046/j.1461-0248.2001.00203.x" target="_blank">doi:10.1046/j.1461-0248.2001.00203.x</a> — <span data-lang="en">The seminal paper establishing the framework (1,500+ citations)</span><span data-lang="ja">フレームワークを確立した原典（1,500+引用）</span></li>
-                    <li>van Woesik R et al. (2011) Revisiting the winners and the losers a decade after coral bleaching. <i>Mar Ecol Prog Ser</i>. <a href="https://doi.org/10.3354/meps09203" target="_blank">doi:10.3354/meps09203</a> — <span data-lang="en">14-year follow-up confirming persistence of patterns</span><span data-lang="ja">パターンの持続性を確認した14年追跡調査</span></li>
-                    <li>Grottoli AG et al. (2014) The cumulative impact of annual coral bleaching can turn some coral species winners into losers. <i>Glob Change Biol</i>. <a href="https://doi.org/10.1111/gcb.12658" target="_blank">doi:10.1111/gcb.12658</a> — <span data-lang="en">Cumulative stress effects</span><span data-lang="ja">累積ストレス効果</span></li>
+                    <li>van Woesik et al. (2011) - Winners and losers in 14-year follow-up</li>
+                    <li>McClanahan et al. (2004) - Taxonomy explains 52% of bleaching variation</li>
+                    <li>Sampayo et al. (2008) - Symbiont sub-clade determines tolerance</li>
+                    <li>Pratchett et al. (2013) - Moorea repeated bleaching</li>
+                    <li>Morais et al. (2021) - Boom-bust vs. protracted decline dynamics</li>
+                    <li>Pisapia et al. (2019) - Maldives 2016 bleaching</li>
                 </ul>
-                
-                <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">
-                    <span data-lang="en">Mechanisms — Why Taxa Differ</span>
-                    <span data-lang="ja">メカニズム — なぜ分類群で差があるか</span>
-                </p>
-                <ul>
-                    <li>McClanahan TR et al. (2020) Highly variable taxa-specific coral bleaching responses to thermal stresses. <i>Mar Ecol Prog Ser</i>. <a href="https://doi.org/10.3354/meps13402" target="_blank">doi:10.3354/meps13402</a> — <span data-lang="en">Taxonomy explains 52% of response variation</span><span data-lang="ja">分類群が応答変動の52%を説明</span></li>
-                    <li>Wooldridge SA (2014) Differential thermal bleaching susceptibilities amongst coral taxa: re-posing the role of the host. <i>Coral Reefs</i>. <a href="https://doi.org/10.1007/s00338-013-1111-4" target="_blank">doi:10.1007/s00338-013-1111-4</a> — <span data-lang="en">Tissue thickness hypothesis</span><span data-lang="ja">組織厚仮説</span></li>
-                    <li>Maor-Landaw K & Levy O (2016) Gene expression profiles during short-term heat stress: branching vs. massive corals. <i>PeerJ</i>. <a href="https://doi.org/10.7717/peerj.1814" target="_blank">doi:10.7717/peerj.1814</a> — <span data-lang="en">Molecular basis of morphology-linked susceptibility</span><span data-lang="ja">形態と感受性の分子基盤</span></li>
-                    <li>Sampayo EM et al. (2007) Niche partitioning of closely related symbiotic dinoflagellates. <i>Mol Ecol</i>. <a href="https://doi.org/10.1111/j.1365-294X.2007.03403.x" target="_blank">doi:10.1111/j.1365-294X.2007.03403.x</a> — <span data-lang="en">Symbiont sub-clade determines tolerance</span><span data-lang="ja">共生藻亜クレードが耐性を決定</span></li>
-                </ul>
-                
-                <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">
-                    <span data-lang="en">Recovery Dynamics</span>
-                    <span data-lang="ja">回復動態</span>
-                </p>
-                <ul>
-                    <li>Morais J et al. (2021) Boom-bust dynamics limit the impact of disturbances on reef fish assemblages. <i>Ecology</i>. <a href="https://doi.org/10.1002/ecy.3526" target="_blank">doi:10.1002/ecy.3526</a> — <span data-lang="en">Boom-bust vs protracted decline patterns</span><span data-lang="ja">Boom-bust型 vs 緩やかな衰退型</span></li>
-                    <li>Pratchett MS et al. (2013) Changes in bleaching susceptibility among corals subject to ocean warming and recurrent bleaching in Moorea. <i>PLoS ONE</i>. <a href="https://doi.org/10.1371/journal.pone.0070443" target="_blank">doi:10.1371/journal.pone.0070443</a> — <span data-lang="en">Selection through repeated bleaching</span><span data-lang="ja">繰り返し白化による選択</span></li>
-                </ul>
-                
-                <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">
-                    <span data-lang="en">Case Studies</span>
-                    <span data-lang="ja">事例研究</span>
-                </p>
-                <ul>
-                    <li>Pisapia C et al. (2019) Coral recovery in the central Maldives archipelago since the last major mass-bleaching, in 2016. <i>Sci Rep</i>. <a href="https://doi.org/10.1038/s41598-019-42659-z" target="_blank">doi:10.1038/s41598-019-42659-z</a> — <span data-lang="en">Maldives 2016 event</span><span data-lang="ja">モルディブ2016年イベント</span></li>
-                    <li>Sakai K et al. (2019) A decade of coral recovery at Sesoko Island following the 2016 bleaching. <i>Galaxea</i>. <a href="https://doi.org/10.3755/galaxea.21.1_29" target="_blank">doi:10.3755/galaxea.21.1_29</a> — <span data-lang="en">Sesoko Island recovery patterns</span><span data-lang="ja">瀬底島の回復パターン</span></li>
-                    <li>Singh T et al. (2023) Short-term improvement of heat tolerance in naturally growing <i>Acropora</i>. <i>PeerJ</i>. <a href="https://doi.org/10.7717/peerj.14629" target="_blank">doi:10.7717/peerj.14629</a> — <span data-lang="en">Thermal history effects</span><span data-lang="ja">熱履歴効果</span></li>
-                </ul>
-                
                 <br>
-                <span data-lang="en">Full collection: Zotero ThermalStress-Bleaching (RIIHGD8I) — 39 papers</span>
-                <span data-lang="ja">完全コレクション: Zotero ThermalStress-Bleaching (RIIHGD8I) — 39論文</span>
+                <span data-lang="en">Full collection available in Zotero: ThermalStress-Bleaching (RIIHGD8I)</span>
+                <span data-lang="ja">完全な文献リストはZoteroコレクション: ThermalStress-Bleaching (RIIHGD8I) で参照可能</span>
             </div>
         </section>
-
 
     </main>
 
