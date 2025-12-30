@@ -408,6 +408,19 @@ body:not(.ja) .diver-cta-card.coming-soon .title::after {
             box-shadow: var(--shadow);
         }
 
+        a.kpi-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: all 0.2s ease;
+        }
+
+        a.kpi-card-link:hover {
+            border-color: var(--accent-teal);
+            box-shadow: 0 2px 8px rgba(43, 108, 176, 0.15);
+            transform: translateY(-2px);
+        }
+
         .kpi-label {
             font-size: 0.8rem;
             font-weight: 500;
@@ -1459,21 +1472,21 @@ body.ja .hero-tagline-sub {
 
             <section class="kpi-grid">
                 <!-- SST 3地点 -->
-                <div class="kpi-card">
+                <a href="sst.html" class="kpi-card kpi-card-link">
                     <div class="kpi-label">
                         <span data-lang="en">Latest SST</span>
                         <span data-lang="ja">最新海水温</span>
                     </div>
                     <div class="kpi-value-multi">
-                        <div class="kpi-site"><span class="site-dot" style="background:#c05621"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span> <strong>23.6</strong>℃</div>
                         <div class="kpi-site"><span class="site-dot" style="background:#2b6cb0"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span> <strong>23.6</strong>℃</div>
+                        <div class="kpi-site"><span class="site-dot" style="background:#c05621"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span> <strong>23.6</strong>℃</div>
                         <div class="kpi-site"><span class="site-dot" style="background:#2f855a"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span> <strong>23.4</strong>℃</div>
                     </div>
                     <div class="kpi-context">
                         <span data-lang="en">Dec 27, 2025</span>
                         <span data-lang="ja">2025年12月27日</span>
                     </div>
-                </div>
+                </a>
                 <!-- DHW 2024 3地点 -->
                 <div class="kpi-card">
                     <div class="kpi-label">
@@ -1481,8 +1494,8 @@ body.ja .hero-tagline-sub {
                         <span data-lang="ja">2025年 最大DHW</span>
                     </div>
                     <div class="kpi-value-multi">
-                        <div class="kpi-site"><span class="site-dot" style="background:#c05621"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span> <strong>2.2</strong></div>
                         <div class="kpi-site"><span class="site-dot" style="background:#2b6cb0"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span> <strong>0.6</strong></div>
+                        <div class="kpi-site"><span class="site-dot" style="background:#c05621"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span> <strong>2.2</strong></div>
                         <div class="kpi-site"><span class="site-dot" style="background:#2f855a"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span> <strong>2.8</strong></div>
                     </div>
                     <div class="kpi-context">
@@ -1497,8 +1510,8 @@ body.ja .hero-tagline-sub {
                         <span data-lang="ja">高温日数 2025</span>
                     </div>
                     <div class="kpi-value-multi">
-                        <div class="kpi-site"><span class="site-dot" style="background:#c05621"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span> <strong>14</strong><span data-lang="en">d</span><span data-lang="ja">日</span></div>
                         <div class="kpi-site"><span class="site-dot" style="background:#2b6cb0"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span> <strong>4</strong><span data-lang="en">d</span><span data-lang="ja">日</span></div>
+                        <div class="kpi-site"><span class="site-dot" style="background:#c05621"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span> <strong>14</strong><span data-lang="en">d</span><span data-lang="ja">日</span></div>
                         <div class="kpi-site"><span class="site-dot" style="background:#2f855a"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span> <strong>4</strong><span data-lang="en">d</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="kpi-context">
@@ -1513,8 +1526,8 @@ body.ja .hero-tagline-sub {
                         <span data-lang="ja">低温日数 2025</span>
                     </div>
                     <div class="kpi-value-multi">
-                        <div class="kpi-site"><span class="site-dot" style="background:#c05621"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span> <strong>0</strong><span data-lang="en">d</span><span data-lang="ja">日</span></div>
                         <div class="kpi-site"><span class="site-dot" style="background:#2b6cb0"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span> <strong>0</strong><span data-lang="en">d</span><span data-lang="ja">日</span></div>
+                        <div class="kpi-site"><span class="site-dot" style="background:#c05621"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span> <strong>0</strong><span data-lang="en">d</span><span data-lang="ja">日</span></div>
                         <div class="kpi-site"><span class="site-dot" style="background:#2f855a"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span> <strong class="warning">49</strong><span data-lang="en">d</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="kpi-context">
@@ -1545,8 +1558,8 @@ body.ja .hero-tagline-sub {
                         <canvas id="dhwChart"></canvas>
                     </div>
                     <div class="chart-legend">
-                        <div class="legend-item"><span class="legend-line legend-line-2"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
                         <div class="legend-item"><span class="legend-line legend-line-1"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
+                        <div class="legend-item"><span class="legend-line legend-line-2"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
                         <div class="legend-item"><span class="legend-line legend-line-3"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
                     </div>
                 </div>
@@ -1565,8 +1578,8 @@ body.ja .hero-tagline-sub {
                         <canvas id="extremeChart"></canvas>
                     </div>
                     <div class="chart-legend">
-                        <div class="legend-item"><span class="legend-line legend-line-2"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
                         <div class="legend-item"><span class="legend-line legend-line-1"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
+                        <div class="legend-item"><span class="legend-line legend-line-2"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
                         <div class="legend-item"><span class="legend-line legend-line-3"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
                     </div>
                 </div>
@@ -1894,12 +1907,12 @@ body.ja .hero-tagline-sub {
         </div>
         <div class="six-card-location">
           <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span data-lang="en">Manza · Sesoko · Ogasawara</span>
-          <span data-lang="ja">万座・瀬底・小笠原</span>
+          <span data-lang="en">Sesoko · Manza · Ogasawara</span>
+          <span data-lang="ja">瀬底・万座・小笠原</span>
         </div>
         <div class="six-card-latest">
-          <span data-lang="en">2025 Peak: 2.2 / 0.6 / 2.8</span>
-          <span data-lang="ja">2025年ピーク: 2.2 / 0.6 / 2.8</span>
+          <span data-lang="en">2025 Peak: 0.6 / 2.2 / 2.8</span>
+          <span data-lang="ja">2025年ピーク: 0.6 / 2.2 / 2.8</span>
         </div>
         <div class="six-card-desc">
           <span data-lang="en">Manza exceeded Watch Level (DHW 4). Annual peak comparison across 3 sites.</span>
@@ -1934,8 +1947,8 @@ body.ja .hero-tagline-sub {
         </div>
         <div class="six-card-location">
           <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span data-lang="en">Manza · Sesoko · Ogasawara</span>
-          <span data-lang="ja">万座・瀬底・小笠原</span>
+          <span data-lang="en">Sesoko · Manza · Ogasawara</span>
+          <span data-lang="ja">瀬底・万座・小笠原</span>
         </div>
         <div class="six-card-latest">
           <span data-lang="en">Latest: 23.6 / 23.6 / 23.4°C</span>
@@ -1974,12 +1987,12 @@ body.ja .hero-tagline-sub {
         </div>
         <div class="six-card-location">
           <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          <span data-lang="en">Manza · Sesoko · Ogasawara</span>
-          <span data-lang="ja">万座・瀬底・小笠原</span>
+          <span data-lang="en">Sesoko · Manza · Ogasawara</span>
+          <span data-lang="ja">瀬底・万座・小笠原</span>
         </div>
         <div class="six-card-latest">
-          <span data-lang="en">2025: 14 / 4 / 4 hot days</span>
-          <span data-lang="ja">2025年: 14 / 4 / 4 高温日</span>
+          <span data-lang="en">2025: 4 / 14 / 4 hot days</span>
+          <span data-lang="ja">2025年: 4 / 14 / 4 高温日</span>
         </div>
         <div class="six-card-desc">
           <span data-lang="en">Days ≥30°C (hot) and ≤20°C (cold). Ogasawara shows distinct cold-water pattern.</span>
@@ -2212,8 +2225,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlZ2l1aWJscGxpYWlucGRnZ2ZqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NDIwOTM3NCwiZXhwIjoyMDc5Nzg1Mzc0fQ.V3C2newkAdn6gW2TR_ct-_WupVKZapXKtD9Cr3aMk2M';
     
     const LOCATIONS = [
-        { id: 'okinawa_manza', name: '万座', nameEn: 'Manza' },
         { id: 'okinawa_sesoko', name: '瀬底', nameEn: 'Sesoko' },
+        { id: 'okinawa_manza', name: '万座', nameEn: 'Manza' },
         { id: 'ogasawara', name: '小笠原', nameEn: 'Ogasawara' }
     ];
     
@@ -2535,17 +2548,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         labels: years,
                         datasets: [
                             {
-                                label: '万座',
-                                data: dhwData.manza.map(d => d.peak_dhw),
-                                backgroundColor: chartColors.manza + '99',
-                                borderColor: chartColors.manza,
-                                borderWidth: 1
-                            },
-                            {
                                 label: '瀬底',
                                 data: dhwData.sesoko.map(d => d.peak_dhw),
                                 backgroundColor: chartColors.sesoko + '99',
                                 borderColor: chartColors.sesoko,
+                                borderWidth: 1
+                            },
+                            {
+                                label: '万座',
+                                data: dhwData.manza.map(d => d.peak_dhw),
+                                backgroundColor: chartColors.manza + '99',
+                                borderColor: chartColors.manza,
                                 borderWidth: 1
                             },
                             {
@@ -2606,17 +2619,17 @@ document.addEventListener('DOMContentLoaded', function() {
                                 labels: years,
                                 datasets: [
                                     {
-                                        label: '万座',
-                                        data: extremeData.hot_days.manza.map(d => d.days),
-                                        backgroundColor: chartColors.manza + '99',
-                                        borderColor: chartColors.manza,
-                                        borderWidth: 1
-                                    },
-                                    {
                                         label: '瀬底',
                                         data: extremeData.hot_days.sesoko.map(d => d.days),
                                         backgroundColor: chartColors.sesoko + '99',
                                         borderColor: chartColors.sesoko,
+                                        borderWidth: 1
+                                    },
+                                    {
+                                        label: '万座',
+                                        data: extremeData.hot_days.manza.map(d => d.days),
+                                        backgroundColor: chartColors.manza + '99',
+                                        borderColor: chartColors.manza,
                                         borderWidth: 1
                                     },
                                     {

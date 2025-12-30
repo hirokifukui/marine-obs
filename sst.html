@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SST - Sea Surface Temperature | marine-obs.org</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --header-bg: #1a1f2e;
+            --header-text: #ffffff;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-card: #ffffff;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --accent-teal: #2b6cb0;
+            --accent-coral: #996060;
+            --accent-warm: #c05621;
+            --accent-green: #2f855a;
+            --border: #e2e8f0;
+            --shadow: 0 1px 3px rgba(0,0,0,0.08);
+            --manza: #c05621;
+            --sesoko: #2b6cb0;
+            --ogasawara: #2f855a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        body.ja {
+            font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
+        }
+
+        /* Header */
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 0.75rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #5b9a94 0%, #2b6cb0 100%);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lang-switch {
+            font-size: 0.8rem;
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .lang-switch button {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.6);
+            cursor: pointer;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .lang-switch button:hover { color: rgba(255,255,255,0.9); }
+        .lang-switch button.active { color: #ffffff; background: rgba(255,255,255,0.15); }
+
+        /* Main */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .breadcrumb a {
+            color: var(--accent-teal);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        /* Page header */
+        .page-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .page-header h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        body.ja .page-header h1 {
+            font-size: 1.5rem;
+            letter-spacing: 0;
+        }
+
+        .page-header .lead {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 720px;
+        }
+
+        body.ja .page-header .lead {
+            line-height: 2;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .card-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* KPI row */
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .kpi-row { grid-template-columns: 1fr; }
+        }
+
+        .kpi-item {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 6px;
+            background: var(--bg-secondary);
+        }
+
+        .kpi-item .site-name {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.35rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+
+        .site-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .kpi-item .value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .kpi-item .unit {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .kpi-item .context {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .kpi-item .diff {
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+
+        .diff.above { color: var(--accent-warm); }
+        .diff.below { color: var(--accent-teal); }
+
+        /* Content sections */
+        .content-section {
+            margin-bottom: 2rem;
+        }
+
+        .content-section h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .content-section p {
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        body.ja .content-section p {
+            line-height: 2.1;
+        }
+
+        /* Chart */
+        .chart-container {
+            height: 280px;
+            position: relative;
+        }
+
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .legend-line {
+            width: 16px;
+            height: 3px;
+            border-radius: 2px;
+        }
+
+        .legend-manza { background: var(--manza); }
+        .legend-sesoko { background: var(--sesoko); }
+        .legend-ogasawara { background: var(--ogasawara); }
+
+        /* Reference table */
+        .ref-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+
+        .ref-table th, .ref-table td {
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .ref-table th {
+            font-weight: 600;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+        }
+
+        .ref-table td {
+            color: var(--text-secondary);
+        }
+
+        /* Source info */
+        .source-info {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+
+        .source-info a {
+            color: var(--accent-teal);
+            text-decoration: none;
+        }
+
+        .source-info a:hover { text-decoration: underline; }
+
+        /* Footer */
+        footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--accent-teal);
+            text-decoration: none;
+        }
+
+        /* Language toggle */
+        [data-lang="ja"] { display: none; }
+        body.ja [data-lang="en"] { display: none; }
+        body.ja [data-lang="ja"] { display: inline; }
+
+        /* Recent trend mini chart */
+        .trend-chart-container {
+            height: 180px;
+            position: relative;
+        }
+
+        /* Update badge */
+        .update-badge {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            background: var(--bg-secondary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            margin-left: auto;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-header .card-title {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌊</span>
+                marine-obs.org
+            </a>
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button onclick="setLang('en')" id="lang-en" class="active">EN</button>
+                    <button onclick="setLang('ja')" id="lang-ja">JA</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> / 
+            <span data-lang="en">SST</span>
+            <span data-lang="ja">海水温</span>
+        </nav>
+
+        <div class="page-header">
+            <h1>
+                <span data-lang="en">Sea Surface Temperature (SST)</span>
+                <span data-lang="ja">海水温（SST）</span>
+            </h1>
+            <p class="lead">
+                <span data-lang="en">
+                    Sea Surface Temperature is the most fundamental indicator for coral reef health. 
+                    When water temperatures exceed the seasonal maximum that corals have adapted to, 
+                    thermal stress accumulates and can trigger coral bleaching.
+                </span>
+                <span data-lang="ja">
+                    海水温はサンゴ礁の健康状態を示す最も基本的な指標です。
+                    サンゴが適応してきた季節的な最高水温を超えると、熱ストレスが蓄積され、
+                    白化現象を引き起こす可能性があります。
+                </span>
+            </p>
+        </div>
+
+        <!-- Current SST -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <span data-lang="en">Current SST</span>
+                    <span data-lang="ja">現在の海水温</span>
+                </div>
+                <span class="update-badge" id="sst-update-date">--</span>
+            </div>
+            <div class="kpi-row" id="current-sst">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- Recent trend -->
+        <div class="card">
+            <div class="card-title">
+                <span data-lang="en">30-Day Trend</span>
+                <span data-lang="ja">直近30日の推移</span>
+            </div>
+            <div class="trend-chart-container">
+                <canvas id="trendChart"></canvas>
+            </div>
+            <div class="chart-legend">
+                <div class="legend-item"><span class="legend-line legend-manza"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
+                <div class="legend-item"><span class="legend-line legend-sesoko"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
+                <div class="legend-item"><span class="legend-line legend-ogasawara"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
+            </div>
+        </div>
+
+        <!-- Explanation -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">What is SST?</span>
+                <span data-lang="ja">SSTとは</span>
+            </h2>
+            <p>
+                <span data-lang="en">
+                    SST (Sea Surface Temperature) is the water temperature measured at or near the ocean's surface. 
+                    For coral reef monitoring, we use satellite-derived SST data that provides daily measurements 
+                    at high spatial resolution (1km).
+                </span>
+                <span data-lang="ja">
+                    SST（Sea Surface Temperature：海面水温）は、海洋の表面付近で測定される水温です。
+                    サンゴ礁のモニタリングでは、高い空間解像度（1km）で日次測定を提供する
+                    衛星由来のSSTデータを使用しています。
+                </span>
+            </p>
+            <p>
+                <span data-lang="en">
+                    Corals live in a narrow temperature range. Most reef-building corals thrive between 23-29°C. 
+                    When temperatures rise above their upper thermal limit (typically around 29-30°C for Okinawan corals), 
+                    they experience thermal stress that can lead to bleaching.
+                </span>
+                <span data-lang="ja">
+                    サンゴは狭い温度範囲で生息しています。ほとんどの造礁サンゴは23-29℃で繁栄します。
+                    水温が上限（沖縄のサンゴでは通常29-30℃前後）を超えると、
+                    熱ストレスを受け、白化につながる可能性があります。
+                </span>
+            </p>
+        </section>
+
+        <!-- Monthly climatology -->
+        <div class="card">
+            <div class="card-title">
+                <span data-lang="en">Monthly Climatology (2002-2024)</span>
+                <span data-lang="ja">月別平年値（2002-2024年）</span>
+            </div>
+            <div class="chart-container">
+                <canvas id="climChart"></canvas>
+            </div>
+            <div class="chart-legend">
+                <div class="legend-item"><span class="legend-line legend-manza"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
+                <div class="legend-item"><span class="legend-line legend-sesoko"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
+                <div class="legend-item"><span class="legend-line legend-ogasawara"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
+            </div>
+        </div>
+
+        <!-- Key thresholds -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Key Thresholds</span>
+                <span data-lang="ja">重要な閾値</span>
+            </h2>
+            <div class="card" style="margin-top: 1rem;">
+                <table class="ref-table">
+                    <thead>
+                        <tr>
+                            <th><span data-lang="en">Metric</span><span data-lang="ja">指標</span></th>
+                            <th><span data-lang="en">Value</span><span data-lang="ja">値</span></th>
+                            <th><span data-lang="en">Meaning</span><span data-lang="ja">意味</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MMM</td>
+                            <td>
+                                <span data-lang="en">Manza/Sesoko: 29.0°C<br>Ogasawara: 28.5°C</span>
+                                <span data-lang="ja">万座・瀬底: 29.0°C<br>小笠原: 28.5°C</span>
+                            </td>
+                            <td>
+                                <span data-lang="en">Maximum Monthly Mean - the warmest monthly average SST</span>
+                                <span data-lang="ja">最暖月平均 - 最も暖かい月の平均SST</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Bleaching threshold</span><span data-lang="ja">白化閾値</span></td>
+                            <td>MMM + 1°C</td>
+                            <td>
+                                <span data-lang="en">SST above this level indicates thermal stress</span>
+                                <span data-lang="ja">この水準を超えると熱ストレスを示す</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">High temp day</span><span data-lang="ja">高温日</span></td>
+                            <td>≥30°C</td>
+                            <td>
+                                <span data-lang="en">Days with SST at or above 30°C</span>
+                                <span data-lang="ja">SST 30°C以上の日</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Low temp day</span><span data-lang="ja">低温日</span></td>
+                            <td>≤20°C</td>
+                            <td>
+                                <span data-lang="en">Days with SST at or below 20°C (cold stress)</span>
+                                <span data-lang="ja">SST 20°C以下の日（低温ストレス）</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Data source -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Data Source</span>
+                <span data-lang="ja">データソース</span>
+            </h2>
+            <div class="source-info">
+                <strong>NASA MUR SST</strong><br>
+                <span data-lang="en">
+                    Multi-scale Ultra-high Resolution SST Analysis. 
+                    Daily, 1km resolution global dataset combining satellite and in-situ observations.
+                </span>
+                <span data-lang="ja">
+                    多重スケール超高解像度SST解析。
+                    衛星観測と現地観測を組み合わせた、日次・1km解像度のグローバルデータセット。
+                </span>
+                <br><br>
+                <a href="https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1" target="_blank">
+                    NASA PO.DAAC → MUR SST Dataset
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <a href="index.html">← 
+            <span data-lang="en">Back to Home</span>
+            <span data-lang="ja">ホームに戻る</span>
+        </a>
+        <p style="margin-top: 0.5rem;">© 2025 marine-obs.org</p>
+    </footer>
+
+    <script>
+        // Language toggle
+        function setLang(lang) {
+            document.body.classList.toggle('ja', lang === 'ja');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
+            localStorage.setItem('lang', lang);
+        }
+
+        // Restore language preference
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang) setLang(savedLang);
+
+        // Site colors
+        const COLORS = {
+            manza: '#c05621',
+            sesoko: '#2b6cb0',
+            ogasawara: '#2f855a'
+        };
+
+        // Site MMM values
+        const MMM = {
+            manza: 29.0,
+            sesoko: 29.0,
+            ogasawara: 28.5
+        };
+
+        // Load data and render
+        async function init() {
+            try {
+                const [recentRes, climRes] = await Promise.all([
+                    fetch('data/sst_recent.json'),
+                    fetch('data/monthly_clim.json')
+                ]);
+                
+                const recent = await recentRes.json();
+                const clim = await climRes.json();
+                
+                renderCurrentSST(recent);
+                renderTrendChart(recent);
+                renderClimChart(clim);
+            } catch (err) {
+                console.error('Failed to load data:', err);
+            }
+        }
+
+        function renderCurrentSST(data) {
+            const container = document.getElementById('current-sst');
+            const sites = ['manza', 'sesoko', 'ogasawara'];
+            const siteNames = {
+                manza: { en: 'Manza', ja: '万座' },
+                sesoko: { en: 'Sesoko', ja: '瀬底' },
+                ogasawara: { en: 'Ogasawara', ja: '小笠原' }
+            };
+
+            // Get latest date from data
+            const latestDate = data.manza[data.manza.length - 1].date;
+            const dateObj = new Date(latestDate);
+            const dateStrEn = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            const dateStrJa = dateObj.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
+            
+            document.getElementById('sst-update-date').innerHTML = `
+                <span data-lang="en">${dateStrEn}</span>
+                <span data-lang="ja">${dateStrJa}</span>
+            `;
+            // Re-apply language
+            const lang = localStorage.getItem('lang') || 'en';
+            if (lang === 'ja') {
+                document.getElementById('sst-update-date').querySelectorAll('[data-lang="en"]').forEach(el => el.style.display = 'none');
+                document.getElementById('sst-update-date').querySelectorAll('[data-lang="ja"]').forEach(el => el.style.display = 'inline');
+            }
+
+            // Get current month for climatology comparison
+            const currentMonth = dateObj.getMonth() + 1;
+
+            let html = '';
+            sites.forEach(site => {
+                const siteData = data[site];
+                const latest = siteData[siteData.length - 1];
+                const sst = latest.sst;
+
+                // Get monthly clim for comparison (approximate)
+                const diff = sst - MMM[site];
+                const diffClass = diff > 0 ? 'above' : 'below';
+                const diffText = diff > 0 ? `+${diff.toFixed(1)}` : diff.toFixed(1);
+
+                html += `
+                    <div class="kpi-item">
+                        <div class="site-name">
+                            <span class="site-dot" style="background:${COLORS[site]}"></span>
+                            <span data-lang="en">${siteNames[site].en}</span>
+                            <span data-lang="ja">${siteNames[site].ja}</span>
+                        </div>
+                        <div class="value">${sst.toFixed(1)}<span class="unit">°C</span></div>
+                        <div class="diff ${diffClass}">
+                            <span data-lang="en">${diffText}°C vs MMM</span>
+                            <span data-lang="ja">MMM比 ${diffText}°C</span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            // Re-apply language to new content
+            if (localStorage.getItem('lang') === 'ja') {
+                container.querySelectorAll('[data-lang="en"]').forEach(el => el.style.display = 'none');
+                container.querySelectorAll('[data-lang="ja"]').forEach(el => el.style.display = 'inline');
+            }
+        }
+
+        function renderTrendChart(data) {
+            const ctx = document.getElementById('trendChart').getContext('2d');
+            
+            const labels = data.manza.map(d => {
+                const date = new Date(d.date);
+                return `${date.getMonth() + 1}/${date.getDate()}`;
+            });
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Manza',
+                            data: data.manza.map(d => d.sst),
+                            borderColor: COLORS.manza,
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.3,
+                            pointRadius: 0
+                        },
+                        {
+                            label: 'Sesoko',
+                            data: data.sesoko.map(d => d.sst),
+                            borderColor: COLORS.sesoko,
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.3,
+                            pointRadius: 0
+                        },
+                        {
+                            label: 'Ogasawara',
+                            data: data.ogasawara.map(d => d.sst),
+                            borderColor: COLORS.ogasawara,
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.3,
+                            pointRadius: 0
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: { 
+                                font: { size: 10 },
+                                maxTicksLimit: 10
+                            }
+                        },
+                        y: {
+                            grid: { color: '#e2e8f0' },
+                            ticks: { 
+                                font: { size: 10 },
+                                callback: v => v + '°C'
+                            }
+                        }
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    }
+                }
+            });
+        }
+
+        function renderClimChart(data) {
+            const ctx = document.getElementById('climChart').getContext('2d');
+            
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: months,
+                    datasets: [
+                        {
+                            label: 'Manza',
+                            data: data.manza.map(d => d.avg_sst),
+                            borderColor: COLORS.manza,
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.4,
+                            pointRadius: 3,
+                            pointBackgroundColor: COLORS.manza
+                        },
+                        {
+                            label: 'Sesoko',
+                            data: data.sesoko.map(d => d.avg_sst),
+                            borderColor: COLORS.sesoko,
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.4,
+                            pointRadius: 3,
+                            pointBackgroundColor: COLORS.sesoko
+                        },
+                        {
+                            label: 'Ogasawara',
+                            data: data.ogasawara.map(d => d.avg_sst),
+                            borderColor: COLORS.ogasawara,
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.4,
+                            pointRadius: 3,
+                            pointBackgroundColor: COLORS.ogasawara
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 11 } }
+                        },
+                        y: {
+                            grid: { color: '#e2e8f0' },
+                            ticks: { 
+                                font: { size: 10 },
+                                callback: v => v + '°C'
+                            },
+                            min: 20,
+                            max: 30
+                        }
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    }
+                }
+            });
+        }
+
+        // Initialize
+        init();
+    </script>
+</body>
+</html>
