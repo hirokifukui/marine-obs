@@ -1826,3 +1826,34 @@ body.ja .hero-tagline-sub {
         line-height: 1.7;
     }
 }
+
+/* Introduction Links */
+.intro-links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.intro-link {
+    color: var(--accent-teal);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.intro-link:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 640px) {
+    .intro-links {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .intro-link {
+        font-size: 0.85rem;
+    }
+}
