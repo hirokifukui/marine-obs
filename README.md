@@ -434,3 +434,68 @@ marine-obs/
 ---
 
 *最終更新: 2025-12-31*
+
+---
+
+## JSON統一（2025-12-31）
+
+### 背景
+チャートデータの取得方法が不統一だった問題を解消。全カードをJSON fetch方式に統一し、`chart-data.js`を廃止。
+
+### 変更内容
+
+**廃止:**
+- `js/chart-data.js` → `archive/chart-data.js.deprecated` に移動
+
+**新規JSON:**
+| ファイル | 用途 |
+|----------|------|
+| `data/sst_card.json` | SSTカード（月別比較） |
+| `data/dhw_card.json` | DHWカード（年別推移） |
+| `data/spawning_card.json` | 産卵予測カード |
+
+**統合:**
+- `js/charts.js` が全カードのチャート初期化を担当
+
+### データフロー（統一後）
+
+```
+data/
+├── sst_card.json         → SST カード
+├── extreme_days.json     → 極端日数 カード（既存）
+├── dhw_card.json         → DHW カード
+├── dhw_annual_peak.json  → DHW 詳細ページ（既存）
+├── spawning_card.json    → 産卵予測 カード
+├── monthly_clim.json     → SST 詳細ページ（既存）
+└── sst_recent.json       → SST 詳細ページ（既存）
+
+js/charts.js → 全チャートを fetch() で初期化
+```
+
+### ローカル開発
+
+`file://` プロトコルでは fetch() がCORSでブロックされるため、ローカルサーバーを使用:
+
+```bash
+cd "/Users/hirokifukui/Dropbox (個人)/Scripts/marine-obs"
+
+# 方法1: Python
+python3 -m http.server 8000
+
+# 方法2: VS Code Live Server
+# 右クリック → Open with Live Server
+```
+
+その後 http://localhost:8000 でアクセス。
+
+### 変更履歴追記
+
+| 日付 | 変更内容 |
+|------|----------|
+| 2025-12-31 | **JSON統一**: 全カードをJSON fetch方式に統一、chart-data.js廃止 |
+| 2025-12-31 | 新規JSON: sst_card.json, dhw_card.json, spawning_card.json |
+| 2025-12-31 | charts.js統合: 全チャート初期化を一元管理 |
+
+---
+
+*最終更新: 2025-12-31*

@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "description": "サンゴ産卵予測カード用データ",
+    "generated_at": "2025-12-31"
+  },
+  "next_event": {
+    "date": "2026-06-06",
+    "day_of_week": "土",
+    "time_estimate": "21:42 ± 23min",
+    "location": "沖縄本島",
+    "species": "ミドリイシ属"
+  },
+  "prediction_basis": {
+    "lunar_phase": "満月後6-8日",
+    "sst_threshold": "26-28°C",
+    "dark_period_hours": 2.5
+  }
+}
