@@ -1794,3 +1794,35 @@ body.ja .hero-tagline-sub {
     color: #4a5568;
 }
 
+
+/* Introduction Section */
+.intro-section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+}
+
+.intro-content {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.intro-content p {
+    margin-bottom: 1rem;
+}
+
+.intro-content p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+    .intro-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .intro-content {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+}
