@@ -1011,9 +1011,73 @@
                     </div>
                 </div>
             </div>
+            <!-- Phase Indicator -->
+            <div class="phase-indicator" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 1.25rem; margin-top: 1.5rem;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                    <span style="font-size: 0.9rem; font-weight: 600;">
+                        <span data-lang="en">Prediction Phase: 1 / 4</span>
+                        <span data-lang="ja">予測フェーズ: 1 / 4</span>
+                    </span>
+                    <span style="font-size: 0.75rem; opacity: 0.8;">
+                        <span data-lang="en">Annual (Literature-based)</span>
+                        <span data-lang="ja">年間予測（文献ベース）</span>
+                    </span>
+                </div>
+                <div style="background: rgba(255,255,255,0.2); border-radius: 4px; height: 8px; overflow: hidden;">
+                    <div style="background: #fbbf24; width: 25%; height: 100%;"></div>
+                </div>
+                <div style="font-size: 0.8rem; margin-top: 0.75rem; opacity: 0.85;">
+                    <span data-lang="en">🔄 Daily updates starting April 2026</span>
+                    <span data-lang="ja">🔄 2026年4月から毎日更新予定</span>
+                </div>
+                <div style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.7;">
+                    <span data-lang="en">Other months: May ~5/6 · July ~7/5</span>
+                    <span data-lang="ja">他月の予測: 5月 ~5/6 · 7月 ~7/5</span>
+                </div>
+            </div>
+
         </section>
 
         <!-- ===== INTRODUCTION: Why can we predict? ===== -->
+
+        <!-- Coral Foundation Section -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Corals: Foundation of the Sea</span>
+                <span data-lang="ja">サンゴは海の土台</span>
+            </h2>
+            
+            <div class="story-box">
+                <p class="story-lead" data-lang="en">
+                    Over 25% of all marine species depend on coral reefs for survival.
+                </p>
+                <p class="story-lead" data-lang="ja">
+                    海洋生物種の25%以上が、サンゴ礁に暮らしています。
+                </p>
+                
+                <p data-lang="en">
+                    If coral spawning fails, no next generation is born. When corals decline, the fish that live among them and the creatures that feed on those fish are all affected in a cascade.
+                </p>
+                <p data-lang="ja">
+                    サンゴの産卵が失敗すれば、次世代が生まれない。サンゴが減れば、そこに棲む魚も、その魚を食べる生き物も、連鎖的に影響を受けます。
+                </p>
+                
+                <p data-lang="en">
+                    That is why corals do not take a spawn anyway strategy. Once a year, they synchronize with as many companions as possible, releasing their gametes under the most favorable conditions.
+                </p>
+                <p data-lang="ja">
+                    だからサンゴは「とりあえず産む」という戦略をとりません。年に一度のチャンスに、できる限り多くの仲間と同期して、できる限り受精しやすい条件で、配偶子を海に放つ。
+                </p>
+                
+                <p data-lang="en" style="font-weight: 500; color: var(--text-primary);">
+                    Because they cannot move, they have refined their ability to read the environment to the extreme. That is the reason for this precision.
+                </p>
+                <p data-lang="ja" style="font-weight: 500; color: var(--text-primary);">
+                    動けないからこそ、環境を読む能力を極限まで磨いてきた。それが、この精密さの理由です。
+                </p>
+            </div>
+        </section>
+
         <section class="content-section">
             <h2>
                 <span data-lang="en">Why Can We Predict the Exact Minute?</span>
@@ -1556,6 +1620,100 @@
         <!-- ===== SECTION: Interactive Placeholder ===== -->
         <section class="content-section">
             <h2>
+
+        <!-- Prediction Mechanism Section -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">How We Predict</span>
+                <span data-lang="ja">予測の仕組み</span>
+            </h2>
+            
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--spawning-purple);">
+                    <span data-lang="en">Four-Phase Prediction System</span>
+                    <span data-lang="ja">4フェーズ予測システム</span>
+                </h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th><span data-lang="en">Phase</span><span data-lang="ja">フェーズ</span></th>
+                            <th><span data-lang="en">Timing</span><span data-lang="ja">時期</span></th>
+                            <th><span data-lang="en">Data Source</span><span data-lang="ja">データソース</span></th>
+                            <th><span data-lang="en">Accuracy</span><span data-lang="ja">精度</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="highlight-row">
+                            <td>Phase 1</td>
+                            <td><span data-lang="en">Until April</span><span data-lang="ja">〜4月</span></td>
+                            <td><span data-lang="en">Full moon + Literature</span><span data-lang="ja">満月日＋文献</span></td>
+                            <td>± 3 days</td>
+                        </tr>
+                        <tr>
+                            <td>Phase 2</td>
+                            <td><span data-lang="en">From April</span><span data-lang="ja">4月〜</span></td>
+                            <td><span data-lang="en">SST observations</span><span data-lang="ja">SST実測値</span></td>
+                            <td>± 2 days</td>
+                        </tr>
+                        <tr>
+                            <td>Phase 3</td>
+                            <td><span data-lang="en">1 week before</span><span data-lang="ja">1週間前</span></td>
+                            <td><span data-lang="en">Wind and tide forecast</span><span data-lang="ja">風速・潮汐予報</span></td>
+                            <td>± 1 day</td>
+                        </tr>
+                        <tr>
+                            <td>Phase 4</td>
+                            <td><span data-lang="en">Just before</span><span data-lang="ja">直前</span></td>
+                            <td><span data-lang="en">Current conditions</span><span data-lang="ja">当日条件</span></td>
+                            <td>± hours</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="story-box">
+                <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">
+                    <span data-lang="en">Temperature Adjustment Rules</span>
+                    <span data-lang="ja">水温による調整ルール</span>
+                </h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                    <span data-lang="en">Based on Sakai et al. 2020</span>
+                    <span data-lang="ja">Sakai et al. 2020 に基づく</span>
+                </p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">
+                        <span data-lang="en">+2 degrees C or more above average</span>
+                        <span data-lang="ja">平年比 +2度C以上</span>
+                        → <span data-lang="en">3 days earlier</span><span data-lang="ja">3日早まる</span>
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">
+                        <span data-lang="en">+1 degree C above average</span>
+                        <span data-lang="ja">平年比 +1度C</span>
+                        → <span data-lang="en">2 days earlier</span><span data-lang="ja">2日早まる</span>
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); background: var(--spawning-light);">
+                        <span data-lang="en">Average</span>
+                        <span data-lang="ja">平年並み</span>
+                        → <span data-lang="en">Standard (5 days after full moon)</span><span data-lang="ja">基準（満月後5日）</span>
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">
+                        <span data-lang="en">1 degree C below average</span>
+                        <span data-lang="ja">平年比 -1度C</span>
+                        → <span data-lang="en">2 days later</span><span data-lang="ja">2日遅れる</span>
+                    </li>
+                    <li style="padding: 0.5rem 0;">
+                        <span data-lang="en">2 degrees C or more below average</span>
+                        <span data-lang="ja">平年比 -2度C以下</span>
+                        → <span data-lang="en">3 days later</span><span data-lang="ja">3日遅れる</span>
+                    </li>
+                </ul>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; font-style: italic;">
+                    <span data-lang="en">These rules may be updated based on additional research.</span>
+                    <span data-lang="ja">このルールは追加研究により更新される可能性があります。</span>
+                </p>
+            </div>
+        </section>
+
                 <span data-lang="en">Interactive Prediction (Coming Soon)</span>
                 <span data-lang="ja">インタラクティブ予測（準備中）</span>
             </h2>
