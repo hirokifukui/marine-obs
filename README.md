@@ -351,3 +351,86 @@ Vercelが自動検知して約1分でデプロイ完了。
 
 ### アーカイブ
 - `archive/species_v1.html` — v1バックアップ
+
+---
+
+## CSS/JS外部化（2025-12-31）
+
+### 背景
+index.htmlが3,378行・120KBに肥大化し、Claude編集時に頻繁に停止する問題が発生。CSS/JSを外部ファイルに分割して軽量化。
+
+### 実施内容
+
+**分割前:**
+```
+index.html: 3,378行 / 120KB（CSS・JS全てインライン）
+```
+
+**分割後:**
+```
+index.html: 700行 / 44KB（63%削減）
+css/main.css: 38KB
+js/
+├── lang.js: 2KB（言語切替）
+├── chart-data.js: 5KB（SST/DHWチャートデータ）
+├── marine-monitor.js: 14KB（Supabase連携）
+├── gear-recs.js: 8KB（装備推奨）
+└── charts.js: 10KB（Chart.js初期化・Extremeチャート）
+```
+
+### 修正点
+- `css/main.css`内の画像パスを修正: `url('hero.jpg')` → `url('../hero.jpg')`
+- Chart.js CDNの重複読み込みを削除
+
+### 既知の問題：チャートデータの不整合
+
+現在、チャートデータの取得方法が統一されていない:
+
+| チャート | データ取得方法 | ファイル |
+|----------|----------------|----------|
+| SST | JSにハードコード | js/chart-data.js |
+| DHW | JSにハードコード | js/chart-data.js |
+| Extreme | fetch()でJSON取得 | js/charts.js |
+
+**問題:**
+- ローカル（file://）では fetch() がCORS制限でブロックされる
+- Extremeチャートのみローカルで表示されない（デプロイ後は正常）
+
+**TODO（優先度：中）:**
+- 全チャートをJSON fetch方式に統一する
+- `data/sst_monthly.json`, `data/dhw_trend.json` を作成
+- `chart-data.js` を廃止し、`charts.js` に統合
+
+### ファイル構成（更新後）
+
+```
+marine-obs/
+├── index.html          # 700行に軽量化
+├── css/
+│   └── main.css        # 全CSS
+├── js/
+│   ├── lang.js
+│   ├── chart-data.js   # TODO: JSON化して廃止予定
+│   ├── marine-monitor.js
+│   ├── gear-recs.js
+│   └── charts.js
+├── data/
+│   ├── dhw_annual_peak.json
+│   ├── extreme_days.json
+│   ├── monthly_clim.json
+│   └── sst_recent.json
+├── (HTMLページ群)
+├── (画像ファイル群)
+└── archive/            # バックアップ
+```
+
+### 変更履歴追記
+
+| 日付 | 変更内容 |
+|------|----------|
+| 2025-12-31 | **CSS/JS外部化**: index.html 3,378行→700行に軽量化、css/・js/フォルダ作成 |
+| 2025-12-31 | フォルダ整理: .bakファイル4件をarchive/に移動、重複画像・空ファイル削除 |
+
+---
+
+*最終更新: 2025-12-31*
