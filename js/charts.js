@@ -114,7 +114,59 @@
         }
     }
 
-
+    // DHWピークをSupabaseから取得
+    async function loadDHWFromSupabase() {
+        try {
+            const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_dhw_all_years`, {
+                method: 'POST',
+                headers: {
+                    'apikey': SUPABASE_ANON_KEY,
+                    'Content-Type': 'application/json'
+                }
+            });
+            if (!response.ok) throw new Error('Supabase RPC failed');
+            const data = await response.json();
+            
+            // 2024年と2025年のピーク値を取得
+            const get2024 = (site) => data[site]?.find(d => d.year === 2024)?.peak_dhw || 0;
+            const get2025 = (site) => data[site]?.find(d => d.year === 2025)?.peak_dhw || 0;
+            
+            const peak2024 = { manza: get2024('manza'), sesoko: get2024('sesoko'), ogasawara: get2024('ogasawara') };
+            const peak2025 = { manza: get2025('manza'), sesoko: get2025('sesoko'), ogasawara: get2025('ogasawara') };
+            
+            // 日付計算
+            const pubDateObj = new Date(Date.UTC(
+                ...data.latest_date.split('-').map(Number).map((v, i) => i === 1 ? v - 1 : v)
+            ));
+            const obsDateObj = new Date(pubDateObj);
+            obsDateObj.setUTCDate(obsDateObj.getUTCDate() - 3);
+            
+            const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            const pubEn = months[pubDateObj.getUTCMonth()] + ' ' + pubDateObj.getUTCDate();
+            const obsEn = months[obsDateObj.getUTCMonth()] + ' ' + obsDateObj.getUTCDate();
+            const pubJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
+            const obsJa = `${obsDateObj.getUTCMonth() + 1}/${obsDateObj.getUTCDate()}`;
+            
+            const enEl = document.getElementById('dhw-latest-en');
+            const jaEl = document.getElementById('dhw-latest-ja');
+            
+            if (enEl) {
+                enEl.innerHTML = `2024: ${peak2024.manza.toFixed(1)} / ${peak2024.sesoko.toFixed(1)} / ${peak2024.ogasawara.toFixed(1)}<br>2025: ${peak2025.manza.toFixed(1)} / ${peak2025.sesoko.toFixed(1)} / ${peak2025.ogasawara.toFixed(1)}<br><small style="opacity:0.8">Obs: ${obsEn} | Pub: ${pubEn}</small>`;
+            }
+            if (jaEl) {
+                jaEl.innerHTML = `2024: ${peak2024.manza.toFixed(1)} / ${peak2024.sesoko.toFixed(1)} / ${peak2024.ogasawara.toFixed(1)}<br>2025: ${peak2025.manza.toFixed(1)} / ${peak2025.sesoko.toFixed(1)} / ${peak2025.ogasawara.toFixed(1)}<br><small style="opacity:0.8">観測: ${obsJa} | 公開: ${pubJa}</small>`;
+            }
+            
+            // グローバルに保存（チャート描画用）
+            window.dhwAllYearsData = data;
+            
+            console.log('✅ DHW peaks loaded from Supabase RPC');
+            return data;
+        } catch (e) {
+            console.error('❌ Failed to load DHW from Supabase:', e);
+            return null;
+        }
+    }
 
     // DHW色分け（閾値: 4未満=緑, 4-8=黄, 8以上=赤）
     function getDHWColors(values) {
@@ -209,6 +261,11 @@
             // 極端日数 カード最新値（Supabaseから動的取得）
             // ========================================
             await loadExtremeDaysFromSupabase();
+
+            // ========================================
+            // DHW カード最新値（Supabaseから動的取得）
+            // ========================================
+            await loadDHWFromSupabase();
 
             // ========================================
             // 極端日数 カード（ミニチャート）
