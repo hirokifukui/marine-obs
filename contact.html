@@ -9,143 +9,89 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
         body {
             margin: 0;
             min-height: 100vh;
             background: #fff;
         }
         .contact-page {
-            max-width: 480px;
+            max-width: 400px;
             margin: 0 auto;
-            padding: 6rem 2rem 4rem;
-        }
-        @media (max-width: 600px) {
-            .contact-page {
-                padding: 4rem 1.5rem 3rem;
-            }
+            padding: 5rem 1.5rem 3rem;
         }
         .contact-page h1 {
-            font-size: clamp(2.5rem, 8vw, 3.5rem);
-            font-weight: 400;
-            color: #0a0a0a;
-            margin: 0 0 2.5rem 0;
-            letter-spacing: -0.04em;
-            line-height: 1.05;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #111;
+            margin: 0 0 2rem 0;
         }
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            gap: 1rem;
         }
         .form-field label {
             display: block;
-            font-size: 0.8rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.01em;
-        }
-        .form-field .input-wrapper {
-            position: relative;
+            font-size: 0.875rem;
+            color: #333;
+            margin-bottom: 0.375rem;
         }
         .form-field input,
         .form-field textarea {
             width: 100%;
-            padding: 0.875rem 1rem;
-            background: #f5f5f5;
-            border: none;
-            border-radius: 8px;
-            font-size: 0.95rem;
+            padding: 0.75rem;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
             font-family: inherit;
-            color: #0a0a0a;
-            transition: all 0.15s ease;
-        }
-        .form-field input {
-            padding-right: 3rem;
-        }
-        .form-field input::placeholder,
-        .form-field textarea::placeholder {
-            color: #a3a3a3;
+            color: #111;
         }
         .form-field input:focus,
         .form-field textarea:focus {
             outline: none;
-            background: #efefef;
+            border-color: #0891b2;
         }
         .form-field textarea {
-            min-height: 140px;
+            min-height: 120px;
             resize: vertical;
-            line-height: 1.5;
-        }
-        .email-icon {
-            position: absolute;
-            right: 0.75rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 28px;
-            height: 28px;
-            background: #0891b2;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .email-icon svg {
-            width: 14px;
-            height: 14px;
-            fill: #fff;
         }
         .submit-btn {
-            align-self: flex-start;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.6rem 1rem;
-            background: transparent;
-            color: #525252;
-            border: 1px solid #e5e5e5;
+            width: 100%;
+            padding: 0.75rem;
+            background: #0891b2;
+            color: #fff;
+            border: none;
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 1rem;
             font-family: inherit;
             cursor: pointer;
-            transition: all 0.15s ease;
             margin-top: 0.5rem;
         }
         .submit-btn:hover {
-            color: #0a0a0a;
-            border-color: #d4d4d4;
-            background: #fafafa;
+            background: #0e7490;
         }
         .submit-btn:disabled {
-            opacity: 0.4;
+            opacity: 0.5;
             cursor: not-allowed;
         }
-        .submit-btn svg {
-            width: 12px;
-            height: 12px;
-            fill: currentColor;
-            transition: transform 0.15s ease;
-        }
-        .submit-btn:hover svg {
-            transform: translateX(2px);
-        }
         .form-status {
-            padding: 0.875rem 1rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            text-align: center;
             display: none;
         }
         .form-status.success {
             display: block;
             background: #f0fdf4;
-            color: #15803d;
+            color: #166534;
         }
         .form-status.error {
             display: block;
             background: #fef2f2;
-            color: #b91c1c;
+            color: #991b1b;
         }
     </style>
 </head>
@@ -168,36 +114,30 @@
 
     <main class="contact-page">
         <h1>
-            <span data-lang="en">Get in touch</span>
+            <span data-lang="en">Contact</span>
             <span data-lang="ja">お問い合わせ</span>
         </h1>
         
         <form id="contact-form" class="contact-form">
             <div class="form-field">
                 <label for="email">
-                    <span data-lang="en">Email address</span>
-                    <span data-lang="ja">メールアドレス</span>
+                    <span data-lang="en">Email</span>
+                    <span data-lang="ja">メール</span>
                 </label>
-                <div class="input-wrapper">
-                    <input type="email" id="email" name="email" required data-placeholder-en="Enter your email" data-placeholder-ja="メールアドレスを入力">
-                    <div class="email-icon">
-                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    </div>
-                </div>
+                <input type="email" id="email" name="email" required>
             </div>
             
             <div class="form-field">
                 <label for="message">
-                    <span data-lang="en">How can we help?</span>
-                    <span data-lang="ja">ご用件</span>
+                    <span data-lang="en">Message</span>
+                    <span data-lang="ja">メッセージ</span>
                 </label>
-                <textarea id="message" name="message" required data-placeholder-en="I'd like to know more about..." data-placeholder-ja="お問い合わせ内容をご記入ください..."></textarea>
+                <textarea id="message" name="message" required></textarea>
             </div>
             
             <button type="submit" class="submit-btn" id="submit-btn">
-                <span data-lang="en">Submit</span>
+                <span data-lang="en">Send</span>
                 <span data-lang="ja">送信</span>
-                <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
             </button>
             
             <div id="form-status" class="form-status"></div>
@@ -207,20 +147,6 @@
     <script src="js/lang.js"></script>
     <script>
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKLAn1MzOv0NMccagqQhvUdtJjJb6JymVMYDZa82uaR6XLWPWMKO5AdebUVtqy-RC4/exec';
-        
-        function updatePlaceholders() {
-            const lang = localStorage.getItem('lang') || 'en';
-            document.querySelectorAll('[data-placeholder-' + lang + ']').forEach(el => {
-                el.placeholder = el.getAttribute('data-placeholder-' + lang);
-            });
-        }
-        updatePlaceholders();
-        
-        const origApplyLang = window.applyLanguage;
-        window.applyLanguage = function(lang) {
-            if (origApplyLang) origApplyLang(lang);
-            updatePlaceholders();
-        };
         
         document.getElementById('contact-form').addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -232,34 +158,26 @@
             
             btn.disabled = true;
             status.className = 'form-status';
-            status.style.display = 'none';
-            
-            const data = {
-                name: '(via contact form)',
-                email: form.email.value,
-                message: form.message.value
-            };
             
             try {
                 await fetch(SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify({
+                        name: '(contact form)',
+                        email: form.email.value,
+                        message: form.message.value
+                    })
                 });
                 
                 status.className = 'form-status success';
-                status.textContent = lang === 'ja' 
-                    ? '送信しました。ありがとうございます。'
-                    : 'Message sent. Thank you.';
+                status.textContent = lang === 'ja' ? '送信しました' : 'Sent';
                 form.reset();
-                updatePlaceholders();
                 
             } catch (error) {
                 status.className = 'form-status error';
-                status.textContent = lang === 'ja'
-                    ? '送信できませんでした。'
-                    : 'Could not send. Please try again.';
+                status.textContent = lang === 'ja' ? 'エラー' : 'Error';
             }
             
             btn.disabled = false;
