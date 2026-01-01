@@ -6,7 +6,7 @@
     <title>Contact | marine-obs.org</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <style>
         * {
@@ -14,276 +14,276 @@
         }
         body {
             margin: 0;
-            background: #0a0a0a;
             min-height: 100vh;
         }
-        .terminal-page {
+        .contact-page {
             min-height: calc(100vh - 60px);
-            background: #0a0a0a;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 25%, #f0f9ff 50%, #ecfeff 75%, #f0f9ff 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 3rem 1.5rem;
             position: relative;
             overflow: hidden;
         }
-        .terminal-page::before {
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .contact-page::before {
             content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.07) 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 40% 40%, rgba(14, 165, 233, 0.04) 0%, transparent 30%);
+            pointer-events: none;
+        }
+        .floating-shapes {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
-                radial-gradient(ellipse at 20% 80%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
             pointer-events: none;
+            overflow: hidden;
         }
-        .scanline {
+        .shape {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(transparent, rgba(6, 182, 212, 0.1), transparent);
-            animation: scanline 8s linear infinite;
-            pointer-events: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.05));
+            filter: blur(1px);
         }
-        @keyframes scanline {
-            0% { top: -4px; }
-            100% { top: 100%; }
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            right: -5%;
+            animation: float 25s ease-in-out infinite;
         }
-        .terminal-container {
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 15%;
+            left: -3%;
+            animation: float 20s ease-in-out infinite reverse;
+        }
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 20%;
+            animation: float 30s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(20px, -30px) scale(1.05); }
+            50% { transform: translate(-10px, 20px) scale(0.95); }
+            75% { transform: translate(30px, 10px) scale(1.02); }
+        }
+        .contact-container {
             width: 100%;
-            max-width: 700px;
+            max-width: 480px;
             position: relative;
             z-index: 1;
         }
-        .terminal-window {
-            background: #111;
-            border: 1px solid #222;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 
-                0 0 0 1px rgba(255,255,255,0.05),
-                0 25px 50px -12px rgba(0, 0, 0, 0.8),
-                0 0 100px rgba(6, 182, 212, 0.1);
-        }
-        .terminal-header {
-            background: #1a1a1a;
-            padding: 0.875rem 1rem;
-            display: flex;
+        .back-link {
+            display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            border-bottom: 1px solid #222;
+            gap: 0.4rem;
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s;
         }
-        .terminal-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
+        .back-link:hover {
+            color: #0369a1;
+            transform: translateX(-3px);
         }
-        .terminal-dot.red { background: #ff5f56; }
-        .terminal-dot.yellow { background: #ffbd2e; }
-        .terminal-dot.green { background: #27ca40; }
-        .terminal-title {
-            flex: 1;
-            text-align: center;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: #666;
-            margin-right: 52px;
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
         }
-        .terminal-body {
-            padding: 2rem;
-            font-family: 'JetBrains Mono', monospace;
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 
+                0 4px 6px -1px rgba(0, 0, 0, 0.05),
+                0 10px 15px -3px rgba(0, 0, 0, 0.05),
+                0 25px 50px -12px rgba(0, 0, 0, 0.08),
+                inset 0 1px 1px rgba(255, 255, 255, 0.9);
         }
         @media (max-width: 600px) {
-            .terminal-body {
-                padding: 1.5rem 1rem;
+            .glass-card {
+                padding: 2rem 1.5rem;
+                border-radius: 20px;
             }
         }
-        .terminal-line {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-            color: #888;
-            font-size: 0.9rem;
+        .contact-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .contact-header h1 {
+            font-size: 1.875rem;
+            font-weight: 600;
+            color: #0c4a6e;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        .contact-header p {
+            color: #64748b;
+            font-size: 0.95rem;
             line-height: 1.6;
         }
-        .terminal-prompt {
-            color: #06b6d4;
-            margin-right: 0.75rem;
-            user-select: none;
-            flex-shrink: 0;
-        }
-        .terminal-text {
-            color: #e4e4e7;
-        }
-        .terminal-text .highlight {
-            color: #06b6d4;
-        }
-        .typing-cursor {
-            display: inline-block;
-            width: 10px;
-            height: 1.2em;
-            background: #06b6d4;
-            margin-left: 2px;
-            animation: blink 1s step-end infinite;
-            vertical-align: text-bottom;
-        }
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
-        .form-section {
-            margin-top: 1.5rem;
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
         .form-field {
-            margin-bottom: 1.5rem;
+            position: relative;
         }
-        .field-label {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.5rem;
+        .form-field label {
+            display: block;
             font-size: 0.8rem;
-        }
-        .field-prompt {
-            color: #22c55e;
-            margin-right: 0.5rem;
-        }
-        .field-name {
-            color: #a78bfa;
-        }
-        .field-type {
-            color: #666;
-            margin-left: 0.5rem;
+            font-weight: 500;
+            color: #475569;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
         }
         .form-field input,
         .form-field textarea {
             width: 100%;
-            background: #0a0a0a;
-            border: 1px solid #333;
-            border-radius: 6px;
-            padding: 1rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.95rem;
-            color: #e4e4e7;
-            transition: all 0.2s;
+            padding: 1rem 1.25rem;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            color: #1e293b;
+            transition: all 0.3s ease;
         }
         .form-field input::placeholder,
         .form-field textarea::placeholder {
-            color: #444;
+            color: #94a3b8;
+        }
+        .form-field input:hover,
+        .form-field textarea:hover {
+            border-color: rgba(6, 182, 212, 0.4);
         }
         .form-field input:focus,
         .form-field textarea:focus {
             outline: none;
+            background: rgba(255, 255, 255, 0.95);
             border-color: #06b6d4;
-            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15), 0 0 20px rgba(6, 182, 212, 0.1);
+            box-shadow: 
+                0 0 0 4px rgba(6, 182, 212, 0.1),
+                0 4px 12px rgba(6, 182, 212, 0.1);
         }
         .form-field textarea {
-            min-height: 120px;
+            min-height: 130px;
             resize: vertical;
         }
-        .submit-section {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #222;
-        }
         .submit-btn {
-            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
-            color: #000;
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+            color: #fff;
             border: none;
-            padding: 0.875rem 2rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.875rem;
-            font-weight: 600;
-            border-radius: 6px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            font-family: inherit;
             cursor: pointer;
-            transition: all 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
         }
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(6, 182, 212, 0.4);
+            box-shadow: 
+                0 10px 20px -5px rgba(8, 145, 178, 0.4),
+                0 4px 6px -2px rgba(8, 145, 178, 0.2);
+        }
+        .submit-btn:hover::before {
+            left: 100%;
         }
         .submit-btn:active {
             transform: translateY(0);
         }
         .submit-btn:disabled {
-            opacity: 0.5;
+            opacity: 0.7;
             cursor: not-allowed;
             transform: none;
         }
-        .submit-hint {
-            color: #444;
-            font-size: 0.75rem;
-        }
         .form-status {
             margin-top: 1rem;
-            padding: 1rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
             display: none;
+            text-align: center;
         }
         .form-status.success {
             display: block;
-            background: rgba(34, 197, 94, 0.1);
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            color: #22c55e;
+            background: rgba(236, 253, 245, 0.9);
+            border: 1px solid rgba(167, 243, 208, 0.5);
+            color: #065f46;
         }
         .form-status.error {
             display: block;
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            color: #ef4444;
+            background: rgba(254, 242, 242, 0.9);
+            border: 1px solid rgba(254, 202, 202, 0.5);
+            color: #991b1b;
         }
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #666;
-            text-decoration: none;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            margin-bottom: 1.5rem;
-            transition: color 0.2s;
-        }
-        .back-link:hover {
-            color: #06b6d4;
-        }
-        .terminal-footer {
+        .contact-footer {
+            text-align: center;
             margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid #222;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.7rem;
-            color: #444;
+            font-size: 0.8rem;
+            color: #94a3b8;
         }
-        .status-indicator {
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(148, 163, 184, 0.2);
+        }
+        .trust-badge {
             display: flex;
             align-items: center;
             gap: 0.4rem;
+            font-size: 0.75rem;
+            color: #64748b;
         }
-        .status-dot {
-            width: 6px;
-            height: 6px;
-            background: #22c55e;
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        /* Custom header for this page */
-        header {
-            background: #0a0a0a !important;
-            border-bottom: 1px solid #222 !important;
+        .trust-badge svg {
+            width: 14px;
+            height: 14px;
+            fill: #06b6d4;
         }
     </style>
 </head>
@@ -304,82 +304,73 @@
         </div>
     </header>
 
-    <div class="terminal-page">
-        <div class="scanline"></div>
-        <div class="terminal-container">
+    <div class="contact-page">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        
+        <div class="contact-container">
             <a href="index.html" class="back-link">
-                <span>←</span>
-                <span data-lang="en">cd ../dashboard</span>
-                <span data-lang="ja">cd ../ダッシュボード</span>
+                <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                <span data-lang="en">Back to Dashboard</span>
+                <span data-lang="ja">ダッシュボードに戻る</span>
             </a>
             
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <div class="terminal-dot red"></div>
-                    <div class="terminal-dot yellow"></div>
-                    <div class="terminal-dot green"></div>
-                    <div class="terminal-title">contact@marine-obs.org</div>
+            <div class="glass-card">
+                <div class="contact-header">
+                    <h1>
+                        <span data-lang="en">Get in Touch</span>
+                        <span data-lang="ja">お問い合わせ</span>
+                    </h1>
+                    <p data-lang="en">Questions, feedback, or collaboration ideas.</p>
+                    <p data-lang="ja">ご質問、フィードバック、協力のご提案など。</p>
                 </div>
-                
-                <div class="terminal-body">
-                    <div class="terminal-line">
-                        <span class="terminal-prompt">$</span>
-                        <span class="terminal-text" id="typing-text"></span>
-                        <span class="typing-cursor" id="cursor"></span>
+
+                <form id="contact-form" class="contact-form">
+                    <div class="form-field">
+                        <label for="name">
+                            <span data-lang="en">Name</span>
+                            <span data-lang="ja">お名前</span>
+                        </label>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     
-                    <form id="contact-form" class="form-section">
-                        <div class="form-field">
-                            <div class="field-label">
-                                <span class="field-prompt">→</span>
-                                <span class="field-name">name</span>
-                                <span class="field-type">// <span data-lang="en">string</span><span data-lang="ja">文字列</span></span>
-                            </div>
-                            <input type="text" id="name" name="name" required placeholder="Enter your name">
-                        </div>
-                        
-                        <div class="form-field">
-                            <div class="field-label">
-                                <span class="field-prompt">→</span>
-                                <span class="field-name">email</span>
-                                <span class="field-type">// <span data-lang="en">string</span><span data-lang="ja">文字列</span></span>
-                            </div>
-                            <input type="email" id="email" name="email" required placeholder="your@email.com">
-                        </div>
-                        
-                        <div class="form-field">
-                            <div class="field-label">
-                                <span class="field-prompt">→</span>
-                                <span class="field-name">message</span>
-                                <span class="field-type">// <span data-lang="en">text</span><span data-lang="ja">テキスト</span></span>
-                            </div>
-                            <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
-                        </div>
-                        
-                        <div class="submit-section">
-                            <button type="submit" class="submit-btn">
-                                <span data-lang="en">TRANSMIT</span>
-                                <span data-lang="ja">送信</span>
-                            </button>
-                            <span class="submit-hint">
-                                <span data-lang="en">// encrypted & secure</span>
-                                <span data-lang="ja">// 暗号化 & セキュア</span>
-                            </span>
-                        </div>
-                    </form>
-
-                    <div id="form-status" class="form-status"></div>
+                    <div class="form-field">
+                        <label for="email">
+                            <span data-lang="en">Email</span>
+                            <span data-lang="ja">メールアドレス</span>
+                        </label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
                     
-                    <div class="terminal-footer">
-                        <div class="status-indicator">
-                            <span class="status-dot"></span>
-                            <span data-lang="en">system operational</span>
-                            <span data-lang="ja">システム稼働中</span>
-                        </div>
-                        <div>
-                            <span data-lang="en">response: ~48h</span>
-                            <span data-lang="ja">応答: 約48時間</span>
-                        </div>
+                    <div class="form-field">
+                        <label for="message">
+                            <span data-lang="en">Message</span>
+                            <span data-lang="ja">メッセージ</span>
+                        </label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span data-lang="en">Send Message</span>
+                        <span data-lang="ja">送信する</span>
+                    </button>
+                </form>
+
+                <div id="form-status" class="form-status"></div>
+                
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                        <span data-lang="en">Secure</span>
+                        <span data-lang="ja">セキュア</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                        <span data-lang="en">Response in 48h</span>
+                        <span data-lang="ja">48時間以内に返信</span>
                     </div>
                 </div>
             </div>
@@ -388,47 +379,6 @@
 
     <script src="js/lang.js"></script>
     <script>
-        // Typing animation
-        const messages = {
-            en: 'Establishing secure connection to marine-obs.org...',
-            ja: 'marine-obs.orgへの安全な接続を確立中...'
-        };
-        
-        function typeText() {
-            const lang = localStorage.getItem('lang') || 'en';
-            const text = messages[lang];
-            const element = document.getElementById('typing-text');
-            const cursor = document.getElementById('cursor');
-            
-            element.textContent = '';
-            let i = 0;
-            
-            function type() {
-                if (i < text.length) {
-                    element.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(type, 30 + Math.random() * 50);
-                } else {
-                    setTimeout(() => {
-                        cursor.style.display = 'none';
-                    }, 1500);
-                }
-            }
-            
-            setTimeout(type, 500);
-        }
-        
-        typeText();
-        
-        // Re-type on language change
-        const origApplyLang = window.applyLanguage;
-        window.applyLanguage = function(lang) {
-            if (origApplyLang) origApplyLang(lang);
-            document.getElementById('cursor').style.display = 'inline-block';
-            typeText();
-        };
-        
-        // Form submission
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKLAn1MzOv0NMccagqQhvUdtJjJb6JymVMYDZa82uaR6XLWPWMKO5AdebUVtqy-RC4/exec';
         
         document.getElementById('contact-form').addEventListener('submit', async (e) => {
@@ -440,7 +390,7 @@
             const lang = localStorage.getItem('lang') || 'en';
             
             btn.disabled = true;
-            btn.innerHTML = lang === 'ja' ? '送信中...' : 'TRANSMITTING...';
+            btn.innerHTML = lang === 'ja' ? '送信中...' : 'Sending...';
             status.className = 'form-status';
             status.style.display = 'none';
             
@@ -459,22 +409,19 @@
                 });
                 
                 status.className = 'form-status success';
-                status.innerHTML = lang === 'ja' 
-                    ? '✓ transmission_complete // メッセージを受信しました'
-                    : '✓ transmission_complete // message received';
+                status.textContent = lang === 'ja' 
+                    ? '送信しました。ありがとうございます。'
+                    : 'Message sent. Thank you.';
                 form.reset();
             } catch (error) {
                 status.className = 'form-status error';
-                status.innerHTML = lang === 'ja'
-                    ? '✗ transmission_failed // 再試行してください'
-                    : '✗ transmission_failed // please retry';
+                status.textContent = lang === 'ja'
+                    ? '送信できませんでした。再度お試しください。'
+                    : 'Could not send. Please try again.';
             }
             
             btn.disabled = false;
-            btn.innerHTML = lang === 'ja' 
-                ? '<span data-lang="en">TRANSMIT</span><span data-lang="ja">送信</span>'
-                : '<span data-lang="en">TRANSMIT</span><span data-lang="ja">送信</span>';
-            if (typeof applyLanguage === 'function') applyLanguage(lang);
+            btn.innerHTML = lang === 'ja' ? '送信する' : 'Send Message';
         });
     </script>
 </body>
