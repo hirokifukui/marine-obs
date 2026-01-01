@@ -369,8 +369,8 @@
                         labels: sstData.chart.labels,
                         datasets: [
                             {
-                                label: '2024',
-                                data: sst['2024'],
+                                label: '2025',
+                                data: sst['2025'],
                                 borderColor: '#a65d5d',
                                 backgroundColor: 'rgba(231,76,60,0.1)',
                                 fill: true,
@@ -379,8 +379,8 @@
                                 borderWidth: 2
                             },
                             {
-                                label: '2023',
-                                data: sst['2023'],
+                                label: '2024',
+                                data: sst['2024'],
                                 borderColor: '#3498db',
                                 borderDash: [5, 5],
                                 fill: false,
