@@ -512,6 +512,15 @@
                     <div class="sst-diff neutral" id="diff-ogasawara">-- vs MMM</div>
                 </div>
             </div>
+
+            <div style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.9;">
+                <div id="sst-dates-en" data-lang="en">Observed: -- | Published: --</div>
+                <div id="sst-dates-ja" data-lang="ja">観測日: -- | 公開日: --</div>
+            </div>
+            <div style="text-align: center; margin-top: 0.75rem; font-size: 0.75rem; opacity: 0.75; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                <span data-lang="en">⏱ Satellite data is published approximately 2-3 days after observation due to NASA's processing pipeline.</span>
+                <span data-lang="ja">⏱ 衛星データは観測から約2〜3日後に公開されます（NASAの処理パイプラインによる）</span>
+            </div>
         </section>
 
         <!-- ===== WHY 1°C MATTERS ===== -->
@@ -884,10 +893,6 @@
                     <br>
                     <a href="https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1" target="_blank">podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1</a>
                 </p>
-                <p style="margin-top: 0.75rem; font-size: 0.75rem; color: #718096;">
-                    <span data-lang="en">⏱ Satellite data is published approximately 2-3 days after observation due to NASA's processing pipeline. The "Observed" date shown on this site indicates when the satellite captured the data; "Published" indicates when it became available.</span>
-                    <span data-lang="ja">⏱ 衛星データは観測から約2〜3日後に公開されます（NASAの処理パイプラインによる）。本サイトの「観測」は衛星がデータを取得した日、「公開」はデータが利用可能になった日を示します。</span>
-                </p>
             </div>
         </section>
     </main>
@@ -922,17 +927,28 @@
         let sstChart, climChart;
 
         // Fetch and display current SST
+        // Supabase設定
+        const SUPABASE_URL = 'https://pegiuiblpliainpdggfj.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlZ2l1aWJscGxpYWlucGRnZ2ZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQyMDkzNzQsImV4cCI6MjA3OTc4NTM3NH0.r9dBAsMLoXbgZL93lvA756r74U6YfCCfftHHlxYqZIw';
+
         async function loadCurrentSST() {
             try {
-                const response = await fetch('data/sst_recent.json');
+                // Supabaseから最新データを取得
+                const response = await fetch(
+                    `${SUPABASE_URL}/rest/v1/sst_daily?select=date,site_code,sst&order=date.desc&limit=3`,
+                    { headers: { 'apikey': SUPABASE_ANON_KEY } }
+                );
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const data = await response.json();
                 
+                // 最新日付のデータを整形
+                const latest = {};
+                data.forEach(row => { latest[row.site_code] = row.sst; });
+                const publishedDate = data[0]?.date;
+                
                 ['manza', 'sesoko', 'ogasawara'].forEach(site => {
-                    const siteData = data[site];
-                    if (siteData && siteData.length > 0) {
-                        const latest = siteData[siteData.length - 1];
-                        const sst = latest.sst;
+                    const sst = latest[site];
+                    if (sst !== undefined) {
                         const diff = sst - MMM[site];
                         
                         document.getElementById(`sst-${site}`).textContent = sst.toFixed(1) + '°C';
@@ -943,7 +959,28 @@
                         diffEl.className = 'sst-diff ' + (diff > 1 ? 'above' : diff < -1 ? 'below' : 'neutral');
                     }
                 });
-                console.log('✓ loadCurrentSST completed');
+                
+                // 日付表示を更新（月またぎ対応）
+                if (publishedDate) {
+                    const pubDateObj = new Date(Date.UTC(
+                        ...publishedDate.split('-').map(Number).map((v, i) => i === 1 ? v - 1 : v)
+                    ));
+                    const obsDateObj = new Date(pubDateObj);
+                    obsDateObj.setUTCDate(obsDateObj.getUTCDate() - 3);
+                    
+                    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                    const pubEn = months[pubDateObj.getUTCMonth()] + ' ' + pubDateObj.getUTCDate();
+                    const obsEn = months[obsDateObj.getUTCMonth()] + ' ' + obsDateObj.getUTCDate();
+                    const pubJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
+                    const obsJa = `${obsDateObj.getUTCMonth() + 1}/${obsDateObj.getUTCDate()}`;
+                    
+                    const enEl = document.getElementById('sst-dates-en');
+                    const jaEl = document.getElementById('sst-dates-ja');
+                    if (enEl) enEl.textContent = `Observed: ${obsEn} | Published: ${pubEn}`;
+                    if (jaEl) jaEl.textContent = `観測日: ${obsJa} | 公開日: ${pubJa}`;
+                }
+                
+                console.log('✓ loadCurrentSST completed (from Supabase)');
             } catch (e) {
                 console.error('Failed to load SST data:', e);
             }
