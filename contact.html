@@ -18,219 +18,142 @@
             background: #fff;
         }
         .contact-page {
-            min-height: calc(100vh - 60px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 3rem 1.5rem;
-            position: relative;
-            overflow: hidden;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 5rem 2rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
         }
-        .contact-container {
-            width: 100%;
-            max-width: 440px;
-            position: relative;
-            z-index: 1;
-        }
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            color: #64748b;
-            text-decoration: none;
-            font-size: 0.875rem;
-            margin-bottom: 2rem;
-            transition: color 0.2s;
-        }
-        .back-link:hover {
-            color: #0c4a6e;
-        }
-        .back-link svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
-        }
-        .contact-card {
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 2.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-        @media (max-width: 600px) {
-            .contact-card {
-                padding: 2rem 1.5rem;
+        @media (max-width: 768px) {
+            .contact-page {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding: 3rem 1.5rem;
             }
         }
-        .contact-header {
-            margin-bottom: 2rem;
+        .contact-left h1 {
+            font-size: 3rem;
+            font-weight: 500;
+            color: #111;
+            margin: 0 0 3rem 0;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
         }
-        .contact-header h1 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #111827;
-            margin-bottom: 0.5rem;
-        }
-        .contact-header p {
-            color: #6b7280;
-            font-size: 0.95rem;
-            line-height: 1.5;
+        @media (max-width: 768px) {
+            .contact-left h1 {
+                font-size: 2.25rem;
+                margin-bottom: 2rem;
+            }
         }
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            gap: 1.5rem;
         }
         .form-field label {
             display: block;
             font-size: 0.875rem;
-            font-weight: 500;
-            color: #374151;
+            color: #666;
             margin-bottom: 0.5rem;
         }
         .form-field input,
         .form-field textarea {
             width: 100%;
             padding: 0.875rem 1rem;
-            background: #f9fafb;
-            border: 1px solid #e5e7eb;
+            background: #f5f5f5;
+            border: 1px solid transparent;
             border-radius: 8px;
             font-size: 1rem;
             font-family: inherit;
-            color: #111827;
+            color: #111;
             transition: all 0.2s;
         }
         .form-field input::placeholder,
         .form-field textarea::placeholder {
-            color: #9ca3af;
+            color: #999;
         }
         .form-field input:focus,
         .form-field textarea:focus {
             outline: none;
             background: #fff;
-            border-color: #0891b2;
-            box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+            border-color: #ddd;
         }
         .form-field textarea {
-            min-height: 120px;
+            min-height: 140px;
             resize: vertical;
         }
         .submit-btn {
-            width: 100%;
-            padding: 0.875rem 1.5rem;
-            background: #0891b2;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 500;
+            align-self: flex-start;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: #fff;
+            color: #666;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9rem;
             font-family: inherit;
             cursor: pointer;
             transition: all 0.2s;
-            margin-top: 0.5rem;
         }
         .submit-btn:hover {
-            background: #0e7490;
+            color: #111;
+            border-color: #999;
         }
         .submit-btn:disabled {
-            opacity: 0.6;
+            opacity: 0.5;
             cursor: not-allowed;
         }
-        .form-footer {
-            margin-top: 1.5rem;
-            text-align: center;
-            font-size: 0.8rem;
-            color: #9ca3af;
+        .submit-btn svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
         }
-        
-        /* Ripple overlay */
-        .ripple-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            display: none;
+        .contact-right {
+            padding-top: 5rem;
         }
-        .ripple-overlay.active {
-            display: block;
-        }
-        .ripple-ring {
-            position: absolute;
-            border-radius: 50%;
-            border: 3px solid rgba(8, 145, 178, 0.6);
-            transform: translate(-50%, -50%);
-            animation: ripple-grow 2.5s ease-out forwards;
-        }
-        .ripple-ring:nth-child(2) {
-            animation-delay: 0.3s;
-        }
-        .ripple-ring:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-        @keyframes ripple-grow {
-            0% {
-                width: 0;
-                height: 0;
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.6;
-            }
-            100% {
-                width: 250vmax;
-                height: 250vmax;
-                opacity: 0;
+        @media (max-width: 768px) {
+            .contact-right {
+                padding-top: 0;
             }
         }
-        
-        /* Success state */
-        .success-message {
-            display: none;
-            text-align: center;
-            padding: 3rem 1rem;
-        }
-        .success-message.show {
-            display: block;
-            animation: fadeIn 0.6s ease;
-        }
-        .success-icon {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 1.5rem;
-            background: #ecfdf5;
-            border-radius: 50%;
+        .contact-links {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            gap: 2rem;
         }
-        .success-icon svg {
-            width: 32px;
-            height: 32px;
-            fill: #059669;
+        .contact-link-group h3 {
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: #999;
+            margin: 0 0 0.25rem 0;
         }
-        .success-message h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #111827;
-            margin-bottom: 0.5rem;
-        }
-        .success-message p {
-            color: #6b7280;
+        .contact-link-group a {
             font-size: 0.95rem;
+            color: #111;
+            text-decoration: none;
+            transition: color 0.2s;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .contact-link-group a:hover {
+            color: #0891b2;
         }
-        .form-content {
-            transition: opacity 0.4s ease;
-        }
-        .form-content.hide {
+        .form-status {
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
             display: none;
+        }
+        .form-status.success {
+            display: block;
+            background: #f0fdf4;
+            color: #166534;
+        }
+        .form-status.error {
+            display: block;
+            background: #fef2f2;
+            color: #991b1b;
         }
     </style>
 </head>
@@ -251,76 +174,64 @@
         </div>
     </header>
 
-    <div class="ripple-overlay" id="ripple-overlay"></div>
-
     <main class="contact-page">
-        <div class="contact-container">
-            <a href="index.html" class="back-link">
-                <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
-                <span data-lang="en">Back</span>
-                <span data-lang="ja">戻る</span>
-            </a>
+        <div class="contact-left">
+            <h1>
+                <span data-lang="en">Get in touch</span>
+                <span data-lang="ja">お問い合わせ</span>
+            </h1>
             
-            <div class="contact-card">
-                <div class="form-content" id="form-content">
-                    <div class="contact-header">
-                        <h1>
-                            <span data-lang="en">Contact</span>
-                            <span data-lang="ja">お問い合わせ</span>
-                        </h1>
-                        <p data-lang="en">Questions, feedback, or collaboration ideas.</p>
-                        <p data-lang="ja">ご質問、フィードバック、協力のご提案など。</p>
-                    </div>
-
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-field">
-                            <label for="name">
-                                <span data-lang="en">Name</span>
-                                <span data-lang="ja">お名前</span>
-                            </label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-field">
-                            <label for="email">
-                                <span data-lang="en">Email</span>
-                                <span data-lang="ja">メールアドレス</span>
-                            </label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-field">
-                            <label for="message">
-                                <span data-lang="en">Message</span>
-                                <span data-lang="ja">メッセージ</span>
-                            </label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn" id="submit-btn">
-                            <span data-lang="en">Send</span>
-                            <span data-lang="ja">送信</span>
-                        </button>
-                    </form>
-
-                    <p class="form-footer">
-                        <span data-lang="en">Usually respond within a few days.</span>
-                        <span data-lang="ja">通常、数日以内に返信します。</span>
-                    </p>
+            <form id="contact-form" class="contact-form">
+                <div class="form-field">
+                    <label for="email">
+                        <span data-lang="en">Email address</span>
+                        <span data-lang="ja">メールアドレス</span>
+                    </label>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 
-                <div class="success-message" id="success-message">
-                    <div class="success-icon">
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                    </div>
-                    <h2>
-                        <span data-lang="en">Message Sent</span>
-                        <span data-lang="ja">送信しました</span>
-                    </h2>
-                    <p>
-                        <span data-lang="en">Thank you. I'll get back to you soon.</span>
-                        <span data-lang="ja">ありがとうございます。近日中にご連絡します。</span>
-                    </p>
+                <div class="form-field">
+                    <label for="message">
+                        <span data-lang="en">How can we help?</span>
+                        <span data-lang="ja">ご用件</span>
+                    </label>
+                    <textarea id="message" name="message" required data-placeholder-en="I'd like to know more about..." data-placeholder-ja="お問い合わせ内容をご記入ください..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submit-btn">
+                    <span data-lang="en">Submit</span>
+                    <span data-lang="ja">送信</span>
+                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                </button>
+                
+                <div id="form-status" class="form-status"></div>
+            </form>
+        </div>
+        
+        <div class="contact-right">
+            <div class="contact-links">
+                <div class="contact-link-group">
+                    <h3>
+                        <span data-lang="en">General inquiries</span>
+                        <span data-lang="ja">一般的なお問い合わせ</span>
+                    </h3>
+                    <a href="mailto:contact@marine-obs.org">contact@marine-obs.org</a>
+                </div>
+                
+                <div class="contact-link-group">
+                    <h3>
+                        <span data-lang="en">Data & research</span>
+                        <span data-lang="ja">データ・研究について</span>
+                    </h3>
+                    <a href="mailto:data@marine-obs.org">data@marine-obs.org</a>
+                </div>
+                
+                <div class="contact-link-group">
+                    <h3>
+                        <span data-lang="en">Report issues</span>
+                        <span data-lang="ja">不具合の報告</span>
+                    </h3>
+                    <a href="https://github.com/hirokifukui/marine-obs/issues" target="_blank">GitHub Issues</a>
                 </div>
             </div>
         </div>
@@ -330,41 +241,35 @@
     <script>
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKLAn1MzOv0NMccagqQhvUdtJjJb6JymVMYDZa82uaR6XLWPWMKO5AdebUVtqy-RC4/exec';
         
-        function triggerRipple(x, y) {
-            const overlay = document.getElementById('ripple-overlay');
-            overlay.innerHTML = '';
-            overlay.classList.add('active');
-            
-            // Create 3 ripple rings
-            for (let i = 0; i < 3; i++) {
-                const ring = document.createElement('div');
-                ring.className = 'ripple-ring';
-                ring.style.left = x + 'px';
-                ring.style.top = y + 'px';
-                overlay.appendChild(ring);
-            }
-            
-            // Clean up after animation
-            setTimeout(() => {
-                overlay.classList.remove('active');
-                overlay.innerHTML = '';
-            }, 3500);
+        // Set placeholder based on language
+        function updatePlaceholder() {
+            const lang = localStorage.getItem('lang') || 'en';
+            const textarea = document.getElementById('message');
+            textarea.placeholder = textarea.getAttribute('data-placeholder-' + lang);
         }
+        updatePlaceholder();
+        
+        // Update placeholder on language change
+        const origApplyLang = window.applyLanguage;
+        window.applyLanguage = function(lang) {
+            if (origApplyLang) origApplyLang(lang);
+            updatePlaceholder();
+        };
         
         document.getElementById('contact-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const form = e.target;
             const btn = document.getElementById('submit-btn');
-            const formContent = document.getElementById('form-content');
-            const successMessage = document.getElementById('success-message');
+            const status = document.getElementById('form-status');
             const lang = localStorage.getItem('lang') || 'en';
             
             btn.disabled = true;
-            btn.textContent = lang === 'ja' ? '送信中...' : 'Sending...';
+            status.className = 'form-status';
+            status.style.display = 'none';
             
             const data = {
-                name: form.name.value,
+                name: '(via contact form)',
                 email: form.email.value,
                 message: form.message.value
             };
@@ -377,30 +282,21 @@
                     body: JSON.stringify(data)
                 });
                 
-                // Get button center position
-                const rect = btn.getBoundingClientRect();
-                const x = rect.left + rect.width / 2;
-                const y = rect.top + rect.height / 2;
-                
-                // Trigger ripple effect
-                triggerRipple(x, y);
-                
-                // Show success message after ripple starts
-                setTimeout(() => {
-                    formContent.classList.add('hide');
-                    successMessage.classList.add('show');
-                    if (typeof applyLanguage === 'function') {
-                        applyLanguage(lang);
-                    }
-                }, 800);
-                
+                status.className = 'form-status success';
+                status.textContent = lang === 'ja' 
+                    ? '送信しました。ありがとうございます。'
+                    : 'Message sent. Thank you.';
                 form.reset();
+                updatePlaceholder();
                 
             } catch (error) {
-                btn.disabled = false;
-                btn.textContent = lang === 'ja' ? '送信' : 'Send';
-                alert(lang === 'ja' ? '送信できませんでした。' : 'Could not send. Please try again.');
+                status.className = 'form-status error';
+                status.textContent = lang === 'ja'
+                    ? '送信できませんでした。'
+                    : 'Could not send. Please try again.';
             }
+            
+            btn.disabled = false;
         });
     </script>
 </body>
