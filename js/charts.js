@@ -39,15 +39,17 @@
             data.forEach(row => { latest[row.site_code] = row.sst; });
             const publishedDate = data[0]?.date;
             
-            // 衛星観測日は公開日の約3日前と推定
-            const pubDate = new Date(publishedDate + 'T00:00:00');
-            const obsDate = new Date(pubDate);
-            obsDate.setDate(obsDate.getDate() - 3);
+            // 衛星観測日は公開日の約3日前と推定（タイムゾーン非依存で計算）
+            const [year, month, day] = publishedDate.split('-').map(Number);
+            const obsDay = day - 3;
+            const obsDateStr = `${year}-${String(month).padStart(2,'0')}-${String(obsDay).padStart(2,'0')}`;
             
-            const obsEn = obsDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-            const pubEn = pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-            const obsJa = obsDate.toISOString().slice(5, 10).replace('-', '/');
-            const pubJa = publishedDate.slice(5).replace('-', '/');
+            // 表示用フォーマット
+            const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            const pubEn = months[month - 1] + ' ' + day;
+            const obsEn = months[month - 1] + ' ' + obsDay;
+            const pubJa = `${month}/${day}`;
+            const obsJa = `${month}/${obsDay}`;
             
             const enEl = document.getElementById('sst-latest-en');
             const jaEl = document.getElementById('sst-latest-ja');
