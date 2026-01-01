@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | marine-obs.org</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .contact-container {
+            max-width: 560px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        .contact-header {
+            margin-bottom: 2rem;
+        }
+        .contact-header h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .contact-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        .form-group input,
+        .form-group textarea {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: var(--surface);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+        .submit-btn {
+            padding: 0.875rem 1.5rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+        .submit-btn:hover {
+            background: var(--accent-hover);
+        }
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .form-status {
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .form-status.success {
+            display: block;
+            background: #ecfdf5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+        .form-status.error {
+            display: block;
+            background: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            transition: color 0.2s;
+        }
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="logo.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
+            </a>
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button id="lang-en" class="active">English</button>
+                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <button id="lang-ja">日本語</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="contact-container">
+            <a href="index.html" class="back-link">
+                <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                <span data-lang="en">Back to Dashboard</span>
+                <span data-lang="ja">ダッシュボードに戻る</span>
+            </a>
+            
+            <div class="contact-header">
+                <h1>
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="ja">お問い合わせ</span>
+                </h1>
+                <p data-lang="en">Questions, feedback, or collaboration ideas—feel free to reach out.</p>
+                <p data-lang="ja">ご質問、フィードバック、協力のご提案など、お気軽にどうぞ。</p>
+            </div>
+
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">
+                        <span data-lang="en">Name</span>
+                        <span data-lang="ja">お名前</span>
+                    </label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">
+                        <span data-lang="en">Email</span>
+                        <span data-lang="ja">メールアドレス</span>
+                    </label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">
+                        <span data-lang="en">Message</span>
+                        <span data-lang="ja">メッセージ</span>
+                    </label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <span data-lang="en">Send Message</span>
+                    <span data-lang="ja">送信する</span>
+                </button>
+            </form>
+
+            <div id="form-status" class="form-status"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <span data-lang="en">© 2024 marine-obs.org · Independent research project</span>
+                <span data-lang="ja">© 2024 marine-obs.org · 個人プロジェクト</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/hirokifukui/marine-obs" target="_blank" rel="noopener">GitHub</a>
+                <a href="contact.html">
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="ja">お問い合わせ</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/lang.js"></script>
+    <script>
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKLAn1MzOv0NMccagqQhvUdtJjJb6JymVMYDZa82uaR6XLWPWMKO5AdebUVtqy-RC4/exec';
+        
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const form = e.target;
+            const btn = form.querySelector('.submit-btn');
+            const status = document.getElementById('form-status');
+            const lang = localStorage.getItem('lang') || 'en';
+            
+            btn.disabled = true;
+            btn.innerHTML = lang === 'ja' ? '送信中...' : 'Sending...';
+            status.className = 'form-status';
+            status.style.display = 'none';
+            
+            const data = {
+                name: form.name.value,
+                email: form.email.value,
+                message: form.message.value
+            };
+            
+            try {
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                status.className = 'form-status success';
+                status.innerHTML = lang === 'ja' 
+                    ? 'メッセージを送信しました。ありがとうございます。'
+                    : 'Message sent successfully. Thank you!';
+                form.reset();
+            } catch (error) {
+                status.className = 'form-status error';
+                status.innerHTML = lang === 'ja'
+                    ? '送信に失敗しました。時間をおいて再度お試しください。'
+                    : 'Failed to send. Please try again later.';
+            }
+            
+            btn.disabled = false;
+            btn.innerHTML = lang === 'ja' 
+                ? '<span data-lang="en">Send Message</span><span data-lang="ja">送信する</span>'
+                : '<span data-lang="en">Send Message</span><span data-lang="ja">送信する</span>';
+            
+            // Re-apply language
+            if (typeof applyLanguage === 'function') applyLanguage(lang);
+        });
+    </script>
+</body>
+</html>
