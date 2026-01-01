@@ -30,6 +30,7 @@ data/  *.json（チャート用、一部は未使用）
 
 ## データソース
 SST最新値: Supabase動的取得（`sst_daily`テーブル）
+極端日数: Supabase RPC `get_extreme_days()`
 日次更新: `~/Scripts/scheduled-jobs/sync-sst-daily/`
 
 ## デプロイ
