@@ -144,8 +144,8 @@
             color: #9ca3af;
         }
         
-        /* Ripple effect */
-        .ripple-container {
+        /* Ripple overlay */
+        .ripple-overlay {
             position: fixed;
             top: 0;
             left: 0;
@@ -153,37 +153,36 @@
             height: 100%;
             pointer-events: none;
             z-index: 9999;
-            overflow: hidden;
+            display: none;
         }
-        .ripple {
+        .ripple-overlay.active {
+            display: block;
+        }
+        .ripple-ring {
             position: absolute;
             border-radius: 50%;
-            background: transparent;
-            border: 2px solid rgba(8, 145, 178, 0.4);
-            transform: translate(-50%, -50%) scale(0);
-            animation: ripple-expand 2s ease-out forwards;
+            border: 3px solid rgba(8, 145, 178, 0.6);
+            transform: translate(-50%, -50%);
+            animation: ripple-grow 2.5s ease-out forwards;
         }
-        .ripple:nth-child(2) {
-            animation-delay: 0.2s;
-            border-color: rgba(8, 145, 178, 0.3);
+        .ripple-ring:nth-child(2) {
+            animation-delay: 0.3s;
         }
-        .ripple:nth-child(3) {
-            animation-delay: 0.4s;
-            border-color: rgba(8, 145, 178, 0.2);
-        }
-        .ripple:nth-child(4) {
+        .ripple-ring:nth-child(3) {
             animation-delay: 0.6s;
-            border-color: rgba(8, 145, 178, 0.1);
         }
-        @keyframes ripple-expand {
+        @keyframes ripple-grow {
             0% {
                 width: 0;
                 height: 0;
                 opacity: 1;
             }
+            50% {
+                opacity: 0.6;
+            }
             100% {
-                width: 200vmax;
-                height: 200vmax;
+                width: 250vmax;
+                height: 250vmax;
                 opacity: 0;
             }
         }
@@ -196,7 +195,7 @@
         }
         .success-message.show {
             display: block;
-            animation: fadeIn 0.5s ease;
+            animation: fadeIn 0.6s ease;
         }
         .success-icon {
             width: 64px;
@@ -227,6 +226,9 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        .form-content {
+            transition: opacity 0.4s ease;
+        }
         .form-content.hide {
             display: none;
         }
@@ -249,7 +251,7 @@
         </div>
     </header>
 
-    <div class="ripple-container" id="ripple-container"></div>
+    <div class="ripple-overlay" id="ripple-overlay"></div>
 
     <main class="contact-page">
         <div class="contact-container">
@@ -328,21 +330,25 @@
     <script>
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKLAn1MzOv0NMccagqQhvUdtJjJb6JymVMYDZa82uaR6XLWPWMKO5AdebUVtqy-RC4/exec';
         
-        function createRipple(x, y) {
-            const container = document.getElementById('ripple-container');
-            container.innerHTML = '';
+        function triggerRipple(x, y) {
+            const overlay = document.getElementById('ripple-overlay');
+            overlay.innerHTML = '';
+            overlay.classList.add('active');
             
-            for (let i = 0; i < 4; i++) {
-                const ripple = document.createElement('div');
-                ripple.className = 'ripple';
-                ripple.style.left = x + 'px';
-                ripple.style.top = y + 'px';
-                container.appendChild(ripple);
+            // Create 3 ripple rings
+            for (let i = 0; i < 3; i++) {
+                const ring = document.createElement('div');
+                ring.className = 'ripple-ring';
+                ring.style.left = x + 'px';
+                ring.style.top = y + 'px';
+                overlay.appendChild(ring);
             }
             
+            // Clean up after animation
             setTimeout(() => {
-                container.innerHTML = '';
-            }, 2500);
+                overlay.classList.remove('active');
+                overlay.innerHTML = '';
+            }, 3500);
         }
         
         document.getElementById('contact-form').addEventListener('submit', async (e) => {
@@ -371,22 +377,22 @@
                     body: JSON.stringify(data)
                 });
                 
-                // Get button position for ripple origin
+                // Get button center position
                 const rect = btn.getBoundingClientRect();
                 const x = rect.left + rect.width / 2;
                 const y = rect.top + rect.height / 2;
                 
-                // Trigger ripple
-                createRipple(x, y);
+                // Trigger ripple effect
+                triggerRipple(x, y);
                 
-                // Show success after slight delay
+                // Show success message after ripple starts
                 setTimeout(() => {
                     formContent.classList.add('hide');
                     successMessage.classList.add('show');
                     if (typeof applyLanguage === 'function') {
                         applyLanguage(lang);
                     }
-                }, 400);
+                }, 800);
                 
                 form.reset();
                 
