@@ -1,55 +1,42 @@
-# 海洋の徴候 / marine-obs.org
+# marine-obs.org
 
-サンゴ熱ストレスモニタリング。
+Coral thermal stress monitoring for Japanese waters.
 
-## URL
-- 本番: https://marine-obs.org
-- GitHub: https://github.com/hirokifukui/marine-obs
+## Live Site
+https://marine-obs.org
 
-## ローカル
-```
-/Users/hirokifukui/Dropbox (個人)/Scripts/marine-obs
-```
+## Pages
+| Page | Description |
+|------|-------------|
+| index.html | Home (6 cards + About + Glossary + For Divers) |
+| sst.html | Sea Surface Temperature |
+| extreme.html | Extreme Temperature Days |
+| dhw.html | Degree Heating Weeks |
+| species.html | Species Vulnerability |
+| spawning.html | Coral Spawning Forecast |
+| contact.html | Contact Form |
 
-## ページ
-| ページ | 内容 |
-|--------|------|
-| index.html | トップ（6カード + About + Glossary + For Divers） |
-| sst.html | 海水温 |
-| extreme.html | 極端水温日数 |
-| dhw.html | 積算熱ストレス |
-| species.html | 種別脆弱性 |
-| spawning.html | サンゴ産卵予測 |
-
-## 構成
+## Structure
 ```
 css/main.css
 js/  lang.js, charts.js, marine-monitor.js, gear-recs.js
-data/  *.json（チャート用、一部は未使用）
-sql/  RPC関数定義
+data/  *.json (chart data)
+sql/  RPC function definitions
 ```
 
-## データソース
-| データ | ソース |
-|--------|--------|
-| SST最新値 | Supabase `sst_daily` テーブル |
-| 極端日数 | Supabase RPC `get_extreme_days()` |
-| DHWピーク | Supabase RPC `get_dhw_all_years()` + `dhw_annual_peak` テーブル |
-| 日次更新 | `~/Scripts/scheduled-jobs/sync-sst-daily/` |
+## Data Sources
+| Data | Source |
+|------|--------|
+| Latest SST | Supabase `sst_daily` table |
+| Extreme Days | Supabase RPC `get_extreme_days()` |
+| DHW Peak | Supabase RPC `get_dhw_all_years()` + `dhw_annual_peak` table |
+| Daily Sync | Scheduled job via cron |
 
-## Supabase RPC関数
-| 関数 | 用途 |
-|------|------|
-| `get_extreme_days()` | 年別極端日数（高温・低温） |
-| `get_dhw_all_years()` | 2003-現在の全年ピークDHW |
-| `get_dhw_annual_peak(site, year)` | 指定年のピークDHW |
-| `calc_dhw(site, date)` | 指定日のDHW計算 |
-
-## デプロイ
+## Deploy
 ```bash
 git add . && git commit -m "msg" && git push
 ```
-Vercel自動デプロイ。
+Auto-deployed via Vercel.
 
 ---
 *2026-01-01*
