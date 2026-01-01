@@ -9,124 +9,187 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <style>
-        .contact-page {
-            min-height: calc(100vh - 120px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4rem 1.5rem;
+        body {
+            margin: 0;
+            min-height: 100vh;
         }
-        .contact-container {
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: calc(100vh - 60px);
+        }
+        @media (max-width: 900px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+            .contact-visual {
+                display: none;
+            }
+        }
+        .contact-visual {
+            position: relative;
+            background: linear-gradient(135deg, #0c1929 0%, #1a3a52 100%);
+            overflow: hidden;
+        }
+        .contact-visual img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+        .contact-visual-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 3rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+        }
+        .contact-visual-text {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.4;
             max-width: 400px;
         }
-        .contact-header {
-            margin-bottom: 3rem;
+        .contact-visual-sub {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        .contact-main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem;
+            background: #fff;
+        }
+        @media (max-width: 600px) {
+            .contact-main {
+                padding: 2rem 1.5rem;
+            }
+        }
+        .contact-inner {
+            max-width: 400px;
+            width: 100%;
         }
         .contact-header h1 {
-            font-size: 1.875rem;
+            font-size: 2rem;
             font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.75rem;
             color: #111;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
         }
         .contact-header p {
-            color: #6b7280;
-            font-size: 0.95rem;
+            color: #64748b;
+            font-size: 1rem;
             line-height: 1.6;
+            margin-bottom: 2.5rem;
         }
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
-        }
-        .form-field {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+            gap: 1.75rem;
         }
         .form-field label {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #374151;
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #64748b;
+            margin-bottom: 0.5rem;
         }
         .form-field input,
         .form-field textarea {
-            padding: 0.75rem 0;
-            border: none;
-            border-bottom: 1px solid #e5e7eb;
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
             font-size: 1rem;
             font-family: inherit;
-            background: transparent;
-            transition: border-color 0.2s;
-            outline: none;
-        }
-        .form-field input::placeholder,
-        .form-field textarea::placeholder {
-            color: #9ca3af;
+            background: #f8fafc;
+            transition: all 0.2s;
+            box-sizing: border-box;
         }
         .form-field input:focus,
         .form-field textarea:focus {
-            border-color: #111;
+            outline: none;
+            border-color: #0369a1;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1);
         }
         .form-field textarea {
-            min-height: 120px;
-            resize: none;
+            min-height: 140px;
+            resize: vertical;
         }
         .submit-btn {
-            margin-top: 1rem;
-            padding: 0.875rem 1.5rem;
-            background: #111;
+            padding: 1rem 2rem;
+            background: #0c4a6e;
             color: #fff;
             border: none;
-            border-radius: 6px;
-            font-size: 0.9375rem;
+            border-radius: 8px;
+            font-size: 1rem;
             font-weight: 500;
             font-family: inherit;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: all 0.2s;
+            margin-top: 0.5rem;
         }
         .submit-btn:hover {
-            background: #333;
+            background: #075985;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(12, 74, 110, 0.25);
+        }
+        .submit-btn:active {
+            transform: translateY(0);
         }
         .submit-btn:disabled {
-            background: #9ca3af;
+            opacity: 0.6;
             cursor: not-allowed;
+            transform: none;
         }
         .form-status {
             margin-top: 1rem;
-            padding: 0.875rem;
-            border-radius: 6px;
-            font-size: 0.875rem;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
             display: none;
         }
         .form-status.success {
             display: block;
-            background: #f0fdf4;
-            color: #166534;
+            background: #ecfdf5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
         }
         .form-status.error {
             display: block;
             background: #fef2f2;
             color: #991b1b;
+            border: 1px solid #fecaca;
         }
         .contact-footer {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #f3f4f6;
-            font-size: 0.8125rem;
-            color: #9ca3af;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #94a3b8;
         }
         .back-link {
-            color: #6b7280;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: #64748b;
             text-decoration: none;
             font-size: 0.875rem;
-            display: inline-block;
             margin-bottom: 2rem;
             transition: color 0.2s;
         }
         .back-link:hover {
-            color: #111;
+            color: #0c4a6e;
+        }
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
         }
     </style>
 </head>
@@ -147,61 +210,80 @@
         </div>
     </header>
 
-    <main class="contact-page">
-        <div class="contact-container">
-            <a href="index.html" class="back-link">
-                <span data-lang="en">← Back</span>
-                <span data-lang="ja">← 戻る</span>
-            </a>
-            
-            <div class="contact-header">
-                <h1>
-                    <span data-lang="en">Contact</span>
-                    <span data-lang="ja">お問い合わせ</span>
-                </h1>
-                <p data-lang="en">Questions, feedback, or ideas for collaboration.</p>
-                <p data-lang="ja">ご質問、フィードバック、協力のご提案など。</p>
-            </div>
-
-            <form id="contact-form" class="contact-form">
-                <div class="form-field">
-                    <label for="name">
-                        <span data-lang="en">Name</span>
-                        <span data-lang="ja">お名前</span>
-                    </label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-field">
-                    <label for="email">
-                        <span data-lang="en">Email</span>
-                        <span data-lang="ja">メールアドレス</span>
-                    </label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-field">
-                    <label for="message">
-                        <span data-lang="en">Message</span>
-                        <span data-lang="ja">メッセージ</span>
-                    </label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">
-                    <span data-lang="en">Send</span>
-                    <span data-lang="ja">送信</span>
-                </button>
-            </form>
-
-            <div id="form-status" class="form-status"></div>
-            
-            <div class="contact-footer">
-                <span data-lang="en">Usually respond within a few days.</span>
-                <span data-lang="ja">通常、数日以内に返信します。</span>
+    <div class="contact-layout">
+        <div class="contact-visual">
+            <img src="diving.jpg" alt="Underwater coral reef">
+            <div class="contact-visual-overlay">
+                <p class="contact-visual-text" data-lang="en">
+                    The ocean speaks in patterns.<br>We're learning to listen.
+                </p>
+                <p class="contact-visual-text" data-lang="ja">
+                    海はパターンで語りかける。<br>私たちは耳を傾け始めている。
+                </p>
+                <p class="contact-visual-sub">
+                    <span data-lang="en">Onna Village, Okinawa</span>
+                    <span data-lang="ja">沖縄県恩納村</span>
+                </p>
             </div>
         </div>
-    </main>
+
+        <main class="contact-main">
+            <div class="contact-inner">
+                <a href="index.html" class="back-link">
+                    <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                    <span data-lang="en">Back</span>
+                    <span data-lang="ja">戻る</span>
+                </a>
+                
+                <div class="contact-header">
+                    <h1>
+                        <span data-lang="en">Get in touch</span>
+                        <span data-lang="ja">お問い合わせ</span>
+                    </h1>
+                    <p data-lang="en">Questions, feedback, or ideas for collaboration.</p>
+                    <p data-lang="ja">ご質問、フィードバック、協力のご提案など。</p>
+                </div>
+
+                <form id="contact-form" class="contact-form">
+                    <div class="form-field">
+                        <label for="name">
+                            <span data-lang="en">Name</span>
+                            <span data-lang="ja">お名前</span>
+                        </label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="email">
+                            <span data-lang="en">Email</span>
+                            <span data-lang="ja">メールアドレス</span>
+                        </label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="message">
+                            <span data-lang="en">Message</span>
+                            <span data-lang="ja">メッセージ</span>
+                        </label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span data-lang="en">Send message</span>
+                        <span data-lang="ja">送信する</span>
+                    </button>
+                </form>
+
+                <div id="form-status" class="form-status"></div>
+                
+                <p class="contact-footer">
+                    <span data-lang="en">Usually respond within a few days.</span>
+                    <span data-lang="ja">通常、数日以内に返信します。</span>
+                </p>
+            </div>
+        </main>
+    </div>
 
     <script src="js/lang.js"></script>
     <script>
@@ -236,7 +318,7 @@
                 status.className = 'form-status success';
                 status.textContent = lang === 'ja' 
                     ? '送信しました。ありがとうございます。'
-                    : 'Sent. Thank you.';
+                    : 'Message sent. Thank you.';
                 form.reset();
             } catch (error) {
                 status.className = 'form-status error';
