@@ -643,8 +643,12 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.9;">
-                <span data-lang="en">Data through: <span id="latest-date-en">--</span></span>
-                <span data-lang="ja">データ更新日: <span id="latest-date-ja">--</span></span>
+                <div id="sst-dates-en" data-lang="en">Observed: -- | Published: --</div>
+                <div id="sst-dates-ja" data-lang="ja">観測日: -- | 公開日: --</div>
+            </div>
+            <div style="text-align: center; margin-top: 0.75rem; font-size: 0.75rem; opacity: 0.75; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                <span data-lang="en">⏱ Satellite data is published approximately 2-3 days after observation due to NASA's processing pipeline.</span>
+                <span data-lang="ja">⏱ 衛星データは観測から約2〜3日後に公開されます（NASAの処理パイプラインによる）</span>
             </div>
         </section>
 
@@ -1182,14 +1186,24 @@
                 const heroCold = document.getElementById('hero-cold-2025');
                 if (heroCold) heroCold.textContent = data.cold_winter_2025?.ogasawara ?? '--';
                 
-                // Latest date
+                // Date display (Observed = Published - 3 days)
                 if (data.latest_date) {
-                    const d = new Date(data.latest_date + 'T00:00:00Z');
+                    const pubDateObj = new Date(Date.UTC(
+                        ...data.latest_date.split('-').map(Number).map((v, i) => i === 1 ? v - 1 : v)
+                    ));
+                    const obsDateObj = new Date(pubDateObj);
+                    obsDateObj.setUTCDate(obsDateObj.getUTCDate() - 3);
+                    
                     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-                    const enEl = document.getElementById('latest-date-en');
-                    const jaEl = document.getElementById('latest-date-ja');
-                    if (enEl) enEl.textContent = `${months[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
-                    if (jaEl) jaEl.textContent = `${d.getUTCFullYear()}/${d.getUTCMonth()+1}/${d.getUTCDate()}`;
+                    const pubEn = months[pubDateObj.getUTCMonth()] + ' ' + pubDateObj.getUTCDate();
+                    const obsEn = months[obsDateObj.getUTCMonth()] + ' ' + obsDateObj.getUTCDate();
+                    const pubJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
+                    const obsJa = `${obsDateObj.getUTCMonth() + 1}/${obsDateObj.getUTCDate()}`;
+                    
+                    const enEl = document.getElementById('sst-dates-en');
+                    const jaEl = document.getElementById('sst-dates-ja');
+                    if (enEl) enEl.textContent = `Observed: ${obsEn} | Published: ${pubEn}`;
+                    if (jaEl) jaEl.textContent = `観測日: ${obsJa} | 公開日: ${pubJa}`;
                 }
                 
                 console.log('✓ Extreme days loaded from Supabase');
