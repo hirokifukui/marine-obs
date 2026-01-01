@@ -106,10 +106,10 @@
 <section class="six-card-section">
   <div class="six-card-grid">
     <!-- Card 1: SST（海水温）- 3地点 -->
-    <div class="six-card status-warning">
-      <span class="six-card-badge badge-watch">
-        <span data-lang="en">Watch</span>
-        <span data-lang="ja">注意</span>
+    <div class="six-card" id="sst-card">
+      <span class="six-card-badge" id="sst-badge">
+        <span data-lang="en" id="sst-badge-en">--</span>
+        <span data-lang="ja" id="sst-badge-ja">--</span>
       </span>
       <div class="six-card-chart">
         <canvas id="chart-sst-compare"></canvas>
@@ -134,8 +134,8 @@
           <span data-lang="ja" id="sst-latest-ja">読み込み中...</span>
         </div>
         <div class="six-card-desc">
-          <span data-lang="en">Monthly climatology comparison. Okinawa peaks in August, Ogasawara in September.</span>
-          <span data-lang="ja">月別気候値の比較。沖縄は8月、小笠原は9月にピーク。</span>
+          <span data-lang="en" id="sst-desc-en">Loading...</span>
+          <span data-lang="ja" id="sst-desc-ja">読込中...</span>
         </div>
         <a href="sst.html" class="six-card-btn">
           <span data-lang="en">Explore data</span>

@@ -62,11 +62,78 @@
             if (jaEl) {
                 jaEl.innerHTML = `SST: ${latest.manza?.toFixed(1) || '--'} / ${latest.sesoko?.toFixed(1) || '--'} / ${latest.ogasawara?.toFixed(1) || '--'}°C<br><small style="opacity:0.8">観測: ${obsJa} | 公開: ${pubJa}</small>`;
             }
+            
+            // バッジと説明文を動的更新
+            updateSSTStatus(latest, obsDateObj.getUTCMonth() + 1);
+            
             console.log('✅ SST latest loaded from Supabase:', publishedDate);
         } catch (e) {
             console.error('❌ Failed to load SST from Supabase:', e);
         }
     }
+
+    // SSTステータスを動的更新（バッジ・説明文）
+    function updateSSTStatus(sstData, currentMonth) {
+        const siteNamesEn = { manza: 'Manza', sesoko: 'Sesoko', ogasawara: 'Ogasawara' };
+        const siteNamesJa = { manza: '万座', sesoko: '瀬底', ogasawara: '小笠原' };
+        const sites = ['manza', 'sesoko', 'ogasawara'];
+        
+        const maxSST = Math.max(sstData.manza || 0, sstData.sesoko || 0, sstData.ogasawara || 0);
+        const minSST = Math.min(sstData.manza || 99, sstData.sesoko || 99, sstData.ogasawara || 99);
+        const maxSite = sites.find(s => sstData[s] === maxSST);
+        const minSite = sites.find(s => sstData[s] === minSST);
+        
+        // 夏季: 6-10月、冬季: 11-5月
+        const isSummer = currentMonth >= 6 && currentMonth <= 10;
+        const isWinter = currentMonth >= 11 || currentMonth <= 5;
+        
+        const cardEl = document.getElementById('sst-card');
+        const badgeEl = document.getElementById('sst-badge');
+        const badgeEnEl = document.getElementById('sst-badge-en');
+        const badgeJaEl = document.getElementById('sst-badge-ja');
+        const descEnEl = document.getElementById('sst-desc-en');
+        const descJaEl = document.getElementById('sst-desc-ja');
+        
+        let isWarning = false;
+        let descEn = '';
+        let descJa = '';
+        
+        if (isSummer && maxSST >= 29) {
+            // 夏季で高温
+            isWarning = true;
+            descEn = `${siteNamesEn[maxSite]} at ${maxSST.toFixed(1)}°C—approaching bleaching threshold (29°C).`;
+            descJa = `${siteNamesJa[maxSite]}が${maxSST.toFixed(1)}°C—白化閾値（29°C）に接近。`;
+        } else if (isWinter && minSST <= 21) {
+            // 冬季で低温
+            isWarning = true;
+            descEn = `${siteNamesEn[minSite]} at ${minSST.toFixed(1)}°C—cold stress threshold (≤21°C). Winter monitoring.`;
+            descJa = `${siteNamesJa[minSite]}が${minSST.toFixed(1)}°C—低温ストレス閾値（21°C以下）。冬季監視中。`;
+        } else if (isSummer) {
+            // 夏季で安全
+            descEn = `All sites below 29°C. Normal summer temperatures. Peak typically in August-September.`;
+            descJa = `全地点29°C未満。夏季の平常水温。ピークは通常8-9月。`;
+        } else {
+            // 冬季で安全
+            descEn = `All sites above 21°C. Normal winter temperatures. Monitoring continues.`;
+            descJa = `全地点21°C超。冬季の平常水温。監視継続中。`;
+        }
+        
+        if (isWarning) {
+            if (cardEl) cardEl.className = 'six-card status-warning';
+            if (badgeEl) badgeEl.className = 'six-card-badge badge-watch';
+            if (badgeEnEl) badgeEnEl.textContent = 'Watch';
+            if (badgeJaEl) badgeJaEl.textContent = '注意';
+        } else {
+            if (cardEl) cardEl.className = 'six-card status-safe';
+            if (badgeEl) badgeEl.className = 'six-card-badge badge-safe';
+            if (badgeEnEl) badgeEnEl.textContent = 'Safe';
+            if (badgeJaEl) badgeJaEl.textContent = '安全';
+        }
+        
+        if (descEnEl) descEnEl.textContent = descEn;
+        if (descJaEl) descJaEl.textContent = descJa;
+    }
+
     // 極端日数をSupabaseから取得
     async function loadExtremeDaysFromSupabase() {
         try {
