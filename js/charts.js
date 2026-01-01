@@ -20,6 +20,50 @@
         ogasawara: '#2f855a'
     };
 
+    // Supabase設定
+    const SUPABASE_URL = 'https://pegiuiblpliainpdggfj.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlZ2l1aWJscGxpYWlucGRnZ2ZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQyMDkzNzQsImV4cCI6MjA3OTc4NTM3NH0.r9dBAsMLoXbgZL93lvA756r74U6YfCCfftHHlxYqZIw';
+
+    // SST最新値をSupabaseから取得
+    async function loadSSTLatestFromSupabase() {
+        try {
+            const response = await fetch(
+                `${SUPABASE_URL}/rest/v1/sst_daily?select=date,site_code,sst&order=date.desc&limit=3`,
+                { headers: { 'apikey': SUPABASE_ANON_KEY } }
+            );
+            if (!response.ok) throw new Error('Supabase fetch failed');
+            const data = await response.json();
+            
+            // 最新日付のデータを整形
+            const latest = {};
+            data.forEach(row => { latest[row.site_code] = row.sst; });
+            const publishedDate = data[0]?.date;
+            
+            // 衛星観測日は公開日の約3日前と推定
+            const pubDate = new Date(publishedDate + 'T00:00:00');
+            const obsDate = new Date(pubDate);
+            obsDate.setDate(obsDate.getDate() - 3);
+            
+            const obsEn = obsDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            const pubEn = pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            const obsJa = obsDate.toISOString().slice(5, 10).replace('-', '/');
+            const pubJa = publishedDate.slice(5).replace('-', '/');
+            
+            const enEl = document.getElementById('sst-latest-en');
+            const jaEl = document.getElementById('sst-latest-ja');
+            
+            if (enEl) {
+                enEl.innerHTML = `SST: ${latest.manza?.toFixed(1) || '--'} / ${latest.sesoko?.toFixed(1) || '--'} / ${latest.ogasawara?.toFixed(1) || '--'}°C<br><small style="opacity:0.8">Observed: ${obsEn} | Published: ${pubEn}</small>`;
+            }
+            if (jaEl) {
+                jaEl.innerHTML = `SST: ${latest.manza?.toFixed(1) || '--'} / ${latest.sesoko?.toFixed(1) || '--'} / ${latest.ogasawara?.toFixed(1) || '--'}°C<br><small style="opacity:0.8">観測: ${obsJa} | 公開: ${pubJa}</small>`;
+            }
+            console.log('✅ SST latest loaded from Supabase:', publishedDate);
+        } catch (e) {
+            console.error('❌ Failed to load SST from Supabase:', e);
+        }
+    }
+
     // DHW色分け（閾値: 4未満=緑, 4-8=黄, 8以上=赤）
     function getDHWColors(values) {
         return values.map(v => v >= 8 ? '#a65d5d' : v >= 4 ? '#c4a35a' : '#5b9a94');
@@ -102,23 +146,12 @@
                     }
                 });
                 console.log('✅ SST card chart initialized');
-
-                // SST カード最新値テキスト更新
-                if (sstData.latest) {
-                    const { manza, sesoko, ogasawara, observed, published } = sstData.latest;
-                    const obsDate = new Date(observed + 'T00:00:00');
-                    const pubDate = new Date(published + 'T00:00:00');
-                    const obsEn = obsDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-                    const pubEn = pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-                    const obsJa = observed.slice(5).replace('-', '/');
-                    const pubJa = published.slice(5).replace('-', '/');
-                    const enEl = document.getElementById('sst-latest-en');
-                    const jaEl = document.getElementById('sst-latest-ja');
-                    if (enEl) enEl.innerHTML = 'SST: ' + manza + ' / ' + sesoko + ' / ' + ogasawara + '°C<br><small style="opacity:0.8">Observed: ' + obsEn + ' | Published: ' + pubEn + '</small>';
-                    if (jaEl) jaEl.innerHTML = 'SST: ' + manza + ' / ' + sesoko + ' / ' + ogasawara + '°C<br><small style="opacity:0.8">観測: ' + obsJa + ' | 公開: ' + pubJa + '</small>';
-                    console.log('✅ SST card latest text updated');
-                }
             }
+
+            // ========================================
+            // SST カード最新値（Supabaseから動的取得）
+            // ========================================
+            await loadSSTLatestFromSupabase();
 
             // ========================================
             // 極端日数 カード（ミニチャート）
