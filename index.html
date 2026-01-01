@@ -186,10 +186,10 @@
     </div>
 
     <!-- Card 3: DHW（積算熱ストレス）- 3地点 -->
-    <div class="six-card status-alert">
-      <span class="six-card-badge badge-alert">
-        <span data-lang="en">Alert</span>
-        <span data-lang="ja">警報</span>
+    <div class="six-card" id="dhw-card">
+      <span class="six-card-badge" id="dhw-badge">
+        <span data-lang="en" id="dhw-badge-en">--</span>
+        <span data-lang="ja" id="dhw-badge-ja">--</span>
       </span>
       <div class="six-card-chart">
         <canvas id="chart-dhw-trend"></canvas>
@@ -214,8 +214,8 @@
           <span data-lang="ja" id="dhw-latest-ja">読込中...</span>
         </div>
         <div class="six-card-desc">
-          <span data-lang="en">Manza exceeded Watch Level (DHW 4). Annual peak comparison across 3 sites.</span>
-          <span data-lang="ja">万座が注意レベル（DHW 4）を超過。3地点の年別ピークを比較。</span>
+          <span data-lang="en" id="dhw-desc-en">Loading...</span>
+          <span data-lang="ja" id="dhw-desc-ja">読込中...</span>
         </div>
         <a href="dhw.html" class="six-card-btn">
           <span data-lang="en">Explore data</span>

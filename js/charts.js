@@ -160,11 +160,58 @@
             // グローバルに保存（チャート描画用）
             window.dhwAllYearsData = data;
             
+            // バッジと説明文を動的更新（2025年基準）
+            updateDHWStatus(peak2025);
+            
             console.log('✅ DHW peaks loaded from Supabase RPC');
             return data;
         } catch (e) {
             console.error('❌ Failed to load DHW from Supabase:', e);
             return null;
+        }
+    }
+
+    // DHWステータスを動的更新（バッジ・説明文）
+    function updateDHWStatus(peak2025) {
+        const maxDHW = Math.max(peak2025.manza, peak2025.sesoko, peak2025.ogasawara);
+        const sites = ['manza', 'sesoko', 'ogasawara'];
+        const siteNamesEn = { manza: 'Manza', sesoko: 'Sesoko', ogasawara: 'Ogasawara' };
+        const siteNamesJa = { manza: '万座', sesoko: '瀬底', ogasawara: '小笠原' };
+        
+        // 最大値のサイトを特定
+        const maxSite = sites.find(s => peak2025[s] === maxDHW);
+        
+        const cardEl = document.getElementById('dhw-card');
+        const badgeEl = document.getElementById('dhw-badge');
+        const badgeEnEl = document.getElementById('dhw-badge-en');
+        const badgeJaEl = document.getElementById('dhw-badge-ja');
+        const descEnEl = document.getElementById('dhw-desc-en');
+        const descJaEl = document.getElementById('dhw-desc-ja');
+        
+        if (maxDHW >= 8) {
+            // 危険レベル（DHW >= 8）
+            if (cardEl) cardEl.className = 'six-card status-alert';
+            if (badgeEl) badgeEl.className = 'six-card-badge badge-alert';
+            if (badgeEnEl) badgeEnEl.textContent = 'Alert';
+            if (badgeJaEl) badgeJaEl.textContent = '警報';
+            if (descEnEl) descEnEl.textContent = `2025: ${siteNamesEn[maxSite]} reached Alert Level 2 (DHW ≥8). Severe bleaching likely.`;
+            if (descJaEl) descJaEl.textContent = `2025年: ${siteNamesJa[maxSite]}が警報レベル2（DHW ≥8）に到達。深刻な白化の可能性。`;
+        } else if (maxDHW >= 4) {
+            // 注意レベル（DHW >= 4）
+            if (cardEl) cardEl.className = 'six-card status-alert';
+            if (badgeEl) badgeEl.className = 'six-card-badge badge-alert';
+            if (badgeEnEl) badgeEnEl.textContent = 'Alert';
+            if (badgeJaEl) badgeJaEl.textContent = '警報';
+            if (descEnEl) descEnEl.textContent = `2025: ${siteNamesEn[maxSite]} exceeded Watch Level (DHW ≥4). Bleaching possible.`;
+            if (descJaEl) descJaEl.textContent = `2025年: ${siteNamesJa[maxSite]}が注意レベル（DHW ≥4）を超過。白化の可能性あり。`;
+        } else {
+            // 安全（DHW < 4）
+            if (cardEl) cardEl.className = 'six-card status-safe';
+            if (badgeEl) badgeEl.className = 'six-card-badge badge-safe';
+            if (badgeEnEl) badgeEnEl.textContent = 'Safe';
+            if (badgeJaEl) badgeJaEl.textContent = '安全';
+            if (descEnEl) descEnEl.textContent = `2025: All sites below Watch Level (DHW <4). Low thermal stress year.`;
+            if (descJaEl) descJaEl.textContent = `2025年: 全地点で注意レベル（DHW 4）未満。熱ストレスの低い年。`;
         }
     }
 
