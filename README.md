@@ -26,12 +26,24 @@
 css/main.css
 js/  lang.js, charts.js, marine-monitor.js, gear-recs.js
 data/  *.json（チャート用、一部は未使用）
+sql/  RPC関数定義
 ```
 
 ## データソース
-SST最新値: Supabase動的取得（`sst_daily`テーブル）
-極端日数: Supabase RPC `get_extreme_days()`
-日次更新: `~/Scripts/scheduled-jobs/sync-sst-daily/`
+| データ | ソース |
+|--------|--------|
+| SST最新値 | Supabase `sst_daily` テーブル |
+| 極端日数 | Supabase RPC `get_extreme_days()` |
+| DHWピーク | Supabase RPC `get_dhw_all_years()` + `dhw_annual_peak` テーブル |
+| 日次更新 | `~/Scripts/scheduled-jobs/sync-sst-daily/` |
+
+## Supabase RPC関数
+| 関数 | 用途 |
+|------|------|
+| `get_extreme_days()` | 年別極端日数（高温・低温） |
+| `get_dhw_all_years()` | 2003-現在の全年ピークDHW |
+| `get_dhw_annual_peak(site, year)` | 指定年のピークDHW |
+| `calc_dhw(site, date)` | 指定日のDHW計算 |
 
 ## デプロイ
 ```bash
