@@ -6,182 +6,127 @@
     <title>Contact | marine-obs.org</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <style>
         .contact-page {
-            min-height: calc(100vh - 140px);
-            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
-            padding: 3rem 1.5rem;
-        }
-        .contact-container {
-            max-width: 520px;
-            margin: 0 auto;
-        }
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            text-decoration: none;
-            margin-bottom: 1.5rem;
-            transition: color 0.2s;
-        }
-        .back-link:hover {
-            color: var(--text-primary);
-        }
-        .back-link svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
-        }
-        .contact-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-            padding: 2.5rem;
-        }
-        .contact-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            border-radius: 12px;
+            min-height: calc(100vh - 120px);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
+            padding: 4rem 1.5rem;
         }
-        .contact-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: white;
+        .contact-container {
+            width: 100%;
+            max-width: 400px;
+        }
+        .contact-header {
+            margin-bottom: 3rem;
         }
         .contact-header h1 {
-            font-size: 1.5rem;
+            font-size: 1.875rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            color: #111;
         }
         .contact-header p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.5;
+            color: #6b7280;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            gap: 1.5rem;
         }
-        .form-group {
+        .form-field {
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.5rem;
         }
-        .form-group label {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
+        .form-field label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
         }
-        .input-wrapper {
-            position: relative;
-        }
-        .input-wrapper svg {
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 18px;
-            height: 18px;
-            fill: #94a3b8;
-            pointer-events: none;
-        }
-        .input-wrapper input {
-            padding-left: 2.75rem;
-        }
-        .form-group input,
-        .form-group textarea {
-            padding: 0.875rem 1rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            font-size: 0.95rem;
+        .form-field input,
+        .form-field textarea {
+            padding: 0.75rem 0;
+            border: none;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 1rem;
             font-family: inherit;
-            background: #f8fafc;
-            transition: all 0.2s;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #94a3b8;
-        }
-        .form-group input:focus,
-        .form-group textarea:focus {
+            background: transparent;
+            transition: border-color 0.2s;
             outline: none;
-            border-color: var(--accent);
-            background: white;
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
         }
-        .form-group textarea {
-            min-height: 130px;
-            resize: vertical;
+        .form-field input::placeholder,
+        .form-field textarea::placeholder {
+            color: #9ca3af;
+        }
+        .form-field input:focus,
+        .form-field textarea:focus {
+            border-color: #111;
+        }
+        .form-field textarea {
+            min-height: 120px;
+            resize: none;
         }
         .submit-btn {
-            padding: 1rem 1.5rem;
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            color: white;
+            margin-top: 1rem;
+            padding: 0.875rem 1.5rem;
+            background: #111;
+            color: #fff;
             border: none;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            font-weight: 600;
+            border-radius: 6px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            font-family: inherit;
             cursor: pointer;
-            transition: all 0.2s;
-            margin-top: 0.5rem;
+            transition: background 0.2s;
         }
         .submit-btn:hover {
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
-            transform: translateY(-1px);
-        }
-        .submit-btn:active {
-            transform: translateY(0);
+            background: #333;
         }
         .submit-btn:disabled {
-            opacity: 0.6;
+            background: #9ca3af;
             cursor: not-allowed;
-            transform: none;
         }
         .form-status {
-            padding: 1rem;
-            border-radius: 10px;
-            font-size: 0.9rem;
+            margin-top: 1rem;
+            padding: 0.875rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
             display: none;
-            text-align: center;
         }
         .form-status.success {
             display: block;
-            background: #ecfdf5;
-            color: #065f46;
-            border: 1px solid #a7f3d0;
+            background: #f0fdf4;
+            color: #166534;
         }
         .form-status.error {
             display: block;
             background: #fef2f2;
             color: #991b1b;
-            border: 1px solid #fecaca;
         }
-        .response-note {
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 1rem;
+        .contact-footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #f3f4f6;
+            font-size: 0.8125rem;
+            color: #9ca3af;
+        }
+        .back-link {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.875rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+        .back-link:hover {
+            color: #111;
         }
     </style>
 </head>
@@ -205,108 +150,62 @@
     <main class="contact-page">
         <div class="contact-container">
             <a href="index.html" class="back-link">
-                <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
-                <span data-lang="en">Back to Dashboard</span>
-                <span data-lang="ja">ダッシュボードに戻る</span>
+                <span data-lang="en">← Back</span>
+                <span data-lang="ja">← 戻る</span>
             </a>
             
-            <div class="contact-card">
-                <div class="contact-header">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    </div>
-                    <h1>
-                        <span data-lang="en">Get in Touch</span>
-                        <span data-lang="ja">お問い合わせ</span>
-                    </h1>
-                    <p data-lang="en">Questions, feedback, or collaboration ideas—I'd love to hear from you.</p>
-                    <p data-lang="ja">ご質問、フィードバック、協力のご提案など、お気軽にどうぞ。</p>
+            <div class="contact-header">
+                <h1>
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="ja">お問い合わせ</span>
+                </h1>
+                <p data-lang="en">Questions, feedback, or ideas for collaboration.</p>
+                <p data-lang="ja">ご質問、フィードバック、協力のご提案など。</p>
+            </div>
+
+            <form id="contact-form" class="contact-form">
+                <div class="form-field">
+                    <label for="name">
+                        <span data-lang="en">Name</span>
+                        <span data-lang="ja">お名前</span>
+                    </label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">
-                            <span data-lang="en">Name</span>
-                            <span data-lang="ja">お名前</span>
-                        </label>
-                        <div class="input-wrapper">
-                            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                            <input type="text" id="name" name="name" required data-placeholder-en="Your name" data-placeholder-ja="山田 太郎">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">
-                            <span data-lang="en">Email</span>
-                            <span data-lang="ja">メールアドレス</span>
-                        </label>
-                        <div class="input-wrapper">
-                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                            <input type="email" id="email" name="email" required data-placeholder-en="your@email.com" data-placeholder-ja="your@email.com">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">
-                            <span data-lang="en">Message</span>
-                            <span data-lang="ja">メッセージ</span>
-                        </label>
-                        <textarea id="message" name="message" required data-placeholder-en="How can I help you?" data-placeholder-ja="お問い合わせ内容をご記入ください"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">
-                        <span data-lang="en">Send Message</span>
-                        <span data-lang="ja">送信する</span>
-                    </button>
-                </form>
-
-                <div id="form-status" class="form-status"></div>
                 
-                <p class="response-note">
-                    <span data-lang="en">Typically respond within 2–3 days</span>
-                    <span data-lang="ja">通常2〜3日以内に返信します</span>
-                </p>
+                <div class="form-field">
+                    <label for="email">
+                        <span data-lang="en">Email</span>
+                        <span data-lang="ja">メールアドレス</span>
+                    </label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-field">
+                    <label for="message">
+                        <span data-lang="en">Message</span>
+                        <span data-lang="ja">メッセージ</span>
+                    </label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <span data-lang="en">Send</span>
+                    <span data-lang="ja">送信</span>
+                </button>
+            </form>
+
+            <div id="form-status" class="form-status"></div>
+            
+            <div class="contact-footer">
+                <span data-lang="en">Usually respond within a few days.</span>
+                <span data-lang="ja">通常、数日以内に返信します。</span>
             </div>
         </div>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div>
-                <span data-lang="en">© 2024 marine-obs.org · Independent research project</span>
-                <span data-lang="ja">© 2024 marine-obs.org · 個人プロジェクト</span>
-            </div>
-            <div class="footer-links">
-                <a href="https://github.com/hirokifukui/marine-obs" target="_blank" rel="noopener">GitHub</a>
-                <a href="contact.html">
-                    <span data-lang="en">Contact</span>
-                    <span data-lang="ja">お問い合わせ</span>
-                </a>
-            </div>
-        </div>
-    </footer>
-
     <script src="js/lang.js"></script>
     <script>
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKLAn1MzOv0NMccagqQhvUdtJjJb6JymVMYDZa82uaR6XLWPWMKO5AdebUVtqy-RC4/exec';
-        
-        // Set placeholders based on language
-        function setPlaceholders(lang) {
-            document.querySelectorAll('[data-placeholder-en]').forEach(el => {
-                el.placeholder = el.getAttribute(`data-placeholder-${lang}`) || el.getAttribute('data-placeholder-en');
-            });
-        }
-        
-        // Initialize placeholders
-        const currentLang = localStorage.getItem('lang') || 'en';
-        setPlaceholders(currentLang);
-        
-        // Update placeholders on language change
-        const origApplyLang = window.applyLanguage;
-        window.applyLanguage = function(lang) {
-            if (origApplyLang) origApplyLang(lang);
-            setPlaceholders(lang);
-        };
         
         document.getElementById('contact-form').addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -317,7 +216,6 @@
             const lang = localStorage.getItem('lang') || 'en';
             
             btn.disabled = true;
-            btn.innerHTML = lang === 'ja' ? '送信中...' : 'Sending...';
             status.className = 'form-status';
             status.style.display = 'none';
             
@@ -336,19 +234,18 @@
                 });
                 
                 status.className = 'form-status success';
-                status.innerHTML = lang === 'ja' 
-                    ? '✓ メッセージを送信しました。ありがとうございます。'
-                    : '✓ Message sent successfully. Thank you!';
+                status.textContent = lang === 'ja' 
+                    ? '送信しました。ありがとうございます。'
+                    : 'Sent. Thank you.';
                 form.reset();
             } catch (error) {
                 status.className = 'form-status error';
-                status.innerHTML = lang === 'ja'
-                    ? '送信に失敗しました。時間をおいて再度お試しください。'
-                    : 'Failed to send. Please try again later.';
+                status.textContent = lang === 'ja'
+                    ? '送信できませんでした。'
+                    : 'Could not send. Please try again.';
             }
             
             btn.disabled = false;
-            btn.innerHTML = lang === 'ja' ? '送信する' : 'Send Message';
         });
     </script>
 </body>
