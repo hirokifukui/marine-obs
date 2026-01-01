@@ -102,6 +102,19 @@
                     }
                 });
                 console.log('✅ SST card chart initialized');
+
+                // SST カード最新値テキスト更新
+                if (sstData.latest) {
+                    const { manza, sesoko, ogasawara, updated } = sstData.latest;
+                    const d = new Date(updated + 'T00:00:00');
+                    const dateEn = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                    const dateJa = updated.replace(/-/g, '/').slice(5);
+                    const enEl = document.getElementById('sst-latest-en');
+                    const jaEl = document.getElementById('sst-latest-ja');
+                    if (enEl) enEl.textContent = manza + ' / ' + sesoko + ' / ' + ogasawara + '°C (as of ' + dateEn + ')';
+                    if (jaEl) jaEl.textContent = manza + ' / ' + sesoko + ' / ' + ogasawara + '°C（' + dateJa + '時点）';
+                    console.log('✅ SST card latest text updated');
+                }
             }
 
             // ========================================
