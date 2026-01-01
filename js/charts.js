@@ -301,20 +301,44 @@
             }
 
             // ========================================
-            // DHW カード（年別推移チャート）
+            // DHW カード（直近5年・3地点チャート - Supabaseから）
             // ========================================
             const dhwTrendCtx = document.getElementById('chart-dhw-trend');
-            if (dhwTrendCtx && dhwCardData) {
-                const dhwValues = dhwCardData.chart.manza;
+            if (dhwTrendCtx && window.dhwAllYearsData) {
+                const dhwData = window.dhwAllYearsData;
+                const recentYears = [2021, 2022, 2023, 2024, 2025];
+                
+                const getRecentData = (site) => recentYears.map(y => 
+                    dhwData[site]?.find(d => d.year === y)?.peak_dhw || 0
+                );
+                
                 new Chart(dhwTrendCtx, {
                     type: 'bar',
                     data: {
-                        labels: dhwCardData.chart.labels,
-                        datasets: [{
-                            data: dhwValues,
-                            backgroundColor: getDHWColors(dhwValues),
-                            borderRadius: 4
-                        }]
+                        labels: recentYears,
+                        datasets: [
+                            {
+                                label: 'Manza',
+                                data: getRecentData('manza'),
+                                backgroundColor: chartColors.manza + '99',
+                                borderColor: chartColors.manza,
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'Sesoko',
+                                data: getRecentData('sesoko'),
+                                backgroundColor: chartColors.sesoko + '99',
+                                borderColor: chartColors.sesoko,
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'Ogasawara',
+                                data: getRecentData('ogasawara'),
+                                backgroundColor: chartColors.ogasawara + '99',
+                                borderColor: chartColors.ogasawara,
+                                borderWidth: 1
+                            }
+                        ]
                     },
                     options: {
                         responsive: true,
@@ -323,18 +347,18 @@
                         scales: {
                             y: {
                                 beginAtZero: true,
-                                max: 12,
+                                max: 10,
                                 grid: { color: 'rgba(0,122,108,0.08)' },
-                                ticks: { font: { size: 10 }, color: '#666' }
+                                ticks: { font: { size: 9 }, color: '#666' }
                             },
                             x: {
                                 grid: { display: false },
-                                ticks: { font: { size: 10 }, color: '#666' }
+                                ticks: { font: { size: 9 }, color: '#666' }
                             }
                         }
                     }
                 });
-                console.log('✅ DHW card chart initialized');
+                console.log('✅ DHW card chart initialized (5 years, 3 sites)');
             }
 
             // ========================================
