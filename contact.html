@@ -13,7 +13,7 @@
         body {
             margin: 0;
             min-height: 100vh;
-            background: #fff;
+            background: var(--bg-secondary);
         }
         .contact-page {
             max-width: 400px;
@@ -23,7 +23,7 @@
         .contact-page h1 {
             font-size: 1.5rem;
             font-weight: 600;
-            color: #111;
+            color: var(--text-primary);
             margin: 0 0 2rem 0;
         }
         .contact-form {
@@ -34,26 +34,30 @@
         .form-field label {
             display: block;
             font-size: 0.875rem;
-            color: #333;
+            color: var(--text-secondary);
             margin-bottom: 0.375rem;
+        }
+        .form-field .optional {
+            color: var(--text-muted);
+            font-weight: 400;
         }
         .form-field input,
         .form-field textarea {
             width: 100%;
             padding: 0.75rem;
-            background: #fff;
-            border: 1px solid #ddd;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 6px;
             font-size: 1rem;
             font-family: inherit;
-            color: #111;
+            color: var(--text-primary);
             transition: border-color 0.2s, box-shadow 0.2s;
         }
         .form-field input:focus,
         .form-field textarea:focus {
             outline: none;
-            border-color: #0891b2;
-            box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+            border-color: var(--accent-teal);
+            box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
         }
         .form-field textarea {
             min-height: 120px;
@@ -62,7 +66,7 @@
         .submit-btn {
             width: 100%;
             padding: 0.75rem;
-            background: #0891b2;
+            background: var(--accent-teal);
             color: #fff;
             border: none;
             border-radius: 6px;
@@ -73,7 +77,7 @@
             transition: background 0.2s, transform 0.1s;
         }
         .submit-btn:hover {
-            background: #0e7490;
+            background: #245a94;
         }
         .submit-btn:active {
             transform: scale(0.98);
@@ -86,7 +90,7 @@
         .form-status {
             text-align: center;
             font-size: 0.9rem;
-            color: #666;
+            color: var(--text-muted);
             padding: 1rem 0 0;
             opacity: 0;
             transition: opacity 0.3s;
@@ -95,10 +99,10 @@
             opacity: 1;
         }
         .form-status.success {
-            color: #0891b2;
+            color: var(--accent-green);
         }
         .form-status.error {
-            color: #dc2626;
+            color: var(--accent-coral);
         }
     </style>
 </head>
@@ -126,6 +130,14 @@
         </h1>
         
         <form id="contact-form" class="contact-form">
+            <div class="form-field">
+                <label for="name">
+                    <span data-lang="en">Name <span class="optional">(optional)</span></span>
+                    <span data-lang="ja">お名前 <span class="optional">（任意）</span></span>
+                </label>
+                <input type="text" id="name" name="name">
+            </div>
+            
             <div class="form-field">
                 <label for="email">
                     <span data-lang="en">Email</span>
@@ -172,7 +184,7 @@
                     mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        name: '(contact form)',
+                        name: form.name.value || '(anonymous)',
                         email: form.email.value,
                         message: form.message.value
                     })
