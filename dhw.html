@@ -501,6 +501,37 @@
             margin-bottom: 0.25rem;
         }
 
+        /* DHW年別表示 */
+        .dhw-year-values {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        .dhw-year-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .dhw-year-row .year-label {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            min-width: 40px;
+            text-align: right;
+        }
+        .dhw-year-row .number {
+            font-size: 1.5rem;
+        }
+        .dhw-year-row.current .number {
+            color: #fbbf24;
+        }
+        .hero-date-info {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
         /* Story box */
         .story-box {
             background: #fffbeb;
@@ -656,8 +687,8 @@
             <div class="hero-main">
                 <div class="hero-icon">🌡️📈</div>
                 <div class="hero-tagline">
-                    <span data-lang="en">2024: Record Thermal Stress in Okinawa</span>
-                    <span data-lang="ja">2024年：沖縄で記録的な熱ストレス</span>
+                    <span data-lang="en">Annual Peak DHW Comparison</span>
+                    <span data-lang="ja">年間ピークDHW比較</span>
                 </div>
                 <div class="hero-subtitle">
                     <span data-lang="en">DHW measures accumulated heat stress—the silent killer of coral reefs</span>
@@ -669,32 +700,51 @@
                     <div class="site-name-hero">
                         <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
                     </div>
-                    <span class="number">7.53</span>
-                    <span class="label">
-                        <span data-lang="en">Highest in 22 years</span>
-                        <span data-lang="ja">22年間最高</span>
-                    </span>
+                    <div class="dhw-year-values">
+                        <div class="dhw-year-row">
+                            <span class="year-label">2024:</span>
+                            <span class="number" id="dhw-hero-manza-2024">--</span>
+                        </div>
+                        <div class="dhw-year-row current">
+                            <span class="year-label">2025:</span>
+                            <span class="number" id="dhw-hero-manza-2025">--</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="hero-stat-card">
                     <div class="site-name-hero">
                         <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
                     </div>
-                    <span class="number">4.45</span>
-                    <span class="label">
-                        <span data-lang="en">Alert Level 1 exceeded</span>
-                        <span data-lang="ja">Alert Level 1超過</span>
-                    </span>
+                    <div class="dhw-year-values">
+                        <div class="dhw-year-row">
+                            <span class="year-label">2024:</span>
+                            <span class="number" id="dhw-hero-sesoko-2024">--</span>
+                        </div>
+                        <div class="dhw-year-row current">
+                            <span class="year-label">2025:</span>
+                            <span class="number" id="dhw-hero-sesoko-2025">--</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="hero-stat-card">
                     <div class="site-name-hero">
                         <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
                     </div>
-                    <span class="number">1.24</span>
-                    <span class="label">
-                        <span data-lang="en">Relatively mild</span>
-                        <span data-lang="ja">比較的穏やか</span>
-                    </span>
+                    <div class="dhw-year-values">
+                        <div class="dhw-year-row">
+                            <span class="year-label">2024:</span>
+                            <span class="number" id="dhw-hero-ogasawara-2024">--</span>
+                        </div>
+                        <div class="dhw-year-row current">
+                            <span class="year-label">2025:</span>
+                            <span class="number" id="dhw-hero-ogasawara-2025">--</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="hero-date-info">
+                <span data-lang="en" id="dhw-hero-date-en">Data through: --</span>
+                <span data-lang="ja" id="dhw-hero-date-ja">データ更新日: --</span>
             </div>
         </section>
 
@@ -1203,10 +1253,50 @@
                 });
                 if (!response.ok) throw new Error('Supabase RPC failed');
                 const data = await response.json();
+                
+                // Hero部分を更新
+                updateHeroStats(data);
+                
+                // チャートを描画
                 renderDHWChart(data);
                 console.log('✅ DHW data loaded from Supabase');
             } catch (err) {
                 console.error('Failed to load data:', err);
+            }
+        }
+
+        function updateHeroStats(data) {
+            const sites = ['manza', 'sesoko', 'ogasawara'];
+            const years = [2024, 2025];
+            
+            sites.forEach(site => {
+                years.forEach(year => {
+                    const el = document.getElementById(`dhw-hero-${site}-${year}`);
+                    if (el) {
+                        const val = data[site]?.find(d => d.year === year)?.peak_dhw;
+                        el.textContent = val != null ? val.toFixed(2) : '--';
+                    }
+                });
+            });
+            
+            // 日付表示
+            if (data.latest_date) {
+                const pubDateObj = new Date(Date.UTC(
+                    ...data.latest_date.split('-').map(Number).map((v, i) => i === 1 ? v - 1 : v)
+                ));
+                const obsDateObj = new Date(pubDateObj);
+                obsDateObj.setUTCDate(obsDateObj.getUTCDate() - 3);
+                
+                const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+                const pubEn = months[pubDateObj.getUTCMonth()] + ' ' + pubDateObj.getUTCDate();
+                const obsEn = months[obsDateObj.getUTCMonth()] + ' ' + obsDateObj.getUTCDate();
+                const pubJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
+                const obsJa = `${obsDateObj.getUTCMonth() + 1}/${obsDateObj.getUTCDate()}`;
+                
+                const enEl = document.getElementById('dhw-hero-date-en');
+                const jaEl = document.getElementById('dhw-hero-date-ja');
+                if (enEl) enEl.textContent = `Observed: ${obsEn} | Published: ${pubEn}`;
+                if (jaEl) jaEl.textContent = `観測日: ${obsJa} | 公開日: ${pubJa}`;
             }
         }
 
