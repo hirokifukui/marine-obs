@@ -39,17 +39,19 @@
             data.forEach(row => { latest[row.site_code] = row.sst; });
             const publishedDate = data[0]?.date;
             
-            // 衛星観測日は公開日の約3日前と推定（タイムゾーン非依存で計算）
-            const [year, month, day] = publishedDate.split('-').map(Number);
-            const obsDay = day - 3;
-            const obsDateStr = `${year}-${String(month).padStart(2,'0')}-${String(obsDay).padStart(2,'0')}`;
+            // 衛星観測日は公開日の約3日前と推定（月またぎ対応）
+            const pubDateObj = new Date(Date.UTC(
+                ...publishedDate.split('-').map(Number).map((v, i) => i === 1 ? v - 1 : v)
+            ));
+            const obsDateObj = new Date(pubDateObj);
+            obsDateObj.setUTCDate(obsDateObj.getUTCDate() - 3);
             
             // 表示用フォーマット
             const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-            const pubEn = months[month - 1] + ' ' + day;
-            const obsEn = months[month - 1] + ' ' + obsDay;
-            const pubJa = `${month}/${day}`;
-            const obsJa = `${month}/${obsDay}`;
+            const pubEn = months[pubDateObj.getUTCMonth()] + ' ' + pubDateObj.getUTCDate();
+            const obsEn = months[obsDateObj.getUTCMonth()] + ' ' + obsDateObj.getUTCDate();
+            const pubJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
+            const obsJa = `${obsDateObj.getUTCMonth() + 1}/${obsDateObj.getUTCDate()}`;
             
             const enEl = document.getElementById('sst-latest-en');
             const jaEl = document.getElementById('sst-latest-ja');
