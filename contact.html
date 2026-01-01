@@ -18,142 +18,110 @@
             background: #fff;
         }
         .contact-page {
-            max-width: 1100px;
+            max-width: 520px;
             margin: 0 auto;
-            padding: 5rem 2rem 4rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            padding: 6rem 2rem 4rem;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .contact-page {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                padding: 3rem 1.5rem;
+                padding: 4rem 1.5rem 3rem;
             }
         }
-        .contact-left h1 {
-            font-size: 3rem;
-            font-weight: 500;
-            color: #111;
+        .contact-page h1 {
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            font-weight: 400;
+            color: #0a0a0a;
             margin: 0 0 3rem 0;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-        }
-        @media (max-width: 768px) {
-            .contact-left h1 {
-                font-size: 2.25rem;
-                margin-bottom: 2rem;
-            }
+            letter-spacing: -0.04em;
+            line-height: 1.05;
         }
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.25rem;
         }
         .form-field label {
             display: block;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             color: #666;
             margin-bottom: 0.5rem;
+            letter-spacing: 0.01em;
         }
         .form-field input,
         .form-field textarea {
             width: 100%;
             padding: 0.875rem 1rem;
             background: #f5f5f5;
-            border: 1px solid transparent;
+            border: none;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-family: inherit;
-            color: #111;
-            transition: all 0.2s;
+            color: #0a0a0a;
+            transition: all 0.15s ease;
         }
         .form-field input::placeholder,
         .form-field textarea::placeholder {
-            color: #999;
+            color: #a3a3a3;
         }
         .form-field input:focus,
         .form-field textarea:focus {
             outline: none;
-            background: #fff;
-            border-color: #ddd;
+            background: #efefef;
         }
         .form-field textarea {
             min-height: 140px;
             resize: vertical;
+            line-height: 1.5;
         }
         .submit-btn {
             align-self: flex-start;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
-            background: #fff;
-            color: #666;
-            border: 1px solid #ddd;
+            gap: 0.4rem;
+            padding: 0.6rem 1rem;
+            background: transparent;
+            color: #525252;
+            border: 1px solid #e5e5e5;
             border-radius: 6px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-family: inherit;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.15s ease;
+            margin-top: 0.5rem;
         }
         .submit-btn:hover {
-            color: #111;
-            border-color: #999;
+            color: #0a0a0a;
+            border-color: #d4d4d4;
+            background: #fafafa;
         }
         .submit-btn:disabled {
-            opacity: 0.5;
+            opacity: 0.4;
             cursor: not-allowed;
         }
         .submit-btn svg {
-            width: 14px;
-            height: 14px;
+            width: 12px;
+            height: 12px;
             fill: currentColor;
+            transition: transform 0.15s ease;
         }
-        .contact-right {
-            padding-top: 5rem;
-        }
-        @media (max-width: 768px) {
-            .contact-right {
-                padding-top: 0;
-            }
-        }
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        .contact-link-group h3 {
-            font-size: 0.875rem;
-            font-weight: 400;
-            color: #999;
-            margin: 0 0 0.25rem 0;
-        }
-        .contact-link-group a {
-            font-size: 0.95rem;
-            color: #111;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .contact-link-group a:hover {
-            color: #0891b2;
+        .submit-btn:hover svg {
+            transform: translateX(2px);
         }
         .form-status {
-            padding: 1rem;
+            padding: 0.875rem 1rem;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: none;
         }
         .form-status.success {
             display: block;
             background: #f0fdf4;
-            color: #166534;
+            color: #15803d;
         }
         .form-status.error {
             display: block;
             background: #fef2f2;
-            color: #991b1b;
+            color: #b91c1c;
         }
     </style>
 </head>
@@ -175,85 +143,54 @@
     </header>
 
     <main class="contact-page">
-        <div class="contact-left">
-            <h1>
-                <span data-lang="en">Get in touch</span>
-                <span data-lang="ja">お問い合わせ</span>
-            </h1>
-            
-            <form id="contact-form" class="contact-form">
-                <div class="form-field">
-                    <label for="email">
-                        <span data-lang="en">Email address</span>
-                        <span data-lang="ja">メールアドレス</span>
-                    </label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-field">
-                    <label for="message">
-                        <span data-lang="en">How can we help?</span>
-                        <span data-lang="ja">ご用件</span>
-                    </label>
-                    <textarea id="message" name="message" required data-placeholder-en="I'd like to know more about..." data-placeholder-ja="お問い合わせ内容をご記入ください..."></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn" id="submit-btn">
-                    <span data-lang="en">Submit</span>
-                    <span data-lang="ja">送信</span>
-                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
-                </button>
-                
-                <div id="form-status" class="form-status"></div>
-            </form>
-        </div>
+        <h1>
+            <span data-lang="en">Get in touch</span>
+            <span data-lang="ja">お問い合わせ</span>
+        </h1>
         
-        <div class="contact-right">
-            <div class="contact-links">
-                <div class="contact-link-group">
-                    <h3>
-                        <span data-lang="en">General inquiries</span>
-                        <span data-lang="ja">一般的なお問い合わせ</span>
-                    </h3>
-                    <a href="mailto:contact@marine-obs.org">contact@marine-obs.org</a>
-                </div>
-                
-                <div class="contact-link-group">
-                    <h3>
-                        <span data-lang="en">Data & research</span>
-                        <span data-lang="ja">データ・研究について</span>
-                    </h3>
-                    <a href="mailto:data@marine-obs.org">data@marine-obs.org</a>
-                </div>
-                
-                <div class="contact-link-group">
-                    <h3>
-                        <span data-lang="en">Report issues</span>
-                        <span data-lang="ja">不具合の報告</span>
-                    </h3>
-                    <a href="https://github.com/hirokifukui/marine-obs/issues" target="_blank">GitHub Issues</a>
-                </div>
+        <form id="contact-form" class="contact-form">
+            <div class="form-field">
+                <label for="email">
+                    <span data-lang="en">Email address</span>
+                    <span data-lang="ja">メールアドレス</span>
+                </label>
+                <input type="email" id="email" name="email" required data-placeholder-en="Enter your email" data-placeholder-ja="メールアドレスを入力">
             </div>
-        </div>
+            
+            <div class="form-field">
+                <label for="message">
+                    <span data-lang="en">How can we help?</span>
+                    <span data-lang="ja">ご用件</span>
+                </label>
+                <textarea id="message" name="message" required data-placeholder-en="I'd like to know more about..." data-placeholder-ja="お問い合わせ内容をご記入ください..."></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="submit-btn">
+                <span data-lang="en">Submit</span>
+                <span data-lang="ja">送信</span>
+                <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+            </button>
+            
+            <div id="form-status" class="form-status"></div>
+        </form>
     </main>
 
     <script src="js/lang.js"></script>
     <script>
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKLAn1MzOv0NMccagqQhvUdtJjJb6JymVMYDZa82uaR6XLWPWMKO5AdebUVtqy-RC4/exec';
         
-        // Set placeholder based on language
-        function updatePlaceholder() {
+        function updatePlaceholders() {
             const lang = localStorage.getItem('lang') || 'en';
-            const textarea = document.getElementById('message');
-            textarea.placeholder = textarea.getAttribute('data-placeholder-' + lang);
+            document.querySelectorAll('[data-placeholder-' + lang + ']').forEach(el => {
+                el.placeholder = el.getAttribute('data-placeholder-' + lang);
+            });
         }
-        updatePlaceholder();
+        updatePlaceholders();
         
-        // Update placeholder on language change
         const origApplyLang = window.applyLanguage;
         window.applyLanguage = function(lang) {
             if (origApplyLang) origApplyLang(lang);
-            updatePlaceholder();
+            updatePlaceholders();
         };
         
         document.getElementById('contact-form').addEventListener('submit', async (e) => {
@@ -287,7 +224,7 @@
                     ? '送信しました。ありがとうございます。'
                     : 'Message sent. Thank you.';
                 form.reset();
-                updatePlaceholder();
+                updatePlaceholders();
                 
             } catch (error) {
                 status.className = 'form-status error';
