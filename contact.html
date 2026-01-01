@@ -47,11 +47,13 @@
             font-size: 1rem;
             font-family: inherit;
             color: #111;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
         .form-field input:focus,
         .form-field textarea:focus {
             outline: none;
             border-color: #0891b2;
+            box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
         }
         .form-field textarea {
             min-height: 120px;
@@ -68,30 +70,35 @@
             font-family: inherit;
             cursor: pointer;
             margin-top: 0.5rem;
+            transition: background 0.2s, transform 0.1s;
         }
         .submit-btn:hover {
             background: #0e7490;
         }
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
         .submit-btn:disabled {
             opacity: 0.5;
             cursor: not-allowed;
+            transform: none;
         }
         .form-status {
-            padding: 0.75rem;
-            border-radius: 6px;
-            font-size: 0.875rem;
             text-align: center;
-            display: none;
+            font-size: 0.9rem;
+            color: #666;
+            padding: 1rem 0 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .form-status.show {
+            opacity: 1;
         }
         .form-status.success {
-            display: block;
-            background: #f0fdf4;
-            color: #166534;
+            color: #0891b2;
         }
         .form-status.error {
-            display: block;
-            background: #fef2f2;
-            color: #991b1b;
+            color: #dc2626;
         }
     </style>
 </head>
@@ -171,13 +178,13 @@
                     })
                 });
                 
-                status.className = 'form-status success';
-                status.textContent = lang === 'ja' ? '送信しました' : 'Sent';
+                status.textContent = lang === 'ja' ? 'ありがとうございます。送信しました。' : 'Thank you. Message sent.';
+                status.className = 'form-status success show';
                 form.reset();
                 
             } catch (error) {
-                status.className = 'form-status error';
-                status.textContent = lang === 'ja' ? 'エラー' : 'Error';
+                status.textContent = lang === 'ja' ? '送信できませんでした' : 'Could not send';
+                status.className = 'form-status error show';
             }
             
             btn.disabled = false;
