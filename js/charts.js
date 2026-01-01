@@ -108,9 +108,69 @@
             if (jaEl) {
                 jaEl.innerHTML = `🔥 2024: ${hot24.manza||0}/${hot24.sesoko||0}/${hot24.ogasawara||0} | 2025: ${hot25.manza||0}/${hot25.sesoko||0}/${hot25.ogasawara||0}<br>❄️ 25冬: ${cold25.manza||0}/${cold25.sesoko||0}/${cold25.ogasawara||0} | 26冬: ${cold26.manza||0}/${cold26.sesoko||0}/${cold26.ogasawara||0}<br><small style="opacity:0.8">観測: ${obsJa} | 公開: ${pubJa}</small>`;
             }
+            
+            // バッジと説明文を動的更新（2025年夏 + 2025-26年冬基準）
+            updateExtremeStatus(hot25, cold26);
+            
             console.log('✅ Extreme days loaded from Supabase RPC');
         } catch (e) {
             console.error('❌ Failed to load extreme days from Supabase:', e);
+        }
+    }
+
+    // 極端日数ステータスを動的更新（バッジ・説明文）
+    function updateExtremeStatus(hot2025, cold2026) {
+        const siteNamesEn = { manza: 'Manza', sesoko: 'Sesoko', ogasawara: 'Ogasawara' };
+        const siteNamesJa = { manza: '万座', sesoko: '瀬底', ogasawara: '小笠原' };
+        const sites = ['manza', 'sesoko', 'ogasawara'];
+        
+        // 2025年夏の高温日合計
+        const totalHot = (hot2025.manza||0) + (hot2025.sesoko||0) + (hot2025.ogasawara||0);
+        const maxHotSite = sites.reduce((a, b) => (hot2025[a]||0) > (hot2025[b]||0) ? a : b);
+        const maxHotDays = hot2025[maxHotSite] || 0;
+        
+        // 2025-26年冬の低温日合計
+        const totalCold = (cold2026.manza||0) + (cold2026.sesoko||0) + (cold2026.ogasawara||0);
+        const maxColdSite = sites.reduce((a, b) => (cold2026[a]||0) > (cold2026[b]||0) ? a : b);
+        const maxColdDays = cold2026[maxColdSite] || 0;
+        
+        const cardEl = document.getElementById('extreme-card');
+        const badgeEl = document.getElementById('extreme-badge');
+        const badgeEnEl = document.getElementById('extreme-badge-en');
+        const badgeJaEl = document.getElementById('extreme-badge-ja');
+        const descEnEl = document.getElementById('extreme-desc-en');
+        const descJaEl = document.getElementById('extreme-desc-ja');
+        
+        // 判定: 高温20日以上 or 低温30日以上 → 注意
+        const isWarning = maxHotDays >= 20 || maxColdDays >= 30;
+        
+        if (isWarning) {
+            if (cardEl) cardEl.className = 'six-card status-warning';
+            if (badgeEl) badgeEl.className = 'six-card-badge badge-watch';
+            if (badgeEnEl) badgeEnEl.textContent = 'Watch';
+            if (badgeJaEl) badgeJaEl.textContent = '注意';
+            
+            // どちらが多いかで説明文を変える
+            if (maxHotDays >= maxColdDays && maxHotDays >= 20) {
+                if (descEnEl) descEnEl.textContent = `2025 summer: ${siteNamesEn[maxHotSite]} had ${maxHotDays} hot days (≥30°C). Heat stress risk.`;
+                if (descJaEl) descJaEl.textContent = `2025年夏: ${siteNamesJa[maxHotSite]}で${maxHotDays}日の高温（30°C以上）。熱ストレスリスクあり。`;
+            } else {
+                if (descEnEl) descEnEl.textContent = `2025-26 winter: ${siteNamesEn[maxColdSite]} had ${maxColdDays} cold days (≤20°C). Cold stress risk.`;
+                if (descJaEl) descJaEl.textContent = `2025-26年冬: ${siteNamesJa[maxColdSite]}で${maxColdDays}日の低温（20°C以下）。低温ストレスリスクあり。`;
+            }
+        } else {
+            if (cardEl) cardEl.className = 'six-card status-safe';
+            if (badgeEl) badgeEl.className = 'six-card-badge badge-safe';
+            if (badgeEnEl) badgeEnEl.textContent = 'Safe';
+            if (badgeJaEl) badgeJaEl.textContent = '安全';
+            
+            if (totalHot === 0 && totalCold === 0) {
+                if (descEnEl) descEnEl.textContent = '2025-26 winter: No extreme days recorded. Monitoring continues.';
+                if (descJaEl) descJaEl.textContent = '2025-26年冬: 極端水温日なし。観測継続中。';
+            } else {
+                if (descEnEl) descEnEl.textContent = `2025 summer: ${totalHot} hot days total. 2025-26 winter: ${totalCold} cold days. Within normal range.`;
+                if (descJaEl) descJaEl.textContent = `2025年夏: 高温${totalHot}日。2025-26年冬: 低温${totalCold}日。正常範囲内。`;
+            }
         }
     }
 
