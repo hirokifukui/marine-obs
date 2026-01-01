@@ -67,6 +67,54 @@
             console.error('❌ Failed to load SST from Supabase:', e);
         }
     }
+    // 極端日数をSupabaseから取得
+    async function loadExtremeDaysFromSupabase() {
+        try {
+            const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_extreme_days`, {
+                method: 'POST',
+                headers: {
+                    'apikey': SUPABASE_ANON_KEY,
+                    'Content-Type': 'application/json'
+                }
+            });
+            if (!response.ok) throw new Error('Supabase RPC failed');
+            const data = await response.json();
+            
+            // 日付計算
+            const pubDateObj = new Date(Date.UTC(
+                ...data.latest_date.split('-').map(Number).map((v, i) => i === 1 ? v - 1 : v)
+            ));
+            const obsDateObj = new Date(pubDateObj);
+            obsDateObj.setUTCDate(obsDateObj.getUTCDate() - 3);
+            
+            const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            const pubEn = months[pubDateObj.getUTCMonth()] + ' ' + pubDateObj.getUTCDate();
+            const obsEn = months[obsDateObj.getUTCMonth()] + ' ' + obsDateObj.getUTCDate();
+            const pubJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
+            const obsJa = `${obsDateObj.getUTCMonth() + 1}/${obsDateObj.getUTCDate()}`;
+            
+            // 値取得（nullの場合は0）
+            const hot24 = data.hot_2024 || {};
+            const hot25 = data.hot_2025 || {};
+            const cold25 = data.cold_winter_2025 || {};
+            const cold26 = data.cold_winter_2026 || {};
+            
+            const enEl = document.getElementById('extreme-latest-en');
+            const jaEl = document.getElementById('extreme-latest-ja');
+            
+            if (enEl) {
+                enEl.innerHTML = `🔥 2024: ${hot24.manza||0}/${hot24.sesoko||0}/${hot24.ogasawara||0} | 2025: ${hot25.manza||0}/${hot25.sesoko||0}/${hot25.ogasawara||0}<br>❄️ W25: ${cold25.manza||0}/${cold25.sesoko||0}/${cold25.ogasawara||0} | W26: ${cold26.manza||0}/${cold26.sesoko||0}/${cold26.ogasawara||0}<br><small style="opacity:0.8">Obs: ${obsEn} | Pub: ${pubEn}</small>`;
+            }
+            if (jaEl) {
+                jaEl.innerHTML = `🔥 2024: ${hot24.manza||0}/${hot24.sesoko||0}/${hot24.ogasawara||0} | 2025: ${hot25.manza||0}/${hot25.sesoko||0}/${hot25.ogasawara||0}<br>❄️ 25冬: ${cold25.manza||0}/${cold25.sesoko||0}/${cold25.ogasawara||0} | 26冬: ${cold26.manza||0}/${cold26.sesoko||0}/${cold26.ogasawara||0}<br><small style="opacity:0.8">観測: ${obsJa} | 公開: ${pubJa}</small>`;
+            }
+            console.log('✅ Extreme days loaded from Supabase RPC');
+        } catch (e) {
+            console.error('❌ Failed to load extreme days from Supabase:', e);
+        }
+    }
+
+
 
     // DHW色分け（閾値: 4未満=緑, 4-8=黄, 8以上=赤）
     function getDHWColors(values) {
@@ -156,6 +204,11 @@
             // SST カード最新値（Supabaseから動的取得）
             // ========================================
             await loadSSTLatestFromSupabase();
+
+            // ========================================
+            // 極端日数 カード最新値（Supabaseから動的取得）
+            // ========================================
+            await loadExtremeDaysFromSupabase();
 
             // ========================================
             // 極端日数 カード（ミニチャート）
