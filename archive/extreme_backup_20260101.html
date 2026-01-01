@@ -241,20 +241,6 @@
         .summary-card.hot .site-value { color: var(--hot-color); }
         .summary-card.cold .site-value { color: var(--cold-color); }
 
-        .period-note {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            margin-top: 0.75rem;
-            padding-top: 0.5rem;
-            border-top: 1px dashed var(--border);
-        }
-
-        .period-note.ongoing {
-            color: var(--cold-color);
-            font-weight: 500;
-        }
-
-
         .summary-card .site-unit {
             font-size: 0.7rem;
             color: var(--text-muted);
@@ -628,55 +614,24 @@
             </div>
             <div class="hero-stats-row">
                 <div class="hero-stat-card">
-                    <span class="number" style="color: #fca5a5;" id="hero-hot-2024">--</span>
+                    <span class="number" style="color: #fca5a5;">36</span>
                     <span class="label">
                         <span data-lang="en">Manza hot days (2024)</span>
                         <span data-lang="ja">万座高温日 (2024)</span>
                     </span>
                 </div>
                 <div class="hero-stat-card">
-                    <span class="number" style="color: #67e8f9;" id="hero-cold-2025">--</span>
+                    <span class="number" style="color: #67e8f9;">49</span>
                     <span class="label">
-                        <span data-lang="en">Ogasawara cold days (Winter 2025)</span>
-                        <span data-lang="ja">小笠原低温日 (2025年冬)</span>
+                        <span data-lang="en">Ogasawara cold days (2024)</span>
+                        <span data-lang="ja">小笠原低温日 (2024)</span>
                     </span>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.9;">
-                <span data-lang="en">Data through: <span id="latest-date-en">--</span></span>
-                <span data-lang="ja">データ更新日: <span id="latest-date-ja">--</span></span>
-            </div>
         </section>
 
-        <!-- Summary Cards - Dynamic from Supabase -->
-        <div class="summary-grid" style="grid-template-columns: repeat(2, 1fr);">
-            <!-- Hot Days 2024 -->
-            <div class="summary-card hot">
-                <div class="icon">🔥</div>
-                <div class="label">
-                    <span data-lang="en">Hot Days 2024 (≥30°C)</span>
-                    <span data-lang="ja">2024年 高温日（30°C以上）</span>
-                </div>
-                <div class="sites">
-                    <div class="site-item">
-                        <div class="site-name"><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                        <div class="site-value" id="hot24-manza">--</div>
-                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
-                    </div>
-                    <div class="site-item">
-                        <div class="site-name"><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                        <div class="site-value" id="hot24-sesoko">--</div>
-                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
-                    </div>
-                    <div class="site-item">
-                        <div class="site-name"><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
-                        <div class="site-value" id="hot24-ogasawara">--</div>
-                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Hot Days 2025 -->
+        <!-- 2025 Summary -->
+        <div class="summary-grid">
             <div class="summary-card hot">
                 <div class="icon">🔥</div>
                 <div class="label">
@@ -686,83 +641,49 @@
                 <div class="sites">
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                        <div class="site-value" id="hot25-manza">--</div>
+                        <div class="site-value">14</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                        <div class="site-value" id="hot25-sesoko">--</div>
+                        <div class="site-value">4</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
-                        <div class="site-value" id="hot25-ogasawara">--</div>
+                        <div class="site-value">4</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Cold Days Winter 2025 (Nov 2024 - Apr 2025) -->
             <div class="summary-card cold">
                 <div class="icon">❄️</div>
                 <div class="label">
-                    <span data-lang="en">Cold Days Winter 2025 (≤20°C)</span>
-                    <span data-lang="ja">2025年冬 低温日（20°C以下）</span>
+                    <span data-lang="en">Cold Days 2025 (≤20°C)</span>
+                    <span data-lang="ja">2025年 低温日（20°C以下）</span>
                 </div>
                 <div class="sites">
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                        <div class="site-value" id="cold25-manza">--</div>
+                        <div class="site-value">0</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                        <div class="site-value" id="cold25-sesoko">--</div>
+                        <div class="site-value">0</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
-                        <div class="site-value" id="cold25-ogasawara">--</div>
+                        <div class="site-value">49</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
-                </div>
-                <div class="period-note">
-                    <span data-lang="en">Nov 2024 – Apr 2025</span>
-                    <span data-lang="ja">2024年11月〜2025年4月</span>
-                </div>
-            </div>
-
-            <!-- Cold Days Winter 2026 (Nov 2025 - ongoing) -->
-            <div class="summary-card cold">
-                <div class="icon">❄️</div>
-                <div class="label">
-                    <span data-lang="en">Cold Days Winter 2026 (≤20°C)</span>
-                    <span data-lang="ja">2026年冬 低温日（20°C以下）</span>
-                </div>
-                <div class="sites">
-                    <div class="site-item">
-                        <div class="site-name"><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                        <div class="site-value" id="cold26-manza">--</div>
-                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
-                    </div>
-                    <div class="site-item">
-                        <div class="site-name"><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                        <div class="site-value" id="cold26-sesoko">--</div>
-                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
-                    </div>
-                    <div class="site-item">
-                        <div class="site-name"><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
-                        <div class="site-value" id="cold26-ogasawara">--</div>
-                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
-                    </div>
-                </div>
-                <div class="period-note ongoing">
-                    <span data-lang="en">Nov 2025 – ongoing 🔴</span>
-                    <span data-lang="ja">2025年11月〜進行中 🔴</span>
                 </div>
             </div>
         </div>
 
+        
         <!-- Story Box -->
         <div class="story-box">
             <p class="story-lead">
@@ -1114,7 +1035,7 @@
         <p style="margin-top: 0.5rem;">© 2025 marine-obs.org</p>
     </footer>
 
-        <script>
+    <script>
         // Language toggle
         function setLang(lang) {
             document.body.classList.toggle('ja', lang === 'ja');
@@ -1132,84 +1053,14 @@
             ogasawara: '#2f855a'
         };
 
-        // Supabase config
-        const SUPABASE_URL = 'https://pegiuiblpliainpdggfj.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlZ2l1aWJscGxpYWlucGRnZ2ZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQyMDkzNzQsImV4cCI6MjA3OTc4NTM3NH0.r9dBAsMLoXbgZL93lvA756r74U6YfCCfftHHlxYqZIw';
-
-        // Load real-time extreme days from Supabase RPC
-        async function loadExtremeDays() {
-            try {
-                const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_extreme_days`, {
-                    method: 'POST',
-                    headers: {
-                        'apikey': SUPABASE_ANON_KEY,
-                        'Content-Type': 'application/json'
-                    }
-                });
-                if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                const data = await response.json();
-                
-                const sites = ['manza', 'sesoko', 'ogasawara'];
-                
-                // Hot Days 2024
-                sites.forEach(site => {
-                    const el = document.getElementById(`hot24-${site}`);
-                    if (el) el.textContent = data.hot_2024?.[site] ?? 0;
-                });
-                
-                // Hot Days 2025
-                sites.forEach(site => {
-                    const el = document.getElementById(`hot25-${site}`);
-                    if (el) el.textContent = data.hot_2025?.[site] ?? 0;
-                });
-                
-                // Cold Days Winter 2025
-                sites.forEach(site => {
-                    const el = document.getElementById(`cold25-${site}`);
-                    if (el) el.textContent = data.cold_winter_2025?.[site] ?? 0;
-                });
-                
-                // Cold Days Winter 2026 (ongoing)
-                sites.forEach(site => {
-                    const el = document.getElementById(`cold26-${site}`);
-                    if (el) el.textContent = data.cold_winter_2026?.[site] ?? 0;
-                });
-                
-                // Hero stats
-                const heroHot = document.getElementById('hero-hot-2024');
-                if (heroHot) heroHot.textContent = data.hot_2024?.manza ?? '--';
-                
-                const heroCold = document.getElementById('hero-cold-2025');
-                if (heroCold) heroCold.textContent = data.cold_winter_2025?.ogasawara ?? '--';
-                
-                // Latest date
-                if (data.latest_date) {
-                    const d = new Date(data.latest_date + 'T00:00:00Z');
-                    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-                    const enEl = document.getElementById('latest-date-en');
-                    const jaEl = document.getElementById('latest-date-ja');
-                    if (enEl) enEl.textContent = `${months[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
-                    if (jaEl) jaEl.textContent = `${d.getUTCFullYear()}/${d.getUTCMonth()+1}/${d.getUTCDate()}`;
-                }
-                
-                console.log('✓ Extreme days loaded from Supabase');
-            } catch (e) {
-                console.error('Failed to load extreme days:', e);
-            }
-        }
-
         async function init() {
-            // Load real-time data
-            await loadExtremeDays();
-            
-            // Load historical chart data
             try {
                 const res = await fetch('data/extreme_days.json');
                 const data = await res.json();
                 renderHotDaysChart(data);
                 renderColdDaysChart(data);
             } catch (err) {
-                console.error('Failed to load chart data:', err);
+                console.error('Failed to load data:', err);
             }
         }
 
