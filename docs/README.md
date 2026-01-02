@@ -14,7 +14,10 @@
 ## ページ
 | ページ | 内容 |
 |--------|------|
-| index.html | トップ（6カード + About + Glossary + For Divers） |
+| index.html | ダッシュボード（6カード + Data Sources） |
+| about.html | このサイトについて |
+| divers.html | ダイバー向け（海況・装備） |
+| glossary.html | 用語解説 |
 | sst.html | 海水温 |
 | extreme.html | 極端水温日数 |
 | dhw.html | 積算熱ストレス |
@@ -24,7 +27,7 @@
 ## 構成
 ```
 css/  main.css, dhw.css, extreme.css, species.css, spawning.css, turbidity.css, contact.css, global-bleaching.css
-js/  lang.js, charts.js, marine-monitor.js, gear-recs.js
+js/  lang.js, lang-simple.js, charts.js, marine-monitor.js, gear-recs.js
 data/  *.json（チャート用、一部は未使用）
 sql/  RPC関数定義
 ```
