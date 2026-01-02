@@ -54,7 +54,7 @@
     </header>
 
     <main class="detail-page">
-<nav class="breadcrumb">
+        <nav class="breadcrumb">
             <a href="index.html">Home</a> / 
             <span data-lang="en">DHW</span>
             <span data-lang="ja">DHW</span>
@@ -606,18 +606,21 @@
                 </ul>
             </div>
         </section>
+
     </main>
 
-    <footer class="detail-footer">
-        <a href="index.html">← 
-            <span data-lang="en">Back to Home</span>
-            <span data-lang="ja">ホームに戻る</span>
-        </a>
-        <p style="margin-top: 0.5rem;">© 2025 marine-obs.org</p>
-    </footer>
-
     <script src="js/lang.js"></script>
+    <script>
+        // Language toggle
+        function setLang(lang) {
+            document.body.classList.toggle('ja', lang === 'ja');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
+            localStorage.setItem('lang', lang);
+        }
 
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang) setLang(savedLang);
 
         const COLORS = {
             manza: '#c05621',
