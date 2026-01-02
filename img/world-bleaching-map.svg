@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <!-- Ocean gradient -->
+    <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3a5c"/>
+      <stop offset="100%" style="stop-color:#0d2137"/>
+    </linearGradient>
+    
+    <!-- Glow effect for hotspots -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Subtle glow -->
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background ocean -->
+  <rect width="800" height="400" fill="url(#oceanGrad)"/>
+  
+  <!-- Simplified world landmass (very minimal) -->
+  <g fill="#2d4a5e" opacity="0.6">
+    <!-- North America -->
+    <path d="M80,80 Q120,70 160,85 L180,120 Q170,160 140,180 L100,170 Q70,140 80,80Z"/>
+    <!-- South America -->
+    <path d="M150,200 Q170,190 180,210 L175,280 Q160,320 140,300 L130,240 Q140,210 150,200Z"/>
+    <!-- Europe -->
+    <path d="M360,70 Q400,60 420,80 L410,110 Q390,120 370,110 L360,70Z"/>
+    <!-- Africa -->
+    <path d="M360,130 Q400,120 420,150 L430,220 Q410,280 380,270 L350,200 Q340,150 360,130Z"/>
+    <!-- Asia -->
+    <path d="M450,50 Q550,40 620,70 L640,130 Q600,160 520,150 L460,120 Q440,80 450,50Z"/>
+    <!-- Australia -->
+    <path d="M600,240 Q650,230 680,250 L690,290 Q670,320 630,310 L600,280 Q590,260 600,240Z"/>
+    <!-- Indonesia/SE Asia -->
+    <path d="M560,170 Q590,165 610,180 L600,200 Q580,210 560,200 L560,170Z"/>
+  </g>
+  
+  <!-- Coral reef regions (coral triangle, GBR, Caribbean, etc) as subtle outlines -->
+  <g fill="none" stroke="#4a7a9a" stroke-width="1" opacity="0.4">
+    <!-- Coral Triangle -->
+    <ellipse cx="580" cy="190" rx="60" ry="35"/>
+    <!-- Great Barrier Reef -->
+    <ellipse cx="670" cy="265" rx="20" ry="40"/>
+    <!-- Caribbean -->
+    <ellipse cx="180" cy="165" rx="40" ry="25"/>
+    <!-- Red Sea -->
+    <ellipse cx="400" cy="160" rx="15" ry="30"/>
+    <!-- Indian Ocean -->
+    <ellipse cx="480" cy="210" rx="50" ry="35"/>
+  </g>
+  
+  <!-- BLEACHING HOTSPOTS -->
+  
+  <!-- Caribbean - Severe (2005, 2023-) -->
+  <g filter="url(#glow)">
+    <circle cx="180" cy="165" r="25" fill="#ef476f" opacity="0.5"/>
+    <circle cx="180" cy="165" r="12" fill="#d90429" opacity="0.8"/>
+  </g>
+  
+  <!-- Florida - Critical 2023 (38°C) -->
+  <g filter="url(#softGlow)">
+    <circle cx="155" cy="140" r="8" fill="#d90429" opacity="0.9"/>
+  </g>
+  
+  <!-- Indian Ocean - Severe (1998) -->
+  <g filter="url(#glow)">
+    <circle cx="480" cy="200" r="30" fill="#ef476f" opacity="0.45"/>
+    <circle cx="480" cy="200" r="15" fill="#f4845f" opacity="0.7"/>
+  </g>
+  
+  <!-- Maldives -->
+  <circle cx="460" cy="185" r="5" fill="#ef476f" opacity="0.8"/>
+  
+  <!-- Great Barrier Reef - Repeated bleaching -->
+  <g filter="url(#glow)">
+    <ellipse cx="670" cy="270" rx="18" ry="35" fill="#f4845f" opacity="0.5"/>
+    <ellipse cx="670" cy="270" rx="10" ry="20" fill="#ef476f" opacity="0.7"/>
+  </g>
+  
+  <!-- Coral Triangle / Indonesia -->
+  <g filter="url(#softGlow)">
+    <circle cx="580" cy="190" r="20" fill="#ffd166" opacity="0.4"/>
+    <circle cx="580" cy="190" r="10" fill="#f4845f" opacity="0.6"/>
+  </g>
+  
+  <!-- Japan / Okinawa -->
+  <g filter="url(#softGlow)">
+    <circle cx="640" cy="130" r="10" fill="#ef476f" opacity="0.6"/>
+    <circle cx="640" cy="130" r="5" fill="#d90429" opacity="0.8"/>
+  </g>
+  
+  <!-- Pacific Islands (scattered) -->
+  <circle cx="720" cy="200" r="6" fill="#f4845f" opacity="0.5"/>
+  <circle cx="280" cy="220" r="5" fill="#f4845f" opacity="0.5"/>
+  <circle cx="320" cy="190" r="4" fill="#ffd166" opacity="0.5"/>
+  
+  <!-- Red Sea -->
+  <circle cx="400" cy="155" r="8" fill="#ffd166" opacity="0.5"/>
+  
+  <!-- Mexico Pacific (2023-) -->
+  <circle cx="100" cy="150" r="7" fill="#d90429" opacity="0.7"/>
+  
+  <!-- LABELS -->
+  <g font-family="Helvetica Neue, sans-serif" font-size="11" fill="#ffffff" opacity="0.9">
+    <!-- Caribbean -->
+    <text x="180" y="205" text-anchor="middle">
+      <tspan font-weight="500">カリブ海</tspan>
+    </text>
+    <text x="180" y="218" text-anchor="middle" font-size="9" opacity="0.7">Caribbean</text>
+    
+    <!-- Indian Ocean -->
+    <text x="480" cy="200" y="248" text-anchor="middle">
+      <tspan font-weight="500">インド洋</tspan>
+    </text>
+    <text x="480" y="261" text-anchor="middle" font-size="9" opacity="0.7">Indian Ocean</text>
+    
+    <!-- GBR -->
+    <text x="710" y="275" text-anchor="start">
+      <tspan font-weight="500">GBR</tspan>
+    </text>
+    <text x="710" y="288" text-anchor="start" font-size="9" opacity="0.7">豪州</text>
+    
+    <!-- Japan -->
+    <text x="655" y="115" text-anchor="start">
+      <tspan font-weight="500">日本</tspan>
+    </text>
+    <text x="655" y="128" text-anchor="start" font-size="9" opacity="0.7">Japan</text>
+    
+    <!-- Coral Triangle -->
+    <text x="580" y="230" text-anchor="middle">
+      <tspan font-weight="500">珊瑚三角地帯</tspan>
+    </text>
+    <text x="580" y="243" text-anchor="middle" font-size="9" opacity="0.7">Coral Triangle</text>
+  </g>
+  
+  <!-- LEGEND -->
+  <g transform="translate(20, 320)">
+    <rect x="0" y="0" width="200" height="70" rx="6" fill="#0a1628" opacity="0.7"/>
+    
+    <text x="15" y="20" font-family="Helvetica Neue, sans-serif" font-size="10" fill="#ffffff" font-weight="500">
+      白化の深刻度 / Severity
+    </text>
+    
+    <!-- Legend items -->
+    <circle cx="25" cy="38" r="6" fill="#d90429"/>
+    <text x="40" y="42" font-family="Helvetica Neue, sans-serif" font-size="9" fill="#ffffff" opacity="0.8">
+      壊滅的 / Critical
+    </text>
+    
+    <circle cx="115" cy="38" r="6" fill="#ef476f"/>
+    <text x="130" y="42" font-family="Helvetica Neue, sans-serif" font-size="9" fill="#ffffff" opacity="0.8">
+      深刻 / Severe
+    </text>
+    
+    <circle cx="25" cy="56" r="6" fill="#f4845f"/>
+    <text x="40" y="60" font-family="Helvetica Neue, sans-serif" font-size="9" fill="#ffffff" opacity="0.8">
+      中程度 / Moderate
+    </text>
+    
+    <circle cx="115" cy="56" r="6" fill="#ffd166"/>
+    <text x="130" y="60" font-family="Helvetica Neue, sans-serif" font-size="9" fill="#ffffff" opacity="0.8">
+      軽度 / Low
+    </text>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Helvetica Neue, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="300" letter-spacing="0.1em">
+    世界のサンゴ白化ホットスポット / Global Coral Bleaching Hotspots
+  </text>
+  
+  <!-- Data source -->
+  <text x="780" y="390" font-family="Helvetica Neue, sans-serif" font-size="8" fill="#ffffff" opacity="0.4" text-anchor="end">
+    Data: NOAA Coral Reef Watch, AIMS
+  </text>
+</svg>

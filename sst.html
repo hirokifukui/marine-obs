@@ -7,467 +7,53 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        :root {
-            --header-bg: #1a1f2e;
-            --header-text: #ffffff;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8f9fa;
-            --bg-card: #ffffff;
-            --text-primary: #1a202c;
-            --text-secondary: #4a5568;
-            --text-muted: #718096;
-            --accent-teal: #2b6cb0;
-            --accent-coral: #996060;
-            --accent-warm: #c05621;
-            --accent-green: #2f855a;
-            --border: #e2e8f0;
-            --shadow: 0 1px 3px rgba(0,0,0,0.08);
-            --manza: #c05621;
-            --sesoko: #2b6cb0;
-            --ogasawara: #2f855a;
-            --sst-hero: #2b6cb0;
-            --sst-light: #ebf8ff;
-            --sst-border: #bee3f8;
-            --heat-red: #c53030;
-            --heat-light: #fff5f5;
-            --heat-border: #feb2b2;
-            --cold-teal: #0987a0;
-            --cold-light: #e6fffa;
-            --cold-border: #81e6d9;
-            --adapt-purple: #6b46c1;
-            --adapt-light: #f5f3ff;
-            --adapt-border: #d6bcfa;
-            --story-bg: #fffbeb;
-            --story-border: #fde68a;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            line-height: 1.8;
-            min-height: 100vh;
-        }
-        body.ja { font-family: 'Noto Sans JP', 'DM Sans', sans-serif; }
-        header {
-            background: var(--header-bg);
-            color: var(--header-text);
-            padding: 0.75rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: inherit;
-        }
-        .logo-icon {
-            width: 28px;
-            height: 28px;
-            background: linear-gradient(135deg, #5b9a94 0%, #2b6cb0 100%);
-            border-radius: 6px;
-            overflow: hidden;
-        }
-        .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
-        .lang-switch {
-            font-size: 0.8rem;
-            display: flex;
-            gap: 0.25rem;
-        }
-        .lang-switch button {
-            background: none;
-            border: none;
-            color: rgba(255,255,255,0.6);
-            cursor: pointer;
-            font-size: 0.8rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            transition: all 0.2s;
-        }
-        .lang-switch button:hover { color: rgba(255,255,255,0.9); }
-        .lang-switch button.active { color: #ffffff; background: rgba(255,255,255,0.15); }
-        main {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2.5rem 2rem;
-        }
-        .breadcrumb {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-        .breadcrumb a {
-            color: var(--accent-teal);
-            text-decoration: none;
-        }
-        .hero-section {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.7), rgba(66, 153, 225, 0.65)), url("images/bg-sst.jpg");
-            color: white;
-            padding: 2.5rem 2rem;
-            border-radius: 12px;
-            margin-bottom: 2.5rem;
-            background-size: cover;
-            background-position: center;
-        }
-        .hero-main { text-align: center; margin-bottom: 2rem; }
-        .hero-icon { font-size: 3.5rem; margin-bottom: 0.75rem; }
-        .hero-tagline {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        body.ja .hero-tagline { font-size: 1.3rem; }
-        .hero-subtitle {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-        .sst-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        @media (max-width: 640px) {
-            .sst-grid { grid-template-columns: 1fr; }
-        }
-        .sst-card {
-            background: rgba(255,255,255,0.15);
-            border-radius: 8px;
-            padding: 1rem;
-            text-align: center;
-        }
-        .sst-location {
-            font-size: 0.85rem;
-            opacity: 0.9;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.4rem;
-        }
-        .site-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-        }
-        .sst-value {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2rem;
-            font-weight: 500;
-        }
-        .sst-diff {
-            font-size: 0.8rem;
-            margin-top: 0.25rem;
-        }
-        .sst-diff.above { color: #fed7d7; }
-        .sst-diff.below { color: #c6f6d5; }
-        .sst-diff.neutral { color: rgba(255,255,255,0.8); }
-        .content-section { margin-bottom: 3rem; }
-        .content-section h2 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-        }
-        .story-box {
-            background: var(--story-bg);
-            border: 1px solid var(--story-border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .story-box .story-lead {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-        .story-box p {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            line-height: 1.9;
-        }
-        .story-box p:last-child { margin-bottom: 0; }
-        .story-box .highlight {
-            background: rgba(43, 108, 176, 0.15);
-            padding: 0.15rem 0.4rem;
-            border-radius: 3px;
-            font-weight: 500;
-        }
-        .story-box .emphasis {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        .qa-block { margin-bottom: 1.5rem; }
-        .qa-question {
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-        .qa-question.heat { color: var(--heat-red); }
-        .qa-question.cold { color: var(--cold-teal); }
-        .qa-question.adapt { color: var(--adapt-purple); }
-        .qa-answer {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.9;
-            padding-left: 1rem;
-            border-left: 3px solid var(--border);
-        }
-        .qa-answer.heat { border-left-color: var(--heat-border); }
-        .qa-answer.cold { border-left-color: var(--cold-border); }
-        .qa-answer.adapt { border-left-color: var(--adapt-border); }
-        .heat-section {
-            background: var(--heat-light);
-            border: 1px solid var(--heat-border);
-            border-radius: 8px;
-            padding: 1.5rem;
-        }
-        .cold-section {
-            background: var(--cold-light);
-            border: 1px solid var(--cold-border);
-            border-radius: 8px;
-            padding: 1.5rem;
-        }
-        .adapt-section {
-            background: var(--adapt-light);
-            border: 1px solid var(--adapt-border);
-            border-radius: 8px;
-            padding: 1.5rem;
-        }
-        .section-intro {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.9;
-        }
-        .insight-box {
-            border-left: 3px solid;
-            padding: 1rem 1.25rem;
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            border-radius: 0 4px 4px 0;
-            line-height: 1.8;
-        }
-        .insight-box.heat {
-            background: rgba(197, 48, 48, 0.1);
-            border-left-color: var(--heat-red);
-        }
-        .insight-box.cold {
-            background: rgba(9, 135, 160, 0.1);
-            border-left-color: var(--cold-teal);
-        }
-        .insight-box.adapt {
-            background: rgba(107, 70, 193, 0.1);
-            border-left-color: var(--adapt-purple);
-        }
-        .insight-box strong.heat { color: var(--heat-red); }
-        .insight-box strong.cold { color: var(--cold-teal); }
-        .insight-box strong.adapt { color: var(--adapt-purple); }
-        .wave-timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-        .wave-timeline::before {
-            content: '';
-            position: absolute;
-            left: 0.5rem;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, var(--adapt-purple), var(--accent-teal));
-            border-radius: 2px;
-        }
-        .wave-item {
-            position: relative;
-            margin-bottom: 1.25rem;
-            padding-left: 1rem;
-        }
-        .wave-item:last-child { margin-bottom: 0; }
-        .wave-item::before {
-            content: '';
-            position: absolute;
-            left: -1.5rem;
-            top: 0.35rem;
-            width: 14px;
-            height: 14px;
-            background: var(--adapt-purple);
-            border-radius: 50%;
-            border: 3px solid var(--adapt-light);
-        }
-        .wave-timing {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--adapt-purple);
-            margin-bottom: 0.25rem;
-        }
-        .wave-title {
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.25rem;
-        }
-        .wave-desc {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-        .chart-container {
-            height: 280px;
-            position: relative;
-        }
-        .chart-legend {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
-        .legend-line {
-            width: 16px;
-            height: 3px;
-            border-radius: 2px;
-        }
-        .legend-manza { background: var(--manza); }
-        .legend-sesoko { background: var(--sesoko); }
-        .legend-ogasawara { background: var(--ogasawara); }
-        .legend-mmm { background: #e53e3e; }
-        .legend-clim {
-            background: repeating-linear-gradient(
-                90deg,
-                var(--text-muted),
-                var(--text-muted) 3px,
-                transparent 3px,
-                transparent 6px
-            );
-        }
-        .threshold-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85rem;
-        }
-        .threshold-table th,
-        .threshold-table td {
-            padding: 0.75rem;
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-        }
-        .threshold-table th {
-            background: var(--bg-secondary);
-            font-weight: 600;
-            font-size: 0.8rem;
-        }
-        .threshold-table .site-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.4rem;
-        }
-        .insights-box {
-            background: linear-gradient(135deg, var(--sst-light) 0%, #f0f9ff 100%);
-            border: 1px solid var(--sst-border);
-            border-radius: 8px;
-            padding: 1.25rem;
-        }
-        .insights-box .box-title {
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--sst-hero);
-        }
-        .insights-list {
-            list-style: none;
-        }
-        .insights-list li {
-            padding: 0.5rem 0;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            border-bottom: 1px solid rgba(43, 108, 176, 0.1);
-        }
-        .insights-list li:last-child { border-bottom: none; }
-        .insights-list .label { font-weight: 600; color: var(--text-primary); }
-        .source-info {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            padding: 1.25rem;
-            background: var(--bg-secondary);
-            border-radius: 6px;
-            line-height: 1.8;
-        }
-        .source-info a { color: var(--accent-teal); text-decoration: none; }
-        .source-info a:hover { text-decoration: underline; }
-        .source-info ul { margin-top: 0.75rem; padding-left: 1.25rem; }
-        .source-info li { margin-bottom: 0.5rem; }
-        footer {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            text-align: center;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border);
-        }
-        footer a { color: var(--accent-teal); text-decoration: none; }
-        [data-lang="ja"] { display: none; }
-        body.ja [data-lang="en"] { display: none; }
-        body.ja [data-lang="ja"] { display: inline; }
-        div[data-lang="ja"], li[data-lang="ja"], p[data-lang="ja"], span.block[data-lang="ja"] { display: none; }
-        body.ja div[data-lang="en"], body.ja li[data-lang="en"], body.ja p[data-lang="en"], body.ja span.block[data-lang="en"] { display: none; }
-        body.ja div[data-lang="ja"] { display: block; }
-        body.ja li[data-lang="ja"] { display: list-item; }
-        body.ja p[data-lang="ja"] { display: block; }
-        body.ja span.block[data-lang="ja"] { display: block; }
-    </style>
 </head>
 <body>
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
-                <div class="logo-icon"><img src="images/logo.png" alt="logo"></div>
+                <div class="logo-icon"><img src="images/logo.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
                 <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
             </a>
-            <div class="lang-switch">
-                <button onclick="setLang('en')" id="lang-en" class="active">EN</button>
-                <button onclick="setLang('ja')" id="lang-ja">JA</button>
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">
+                        <span data-lang="en">Dashboard</span>
+                        <span data-lang="ja">ダッシュボード</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#about">
+                        <span data-lang="en">About</span>
+                        <span data-lang="ja">このサイトについて</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#divers">
+                        <span data-lang="en">For Divers</span>
+                        <span data-lang="ja">ダイバー向け</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#glossary">
+                        <span data-lang="en">Glossary</span>
+                        <span data-lang="ja">用語解説</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button id="lang-en" class="active">English</button>
+                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <button id="lang-ja">日本語</button>
+                </div>
             </div>
         </div>
     </header>
 
-    <main>
+    <main class="detail-page">
         <nav class="breadcrumb">
             <a href="index.html">Home</a> / 
             <span data-lang="en">Sea Surface Temperature</span>
@@ -475,7 +61,7 @@
         </nav>
 
         <!-- ===== HERO ===== -->
-        <section class="hero-section">
+        <section class="hero-section sst">
             <div class="hero-main">
                 
                 <div class="hero-tagline">
@@ -899,7 +485,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="detail-footer">
         <a href="index.html">← 
             <span data-lang="en">Back to Home</span>
             <span data-lang="ja">ホームに戻る</span>
@@ -907,17 +493,8 @@
         <p style="margin-top: 0.5rem;">© 2025 marine-obs.org</p>
     </footer>
 
+    <script src="js/lang.js"></script>
     <script>
-        // Language toggle
-        function setLang(lang) {
-            document.body.classList.toggle('ja', lang === 'ja');
-            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
-            document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
-            localStorage.setItem('lang', lang);
-        }
-        const savedLang = localStorage.getItem('lang');
-        if (savedLang) setLang(savedLang);
-
         // MMM values for each site
         const MMM = {
             manza: 28.9,
@@ -928,14 +505,12 @@
         // Chart instances
         let sstChart, climChart;
 
-        // Fetch and display current SST
         // Supabase設定
         const SUPABASE_URL = 'https://pegiuiblpliainpdggfj.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlZ2l1aWJscGxpYWlucGRnZ2ZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQyMDkzNzQsImV4cCI6MjA3OTc4NTM3NH0.r9dBAsMLoXbgZL93lvA756r74U6YfCCfftHHlxYqZIw';
 
         async function loadCurrentSST() {
             try {
-                // Supabaseから最新データを取得
                 const response = await fetch(
                     `${SUPABASE_URL}/rest/v1/sst_daily?select=date,site_code,sst&order=date.desc&limit=3`,
                     { headers: { 'apikey': SUPABASE_ANON_KEY } }
@@ -943,7 +518,6 @@
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const data = await response.json();
                 
-                // 最新日付のデータを整形
                 const latest = {};
                 data.forEach(row => { latest[row.site_code] = row.sst; });
                 const publishedDate = data[0]?.date;
@@ -962,7 +536,6 @@
                     }
                 });
                 
-                // 日付表示を更新（月またぎ対応）
                 if (publishedDate) {
                     const pubDateObj = new Date(Date.UTC(
                         ...publishedDate.split('-').map(Number).map((v, i) => i === 1 ? v - 1 : v)
@@ -988,7 +561,6 @@
             }
         }
 
-        // Load extreme days data
         async function loadExtremeDays() {
             try {
                 const response = await fetch('data/extreme_days.json');
@@ -996,7 +568,6 @@
                 const data = await response.json();
                 
                 ['manza', 'sesoko', 'ogasawara'].forEach(site => {
-                    // Hot days (2024)
                     const hotData = data.hot_days?.[site];
                     if (hotData) {
                         const hot2024 = hotData.find(d => d.year === 2024);
@@ -1006,7 +577,6 @@
                         }
                     }
                     
-                    // Cold days (2025)
                     const coldData = data.cold_days?.[site];
                     if (coldData) {
                         const cold2025 = coldData.find(d => d.year === 2025);
@@ -1014,7 +584,6 @@
                         if (coldEl) {
                             coldEl.textContent = cold2025 ? cold2025.days : 0;
                         }
-                        // Also update inline text for Ogasawara
                         if (site === 'ogasawara' && cold2025) {
                             const inlineEl = document.getElementById('cold-ogasawara-inline');
                             const inlineElJa = document.getElementById('cold-ogasawara-inline-ja');
@@ -1029,7 +598,6 @@
             }
         }
 
-        // Render 30-day trend chart
         async function renderSSTChart() {
             try {
                 const response = await fetch('data/sst_recent.json');
@@ -1110,7 +678,6 @@
             }
         }
 
-        // Render climatology chart
         async function renderClimChart() {
             try {
                 const response = await fetch('data/monthly_clim.json');
@@ -1123,7 +690,6 @@
                 
                 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
                 
-                // Extract avg_sst values from array of objects
                 const manzaData = data.manza.map(d => d.avg_sst);
                 const sesokoData = data.sesoko.map(d => d.avg_sst);
                 const ogasawaraData = data.ogasawara.map(d => d.avg_sst);
@@ -1190,7 +756,7 @@
             }
         }
 
-        // Initialize with better error handling
+        // Initialize
         console.log('SST page initializing...');
         Promise.all([
             loadCurrentSST(),
