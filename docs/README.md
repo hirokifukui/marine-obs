@@ -18,7 +18,7 @@ https://marine-obs.org
 
 ## Structure
 ```
-css/main.css
+css/  main.css, dhw.css, extreme.css, species.css, spawning.css, turbidity.css, contact.css, global-bleaching.css
 js/  lang.js, charts.js, marine-monitor.js, gear-recs.js
 data/  *.json (chart data)
 sql/  RPC function definitions
