@@ -725,3 +725,14 @@
                 border-radius: 0 0 8px 8px;
             }
         }
+
+        .event-card-toggle-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .event-card-toggle-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
