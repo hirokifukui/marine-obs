@@ -7,51 +7,767 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/global-bleaching.css">
+    <style>
+        :root {
+            --header-bg: #1a1f2e;
+            --header-text: #ffffff;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-card: #ffffff;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --accent-teal: #2b6cb0;
+            --accent-coral: #996060;
+            --accent-warm: #c05621;
+            --accent-green: #2f855a;
+            --border: #e2e8f0;
+            --shadow: 0 1px 3px rgba(0,0,0,0.08);
+            --coral-critical: #d90429;
+            --coral-severe: #ef476f;
+            --coral-moderate: #f4845f;
+            --coral-low: #ffd166;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        body.ja {
+            font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
+        }
+
+        /* Language toggle CSS - same as sst.html */
+        [data-lang="ja"] { display: none; }
+        body.ja [data-lang="en"] { display: none; }
+        body.ja [data-lang="ja"] { display: inline; }
+        div[data-lang="ja"], li[data-lang="ja"], p[data-lang="ja"], span.block[data-lang="ja"], h1[data-lang="ja"], h2[data-lang="ja"], h3[data-lang="ja"], h4[data-lang="ja"] { display: none; }
+        body.ja div[data-lang="en"], body.ja li[data-lang="en"], body.ja p[data-lang="en"], body.ja span.block[data-lang="en"], body.ja h1[data-lang="en"], body.ja h2[data-lang="en"], body.ja h3[data-lang="en"], body.ja h4[data-lang="en"] { display: none; }
+        body.ja div[data-lang="ja"] { display: block; }
+        body.ja li[data-lang="ja"] { display: list-item; }
+        body.ja p[data-lang="ja"] { display: block; }
+        body.ja span.block[data-lang="ja"] { display: block; }
+        body.ja h1[data-lang="ja"], body.ja h2[data-lang="ja"], body.ja h3[data-lang="ja"], body.ja h4[data-lang="ja"] { display: block; }
+
+        /* Header */
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 0.75rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .logo {
+            margin-right: 2rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #5b9a94 0%, #2b6cb0 100%);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffffff;
+        }
+
+        .header-controls {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .lang-switch button {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .lang-switch button:hover { color: rgba(255,255,255,0.9); }
+        .lang-switch button.active { color: #ffffff; background: rgba(255,255,255,0.15); }
+
+        /* Main */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .breadcrumb a {
+            color: var(--accent-teal);
+            text-decoration: none;
+        }
+
+        /* Hero Section with Map */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(26, 31, 46, 0.95), rgba(26, 58, 92, 0.9)), url("img/iStock-964888346.jpg");
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-header {
+            padding: 2rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        body.ja .hero-tagline {
+            font-size: 1.4rem;
+        }
+
+        .hero-subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+        }
+
+        /* Map Container */
+        .map-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .map-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hotspots-layer {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .hotspot {
+            position: absolute;
+            pointer-events: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hotspot:hover {
+            transform: scale(1.3);
+            z-index: 10;
+        }
+
+        .hotspot-glow {
+            position: absolute;
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .hotspot-core {
+            position: relative;
+            border-radius: 50%;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.15); }
+        }
+
+        .hotspot-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10, 22, 40, 0.95);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            min-width: 180px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s, transform 0.2s;
+            margin-bottom: 10px;
+            z-index: 20;
+            text-align: left;
+            color: white;
+        }
+
+        .hotspot:hover .hotspot-tooltip {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        .hotspot-tooltip h4 {
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .hotspot-tooltip p {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.4;
+        }
+
+        .hotspot-tooltip .year {
+            font-size: 0.7rem;
+            color: var(--coral-severe);
+            margin-top: 0.3rem;
+        }
+
+        .severity-critical .hotspot-glow { background: var(--coral-critical); }
+        .severity-critical .hotspot-core { background: var(--coral-critical); }
+        .severity-severe .hotspot-glow { background: var(--coral-severe); }
+        .severity-severe .hotspot-core { background: var(--coral-severe); }
+        .severity-moderate .hotspot-glow { background: var(--coral-moderate); }
+        .severity-moderate .hotspot-core { background: var(--coral-moderate); }
+        .severity-low .hotspot-glow { background: var(--coral-low); }
+        .severity-low .hotspot-core { background: var(--coral-low); }
+
+        .map-legend {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(10, 22, 40, 0.85);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+        }
+
+        .map-legend h5 {
+            font-size: 0.7rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .legend-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 0.75rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.critical { background: var(--coral-critical); }
+        .legend-dot.severe { background: var(--coral-severe); }
+        .legend-dot.moderate { background: var(--coral-moderate); }
+        .legend-dot.low { background: var(--coral-low); }
+
+        .data-source {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-size: 0.6rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .content-section h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        /* Introduction */
+        .intro-text {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .intro-text p {
+            margin-bottom: 1rem;
+        }
+
+        .intro-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Key Stats */
+        .key-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 640px) {
+            .key-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .key-stat {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .key-stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--coral-severe);
+        }
+
+        .key-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Timeline */
+        .timeline-visual {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1.5rem 0;
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-visual::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            left: 5%;
+            right: 5%;
+            height: 3px;
+            background: var(--border);
+        }
+
+        .timeline-point {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .timeline-dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin: 0 auto 0.75rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .timeline-point:hover .timeline-dot {
+            transform: scale(1.2);
+        }
+
+        .timeline-dot.active {
+            box-shadow: 0 0 0 4px rgba(217, 4, 41, 0.3);
+            animation: dotPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes dotPulse {
+            0%, 100% { box-shadow: 0 0 0 4px rgba(217, 4, 41, 0.3); }
+            50% { box-shadow: 0 0 0 8px rgba(217, 4, 41, 0.1); }
+        }
+
+        .timeline-year {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .timeline-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .timeline-status {
+            font-size: 0.7rem;
+            color: var(--coral-critical);
+            margin-top: 0.25rem;
+        }
+
+        /* Event Cards */
+        .event-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+
+        .event-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .event-card-header {
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-secondary);
+        }
+
+        .event-card-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .event-card-title .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .event-card-title h3 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .event-card-title .impact {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-left: 0.5rem;
+        }
+
+        .event-card-toggle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            transition: transform 0.3s;
+        }
+
+        .event-card.open .event-card-toggle {
+            transform: rotate(180deg);
+        }
+
+        .event-card-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .event-card.open .event-card-content {
+            max-height: 800px;
+        }
+
+        .event-card-body {
+            padding: 1.5rem;
+        }
+
+        .event-description {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .event-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .event-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .event-stat {
+            text-align: center;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+        }
+
+        .event-stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--coral-severe);
+        }
+
+        .event-stat-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .event-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .event-details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .event-detail-section h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .event-detail-section ul {
+            list-style: none;
+        }
+
+        .event-detail-section li {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .event-detail-section li:last-child {
+            border-bottom: none;
+        }
+
+        /* Frequency Chart */
+        .frequency-note {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .frequency-note-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--coral-critical);
+            margin-bottom: 0.5rem;
+        }
+
+        .frequency-note p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Hope Section */
+        .hope-section {
+            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+            border: 1px solid #a7f3d0;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .hope-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+        }
+
+        .hope-items {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .hope-item {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .hope-icon {
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .hope-text {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Source Info */
+        .source-info {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            padding: 1.25rem;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            line-height: 1.8;
+        }
+        .source-info a { color: var(--accent-teal); text-decoration: none; }
+        .source-info a:hover { text-decoration: underline; }
+        .source-info ul { margin-top: 0.75rem; padding-left: 1.25rem; }
+        .source-info li { margin-bottom: 0.5rem; }
+
+        /* Footer */
+        footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--accent-teal);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            main {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero-header {
+                padding: 1.5rem 1rem 0.75rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.25rem;
+            }
+
+            .map-legend {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                margin: 0.5rem;
+                border-radius: 0 0 8px 8px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
-                <div class="logo-icon"><img src="images/logo.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
-                <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
+                <div class="logo-icon"><img src="images/logo.png" alt="logo"></div>
+                <span data-lang="en">marine-obs.org</span>
+                <span data-lang="ja">海洋の徴候</span>
             </a>
-            <ul class="nav-links">
-                <li>
-                    <a href="index.html">
-                        <span data-lang="en">Dashboard</span>
-                        <span data-lang="ja">ダッシュボード</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html#about">
-                        <span data-lang="en">About</span>
-                        <span data-lang="ja">このサイトについて</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html#divers">
-                        <span data-lang="en">For Divers</span>
-                        <span data-lang="ja">ダイバー向け</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html#glossary">
-                        <span data-lang="en">Glossary</span>
-                        <span data-lang="ja">用語解説</span>
-                    </a>
-                </li>
-            </ul>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="sst.html">
+                        <span data-lang="en">SST</span>
+                        <span data-lang="ja">海水温</span>
+                    </a></li>
+                    <li><a href="dhw.html">
+                        <span data-lang="en">DHW</span>
+                        <span data-lang="ja">熱ストレス</span>
+                    </a></li>
+                    <li><a href="global-bleaching.html" class="active">
+                        <span data-lang="en">History</span>
+                        <span data-lang="ja">白化史</span>
+                    </a></li>
+                </ul>
+            </nav>
             <div class="header-controls">
                 <div class="lang-switch">
-                    <button id="lang-en" class="active">English</button>
-                    <span style="color:rgba(255,255,255,0.4)">/</span>
-                    <button id="lang-ja">日本語</button>
+                    <button onclick="setLang('en')" id="lang-en">EN</button>
+                    <button onclick="setLang('ja')" id="lang-ja">JA</button>
                 </div>
             </div>
         </div>
     </header>
+
     <main>
         <div class="breadcrumb">
             <a href="index.html">Home</a> / 
@@ -81,7 +797,7 @@
                         <div class="hotspot-glow" style="width: 35px; height: 35px; margin: -17px;"></div>
                         <div class="hotspot-core" style="width: 14px; height: 14px;"></div>
                         <div class="hotspot-tooltip">
-                            <h4 data-lang="en">Florida</h4><h4 data-lang="ja">フロリダ</h4>
+                            <h4>Florida</h4>
                             <p data-lang="en">38°C recorded, catastrophic damage</p>
                             <p data-lang="ja">周辺海域で38℃を記録、壊滅的被害</p>
                             <div class="year">2023</div>
@@ -93,7 +809,7 @@
                         <div class="hotspot-glow" style="width: 55px; height: 55px; margin: -27px;"></div>
                         <div class="hotspot-core" style="width: 22px; height: 22px;"></div>
                         <div class="hotspot-tooltip">
-                            <h4 data-lang="en">Caribbean</h4><h4 data-lang="ja">カリブ海</h4>
+                            <h4>Caribbean</h4>
                             <p data-lang="en">99.7% of Atlantic tropics under heat stress</p>
                             <p data-lang="ja">大西洋熱帯域の99.7%が熱ストレス</p>
                             <div class="year">2005, 2023-</div>
@@ -118,10 +834,10 @@
                         <div class="hotspot-glow" style="width: 25px; height: 25px; margin: -12px;"></div>
                         <div class="hotspot-core" style="width: 10px; height: 10px;"></div>
                         <div class="hotspot-tooltip">
-                            <h4 data-lang="en">Red Sea</h4><h4 data-lang="ja">紅海</h4>
-                            <p data-lang="en">"Supercorals" with high heat tolerance; first bleaching in 2024</p>
-                            <p data-lang="ja">高い熱耐性（"スーパーコーラル"）、2024年に初の白化</p>
-                            <div class="year">2024</div>
+                            <h4>Red Sea</h4>
+                            <p data-lang="en">Relatively heat-tolerant</p>
+                            <p data-lang="ja">比較的耐性が高い</p>
+                            <div class="year">-</div>
                         </div>
                     </div>
                     
@@ -130,7 +846,7 @@
                         <div class="hotspot-glow" style="width: 25px; height: 25px; margin: -12px;"></div>
                         <div class="hotspot-core" style="width: 10px; height: 10px;"></div>
                         <div class="hotspot-tooltip">
-                            <h4 data-lang="en">Maldives</h4><h4 data-lang="ja">モルディブ</h4>
+                            <h4>Maldives</h4>
                             <p data-lang="en">Recovering from 1998 devastation</p>
                             <p data-lang="ja">1998年の壊滅的被害から回復途上</p>
                             <div class="year">1998</div>
@@ -142,7 +858,7 @@
                         <div class="hotspot-glow" style="width: 50px; height: 50px; margin: -25px;"></div>
                         <div class="hotspot-core" style="width: 20px; height: 20px;"></div>
                         <div class="hotspot-tooltip">
-                            <h4 data-lang="en">Indian Ocean</h4><h4 data-lang="ja">インド洋</h4>
+                            <h4>Indian Ocean</h4>
                             <p data-lang="en">Up to 90% coral died in 1998</p>
                             <p data-lang="ja">1998年に最大90%のサンゴが死亡</p>
                             <div class="year">1998, 2016</div>
@@ -154,7 +870,7 @@
                         <div class="hotspot-glow" style="width: 45px; height: 45px; margin: -22px;"></div>
                         <div class="hotspot-core" style="width: 18px; height: 18px;"></div>
                         <div class="hotspot-tooltip">
-                            <h4 data-lang="en">Coral Triangle</h4><h4 data-lang="ja">コーラルトライアングル</h4>
+                            <h4>Coral Triangle</h4>
                             <p data-lang="en">World's highest marine biodiversity</p>
                             <p data-lang="ja">世界最大の生物多様性</p>
                             <div class="year" data-lang="en">Ongoing risk</div>
@@ -167,7 +883,7 @@
                         <div class="hotspot-glow" style="width: 30px; height: 30px; margin: -15px;"></div>
                         <div class="hotspot-core" style="width: 12px; height: 12px;"></div>
                         <div class="hotspot-tooltip">
-                            <h4 data-lang="en">Japan</h4><h4 data-lang="ja">日本</h4>
+                            <h4>Japan</h4>
                             <p data-lang="en">97% bleaching at Sekisei Lagoon (2016)</p>
                             <p data-lang="ja">石西礁湖で97%白化（2016年）</p>
                             <div class="year">1998, 2016, 2022, 2024</div>
@@ -179,7 +895,7 @@
                         <div class="hotspot-glow" style="width: 30px; height: 60px; margin: -15px -30px; border-radius: 40%;"></div>
                         <div class="hotspot-core" style="width: 14px; height: 35px; border-radius: 40%;"></div>
                         <div class="hotspot-tooltip">
-                            <h4 data-lang="en">Great Barrier Reef</h4><h4 data-lang="ja">グレートバリアリーフ</h4>
+                            <h4>Great Barrier Reef</h4>
                             <p data-lang="en">8 mass bleaching events since 1998</p>
                             <p data-lang="ja">1998年以降8回の大規模白化</p>
                             <div class="year">1998, 2002, 2016, 2017, 2020, 2022, 2024, 2025</div>
@@ -778,7 +1494,7 @@
             <span data-lang="en">Back to Home</span>
             <span data-lang="ja">ホームに戻る</span>
         </a>
-        <p style="margin-top: 0.5rem;">© 2026 marine-obs.org</p>
+        <p style="margin-top: 0.5rem;">© 2025 marine-obs.org</p>
     </footer>
 
     <script>
@@ -811,9 +1527,6 @@
         // Initialize language from localStorage
         const savedLang = localStorage.getItem('lang') || 'en';
         setLang(savedLang);
-
-        document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
-        document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
     </script>
 </body>
 </html>
