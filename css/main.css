@@ -903,12 +903,14 @@ body:not(.ja) .diver-cta-card.coming-soon .title::after {
 }
 
 .marine-expand-icon {
+    display: inline-block;
     font-size: 0.7rem;
     color: var(--text-muted);
     transition: transform 0.2s;
 }
 
 .marine-summary-card.expanded .marine-expand-icon {
+    display: inline-block;
     transform: rotate(180deg);
 }
 
