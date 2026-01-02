@@ -511,12 +511,14 @@
         }
 
         .event-card-toggle {
+            display: inline-block;
             font-size: 1rem;
             color: var(--text-muted);
             transition: transform 0.3s;
         }
 
         .event-card.open .event-card-toggle {
+            display: inline-block;
             transform: rotate(180deg);
         }
 
