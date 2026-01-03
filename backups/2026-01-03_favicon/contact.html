@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Sources | marine-obs.org</title>
-    <link rel="icon" href="/favicon.ico" sizes="32x32">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <title>Contact | marine-obs.org</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
     <header>
@@ -152,130 +152,86 @@
         </ul>
     </nav>
 
-    <main>
-        <!-- Data Sources Section - Enhanced -->
-            <section class="data-sources-section">
-                <h3 class="section-title">
-                    <span data-lang="en">Data Sources</span>
-                    <span data-lang="ja">データソース</span>
-                </h3>
-                
-                <!-- 🛰️ Satellite Data -->
-                <div class="source-category">
-                    <div class="source-category-header">
-                        <span class="source-category-icon">🛰️</span>
-                        <span data-lang="en">Satellite Data</span>
-                        <span data-lang="ja">衛星データ</span>
-                    </div>
-                    <div class="source-item-enhanced">
-                        <div class="source-main">
-                            <a href="https://coralreefwatch.noaa.gov/" target="_blank" rel="noopener" class="source-name-link">NOAA Coral Reef Watch</a>
-                            <span class="source-badge active"><span data-lang="en">Active</span><span data-lang="ja">運用中</span></span>
-                        </div>
-                        <div class="source-desc">
-                            <span data-lang="en">DHW calculation source. 5km resolution global coverage.</span>
-                            <span data-lang="ja">DHW（積算熱ストレス）算出元。5km解像度グローバルカバレッジ。</span>
-                        </div>
-                    </div>
-                    <div class="source-item-enhanced">
-                        <div class="source-main">
-                            <a href="https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1" target="_blank" rel="noopener" class="source-name-link">NASA MUR SST</a>
-                            <span class="source-badge active"><span data-lang="en">Active</span><span data-lang="ja">運用中</span></span>
-                        </div>
-                        <div class="source-desc">
-                            <span data-lang="en">Daily SST. 1km high-resolution satellite data.</span>
-                            <span data-lang="ja">日次海水温。1km高解像度衛星データ。</span>
-                        </div>
-                        <div class="source-update">
-                            <span data-lang="en">Updated: Daily 10:00 JST</span>
-                            <span data-lang="ja">更新: 毎日 10:00 JST</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 🌊 Field Observation / Forecast -->
-                <div class="source-category">
-                    <div class="source-category-header">
-                        <span class="source-category-icon">🌊</span>
-                        <span data-lang="en">Field Observation / Forecast</span>
-                        <span data-lang="ja">現地観測・予測</span>
-                    </div>
-                    <div class="source-item-enhanced">
-                        <div class="source-main">
-                            <a href="https://stormglass.io/" target="_blank" rel="noopener" class="source-name-link">Stormglass</a>
-                            <span class="source-badge active"><span data-lang="en">Active</span><span data-lang="ja">運用中</span></span>
-                        </div>
-                        <div class="source-desc">
-                            <span data-lang="en">Real-time marine forecast (wave, wind, swell, current).</span>
-                            <span data-lang="ja">リアルタイム海況予報（波高・風・うねり・潮流）。</span>
-                        </div>
-                        <div class="source-update">
-                            <span data-lang="en">Updated: Every 3 hours</span>
-                            <span data-lang="ja">更新: 3時間ごと</span>
-                        </div>
-                    </div>
-                    <div class="source-item-enhanced">
-                        <div class="source-main">
-                            <a href="https://www.biodic.go.jp/moni1000/" target="_blank" rel="noopener" class="source-name-link">
-                                <span data-lang="en">Monitoring Sites 1000</span>
-                                <span data-lang="ja">モニタリングサイト1000</span>
-                            </a>
-                            <span class="source-badge pending"><span data-lang="en">Jan 2026</span><span data-lang="ja">2026年1月予定</span></span>
-                        </div>
-                        <div class="source-desc">
-                            <span data-lang="en">MOE long-term coral reef monitoring. Awaiting data delivery.</span>
-                            <span data-lang="ja">環境省長期サンゴ礁モニタリング。データ受領待ち。</span>
-                        </div>
-                        <div class="source-update">
-                            <span data-lang="en">Expected: January 2026</span>
-                            <span data-lang="ja">予定: 2026年1月</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 🔬 Planning -->
-                <div class="source-category">
-                    <div class="source-category-header">
-                        <span class="source-category-icon">🔬</span>
-                        <span data-lang="en">Planning</span>
-                        <span data-lang="ja">検討中</span>
-                    </div>
-                    <div class="source-item-enhanced">
-                        <div class="source-main">
-                            <span class="source-name-text">
-                                <span data-lang="en">Turbidity Logger</span>
-                                <span data-lang="ja">濁度計</span>
-                            </span>
-                            <span class="source-badge planning"><span data-lang="en">TBD</span><span data-lang="ja">検討中</span></span>
-                        </div>
-                        <div class="source-desc">
-                            <span data-lang="en">Considering local turbidity measurement for sediment stress assessment.</span>
-                            <span data-lang="ja">堆積物ストレス評価のためローカル濁度測定の導入を検討中。</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <main class="contact-page">
+        <h1>
+            <span data-lang="en">Contact</span>
+            <span data-lang="ja">お問い合わせ</span>
+        </h1>
         
+        <form id="contact-form" class="contact-form">
+            <div class="form-field">
+                <label for="name">
+                    <span data-lang="en">Name <span class="optional">(optional)</span></span>
+                    <span data-lang="ja">お名前 <span class="optional">（任意）</span></span>
+                </label>
+                <input type="text" id="name" name="name">
+            </div>
+            
+            <div class="form-field">
+                <label for="email">
+                    <span data-lang="en">Email</span>
+                    <span data-lang="ja">メール</span>
+                </label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-field">
+                <label for="message">
+                    <span data-lang="en">Message</span>
+                    <span data-lang="ja">メッセージ</span>
+                </label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="submit-btn">
+                <span data-lang="en">Send</span>
+                <span data-lang="ja">送信</span>
+            </button>
+            
+            <div id="form-status" class="form-status"></div>
+        </form>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div>
-                <span data-lang="en">© 2026 marine-obs.org · Independent research project</span>
-                <span data-lang="ja">© 2026 marine-obs.org · 個人プロジェクト</span>
-            </div>
-            <div class="footer-links">
-                <a href="https://github.com/hirokifukui/marine-obs" target="_blank" rel="noopener">GitHub</a>
-                <a href="contact.html">
-                    <span data-lang="en">Contact</span>
-                    <span data-lang="ja">お問い合わせ</span>
-                </a>
-            </div>
-        </div>
-    </footer>
-
     <script src="js/lang.js"></script>
-    
+    <script>
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKLAn1MzOv0NMccagqQhvUdtJjJb6JymVMYDZa82uaR6XLWPWMKO5AdebUVtqy-RC4/exec';
+        
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const form = e.target;
+            const btn = document.getElementById('submit-btn');
+            const status = document.getElementById('form-status');
+            const lang = localStorage.getItem('lang') || 'en';
+            
+            btn.disabled = true;
+            status.className = 'form-status';
+            
+            try {
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: form.name.value || '(anonymous)',
+                        email: form.email.value,
+                        message: form.message.value
+                    })
+                });
+                
+                status.textContent = lang === 'ja' ? 'ありがとうございます。送信しました。' : 'Thank you. Message sent.';
+                status.className = 'form-status success show';
+                form.reset();
+                
+            } catch (error) {
+                status.textContent = lang === 'ja' ? '送信できませんでした' : 'Could not send';
+                status.className = 'form-status error show';
+            }
+            
+            btn.disabled = false;
+        });
+    </script>
+
     <!-- Navigation JS -->
     <script>
     (function() {
