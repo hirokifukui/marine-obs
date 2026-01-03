@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sekisei Lagoon Coral Cover | marine-obs.org</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            background: var(--card-bg, #ffffff);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        @media (max-width: 600px) {
+            .chart-wrapper {
+                height: 300px;
+            }
+            .chart-container {
+                padding: 1rem;
+            }
+        }
+        .chart-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .chart-title h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary, #1a1a2e);
+        }
+        .chart-subtitle {
+            color: var(--text-secondary, #64748b);
+            font-size: 0.95rem;
+        }
+        .chart-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(239, 68, 68, 0.08);
+            border-radius: 8px;
+            border-left: 3px solid #ef4444;
+        }
+        .chart-note p {
+            margin: 0;
+            color: var(--text-secondary, #64748b);
+            font-size: 0.9rem;
+        }
+        .chart-note strong {
+            color: #ef4444;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--accent, #0ea5e9);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .source-info {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border, #e2e8f0);
+            font-size: 0.85rem;
+            color: var(--text-secondary, #64748b);
+        }
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .breadcrumb {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary, #64748b);
+        }
+        .breadcrumb a {
+            color: var(--accent, #0ea5e9);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / 
+            <a href="japan-bleaching.html">
+                <span data-lang="en">Japan Bleaching</span>
+                <span data-lang="ja">日本の白化状況</span>
+            </a> / 
+            <span data-lang="en">Sekisei Coral Cover</span>
+            <span data-lang="ja">石西礁湖 被度推移</span>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-title">
+                <h1>
+                    <span data-lang="en">Sekisei Lagoon Coral Cover Decline</span>
+                    <span data-lang="ja">石西礁湖 サンゴ被度の推移</span>
+                </h1>
+                <p class="chart-subtitle">
+                    <span data-lang="en">2004-2024: From 50% to record low 13.7%</span>
+                    <span data-lang="ja">2004-2024年：50%から過去最低13.7%へ</span>
+                </p>
+            </div>
+
+            <div class="chart-wrapper">
+                <canvas id="coverChart"></canvas>
+            </div>
+
+            <div class="chart-note">
+                <p>
+                    <span data-lang="en"><strong>73% decline</strong> in coral cover over 20 years. Major bleaching events in 2016, 2022, and 2024 have prevented recovery.</span>
+                    <span data-lang="ja">20年間で<strong>73%減少</strong>。2016年、2022年、2024年の大規模白化により回復が妨げられています。</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="source-info">
+            <p>
+                <span data-lang="en">Data: Ministry of the Environment Japan, Monitoring Sites 1000, Sekisei Lagoon Nature Restoration Council</span>
+                <span data-lang="ja">データ：環境省、モニタリングサイト1000、石西礁湖自然再生協議会</span>
+            </p>
+        </div>
+
+        <a href="japan-bleaching.html" class="back-link">
+            ← <span data-lang="en">Back to Japan Bleaching History</span>
+            <span data-lang="ja">日本の白化状況に戻る</span>
+        </a>
+    </main>
+
+    <script>
+        // Language switching
+        function setLang(lang) {
+            document.body.classList.toggle('ja', lang === 'ja');
+            localStorage.setItem('lang', lang);
+        }
+        const savedLang = localStorage.getItem('lang') || 'en';
+        setLang(savedLang);
+
+        // Chart data
+        const data = {
+            labels: ['2004', '2015', '2016', '2020', '2021', '2022/9', '2022/12', '2024/9', '2024/12'],
+            datasets: [{
+                label: 'Coral Cover (%)',
+                data: [50, 40, 20, 30, 26.2, 21.6, 17.0, 17.4, 13.7],
+                fill: true,
+                backgroundColor: function(context) {
+                    const chart = context.chart;
+                    const {ctx, chartArea} = chart;
+                    if (!chartArea) return null;
+                    const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+                    gradient.addColorStop(0, 'rgba(14, 165, 233, 0.6)');
+                    gradient.addColorStop(1, 'rgba(14, 165, 233, 0.05)');
+                    return gradient;
+                },
+                borderColor: '#0ea5e9',
+                borderWidth: 2,
+                tension: 0.3,
+                pointBackgroundColor: function(context) {
+                    const index = context.dataIndex;
+                    const bleachingYears = [2, 5, 6, 7, 8]; // 2016, 2022/9, 2022/12, 2024/9, 2024/12
+                    return bleachingYears.includes(index) ? '#ef4444' : '#0ea5e9';
+                },
+                pointBorderColor: '#fff',
+                pointBorderWidth: 2,
+                pointRadius: 6,
+                pointHoverRadius: 8
+            }]
+        };
+
+        // Annotations for bleaching events
+        const annotations = {
+            '2016': { label: '2016 Bleaching', color: '#ef4444' },
+            '2022/9': { label: '2022 Bleaching', color: '#ef4444' },
+            '2024/12': { label: 'Record Low', color: '#ef4444' }
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    intersect: false,
+                    mode: 'index'
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(26, 26, 46, 0.9)',
+                        titleFont: { size: 14 },
+                        bodyFont: { size: 13 },
+                        padding: 12,
+                        callbacks: {
+                            label: function(context) {
+                                return `Coral Cover: ${context.parsed.y}%`;
+                            },
+                            afterLabel: function(context) {
+                                const notes = {
+                                    0: 'Baseline (Moni1000)',
+                                    1: 'Recovery from 1998',
+                                    2: '⚠️ Major bleaching - halved',
+                                    3: 'Gradual recovery',
+                                    5: '⚠️ Major bleaching',
+                                    8: '⚠️ Record low'
+                                };
+                                return notes[context.dataIndex] || '';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 60,
+                        title: {
+                            display: true,
+                            text: 'Coral Cover (%)',
+                            font: { size: 12 }
+                        },
+                        grid: {
+                            color: 'rgba(0,0,0,0.06)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Year',
+                            font: { size: 12 }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        };
+
+        new Chart(document.getElementById('coverChart'), config);
+    </script>
+</body>
+</html>
