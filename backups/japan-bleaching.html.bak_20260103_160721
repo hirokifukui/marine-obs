@@ -1147,21 +1147,24 @@
             });
         });
 
-    </script>
+        // Language switching
+        function setLang(lang) {
+            document.body.classList.toggle('ja', lang === 'ja');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
+            localStorage.setItem('lang', lang);
+            // Notify chart iframe of language change (no reload)
+            const chartIframe = document.getElementById('chart-iframe');
+            if (chartIframe && chartIframe.contentWindow) chartIframe.contentWindow.postMessage({ lang: lang }, '*');
+        }
 
-    <script src="js/lang.js"></script>
-    <script>
-        // Extend setLang for iframe notification
-        const originalSetLang = setLang;
-        setLang = function(lang) {
-            originalSetLang(lang);
-            const iframe = document.getElementById('chart-iframe');
-            if (iframe && iframe.contentWindow) {
-                iframe.contentWindow.postMessage({ lang }, '*');
-            }
-        };
-    </script>
+        // Initialize language from localStorage
+        const savedLang = localStorage.getItem('lang') || 'en';
+        setLang(savedLang);
 
+        document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
+        document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
+    </script>
 
     <!-- Navigation JS -->
     <script>
