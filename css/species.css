@@ -237,7 +237,7 @@
 
         /* Hero section */
         .hero-section {
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.75), rgba(42, 157, 143, 0.75)), url("../images/bg-species.jpg");
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.75), rgba(42, 157, 143, 0.75)), url("../images/bg-species.webp");
             color: white;
             padding: 2.5rem 2rem;
             border-radius: 12px;
@@ -586,3 +586,12 @@
         body.ja div[data-lang="ja"] { display: block; }
         body.ja li[data-lang="ja"] { display: list-item; }
         body.ja tr[data-lang="ja"] { display: table-row; }
+
+/* Mobile-optimized background images */
+@media (max-width: 768px) {
+    .hero-section {
+        background: linear-gradient(135deg, rgba(30, 60, 114, 0.75), rgba(42, 157, 143, 0.75)), url("../images/bg-species-mobile.webp") !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+}

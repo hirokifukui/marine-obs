@@ -122,7 +122,7 @@
 
         /* ===== HERO SECTION ===== */
         .hero-section {
-            background: linear-gradient(135deg, rgba(5, 30, 45, 0.7), rgba(10, 60, 70, 0.6)), url("../images/bg-spawning.jpg");
+            background: linear-gradient(135deg, rgba(5, 30, 45, 0.7), rgba(10, 60, 70, 0.6)), url("../images/bg-spawning.webp");
             color: white;
             padding: 2.5rem 2rem;
             border-radius: 12px;
@@ -930,3 +930,12 @@
         body.ja li[data-lang="ja"] { display: list-item; }
         body.ja p[data-lang="ja"] { display: block; }
         body.ja span.block[data-lang="ja"] { display: block; }
+
+/* Mobile-optimized background images */
+@media (max-width: 768px) {
+    .hero-section {
+        background: linear-gradient(135deg, rgba(5, 30, 45, 0.7), rgba(10, 60, 70, 0.6)), url("../images/bg-spawning-mobile.webp") !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+}

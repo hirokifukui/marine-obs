@@ -384,7 +384,7 @@
     
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../images/bg-extreme.jpg");
+            background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../images/bg-extreme.webp");
             color: white;
             padding: 2.5rem 2rem;
             border-radius: 12px;
@@ -558,3 +558,12 @@
         }
         .ref-list a:hover { text-decoration: underline; }
 
+
+/* Mobile-optimized background images */
+@media (max-width: 768px) {
+    .hero-section {
+        background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../images/bg-extreme-mobile.webp") !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+}

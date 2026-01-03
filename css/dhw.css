@@ -441,7 +441,7 @@
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("../images/bg-dhw.jpg");
+            background: linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("../images/bg-dhw.webp");
             color: white;
             padding: 2.5rem 2rem;
             border-radius: 12px;
@@ -629,3 +629,12 @@
             text-align: center;
             margin-top: 0.75rem;
         }
+
+/* Mobile-optimized background images */
+@media (max-width: 768px) {
+    .hero-section {
+        background: linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("../images/bg-dhw-mobile.webp") !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+}

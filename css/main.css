@@ -188,7 +188,7 @@
         rgba(26, 32, 46, 0.88) 0%, 
         rgba(26, 32, 46, 0.75) 50%,
         rgba(26, 32, 46, 0.65) 100%
-    ), url('../images/hero.jpg');
+    ), url('../images/hero.webp');
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -1570,7 +1570,7 @@ body:not(.ja) .diver-cta-card.coming-soon .title::after {
         rgba(26, 32, 46, 0.7) 0%,
         rgba(26, 32, 46, 0.5) 50%,
         rgba(26, 32, 46, 0.7) 100%
-    ), url('../images/hero.jpg');
+    ), url('../images/hero.webp');
     background-size: cover;
     background-position: center;
     padding: 2rem;
@@ -1902,37 +1902,37 @@ main.detail-page {
     background-position: center;
 }
 .hero-section.sst {
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.7), rgba(66, 153, 225, 0.65)), url("../images/bg-sst.jpg");
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.7), rgba(66, 153, 225, 0.65)), url("../images/bg-sst.webp");
     background-size: cover;
     background-position: center;
 }
 .hero-section.dhw {
-    background: linear-gradient(135deg, rgba(197, 48, 48, 0.75), rgba(237, 100, 100, 0.65)), url("../images/bg-dhw.jpg");
+    background: linear-gradient(135deg, rgba(197, 48, 48, 0.75), rgba(237, 100, 100, 0.65)), url("../images/bg-dhw.webp");
     background-size: cover;
     background-position: center;
 }
 .hero-section.extreme {
-    background: linear-gradient(135deg, rgba(107, 70, 193, 0.75), rgba(159, 122, 234, 0.65)), url("../images/bg-extreme.jpg");
+    background: linear-gradient(135deg, rgba(107, 70, 193, 0.75), rgba(159, 122, 234, 0.65)), url("../images/bg-extreme.webp");
     background-size: cover;
     background-position: center;
 }
 .hero-section.species {
-    background: linear-gradient(135deg, rgba(47, 133, 90, 0.75), rgba(72, 187, 120, 0.65)), url("../images/bg-species.jpg");
+    background: linear-gradient(135deg, rgba(47, 133, 90, 0.75), rgba(72, 187, 120, 0.65)), url("../images/bg-species.webp");
     background-size: cover;
     background-position: center;
 }
 .hero-section.spawning {
-    background: linear-gradient(135deg, rgba(192, 86, 33, 0.75), rgba(237, 137, 54, 0.65)), url("../images/bg-spawning.jpg");
+    background: linear-gradient(135deg, rgba(192, 86, 33, 0.75), rgba(237, 137, 54, 0.65)), url("../images/bg-spawning.webp");
     background-size: cover;
     background-position: center;
 }
 .hero-section.turbidity {
-    background: linear-gradient(135deg, rgba(74, 85, 104, 0.75), rgba(113, 128, 150, 0.65)), url("../images/bg-turbidity.jpg");
+    background: linear-gradient(135deg, rgba(74, 85, 104, 0.75), rgba(113, 128, 150, 0.65)), url("../images/bg-turbidity.webp");
     background-size: cover;
     background-position: center;
 }
 .hero-section.global-bleaching {
-    background: linear-gradient(135deg, rgba(197, 48, 48, 0.75), rgba(237, 100, 100, 0.65)), url("../images/bg-global-bleaching.jpg");
+    background: linear-gradient(135deg, rgba(197, 48, 48, 0.75), rgba(237, 100, 100, 0.65)), url("../images/bg-global-bleaching.webp");
     background-size: cover;
     background-position: center;
 }
@@ -2826,5 +2826,54 @@ main.detail-page {
     .lang-switch button {
         font-size: 0.7rem;
         padding: 0.2rem 0.4rem;
+    }
+}
+
+/* Mobile-optimized background images */
+@media (max-width: 768px) {
+    .hero-section.sst {
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.7), rgba(66, 153, 225, 0.65)), url("../images/bg-sst-mobile.webp");
+        background-size: cover;
+        background-position: center;
+    }
+    .hero-section.dhw {
+        background: linear-gradient(135deg, rgba(197, 48, 48, 0.75), rgba(237, 100, 100, 0.65)), url("../images/bg-dhw-mobile.webp");
+        background-size: cover;
+        background-position: center;
+    }
+    .hero-section.extreme {
+        background: linear-gradient(135deg, rgba(107, 70, 193, 0.75), rgba(159, 122, 234, 0.65)), url("../images/bg-extreme-mobile.webp");
+        background-size: cover;
+        background-position: center;
+    }
+    .hero-section.species {
+        background: linear-gradient(135deg, rgba(47, 133, 90, 0.75), rgba(72, 187, 120, 0.65)), url("../images/bg-species-mobile.webp");
+        background-size: cover;
+        background-position: center;
+    }
+    .hero-section.spawning {
+        background: linear-gradient(135deg, rgba(192, 86, 33, 0.75), rgba(237, 137, 54, 0.65)), url("../images/bg-spawning-mobile.webp");
+        background-size: cover;
+        background-position: center;
+    }
+    .hero-section.turbidity {
+        background: linear-gradient(135deg, rgba(74, 85, 104, 0.75), rgba(113, 128, 150, 0.65)), url("../images/bg-turbidity-mobile.webp");
+        background-size: cover;
+        background-position: center;
+    }
+    .hero-section.global-bleaching {
+        background: linear-gradient(135deg, rgba(197, 48, 48, 0.75), rgba(237, 100, 100, 0.65)), url("../images/bg-global-bleaching-mobile.webp");
+        background-size: cover;
+        background-position: center;
+    }
+    .hero-visual {
+        background: linear-gradient(
+            135deg,
+            rgba(26, 32, 46, 0.88) 0%,
+            rgba(26, 32, 46, 0.75) 50%,
+            rgba(26, 32, 46, 0.65) 100%
+        ), url("../images/hero-mobile.webp");
+        background-size: cover;
+        background-position: center;
     }
 }
