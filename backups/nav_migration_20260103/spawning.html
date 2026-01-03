@@ -17,69 +17,32 @@
                 <div class="logo-icon"><img src="images/logo.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
                 <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
             </a>
-            
-            <!-- Desktop Navigation -->
-            <nav class="nav-desktop">
-                <ul class="nav-links">
-                    <li class="nav-item has-dropdown">
-                        <a href="#" class="nav-link">
-                            <span data-lang="en">Monitoring</span>
-                            <span data-lang="ja">モニタリング</span>
-                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
-                            <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
-                            <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
-                            <li><a href="global-bleaching.html"><span data-lang="en">Global Bleaching</span><span data-lang="ja">世界の白化状況</span></a></li>
-                            <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge">計画中</span></a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-dropdown">
-                        <a href="#" class="nav-link">
-                            <span data-lang="en">Learn</span>
-                            <span data-lang="ja">サンゴを知る</span>
-                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="species.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
-                            <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="divers.html" class="nav-link">
-                            <span data-lang="en">For Divers</span>
-                            <span data-lang="ja">ダイバー向け</span>
-                        </a>
-                    </li>
-                    <li class="nav-item has-dropdown">
-                        <a href="#" class="nav-link">
-                            <span data-lang="en">Reference</span>
-                            <span data-lang="ja">リファレンス</span>
-                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
-                            <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
-                            <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link">
-                            <span data-lang="en">Contact</span>
-                            <span data-lang="ja">お問い合わせ</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <!-- Mobile Hamburger Button -->
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">
+                        <span data-lang="en">Dashboard</span>
+                        <span data-lang="ja">ダッシュボード</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#about">
+                        <span data-lang="en">About</span>
+                        <span data-lang="ja">このサイトについて</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#divers">
+                        <span data-lang="en">For Divers</span>
+                        <span data-lang="ja">ダイバー向け</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#glossary">
+                        <span data-lang="en">Glossary</span>
+                        <span data-lang="ja">用語解説</span>
+                    </a>
+                </li>
+            </ul>
             <div class="header-controls">
                 <div class="lang-switch">
                     <button id="lang-en" class="active">English</button>
@@ -89,65 +52,6 @@
             </div>
         </div>
     </header>
-
-    <!-- Mobile Sidebar -->
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
-    <nav class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <span class="sidebar-title">Menu</span>
-            <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
-                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-            </button>
-        </div>
-        <ul class="sidebar-menu">
-            <li class="sidebar-section">
-                <span class="sidebar-section-title">
-                    <span data-lang="en">Monitoring</span>
-                    <span data-lang="ja">モニタリング</span>
-                </span>
-                <ul class="sidebar-submenu">
-                    <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
-                    <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
-                    <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
-                    <li><a href="global-bleaching.html"><span data-lang="en">Global Bleaching</span><span data-lang="ja">世界の白化状況</span></a></li>
-                    <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge-mobile">計画中</span></a></li>
-                </ul>
-            </li>
-            <li class="sidebar-section">
-                <span class="sidebar-section-title">
-                    <span data-lang="en">Learn</span>
-                    <span data-lang="ja">サンゴを知る</span>
-                </span>
-                <ul class="sidebar-submenu">
-                    <li><a href="species.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
-                    <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
-                </ul>
-            </li>
-            <li class="sidebar-item">
-                <a href="divers.html">
-                    <span data-lang="en">For Divers</span>
-                    <span data-lang="ja">ダイバー向け</span>
-                </a>
-            </li>
-            <li class="sidebar-section">
-                <span class="sidebar-section-title">
-                    <span data-lang="en">Reference</span>
-                    <span data-lang="ja">リファレンス</span>
-                </span>
-                <ul class="sidebar-submenu">
-                    <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
-                    <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
-                    <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
-                </ul>
-            </li>
-            <li class="sidebar-item">
-                <a href="contact.html">
-                    <span data-lang="en">Contact</span>
-                    <span data-lang="ja">お問い合わせ</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
     <main>
         <nav class="breadcrumb">
             <a href="index.html">Home</a> / 
@@ -1063,47 +967,6 @@
         
         setInterval(updateCountdown, 60000);
         updateCountdown();
-    </script>
-
-    <!-- Navigation JS -->
-    <script>
-    (function() {
-        const hamburger = document.getElementById('hamburger');
-        const sidebar = document.getElementById('sidebar');
-        const sidebarOverlay = document.getElementById('sidebar-overlay');
-        const sidebarClose = document.getElementById('sidebar-close');
-        
-        function openSidebar() {
-            sidebar.classList.add('active');
-            sidebarOverlay.classList.add('active');
-            hamburger.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeSidebar() {
-            sidebar.classList.remove('active');
-            sidebarOverlay.classList.remove('active');
-            hamburger.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        
-        hamburger.addEventListener('click', function() {
-            if (sidebar.classList.contains('active')) {
-                closeSidebar();
-            } else {
-                openSidebar();
-            }
-        });
-        
-        sidebarOverlay.addEventListener('click', closeSidebar);
-        sidebarClose.addEventListener('click', closeSidebar);
-        
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
-                closeSidebar();
-            }
-        });
-    })();
     </script>
 </body>
 </html>
