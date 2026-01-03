@@ -1153,9 +1153,9 @@
             document.getElementById('lang-en').classList.toggle('active', lang === 'en');
             document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
             localStorage.setItem('lang', lang);
-            // Notify chart iframe of language change (no reload)
+            // Reload chart iframe to update language
             const chartIframe = document.getElementById('chart-iframe');
-            if (chartIframe && chartIframe.contentWindow) chartIframe.contentWindow.postMessage({ lang: lang }, '*');
+            if (chartIframe) chartIframe.src = "sekisei-cover.html?" + Date.now();
         }
 
         // Initialize language from localStorage
