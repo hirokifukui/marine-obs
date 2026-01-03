@@ -54,6 +54,9 @@ sql/  RPC関数定義
 | `get_dhw_annual_peak(site, year)` | 指定年のピークDHW |
 | `calc_dhw(site, date)` | 指定日のDHW計算 |
 
+## 画像処理
+ImageMagick + Ghostscript でEPS→PNG/ICO変換可能。
+
 ## デプロイ
 ```bash
 git add . && git commit -m "msg" && git push
