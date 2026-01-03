@@ -19,6 +19,8 @@
 | extreme.html | 極端水温日数 |
 | dhw.html | 積算熱ストレス |
 | global-bleaching.html | 世界の白化状況 |
+| japan-bleaching.html | 日本の白化状況 |
+| sekisei-cover.html | 石西礁湖被度グラフ（iframe用） |
 | turbidity.html | 濁度観測（計画中） |
 | species.html | 種別脆弱性 |
 | spawning.html | サンゴ産卵予測 |
