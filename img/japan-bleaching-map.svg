@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900">
+  <defs>
+    <!-- Ocean gradient -->
+    <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3a5c"/>
+      <stop offset="100%" style="stop-color:#0d2137"/>
+    </linearGradient>
+    
+    <!-- Glow effect for hotspots -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Subtle glow -->
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background ocean -->
+  <rect width="800" height="900" fill="url(#oceanGrad)"/>
+  
+  <!-- Japan landmass (simplified stylized shapes) -->
+  <g fill="#3d5a73" opacity="0.65">
+    
+    <!-- Hokkaido -->
+    <path d="M480,80 Q530,70 560,90 Q590,110 580,150 Q560,180 520,190 Q480,195 450,175 Q420,155 430,120 Q445,90 480,80 Z"/>
+    
+    <!-- Honshu (Main island) -->
+    <path d="M350,180 Q420,170 480,200 Q530,230 540,280 Q545,340 520,400 Q490,450 440,480 Q400,500 360,490 Q320,475 300,440 Q280,400 290,350 Q295,290 320,240 Q340,195 350,180 Z"/>
+    
+    <!-- Shikoku -->
+    <path d="M340,500 Q380,495 400,520 Q415,545 400,570 Q380,590 345,585 Q315,575 310,545 Q310,515 340,500 Z"/>
+    
+    <!-- Kyushu -->
+    <path d="M280,530 Q320,520 340,555 Q355,590 340,630 Q320,665 280,670 Q245,670 225,640 Q210,605 225,565 Q245,535 280,530 Z"/>
+    
+    <!-- Okinawa Main Island -->
+    <path d="M200,730 Q225,725 235,745 Q240,765 225,780 Q205,790 185,775 Q175,755 190,740 Q195,732 200,730 Z"/>
+    
+    <!-- Yaeyama Islands (Ishigaki, Iriomote) -->
+    <ellipse cx="130" cy="820" rx="30" ry="10"/>
+    <ellipse cx="95" cy="835" rx="18" ry="7"/>
+    
+    <!-- Miyako -->
+    <ellipse cx="165" cy="795" rx="15" ry="6"/>
+    
+    <!-- Amami Oshima -->
+    <ellipse cx="260" cy="670" rx="20" ry="8"/>
+    
+    <!-- Ogasawara Islands -->
+    <circle cx="650" cy="550" r="6"/>
+    <circle cx="660" cy="580" r="5"/>
+    <circle cx="655" cy="610" r="4"/>
+    
+  </g>
+  
+  <!-- Coral reef regions (subtle outlines) -->
+  <g fill="none" stroke="#4a7a9a" stroke-width="1" opacity="0.35">
+    <ellipse cx="130" cy="825" rx="50" ry="25"/>
+    <ellipse cx="210" cy="755" rx="35" ry="20"/>
+    <ellipse cx="655" cy="580" rx="25" ry="45"/>
+  </g>
+  
+  <!-- BLEACHING HOTSPOTS -->
+  
+  <!-- 1. Sekisei Lagoon (石西礁湖) - Critical - Most frequent events -->
+  <g filter="url(#glow)">
+    <circle cx="130" cy="825" r="28" fill="#d90429" opacity="0.35"/>
+    <circle cx="130" cy="825" r="14" fill="#d90429" opacity="0.85"/>
+  </g>
+  
+  <!-- 2. Sesoko Island (瀬底島) - Severe -->
+  <g filter="url(#softGlow)">
+    <circle cx="215" cy="755" r="16" fill="#ef476f" opacity="0.4"/>
+    <circle cx="215" cy="755" r="8" fill="#ef476f" opacity="0.8"/>
+  </g>
+  
+  <!-- 3. Kerama (慶良間) - Moderate -->
+  <g filter="url(#softGlow)">
+    <circle cx="190" cy="770" r="12" fill="#f4845f" opacity="0.45"/>
+    <circle cx="190" cy="770" r="6" fill="#f4845f" opacity="0.75"/>
+  </g>
+  
+  <!-- 4. Amami Oshima (奄美大島) - Moderate -->
+  <g filter="url(#softGlow)">
+    <circle cx="260" cy="670" r="12" fill="#f4845f" opacity="0.45"/>
+    <circle cx="260" cy="670" r="6" fill="#f4845f" opacity="0.75"/>
+  </g>
+  
+  <!-- 5. Ogasawara (小笠原) - Severe (2009) -->
+  <g filter="url(#softGlow)">
+    <circle cx="655" cy="580" r="16" fill="#ef476f" opacity="0.4"/>
+    <circle cx="655" cy="580" r="8" fill="#ef476f" opacity="0.8"/>
+  </g>
+  
+  <!-- 6. Kushimoto (串本) - Low (Northern limit) -->
+  <g filter="url(#softGlow)">
+    <circle cx="400" cy="505" r="10" fill="#ffd166" opacity="0.45"/>
+    <circle cx="400" cy="505" r="5" fill="#ffd166" opacity="0.75"/>
+  </g>
+  
+  <!-- LABELS -->
+  <g font-family="'Helvetica Neue', 'Noto Sans JP', sans-serif" font-size="11" fill="#ffffff">
+    
+    <!-- Sekisei Lagoon -->
+    <text x="130" y="865" text-anchor="middle">
+      <tspan font-weight="500">石西礁湖</tspan>
+    </text>
+    <text x="130" y="878" text-anchor="middle" font-size="9" opacity="0.7">Sekisei Lagoon</text>
+    
+    <!-- Sesoko -->
+    <text x="250" y="750" text-anchor="start">
+      <tspan font-weight="500">瀬底島</tspan>
+    </text>
+    <text x="250" y="763" text-anchor="start" font-size="9" opacity="0.7">Sesoko</text>
+    
+    <!-- Kerama -->
+    <text x="165" y="800" text-anchor="middle">
+      <tspan font-weight="500">慶良間</tspan>
+    </text>
+    <text x="165" y="813" text-anchor="middle" font-size="9" opacity="0.7">Kerama</text>
+    
+    <!-- Amami -->
+    <text x="290" y="665" text-anchor="start">
+      <tspan font-weight="500">奄美大島</tspan>
+    </text>
+    <text x="290" y="678" text-anchor="start" font-size="9" opacity="0.7">Amami</text>
+    
+    <!-- Ogasawara -->
+    <text x="655" y="635" text-anchor="middle">
+      <tspan font-weight="500">小笠原</tspan>
+    </text>
+    <text x="655" y="648" text-anchor="middle" font-size="9" opacity="0.7">Ogasawara</text>
+    
+    <!-- Kushimoto -->
+    <text x="400" y="480" text-anchor="middle">
+      <tspan font-weight="500">串本</tspan>
+    </text>
+    <text x="400" y="493" text-anchor="middle" font-size="9" opacity="0.7">Kushimoto (北限)</text>
+    
+    <!-- Region labels (subtle) -->
+    <text x="520" y="140" text-anchor="middle" font-size="10" opacity="0.4">北海道</text>
+    <text x="430" y="350" text-anchor="middle" font-size="10" opacity="0.4">本州</text>
+    <text x="365" y="545" text-anchor="middle" font-size="9" opacity="0.4">四国</text>
+    <text x="280" y="600" text-anchor="middle" font-size="9" opacity="0.4">九州</text>
+    
+  </g>
+  
+  <!-- LEGEND -->
+  <g transform="translate(20, 50)">
+    <rect x="0" y="0" width="180" height="95" rx="6" fill="#0a1628" opacity="0.8"/>
+    
+    <text x="15" y="20" font-family="'Helvetica Neue', 'Noto Sans JP', sans-serif" font-size="11" fill="#ffffff" font-weight="500">
+      白化の深刻度 / Severity
+    </text>
+    
+    <!-- Legend items -->
+    <circle cx="25" cy="40" r="5" fill="#d90429"/>
+    <text x="40" y="44" font-family="'Helvetica Neue', sans-serif" font-size="9" fill="#ffffff" opacity="0.85">
+      Critical / 壊滅的
+    </text>
+    
+    <circle cx="110" cy="40" r="5" fill="#ef476f"/>
+    <text x="125" y="44" font-family="'Helvetica Neue', sans-serif" font-size="9" fill="#ffffff" opacity="0.85">
+      Severe / 深刻
+    </text>
+    
+    <circle cx="25" cy="60" r="5" fill="#f4845f"/>
+    <text x="40" y="64" font-family="'Helvetica Neue', sans-serif" font-size="9" fill="#ffffff" opacity="0.85">
+      Moderate / 中程度
+    </text>
+    
+    <circle cx="110" cy="60" r="5" fill="#ffd166"/>
+    <text x="125" y="64" font-family="'Helvetica Neue', sans-serif" font-size="9" fill="#ffffff" opacity="0.85">
+      Low / 軽度
+    </text>
+    
+    <text x="15" y="82" font-family="'Helvetica Neue', sans-serif" font-size="8" fill="#ffffff" opacity="0.5">
+      ● サイズは発生頻度を反映
+    </text>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="'Helvetica Neue', 'Noto Sans JP', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="300" letter-spacing="0.08em">
+    日本のサンゴ白化ホットスポット / Japan Coral Bleaching Hotspots
+  </text>
+  
+  <!-- Data source -->
+  <text x="780" y="890" font-family="'Helvetica Neue', sans-serif" font-size="8" fill="#ffffff" opacity="0.4" text-anchor="end">
+    Data: 環境省, モニタリングサイト1000, 日本サンゴ礁学会
+  </text>
+</svg>

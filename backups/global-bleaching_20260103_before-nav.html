@@ -32,7 +32,6 @@
                             <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
                             <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
                             <li><a href="global-bleaching.html"><span data-lang="en">Global Bleaching</span><span data-lang="ja">世界の白化状況</span></a></li>
-                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Bleaching</span><span data-lang="ja">日本の白化状況</span></a></li>
                             <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge">計画中</span></a></li>
                         </ul>
                     </li>
@@ -111,7 +110,6 @@
                     <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
                     <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
                     <li><a href="global-bleaching.html"><span data-lang="en">Global Bleaching</span><span data-lang="ja">世界の白化状況</span></a></li>
-                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Bleaching</span><span data-lang="ja">日本の白化状況</span></a></li>
                     <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge-mobile">計画中</span></a></li>
                 </ul>
             </li>
@@ -898,9 +896,22 @@
             });
         });
 
+        // Language switching - same as sst.html
+        function setLang(lang) {
+            document.body.classList.toggle('ja', lang === 'ja');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
+            localStorage.setItem('lang', lang);
+        }
+
+        // Initialize language from localStorage
+        const savedLang = localStorage.getItem('lang') || 'en';
+        setLang(savedLang);
+
+        document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
+        document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
     </script>
 
-    <script src="js/lang.js"></script>
     <!-- Navigation JS -->
     <script>
     (function() {

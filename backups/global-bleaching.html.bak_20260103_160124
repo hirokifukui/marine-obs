@@ -898,9 +898,22 @@
             });
         });
 
+        // Language switching - same as sst.html
+        function setLang(lang) {
+            document.body.classList.toggle('ja', lang === 'ja');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
+            localStorage.setItem('lang', lang);
+        }
+
+        // Initialize language from localStorage
+        const savedLang = localStorage.getItem('lang') || 'en';
+        setLang(savedLang);
+
+        document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
+        document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
     </script>
 
-    <script src="js/lang.js"></script>
     <!-- Navigation JS -->
     <script>
     (function() {
