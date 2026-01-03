@@ -3,15 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | marine-obs.org</title>
-    <!-- SEO / OGP -->
-    <meta name="description" content="なぜ私が海を記録するのか。医師・ダイバーとしての視点から、プロジェクトの背景と目的を紹介。">
-    <meta property="og:title" content="このサイトについて | marine-obs.org">
-    <meta property="og:description" content="なぜ私が海を記録するのか。医師・ダイバーとしての視点から、プロジェクトの背景と目的を紹介。">
-    <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
-    <meta property="og:url" content="https://marine-obs.org/about.html">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+    <title>Data Sources | marine-obs.org</title>
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -161,75 +153,109 @@
     </nav>
 
     <main>
-        <div class="about-content">
-            <div data-lang="en">
-                <h1>About MarineObservations</h1>
-                <img src="images/diving.jpg" alt="Diving observation" style="width: 100%; max-width: 500px; border-radius: 12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <!-- Data Sources Section - Enhanced -->
+            <section class="data-sources-section">
+                <h3 class="section-title">
+                    <span data-lang="en">Data Sources</span>
+                    <span data-lang="ja">データソース</span>
+                </h3>
                 
-                <h2>What I saw</h2>
-                <p>In the summer of 2024, I went diving in Onna Village, Okinawa. What I saw underwater stopped me cold: coral, bleached white, stretching across the reef. Not in patches—everywhere. The coral that local communities had spent years cultivating was gone.</p>
-                <p>I had heard about coral bleaching before. I knew the graphs, the rising temperatures, the warnings. None of it moved me to act. This did.</p>
+                <!-- 🛰️ Satellite Data -->
+                <div class="source-category">
+                    <div class="source-category-header">
+                        <span class="source-category-icon">🛰️</span>
+                        <span data-lang="en">Satellite Data</span>
+                        <span data-lang="ja">衛星データ</span>
+                    </div>
+                    <div class="source-item-enhanced">
+                        <div class="source-main">
+                            <a href="https://coralreefwatch.noaa.gov/" target="_blank" rel="noopener" class="source-name-link">NOAA Coral Reef Watch</a>
+                            <span class="source-badge active"><span data-lang="en">Active</span><span data-lang="ja">運用中</span></span>
+                        </div>
+                        <div class="source-desc">
+                            <span data-lang="en">DHW calculation source. 5km resolution global coverage.</span>
+                            <span data-lang="ja">DHW（積算熱ストレス）算出元。5km解像度グローバルカバレッジ。</span>
+                        </div>
+                    </div>
+                    <div class="source-item-enhanced">
+                        <div class="source-main">
+                            <a href="https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1" target="_blank" rel="noopener" class="source-name-link">NASA MUR SST</a>
+                            <span class="source-badge active"><span data-lang="en">Active</span><span data-lang="ja">運用中</span></span>
+                        </div>
+                        <div class="source-desc">
+                            <span data-lang="en">Daily SST. 1km high-resolution satellite data.</span>
+                            <span data-lang="ja">日次海水温。1km高解像度衛星データ。</span>
+                        </div>
+                        <div class="source-update">
+                            <span data-lang="en">Updated: Daily 10:00 JST</span>
+                            <span data-lang="ja">更新: 毎日 10:00 JST</span>
+                        </div>
+                    </div>
+                </div>
 
-                <h2>Who I am</h2>
-                <p>I am a physician based in Japan. I am not a marine biologist, not an environmental scientist. But I dive—over a hundred times a year, in Okinawa, Ogasawara, the Maldives, and elsewhere. Diving is not my profession. It is how I stay connected to something larger than myself.</p>
-                <p>In my clinical work, I observe people over long periods of time. Change is slow, complex, and rarely reducible to simple cause and effect. Watching the ocean, I have come to feel, requires the same discipline: patient observation, careful recording, resistance to easy conclusions.</p>
+                <!-- 🌊 Field Observation / Forecast -->
+                <div class="source-category">
+                    <div class="source-category-header">
+                        <span class="source-category-icon">🌊</span>
+                        <span data-lang="en">Field Observation / Forecast</span>
+                        <span data-lang="ja">現地観測・予測</span>
+                    </div>
+                    <div class="source-item-enhanced">
+                        <div class="source-main">
+                            <a href="https://stormglass.io/" target="_blank" rel="noopener" class="source-name-link">Stormglass</a>
+                            <span class="source-badge active"><span data-lang="en">Active</span><span data-lang="ja">運用中</span></span>
+                        </div>
+                        <div class="source-desc">
+                            <span data-lang="en">Real-time marine forecast (wave, wind, swell, current).</span>
+                            <span data-lang="ja">リアルタイム海況予報（波高・風・うねり・潮流）。</span>
+                        </div>
+                        <div class="source-update">
+                            <span data-lang="en">Updated: Every 3 hours</span>
+                            <span data-lang="ja">更新: 3時間ごと</span>
+                        </div>
+                    </div>
+                    <div class="source-item-enhanced">
+                        <div class="source-main">
+                            <a href="https://www.biodic.go.jp/moni1000/" target="_blank" rel="noopener" class="source-name-link">
+                                <span data-lang="en">Monitoring Sites 1000</span>
+                                <span data-lang="ja">モニタリングサイト1000</span>
+                            </a>
+                            <span class="source-badge pending"><span data-lang="en">Jan 2026</span><span data-lang="ja">2026年1月予定</span></span>
+                        </div>
+                        <div class="source-desc">
+                            <span data-lang="en">MOE long-term coral reef monitoring. Awaiting data delivery.</span>
+                            <span data-lang="ja">環境省長期サンゴ礁モニタリング。データ受領待ち。</span>
+                        </div>
+                        <div class="source-update">
+                            <span data-lang="en">Expected: January 2026</span>
+                            <span data-lang="ja">予定: 2026年1月</span>
+                        </div>
+                    </div>
+                </div>
 
-                <h2>Why this project</h2>
-                <p>Divers feel the change. "The coral is whiter than before." "There used to be more fish here." "The water is warmer." These observations come up constantly—over dinner, on the boat, between dives. But they remain impressions. They are not recorded, not accumulated, not shared beyond the moment.</p>
-                <p>MarineObservations is an attempt to change that. The goal is simple: to document what is happening in the waters where I dive, and to share it in a way that others can understand and use.</p>
-                <p>I am not here to tell anyone what to think. I have no political agenda—at least not yet. I do not know enough to take a position. What I do know is that understanding must come before judgment. First, observe. First, record. The rest can follow.</p>
-
-                <h2>Who this is for</h2>
-                <p>For anyone who wants to know what is happening beneath the surface.</p>
-                <p>For divers who sense the change but have not found a way to articulate it.</p>
-                <p>For those who believe that paying attention—even without expertise, even without authority—is itself a form of responsibility.</p>
-
-                <h2>Ten years from now</h2>
-                <p>If this project is still running in ten years, what would make it worthwhile?</p>
-                <p>A world where more people think about the ocean while enjoying its beauty. That would be enough.</p>
-
-                <p class="about-signature">MarineObservations is a project by a physician and diver, documenting ocean conditions from outside the boundaries of formal expertise.</p>
-            </div>
-
-            <div data-lang="ja">
-                <h1>海洋の徴候について</h1>
-                <img src="images/diving.jpg" alt="海洋観測の様子" style="width: 100%; max-width: 500px; border-radius: 12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-
-                <h2>海に潜る瞬間</h2>
-                <p>東京で暮らしていると、自然を身体で感じる機会はほとんどない。だからこそ、海に潜った瞬間の感覚は格別である。一本目のエントリーで水中に入ると、全身の細胞が目を覚ますような感覚が走る。重力から解放され、聞こえるのは自分の呼吸音だけ。その感覚を求めて、私は潜り続けてきた。</p>
-                <p>本業は医師である。臨床の傍ら、国内外の海に年間100本以上潜っている。沖縄、小笠原、モルディブ——場所が変われば、海はまったく異なる表情を見せる。</p>
-
-                <h2>2024年、恩納村で見たもの</h2>
-                <p>転機は2024年の夏だった。</p>
-                <p>沖縄・恩納村の海に潜ったとき、異様な光景が広がっていた。サンゴが白い。それも一部ではなく、広範囲にわたってである。特に衝撃だったのは、地元の人々が長年かけて養殖してきたサンゴが、ほぼ全滅していたことだった。</p>
-                <p>正直に言えば、それまで地球温暖化という言葉は、どこか遠い政治的な議論として受け止めていた。しかし、目の前で白化したサンゴを見て、その認識は完全に覆った。これは政治の話ではない。今、この海で起きている現象なのだ。</p>
-
-                <h2>データと報道では動かなかった</h2>
-                <p>振り返れば、サンゴの白化に関する報道や研究データは以前から目にしていた。気温上昇のグラフも、海水温の変化も、知識としては知っていた。しかし、それらは私の行動を変えることはなかった。</p>
-                <p>変化が起きたのは、自分の目で見たあとだった。</p>
-                <p>この経験から、ひとつの確信を持つようになった。データや報道だけでは、人は必ずしも動かない。しかし、実際に見て、身体で感じたとき、初めて何かが変わる。少なくとも、私はそうだった。</p>
-
-                <h2>ダイバーは感じている、しかし</h2>
-                <p>海に潜るダイバーたちは、環境の変化を確実に感じ取っている。「サンゴが白くなっている」「昔はもっと魚がいた」「水温が高い」——そうした言葉は、ダイビング後の食事の席で頻繁に交わされる。</p>
-                <p>しかし、その先がない。感覚として共有されるだけで、言語化されず、記録にも残らない。「地球温暖化の影響かもしれないね」で会話は終わり、次の週にはまた別の海へ潜りに行く。</p>
-                <p>そこに、何かできる余地があるのではないか。そう考えるようになった。</p>
-
-                <h2>海洋の徴候という試み</h2>
-                <p>私は海洋生物学者でも環境科学者でもない。専門外の人間が環境観測に関わることに、どれほどの意味があるのかは、正直なところ分からない。</p>
-                <p>ただ、本業で長年続けてきた臨床の仕事と、環境の変化を見つめる行為との間に、不思議な共通点があることに気づいた。臨床では、人の変化を長期にわたって観察する。その変化は複雑な要因が絡み合い、すぐには可視化されない。環境の変化もまた、同じ構造を持っているように思える。</p>
-                <p>「観察」という行為が、両者をつないでいる。</p>
-
-                <h2>届けたい相手</h2>
-                <p>一般の人に、海で起きている変化を知ってほしい。</p>
-                <p>同時に、ダイバーたちと「何かができる」という感覚を共有したい。私たちはすでに変化を感じている。その感覚を言葉にし、記録し、データとして残すことで、新しい可能性が生まれるかもしれない。</p>
-
-                <h2>10年後に</h2>
-                <p>もしこのプロジェクトが10年続いたとしたら、何が実現していれば「やってよかった」と思えるだろうか。</p>
-                <p>海の美しさや自然の恩恵を享受しながら、人々が環境について自覚的に考えている。そうした姿勢が、ほんの少しでも広がっていれば、それで十分だと思っている。</p>
-
-                <p class="about-signature">海洋の徴候は、医師・ダイバーである筆者が、専門外の立場から海洋環境の観察と発信に取り組むプロジェクトです。</p>
-            </div>
-        </div>
+                <!-- 🔬 Planning -->
+                <div class="source-category">
+                    <div class="source-category-header">
+                        <span class="source-category-icon">🔬</span>
+                        <span data-lang="en">Planning</span>
+                        <span data-lang="ja">検討中</span>
+                    </div>
+                    <div class="source-item-enhanced">
+                        <div class="source-main">
+                            <span class="source-name-text">
+                                <span data-lang="en">Turbidity Logger</span>
+                                <span data-lang="ja">濁度計</span>
+                            </span>
+                            <span class="source-badge planning"><span data-lang="en">TBD</span><span data-lang="ja">検討中</span></span>
+                        </div>
+                        <div class="source-desc">
+                            <span data-lang="en">Considering local turbidity measurement for sediment stress assessment.</span>
+                            <span data-lang="ja">堆積物ストレス評価のためローカル濁度測定の導入を検討中。</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
     </main>
 
     <footer>
@@ -248,8 +274,8 @@
         </div>
     </footer>
 
-    <script src="js/lang-simple.js"></script>
-
+    <script src="js/lang.js"></script>
+    
     <!-- Navigation JS -->
     <script>
     (function() {
