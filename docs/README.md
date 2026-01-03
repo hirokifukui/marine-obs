@@ -14,15 +14,19 @@
 ## ページ
 | ページ | 内容 |
 |--------|------|
-| index.html | ダッシュボード（6カード + Data Sources） |
-| about.html | このサイトについて |
-| divers.html | ダイバー向け（海況・装備） |
-| glossary.html | 用語解説 |
+| index.html | ダッシュボード |
 | sst.html | 海水温 |
 | extreme.html | 極端水温日数 |
 | dhw.html | 積算熱ストレス |
+| global-bleaching.html | 世界の白化状況 |
+| turbidity.html | 濁度観測（計画中） |
 | species.html | 種別脆弱性 |
 | spawning.html | サンゴ産卵予測 |
+| divers.html | ダイバー向け（海況・装備） |
+| about.html | このサイトについて |
+| glossary.html | 用語解説 |
+| datasources.html | データソース |
+| contact.html | お問い合わせ |
 
 ## 構成
 ```
@@ -58,4 +62,4 @@ Vercel自動デプロイ。
 `backups/` フォルダに保存。
 
 ---
-*2026-01-02*
+*2026-01-03*
