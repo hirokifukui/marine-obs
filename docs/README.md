@@ -65,7 +65,7 @@ git add . && git commit -m "msg" && git push
 Vercel自動デプロイ。
 
 ## バックアップ
-`backups/` フォルダに保存。
+`backups/` フォルダに保存。**削除禁止**。
 
 ---
 *2026-01-04*
