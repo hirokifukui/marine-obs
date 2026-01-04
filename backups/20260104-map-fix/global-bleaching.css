@@ -718,11 +718,11 @@
             }
 
             .map-legend {
-                position: absolute;
-                bottom: 8px;
-                left: 8px;
-                font-size: 0.6rem; padding: 0.5rem 0.6rem;
-                border-radius: 6px;
+                position: relative;
+                bottom: auto;
+                left: auto;
+                margin: 0.5rem;
+                border-radius: 0 0 8px 8px;
             }
         }
 
