@@ -296,7 +296,7 @@
                     </div>
                 </div>
                 
-                <div class="map-legend" style="left: 15px; bottom: 15px;">
+                <div class="map-legend desktop-only" style="left: 20px; top: 50%; transform: translateY(-50%);">
                     <h5>
                         <span data-lang="en">Severity</span>
                         <span data-lang="ja">深刻度</span>
@@ -325,8 +325,39 @@
                     </div>
                 </div>
                 
-                <div class="data-source">Data: 環境省, モニタリングサイト1000, 日本サンゴ礁学会</div>
+                <div class="data-source desktop-only">Data: 環境省, モニタリングサイト1000, 日本サンゴ礁学会</div>
             </div>
+
+                <!-- Mobile: Legend and Data Source outside map -->
+                <div class="map-legend mobile-only">
+                    <h5>
+                        <span data-lang="en">Severity</span>
+                        <span data-lang="ja">深刻度</span>
+                    </h5>
+                    <div class="legend-items">
+                        <div class="legend-item">
+                            <span class="legend-dot critical"></span>
+                            <span data-lang="en">Critical</span>
+                            <span data-lang="ja">壊滅的</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot severe"></span>
+                            <span data-lang="en">Severe</span>
+                            <span data-lang="ja">深刻</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot moderate"></span>
+                            <span data-lang="en">Moderate</span>
+                            <span data-lang="ja">中程度</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot low"></span>
+                            <span data-lang="en">Low</span>
+                            <span data-lang="ja">軽度</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="data-source mobile-only">Data: 環境省, モニタリングサイト1000, 日本サンゴ礁学会</div>
         </section>
 
         <!-- Key Statistics -->

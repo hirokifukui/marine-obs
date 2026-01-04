@@ -736,3 +736,32 @@
             align-items: center;
             gap: 0.5rem;
         }
+
+        /* Desktop/Mobile visibility toggle */
+        .mobile-only {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-only {
+                display: none !important;
+            }
+            .mobile-only {
+                display: block;
+            }
+            /* Mobile legend styling - outside map */
+            .map-legend.mobile-only {
+                position: static;
+                background: rgba(10, 22, 40, 0.85);
+                border-radius: 8px;
+                padding: 0.75rem 1rem;
+                margin: 0.75rem 0;
+            }
+            .data-source.mobile-only {
+                position: static;
+                font-size: 0.65rem;
+                color: var(--text-muted);
+                text-align: right;
+                margin-bottom: 1rem;
+            }
+        }
