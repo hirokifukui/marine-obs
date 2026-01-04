@@ -18,6 +18,64 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <style>
+        .literature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .literature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        .literature-card .paper-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+        .literature-card .paper-journal {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        .literature-card .paper-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .literature-card .paper-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+        }
+        .literature-card .paper-link:hover {
+            text-decoration: underline;
+        }
+        .literature-subsection {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .literature-subsection::before {
+            content: "";
+            display: block;
+            width: 3px;
+            height: 1em;
+            background: var(--accent-teal);
+            border-radius: 2px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -125,7 +183,7 @@
                     <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
                     <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
                     <li><a href="global-bleaching.html"><span data-lang="en">Global Bleaching</span><span data-lang="ja">世界の白化状況</span></a></li>
-                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Bleaching</span><span data-lang="ja">日本の白化状況</span></a></li>
+                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Bleaching</span><span data-lang="ja">日本の白化状況</span></a></li>
                     <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge-mobile">計画中</span></a></li>
                 </ul>
             </li>
@@ -170,171 +228,135 @@
     </nav>
 
     <main>
-        <!-- Data Sources Section - Enhanced -->
-            <section class="data-sources-section">
-                <h3 class="section-title">
-                    <span data-lang="en">Data Sources</span>
-                    <span data-lang="ja">データソース</span>
-                </h3>
-                
-                <!-- 🛰️ Satellite Data -->
-                <div class="source-category">
-                    <div class="source-category-header">
-                        <span class="source-category-icon">🛰️</span>
-                        <span data-lang="en">Satellite Data</span>
-                        <span data-lang="ja">衛星データ</span>
+        <section class="hero">
+            <h1 data-lang="en">Data Sources</h1>
+            <h1 data-lang="ja">データソース</h1>
+            <p class="hero-subtitle" data-lang="en">Satellite data, field observations, and scientific literature used on this site.</p>
+            <p class="hero-subtitle" data-lang="ja">本サイトが参照する衛星データ、現地観測、学術文献の一覧。</p>
+        </section>
+
+        <section class="data-sources-section">
+            <!-- 🛰️ Satellite Data -->
+            <div class="source-category">
+                <div class="source-category-header">
+                    <span class="source-category-icon">🛰️</span>
+                    <span data-lang="en">Satellite Data</span>
+                    <span data-lang="ja">衛星データ</span>
+                </div>
+                <div class="source-item-enhanced">
+                    <div class="source-main">
+                        <a href="https://coralreefwatch.noaa.gov/" target="_blank" rel="noopener" class="source-name-link">NOAA Coral Reef Watch</a>
+                        <span class="source-badge active"><span data-lang="en">Active</span><span data-lang="ja">運用中</span></span>
                     </div>
-                    <div class="source-item-enhanced">
-                        <div class="source-main">
-                            <a href="https://coralreefwatch.noaa.gov/" target="_blank" rel="noopener" class="source-name-link">NOAA Coral Reef Watch</a>
-                            <span class="source-badge active"><span data-lang="en">Active</span><span data-lang="ja">運用中</span></span>
-                        </div>
-                        <div class="source-desc">
-                            <span data-lang="en">DHW calculation source. 5km resolution global coverage.</span>
-                            <span data-lang="ja">DHW（積算熱ストレス）算出元。5km解像度グローバルカバレッジ。</span>
-                        </div>
-                    </div>
-                    <div class="source-item-enhanced">
-                        <div class="source-main">
-                            <a href="https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1" target="_blank" rel="noopener" class="source-name-link">NASA MUR SST</a>
-                            <span class="source-badge active"><span data-lang="en">Active</span><span data-lang="ja">運用中</span></span>
-                        </div>
-                        <div class="source-desc">
-                            <span data-lang="en">Daily SST. 1km high-resolution satellite data.</span>
-                            <span data-lang="ja">日次海水温。1km高解像度衛星データ。</span>
-                        </div>
-                        <div class="source-update">
-                            <span data-lang="en">Updated: Daily 10:00 JST</span>
-                            <span data-lang="ja">更新: 毎日 10:00 JST</span>
-                        </div>
+                    <div class="source-desc">
+                        <span data-lang="en">DHW calculation source. 5km resolution global coverage.</span>
+                        <span data-lang="ja">DHW（積算熱ストレス）算出元。5km解像度グローバルカバレッジ。</span>
                     </div>
                 </div>
-
-                <!-- 🌊 Field Observation / Forecast -->
-                <div class="source-category">
-                    <div class="source-category-header">
-                        <span class="source-category-icon">🌊</span>
-                        <span data-lang="en">Field Observation / Forecast</span>
-                        <span data-lang="ja">現地観測・予測</span>
+                <div class="source-item-enhanced">
+                    <div class="source-main">
+                        <a href="https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1" target="_blank" rel="noopener" class="source-name-link">NASA MUR SST</a>
+                        <span class="source-badge active"><span data-lang="en">Active</span><span data-lang="ja">運用中</span></span>
                     </div>
-                    <div class="source-item-enhanced">
-                        <div class="source-main">
-                            <a href="https://stormglass.io/" target="_blank" rel="noopener" class="source-name-link">Stormglass</a>
-                            <span class="source-badge active"><span data-lang="en">Active</span><span data-lang="ja">運用中</span></span>
-                        </div>
-                        <div class="source-desc">
-                            <span data-lang="en">Real-time marine forecast (wave, wind, swell, current).</span>
-                            <span data-lang="ja">リアルタイム海況予報（波高・風・うねり・潮流）。</span>
-                        </div>
-                        <div class="source-update">
-                            <span data-lang="en">Updated: Every 3 hours</span>
-                            <span data-lang="ja">更新: 3時間ごと</span>
-                        </div>
+                    <div class="source-desc">
+                        <span data-lang="en">Daily SST. 1km high-resolution satellite data.</span>
+                        <span data-lang="ja">日次海水温。1km高解像度衛星データ。</span>
                     </div>
-                    <div class="source-item-enhanced">
-                        <div class="source-main">
-                            <a href="https://www.biodic.go.jp/moni1000/" target="_blank" rel="noopener" class="source-name-link">
-                                <span data-lang="en">Monitoring Sites 1000</span>
-                                <span data-lang="ja">モニタリングサイト1000</span>
-                            </a>
-                            <span class="source-badge pending"><span data-lang="en">Jan 2026</span><span data-lang="ja">2026年1月予定</span></span>
-                        </div>
-                        <div class="source-desc">
-                            <span data-lang="en">MOE long-term coral reef monitoring. Awaiting data delivery.</span>
-                            <span data-lang="ja">環境省長期サンゴ礁モニタリング。データ受領待ち。</span>
-                        </div>
-                        <div class="source-update">
-                            <span data-lang="en">Expected: January 2026</span>
-                            <span data-lang="ja">予定: 2026年1月</span>
-                        </div>
+                    <div class="source-update">
+                        <span data-lang="en">Updated: Daily 10:00 JST</span>
+                        <span data-lang="ja">更新: 毎日 10:00 JST</span>
                     </div>
                 </div>
-
-                <!-- 🔬 Planning -->
-                <div class="source-category">
-                    <div class="source-category-header">
-                        <span class="source-category-icon">🔬</span>
-                        <span data-lang="en">Planning</span>
-                        <span data-lang="ja">検討中</span>
-                    </div>
-                    <div class="source-item-enhanced">
-                        <div class="source-main">
-                            <span class="source-name-text">
-                                <span data-lang="en">Turbidity Logger</span>
-                                <span data-lang="ja">濁度計</span>
-                            </span>
-                            <span class="source-badge planning"><span data-lang="en">TBD</span><span data-lang="ja">検討中</span></span>
-                        </div>
-                        <div class="source-desc">
-                            <span data-lang="en">Considering local turbidity measurement for sediment stress assessment.</span>
-                            <span data-lang="ja">堆積物ストレス評価のためローカル濁度測定の導入を検討中。</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div>
-                <span data-lang="en">© 2026 marine-obs.org · Independent research project</span>
-                <span data-lang="ja">© 2026 marine-obs.org · 個人プロジェクト</span>
             </div>
-            <div class="footer-links">
-                <a href="https://github.com/hirokifukui/marine-obs" target="_blank" rel="noopener">GitHub</a>
-                <a href="contact.html">
-                    <span data-lang="en">Contact</span>
-                    <span data-lang="ja">お問い合わせ</span>
-                </a>
-            </div>
-        </div>
-    </footer>
 
-    <script src="js/lang.js"></script>
-    
-    <!-- Navigation JS -->
-    <script>
-    (function() {
-        const hamburger = document.getElementById('hamburger');
-        const sidebar = document.getElementById('sidebar');
-        const sidebarOverlay = document.getElementById('sidebar-overlay');
-        const sidebarClose = document.getElementById('sidebar-close');
-        
-        function openSidebar() {
-            sidebar.classList.add('active');
-            sidebarOverlay.classList.add('active');
-            hamburger.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeSidebar() {
-            sidebar.classList.remove('active');
-            sidebarOverlay.classList.remove('active');
-            hamburger.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        
-        hamburger.addEventListener('click', function() {
-            if (sidebar.classList.contains('active')) {
-                closeSidebar();
-            } else {
-                openSidebar();
-            }
-        });
-        
-        sidebarOverlay.addEventListener('click', closeSidebar);
-        sidebarClose.addEventListener('click', closeSidebar);
-        
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
-                closeSidebar();
-            }
-        });
-    })();
-    </script>
-</body>
-</html>
+            <!-- 🌊 Field Observation / Forecast -->
+            <div class="source-category">
+                <div class="source-category-header">
+                    <span class="source-category-icon">🌊</span>
+                    <span data-lang="en">Field Observation / Forecast</span>
+                    <span data-lang="ja">現地観測・予報</span>
+                </div>
+                <div class="source-item-enhanced">
+                    <div class="source-main">
+                        <a href="https://stormglass.io/" target="_blank" rel="noopener" class="source-name-link">Stormglass</a>
+                        <span class="source-badge active"><span data-lang="en">Active</span><span data-lang="ja">運用中</span></span>
+                    </div>
+                    <div class="source-desc">
+                        <span data-lang="en">Real-time marine forecast (wave, wind, swell, current).</span>
+                        <span data-lang="ja">リアルタイム海況予報（波高・風・うねり・潮流）。</span>
+                    </div>
+                    <div class="source-update">
+                        <span data-lang="en">Updated: Every 3 hours</span>
+                        <span data-lang="ja">更新: 3時間ごと</span>
+                    </div>
+                </div>
+                <div class="source-item-enhanced">
+                    <div class="source-main">
+                        <a href="https://www.windy.com/" target="_blank" rel="noopener" class="source-name-link">Windy.com</a>
+                        <span class="source-badge active"><span data-lang="en">Active</span><span data-lang="ja">運用中</span></span>
+                    </div>
+                    <div class="source-desc">
+                        <span data-lang="en">Weather maps, wind forecast, and wave visualization.</span>
+                        <span data-lang="ja">天気図、風向き予報、波浪可視化。</span>
+                    </div>
+                </div>
+                <div class="source-item-enhanced">
+                    <div class="source-main">
+                        <a href="https://www.jma.go.jp/" target="_blank" rel="noopener" class="source-name-link">
+                            <span data-lang="en">Japan Meteorological Agency</span>
+                            <span data-lang="ja">気象庁</span>
+                        </a>
+                        <span class="source-badge active"><span data-lang="en">Active</span><span data-lang="ja">運用中</span></span>
+                    </div>
+                    <div class="source-desc">
+                        <span data-lang="en">Lunar phase and sunset times for spawning prediction.</span>
+                        <span data-lang="ja">産卵予測に使用する月齢・日没時刻データ。</span>
+                    </div>
+                </div>
+                <div class="source-item-enhanced">
+                    <div class="source-main">
+                        <a href="https://www.biodic.go.jp/moni1000/" target="_blank" rel="noopener" class="source-name-link">
+                            <span data-lang="en">Monitoring Sites 1000</span>
+                            <span data-lang="ja">モニタリングサイト1000</span>
+                        </a>
+                        <span class="source-badge pending"><span data-lang="en">Jan 2026</span><span data-lang="ja">2026年1月予定</span></span>
+                    </div>
+                    <div class="source-desc">
+                        <span data-lang="en">MOE long-term coral reef monitoring. Awaiting data delivery.</span>
+                        <span data-lang="ja">環境省長期サンゴ礁モニタリング。データ受領待ち。</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🏛️ Organizations / Reports -->
+            <div class="source-category">
+                <div class="source-category-header">
+                    <span class="source-category-icon">🏛️</span>
+                    <span data-lang="en">Organizations / Reports</span>
+                    <span data-lang="ja">公的機関・レポート</span>
+                </div>
+                <div class="source-item-enhanced">
+                    <div class="source-main">
+                        <a href="https://icriforum.org/" target="_blank" rel="noopener" class="source-name-link">ICRI</a>
+                    </div>
+                    <div class="source-desc">
+                        <span data-lang="en">International Coral Reef Initiative. Declared 4th Global Bleaching Event (2024).</span>
+                        <span data-lang="ja">国際サンゴ礁イニシアチブ。第4回グローバル白化イベント宣言（2024年）。</span>
+                    </div>
+                </div>
+                <div class="source-item-enhanced">
+                    <div class="source-main">
+                        <a href="https://www.env.go.jp/nature/biodic/coralreefs/" target="_blank" rel="noopener" class="source-name-link">
+                            <span data-lang="en">Ministry of the Environment (Japan)</span>
+                            <span data-lang="ja">環境省</span>
+                        </a>
+                    </div>
+                    <div class="source-desc">
+                        <span data-lang="en">Sekisei Lagoon coral cover surveys and bleaching status reports.</span>
+                        <span data-lang="ja">石西礁湖被度調査、サンゴ白化現況調査。</span>
+                    </div>
+                </div>
+            </div>
 
             <!-- 📚 Scientific Literature -->
             <div class="source-category">
@@ -416,6 +438,7 @@
                             <span data-lang="ja">瀬底2016-2017白化と回復。現地DHW検証研究。</span>
                         </p>
                     </div>
+                </div>
                     <div class="literature-card">
                         <div class="paper-title">Nakamura T (2017)</div>
                         <div class="paper-journal">J. Japan Coral Reef Soc. 19:29-40</div>
@@ -433,7 +456,6 @@
                         </p>
                         <a href="https://doi.org/10.3755/galaxea.24.1_1" target="_blank" class="paper-link">DOI →</a>
                     </div>
-                </div>
 
                 <div class="literature-subsection">
                     <span data-lang="en">Coral Spawning</span>
