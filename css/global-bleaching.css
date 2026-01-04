@@ -777,4 +777,31 @@
                 text-align: center;
                 margin: 0.25rem 0 0.5rem 0;
             }
+            /* Mobile hotspot - larger tap area */
+            .hotspot {
+                min-width: 44px;
+                min-height: 44px;
+            }
+            /* Mobile tooltip - smaller and constrained */
+            .hotspot-tooltip {
+                min-width: 140px;
+                max-width: 160px;
+                padding: 0.5rem 0.75rem;
+            }
+            .hotspot-tooltip h4 {
+                font-size: 0.75rem;
+            }
+            .hotspot-tooltip p {
+                font-size: 0.65rem;
+                line-height: 1.3;
+            }
+            .hotspot-tooltip .year {
+                font-size: 0.6rem;
+            }
+            /* Mobile: show tooltip on tap */
+            .hotspot:active .hotspot-tooltip,
+            .hotspot:focus .hotspot-tooltip {
+                opacity: 1;
+                transform: translateX(-50%) translateY(-5px);
+            }
         }
