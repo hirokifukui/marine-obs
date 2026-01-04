@@ -4,14 +4,11 @@
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlZ2l1aWJscGxpYWlucGRnZ2ZqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NDIwOTM3NCwiZXhwIjoyMDc5Nzg1Mzc0fQ.V3C2newkAdn6gW2TR_ct-_WupVKZapXKtD9Cr3aMk2M';
     
     const LOCATIONS = [
-        { id: 'kushimoto', name: '串本', nameEn: 'Kushimoto' },
-        { id: 'ogasawara', name: '小笠原', nameEn: 'Ogasawara' },
-        { id: 'amami', name: '奄美大島', nameEn: 'Amami' },
         { id: 'okinawa_sesoko', name: '瀬底', nameEn: 'Sesoko' },
         { id: 'okinawa_manza', name: '万座', nameEn: 'Manza' },
-        { id: 'kerama', name: '慶良間', nameEn: 'Kerama' },
-        { id: 'sekisei', name: '石西礁湖', nameEn: 'Sekisei' }
-    ];    
+        { id: 'ogasawara', name: '小笠原', nameEn: 'Ogasawara' }
+    ];
+    
     const WEEKDAYS_JA = ['日', '月', '火', '水', '木', '金', '土'];
     const WEEKDAYS_EN = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     

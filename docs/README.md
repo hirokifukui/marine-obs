@@ -24,7 +24,8 @@
 | turbidity.html | 濁度観測（計画中） |
 | species.html | 種別脆弱性 |
 | spawning.html | サンゴ産卵予測 |
-| divers.html | ダイバー向け（海況・装備） |
+| conditions.html | 海況 |
+| weather.html | 天気図 |
 | about.html | このサイトについて |
 | glossary.html | 用語解説 |
 | datasources.html | データソース |
@@ -67,4 +68,4 @@ Vercel自動デプロイ。
 `backups/` フォルダに保存。
 
 ---
-*2026-01-03*
+*2026-01-04*
