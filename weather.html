@@ -640,9 +640,7 @@
         const mapTitleText = document.getElementById('map-title-text');
         const mapCoords = document.getElementById('map-coords');
         const mapIcon = document.getElementById('map-icon');
-        const layerInfoIcon = document.getElementById('layer-info-icon');
-        const layerInfoTitle = document.getElementById('layer-info-title');
-        const layerInfoDesc = document.getElementById('layer-info-desc');
+
 
         // ===== Build Windy URL =====
         function buildWindyUrl(loc, layer) {
@@ -662,9 +660,7 @@
             mapIcon.textContent = currentLayer.icon;
             
             // Update layer info
-            layerInfoIcon.textContent = currentLayer.icon;
-            layerInfoTitle.textContent = isJa ? currentLayer.nameJa : currentLayer.nameEn;
-            layerInfoDesc.textContent = isJa ? currentLayer.descJa : currentLayer.descEn;
+
         }
 
         // ===== Render Location Pills =====
