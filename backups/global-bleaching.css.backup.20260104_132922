@@ -529,7 +529,7 @@
         }
 
         .event-card.open .event-card-content {
-            max-height: 1500px;
+            max-height: 800px;
         }
 
         .event-card-body {
