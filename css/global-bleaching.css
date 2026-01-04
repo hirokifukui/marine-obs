@@ -778,9 +778,9 @@
                 margin: 0.25rem 0 0.5rem 0;
             }
             /* Mobile hotspot - larger tap area */
-            .hotspot {
-                min-width: 44px;
-                min-height: 44px;
+            .hotspot::before {
+                content: '';
+                position: absolute; width: 44px; height: 44px; top: 50%; left: 50%; transform: translate(-50%, -50%);
             }
             /* Mobile tooltip - smaller and constrained */
             .hotspot-tooltip {
