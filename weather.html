@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Map | marine-obs.org</title>
+    <!-- SEO / OGP -->
+    <meta name="description" content="日本のサンゴ白化モニタリング地点の天気図。風、波、うねり、水温をリアルタイムで確認。">
+    <meta property="og:title" content="天気図 | marine-obs.org">
+    <meta property="og:description" content="日本のサンゴ白化モニタリング地点の天気図。風、波、うねり、水温をリアルタイムで確認。">
+    <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
+    <meta property="og:url" content="https://marine-obs.org/weather.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Weather page specific styles */
+
+        /* Site Selection Rationale */
+        .site-rationale {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent-teal);
+            border-radius: 0 12px 12px 0;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .site-rationale-content p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        body.ja .site-rationale-content p {
+            line-height: 2;
+        }
+
+        .site-rationale-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .site-rationale-content a {
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .site-rationale-content a:hover {
+            text-decoration: underline;
+        }
+
+        
+        /* Location Selection - Pill Style */
+        .location-selector {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .selector-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .location-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .location-pill {
+            padding: 0.6rem 1.1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .location-pill:hover {
+            background: var(--bg-card);
+            border-color: var(--accent-teal);
+            color: var(--text-primary);
+        }
+
+        .location-pill.active {
+            background: var(--accent-teal);
+            border-color: var(--accent-teal);
+            color: white;
+        }
+
+        /* Layer Selection - Icon Buttons */
+        .layer-selector {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .layer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .layer-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.85rem 0.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .layer-btn:hover {
+            background: var(--bg-card);
+            border-color: var(--accent-teal);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .layer-btn.active {
+            background: linear-gradient(135deg, #3d7a73, #2d5f5a);
+            border-color: transparent;
+            color: white;
+            box-shadow: 0 4px 12px rgba(61, 122, 115, 0.3);
+        }
+
+        .layer-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .layer-name {
+            text-align: center;
+        }
+
+        /* Map Container */
+        .map-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .map-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-secondary);
+        }
+
+        .map-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .map-title-icon {
+            font-size: 1.25rem;
+        }
+
+        .map-title-text {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .map-coords {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: var(--bg-card);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+        }
+
+        .windy-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 50%; /* 2:1 aspect ratio */
+            background: var(--bg-secondary);
+        }
+
+        .windy-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .windy-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Layer Info Card */
+        .layer-info {
+            background: linear-gradient(135deg, rgba(61, 122, 115, 0.08) 0%, rgba(43, 108, 176, 0.05) 100%);
+            border: 1px solid rgba(61, 122, 115, 0.2);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .layer-info-icon {
+            font-size: 1.75rem;
+            flex-shrink: 0;
+        }
+
+        .layer-info-content {
+            flex: 1;
+        }
+
+        .layer-info-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .layer-info-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Tips Card */
+        .tips-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .tips-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tips-header h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .tips-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tips-list li {
+            position: relative;
+            padding: 0.6rem 0 0.6rem 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tips-list li:last-child {
+            border-bottom: none;
+        }
+
+        .tips-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-teal);
+            font-weight: 600;
+        }
+
+        .tips-list strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .windy-container {
+                padding-bottom: 70%;
+            }
+
+            .map-header {
+                flex-direction: column;
+                gap: 0.75rem;
+                align-items: flex-start;
+            }
+
+            .layer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .layer-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .layer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="images/logo-circle.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul class="nav-links">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Monitoring</span>
+                            <span data-lang="ja">モニタリング</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                            <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                            <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="global-bleaching.html"><span data-lang="en">Global Bleaching</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Bleaching</span><span data-lang="ja">日本の白化状況</span></a></li>
+                            <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge">計画中</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Learn</span>
+                            <span data-lang="ja">サンゴを知る</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="species.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                            <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="divers.html" class="nav-link">
+                            <span data-lang="en">For Divers</span>
+                            <span data-lang="ja">ダイバー向け</span>
+                        </a>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Reference</span>
+                            <span data-lang="ja">リファレンス</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                            <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                            <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <span data-lang="en">Contact</span>
+                            <span data-lang="ja">お問い合わせ</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button id="lang-en" class="active">English</button>
+                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <button id="lang-ja">日本語</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Monitoring</span>
+                    <span data-lang="ja">モニタリング</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                    <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                    <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                    <li><a href="global-bleaching.html"><span data-lang="en">Global Bleaching</span><span data-lang="ja">世界の白化状況</span></a></li>
+                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Bleaching</span><span data-lang="ja">日本の白化状況</span></a></li>
+                    <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge-mobile">計画中</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Learn</span>
+                    <span data-lang="ja">サンゴを知る</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="species.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                    <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a href="divers.html">
+                    <span data-lang="en">For Divers</span>
+                    <span data-lang="ja">ダイバー向け</span>
+                </a>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Reference</span>
+                    <span data-lang="ja">リファレンス</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                    <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                    <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a href="contact.html">
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="ja">お問い合わせ</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1 data-lang="en">Weather Map</h1>
+            <h1 data-lang="ja">天気図</h1>
+            <p class="hero-subtitle" data-lang="en">
+                Real-time wind, waves, swell, and sea conditions at coral monitoring sites across Japan.
+            </p>
+            <p class="hero-subtitle" data-lang="ja">
+                日本各地のサンゴモニタリング地点における風、波、うねり、海況をリアルタイムで確認。
+            </p>
+        </section>
+
+        <!-- Site Selection Rationale -->
+        <div class="site-rationale">
+            <div class="site-rationale-content">
+                <p data-lang="en">
+                    These 7 locations represent Japan's key coral bleaching hotspots—from <strong>Kushimoto</strong> (the northern limit of reef-building corals in the Pacific) to <strong>Sekisei Lagoon</strong> (Japan's largest coral reef). Selected based on bleaching history and ecological significance, they cover subtropical Okinawa, oceanic Ogasawara, and temperate zones. <a href="japan-bleaching.html">Learn more about Japan's bleaching events →</a>
+                </p>
+                <p data-lang="ja">
+                    この7地点は、日本の主要なサンゴ白化ホットスポットです。太平洋における造礁サンゴの北限である<strong>串本</strong>から、日本最大のサンゴ礁<strong>石西礁湖</strong>まで、白化履歴と生態学的重要性に基づいて選定しました。亜熱帯の沖縄、海洋島の小笠原、温帯域をカバーしています。<a href="japan-bleaching.html">日本の白化状況について詳しく →</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Location Selection -->
+        <div class="location-selector">
+            <span class="selector-label">
+                <span data-lang="en">Select Location</span>
+                <span data-lang="ja">地点を選択</span>
+            </span>
+            <div class="location-pills" id="location-pills">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Layer Selection -->
+        <div class="layer-selector">
+            <span class="selector-label">
+                <span data-lang="en">Data Layer</span>
+                <span data-lang="ja">データレイヤー</span>
+            </span>
+            <div class="layer-grid" id="layer-grid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Map Card -->
+        <div class="map-card">
+            <div class="map-header">
+                <div class="map-title">
+                    <span class="map-title-icon" id="map-icon">🗺️</span>
+                    <span class="map-title-text" id="map-title-text"></span>
+                </div>
+                <span class="map-coords" id="map-coords"></span>
+            </div>
+            <div class="windy-container" id="windy-container">
+                <div class="windy-loading">
+                    <span data-lang="en">Loading map...</span>
+                    <span data-lang="ja">地図を読み込み中...</span>
+                </div>
+                <iframe id="windy-iframe" allowfullscreen></iframe>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <span data-lang="en">© 2026 marine-obs.org · Independent research project</span>
+                <span data-lang="ja">© 2026 marine-obs.org · 個人プロジェクト</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/hirokifukui/marine-obs" target="_blank" rel="noopener">GitHub</a>
+                <a href="contact.html">
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="ja">お問い合わせ</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/lang-simple.js"></script>
+
+    <script>
+    (function() {
+        // ===== Location Data =====
+        const locations = [
+            { id: 'japan', nameEn: 'Japan', nameJa: '日本全体', lat: 30.0, lon: 132.0, zoom: 5 },
+            { id: 'kushimoto', nameEn: 'Kushimoto', nameJa: '串本', lat: 33.47, lon: 135.78, zoom: 11 },
+            { id: 'ogasawara', nameEn: 'Ogasawara', nameJa: '小笠原', lat: 27.09, lon: 142.19, zoom: 9 },
+            { id: 'amami', nameEn: 'Amami', nameJa: '奄美大島', lat: 28.38, lon: 129.49, zoom: 10 },
+            { id: 'sesoko', nameEn: 'Sesoko', nameJa: '瀬底', lat: 26.64, lon: 127.86, zoom: 11 },
+            { id: 'onna', nameEn: 'Onna', nameJa: '恩納村', lat: 26.50, lon: 127.85, zoom: 11 },
+            { id: 'kerama', nameEn: 'Kerama', nameJa: '慶良間', lat: 26.19, lon: 127.31, zoom: 10 },
+            { id: 'sekisei', nameEn: 'Sekisei', nameJa: '石西礁湖', lat: 24.33, lon: 124.10, zoom: 10 }
+        ];
+
+        // ===== Layer Data (ordered by coral stress relevance) =====
+        const layers = [
+            { id: 'sst', icon: '🌡️', nameEn: 'SST', nameJa: '水温', 
+              descEn: 'Sea Surface Temperature—the primary indicator of coral thermal stress. Compare with our SST monitoring page for detailed local analysis.',
+              descJa: '海面水温—サンゴ熱ストレスの主要指標。詳細な分析はSST監視ページもご活用ください。' },
+            { id: 'currents', icon: '↔️', nameEn: 'Currents', nameJa: '海流', 
+              descEn: 'Ocean surface currents. Affects temperature distribution, nutrient transport, and coral recovery potential.',
+              descJa: '海面の海流。水温分布、栄養塩輸送、サンゴの回復可能性に影響します。' },
+            { id: 'wind', icon: '💨', nameEn: 'Wind', nameJa: '風', 
+              descEn: 'Wind speed and direction at 10m height. Essential for boat operations and surface conditions.',
+              descJa: '地上10mの風速と風向。ボートオペレーションや海面状況の把握に不可欠です。' },
+            { id: 'waves', icon: '🌊', nameEn: 'Waves', nameJa: '波', 
+              descEn: 'Combined wave height from wind waves and swell. Shows overall sea state.',
+              descJa: '風浪とうねりを合成した波高。全体的な海況を把握できます。' },
+            { id: 'swell1', icon: '〰️', nameEn: 'Swell', nameJa: 'うねり', 
+              descEn: 'Primary swell height and direction. Critical for entry/exit planning and site selection.',
+              descJa: 'うねりの高さと方向。エントリー・エキジットやポイント選びに重要です。' },
+            { id: 'rain', icon: '🌧️', nameEn: 'Rain', nameJa: '降水', 
+              descEn: 'Precipitation forecast. Affects visibility and freshwater runoff—a stress factor for coastal corals.',
+              descJa: '降水予報。透視度や淡水流入に影響し、沿岸サンゴへのストレス要因となります。' }
+        ];
+
+        // ===== State =====
+        let currentLocation = locations[0];
+        let currentLayer = layers[0];
+        const currentLang = () => document.body.classList.contains('ja') ? 'ja' : 'en';
+
+        // ===== DOM Elements =====
+        const locationPills = document.getElementById('location-pills');
+        const layerGrid = document.getElementById('layer-grid');
+        const windyIframe = document.getElementById('windy-iframe');
+        const mapTitleText = document.getElementById('map-title-text');
+        const mapCoords = document.getElementById('map-coords');
+        const mapIcon = document.getElementById('map-icon');
+        const layerInfoIcon = document.getElementById('layer-info-icon');
+        const layerInfoTitle = document.getElementById('layer-info-title');
+        const layerInfoDesc = document.getElementById('layer-info-desc');
+
+        // ===== Build Windy URL =====
+        function buildWindyUrl(loc, layer) {
+            return `https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=m/s&zoom=${loc.zoom}&overlay=${layer.id}&product=ecmwf&level=surface&lat=${loc.lat}&lon=${loc.lon}&detailLat=${loc.lat}&detailLon=${loc.lon}&marker=true&message=true`;
+        }
+
+        // ===== Update Display =====
+        function updateDisplay() {
+            const isJa = currentLang() === 'ja';
+            
+            // Update iframe
+            windyIframe.src = buildWindyUrl(currentLocation, currentLayer);
+            
+            // Update map header
+            mapTitleText.textContent = isJa ? currentLocation.nameJa : currentLocation.nameEn;
+            mapCoords.textContent = `${currentLocation.lat.toFixed(2)}°N, ${currentLocation.lon.toFixed(2)}°E`;
+            mapIcon.textContent = currentLayer.icon;
+            
+            // Update layer info
+            layerInfoIcon.textContent = currentLayer.icon;
+            layerInfoTitle.textContent = isJa ? currentLayer.nameJa : currentLayer.nameEn;
+            layerInfoDesc.textContent = isJa ? currentLayer.descJa : currentLayer.descEn;
+        }
+
+        // ===== Render Location Pills =====
+        function renderLocationPills() {
+            locationPills.innerHTML = locations.map(loc => `
+                <button class="location-pill ${loc.id === currentLocation.id ? 'active' : ''}" data-id="${loc.id}">
+                    <span data-lang="en">${loc.nameEn}</span>
+                    <span data-lang="ja">${loc.nameJa}</span>
+                </button>
+            `).join('');
+
+            locationPills.querySelectorAll('.location-pill').forEach(pill => {
+                pill.addEventListener('click', () => {
+                    currentLocation = locations.find(l => l.id === pill.dataset.id);
+                    locationPills.querySelectorAll('.location-pill').forEach(p => p.classList.remove('active'));
+                    pill.classList.add('active');
+                    updateDisplay();
+                });
+            });
+        }
+
+        // ===== Render Layer Grid =====
+        function renderLayerGrid() {
+            layerGrid.innerHTML = layers.map(layer => `
+                <button class="layer-btn ${layer.id === currentLayer.id ? 'active' : ''}" data-id="${layer.id}">
+                    <span class="layer-icon">${layer.icon}</span>
+                    <span class="layer-name">
+                        <span data-lang="en">${layer.nameEn}</span>
+                        <span data-lang="ja">${layer.nameJa}</span>
+                    </span>
+                </button>
+            `).join('');
+
+            layerGrid.querySelectorAll('.layer-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentLayer = layers.find(l => l.id === btn.dataset.id);
+                    layerGrid.querySelectorAll('.layer-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    updateDisplay();
+                });
+            });
+        }
+
+        // ===== Initialize =====
+        renderLocationPills();
+        renderLayerGrid();
+        updateDisplay();
+
+        // Language change listener
+        document.addEventListener('langChanged', updateDisplay);
+    })();
+
+    // ===== Navigation JS =====
+    (function() {
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        const sidebarClose = document.getElementById('sidebar-close');
+        
+        function openSidebar() {
+            sidebar.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            hamburger.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        hamburger.addEventListener('click', function() {
+            if (sidebar.classList.contains('active')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+        
+        sidebarOverlay.addEventListener('click', closeSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                closeSidebar();
+            }
+        });
+    })();
+    </script>
+</body>
+</html>
