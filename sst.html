@@ -194,8 +194,8 @@
             <!-- 北部エリア -->
             <div class="region-group">
                 <div class="region-label">
-                    <span data-lang="en">Northern Region</span>
-                    <span data-lang="ja">北部エリア</span>
+                    <span data-lang="en">Northern Limit Zone</span>
+                    <span data-lang="ja">北限域</span>
                 </div>
                 <div class="sst-grid sst-grid-2">
                     <div class="sst-card">
@@ -220,8 +220,8 @@
             <!-- 南部エリア -->
             <div class="region-group">
                 <div class="region-label">
-                    <span data-lang="en">Southern Region (Ryukyu Islands)</span>
-                    <span data-lang="ja">南部エリア（琉球列島）</span>
+                    <span data-lang="en">Subtropical Zone</span>
+                    <span data-lang="ja">亜熱帯域</span>
                 </div>
                 <div class="sst-grid sst-grid-5">
                     <div class="sst-card">
@@ -268,12 +268,12 @@
             </div>
 
             <div style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.9;">
-                <div id="sst-dates-en" data-lang="en">Latest data: -- | Updated: --</div>
-                <div id="sst-dates-ja" data-lang="ja">最新データ: -- | 更新: --</div>
+                <div id="sst-dates-en" data-lang="en">Data: -- (observation date)</div>
+                <div id="sst-dates-ja" data-lang="ja">データ: --（観測日）</div>
             </div>
             <div style="text-align: center; margin-top: 0.75rem; font-size: 0.75rem; opacity: 0.75; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                <span data-lang="en">⏱ NASA MUR SST data is published with a ~1 day delay from observation.</span>
-                <span data-lang="ja">⏱ NASA MUR SSTデータは観測から約1日後に公開されます</span>
+                <span data-lang="en">⏱ NASA MUR SST data is published a few days after observation.</span>
+                <span data-lang="ja">⏱ NASA MUR SSTデータは観測から数日後に公開されます</span>
             </div>
         </section>
 
@@ -731,8 +731,8 @@
                     
                     const enEl = document.getElementById('sst-dates-en');
                     const jaEl = document.getElementById('sst-dates-ja');
-                    if (enEl) enEl.textContent = `Latest data: ${dataEn} | Updated: ${updateEn}`;
-                    if (jaEl) jaEl.textContent = `最新データ: ${dataJa} | 更新: ${updateJa}`;
+                    if (enEl) enEl.textContent = `Data: ${dataEn} (observation date)`;
+                    if (jaEl) jaEl.textContent = `データ: ${dataJa}（観測日）`;
                 }
                 
                 console.log('✓ loadCurrentSST completed (7 sites from Supabase)');
