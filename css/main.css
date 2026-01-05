@@ -1975,6 +1975,14 @@ body.ja .hero-section .hero-tagline { font-size: 1.3rem; }
 }
 .sst-grid-5 {
     grid-template-columns: repeat(5, 1fr) !important;
+    max-width: 100%;
+}
+.sst-grid-5 .sst-card {
+    min-width: 0;
+    padding: 0.75rem 0.5rem;
+}
+.sst-grid-5 .sst-value {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
 }
 @media (max-width: 900px) {
     .sst-grid-5 { 
