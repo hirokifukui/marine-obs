@@ -204,27 +204,27 @@
             <div class="hero-main">
                 
                 <div class="hero-tagline">
-                    <span data-lang="en">Both Extremes Matter</span>
-                    <span data-lang="ja">両極端が問題</span>
+                    <span data-lang="en">Frequency Tells the Warning</span>
+                    <span data-lang="ja">頻度が語る警告</span>
                 </div>
                 <div class="hero-subtitle">
-                    <span data-lang="en">High temperatures trigger bleaching. Cold snaps cause mortality.</span>
-                    <span data-lang="ja">高温は白化を引き起こし、低温は死亡の原因となる</span>
+                    <span data-lang="en">How many days crossed the threshold? That's what corals remember.</span>
+                    <span data-lang="ja">何日間、閾値を超えたか。それがサンゴに刻まれる。</span>
                 </div>
             </div>
             <div class="hero-stats-row">
                 <div class="hero-stat-card">
                     <span class="number" style="color: #fca5a5;" id="hero-hot-2024">--</span>
                     <span class="label">
-                        <span data-lang="en">Manza hot days (2024)</span>
-                        <span data-lang="ja">万座高温日 (2024)</span>
+                        <span data-lang="en">Sekisei hot days (2024)</span>
+                        <span data-lang="ja">石西礁湖 高温日 (2024)</span>
                     </span>
                 </div>
                 <div class="hero-stat-card">
                     <span class="number" style="color: #67e8f9;" id="hero-cold-2025">--</span>
                     <span class="label">
-                        <span data-lang="en">Ogasawara cold days (Winter 2025)</span>
-                        <span data-lang="ja">小笠原低温日 (2025年冬)</span>
+                        <span data-lang="en">Kushimoto cold days (2025)</span>
+                        <span data-lang="ja">串本 低温日 (2025)</span>
                     </span>
                 </div>
             </div>
@@ -238,9 +238,13 @@
             </div>
         </section>
 
-        <!-- Summary Cards - Dynamic from Supabase -->
+        <!-- Region: Honshu & Ogasawara -->
+        <h3 class="region-header" style="margin: 2rem 0 1rem; text-align: center; font-size: 1.1rem; color: var(--text-secondary);">
+            <span data-lang="en">🗾 Honshu & Ogasawara</span>
+            <span data-lang="ja">🗾 本州・小笠原</span>
+        </h3>
         <div class="summary-grid" style="grid-template-columns: repeat(2, 1fr);">
-            <!-- Hot Days 2024 -->
+            <!-- Hot Days 2024 - Honshu/Ogasawara -->
             <div class="summary-card hot">
                 <div class="icon">🔥</div>
                 <div class="label">
@@ -249,13 +253,8 @@
                 </div>
                 <div class="sites">
                     <div class="site-item">
-                        <div class="site-name"><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                        <div class="site-value" id="hot24-manza">--</div>
-                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
-                    </div>
-                    <div class="site-item">
-                        <div class="site-name"><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                        <div class="site-value" id="hot24-sesoko">--</div>
+                        <div class="site-name"><span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span></div>
+                        <div class="site-value" id="hot24-kushimoto">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
@@ -266,48 +265,17 @@
                 </div>
             </div>
 
-            <!-- Hot Days 2025 -->
-            <div class="summary-card hot">
-                <div class="icon">🔥</div>
-                <div class="label">
-                    <span data-lang="en">Hot Days 2025 (≥30°C)</span>
-                    <span data-lang="ja">2025年 高温日（30°C以上）</span>
-                </div>
-                <div class="sites">
-                    <div class="site-item">
-                        <div class="site-name"><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                        <div class="site-value" id="hot25-manza">--</div>
-                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
-                    </div>
-                    <div class="site-item">
-                        <div class="site-name"><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                        <div class="site-value" id="hot25-sesoko">--</div>
-                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
-                    </div>
-                    <div class="site-item">
-                        <div class="site-name"><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
-                        <div class="site-value" id="hot25-ogasawara">--</div>
-                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cold Days Winter 2025 (Nov 2024 - Apr 2025) -->
+            <!-- Cold Days Winter 2025 - Honshu/Ogasawara -->
             <div class="summary-card cold">
                 <div class="icon">❄️</div>
                 <div class="label">
-                    <span data-lang="en">Cold Days Winter 2025 (≤20°C)</span>
-                    <span data-lang="ja">2025年冬 低温日（20°C以下）</span>
+                    <span data-lang="en">Cold Days 2025 (≤20°C)</span>
+                    <span data-lang="ja">2025年 低温日（20°C以下）</span>
                 </div>
                 <div class="sites">
                     <div class="site-item">
-                        <div class="site-name"><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                        <div class="site-value" id="cold25-manza">--</div>
-                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
-                    </div>
-                    <div class="site-item">
-                        <div class="site-name"><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                        <div class="site-value" id="cold25-sesoko">--</div>
+                        <div class="site-name"><span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span></div>
+                        <div class="site-value" id="cold25-kushimoto">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
@@ -316,39 +284,84 @@
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                 </div>
-                <div class="period-note">
-                    <span data-lang="en">Nov 2024 – Apr 2025</span>
-                    <span data-lang="ja">2024年11月〜2025年4月</span>
-                </div>
             </div>
+        </div>
 
-            <!-- Cold Days Winter 2026 (Nov 2025 - ongoing) -->
-            <div class="summary-card cold">
-                <div class="icon">❄️</div>
+        <!-- Region: Ryukyu Islands -->
+        <h3 class="region-header" style="margin: 2rem 0 1rem; text-align: center; font-size: 1.1rem; color: var(--text-secondary);">
+            <span data-lang="en">🏝️ Ryukyu Islands</span>
+            <span data-lang="ja">🏝️ 琉球列島</span>
+        </h3>
+        <div class="summary-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <!-- Hot Days 2024 - Ryukyu -->
+            <div class="summary-card hot">
+                <div class="icon">🔥</div>
                 <div class="label">
-                    <span data-lang="en">Cold Days Winter 2026 (≤20°C)</span>
-                    <span data-lang="ja">2026年冬 低温日（20°C以下）</span>
+                    <span data-lang="en">Hot Days 2024 (≥30°C)</span>
+                    <span data-lang="ja">2024年 高温日（30°C以上）</span>
                 </div>
                 <div class="sites">
                     <div class="site-item">
-                        <div class="site-name"><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                        <div class="site-value" id="cold26-manza">--</div>
+                        <div class="site-name"><span data-lang="en">Amami</span><span data-lang="ja">奄美</span></div>
+                        <div class="site-value" id="hot24-amami">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                        <div class="site-value" id="cold26-sesoko">--</div>
+                        <div class="site-value" id="hot24-sesoko">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
-                        <div class="site-name"><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
-                        <div class="site-value" id="cold26-ogasawara">--</div>
+                        <div class="site-name"><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
+                        <div class="site-value" id="hot24-manza">--</div>
+                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
+                    </div>
+                    <div class="site-item">
+                        <div class="site-name"><span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span></div>
+                        <div class="site-value" id="hot24-kerama">--</div>
+                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
+                    </div>
+                    <div class="site-item">
+                        <div class="site-name"><span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span></div>
+                        <div class="site-value" id="hot24-sekisei">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                 </div>
-                <div class="period-note ongoing">
-                    <span data-lang="en">Nov 2025 – ongoing 🔴</span>
-                    <span data-lang="ja">2025年11月〜進行中 🔴</span>
+            </div>
+
+            <!-- Hot Days 2025 - Ryukyu -->
+            <div class="summary-card hot">
+                <div class="icon">🔥</div>
+                <div class="label">
+                    <span data-lang="en">Hot Days 2025 (≥30°C)</span>
+                    <span data-lang="ja">2025年 高温日（30°C以上）</span>
+                </div>
+                <div class="sites">
+                    <div class="site-item">
+                        <div class="site-name"><span data-lang="en">Amami</span><span data-lang="ja">奄美</span></div>
+                        <div class="site-value" id="hot25-amami">--</div>
+                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
+                    </div>
+                    <div class="site-item">
+                        <div class="site-name"><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
+                        <div class="site-value" id="hot25-sesoko">--</div>
+                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
+                    </div>
+                    <div class="site-item">
+                        <div class="site-name"><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
+                        <div class="site-value" id="hot25-manza">--</div>
+                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
+                    </div>
+                    <div class="site-item">
+                        <div class="site-name"><span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span></div>
+                        <div class="site-value" id="hot25-kerama">--</div>
+                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
+                    </div>
+                    <div class="site-item">
+                        <div class="site-name"><span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span></div>
+                        <div class="site-value" id="hot25-sekisei">--</div>
+                        <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -742,7 +755,7 @@
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const data = await response.json();
                 
-                const sites = ['manza', 'sesoko', 'ogasawara'];
+                const sites = ['kushimoto', 'ogasawara', 'amami', 'sesoko', 'manza', 'kerama', 'sekisei'];
                 
                 // Hot Days 2024
                 sites.forEach(site => {
@@ -770,10 +783,10 @@
                 
                 // Hero stats
                 const heroHot = document.getElementById('hero-hot-2024');
-                if (heroHot) heroHot.textContent = data.hot_2024?.manza ?? '--';
+                if (heroHot) heroHot.textContent = data.hot_2024?.sekisei ?? '--';
                 
                 const heroCold = document.getElementById('hero-cold-2025');
-                if (heroCold) heroCold.textContent = data.cold_winter_2025?.ogasawara ?? '--';
+                if (heroCold) heroCold.textContent = data.cold_winter_2025?.kushimoto ?? '--';
                 
                 // Date display (Observed = Published - 3 days)
                 if (data.latest_date) {
