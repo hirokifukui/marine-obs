@@ -456,7 +456,7 @@
                     </div>
                     <p style="margin: 0; font-size: 0.9rem; line-height: 1.6;">
                         <span data-lang="en"><em>Acropora pruinosa</em> survives 13–16°C winters here—temperatures that would kill tropical populations. This cold tolerance may hold genetic keys for future adaptation.</span>
-                        <span data-lang="ja"><em>Acropora pruinosa</em>は13〜16°Cの冬を生き延びます—熱帯の個体群なら死亡する温度です。この耐寒性は将来の適応への遺伝的鍵を握る可能性があります。</span>
+                        <span data-lang="ja"><em>クシハダミドリイシ</em>は13〜16°Cの冬を生き延びます—熱帯の個体群なら死亡する温度です。この耐寒性は将来の適応への遺伝的鍵を握る可能性があります。</span>
                     </p>
                 </div>
             </div>
@@ -866,24 +866,20 @@
                 const heroCold = document.getElementById('hero-cold-2025');
                 if (heroCold) heroCold.textContent = data.cold_winter_2025?.kushimoto ?? '--';
                 
-                // Date display (Observed = Published - 3 days)
+                // Date display (use latest_date directly as observation date)
                 if (data.latest_date) {
-                    const pubDateObj = new Date(Date.UTC(
+                    const dataDateObj = new Date(Date.UTC(
                         ...data.latest_date.split('-').map(Number).map((v, i) => i === 1 ? v - 1 : v)
                     ));
-                    const obsDateObj = new Date(pubDateObj);
-                    obsDateObj.setUTCDate(obsDateObj.getUTCDate() - 3);
                     
                     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-                    const pubEn = months[pubDateObj.getUTCMonth()] + ' ' + pubDateObj.getUTCDate();
-                    const obsEn = months[obsDateObj.getUTCMonth()] + ' ' + obsDateObj.getUTCDate();
-                    const pubJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
-                    const obsJa = `${obsDateObj.getUTCMonth() + 1}/${obsDateObj.getUTCDate()}`;
+                    const dataEn = months[dataDateObj.getUTCMonth()] + ' ' + dataDateObj.getUTCDate();
+                    const dataJa = `${dataDateObj.getUTCMonth() + 1}/${dataDateObj.getUTCDate()}`;
                     
                     const enEl = document.getElementById('sst-dates-en');
                     const jaEl = document.getElementById('sst-dates-ja');
-                    if (enEl) enEl.textContent = `Data: ${obsJa} (observation date)`;
-                    if (jaEl) jaEl.textContent = `データ: ${obsJa}（観測日）`;
+                    if (enEl) enEl.textContent = `Data: ${dataEn} (observation date)`;
+                    if (jaEl) jaEl.textContent = `データ: ${dataJa}（観測日）`;
                 }
                 
                 console.log('✓ Extreme days loaded from Supabase');
