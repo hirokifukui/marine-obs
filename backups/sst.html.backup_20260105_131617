@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SST - Sea Surface Temperature | marine-obs.org</title>
     <!-- SEO / OGP -->
-    <meta name="description" content="串本から石西礁湖まで7地点の日次海水温をNASA衛星データで追跡。22年分の推移と現在値をリアルタイム表示。">
+    <meta name="description" content="万座・瀬底・小笠原の日次海水温をNASA衛星データで追跡。22年分の推移と現在値をリアルタイム表示。">
     <meta property="og:title" content="海水温 | marine-obs.org">
-    <meta property="og:description" content="串本から石西礁湖まで7地点の日次海水温をNASA衛星データで追跡。22年分の推移と現在値をリアルタイム表示。">
+    <meta property="og:description" content="万座・瀬底・小笠原の日次海水温をNASA衛星データで追跡。22年分の推移と現在値をリアルタイム表示。">
     <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
     <meta property="og:url" content="https://marine-obs.org/sst.html">
     <meta property="og:type" content="website">
@@ -191,89 +191,40 @@
                 </div>
             </div>
 
-            <!-- 北部エリア -->
-            <div class="region-group">
-                <div class="region-label">
-                    <span data-lang="en">Northern Region</span>
-                    <span data-lang="ja">北部エリア</span>
+            <div class="sst-grid">
+                <div class="sst-card">
+                    <div class="sst-location">
+                        <span class="site-dot" style="background: var(--manza);"></span>
+                        <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
+                    </div>
+                    <div class="sst-value" id="sst-manza">--.-°C</div>
+                    <div class="sst-diff neutral" id="diff-manza">-- vs MMM</div>
                 </div>
-                <div class="sst-grid sst-grid-2">
-                    <div class="sst-card">
-                        <div class="sst-location">
-                            <span class="site-dot" style="background: var(--kushimoto);"></span>
-                            <span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span>
-                        </div>
-                        <div class="sst-value" id="sst-kushimoto">--.-°C</div>
-                        <div class="sst-diff neutral" id="diff-kushimoto">-- vs MMM</div>
+                <div class="sst-card">
+                    <div class="sst-location">
+                        <span class="site-dot" style="background: var(--sesoko);"></span>
+                        <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
                     </div>
-                    <div class="sst-card">
-                        <div class="sst-location">
-                            <span class="site-dot" style="background: var(--ogasawara);"></span>
-                            <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
-                        </div>
-                        <div class="sst-value" id="sst-ogasawara">--.-°C</div>
-                        <div class="sst-diff neutral" id="diff-ogasawara">-- vs MMM</div>
-                    </div>
+                    <div class="sst-value" id="sst-sesoko">--.-°C</div>
+                    <div class="sst-diff neutral" id="diff-sesoko">-- vs MMM</div>
                 </div>
-            </div>
-
-            <!-- 南部エリア -->
-            <div class="region-group">
-                <div class="region-label">
-                    <span data-lang="en">Southern Region (Ryukyu Islands)</span>
-                    <span data-lang="ja">南部エリア（琉球列島）</span>
-                </div>
-                <div class="sst-grid sst-grid-5">
-                    <div class="sst-card">
-                        <div class="sst-location">
-                            <span class="site-dot" style="background: var(--amami);"></span>
-                            <span data-lang="en">Amami</span><span data-lang="ja">奄美</span>
-                        </div>
-                        <div class="sst-value" id="sst-amami">--.-°C</div>
-                        <div class="sst-diff neutral" id="diff-amami">-- vs MMM</div>
+                <div class="sst-card">
+                    <div class="sst-location">
+                        <span class="site-dot" style="background: var(--ogasawara);"></span>
+                        <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
                     </div>
-                    <div class="sst-card">
-                        <div class="sst-location">
-                            <span class="site-dot" style="background: var(--sesoko);"></span>
-                            <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
-                        </div>
-                        <div class="sst-value" id="sst-sesoko">--.-°C</div>
-                        <div class="sst-diff neutral" id="diff-sesoko">-- vs MMM</div>
-                    </div>
-                    <div class="sst-card">
-                        <div class="sst-location">
-                            <span class="site-dot" style="background: var(--manza);"></span>
-                            <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
-                        </div>
-                        <div class="sst-value" id="sst-manza">--.-°C</div>
-                        <div class="sst-diff neutral" id="diff-manza">-- vs MMM</div>
-                    </div>
-                    <div class="sst-card">
-                        <div class="sst-location">
-                            <span class="site-dot" style="background: var(--kerama);"></span>
-                            <span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span>
-                        </div>
-                        <div class="sst-value" id="sst-kerama">--.-°C</div>
-                        <div class="sst-diff neutral" id="diff-kerama">-- vs MMM</div>
-                    </div>
-                    <div class="sst-card">
-                        <div class="sst-location">
-                            <span class="site-dot" style="background: var(--sekisei);"></span>
-                            <span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span>
-                        </div>
-                        <div class="sst-value" id="sst-sekisei">--.-°C</div>
-                        <div class="sst-diff neutral" id="diff-sekisei">-- vs MMM</div>
-                    </div>
+                    <div class="sst-value" id="sst-ogasawara">--.-°C</div>
+                    <div class="sst-diff neutral" id="diff-ogasawara">-- vs MMM</div>
                 </div>
             </div>
 
             <div style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.9;">
-                <div id="sst-dates-en" data-lang="en">Latest data: -- | Updated: --</div>
-                <div id="sst-dates-ja" data-lang="ja">最新データ: -- | 更新: --</div>
+                <div id="sst-dates-en" data-lang="en">Observed: -- | Published: --</div>
+                <div id="sst-dates-ja" data-lang="ja">観測日: -- | 公開日: --</div>
             </div>
             <div style="text-align: center; margin-top: 0.75rem; font-size: 0.75rem; opacity: 0.75; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                <span data-lang="en">⏱ NASA MUR SST data is published with a ~1 day delay from observation.</span>
-                <span data-lang="ja">⏱ NASA MUR SSTデータは観測から約1日後に公開されます</span>
+                <span data-lang="en">⏱ Satellite data is published approximately 2-3 days after observation due to NASA's processing pipeline.</span>
+                <span data-lang="ja">⏱ 衛星データは観測から約2〜3日後に公開されます（NASAの処理パイプラインによる）</span>
             </div>
         </section>
 
@@ -663,13 +614,9 @@
     <script>
         // MMM values for each site
         const MMM = {
-            kushimoto: 28.0,
-            ogasawara: 28.5,
-            amami: 29.0,
-            sesoko: 29.0,
-            manza: 29.0,
-            kerama: 29.0,
-            sekisei: 29.5
+            manza: 28.9,
+            sesoko: 28.8,
+            ogasawara: 28.3
         };
 
         // Chart instances
@@ -680,62 +627,52 @@
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlZ2l1aWJscGxpYWlucGRnZ2ZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQyMDkzNzQsImV4cCI6MjA3OTc4NTM3NH0.r9dBAsMLoXbgZL93lvA756r74U6YfCCfftHHlxYqZIw';
 
         async function loadCurrentSST() {
-            const SITES = ['kushimoto', 'ogasawara', 'amami', 'sesoko', 'manza', 'kerama', 'sekisei'];
             try {
                 const response = await fetch(
-                    `${SUPABASE_URL}/rest/v1/sst_daily?select=date,site_code,sst&order=date.desc&limit=21`,
+                    `${SUPABASE_URL}/rest/v1/sst_daily?select=date,site_code,sst&order=date.desc&limit=3`,
                     { headers: { 'apikey': SUPABASE_ANON_KEY } }
                 );
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const data = await response.json();
                 
                 const latest = {};
-                let latestDate = null;
-                data.forEach(row => {
-                    if (!latest[row.site_code]) {
-                        latest[row.site_code] = { sst: row.sst, date: row.date };
-                    }
-                    if (!latestDate || row.date > latestDate) latestDate = row.date;
-                });
+                data.forEach(row => { latest[row.site_code] = row.sst; });
+                const publishedDate = data[0]?.date;
                 
-                SITES.forEach(site => {
-                    const siteData = latest[site];
-                    if (siteData) {
-                        const sst = siteData.sst;
+                ['manza', 'sesoko', 'ogasawara'].forEach(site => {
+                    const sst = latest[site];
+                    if (sst !== undefined) {
                         const diff = sst - MMM[site];
                         
-                        const sstEl = document.getElementById(`sst-${site}`);
-                        if (sstEl) sstEl.textContent = sst.toFixed(1) + '°C';
+                        document.getElementById(`sst-${site}`).textContent = sst.toFixed(1) + '°C';
                         
                         const diffEl = document.getElementById(`diff-${site}`);
-                        if (diffEl) {
-                            const sign = diff >= 0 ? '+' : '';
-                            diffEl.textContent = `${sign}${diff.toFixed(1)}°C vs MMM`;
-                            diffEl.className = 'sst-diff ' + (diff > 1 ? 'above' : diff < -1 ? 'below' : 'neutral');
-                        }
+                        const sign = diff >= 0 ? '+' : '';
+                        diffEl.textContent = `${sign}${diff.toFixed(1)}°C vs MMM`;
+                        diffEl.className = 'sst-diff ' + (diff > 1 ? 'above' : diff < -1 ? 'below' : 'neutral');
                     }
                 });
                 
-                // 日付表示: 最新データ日 | 更新日（今日）
-                if (latestDate) {
-                    const dataDateObj = new Date(Date.UTC(
-                        ...latestDate.split('-').map(Number).map((v, i) => i === 1 ? v - 1 : v)
+                if (publishedDate) {
+                    const pubDateObj = new Date(Date.UTC(
+                        ...publishedDate.split('-').map(Number).map((v, i) => i === 1 ? v - 1 : v)
                     ));
-                    const today = new Date();
+                    const obsDateObj = new Date(pubDateObj);
+                    obsDateObj.setUTCDate(obsDateObj.getUTCDate() - 3);
                     
                     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-                    const dataEn = months[dataDateObj.getUTCMonth()] + ' ' + dataDateObj.getUTCDate();
-                    const dataJa = `${dataDateObj.getUTCMonth() + 1}/${dataDateObj.getUTCDate()}`;
-                    const updateEn = months[today.getMonth()] + ' ' + today.getDate();
-                    const updateJa = `${today.getMonth() + 1}/${today.getDate()}`;
+                    const pubEn = months[pubDateObj.getUTCMonth()] + ' ' + pubDateObj.getUTCDate();
+                    const obsEn = months[obsDateObj.getUTCMonth()] + ' ' + obsDateObj.getUTCDate();
+                    const pubJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
+                    const obsJa = `${obsDateObj.getUTCMonth() + 1}/${obsDateObj.getUTCDate()}`;
                     
                     const enEl = document.getElementById('sst-dates-en');
                     const jaEl = document.getElementById('sst-dates-ja');
-                    if (enEl) enEl.textContent = `Latest data: ${dataEn} | Updated: ${updateEn}`;
-                    if (jaEl) jaEl.textContent = `最新データ: ${dataJa} | 更新: ${updateJa}`;
+                    if (enEl) enEl.textContent = `Observed: ${obsEn} | Published: ${pubEn}`;
+                    if (jaEl) jaEl.textContent = `観測日: ${obsJa} | 公開日: ${pubJa}`;
                 }
                 
-                console.log('✓ loadCurrentSST completed (7 sites from Supabase)');
+                console.log('✓ loadCurrentSST completed (from Supabase)');
             } catch (e) {
                 console.error('Failed to load SST data:', e);
             }

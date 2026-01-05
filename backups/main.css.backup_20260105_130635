@@ -1869,13 +1869,9 @@ body.ja .hero-tagline-sub {
 
 /* Site Colors */
 :root {
-    --kushimoto: #805ad5;
-    --ogasawara: #2f855a;
-    --amami: #d53f8c;
-    --sesoko: #2b6cb0;
     --manza: #c05621;
-    --kerama: #0891b2;
-    --sekisei: #e53e3e;
+    --sesoko: #2b6cb0;
+    --ogasawara: #2f855a;
 }
 
 /* Breadcrumb */
@@ -1952,48 +1948,6 @@ body.ja .hero-section .hero-tagline { font-size: 1.3rem; }
 .hero-subtitle {
     font-size: 1rem;
     opacity: 0.9;
-}
-
-
-/* Region Groups (7-site layout) */
-.region-group {
-    margin-top: 1.5rem;
-}
-.region-label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    opacity: 0.7;
-    margin-bottom: 0.75rem;
-    padding-left: 0.25rem;
-}
-.sst-grid-2 {
-    grid-template-columns: repeat(2, 1fr) !important;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.sst-grid-5 {
-    grid-template-columns: repeat(5, 1fr) !important;
-}
-@media (max-width: 900px) {
-    .sst-grid-5 { 
-        grid-template-columns: repeat(3, 1fr) !important; 
-    }
-}
-@media (max-width: 640px) {
-    .sst-grid-2 { 
-        grid-template-columns: repeat(2, 1fr) !important;
-        max-width: 100%;
-    }
-    .sst-grid-5 { 
-        grid-template-columns: repeat(2, 1fr) !important; 
-    }
-}
-@media (max-width: 400px) {
-    .sst-grid-2, .sst-grid-5 { 
-        grid-template-columns: 1fr !important; 
-    }
 }
 
 /* SST Grid */
@@ -2236,13 +2190,9 @@ body.ja .hero-section .hero-tagline { font-size: 1.3rem; }
     height: 3px;
     border-radius: 2px;
 }
-.legend-kushimoto { background: var(--kushimoto); }
-.legend-ogasawara { background: var(--ogasawara); }
-.legend-amami { background: var(--amami); }
-.legend-sesoko { background: var(--sesoko); }
 .legend-manza { background: var(--manza); }
-.legend-kerama { background: var(--kerama); }
-.legend-sekisei { background: var(--sekisei); }
+.legend-sesoko { background: var(--sesoko); }
+.legend-ogasawara { background: var(--ogasawara); }
 .legend-mmm { background: #e53e3e; }
 .legend-clim {
     background: repeating-linear-gradient(
