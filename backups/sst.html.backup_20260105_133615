@@ -463,34 +463,22 @@
                 <div class="chart-container">
                     <canvas id="sstChart"></canvas>
                 </div>
-                <div class="chart-legend chart-legend-7">
+                <div class="chart-legend">
                     <div class="legend-item">
-                        <span class="legend-line legend-kushimoto"></span>
-                        <span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-line legend-ogasawara"></span>
-                        <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-line legend-amami"></span>
-                        <span data-lang="en">Amami</span><span data-lang="ja">奄美</span>
+                        <span class="legend-line legend-manza"></span>
+                        <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
                     </div>
                     <div class="legend-item">
                         <span class="legend-line legend-sesoko"></span>
                         <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
                     </div>
                     <div class="legend-item">
-                        <span class="legend-line legend-manza"></span>
-                        <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
+                        <span class="legend-line legend-ogasawara"></span>
+                        <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
                     </div>
                     <div class="legend-item">
-                        <span class="legend-line legend-kerama"></span>
-                        <span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-line legend-sekisei"></span>
-                        <span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span>
+                        <span class="legend-line legend-mmm"></span>
+                        <span data-lang="en">MMM+1°C (Bleaching)</span><span data-lang="ja">MMM+1°C（白化）</span>
                     </div>
                 </div>
             </div>
@@ -506,34 +494,18 @@
                 <div class="chart-container">
                     <canvas id="climChart"></canvas>
                 </div>
-                <div class="chart-legend chart-legend-7">
+                <div class="chart-legend">
                     <div class="legend-item">
-                        <span class="legend-line legend-kushimoto"></span>
-                        <span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-line legend-ogasawara"></span>
-                        <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-line legend-amami"></span>
-                        <span data-lang="en">Amami</span><span data-lang="ja">奄美</span>
+                        <span class="legend-line legend-manza"></span>
+                        <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
                     </div>
                     <div class="legend-item">
                         <span class="legend-line legend-sesoko"></span>
                         <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
                     </div>
                     <div class="legend-item">
-                        <span class="legend-line legend-manza"></span>
-                        <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-line legend-kerama"></span>
-                        <span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-line legend-sekisei"></span>
-                        <span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span>
+                        <span class="legend-line legend-ogasawara"></span>
+                        <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
                     </div>
                 </div>
             </div>
@@ -807,42 +779,60 @@
         }
 
         async function renderSSTChart() {
-            const SITE_CONFIG = {
-                kushimoto: { label: 'Kushimoto', color: '#805ad5' },
-                ogasawara: { label: 'Ogasawara', color: '#2f855a' },
-                amami: { label: 'Amami', color: '#d53f8c' },
-                sesoko: { label: 'Sesoko', color: '#2b6cb0' },
-                manza: { label: 'Manza', color: '#c05621' },
-                kerama: { label: 'Kerama', color: '#0891b2' },
-                sekisei: { label: 'Sekisei', color: '#e53e3e' }
-            };
             try {
                 const response = await fetch('data/sst_recent.json');
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const data = await response.json();
                 
-                // ラベル用に最初に見つかったサイトを使用
-                const firstSite = Object.keys(SITE_CONFIG).find(s => data[s]?.length > 0);
-                if (!firstSite) throw new Error('No site data');
+                if (!data.manza || data.manza.length === 0) {
+                    throw new Error('No manza data');
+                }
                 
-                const labels = data[firstSite].map(d => d.date.slice(5));
-                
-                const datasets = Object.entries(SITE_CONFIG).map(([site, cfg]) => ({
-                    label: cfg.label,
-                    data: data[site]?.map(d => d.sst) || [],
-                    borderColor: cfg.color,
-                    backgroundColor: 'transparent',
-                    borderWidth: 2,
-                    pointRadius: 0,
-                    tension: 0.3
-                }));
+                const labels = data.manza.map(d => d.date.slice(5));
                 
                 const ctx = document.getElementById('sstChart').getContext('2d');
                 sstChart = new Chart(ctx, {
                     type: 'line',
                     data: {
                         labels: labels,
-                        datasets: datasets
+                        datasets: [
+                            {
+                                label: 'Manza',
+                                data: data.manza.map(d => d.sst),
+                                borderColor: '#c05621',
+                                backgroundColor: 'transparent',
+                                borderWidth: 2,
+                                pointRadius: 0,
+                                tension: 0.3
+                            },
+                            {
+                                label: 'Sesoko',
+                                data: data.sesoko.map(d => d.sst),
+                                borderColor: '#2b6cb0',
+                                backgroundColor: 'transparent',
+                                borderWidth: 2,
+                                pointRadius: 0,
+                                tension: 0.3
+                            },
+                            {
+                                label: 'Ogasawara',
+                                data: data.ogasawara.map(d => d.sst),
+                                borderColor: '#2f855a',
+                                backgroundColor: 'transparent',
+                                borderWidth: 2,
+                                pointRadius: 0,
+                                tension: 0.3
+                            },
+                            {
+                                label: 'Bleaching Threshold',
+                                data: Array(labels.length).fill(29.8),
+                                borderColor: '#e53e3e',
+                                borderWidth: 1,
+                                borderDash: [5, 5],
+                                pointRadius: 0,
+                                fill: false
+                            }
+                        ]
                     },
                     options: {
                         responsive: true,
@@ -878,34 +868,49 @@
                     throw new Error('No manza climatology data');
                 }
                 
-                const SITE_CONFIG = {
-                    kushimoto: { label: 'Kushimoto', color: '#805ad5' },
-                    ogasawara: { label: 'Ogasawara', color: '#2f855a' },
-                    amami: { label: 'Amami', color: '#d53f8c' },
-                    sesoko: { label: 'Sesoko', color: '#2b6cb0' },
-                    manza: { label: 'Manza', color: '#c05621' },
-                    kerama: { label: 'Kerama', color: '#0891b2' },
-                    sekisei: { label: 'Sekisei', color: '#e53e3e' }
-                };
                 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
                 
-                const datasets = Object.entries(SITE_CONFIG).map(([site, cfg]) => ({
-                    label: cfg.label,
-                    data: data[site]?.map(d => d.avg_sst) || [],
-                    borderColor: cfg.color,
-                    backgroundColor: cfg.color + '1a',
-                    borderWidth: 2,
-                    pointRadius: 2,
-                    fill: false,
-                    tension: 0.4
-                }));
+                const manzaData = data.manza.map(d => d.avg_sst);
+                const sesokoData = data.sesoko.map(d => d.avg_sst);
+                const ogasawaraData = data.ogasawara.map(d => d.avg_sst);
                 
                 const ctx = document.getElementById('climChart').getContext('2d');
                 climChart = new Chart(ctx, {
                     type: 'line',
                     data: {
                         labels: months,
-                        datasets: datasets
+                        datasets: [
+                            {
+                                label: 'Manza',
+                                data: manzaData,
+                                borderColor: '#c05621',
+                                backgroundColor: 'rgba(192, 86, 33, 0.1)',
+                                borderWidth: 2,
+                                pointRadius: 3,
+                                fill: true,
+                                tension: 0.4
+                            },
+                            {
+                                label: 'Sesoko',
+                                data: sesokoData,
+                                borderColor: '#2b6cb0',
+                                backgroundColor: 'rgba(43, 108, 176, 0.1)',
+                                borderWidth: 2,
+                                pointRadius: 3,
+                                fill: true,
+                                tension: 0.4
+                            },
+                            {
+                                label: 'Ogasawara',
+                                data: ogasawaraData,
+                                borderColor: '#2f855a',
+                                backgroundColor: 'rgba(47, 133, 90, 0.1)',
+                                borderWidth: 2,
+                                pointRadius: 3,
+                                fill: true,
+                                tension: 0.4
+                            }
+                        ]
                     },
                     options: {
                         responsive: true,

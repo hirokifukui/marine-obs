@@ -2935,3 +2935,13 @@ main.detail-page {
         background-position: center;
     }
 }
+
+/* 7-site chart legend */
+.chart-legend-7 {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1rem;
+}
+.chart-legend-7 .legend-item {
+    font-size: 0.75rem;
+}
