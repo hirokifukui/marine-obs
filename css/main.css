@@ -2963,3 +2963,39 @@ main.detail-page {
 .threshold-table-7 .site-header {
     font-size: 0.75rem;
 }
+
+/* Regional characteristics boxes */
+.region-box {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid;
+}
+.region-box.honshu {
+    border-left-color: #805ad5;
+}
+.region-box.ryukyu {
+    border-left-color: #e53e3e;
+}
+.region-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1a202c;
+}
+.region-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+.region-content p:last-child {
+    margin-bottom: 0;
+}
+.highlight-cold {
+    background: linear-gradient(transparent 60%, rgba(128, 90, 213, 0.2) 60%);
+    padding: 0 2px;
+}
+.highlight-heat {
+    background: linear-gradient(transparent 60%, rgba(229, 62, 62, 0.2) 60%);
+    padding: 0 2px;
+}

@@ -622,56 +622,6 @@
             </div>
         </section>
 
-
-        <!-- ===== REGIONAL CHARACTERISTICS ===== -->
-        <section class="content-section">
-            <h2>
-                <span data-lang="en">Regional Characteristics</span>
-                <span data-lang="ja">地域特性</span>
-            </h2>
-            
-            <div class="region-box honshu">
-                <div class="region-title">
-                    <span data-lang="en">🗾 Honshu & Ogasawara</span>
-                    <span data-lang="ja">🗾 本州・小笠原</span>
-                </div>
-                <div class="region-content">
-                    <p data-lang="en">
-                        <strong>Kushimoto</strong> (33.5°N) marks the <em>northern limit of coral reef formation</em> in Japan. The Kuroshio Current brings warm water, enabling tropical corals to survive at unusually high latitudes. However, winter temperatures can drop below 18°C, causing <span class="highlight-cold">cold stress</span> that limits species diversity. Climate change is enabling poleward range expansion of some coral species (Yara et al. 2012).
-                    </p>
-                    <p data-lang="ja">
-                        <strong>串本</strong>（北緯33.5°）は日本における<em>サンゴ礁形成の北限</em>です。黒潮が暖水をもたらし、熱帯性サンゴが異常に高い緯度で生存できます。ただし冬季水温は18°C以下に低下し、種の多様性を制限する<span class="highlight-cold">低温ストレス</span>を引き起こします。気候変動により一部のサンゴ種の北方への分布拡大が進んでいます（Yara et al. 2012）。
-                    </p>
-                    <p data-lang="en">
-                        <strong>Ogasawara</strong> (27°N) is an oceanic island chain with unique biodiversity. Despite similar latitude to Okinawa, its isolation results in distinct thermal patterns and endemic species. The 2024 bleaching event caused significant stress here.
-                    </p>
-                    <p data-lang="ja">
-                        <strong>小笠原</strong>（北緯27°）は独特の生物多様性を持つ海洋島嶼群です。沖縄と同緯度にもかかわらず、その孤立性により独自の温度パターンと固有種が存在します。2024年の白化イベントではここでも大きなストレスが観測されました。
-                    </p>
-                </div>
-            </div>
-            
-            <div class="region-box ryukyu">
-                <div class="region-title">
-                    <span data-lang="en">🏝️ Ryukyu Islands</span>
-                    <span data-lang="ja">🏝️ 琉球列島</span>
-                </div>
-                <div class="region-content">
-                    <p data-lang="en">
-                        The Ryukyu archipelago hosts Japan's most extensive coral reef ecosystems. <strong>Sekisei Lagoon</strong> is Japan's largest coral reef, designated as a national park. These reefs face recurring <span class="highlight-heat">heat stress</span>—the 2016 and 2024 mass bleaching events caused severe mortality across the region (Kayanne et al. 2017).
-                    </p>
-                    <p data-lang="ja">
-                        琉球列島は日本最大規模のサンゴ礁生態系を有しています。<strong>石西礁湖</strong>は日本最大のサンゴ礁であり、国立公園に指定されています。これらのリーフは繰り返し<span class="highlight-heat">高温ストレス</span>に直面しており、2016年と2024年の大規模白化イベントでは地域全体で深刻な死滅が発生しました（Kayanne et al. 2017）。
-                    </p>
-                    <p data-lang="en">
-                        From <strong>Amami</strong> in the north to <strong>Sekisei</strong> in the south, thermal stress intensifies southward. DHW values in 2024 reached 8.4 at Sekisei—well above the mortality threshold. Recovery depends on reducing cumulative stress through consecutive cool years (Afzal et al. 2024).
-                    </p>
-                    <p data-lang="ja">
-                        北の<strong>奄美</strong>から南の<strong>石西礁湖</strong>まで、熱ストレスは南下するほど強くなります。2024年のDHW値は石西礁湖で8.4に達し、死滅閾値を大きく上回りました。回復には連続した冷涼年による累積ストレスの軽減が必要です（Afzal et al. 2024）。
-                    </p>
-                </div>
-            </div>
-        </section>
         <!-- ===== MONITORING SIGNIFICANCE ===== -->
         <section class="content-section">
             <h2>
