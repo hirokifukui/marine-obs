@@ -571,3 +571,23 @@
         background-position: center !important;
     }
 }
+
+/* Mobile: wrap site items for cards with many sites */
+@media (max-width: 640px) {
+    .summary-card .sites {
+        flex-wrap: wrap;
+        gap: 0.75rem 1rem;
+    }
+    
+    .summary-card .site-item {
+        min-width: 60px;
+    }
+    
+    .summary-card .site-value {
+        font-size: 1.3rem;
+    }
+    
+    .summary-card .site-name {
+        font-size: 0.6rem;
+    }
+}
