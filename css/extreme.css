@@ -417,7 +417,8 @@
             flex-wrap: wrap;
         }
         .hero-stat-card {
-            min-width: 160px;
+            flex: 1;
+            max-width: 220px;
             background: rgba(255,255,255,0.15);
             border-radius: 8px;
             padding: 1rem 1.5rem;
