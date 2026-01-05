@@ -591,3 +591,10 @@
         font-size: 0.6rem;
     }
 }
+
+/* Mobile: stack chart grid */
+@media (max-width: 768px) {
+    .chart-grid {
+        grid-template-columns: 1fr !important;
+    }
+}

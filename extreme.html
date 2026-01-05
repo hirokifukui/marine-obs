@@ -634,35 +634,97 @@
             </div>
         </section>
 
-        <!-- Hot Days Chart -->
-        <div class="card">
-            <div class="card-title">
-                <span data-lang="en">🔥 Annual Hot Days (≥30°C) — 2003-2025</span>
-                <span data-lang="ja">🔥 年間高温日数（30°C以上）— 2003-2025年</span>
+        <!-- Charts Section Header -->
+        <section class="content-section" style="margin-bottom: 0;">
+            <h2>
+                <span data-lang="en">📈 Historical Trends (2003-2025)</span>
+                <span data-lang="ja">📈 過去の推移（2003-2025年）</span>
+            </h2>
+        </section>
+
+        <!-- Region: Honshu & Ogasawara Charts -->
+        <h3 class="region-header" style="margin: 1.5rem 0 1rem; text-align: center; font-size: 1rem; color: var(--text-secondary);">
+            <span data-lang="en">🗾 Honshu & Ogasawara</span>
+            <span data-lang="ja">🗾 本州・小笠原</span>
+        </h3>
+        
+        <div class="chart-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem;">
+            <!-- Hot Days - Honshu/Ogasawara -->
+            <div class="card">
+                <div class="card-title" style="font-size: 0.9rem;">
+                    <span data-lang="en">🔥 Hot Days (≥30°C)</span>
+                    <span data-lang="ja">🔥 高温日（30°C以上）</span>
+                </div>
+                <div class="chart-container" style="height: 200px;">
+                    <canvas id="hotDaysChartHonshu"></canvas>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--kushimoto)"></span><span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span></div>
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--ogasawara)"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
+                </div>
             </div>
-            <div class="chart-container">
-                <canvas id="hotDaysChart"></canvas>
-            </div>
-            <div class="chart-legend">
-                <div class="legend-item"><span class="legend-dot" style="background:var(--manza)"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                <div class="legend-item"><span class="legend-dot" style="background:var(--sesoko)"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                <div class="legend-item"><span class="legend-dot" style="background:var(--ogasawara)"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
+
+            <!-- Cold Days - Honshu/Ogasawara -->
+            <div class="card">
+                <div class="card-title" style="font-size: 0.9rem;">
+                    <span data-lang="en">❄️ Cold Days (≤20°C)</span>
+                    <span data-lang="ja">❄️ 低温日（20°C以下）</span>
+                </div>
+                <div class="chart-container" style="height: 200px;">
+                    <canvas id="coldDaysChartHonshu"></canvas>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--kushimoto)"></span><span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span></div>
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--ogasawara)"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
+                </div>
             </div>
         </div>
 
-        <!-- Cold Days Chart -->
-        <div class="card">
-            <div class="card-title">
-                <span data-lang="en">❄️ Annual Cold Days (≤20°C) — 2003-2025</span>
-                <span data-lang="ja">❄️ 年間低温日数（20°C以下）— 2003-2025年</span>
+        <!-- Region: Ryukyu Charts -->
+        <h3 class="region-header" style="margin: 1.5rem 0 1rem; text-align: center; font-size: 1rem; color: var(--text-secondary);">
+            <span data-lang="en">🏝️ Ryukyu Islands</span>
+            <span data-lang="ja">🏝️ 琉球列島</span>
+        </h3>
+        
+        <div class="chart-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem;">
+            <!-- Hot Days - Ryukyu -->
+            <div class="card">
+                <div class="card-title" style="font-size: 0.9rem;">
+                    <span data-lang="en">🔥 Hot Days (≥30°C)</span>
+                    <span data-lang="ja">🔥 高温日（30°C以上）</span>
+                </div>
+                <div class="chart-container" style="height: 220px;">
+                    <canvas id="hotDaysChartRyukyu"></canvas>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--amami)"></span><span data-lang="en">Amami</span><span data-lang="ja">奄美</span></div>
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--sesoko)"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--manza)"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--kerama)"></span><span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span></div>
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--sekisei)"></span><span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span></div>
+                </div>
             </div>
-            <div class="chart-container">
-                <canvas id="coldDaysChart"></canvas>
-            </div>
-            <div class="chart-legend">
-                <div class="legend-item"><span class="legend-dot" style="background:var(--manza)"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                <div class="legend-item"><span class="legend-dot" style="background:var(--sesoko)"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                <div class="legend-item"><span class="legend-dot" style="background:var(--ogasawara)"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
+
+            <!-- Cold Days - Ryukyu -->
+            <div class="card">
+                <div class="card-title" style="font-size: 0.9rem;">
+                    <span data-lang="en">❄️ Cold Days (≤20°C)</span>
+                    <span data-lang="ja">❄️ 低温日（20°C以下）</span>
+                </div>
+                <div class="chart-container" style="height: 220px;">
+                    <canvas id="coldDaysChartRyukyu"></canvas>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--amami)"></span><span data-lang="en">Amami</span><span data-lang="ja">奄美</span></div>
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--sesoko)"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--manza)"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--kerama)"></span><span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span></div>
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--sekisei)"></span><span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span></div>
+                </div>
+                <div style="text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">
+                    <span data-lang="en">* Ryukyu sites rarely drop below 20°C</span>
+                    <span data-lang="ja">* 琉球の地点は20°C以下になることは稀</span>
+                </div>
             </div>
         </div>
 
@@ -811,9 +873,13 @@
         document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
 
         const COLORS = {
-            manza: '#c05621',
+            kushimoto: '#805ad5',
+            ogasawara: '#2f855a',
+            amami: '#d53f8c',
             sesoko: '#2b6cb0',
-            ogasawara: '#2f855a'
+            manza: '#c05621',
+            kerama: '#0891b2',
+            sekisei: '#e53e3e'
         };
 
         // Supabase config
@@ -896,16 +962,18 @@
             try {
                 const res = await fetch('data/extreme_days.json');
                 const data = await res.json();
-                renderHotDaysChart(data);
-                renderColdDaysChart(data);
+                renderHotDaysChartHonshu(data);
+                renderColdDaysChartHonshu(data);
+                renderHotDaysChartRyukyu(data);
+                renderColdDaysChartRyukyu(data);
             } catch (err) {
                 console.error('Failed to load chart data:', err);
             }
         }
 
-        function renderHotDaysChart(data) {
-            const ctx = document.getElementById('hotDaysChart').getContext('2d');
-            const years = data.hot_days.sesoko.map(d => d.year);
+        function renderHotDaysChartHonshu(data) {
+            const ctx = document.getElementById('hotDaysChartHonshu').getContext('2d');
+            const years = data.hot_days.kushimoto.map(d => d.year);
 
             new Chart(ctx, {
                 type: 'bar',
@@ -913,17 +981,10 @@
                     labels: years,
                     datasets: [
                         {
-                            label: 'Manza',
-                            data: data.hot_days.manza.map(d => d.days),
-                            backgroundColor: COLORS.manza + 'cc',
-                            borderColor: COLORS.manza,
-                            borderWidth: 1
-                        },
-                        {
-                            label: 'Sesoko',
-                            data: data.hot_days.sesoko.map(d => d.days),
-                            backgroundColor: COLORS.sesoko + 'cc',
-                            borderColor: COLORS.sesoko,
+                            label: 'Kushimoto',
+                            data: data.hot_days.kushimoto.map(d => d.days),
+                            backgroundColor: COLORS.kushimoto + 'cc',
+                            borderColor: COLORS.kushimoto,
                             borderWidth: 1
                         },
                         {
@@ -938,30 +999,18 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false }
-                    },
+                    plugins: { legend: { display: false } },
                     scales: {
-                        x: {
-                            grid: { display: false },
-                            ticks: { 
-                                font: { size: 9 },
-                                maxRotation: 45
-                            }
-                        },
-                        y: {
-                            grid: { color: '#e2e8f0' },
-                            ticks: { font: { size: 10 } },
-                            min: 0
-                        }
+                        x: { grid: { display: false }, ticks: { font: { size: 8 }, maxRotation: 45 } },
+                        y: { grid: { color: '#e2e8f0' }, ticks: { font: { size: 9 } }, min: 0 }
                     }
                 }
             });
         }
 
-        function renderColdDaysChart(data) {
-            const ctx = document.getElementById('coldDaysChart').getContext('2d');
-            const years = data.cold_days.sesoko.map(d => d.year);
+        function renderColdDaysChartHonshu(data) {
+            const ctx = document.getElementById('coldDaysChartHonshu').getContext('2d');
+            const years = data.cold_days.kushimoto.map(d => d.year);
 
             new Chart(ctx, {
                 type: 'bar',
@@ -969,17 +1018,10 @@
                     labels: years,
                     datasets: [
                         {
-                            label: 'Manza',
-                            data: data.cold_days.manza.map(d => d.days),
-                            backgroundColor: COLORS.manza + 'cc',
-                            borderColor: COLORS.manza,
-                            borderWidth: 1
-                        },
-                        {
-                            label: 'Sesoko',
-                            data: data.cold_days.sesoko.map(d => d.days),
-                            backgroundColor: COLORS.sesoko + 'cc',
-                            borderColor: COLORS.sesoko,
+                            label: 'Kushimoto',
+                            data: data.cold_days.kushimoto.map(d => d.days),
+                            backgroundColor: COLORS.kushimoto + 'cc',
+                            borderColor: COLORS.kushimoto,
                             borderWidth: 1
                         },
                         {
@@ -994,26 +1036,131 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false }
-                    },
+                    plugins: { legend: { display: false } },
                     scales: {
-                        x: {
-                            grid: { display: false },
-                            ticks: { 
-                                font: { size: 9 },
-                                maxRotation: 45
-                            }
-                        },
-                        y: {
-                            grid: { color: '#e2e8f0' },
-                            ticks: { font: { size: 10 } },
-                            min: 0
-                        }
+                        x: { grid: { display: false }, ticks: { font: { size: 8 }, maxRotation: 45 } },
+                        y: { grid: { color: '#e2e8f0' }, ticks: { font: { size: 9 } }, min: 0 }
                     }
                 }
             });
         }
+
+        function renderHotDaysChartRyukyu(data) {
+            const ctx = document.getElementById('hotDaysChartRyukyu').getContext('2d');
+            const years = data.hot_days.amami.map(d => d.year);
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: years,
+                    datasets: [
+                        {
+                            label: 'Amami',
+                            data: data.hot_days.amami.map(d => d.days),
+                            backgroundColor: COLORS.amami + 'cc',
+                            borderColor: COLORS.amami,
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Sesoko',
+                            data: data.hot_days.sesoko.map(d => d.days),
+                            backgroundColor: COLORS.sesoko + 'cc',
+                            borderColor: COLORS.sesoko,
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Manza',
+                            data: data.hot_days.manza.map(d => d.days),
+                            backgroundColor: COLORS.manza + 'cc',
+                            borderColor: COLORS.manza,
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Kerama',
+                            data: data.hot_days.kerama.map(d => d.days),
+                            backgroundColor: COLORS.kerama + 'cc',
+                            borderColor: COLORS.kerama,
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Sekisei',
+                            data: data.hot_days.sekisei.map(d => d.days),
+                            backgroundColor: COLORS.sekisei + 'cc',
+                            borderColor: COLORS.sekisei,
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { display: false }, ticks: { font: { size: 8 }, maxRotation: 45 } },
+                        y: { grid: { color: '#e2e8f0' }, ticks: { font: { size: 9 } }, min: 0 }
+                    }
+                }
+            });
+        }
+
+        function renderColdDaysChartRyukyu(data) {
+            const ctx = document.getElementById('coldDaysChartRyukyu').getContext('2d');
+            const years = data.cold_days.amami.map(d => d.year);
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: years,
+                    datasets: [
+                        {
+                            label: 'Amami',
+                            data: data.cold_days.amami.map(d => d.days),
+                            backgroundColor: COLORS.amami + 'cc',
+                            borderColor: COLORS.amami,
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Sesoko',
+                            data: data.cold_days.sesoko.map(d => d.days),
+                            backgroundColor: COLORS.sesoko + 'cc',
+                            borderColor: COLORS.sesoko,
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Manza',
+                            data: data.cold_days.manza.map(d => d.days),
+                            backgroundColor: COLORS.manza + 'cc',
+                            borderColor: COLORS.manza,
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Kerama',
+                            data: data.cold_days.kerama.map(d => d.days),
+                            backgroundColor: COLORS.kerama + 'cc',
+                            borderColor: COLORS.kerama,
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Sekisei',
+                            data: data.cold_days.sekisei.map(d => d.days),
+                            backgroundColor: COLORS.sekisei + 'cc',
+                            borderColor: COLORS.sekisei,
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { display: false }, ticks: { font: { size: 8 }, maxRotation: 45 } },
+                        y: { grid: { color: '#e2e8f0' }, ticks: { font: { size: 9 } }, min: 0 }
+                    }
+                }
+            });
+        }
+
 
         init();
     </script>
