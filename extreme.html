@@ -229,12 +229,12 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.9;">
-                <div id="sst-dates-en" data-lang="en">Observed: -- | Published: --</div>
-                <div id="sst-dates-ja" data-lang="ja">観測日: -- | 公開日: --</div>
+                <div id="sst-dates-en" data-lang="en">Data: -- (observation date)</div>
+                <div id="sst-dates-ja" data-lang="ja">データ: --（観測日）</div>
             </div>
             <div style="text-align: center; margin-top: 0.75rem; font-size: 0.75rem; opacity: 0.75; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                <span data-lang="en">⏱ Satellite data is published approximately 2-3 days after observation due to NASA's processing pipeline.</span>
-                <span data-lang="ja">⏱ 衛星データは観測から約2〜3日後に公開されます（NASAの処理パイプラインによる）</span>
+                <span data-lang="en">⏱ NASA MUR SST data is published a few days after observation.</span>
+                <span data-lang="ja">⏱ NASA MUR SSTデータは観測から数日後に公開されます</span>
             </div>
         </section>
 
@@ -804,8 +804,8 @@
                     
                     const enEl = document.getElementById('sst-dates-en');
                     const jaEl = document.getElementById('sst-dates-ja');
-                    if (enEl) enEl.textContent = `Observed: ${obsEn} | Published: ${pubEn}`;
-                    if (jaEl) jaEl.textContent = `観測日: ${obsJa} | 公開日: ${pubJa}`;
+                    if (enEl) enEl.textContent = `Data: ${obsJa} (observation date)`;
+                    if (jaEl) jaEl.textContent = `データ: ${obsJa}（観測日）`;
                 }
                 
                 console.log('✓ Extreme days loaded from Supabase');
