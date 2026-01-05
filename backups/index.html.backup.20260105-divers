@@ -206,6 +206,10 @@
                         下のダッシュボードは、衛星データを毎日自動取得し、沖縄・小笠原の海水温、熱ストレス、サンゴの脆弱性を表示しています。
                     </p>
                     <div class="intro-links">
+                        <a href="#" class="intro-link" onclick="showPage('divers'); return false;">
+                            <span data-lang="en">For Divers →</span>
+                            <span data-lang="ja">ダイバー向け情報 →</span>
+                        </a>
                         <a href="#" class="intro-link" onclick="showPage('about'); return false;">
                             <span data-lang="en">About This Project →</span>
                             <span data-lang="ja">このプロジェクトについて →</span>
