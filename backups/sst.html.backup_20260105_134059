@@ -546,27 +546,14 @@
                 <span data-lang="ja">サイト別主要閾値</span>
             </h2>
             <div class="card">
-                <div class="table-scroll">
-                <table class="threshold-table threshold-table-7">
+                <table class="threshold-table">
                     <thead>
                         <tr>
                             <th><span data-lang="en">Metric</span><span data-lang="ja">指標</span></th>
                             <th>
                                 <div class="site-header">
-                                    <span class="site-dot" style="background: var(--kushimoto);"></span>
-                                    <span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span>
-                                </div>
-                            </th>
-                            <th>
-                                <div class="site-header">
-                                    <span class="site-dot" style="background: var(--ogasawara);"></span>
-                                    <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
-                                </div>
-                            </th>
-                            <th>
-                                <div class="site-header">
-                                    <span class="site-dot" style="background: var(--amami);"></span>
-                                    <span data-lang="en">Amami</span><span data-lang="ja">奄美</span>
+                                    <span class="site-dot" style="background: var(--manza);"></span>
+                                    <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
                                 </div>
                             </th>
                             <th>
@@ -577,20 +564,8 @@
                             </th>
                             <th>
                                 <div class="site-header">
-                                    <span class="site-dot" style="background: var(--manza);"></span>
-                                    <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
-                                </div>
-                            </th>
-                            <th>
-                                <div class="site-header">
-                                    <span class="site-dot" style="background: var(--kerama);"></span>
-                                    <span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span>
-                                </div>
-                            </th>
-                            <th>
-                                <div class="site-header">
-                                    <span class="site-dot" style="background: var(--sekisei);"></span>
-                                    <span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span>
+                                    <span class="site-dot" style="background: var(--ogasawara);"></span>
+                                    <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
                                 </div>
                             </th>
                         </tr>
@@ -598,27 +573,30 @@
                     <tbody>
                         <tr>
                             <td>MMM</td>
-                            <td>28.0°C</td>
-                            <td>28.5°C</td>
-                            <td>29.0°C</td>
-                            <td>29.0°C</td>
-                            <td>29.0°C</td>
-                            <td>29.0°C</td>
-                            <td>29.5°C</td>
+                            <td>28.9°C</td>
+                            <td>28.8°C</td>
+                            <td>28.3°C</td>
                         </tr>
                         <tr>
                             <td><span data-lang="en">Bleaching Threshold</span><span data-lang="ja">白化閾値</span> (MMM+1)</td>
-                            <td>29.0°C</td>
-                            <td>29.5°C</td>
-                            <td>30.0°C</td>
-                            <td>30.0°C</td>
-                            <td>30.0°C</td>
-                            <td>30.0°C</td>
-                            <td>30.5°C</td>
+                            <td>29.9°C</td>
+                            <td>29.8°C</td>
+                            <td>29.3°C</td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Days ≥30°C (2024)</span><span data-lang="ja">30°C以上日数 (2024)</span></td>
+                            <td id="days-hot-manza">--</td>
+                            <td id="days-hot-sesoko">--</td>
+                            <td id="days-hot-ogasawara">--</td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Days &lt;20°C (2025)</span><span data-lang="ja">20°C未満日数 (2025)</span></td>
+                            <td id="days-cold-manza">--</td>
+                            <td id="days-cold-sesoko">--</td>
+                            <td id="days-cold-ogasawara">--</td>
                         </tr>
                     </tbody>
                 </table>
-                </div>
             </div>
         </section>
 
@@ -913,7 +891,7 @@
                 
                 const datasets = Object.entries(SITE_CONFIG).map(([site, cfg]) => ({
                     label: cfg.label,
-                    data: data[site] || [],
+                    data: data[site]?.map(d => d.avg_sst) || [],
                     borderColor: cfg.color,
                     backgroundColor: cfg.color + '1a',
                     borderWidth: 2,

@@ -2945,3 +2945,21 @@ main.detail-page {
 .chart-legend-7 .legend-item {
     font-size: 0.75rem;
 }
+
+/* 7-site threshold table */
+.table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.threshold-table-7 {
+    min-width: 700px;
+}
+.threshold-table-7 th,
+.threshold-table-7 td {
+    padding: 0.5rem 0.4rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+.threshold-table-7 .site-header {
+    font-size: 0.75rem;
+}
