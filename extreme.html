@@ -388,6 +388,48 @@
             </p>
         </div>
 
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Threshold Definitions</span>
+                <span data-lang="ja">閾値の定義</span>
+            </h2>
+            <div class="card" style="margin-top: 1rem;">
+                <table class="threshold-table">
+                    <thead>
+                        <tr>
+                            <th><span data-lang="en">Metric</span><span data-lang="ja">指標</span></th>
+                            <th><span data-lang="en">Threshold</span><span data-lang="ja">閾値</span></th>
+                            <th><span data-lang="en">Rationale</span><span data-lang="ja">根拠</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span data-lang="en">Hot Day</span>
+                                <span data-lang="ja">高温日</span>
+                            </td>
+                            <td>≥30°C</td>
+                            <td>
+                                <span data-lang="en">~1°C above typical summer MMM for Okinawa</span>
+                                <span data-lang="ja">沖縄の夏季MMMより約1°C高い</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span data-lang="en">Cold Day</span>
+                                <span data-lang="ja">低温日</span>
+                            </td>
+                            <td>≤20°C</td>
+                            <td>
+                                <span data-lang="en">Below cold stress threshold (~18-20°C)</span>
+                                <span data-lang="ja">低温ストレス閾値（約18-20°C）以下</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
         <!-- 2024 Bleaching Context -->
         <section class="context-2024" style="margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px; border-left: 4px solid #f59e0b;">
             <h3 style="margin: 0 0 1rem; font-size: 1.1rem; color: #92400e;">
@@ -588,16 +630,18 @@
             <p>
                 <span data-lang="en">
                     Days exceeding 30°C represent acute thermal stress events. While DHW captures 
-                    cumulative stress, individual hot days can cause immediate photosynthetic damage 
-                    to coral symbionts. In 2024, Manza recorded 36 hot days—more than any year 
-                    since 2017 (34 days)—contributing to the widespread bleaching observed.
+                    cumulative stress, individual hot days cause immediate photosynthetic damage 
+                    to coral symbionts. In 2024, Sekisei Lagoon recorded <strong>73 hot days</strong>—the 
+                    most in 22 years of satellite records—resulting in 84% bleaching and 65% mortality. 
+                    The pattern is clear: more hot days = more severe bleaching.
                 </span>
                 <span data-lang="ja">
                     30°Cを超える日は、急性の熱ストレスイベントを表します。
                     DHWは累積ストレスを捉えますが、個々の高温日はサンゴの共生藻に
-                    即座に光合成障害を引き起こす可能性があります。
-                    2024年、万座は36日の高温日を記録しました。
-                    これは2017年（34日）以来最多で、観察された広範な白化の一因となりました。
+                    即座に光合成障害を引き起こします。
+                    2024年、石西礁湖は<strong>73日</strong>の高温日を記録しました—
+                    22年間の衛星記録で最多であり、84%白化・65%死亡という結果をもたらしました。
+                    パターンは明確です：高温日が多いほど、白化は深刻になります。
                 </span>
             </p>
 
@@ -607,29 +651,33 @@
             </h3>
             <p>
                 <span data-lang="en">
-                    Cold days below 20°C can trigger cold-water bleaching and make corals 
-                    susceptible to disease. Ogasawara shows a distinct pattern: while it rarely 
-                    exceeds 30°C, it frequently drops below 20°C in winter months. 
-                    In 2015, Ogasawara recorded 60 cold days—the highest in our dataset.
+                    Cold days below 20°C trigger metabolic suppression and immune compromise, 
+                    making corals susceptible to disease. At the northern limit, <strong>Kushimoto 
+                    experiences 100-160 cold days annually</strong>—nearly half the year below the stress 
+                    threshold. In contrast, Ryukyu sites (Sesoko, Manza, Kerama, Sekisei) rarely 
+                    drop below 20°C, showing 0 cold days in most years.
                 </span>
                 <span data-lang="ja">
-                    20°C以下の低温日は、低温白化を引き起こし、サンゴを病気にかかりやすくします。
-                    小笠原は独特のパターンを示します：30°Cを超えることは稀ですが、
-                    冬季には頻繁に20°C以下に低下します。
-                    2015年、小笠原は60日の低温日を記録しました—これはデータセット中の最高値です。
+                    20°C以下の低温日は、代謝抑制と免疫機能低下を引き起こし、
+                    サンゴを病気にかかりやすくします。北限の<strong>串本は年間100〜160日の
+                    低温日</strong>を経験します—年の約半分がストレス閾値以下です。
+                    対照的に、琉球の地点（瀬底、万座、慶良間、石西礁湖）は20°C以下になることが稀で、
+                    ほとんどの年で低温日は0日です。
                 </span>
             </p>
 
-            <div class="highlight-box cold-note">
+            <div class="highlight-box" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid #0284c7;">
                 <span data-lang="en">
-                    <strong>Ogasawara's Cold Vulnerability:</strong> 
-                    Being located at 27°N (vs. Okinawa's 26°N), Ogasawara experiences more pronounced 
-                    winter cooling. This makes cold stress a more relevant concern here than heat stress.
+                    <strong>🌡️ Latitude and Temperature Risk:</strong><br>
+                    <strong>Kushimoto (33°N)</strong>: Cold is the threat. 100-160 cold days/year, almost no hot days.<br>
+                    <strong>Ogasawara (27°N)</strong>: Mixed risk. 30-60 cold days, occasional hot days.<br>
+                    <strong>Ryukyu (24-28°N)</strong>: Heat is the threat. 20-70+ hot days, rarely cold.
                 </span>
                 <span data-lang="ja">
-                    <strong>小笠原の低温脆弱性：</strong>
-                    北緯27度（沖縄は26度）に位置する小笠原は、より顕著な冬季の冷え込みを経験します。
-                    このため、ここでは高温ストレスよりも低温ストレスがより重要な懸念事項となります。
+                    <strong>🌡️ 緯度と温度リスク：</strong><br>
+                    <strong>串本（北緯33°）</strong>：低温が脅威。年間100〜160日の低温日、高温日はほぼゼロ。<br>
+                    <strong>小笠原（北緯27°）</strong>：混合リスク。30〜60日の低温日、時々高温日。<br>
+                    <strong>琉球（北緯24-28°）</strong>：高温が脅威。20〜70日以上の高温日、低温は稀。
                 </span>
             </div>
         </section>
@@ -729,48 +777,6 @@
         </div>
 
         <!-- Thresholds -->
-        <section class="content-section">
-            <h2>
-                <span data-lang="en">Threshold Definitions</span>
-                <span data-lang="ja">閾値の定義</span>
-            </h2>
-            <div class="card" style="margin-top: 1rem;">
-                <table class="threshold-table">
-                    <thead>
-                        <tr>
-                            <th><span data-lang="en">Metric</span><span data-lang="ja">指標</span></th>
-                            <th><span data-lang="en">Threshold</span><span data-lang="ja">閾値</span></th>
-                            <th><span data-lang="en">Rationale</span><span data-lang="ja">根拠</span></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <span data-lang="en">Hot Day</span>
-                                <span data-lang="ja">高温日</span>
-                            </td>
-                            <td>≥30°C</td>
-                            <td>
-                                <span data-lang="en">~1°C above typical summer MMM for Okinawa</span>
-                                <span data-lang="ja">沖縄の夏季MMMより約1°C高い</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span data-lang="en">Cold Day</span>
-                                <span data-lang="ja">低温日</span>
-                            </td>
-                            <td>≤20°C</td>
-                            <td>
-                                <span data-lang="en">Below cold stress threshold (~18-20°C)</span>
-                                <span data-lang="ja">低温ストレス閾値（約18-20°C）以下</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
         <!-- Data Source -->
         <section class="content-section">
             <h2>
