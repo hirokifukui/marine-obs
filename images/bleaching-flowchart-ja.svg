@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 Z" fill="#616161"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 Z" fill="#2e7d32"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 Z" fill="#c62828"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="600" height="400" fill="#fafafa"/>
+
+  <!-- タイトル -->
+  <text x="300" y="30" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="16" font-weight="600" fill="#1a1a2e">白化後の運命：回復か死か</text>
+
+  <!-- スタート：白化サンゴ -->
+  <rect x="200" y="50" width="200" height="50" rx="8" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="300" y="80" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="14" font-weight="500" fill="#e65100">白化したサンゴ</text>
+
+  <!-- 分岐ダイヤモンド -->
+  <polygon points="300,130 380,170 300,210 220,170" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+  <text x="300" y="167" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#0d47a1">ストレス</text>
+  <text x="300" y="180" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#0d47a1">緩和？</text>
+
+  <!-- スタートから分岐への矢印 -->
+  <line x1="300" y1="100" x2="300" y2="128" stroke="#616161" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- YES経路（回復） -->
+  <text x="175" y="165" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="12" font-weight="600" fill="#2e7d32">はい</text>
+  <line x1="220" y1="170" x2="120" y2="170" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  
+  <!-- 回復ボックス -->
+  <rect x="20" y="145" width="100" height="50" rx="8" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+  <text x="70" y="167" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#2e7d32">褐虫藻が</text>
+  <text x="70" y="180" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#2e7d32">再定着</text>
+
+  <!-- 回復結果への矢印 -->
+  <line x1="70" y1="195" x2="70" y2="230" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- 回復結果 -->
+  <rect x="20" y="235" width="100" height="50" rx="8" fill="#4caf50" stroke="#2e7d32" stroke-width="2"/>
+  <text x="70" y="257" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="12" font-weight="600" fill="white">回復</text>
+  <text x="70" y="273" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="10" fill="white">（数週間〜数ヶ月）</text>
+
+  <!-- NO経路（死亡） -->
+  <text x="425" y="165" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="12" font-weight="600" fill="#c62828">いいえ</text>
+  <line x1="380" y1="170" x2="480" y2="170" stroke="#c62828" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <!-- 餓死ボックス -->
+  <rect x="480" y="145" width="100" height="50" rx="8" fill="#ffebee" stroke="#ef5350" stroke-width="2"/>
+  <text x="530" y="167" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#c62828">餓死</text>
+  <text x="530" y="180" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#c62828">（数週間）</text>
+
+  <!-- 死亡への矢印 -->
+  <line x1="530" y1="195" x2="530" y2="230" stroke="#c62828" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <!-- 死亡ボックス -->
+  <rect x="480" y="235" width="100" height="50" rx="8" fill="#c62828" stroke="#b71c1c" stroke-width="2"/>
+  <text x="530" y="257" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="12" font-weight="600" fill="white">死亡</text>
+  <text x="530" y="273" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="10" fill="white">（組織喪失）</text>
+
+  <!-- 死後への矢印 -->
+  <line x1="530" y1="285" x2="530" y2="320" stroke="#c62828" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+  <!-- 死後ボックス -->
+  <rect x="450" y="325" width="130" height="55" rx="8" fill="#ffcdd2" stroke="#ef5350" stroke-width="2"/>
+  <text x="515" y="347" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="10" fill="#c62828">藻類の被覆</text>
+  <text x="515" y="360" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="10" fill="#c62828">→ 生物侵食</text>
+  <text x="515" y="373" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="10" fill="#c62828">→ ガレ場化</text>
+
+  <!-- 回復の注意書き -->
+  <rect x="20" y="310" width="140" height="70" rx="6" fill="#fff8e1" stroke="#ffc107" stroke-width="1"/>
+  <text x="90" y="330" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="10" font-weight="500" fill="#f57f17">⚠ 回復にはコストがある：</text>
+  <text x="90" y="345" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="9" fill="#795548">• 繁殖能力の低下</text>
+  <text x="90" y="358" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="9" fill="#795548">• 成長速度の低下</text>
+  <text x="90" y="371" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="9" fill="#795548">• 次の白化への脆弱性</text>
+</svg>
