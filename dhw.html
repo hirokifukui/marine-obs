@@ -197,10 +197,9 @@
             </p>
         </div>
 
-        <!-- Hero Section -->
+        <!-- Hero Section - 7 Sites -->
         <section class="hero-section">
             <div class="hero-main">
-                
                 <div class="hero-tagline">
                     <span data-lang="en">Annual Peak DHW Comparison</span>
                     <span data-lang="ja">年間ピークDHW比較</span>
@@ -210,53 +209,132 @@
                     <span data-lang="ja">DHWは蓄積熱ストレスを測定—サンゴ礁の見えない脅威</span>
                 </div>
             </div>
-            <div class="hero-stats-row">
-                <div class="hero-stat-card">
-                    <div class="site-name-hero">
-                        <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
-                    </div>
-                    <div class="dhw-year-values">
-                        <div class="dhw-year-row">
-                            <span class="year-label">2024:</span>
-                            <span class="number" id="dhw-hero-manza-2024">--</span>
-                        </div>
-                        <div class="dhw-year-row current">
-                            <span class="year-label">2025:</span>
-                            <span class="number" id="dhw-hero-manza-2025">--</span>
-                        </div>
-                    </div>
+
+            <!-- Group 1: Honshu & Ogasawara -->
+            <div class="hero-group">
+                <div class="hero-group-label">
+                    <span data-lang="en">Honshu & Ogasawara</span>
+                    <span data-lang="ja">本州・小笠原</span>
                 </div>
-                <div class="hero-stat-card">
-                    <div class="site-name-hero">
-                        <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
-                    </div>
-                    <div class="dhw-year-values">
-                        <div class="dhw-year-row">
-                            <span class="year-label">2024:</span>
-                            <span class="number" id="dhw-hero-sesoko-2024">--</span>
+                <div class="hero-stats-row hero-stats-2">
+                    <div class="hero-stat-card" style="border-left-color: var(--kushimoto);">
+                        <div class="site-name-hero">
+                            <span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span>
                         </div>
-                        <div class="dhw-year-row current">
-                            <span class="year-label">2025:</span>
-                            <span class="number" id="dhw-hero-sesoko-2025">--</span>
+                        <div class="dhw-year-values">
+                            <div class="dhw-year-row">
+                                <span class="year-label">2024:</span>
+                                <span class="number" id="dhw-hero-kushimoto-2024">--</span>
+                            </div>
+                            <div class="dhw-year-row current">
+                                <span class="year-label">2025:</span>
+                                <span class="number" id="dhw-hero-kushimoto-2025">--</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="hero-stat-card">
-                    <div class="site-name-hero">
-                        <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
-                    </div>
-                    <div class="dhw-year-values">
-                        <div class="dhw-year-row">
-                            <span class="year-label">2024:</span>
-                            <span class="number" id="dhw-hero-ogasawara-2024">--</span>
+                    <div class="hero-stat-card" style="border-left-color: var(--ogasawara);">
+                        <div class="site-name-hero">
+                            <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
                         </div>
-                        <div class="dhw-year-row current">
-                            <span class="year-label">2025:</span>
-                            <span class="number" id="dhw-hero-ogasawara-2025">--</span>
+                        <div class="dhw-year-values">
+                            <div class="dhw-year-row">
+                                <span class="year-label">2024:</span>
+                                <span class="number" id="dhw-hero-ogasawara-2024">--</span>
+                            </div>
+                            <div class="dhw-year-row current">
+                                <span class="year-label">2025:</span>
+                                <span class="number" id="dhw-hero-ogasawara-2025">--</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Group 2: Ryukyu Islands -->
+            <div class="hero-group">
+                <div class="hero-group-label">
+                    <span data-lang="en">Ryukyu Islands</span>
+                    <span data-lang="ja">琉球列島</span>
+                </div>
+                <div class="hero-stats-row hero-stats-5">
+                    <div class="hero-stat-card" style="border-left-color: var(--amami);">
+                        <div class="site-name-hero">
+                            <span data-lang="en">Amami</span><span data-lang="ja">奄美</span>
+                        </div>
+                        <div class="dhw-year-values">
+                            <div class="dhw-year-row">
+                                <span class="year-label">2024:</span>
+                                <span class="number" id="dhw-hero-amami-2024">--</span>
+                            </div>
+                            <div class="dhw-year-row current">
+                                <span class="year-label">2025:</span>
+                                <span class="number" id="dhw-hero-amami-2025">--</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-stat-card" style="border-left-color: var(--sesoko);">
+                        <div class="site-name-hero">
+                            <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
+                        </div>
+                        <div class="dhw-year-values">
+                            <div class="dhw-year-row">
+                                <span class="year-label">2024:</span>
+                                <span class="number" id="dhw-hero-sesoko-2024">--</span>
+                            </div>
+                            <div class="dhw-year-row current">
+                                <span class="year-label">2025:</span>
+                                <span class="number" id="dhw-hero-sesoko-2025">--</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-stat-card" style="border-left-color: var(--manza);">
+                        <div class="site-name-hero">
+                            <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
+                        </div>
+                        <div class="dhw-year-values">
+                            <div class="dhw-year-row">
+                                <span class="year-label">2024:</span>
+                                <span class="number" id="dhw-hero-manza-2024">--</span>
+                            </div>
+                            <div class="dhw-year-row current">
+                                <span class="year-label">2025:</span>
+                                <span class="number" id="dhw-hero-manza-2025">--</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-stat-card" style="border-left-color: var(--kerama);">
+                        <div class="site-name-hero">
+                            <span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span>
+                        </div>
+                        <div class="dhw-year-values">
+                            <div class="dhw-year-row">
+                                <span class="year-label">2024:</span>
+                                <span class="number" id="dhw-hero-kerama-2024">--</span>
+                            </div>
+                            <div class="dhw-year-row current">
+                                <span class="year-label">2025:</span>
+                                <span class="number" id="dhw-hero-kerama-2025">--</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-stat-card" style="border-left-color: var(--sekisei);">
+                        <div class="site-name-hero">
+                            <span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span>
+                        </div>
+                        <div class="dhw-year-values">
+                            <div class="dhw-year-row">
+                                <span class="year-label">2024:</span>
+                                <span class="number" id="dhw-hero-sekisei-2024">--</span>
+                            </div>
+                            <div class="dhw-year-row current">
+                                <span class="year-label">2025:</span>
+                                <span class="number" id="dhw-hero-sekisei-2025">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="hero-date-info">
                 <span data-lang="en" id="dhw-hero-date-en">Data through: --</span>
                 <span data-lang="ja" id="dhw-hero-date-ja">データ更新日: --</span>
@@ -400,6 +478,55 @@
                         <span data-lang="en">Mortality likely</span>
                         <span data-lang="ja">死亡の可能性</span>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Annual DHW Charts - Split into 2 groups -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Annual Peak DHW (2003–2025)</span>
+                <span data-lang="ja">年間最大DHW（2003–2025年）</span>
+            </h2>
+
+            <!-- Chart 1: Honshu & Ogasawara -->
+            <div class="card">
+                <div class="card-title">
+                    <span data-lang="en">Honshu & Ogasawara</span>
+                    <span data-lang="ja">本州・小笠原</span>
+                </div>
+                <div class="chart-container">
+                    <canvas id="dhwChartNorth"></canvas>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item"><span class="legend-line legend-kushimoto"></span><span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span></div>
+                    <div class="legend-item"><span class="legend-line legend-ogasawara"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
+                </div>
+                <div class="threshold-note">
+                    <span data-lang="en">Red dashed line: Alert Level 1 threshold (DHW = 4)</span>
+                    <span data-lang="ja">赤破線：警報レベル1の閾値（DHW = 4）</span>
+                </div>
+            </div>
+
+            <!-- Chart 2: Ryukyu Islands -->
+            <div class="card">
+                <div class="card-title">
+                    <span data-lang="en">Ryukyu Islands</span>
+                    <span data-lang="ja">琉球列島</span>
+                </div>
+                <div class="chart-container">
+                    <canvas id="dhwChartSouth"></canvas>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item"><span class="legend-line legend-amami"></span><span data-lang="en">Amami</span><span data-lang="ja">奄美</span></div>
+                    <div class="legend-item"><span class="legend-line legend-sesoko"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
+                    <div class="legend-item"><span class="legend-line legend-manza"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
+                    <div class="legend-item"><span class="legend-line legend-kerama"></span><span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span></div>
+                    <div class="legend-item"><span class="legend-line legend-sekisei"></span><span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span></div>
+                </div>
+                <div class="threshold-note">
+                    <span data-lang="en">Red dashed line: Alert Level 1 threshold (DHW = 4)</span>
+                    <span data-lang="ja">赤破線：警報レベル1の閾値（DHW = 4）</span>
                 </div>
             </div>
         </section>
@@ -557,26 +684,6 @@
                 </p>
             </div>
         </section>
-
-        <!-- Annual DHW Chart -->
-        <div class="card">
-            <div class="card-title">
-                <span data-lang="en">Annual Peak DHW (2003–2025)</span>
-                <span data-lang="ja">年間最大DHW（2003–2025年）</span>
-            </div>
-            <div class="chart-container">
-                <canvas id="dhwChart"></canvas>
-            </div>
-            <div class="chart-legend">
-                <div class="legend-item"><span class="legend-line legend-manza"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                <div class="legend-item"><span class="legend-line legend-sesoko"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                <div class="legend-item"><span class="legend-line legend-ogasawara"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
-            </div>
-            <div class="threshold-note">
-                <span data-lang="en">Red dashed line: Alert Level 1 threshold (DHW = 4)</span>
-                <span data-lang="ja">赤破線：警報レベル1の閾値（DHW = 4）</span>
-            </div>
-        </div>
 
         <!-- Research at Sesoko -->
         <section class="content-section">
@@ -750,10 +857,15 @@
         document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
         document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
 
+        // 7-site color definitions
         const COLORS = {
-            manza: '#c05621',
+            kushimoto: '#805ad5',
+            ogasawara: '#2f855a',
+            amami: '#d53f8c',
             sesoko: '#2b6cb0',
-            ogasawara: '#2f855a'
+            manza: '#c05621',
+            kerama: '#0891b2',
+            sekisei: '#e53e3e'
         };
 
         // Supabase設定
@@ -775,23 +887,23 @@
                 // Hero部分を更新
                 updateHeroStats(data);
                 
-                // チャートを描画
-                renderDHWChart(data);
-                console.log('✅ DHW data loaded from Supabase');
+                // チャートを描画（2つに分割）
+                renderDHWCharts(data);
+                console.log('✅ DHW data loaded from Supabase (7 sites)');
             } catch (err) {
                 console.error('Failed to load data:', err);
             }
         }
 
         function updateHeroStats(data) {
-            const sites = ['manza', 'sesoko', 'ogasawara'];
+            const sites = ['kushimoto', 'ogasawara', 'amami', 'sesoko', 'manza', 'kerama', 'sekisei'];
             const years = [2024, 2025];
             
             sites.forEach(site => {
                 years.forEach(year => {
                     const el = document.getElementById(`dhw-hero-${site}-${year}`);
-                    if (el) {
-                        const val = data[site]?.find(d => d.year === year)?.peak_dhw;
+                    if (el && data[site]) {
+                        const val = data[site].find(d => d.year === year)?.peak_dhw;
                         el.textContent = val != null ? val.toFixed(2) : '--';
                     }
                 });
@@ -818,95 +930,129 @@
             }
         }
 
-        function renderDHWChart(data) {
-            const ctx = document.getElementById('dhwChart').getContext('2d');
+        function renderDHWCharts(data) {
+            // Filter to 2003-2025 range
+            const filterYears = (siteData) => siteData.filter(d => d.year >= 2003 && d.year <= 2025);
             
-            const years = data.manza.map(d => d.year);
+            const years = filterYears(data.manza).map(d => d.year);
 
-            new Chart(ctx, {
+            // Threshold line plugin
+            const thresholdPlugin = {
+                id: 'thresholdLine',
+                afterDraw: (chart) => {
+                    const ctx = chart.ctx;
+                    const yScale = chart.scales.y;
+                    const xScale = chart.scales.x;
+                    const y = yScale.getPixelForValue(4);
+                    
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.setLineDash([6, 6]);
+                    ctx.strokeStyle = '#ef4444';
+                    ctx.lineWidth = 2;
+                    ctx.moveTo(xScale.left, y);
+                    ctx.lineTo(xScale.right, y);
+                    ctx.stroke();
+                    ctx.restore();
+                }
+            };
+
+            const chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { 
+                            font: { size: 9 },
+                            maxRotation: 45
+                        }
+                    },
+                    y: {
+                        grid: { color: '#e2e8f0' },
+                        ticks: { font: { size: 10 } },
+                        min: 0,
+                        max: 10
+                    }
+                }
+            };
+
+            // Chart 1: Honshu & Ogasawara
+            const ctxNorth = document.getElementById('dhwChartNorth').getContext('2d');
+            new Chart(ctxNorth, {
                 type: 'bar',
                 data: {
                     labels: years,
                     datasets: [
                         {
-                            label: 'Manza',
-                            data: data.manza.map(d => d.peak_dhw),
-                            backgroundColor: COLORS.manza + 'cc',
-                            borderColor: COLORS.manza,
-                            borderWidth: 1
-                        },
-                        {
-                            label: 'Sesoko',
-                            data: data.sesoko.map(d => d.peak_dhw),
-                            backgroundColor: COLORS.sesoko + 'cc',
-                            borderColor: COLORS.sesoko,
+                            label: 'Kushimoto',
+                            data: filterYears(data.kushimoto).map(d => d.peak_dhw),
+                            backgroundColor: COLORS.kushimoto + 'cc',
+                            borderColor: COLORS.kushimoto,
                             borderWidth: 1
                         },
                         {
                             label: 'Ogasawara',
-                            data: data.ogasawara.map(d => d.peak_dhw),
+                            data: filterYears(data.ogasawara).map(d => d.peak_dhw),
                             backgroundColor: COLORS.ogasawara + 'cc',
                             borderColor: COLORS.ogasawara,
                             borderWidth: 1
                         }
                     ]
                 },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        annotation: {
-                            annotations: {
-                                threshold: {
-                                    type: 'line',
-                                    yMin: 4,
-                                    yMax: 4,
-                                    borderColor: '#ef4444',
-                                    borderWidth: 2,
-                                    borderDash: [6, 6]
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        x: {
-                            grid: { display: false },
-                            ticks: { 
-                                font: { size: 9 },
-                                maxRotation: 45
-                            }
+                options: chartOptions,
+                plugins: [thresholdPlugin]
+            });
+
+            // Chart 2: Ryukyu Islands
+            const ctxSouth = document.getElementById('dhwChartSouth').getContext('2d');
+            new Chart(ctxSouth, {
+                type: 'bar',
+                data: {
+                    labels: years,
+                    datasets: [
+                        {
+                            label: 'Amami',
+                            data: filterYears(data.amami).map(d => d.peak_dhw),
+                            backgroundColor: COLORS.amami + 'cc',
+                            borderColor: COLORS.amami,
+                            borderWidth: 1
                         },
-                        y: {
-                            grid: { color: '#e2e8f0' },
-                            ticks: { 
-                                font: { size: 10 }
-                            },
-                            min: 0,
-                            max: 10
+                        {
+                            label: 'Sesoko',
+                            data: filterYears(data.sesoko).map(d => d.peak_dhw),
+                            backgroundColor: COLORS.sesoko + 'cc',
+                            borderColor: COLORS.sesoko,
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Manza',
+                            data: filterYears(data.manza).map(d => d.peak_dhw),
+                            backgroundColor: COLORS.manza + 'cc',
+                            borderColor: COLORS.manza,
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Kerama',
+                            data: filterYears(data.kerama).map(d => d.peak_dhw),
+                            backgroundColor: COLORS.kerama + 'cc',
+                            borderColor: COLORS.kerama,
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Sekisei',
+                            data: filterYears(data.sekisei).map(d => d.peak_dhw),
+                            backgroundColor: COLORS.sekisei + 'cc',
+                            borderColor: COLORS.sekisei,
+                            borderWidth: 1
                         }
-                    }
+                    ]
                 },
-                plugins: [{
-                    id: 'thresholdLine',
-                    afterDraw: (chart) => {
-                        const ctx = chart.ctx;
-                        const yScale = chart.scales.y;
-                        const xScale = chart.scales.x;
-                        
-                        const y = yScale.getPixelForValue(4);
-                        
-                        ctx.save();
-                        ctx.beginPath();
-                        ctx.setLineDash([6, 6]);
-                        ctx.strokeStyle = '#ef4444';
-                        ctx.lineWidth = 2;
-                        ctx.moveTo(xScale.left, y);
-                        ctx.lineTo(xScale.right, y);
-                        ctx.stroke();
-                        ctx.restore();
-                    }
-                }]
+                options: chartOptions,
+                plugins: [thresholdPlugin]
             });
         }
 

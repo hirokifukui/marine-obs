@@ -638,3 +638,47 @@
         background-position: center !important;
     }
 }
+
+/* Hero groups for 7 sites */
+.hero-group {
+    margin-bottom: 1.25rem;
+}
+.hero-group-label {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+.hero-stats-row.hero-stats-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.hero-stats-row.hero-stats-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+}
+.hero-stat-card {
+    border-left: 3px solid rgba(255,255,255,0.5);
+}
+@media (max-width: 768px) {
+    .hero-stats-row.hero-stats-5 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-stats-row.hero-stats-5 .hero-stat-card:last-child {
+        grid-column: span 2;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    .hero-stat-card {
+        padding: 0.75rem 1rem;
+    }
+    .dhw-year-row .number {
+        font-size: 1.25rem;
+    }
+}
