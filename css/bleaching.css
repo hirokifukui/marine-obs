@@ -376,3 +376,44 @@
     box-shadow: none;
     background: transparent;
 }
+
+/* Diver guidelines */
+.diver-guidelines {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.guideline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--surface);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary);
+}
+
+.guideline-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.guideline-text {
+    flex: 1;
+}
+
+.guideline-text strong {
+    color: var(--text-primary);
+}
+
+@media (max-width: 480px) {
+    .guideline-item {
+        padding: 0.75rem;
+    }
+    
+    .guideline-icon {
+        font-size: 1.25rem;
+    }
+}
