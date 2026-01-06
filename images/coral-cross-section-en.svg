@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0077b6;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#023e8a;stop-opacity:0.5"/>
+    </linearGradient>
+    <linearGradient id="skeletonGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f5f5"/>
+      <stop offset="100%" style="stop-color:#e0e0e0"/>
+    </linearGradient>
+    <linearGradient id="healthyTissueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8d6e63"/>
+      <stop offset="100%" style="stop-color:#6d4c41"/>
+    </linearGradient>
+    <linearGradient id="bleachedTissueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fafafa;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#f0f0f0;stop-opacity:0.6"/>
+    </linearGradient>
+    <marker id="arrowRed" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#c62828"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="18" font-weight="600" fill="#1a1a2e">Coral Cross-Section: Healthy vs. Bleached</text>
+
+  <!-- ===== Left: Healthy Coral ===== -->
+  <g transform="translate(30, 70)">
+    <!-- Label -->
+    <text x="150" y="0" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="14" font-weight="600" fill="#2e7d32">Healthy Coral</text>
+    
+    <!-- Water -->
+    <rect x="0" y="20" width="300" height="250" rx="8" fill="url(#waterGrad)"/>
+    
+    <!-- Skeleton (white) -->
+    <path d="M50,250 L50,160 Q50,120 80,100 L100,90 Q130,80 150,80 Q170,80 200,90 L220,100 Q250,120 250,160 L250,250 Z" 
+          fill="url(#skeletonGrad)" stroke="#bdbdbd" stroke-width="1"/>
+    
+    <!-- Tissue layer (brown = with zooxanthellae) -->
+    <path d="M55,245 L55,165 Q55,130 82,112 L100,102 Q130,92 150,92 Q170,92 200,102 L218,112 Q245,130 245,165 L245,245 Z" 
+          fill="url(#healthyTissueGrad)" stroke="#5d4037" stroke-width="1.5"/>
+    
+    <!-- Zooxanthellae (dots) -->
+    <g fill="#4e342e">
+      <circle cx="80" cy="140" r="4"/>
+      <circle cx="100" cy="125" r="4"/>
+      <circle cx="120" cy="135" r="4"/>
+      <circle cx="140" cy="120" r="4"/>
+      <circle cx="160" cy="130" r="4"/>
+      <circle cx="180" cy="125" r="4"/>
+      <circle cx="200" cy="135" r="4"/>
+      <circle cx="220" cy="145" r="4"/>
+      <circle cx="90" cy="160" r="4"/>
+      <circle cx="110" cy="155" r="4"/>
+      <circle cx="130" cy="165" r="4"/>
+      <circle cx="150" cy="150" r="4"/>
+      <circle cx="170" cy="160" r="4"/>
+      <circle cx="190" cy="155" r="4"/>
+      <circle cx="210" cy="165" r="4"/>
+      <circle cx="75" cy="185" r="4"/>
+      <circle cx="100" cy="190" r="4"/>
+      <circle cx="125" cy="185" r="4"/>
+      <circle cx="150" cy="180" r="4"/>
+      <circle cx="175" cy="190" r="4"/>
+      <circle cx="200" cy="185" r="4"/>
+      <circle cx="225" cy="180" r="4"/>
+      <circle cx="85" cy="210" r="4"/>
+      <circle cx="115" cy="215" r="4"/>
+      <circle cx="145" cy="205" r="4"/>
+      <circle cx="175" cy="215" r="4"/>
+      <circle cx="205" cy="210" r="4"/>
+    </g>
+  </g>
+  
+  <!-- Left legend (below diagram) -->
+  <g transform="translate(30, 355)" font-family="'DM Sans', sans-serif" font-size="11" fill="#424242">
+    <rect x="0" y="-5" width="12" height="12" fill="url(#healthyTissueGrad)" stroke="#5d4037" stroke-width="1"/>
+    <text x="18" y="5">Tissue (brown)</text>
+    
+    <circle cx="6" cy="25" r="5" fill="#4e342e"/>
+    <text x="18" y="29">Zooxanthellae</text>
+    
+    <rect x="0" y="43" width="12" height="12" fill="url(#skeletonGrad)" stroke="#bdbdbd" stroke-width="1"/>
+    <text x="18" y="53">Skeleton (CaCO₃)</text>
+  </g>
+
+  <!-- ===== Right: Bleached Coral ===== -->
+  <g transform="translate(470, 70)">
+    <!-- Label -->
+    <text x="150" y="0" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="14" font-weight="600" fill="#c62828">Bleached Coral</text>
+    
+    <!-- Water -->
+    <rect x="0" y="20" width="300" height="250" rx="8" fill="url(#waterGrad)"/>
+    
+    <!-- Skeleton (white) -->
+    <path d="M50,250 L50,160 Q50,120 80,100 L100,90 Q130,80 150,80 Q170,80 200,90 L220,100 Q250,120 250,160 L250,250 Z" 
+          fill="url(#skeletonGrad)" stroke="#bdbdbd" stroke-width="1"/>
+    
+    <!-- Tissue layer (transparent = no zooxanthellae) -->
+    <path d="M55,245 L55,165 Q55,130 82,112 L100,102 Q130,92 150,92 Q170,92 200,102 L218,112 Q245,130 245,165 L245,245 Z" 
+          fill="url(#bleachedTissueGrad)" stroke="#bdbdbd" stroke-width="1" stroke-dasharray="4,2"/>
+    
+    <!-- Expelled zooxanthellae (scattered dots) -->
+    <g fill="#8d6e63" opacity="0.6">
+      <circle cx="40" cy="60" r="3"/>
+      <circle cx="70" cy="45" r="3"/>
+      <circle cx="100" cy="38" r="3"/>
+      <circle cx="130" cy="32" r="3"/>
+      <circle cx="160" cy="30" r="3"/>
+      <circle cx="190" cy="35" r="3"/>
+      <circle cx="220" cy="42" r="3"/>
+      <circle cx="250" cy="55" r="3"/>
+      <circle cx="270" cy="70" r="3"/>
+    </g>
+    
+    <!-- Expulsion arrows -->
+    <g stroke="#c62828" stroke-width="1.5" fill="none" opacity="0.7">
+      <path d="M100,100 Q85,70 70,50" marker-end="url(#arrowRed)"/>
+      <path d="M150,95 Q150,65 155,40" marker-end="url(#arrowRed)"/>
+      <path d="M200,100 Q215,70 230,50" marker-end="url(#arrowRed)"/>
+    </g>
+    
+    <!-- Expulsion label -->
+    <text x="150" y="22" text-anchor="middle" fill="#c62828" font-family="'DM Sans', sans-serif" font-size="11">Expelled</text>
+  </g>
+  
+  <!-- Right legend (below diagram) -->
+  <g transform="translate(470, 355)" font-family="'DM Sans', sans-serif" font-size="11" fill="#424242">
+    <rect x="0" y="-5" width="12" height="12" fill="url(#bleachedTissueGrad)" stroke="#bdbdbd" stroke-width="1" stroke-dasharray="2,1"/>
+    <text x="18" y="5">Transparent tissue</text>
+    
+    <rect x="0" y="19" width="12" height="12" fill="url(#skeletonGrad)" stroke="#bdbdbd" stroke-width="1"/>
+    <text x="18" y="29">Skeleton visible</text>
+  </g>
+
+  <!-- Bottom description -->
+  <text x="400" y="430" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="12" fill="#616161">Zooxanthellae provide up to 90% of coral energy via photosynthesis. Loss = starvation risk.</text>
+</svg>

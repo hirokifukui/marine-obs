@@ -201,26 +201,15 @@
                         <p data-lang="ja"><strong>白化 ≠ 死。</strong> 白化したサンゴはストレス状態にあるが、まだ生きている。骨格は生きた組織である。環境が改善すれば、回復の可能性がある。</p>
                     </div>
 
-
-                    <!-- 白化サンゴ写真 -->
-                    <figure class="content-figure">
-                        <img src="images/bleached-coral.webp" alt="Bleached Acropora corals on a reef" loading="lazy">
-                        <figcaption>
-                            <span data-lang="en">Bleached Acropora colonies. The white corals have lost their zooxanthellae but are still alive. Note the contrast with healthy brown corals in the background. Photo: iStock</span>
-                            <span data-lang="ja">白化したミドリイシ群体。白いサンゴは褐虫藻を失っているが、まだ生きている。背景の健康な茶色いサンゴとの対比に注目。Photo: iStock</span>
-                        </figcaption>
-                    </figure>
-                    <!-- サンゴ断面図 -->
-                    <figure class="content-figure diagram">
-                        <img src="images/coral-cross-section-en.svg" alt="Cross-section diagram comparing healthy and bleached coral" data-lang="en"><img src="images/coral-cross-section-ja.svg" alt="健康なサンゴと白化サンゴの断面図" data-lang="ja">
-                        <figcaption>
-                            <span data-lang="en">Cross-section of coral polyp. Left: Healthy coral with zooxanthellae (brown dots) in tissue. Right: Bleached coral—zooxanthellae expelled, transparent tissue reveals white skeleton.</span>
-                            <span data-lang="ja">サンゴポリプの断面図。左：褐虫藻（茶色の点）を含む健康なサンゴ。右：白化サンゴ—褐虫藻が放出され、透明な組織から白い骨格が透けて見える。</span>
-                        </figcaption>
-                    </figure>
+                    <!-- TODO: 図版 - サンゴ断面図（組織・褐虫藻・骨格の位置関係） -->
+                    <div class="figure-placeholder">
+                        <div class="placeholder-box">
+                            <span data-lang="en">Figure: Cross-section of healthy vs. bleached coral</span>
+                            <span data-lang="ja">図：健康なサンゴと白化サンゴの断面図</span>
+                        </div>
+                    </div>
                 </div>
             </section>
-
 
             <!-- Section 2: ストレスの種類 -->
             <section class="bleaching-section">
@@ -347,18 +336,15 @@
                         <p data-lang="ja"><strong>光っているサンゴは、まだ戦っている。</strong> 蛍光色は、サンゴが残った共生藻を積極的に守ろうとしている証拠である。このようなサンゴは回復の可能性が比較的高い。</p>
                     </div>
 
-
-                    <!-- 蛍光白化の写真 -->
-                    <figure class="content-figure">
-                        <img src="images/fluorescent-bleaching.webp" alt="Fluorescent bleaching coral with blue-purple tips" loading="lazy">
-                        <figcaption>
-                            <span data-lang="en">Bleaching Acropora displaying fluorescent blue-purple coloration at branch tips—a sign the coral is actively producing protective pigments. Photo: iStock</span>
-                            <span data-lang="ja">枝先が蛍光の青紫色を呈する白化中のミドリイシ。保護色素を産生している証拠。Photo: iStock</span>
-                        </figcaption>
-                    </figure>
+                    <!-- TODO: 図版 - 蛍光白化の写真（iStock調達） -->
+                    <div class="figure-placeholder">
+                        <div class="placeholder-box">
+                            <span data-lang="en">Photo: Fluorescent bleaching - pink/purple corals</span>
+                            <span data-lang="ja">写真：蛍光白化するサンゴ（ピンク・紫）</span>
+                        </div>
+                    </div>
                 </div>
             </section>
-
 
             <!-- Section 4: 回復か、死か -->
             <section class="bleaching-section">
