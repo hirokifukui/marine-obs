@@ -16,6 +16,10 @@
             --manza: #c05621;
             --sesoko: #2b6cb0;
             --ogasawara: #2f855a;
+            --kushimoto: #805ad5;
+            --amami: #d53f8c;
+            --kerama: #0891b2;
+            --sekisei: #e53e3e;
             --alert-bg: #fef2f2;
             --alert-border: #c05621;
             --warning-bg: #fffbeb;
@@ -346,6 +350,10 @@
         .legend-manza { background: var(--manza); }
         .legend-sesoko { background: var(--sesoko); }
         .legend-ogasawara { background: var(--ogasawara); }
+        .legend-kushimoto { background: var(--kushimoto); }
+        .legend-amami { background: var(--amami); }
+        .legend-kerama { background: var(--kerama); }
+        .legend-sekisei { background: var(--sekisei); }
 
         /* Reference table */
         .ref-table {
