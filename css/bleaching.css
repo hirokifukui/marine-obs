@@ -439,3 +439,118 @@
 .evidence-list li em {
     color: var(--text-secondary);
 }
+
+/* ========================================
+   CORAL BASICS PAGE ADDITIONS
+   ======================================== */
+
+/* Data table for growth forms etc */
+.table-container {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.data-table th {
+    text-align: left;
+    padding: 0.875rem 1rem;
+    background: var(--surface);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.data-table td {
+    padding: 0.75rem 1rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    line-height: 1.5;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tr:hover td {
+    background: rgba(0, 180, 216, 0.04);
+}
+
+.data-table em {
+    font-style: italic;
+    color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+    .data-table {
+        font-size: 0.8rem;
+    }
+    
+    .data-table th,
+    .data-table td {
+        padding: 0.625rem 0.75rem;
+    }
+}
+
+/* Habitat requirements list */
+.habitat-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.habitat-list li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+.habitat-list li strong {
+    color: var(--text-primary);
+    min-width: 80px;
+}
+
+.habitat-list li span {
+    color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+    .habitat-list li {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}
+
+/* Image placeholders - cleaner style */
+.placeholder-image {
+    background: var(--surface);
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    min-height: 200px;
+}
+
+.content-figure.diagram .placeholder-image {
+    background: #f8f9fa;
+    min-height: 240px;
+}
