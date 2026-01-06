@@ -363,3 +363,16 @@
     line-height: 1.6;
     text-align: center;
 }
+
+/* Diagram figures */
+.content-figure.diagram {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid var(--border);
+}
+
+.content-figure.diagram img {
+    box-shadow: none;
+    background: transparent;
+}
