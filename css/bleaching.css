@@ -344,3 +344,22 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Content figures */
+.content-figure {
+    margin: 2rem 0;
+}
+
+.content-figure img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.content-figure figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    text-align: center;
+}
