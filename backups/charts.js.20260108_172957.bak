@@ -90,10 +90,10 @@
             const sstValues = ALL_SITES.map(s => latest[s]?.toFixed(1) || '--').join(' / ');
             
             if (enEl) {
-                enEl.innerHTML = `${sstValues}°C<br><small style="opacity:0.7">Data: ${obsJa}</small>`;
+                enEl.innerHTML = `${sstValues}°C<br><small style="opacity:0.7">Obs: ${obsJa} | Pub: ${pubJa}</small>`;
             }
             if (jaEl) {
-                jaEl.innerHTML = `${sstValues}°C<br><small style="opacity:0.7">データ: ${obsJa}</small>`;
+                jaEl.innerHTML = `${sstValues}°C<br><small style="opacity:0.7">観測: ${obsJa} | 公開: ${pubJa}</small>`;
             }
             
             // バッジと説明文を動的更新
@@ -196,10 +196,10 @@
             const cold26Vals = ALL_SITES.map(s => cold26[s] || 0).join('/');
             
             if (enEl) {
-                enEl.innerHTML = `🔥24: ${hot24Vals} | 25: ${hot25Vals}<br>❄️W26: ${cold26Vals}<br><small style="opacity:0.7">Data: ${obsJa}</small>`;
+                enEl.innerHTML = `🔥24: ${hot24Vals} | 25: ${hot25Vals}<br>❄️W26: ${cold26Vals}<br><small style="opacity:0.7">Obs: ${obsJa} | Pub: ${pubJa}</small>`;
             }
             if (jaEl) {
-                jaEl.innerHTML = `🔥24: ${hot24Vals} | 25: ${hot25Vals}<br>❄️26冬: ${cold26Vals}<br><small style="opacity:0.7">データ: ${obsJa}</small>`;
+                jaEl.innerHTML = `🔥24: ${hot24Vals} | 25: ${hot25Vals}<br>❄️26冬: ${cold26Vals}<br><small style="opacity:0.7">観測: ${obsJa} | 公開: ${pubJa}</small>`;
             }
             
             updateExtremeStatus(hot25, cold26);
@@ -293,10 +293,10 @@
             const dhw25Vals = ALL_SITES.map(s => peak2025[s].toFixed(1)).join('/');
             
             if (enEl) {
-                enEl.innerHTML = `24: ${dhw24Vals}<br>25: ${dhw25Vals}<br><small style="opacity:0.7">Data: ${obsJa}</small>`;
+                enEl.innerHTML = `24: ${dhw24Vals}<br>25: ${dhw25Vals}<br><small style="opacity:0.7">Obs: ${obsJa} | Pub: ${pubJa}</small>`;
             }
             if (jaEl) {
-                jaEl.innerHTML = `24: ${dhw24Vals}<br>25: ${dhw25Vals}<br><small style="opacity:0.7">データ: ${obsJa}</small>`;
+                jaEl.innerHTML = `24: ${dhw24Vals}<br>25: ${dhw25Vals}<br><small style="opacity:0.7">観測: ${obsJa} | 公開: ${pubJa}</small>`;
             }
             
             window.dhwAllYearsData = data;
@@ -497,38 +497,6 @@
                     }
                 });
                 console.log('✅ DHW card chart initialized (7 sites)');
-            }
-
-            // ========================================
-            // 光補正DHW カード（DHW vs 光補正DHW 比較）
-            // ========================================
-            const ladhwCtx = document.getElementById('chart-ladhw');
-            if (ladhwCtx) {
-                const ladhwData = {
-                    labels: ['串', '小', '奄', '瀬', '万', '慶', '石'],
-                    dhw: [7.2, 8.3, 9.1, 10.8, 12.6, 11.2, 10.5],
-                    ladhw: [6.1, 7.8, 7.5, 9.2, 10.8, 9.5, 8.9]
-                };
-                new Chart(ladhwCtx, {
-                    type: 'bar',
-                    data: {
-                        labels: ladhwData.labels,
-                        datasets: [
-                            { label: 'DHW', data: ladhwData.dhw, backgroundColor: 'rgba(239, 68, 68, 0.7)', borderWidth: 0 },
-                            { label: '光補正', data: ladhwData.ladhw, backgroundColor: 'rgba(59, 130, 246, 0.7)', borderWidth: 0 }
-                        ]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: { legend: { display: true, position: 'bottom', labels: { boxWidth: 10, font: { size: 9 }, padding: 6 } } },
-                        scales: {
-                            y: { beginAtZero: true, max: 16, grid: { color: 'rgba(0,122,108,0.08)' }, ticks: { font: { size: 9 }, color: '#666' } },
-                            x: { grid: { display: false }, ticks: { font: { size: 9 }, color: '#666' } }
-                        }
-                    }
-                });
-                console.log('✅ Light-adjusted DHW card chart initialized');
             }
 
             // ========================================
