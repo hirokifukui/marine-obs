@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light-Adjusted DHW | marine-obs.org</title>
+    <!-- SEO / OGP -->
+    <meta name="description" content="雲量を考慮した光補正DHW。同じ水温でも曇天なら白化リスクは下がる。日本7地点の2020-2025年データを公開。">
+    <meta property="og:title" content="光補正DHW（雲量補正）| marine-obs.org">
+    <meta property="og:description" content="雲量を考慮した光補正DHW。同じ水温でも曇天なら白化リスクは下がる。日本7地点の2020-2025年データを公開。">
+    <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
+    <meta property="og:url" content="https://marine-obs.org/light-adjusted-dhw.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dhw.css">
+    <style>
+        /* Page-specific styles */
+        .cloud-badge {
+            display: inline-block;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .cloud-high { background: #dbeafe; color: #1e40af; }
+        .cloud-low { background: #fef3c7; color: #92400e; }
+        .effect-positive { color: #059669; }
+        .effect-negative { color: #dc2626; font-weight: 600; }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin: 1.5rem 0;
+        }
+        .data-table th, .data-table td {
+            padding: 0.5rem 0.4rem;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .data-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .data-table tr:hover {
+            background: #f8fafc;
+        }
+        .site-label {
+            text-align: left;
+            font-weight: 500;
+        }
+        .risk-low { color: #059669; }
+        .risk-bleaching { color: #d97706; }
+        .risk-severe { color: #dc2626; font-weight: 600; }
+        .year-header {
+            background: #1e293b !important;
+            color: white;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .summary-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .summary-card .year {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
+        .summary-card .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .summary-card .label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        .summary-card.highlight {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+        .formula-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+        .formula-box code {
+            display: block;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="images/logo-circle.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul class="nav-links">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Details</span>
+                            <span data-lang="ja">データ詳細</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                            <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                            <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                            <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge">計画中</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Bleaching</span>
+                            <span data-lang="ja">白化</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                            <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                            <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Learn</span>
+                            <span data-lang="ja">サンゴを知る</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                            <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                            <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">For Divers</span>
+                            <span data-lang="ja">ダイバー向け</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                            <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Reference</span>
+                            <span data-lang="ja">リファレンス</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                            <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                            <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                            <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button id="lang-en" class="active">English</button>
+                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <button id="lang-ja">日本語</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Details</span>
+                    <span data-lang="ja">データ詳細</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                    <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                    <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                    <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                    <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge-mobile">計画中</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Bleaching</span>
+                    <span data-lang="ja">白化</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                    <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                    <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Learn</span>
+                    <span data-lang="ja">サンゴを知る</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                    <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                    <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">For Divers</span>
+                    <span data-lang="ja">ダイバー向け</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                    <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Reference</span>
+                    <span data-lang="ja">リファレンス</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                    <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                    <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                    <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> / 
+            <a href="dhw.html">DHW</a> /
+            <span data-lang="en">Light-Adjusted</span>
+            <span data-lang="ja">光補正</span>
+        </nav>
+
+        <div class="page-header">
+            <h1>
+                <span data-lang="en">Light-Adjusted DHW</span>
+                <span data-lang="ja">光補正DHW（雲量補正）</span>
+            </h1>
+            <p class="lead">
+                <span data-lang="en">
+                    The same water temperature doesn't always cause the same bleaching. 
+                    Cloud cover during heat stress can reduce damage by blocking light—the co-driver of coral bleaching.
+                </span>
+                <span data-lang="ja">
+                    同じ水温でも、白化の程度は異なります。
+                    熱ストレス期間中の雲量が光を遮ることで、白化の共同要因を軽減できます。
+                </span>
+            </p>
+        </div>
+
+        <!-- Story Box: Why Light Matters -->
+        <div class="story-box">
+            <p class="story-lead">
+                <span data-lang="en">Why does cloud cover matter for coral bleaching?</span>
+                <span data-lang="ja">なぜ雲量がサンゴ白化に影響するのか？</span>
+            </p>
+            <p>
+                <span data-lang="en">
+                    Coral bleaching is triggered when heat damages the photosynthetic machinery of symbiotic algae (zooxanthellae). 
+                    This process is <strong>light-dependent</strong>: intense sunlight accelerates damage, while cloudy conditions provide natural shade. 
+                    A global study of 35,769 bleaching observations confirmed that higher cloud cover correlates with reduced bleaching severity.
+                </span>
+                <span data-lang="ja">
+                    サンゴ白化は、共生藻（褐虫藻）の光合成系が熱によって損傷されることで引き起こされます。
+                    このプロセスは<strong>光依存的</strong>です。強い日差しは損傷を加速し、曇天は自然の日陰を提供します。
+                    35,769件の白化観測を分析したグローバル研究では、雲量が高いほど白化の程度が低下することが確認されています。
+                </span>
+            </p>
+        </div>
+
+        <!-- Light Stress Science -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">The Science: Heat × Light Interaction</span>
+                <span data-lang="ja">科学的背景：熱×光の相互作用</span>
+            </h2>
+
+            <div class="insight-grid">
+                <div class="insight-card limitation">
+                    <h3>
+                        ☀️ <span data-lang="en">High Heat + High Light</span><span data-lang="ja">高温 + 高光量</span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">
+                            Synergistic damage. Excess light energy overwhelms the algae's repair mechanisms, 
+                            producing reactive oxygen species that damage both algae and coral tissue.
+                        </span>
+                        <span data-lang="ja">
+                            相乗的ダメージ。過剰な光エネルギーが藻類の修復機構を圧倒し、
+                            活性酸素種を生成して藻類とサンゴ組織の両方を傷害します。
+                        </span>
+                    </p>
+                </div>
+
+                <div class="insight-card acclimatization">
+                    <h3>
+                        ☁️ <span data-lang="en">High Heat + Cloudy</span><span data-lang="ja">高温 + 曇天</span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">
+                            Reduced damage. Cloud cover acts as natural shading, allowing corals more time to 
+                            activate stress responses before irreversible damage occurs.
+                        </span>
+                        <span data-lang="ja">
+                            ダメージ軽減。雲が自然の日よけとなり、不可逆的損傷が起こる前に
+                            サンゴがストレス応答を活性化する時間を与えます。
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="insight-box adapt">
+                <strong class="adapt"><span data-lang="en">Experimental evidence:</span><span data-lang="ja">実験的エビデンス：</span></strong>
+                <span data-lang="en"> Butcherine et al. (2023) demonstrated that 30% shading delayed bleaching by up to 3 DHW equivalent in controlled tank experiments. This forms the basis for our light adjustment coefficient.</span>
+                <span data-lang="ja"> Butcherine et al. (2023) は、制御された水槽実験で30%の遮光が白化を最大3 DHW相当遅延させることを実証しました。これが当サイトの光補正係数の根拠です。</span>
+            </div>
+        </section>
+
+        <!-- Calculation Method -->
+        <section class="content-section calculation-notice">
+            <h2>
+                <span data-lang="en">Our Calculation Method</span>
+                <span data-lang="ja">計算方法</span>
+            </h2>
+
+            <div class="notice-box">
+                <h3>
+                    <span data-lang="en">Cloud-Adjusted DHW Formula</span>
+                    <span data-lang="ja">光補正DHWの計算式</span>
+                </h3>
+                <div class="formula-box">
+                    <code><span data-lang="en">Light Reduction Factor</span><span data-lang="ja">光軽減係数</span> = (Cloud% - 50) / 100 × 0.3</code>
+                    <code><span data-lang="en">Adjusted DHW</span><span data-lang="ja">調整DHW</span> = DHW × (1 - <span data-lang="en">Light Reduction Factor</span><span data-lang="ja">光軽減係数</span>)</code>
+                </div>
+                <p>
+                    <span data-lang="en">
+                        <strong>Baseline (50% cloud cover):</strong> Average cloud cover over tropical coral reefs.<br>
+                        <strong>Coefficient (0.3):</strong> Derived from Butcherine et al. (2023) shading experiments.<br>
+                        <strong>Effect:</strong> Higher cloud cover → lower adjusted DHW (reduced risk); lower cloud cover → higher adjusted DHW (increased risk).
+                    </span>
+                    <span data-lang="ja">
+                        <strong>基準値（雲量50%）：</strong> 熱帯サンゴ礁の平均的な雲量。<br>
+                        <strong>係数（0.3）：</strong> Butcherine et al. (2023) の遮光実験から導出。<br>
+                        <strong>効果：</strong> 雲量が高い → 調整DHWが低下（リスク軽減）、雲量が低い → 調整DHWが上昇（リスク悪化）。
+                    </span>
+                </p>
+            </div>
+
+            <div class="method-box">
+                <h3>
+                    <span data-lang="en">Data Sources</span>
+                    <span data-lang="ja">データソース</span>
+                </h3>
+                <table class="method-table">
+                    <thead>
+                        <tr>
+                            <th><span data-lang="en">Data</span><span data-lang="ja">データ</span></th>
+                            <th><span data-lang="en">Source</span><span data-lang="ja">ソース</span></th>
+                            <th><span data-lang="en">Resolution</span><span data-lang="ja">解像度</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SST</td>
+                            <td>NASA MUR</td>
+                            <td>1km, <span data-lang="en">daily</span><span data-lang="ja">日次</span></td>
+                        </tr>
+                        <tr>
+                            <td>DHW</td>
+                            <td><span data-lang="en">Our calculation (Lachs et al. 2021)</span><span data-lang="ja">独自計算（Lachs et al. 2021準拠）</span></td>
+                            <td><span data-lang="en">daily</span><span data-lang="ja">日次</span></td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Cloud Cover</span><span data-lang="ja">雲量</span></td>
+                            <td>Stormglass API</td>
+                            <td><span data-lang="en">3-hourly (daytime avg)</span><span data-lang="ja">3時間毎（日中平均）</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Phase 2: Data Tables will be inserted here -->
+
+        <!-- Phase 3: Charts will be inserted here -->
+
+        <!-- Limitations -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Limitations and Caveats</span>
+                <span data-lang="ja">限界と注意事項</span>
+            </h2>
+
+            <div class="caution-box">
+                <ul>
+                    <li>
+                        <span data-lang="en">
+                            <strong>No ground-truth validation:</strong> These values are estimates based on satellite and weather data. 
+                            We have not validated them against actual bleaching observations.
+                        </span>
+                        <span data-lang="ja">
+                            <strong>実測データとの検証なし：</strong> これらの値は衛星・気象データに基づく推定値です。
+                            実際の白化観測との対応は検証していません。
+                        </span>
+                    </li>
+                    <li>
+                        <span data-lang="en">
+                            <strong>Coefficient uncertainty:</strong> The 0.3 coefficient is derived from tank experiments 
+                            and may not directly translate to field conditions.
+                        </span>
+                        <span data-lang="ja">
+                            <strong>係数の不確実性：</strong> 0.3の係数は水槽実験から導出したもので、
+                            現場条件への適用には不確実性があります。
+                        </span>
+                    </li>
+                    <li>
+                        <span data-lang="en">
+                            <strong>Species-specific responses:</strong> Different coral species respond differently to shading 
+                            (Ellis et al. 2024). Our single coefficient doesn't capture this variation.
+                        </span>
+                        <span data-lang="ja">
+                            <strong>種特異的な応答：</strong> サンゴ種によって遮光への応答は異なります（Ellis et al. 2024）。
+                            単一の係数ではこの変動を捉えられません。
+                        </span>
+                    </li>
+                    <li>
+                        <span data-lang="en">
+                            <strong>Other light variables ignored:</strong> PAR (photosynthetically active radiation) and 
+                            underwater light attenuation are not considered.
+                        </span>
+                        <span data-lang="ja">
+                            <strong>他の光変数の未考慮：</strong> PAR（光合成有効放射）や水中光減衰係数は考慮していません。
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="references-section">
+            <h2>
+                <span data-lang="en">References</span>
+                <span data-lang="ja">参考文献</span>
+            </h2>
+
+            <div class="ref-category">
+                <h3>
+                    <span data-lang="en">Light Stress and Bleaching</span>
+                    <span data-lang="ja">光ストレスと白化</span>
+                </h3>
+                <ul class="ref-list">
+                    <li>González-Espinosa PC, Donner SD (2021) Cloudiness reduces the bleaching response of coral reefs exposed to heat stress. <em>Global Change Biology</em> 27:4143-4154. <a href="https://doi.org/10.1111/gcb.15676" target="_blank">DOI</a></li>
+                    <li>Butcherine P et al. (2023) Intermittent shading can moderate coral bleaching on shallow reefs. <em>Frontiers in Marine Science</em> 10:1162896. <a href="https://doi.org/10.3389/fmars.2023.1162896" target="_blank">DOI</a></li>
+                    <li>Cheung MWM et al. (2025) Moving Beyond Temperature Metrics in Coral Bleaching Prediction. <em>Global Ecology and Biogeography</em>. <a href="https://doi.org/10.1111/geb.70013" target="_blank">DOI</a></li>
+                    <li>Ellis SL et al. (2024) Shading responses are species-specific in thermally stressed corals. <em>Frontiers in Marine Science</em> 11:1333806. <a href="https://doi.org/10.3389/fmars.2024.1333806" target="_blank">DOI</a></li>
+                </ul>
+            </div>
+
+            <div class="ref-category">
+                <h3>
+                    <span data-lang="en">DHW Methodology</span>
+                    <span data-lang="ja">DHW計算方法</span>
+                </h3>
+                <ul class="ref-list">
+                    <li>Lachs L et al. (2021) Fine-tuning heat stress algorithms to optimise global predictions of mass coral bleaching. <em>Remote Sensing</em> 13:2677. <a href="https://doi.org/10.3390/rs13142677" target="_blank">DOI</a></li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <a href="dhw.html">← 
+            <span data-lang="en">Back to DHW</span>
+            <span data-lang="ja">DHWページに戻る</span>
+        </a>
+        <p style="margin-top: 0.5rem;">© 2026 marine-obs.org</p>
+    </footer>
+
+    <script>
+        // Language toggle
+        function setLang(lang) {
+            document.body.classList.toggle('ja', lang === 'ja');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
+            localStorage.setItem('lang', lang);
+        }
+
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang) setLang(savedLang);
+
+        document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
+        document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
+    </script>
+
+    <!-- Navigation JS -->
+    <script>
+    (function() {
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        const sidebarClose = document.getElementById('sidebar-close');
+        
+        function openSidebar() {
+            sidebar.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            hamburger.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        hamburger.addEventListener('click', function() {
+            if (sidebar.classList.contains('active')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+        
+        sidebarOverlay.addEventListener('click', closeSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                closeSidebar();
+            }
+        });
+    })();
+    </script>
+</body>
+</html>
