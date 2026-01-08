@@ -722,6 +722,54 @@
                 </ul>
             </div>
         </section>
+        <!-- Annual DHW Charts - Split into 2 groups -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Annual Peak DHW (2003–2025)</span>
+                <span data-lang="ja">年間最大DHW（2003–2025年）</span>
+            </h2>
+
+            <!-- Chart 1: Honshu & Ogasawara -->
+            <div class="card">
+                <div class="card-title">
+                    <span data-lang="en">Honshu & Ogasawara</span>
+                    <span data-lang="ja">本州・小笠原</span>
+                </div>
+                <div class="chart-container">
+                    <canvas id="dhwChartNorth"></canvas>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item"><span class="legend-line legend-kushimoto"></span><span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span></div>
+                    <div class="legend-item"><span class="legend-line legend-ogasawara"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
+                </div>
+                <div class="threshold-note">
+                    <span data-lang="en">Red dashed line: Alert Level 1 threshold (DHW = 4)</span>
+                    <span data-lang="ja">赤破線：警報レベル1の閾値（DHW = 4）</span>
+                </div>
+            </div>
+
+            <!-- Chart 2: Ryukyu Islands -->
+            <div class="card">
+                <div class="card-title">
+                    <span data-lang="en">Ryukyu Islands</span>
+                    <span data-lang="ja">琉球列島</span>
+                </div>
+                <div class="chart-container">
+                    <canvas id="dhwChartSouth"></canvas>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item"><span class="legend-line legend-amami"></span><span data-lang="en">Amami</span><span data-lang="ja">奄美</span></div>
+                    <div class="legend-item"><span class="legend-line legend-sesoko"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
+                    <div class="legend-item"><span class="legend-line legend-manza"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
+                    <div class="legend-item"><span class="legend-line legend-kerama"></span><span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span></div>
+                    <div class="legend-item"><span class="legend-line legend-sekisei"></span><span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span></div>
+                </div>
+                <div class="threshold-note">
+                    <span data-lang="en">Red dashed line: Alert Level 1 threshold (DHW = 4)</span>
+                    <span data-lang="ja">赤破線：警報レベル1の閾値（DHW = 4）</span>
+                </div>
+            </div>
+        </section>
         <!-- Research at Sesoko -->
         <section class="content-section">
             <h2>
@@ -770,54 +818,6 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-        </section>
-        <!-- Annual DHW Charts - Split into 2 groups -->
-        <section class="content-section">
-            <h2>
-                <span data-lang="en">Annual Peak DHW (2003–2025)</span>
-                <span data-lang="ja">年間最大DHW（2003–2025年）</span>
-            </h2>
-
-            <!-- Chart 1: Honshu & Ogasawara -->
-            <div class="card">
-                <div class="card-title">
-                    <span data-lang="en">Honshu & Ogasawara</span>
-                    <span data-lang="ja">本州・小笠原</span>
-                </div>
-                <div class="chart-container">
-                    <canvas id="dhwChartNorth"></canvas>
-                </div>
-                <div class="chart-legend">
-                    <div class="legend-item"><span class="legend-line legend-kushimoto"></span><span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span></div>
-                    <div class="legend-item"><span class="legend-line legend-ogasawara"></span><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
-                </div>
-                <div class="threshold-note">
-                    <span data-lang="en">Red dashed line: Alert Level 1 threshold (DHW = 4)</span>
-                    <span data-lang="ja">赤破線：警報レベル1の閾値（DHW = 4）</span>
-                </div>
-            </div>
-
-            <!-- Chart 2: Ryukyu Islands -->
-            <div class="card">
-                <div class="card-title">
-                    <span data-lang="en">Ryukyu Islands</span>
-                    <span data-lang="ja">琉球列島</span>
-                </div>
-                <div class="chart-container">
-                    <canvas id="dhwChartSouth"></canvas>
-                </div>
-                <div class="chart-legend">
-                    <div class="legend-item"><span class="legend-line legend-amami"></span><span data-lang="en">Amami</span><span data-lang="ja">奄美</span></div>
-                    <div class="legend-item"><span class="legend-line legend-sesoko"></span><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                    <div class="legend-item"><span class="legend-line legend-manza"></span><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                    <div class="legend-item"><span class="legend-line legend-kerama"></span><span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span></div>
-                    <div class="legend-item"><span class="legend-line legend-sekisei"></span><span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span></div>
-                </div>
-                <div class="threshold-note">
-                    <span data-lang="en">Red dashed line: Alert Level 1 threshold (DHW = 4)</span>
-                    <span data-lang="ja">赤破線：警報レベル1の閾値（DHW = 4）</span>
-                </div>
             </div>
         </section>
         <!-- Thermal History and Acclimatization -->
