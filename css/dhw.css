@@ -769,3 +769,11 @@
 .alert-note strong {
     color: #92400e;
 }
+
+/* Data Note in Hero */
+.data-note {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--text-tertiary, #9ca3af);
+    opacity: 0.8;
+}

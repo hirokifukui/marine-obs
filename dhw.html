@@ -348,8 +348,12 @@
             </div>
 
             <div class="hero-date-info">
-                <span data-lang="en" id="dhw-hero-date-en">Data through: --</span>
-                <span data-lang="ja" id="dhw-hero-date-ja">データ更新日: --</span>
+                <span data-lang="en" id="dhw-hero-date-en">Data: -- (observation date)</span>
+                <span data-lang="ja" id="dhw-hero-date-ja">データ: --（観測日）</span>
+                <p class="data-note">
+                    <span data-lang="en">⏱ NASA MUR SST data is published a few days after observation.</span>
+                    <span data-lang="ja">⏱ NASA MUR SSTデータは観測から数日後に公開されます</span>
+                </p>
             </div>
         </section>
 
@@ -1166,8 +1170,8 @@
                 
                 const enEl = document.getElementById('dhw-hero-date-en');
                 const jaEl = document.getElementById('dhw-hero-date-ja');
-                if (enEl) enEl.textContent = `Observed: ${obsEn} | Published: ${pubEn}`;
-                if (jaEl) jaEl.textContent = `観測日: ${obsJa} | 公開日: ${pubJa}`;
+                if (enEl) enEl.textContent = `Data: ${obsEn} (observation date)`;
+                if (jaEl) jaEl.textContent = `データ: ${obsJa}（観測日）`;
             }
         }
 
