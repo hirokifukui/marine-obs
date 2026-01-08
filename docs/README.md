@@ -18,6 +18,7 @@
 | sst.html | 海水温 |
 | extreme.html | 極端水温日数 |
 | dhw.html | 積算熱ストレス |
+| light-adjusted-dhw.html | 光補正DHW |
 | global-bleaching.html | 世界の白化状況 |
 | japan-bleaching.html | 日本の白化状況 |
 | sekisei-cover.html | 石西礁湖被度グラフ（iframe用） |

@@ -6,7 +6,7 @@
 | NOAA CRW | DHW閾値の基準 |
 | NASA MUR | 日次SST（1km、22年分） |
 | モニ1000 | 実測白化率（将来） |
-| Stormglass | 海況予報 |
+| Stormglass | 海況予報 + 雲量 |
 
 衛星DHWは現地の2〜3倍高く出る。「目安」として提示。
 
@@ -29,8 +29,8 @@
 | Yamashiro 2012 | 低温ストレス |
 | Singh 2023 | 熱履歴効果 |
 | Lachs 2021 | DHW計算最適化（当サイト準拠） |
+| Butcherine 2023 | 光×熱ストレス相互作用 |
 | van Woesik 2011 | Winners and losers |
-| Lachs 2021 | DHW計算最適化（当サイト準拠） |
 
 Zotero: ThermalStress-Bleaching, CoralSpawning
 
