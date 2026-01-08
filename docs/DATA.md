@@ -28,12 +28,14 @@
 | Sakai 2019 | 瀬底白化、現地DHW |
 | Yamashiro 2012 | 低温ストレス |
 | Singh 2023 | 熱履歴効果 |
+| Lachs 2021 | DHW計算最適化（当サイト準拠） |
 | van Woesik 2011 | Winners and losers |
+| Lachs 2021 | DHW計算最適化（当サイト準拠） |
 
 Zotero: ThermalStress-Bleaching, CoralSpawning
 
 ---
-*2025-01-01*
+*2026-01-08*
 
 ## モニタリング地点座標
 | 地点 | 緯度 | 経度 |
