@@ -6,11 +6,7 @@
  * - data/extreme_days.json   → 極端日数カード  
  * - data/dhw_card.json       → DHWカード
  * - data/dhw_annual_peak.json → DHW詳細チャート
- * 
- * 代表3地点: 串本・小笠原・万座（特徴的な地点を選定）
- * - 串本: 日本最北端のサンゴ分布域、低温ストレスの指標
- * - 小笠原: 黒潮の影響を受けない独立した生態系
- * - 万座: 沖縄本島の代表地点、高温ストレスの指標
+ * - data/spawning_card.json  → 産卵予測カード（将来）
  */
 
 (function() {
@@ -18,21 +14,11 @@
     Chart.defaults.font.family = "'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif";
     Chart.defaults.font.size = 11;
     
-    // 代表3地点の色定義
     const chartColors = {
-        kushimoto: '#6366f1',  // インディゴ（北限）
-        ogasawara: '#2f855a',  // グリーン（独立生態系）
-        manza: '#c05621'       // オレンジ（沖縄代表）
+        sesoko: '#2b6cb0',
+        manza: '#c05621', 
+        ogasawara: '#2f855a'
     };
-    
-    // 地点名定義
-    const siteNames = {
-        en: { kushimoto: 'Kushimoto', ogasawara: 'Ogasawara', manza: 'Manza' },
-        ja: { kushimoto: '串本', ogasawara: '小笠原', manza: '万座' }
-    };
-    
-    // 代表3地点の配列
-    const CARD_SITES = ['kushimoto', 'ogasawara', 'manza'];
 
     // Supabase設定
     const SUPABASE_URL = 'https://pegiuiblpliainpdggfj.supabase.co';
@@ -41,25 +27,19 @@
     // SST最新値をSupabaseから取得
     async function loadSSTLatestFromSupabase() {
         try {
-            // 代表3地点の最新データを取得
             const response = await fetch(
-                `${SUPABASE_URL}/rest/v1/sst_daily?select=date,site_code,sst&order=date.desc&limit=21`,
+                `${SUPABASE_URL}/rest/v1/sst_daily?select=date,site_code,sst&order=date.desc&limit=3`,
                 { headers: { 'apikey': SUPABASE_ANON_KEY } }
             );
             if (!response.ok) throw new Error('Supabase fetch failed');
             const data = await response.json();
             
-            // 最新日付のデータを整形（代表3地点のみ）
+            // 最新日付のデータを整形
             const latest = {};
-            let publishedDate = null;
-            data.forEach(row => {
-                if (CARD_SITES.includes(row.site_code) && !latest[row.site_code]) {
-                    latest[row.site_code] = row.sst;
-                    if (!publishedDate) publishedDate = row.date;
-                }
-            });
+            data.forEach(row => { latest[row.site_code] = row.sst; });
+            const publishedDate = data[0]?.date;
             
-            // 衛星観測日は公開日の約3日前と推定
+            // 衛星観測日は公開日の約3日前と推定（月またぎ対応）
             const pubDateObj = new Date(Date.UTC(
                 ...publishedDate.split('-').map(Number).map((v, i) => i === 1 ? v - 1 : v)
             ));
@@ -77,10 +57,10 @@
             const jaEl = document.getElementById('sst-latest-ja');
             
             if (enEl) {
-                enEl.innerHTML = `SST: ${latest.kushimoto?.toFixed(1) || '--'} / ${latest.ogasawara?.toFixed(1) || '--'} / ${latest.manza?.toFixed(1) || '--'}°C<br><small style="opacity:0.8">Observed: ${obsEn} | Published: ${pubEn}</small>`;
+                enEl.innerHTML = `SST: ${latest.manza?.toFixed(1) || '--'} / ${latest.sesoko?.toFixed(1) || '--'} / ${latest.ogasawara?.toFixed(1) || '--'}°C<br><small style="opacity:0.8">Observed: ${obsEn} | Published: ${pubEn}</small>`;
             }
             if (jaEl) {
-                jaEl.innerHTML = `SST: ${latest.kushimoto?.toFixed(1) || '--'} / ${latest.ogasawara?.toFixed(1) || '--'} / ${latest.manza?.toFixed(1) || '--'}°C<br><small style="opacity:0.8">観測: ${obsJa} | 公開: ${pubJa}</small>`;
+                jaEl.innerHTML = `SST: ${latest.manza?.toFixed(1) || '--'} / ${latest.sesoko?.toFixed(1) || '--'} / ${latest.ogasawara?.toFixed(1) || '--'}°C<br><small style="opacity:0.8">観測: ${obsJa} | 公開: ${pubJa}</small>`;
             }
             
             // バッジと説明文を動的更新
@@ -94,10 +74,14 @@
 
     // SSTステータスを動的更新（バッジ・説明文）
     function updateSSTStatus(sstData, currentMonth) {
-        const maxSST = Math.max(sstData.kushimoto || 0, sstData.ogasawara || 0, sstData.manza || 0);
-        const minSST = Math.min(sstData.kushimoto || 99, sstData.ogasawara || 99, sstData.manza || 99);
-        const maxSite = CARD_SITES.find(s => sstData[s] === maxSST);
-        const minSite = CARD_SITES.find(s => sstData[s] === minSST);
+        const siteNamesEn = { manza: 'Manza', sesoko: 'Sesoko', ogasawara: 'Ogasawara' };
+        const siteNamesJa = { manza: '万座', sesoko: '瀬底', ogasawara: '小笠原' };
+        const sites = ['manza', 'sesoko', 'ogasawara'];
+        
+        const maxSST = Math.max(sstData.manza || 0, sstData.sesoko || 0, sstData.ogasawara || 0);
+        const minSST = Math.min(sstData.manza || 99, sstData.sesoko || 99, sstData.ogasawara || 99);
+        const maxSite = sites.find(s => sstData[s] === maxSST);
+        const minSite = sites.find(s => sstData[s] === minSST);
         
         // 夏季: 6-10月、冬季: 11-5月
         const isSummer = currentMonth >= 6 && currentMonth <= 10;
@@ -117,21 +101,21 @@
         if (isSummer && maxSST >= 29) {
             // 夏季で高温
             isWarning = true;
-            descEn = `${siteNames.en[maxSite]} at ${maxSST.toFixed(1)}°C—approaching bleaching threshold (29°C).`;
-            descJa = `${siteNames.ja[maxSite]}が${maxSST.toFixed(1)}°C—白化閾値（29°C）に接近。`;
-        } else if (isWinter && minSST <= 18) {
-            // 冬季で低温（串本は18°C以下で注意）
+            descEn = `${siteNamesEn[maxSite]} at ${maxSST.toFixed(1)}°C—approaching bleaching threshold (29°C).`;
+            descJa = `${siteNamesJa[maxSite]}が${maxSST.toFixed(1)}°C—白化閾値（29°C）に接近。`;
+        } else if (isWinter && minSST <= 21) {
+            // 冬季で低温
             isWarning = true;
-            descEn = `${siteNames.en[minSite]} at ${minSST.toFixed(1)}°C—cold stress threshold (≤18°C). Winter monitoring.`;
-            descJa = `${siteNames.ja[minSite]}が${minSST.toFixed(1)}°C—低温ストレス閾値（18°C以下）。冬季監視中。`;
+            descEn = `${siteNamesEn[minSite]} at ${minSST.toFixed(1)}°C—cold stress threshold (≤21°C). Winter monitoring.`;
+            descJa = `${siteNamesJa[minSite]}が${minSST.toFixed(1)}°C—低温ストレス閾値（21°C以下）。冬季監視中。`;
         } else if (isSummer) {
             // 夏季で安全
             descEn = `All sites below 29°C. Normal summer temperatures. Peak typically in August-September.`;
             descJa = `全地点29°C未満。夏季の平常水温。ピークは通常8-9月。`;
         } else {
             // 冬季で安全
-            descEn = `All sites above 18°C. Normal winter temperatures. Monitoring continues.`;
-            descJa = `全地点18°C超。冬季の平常水温。監視継続中。`;
+            descEn = `All sites above 21°C. Normal winter temperatures. Monitoring continues.`;
+            descJa = `全地点21°C超。冬季の平常水温。監視継続中。`;
         }
         
         if (isWarning) {
@@ -176,7 +160,7 @@
             const pubJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
             const obsJa = `${obsDateObj.getUTCMonth() + 1}/${obsDateObj.getUTCDate()}`;
             
-            // 値取得（nullの場合は0）- 代表3地点
+            // 値取得（nullの場合は0）
             const hot24 = data.hot_2024 || {};
             const hot25 = data.hot_2025 || {};
             const cold25 = data.cold_winter_2025 || {};
@@ -186,13 +170,13 @@
             const jaEl = document.getElementById('extreme-latest-ja');
             
             if (enEl) {
-                enEl.innerHTML = `🔥 2024: ${hot24.kushimoto||0}/${hot24.ogasawara||0}/${hot24.manza||0} | 2025: ${hot25.kushimoto||0}/${hot25.ogasawara||0}/${hot25.manza||0}<br>❄️ W25: ${cold25.kushimoto||0}/${cold25.ogasawara||0}/${cold25.manza||0} | W26: ${cold26.kushimoto||0}/${cold26.ogasawara||0}/${cold26.manza||0}<br><small style="opacity:0.8">Obs: ${obsEn} | Pub: ${pubEn}</small>`;
+                enEl.innerHTML = `🔥 2024: ${hot24.manza||0}/${hot24.sesoko||0}/${hot24.ogasawara||0} | 2025: ${hot25.manza||0}/${hot25.sesoko||0}/${hot25.ogasawara||0}<br>❄️ W25: ${cold25.manza||0}/${cold25.sesoko||0}/${cold25.ogasawara||0} | W26: ${cold26.manza||0}/${cold26.sesoko||0}/${cold26.ogasawara||0}<br><small style="opacity:0.8">Obs: ${obsEn} | Pub: ${pubEn}</small>`;
             }
             if (jaEl) {
-                jaEl.innerHTML = `🔥 2024: ${hot24.kushimoto||0}/${hot24.ogasawara||0}/${hot24.manza||0} | 2025: ${hot25.kushimoto||0}/${hot25.ogasawara||0}/${hot25.manza||0}<br>❄️ 25冬: ${cold25.kushimoto||0}/${cold25.ogasawara||0}/${cold25.manza||0} | 26冬: ${cold26.kushimoto||0}/${cold26.ogasawara||0}/${cold26.manza||0}<br><small style="opacity:0.8">観測: ${obsJa} | 公開: ${pubJa}</small>`;
+                jaEl.innerHTML = `🔥 2024: ${hot24.manza||0}/${hot24.sesoko||0}/${hot24.ogasawara||0} | 2025: ${hot25.manza||0}/${hot25.sesoko||0}/${hot25.ogasawara||0}<br>❄️ 25冬: ${cold25.manza||0}/${cold25.sesoko||0}/${cold25.ogasawara||0} | 26冬: ${cold26.manza||0}/${cold26.sesoko||0}/${cold26.ogasawara||0}<br><small style="opacity:0.8">観測: ${obsJa} | 公開: ${pubJa}</small>`;
             }
             
-            // バッジと説明文を動的更新
+            // バッジと説明文を動的更新（2025年夏 + 2025-26年冬基準）
             updateExtremeStatus(hot25, cold26);
             
             console.log('✅ Extreme days loaded from Supabase RPC');
@@ -203,12 +187,18 @@
 
     // 極端日数ステータスを動的更新（バッジ・説明文）
     function updateExtremeStatus(hot2025, cold2026) {
-        // 2025年夏の高温日（代表3地点）
-        const maxHotSite = CARD_SITES.reduce((a, b) => (hot2025[a]||0) > (hot2025[b]||0) ? a : b);
+        const siteNamesEn = { manza: 'Manza', sesoko: 'Sesoko', ogasawara: 'Ogasawara' };
+        const siteNamesJa = { manza: '万座', sesoko: '瀬底', ogasawara: '小笠原' };
+        const sites = ['manza', 'sesoko', 'ogasawara'];
+        
+        // 2025年夏の高温日合計
+        const totalHot = (hot2025.manza||0) + (hot2025.sesoko||0) + (hot2025.ogasawara||0);
+        const maxHotSite = sites.reduce((a, b) => (hot2025[a]||0) > (hot2025[b]||0) ? a : b);
         const maxHotDays = hot2025[maxHotSite] || 0;
         
-        // 2025-26年冬の低温日（代表3地点）
-        const maxColdSite = CARD_SITES.reduce((a, b) => (cold2026[a]||0) > (cold2026[b]||0) ? a : b);
+        // 2025-26年冬の低温日合計
+        const totalCold = (cold2026.manza||0) + (cold2026.sesoko||0) + (cold2026.ogasawara||0);
+        const maxColdSite = sites.reduce((a, b) => (cold2026[a]||0) > (cold2026[b]||0) ? a : b);
         const maxColdDays = cold2026[maxColdSite] || 0;
         
         const cardEl = document.getElementById('extreme-card');
@@ -227,21 +217,19 @@
             if (badgeEnEl) badgeEnEl.textContent = 'Watch';
             if (badgeJaEl) badgeJaEl.textContent = '注意';
             
+            // どちらが多いかで説明文を変える
             if (maxHotDays >= maxColdDays && maxHotDays >= 20) {
-                if (descEnEl) descEnEl.textContent = `2025 summer: ${siteNames.en[maxHotSite]} had ${maxHotDays} hot days (≥30°C). Heat stress risk.`;
-                if (descJaEl) descJaEl.textContent = `2025年夏: ${siteNames.ja[maxHotSite]}で${maxHotDays}日の高温（30°C以上）。熱ストレスリスクあり。`;
+                if (descEnEl) descEnEl.textContent = `2025 summer: ${siteNamesEn[maxHotSite]} had ${maxHotDays} hot days (≥30°C). Heat stress risk.`;
+                if (descJaEl) descJaEl.textContent = `2025年夏: ${siteNamesJa[maxHotSite]}で${maxHotDays}日の高温（30°C以上）。熱ストレスリスクあり。`;
             } else {
-                if (descEnEl) descEnEl.textContent = `2025-26 winter: ${siteNames.en[maxColdSite]} had ${maxColdDays} cold days (≤20°C). Cold stress risk.`;
-                if (descJaEl) descJaEl.textContent = `2025-26年冬: ${siteNames.ja[maxColdSite]}で${maxColdDays}日の低温（20°C以下）。低温ストレスリスクあり。`;
+                if (descEnEl) descEnEl.textContent = `2025-26 winter: ${siteNamesEn[maxColdSite]} had ${maxColdDays} cold days (≤20°C). Cold stress risk.`;
+                if (descJaEl) descJaEl.textContent = `2025-26年冬: ${siteNamesJa[maxColdSite]}で${maxColdDays}日の低温（20°C以下）。低温ストレスリスクあり。`;
             }
         } else {
             if (cardEl) cardEl.className = 'six-card status-safe';
             if (badgeEl) badgeEl.className = 'six-card-badge badge-safe';
             if (badgeEnEl) badgeEnEl.textContent = 'Safe';
             if (badgeJaEl) badgeJaEl.textContent = '安全';
-            
-            const totalHot = CARD_SITES.reduce((sum, s) => sum + (hot2025[s]||0), 0);
-            const totalCold = CARD_SITES.reduce((sum, s) => sum + (cold2026[s]||0), 0);
             
             if (totalHot === 0 && totalCold === 0) {
                 if (descEnEl) descEnEl.textContent = '2025-26 winter: No extreme days recorded. Monitoring continues.';
@@ -266,12 +254,12 @@
             if (!response.ok) throw new Error('Supabase RPC failed');
             const data = await response.json();
             
-            // 2024年と2025年のピーク値を取得（代表3地点）
+            // 2024年と2025年のピーク値を取得
             const get2024 = (site) => data[site]?.find(d => d.year === 2024)?.peak_dhw || 0;
             const get2025 = (site) => data[site]?.find(d => d.year === 2025)?.peak_dhw || 0;
             
-            const peak2024 = { kushimoto: get2024('kushimoto'), ogasawara: get2024('ogasawara'), manza: get2024('manza') };
-            const peak2025 = { kushimoto: get2025('kushimoto'), ogasawara: get2025('ogasawara'), manza: get2025('manza') };
+            const peak2024 = { manza: get2024('manza'), sesoko: get2024('sesoko'), ogasawara: get2024('ogasawara') };
+            const peak2025 = { manza: get2025('manza'), sesoko: get2025('sesoko'), ogasawara: get2025('ogasawara') };
             
             // 日付計算
             const pubDateObj = new Date(Date.UTC(
@@ -290,10 +278,10 @@
             const jaEl = document.getElementById('dhw-latest-ja');
             
             if (enEl) {
-                enEl.innerHTML = `2024: ${peak2024.kushimoto.toFixed(1)} / ${peak2024.ogasawara.toFixed(1)} / ${peak2024.manza.toFixed(1)}<br>2025: ${peak2025.kushimoto.toFixed(1)} / ${peak2025.ogasawara.toFixed(1)} / ${peak2025.manza.toFixed(1)}<br><small style="opacity:0.8">Obs: ${obsEn} | Pub: ${pubEn}</small>`;
+                enEl.innerHTML = `2024: ${peak2024.manza.toFixed(1)} / ${peak2024.sesoko.toFixed(1)} / ${peak2024.ogasawara.toFixed(1)}<br>2025: ${peak2025.manza.toFixed(1)} / ${peak2025.sesoko.toFixed(1)} / ${peak2025.ogasawara.toFixed(1)}<br><small style="opacity:0.8">Obs: ${obsEn} | Pub: ${pubEn}</small>`;
             }
             if (jaEl) {
-                jaEl.innerHTML = `2024: ${peak2024.kushimoto.toFixed(1)} / ${peak2024.ogasawara.toFixed(1)} / ${peak2024.manza.toFixed(1)}<br>2025: ${peak2025.kushimoto.toFixed(1)} / ${peak2025.ogasawara.toFixed(1)} / ${peak2025.manza.toFixed(1)}<br><small style="opacity:0.8">観測: ${obsJa} | 公開: ${pubJa}</small>`;
+                jaEl.innerHTML = `2024: ${peak2024.manza.toFixed(1)} / ${peak2024.sesoko.toFixed(1)} / ${peak2024.ogasawara.toFixed(1)}<br>2025: ${peak2025.manza.toFixed(1)} / ${peak2025.sesoko.toFixed(1)} / ${peak2025.ogasawara.toFixed(1)}<br><small style="opacity:0.8">観測: ${obsJa} | 公開: ${pubJa}</small>`;
             }
             
             // グローバルに保存（チャート描画用）
@@ -312,8 +300,13 @@
 
     // DHWステータスを動的更新（バッジ・説明文）
     function updateDHWStatus(peak2025) {
-        const maxDHW = Math.max(peak2025.kushimoto, peak2025.ogasawara, peak2025.manza);
-        const maxSite = CARD_SITES.find(s => peak2025[s] === maxDHW);
+        const maxDHW = Math.max(peak2025.manza, peak2025.sesoko, peak2025.ogasawara);
+        const sites = ['manza', 'sesoko', 'ogasawara'];
+        const siteNamesEn = { manza: 'Manza', sesoko: 'Sesoko', ogasawara: 'Ogasawara' };
+        const siteNamesJa = { manza: '万座', sesoko: '瀬底', ogasawara: '小笠原' };
+        
+        // 最大値のサイトを特定
+        const maxSite = sites.find(s => peak2025[s] === maxDHW);
         
         const cardEl = document.getElementById('dhw-card');
         const badgeEl = document.getElementById('dhw-badge');
@@ -328,16 +321,16 @@
             if (badgeEl) badgeEl.className = 'six-card-badge badge-alert';
             if (badgeEnEl) badgeEnEl.textContent = 'Alert';
             if (badgeJaEl) badgeJaEl.textContent = '警報';
-            if (descEnEl) descEnEl.textContent = `2025: ${siteNames.en[maxSite]} reached Alert Level 2 (DHW ≥8). Severe bleaching likely.`;
-            if (descJaEl) descJaEl.textContent = `2025年: ${siteNames.ja[maxSite]}が警報レベル2（DHW ≥8）に到達。深刻な白化の可能性。`;
+            if (descEnEl) descEnEl.textContent = `2025: ${siteNamesEn[maxSite]} reached Alert Level 2 (DHW ≥8). Severe bleaching likely.`;
+            if (descJaEl) descJaEl.textContent = `2025年: ${siteNamesJa[maxSite]}が警報レベル2（DHW ≥8）に到達。深刻な白化の可能性。`;
         } else if (maxDHW >= 4) {
             // 注意レベル（DHW >= 4）
             if (cardEl) cardEl.className = 'six-card status-alert';
             if (badgeEl) badgeEl.className = 'six-card-badge badge-alert';
             if (badgeEnEl) badgeEnEl.textContent = 'Alert';
             if (badgeJaEl) badgeJaEl.textContent = '警報';
-            if (descEnEl) descEnEl.textContent = `2025: ${siteNames.en[maxSite]} exceeded Watch Level (DHW ≥4). Bleaching possible.`;
-            if (descJaEl) descJaEl.textContent = `2025年: ${siteNames.ja[maxSite]}が注意レベル（DHW ≥4）を超過。白化の可能性あり。`;
+            if (descEnEl) descEnEl.textContent = `2025: ${siteNamesEn[maxSite]} exceeded Watch Level (DHW ≥4). Bleaching possible.`;
+            if (descJaEl) descJaEl.textContent = `2025年: ${siteNamesJa[maxSite]}が注意レベル（DHW ≥4）を超過。白化の可能性あり。`;
         } else {
             // 安全（DHW < 4）
             if (cardEl) cardEl.className = 'six-card status-safe';
@@ -347,6 +340,11 @@
             if (descEnEl) descEnEl.textContent = `2025: All sites below Watch Level (DHW <4). Low thermal stress year.`;
             if (descJaEl) descJaEl.textContent = `2025年: 全地点で注意レベル（DHW 4）未満。熱ストレスの低い年。`;
         }
+    }
+
+    // DHW色分け（閾値: 4未満=緑, 4-8=黄, 8以上=赤）
+    function getDHWColors(values) {
+        return values.map(v => v >= 8 ? '#a65d5d' : v >= 4 ? '#c4a35a' : '#5b9a94');
     }
 
     async function initAllCharts() {
@@ -360,11 +358,11 @@
             ]);
 
             // ========================================
-            // SST カード（月別比較チャート）- 串本を表示
+            // SST カード（月別比較チャート）
             // ========================================
             const sstCtx = document.getElementById('chart-sst-compare');
             if (sstCtx && sstData) {
-                const sst = sstData.chart.kushimoto;
+                const sst = sstData.chart.manza;
                 new Chart(sstCtx, {
                     type: 'line',
                     data: {
@@ -413,7 +411,7 @@
                         },
                         scales: {
                             y: {
-                                min: 14,
+                                min: 20,
                                 max: 32,
                                 grid: { color: 'rgba(0,122,108,0.08)' },
                                 ticks: { font: { size: 9 }, color: '#666' }
@@ -425,7 +423,7 @@
                         }
                     }
                 });
-                console.log('✅ SST card chart initialized (Kushimoto)');
+                console.log('✅ SST card chart initialized');
             }
 
             // ========================================
@@ -444,23 +442,23 @@
             await loadDHWFromSupabase();
 
             // ========================================
-            // 極端日数 カード（ミニチャート）- 代表3地点
+            // 極端日数 カード（ミニチャート）
             // ========================================
             const extremeMiniCtx = document.getElementById('extremeChartMini');
             if (extremeMiniCtx && extremeData) {
-                const years = extremeData.hot_days.kushimoto.map(d => d.year).slice(-5);
-                const kushimotoData = extremeData.hot_days.kushimoto.slice(-5).map(d => d.days);
-                const ogasawaraData = extremeData.hot_days.ogasawara.slice(-5).map(d => d.days);
+                const years = extremeData.hot_days.sesoko.map(d => d.year).slice(-5);
+                const sesokoData = extremeData.hot_days.sesoko.slice(-5).map(d => d.days);
                 const manzaData = extremeData.hot_days.manza.slice(-5).map(d => d.days);
+                const ogasawaraData = extremeData.hot_days.ogasawara.slice(-5).map(d => d.days);
                 
                 new Chart(extremeMiniCtx, {
                     type: 'bar',
                     data: {
                         labels: years,
                         datasets: [
-                            { data: kushimotoData, backgroundColor: chartColors.kushimoto + '99' },
-                            { data: ogasawaraData, backgroundColor: chartColors.ogasawara + '99' },
-                            { data: manzaData, backgroundColor: chartColors.manza + '99' }
+                            { data: sesokoData, backgroundColor: chartColors.sesoko + '99' },
+                            { data: manzaData, backgroundColor: chartColors.manza + '99' },
+                            { data: ogasawaraData, backgroundColor: chartColors.ogasawara + '99' }
                         ]
                     },
                     options: {
@@ -494,10 +492,17 @@
                         labels: recentYears,
                         datasets: [
                             {
-                                label: 'Kushimoto',
-                                data: getRecentData('kushimoto'),
-                                backgroundColor: chartColors.kushimoto + '99',
-                                borderColor: chartColors.kushimoto,
+                                label: 'Manza',
+                                data: getRecentData('manza'),
+                                backgroundColor: chartColors.manza + '99',
+                                borderColor: chartColors.manza,
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'Sesoko',
+                                data: getRecentData('sesoko'),
+                                backgroundColor: chartColors.sesoko + '99',
+                                borderColor: chartColors.sesoko,
                                 borderWidth: 1
                             },
                             {
@@ -505,13 +510,6 @@
                                 data: getRecentData('ogasawara'),
                                 backgroundColor: chartColors.ogasawara + '99',
                                 borderColor: chartColors.ogasawara,
-                                borderWidth: 1
-                            },
-                            {
-                                label: 'Manza',
-                                data: getRecentData('manza'),
-                                backgroundColor: chartColors.manza + '99',
-                                borderColor: chartColors.manza,
                                 borderWidth: 1
                             }
                         ]
@@ -542,7 +540,7 @@
             // ========================================
             const dhwDetailCtx = document.getElementById('dhwChart');
             if (dhwDetailCtx && dhwPeakData) {
-                const years = dhwPeakData.manza?.map(d => d.year) || dhwPeakData.sesoko?.map(d => d.year) || [];
+                const years = dhwPeakData.sesoko.map(d => d.year);
                 
                 new Chart(dhwDetailCtx, {
                     type: 'bar',
@@ -550,24 +548,24 @@
                         labels: years,
                         datasets: [
                             {
-                                label: '串本',
-                                data: dhwPeakData.kushimoto?.map(d => d.peak_dhw) || [],
-                                backgroundColor: chartColors.kushimoto + '99',
-                                borderColor: chartColors.kushimoto,
-                                borderWidth: 1
-                            },
-                            {
-                                label: '小笠原',
-                                data: dhwPeakData.ogasawara?.map(d => d.peak_dhw) || [],
-                                backgroundColor: chartColors.ogasawara + '99',
-                                borderColor: chartColors.ogasawara,
+                                label: '瀬底',
+                                data: dhwPeakData.sesoko.map(d => d.peak_dhw),
+                                backgroundColor: chartColors.sesoko + '99',
+                                borderColor: chartColors.sesoko,
                                 borderWidth: 1
                             },
                             {
                                 label: '万座',
-                                data: dhwPeakData.manza?.map(d => d.peak_dhw) || [],
+                                data: dhwPeakData.manza.map(d => d.peak_dhw),
                                 backgroundColor: chartColors.manza + '99',
                                 borderColor: chartColors.manza,
+                                borderWidth: 1
+                            },
+                            {
+                                label: '小笠原',
+                                data: dhwPeakData.ogasawara.map(d => d.peak_dhw),
+                                backgroundColor: chartColors.ogasawara + '99',
+                                borderColor: chartColors.ogasawara,
                                 borderWidth: 1
                             }
                         ]
@@ -611,24 +609,17 @@
             // ========================================
             const extremeDetailCtx = document.getElementById('extremeChart');
             if (extremeDetailCtx && extremeData) {
-                const years = extremeData.hot_days.manza.map(d => d.year);
+                const years = extremeData.hot_days.sesoko.map(d => d.year);
                 new Chart(extremeDetailCtx, {
                     type: 'bar',
                     data: {
                         labels: years,
                         datasets: [
                             {
-                                label: '串本',
-                                data: extremeData.hot_days.kushimoto.map(d => d.days),
-                                backgroundColor: chartColors.kushimoto + '99',
-                                borderColor: chartColors.kushimoto,
-                                borderWidth: 1
-                            },
-                            {
-                                label: '小笠原',
-                                data: extremeData.hot_days.ogasawara.map(d => d.days),
-                                backgroundColor: chartColors.ogasawara + '99',
-                                borderColor: chartColors.ogasawara,
+                                label: '瀬底',
+                                data: extremeData.hot_days.sesoko.map(d => d.days),
+                                backgroundColor: chartColors.sesoko + '99',
+                                borderColor: chartColors.sesoko,
                                 borderWidth: 1
                             },
                             {
@@ -636,6 +627,13 @@
                                 data: extremeData.hot_days.manza.map(d => d.days),
                                 backgroundColor: chartColors.manza + '99',
                                 borderColor: chartColors.manza,
+                                borderWidth: 1
+                            },
+                            {
+                                label: '小笠原',
+                                data: extremeData.hot_days.ogasawara.map(d => d.days),
+                                backgroundColor: chartColors.ogasawara + '99',
+                                borderColor: chartColors.ogasawara,
                                 borderWidth: 1
                             }
                         ]
