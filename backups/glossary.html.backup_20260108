@@ -301,8 +301,8 @@
                 <div class="glossary-term" data-lang="en">DHW (Degree Heating Weeks)</div>
                 <div class="glossary-term" data-lang="ja">DHW（積算熱ストレス）</div>
                 <div class="glossary-term-en" data-lang="ja">Degree Heating Weeks</div>
-                <p class="glossary-def" data-lang="en">A measure of accumulated heat stress. Calculated by summing temperatures exceeding MMM over the past 8 weeks. DHW ≥ 4: bleaching likely. DHW ≥ 8: severe bleaching and mortality likely.</p>
-                <p class="glossary-def" data-lang="ja">蓄積された熱ストレスの指標。過去8週間でMMMを超えた水温の累積値。DHW 4以上で白化の可能性、8以上で大規模白化・死亡の可能性。</p>
+                <p class="glossary-def" data-lang="en">A measure of accumulated heat stress. Calculated by summing temperatures exceeding MMM+1℃ over the past 12 weeks. DHW ≥ 4: bleaching likely. DHW ≥ 8: severe bleaching and mortality likely.</p>
+                <p class="glossary-def" data-lang="ja">蓄積された熱ストレスの指標。過去12週間でMMM+1℃を超えた水温の累積値。DHW 4以上で白化の可能性、8以上で大規模白化・死亡の可能性。</p>
                 <p class="glossary-note" data-lang="en">Note: Satellite DHW tends to overestimate compared to in-situ measurements (2-3x higher in Sesoko studies).</p>
                 <p class="glossary-note" data-lang="ja">注：衛星DHWは現地観測より2〜3倍高く出る傾向がある（瀬底の研究による）。</p>
             </div>

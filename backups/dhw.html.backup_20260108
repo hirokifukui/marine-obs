@@ -363,12 +363,12 @@
                 <span data-lang="en">
                     Corals can tolerate brief temperature spikes, but sustained heat exposure disrupts 
                     the symbiosis with their algal partners. DHW tracks cumulative thermal stress over 
-                    the past 8 weeks, predicting bleaching risk before visible damage occurs. 
+                    the past 12 weeks, predicting bleaching risk before visible damage occurs. 
                     The threshold DHW ≥ 4 indicates likely bleaching; DHW ≥ 8 indicates likely mortality.
                 </span>
                 <span data-lang="ja">
                     サンゴは短時間の高温スパイクには耐えられますが、持続的な熱曝露は共生藻との関係を破壊します。
-                    DHWは過去8週間の累積熱ストレスを追跡し、目に見える被害が発生する前に白化リスクを予測します。
+                    DHWは過去12週間の累積熱ストレスを追跡し、目に見える被害が発生する前に白化リスクを予測します。
                     DHW ≥ 4で白化の可能性、DHW ≥ 8で死亡の可能性を示します。
                 </span>
             </p>
@@ -413,23 +413,23 @@
                 <span data-lang="en">
                     DHW (Degree Heating Weeks) is a metric developed by NOAA Coral Reef Watch 
                     to quantify accumulated thermal stress on corals. It measures how much heat 
-                    has built up over the past 8 weeks above MMM (Maximum Monthly Mean SST).
+                    has built up over the past 12 weeks above the bleaching threshold (MMM + 1°C).
                 </span>
                 <span data-lang="ja">
                     DHW（Degree Heating Weeks：度週）は、サンゴへの累積熱ストレスを定量化するために
-                    NOAA Coral Reef Watchが開発した指標です。過去8週間でMMM（最暖月平均水温）を
+                    NOAA Coral Reef Watchが開発した指標です。過去12週間で白化閾値（MMM + 1°C）を
                     超えた熱がどれだけ蓄積されたかを測定します。
                 </span>
             </p>
             <p>
                 <span data-lang="en">
-                    The unit is °C-weeks. For example, 1°C above MMM for 4 weeks = 4 DHW, 
-                    or 2°C above MMM for 2 weeks = 4 DHW. The higher the DHW, 
+                    The unit is °C-weeks. For example, 1°C above threshold for 4 weeks = 4 DHW, 
+                    or 2°C above threshold for 2 weeks = 4 DHW. The higher the DHW, 
                     the greater the accumulated stress and bleaching risk.
                 </span>
                 <span data-lang="ja">
-                    単位は°C-weeks（度週）です。例えば、MMMを1°C超える状態が4週間続くと4 DHW、
-                    MMMを2°C超える状態が2週間続いても4 DHWとなります。
+                    単位は°C-weeks（度週）です。例えば、閾値を1°C超える状態が4週間続くと4 DHW、
+                    2°C超える状態が2週間続いても4 DHWとなります。
                     DHWが高いほど、蓄積されたストレスと白化リスクが大きくなります。
                 </span>
             </p>
@@ -455,8 +455,8 @@
                     
                     <!-- Annotations -->
                     <text x="50" y="15" font-size="11" fill="#718096">
-                        <tspan data-lang="en">Temperature above MMM accumulates as DHW</tspan>
-                        <tspan data-lang="ja">MMMを超える温度がDHWとして蓄積</tspan>
+                        <tspan data-lang="en">Temperature above MMM+1°C accumulates as DHW</tspan>
+                        <tspan data-lang="ja">MMM+1°Cを超える温度がDHWとして蓄積</tspan>
                     </text>
                     <text x="265" y="50" font-size="10" fill="#dc2626" font-weight="600">DHW</text>
                     
@@ -464,10 +464,11 @@
                     <text x="50" y="175" font-size="9" fill="#718096">Week 1</text>
                     <text x="200" y="175" font-size="9" fill="#718096">Week 4</text>
                     <text x="350" y="175" font-size="9" fill="#718096">Week 8</text>
+                    <text x="500" y="175" font-size="9" fill="#718096">Week 12</text>
                 </svg>
                 <p class="diagram-caption">
-                    <span data-lang="en">DHW = Sum of (SST − MMM) for each week where SST > MMM, over 8 weeks</span>
-                    <span data-lang="ja">DHW = 8週間でMMMを超えた各週の（SST − MMM）の合計</span>
+                    <span data-lang="en">DHW = Sum of (SST − Bleaching Threshold) for each week where SST > threshold, over 12 weeks</span>
+                    <span data-lang="ja">DHW = 12週間で閾値を超えた各週の（SST − 白化閾値）の合計</span>
                 </p>
             </div>
         </section>
