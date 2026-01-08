@@ -1,0 +1,441 @@
+/* bleaching.css - Coral bleaching explanation page */
+
+/* Content wrapper */
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+}
+
+/* Sections */
+.bleaching-section {
+    margin-bottom: 3rem;
+}
+
+.bleaching-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+.bleaching-section h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+}
+
+.section-content p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.section-link {
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+}
+
+.section-link a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.section-link a:hover {
+    border-bottom-color: var(--accent);
+}
+
+/* Key points */
+.key-point {
+    background: linear-gradient(135deg, rgba(0, 180, 216, 0.08) 0%, rgba(0, 180, 216, 0.04) 100%);
+    border-left: 4px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.key-point p {
+    margin: 0;
+    color: var(--text-primary);
+    line-height: 1.7;
+}
+
+.key-point.warning {
+    background: linear-gradient(135deg, rgba(255, 152, 0, 0.08) 0%, rgba(255, 152, 0, 0.04) 100%);
+    border-left-color: #ff9800;
+}
+
+.key-point.positive {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.08) 0%, rgba(76, 175, 80, 0.04) 100%);
+    border-left-color: #4caf50;
+}
+
+/* Figure placeholder */
+.figure-placeholder {
+    margin: 2rem 0;
+}
+
+.placeholder-box {
+    background: var(--card-bg);
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Stress grid */
+.stress-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.stress-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stress-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stress-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.stress-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.stress-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Outcome comparison */
+.outcome-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+@media (max-width: 600px) {
+    .outcome-comparison {
+        grid-template-columns: 1fr;
+    }
+}
+
+.outcome {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+}
+
+.outcome h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.outcome.recovery h3 {
+    color: #4caf50;
+    border-bottom-color: #4caf50;
+}
+
+.outcome.death h3 {
+    color: #f44336;
+    border-bottom-color: #f44336;
+}
+
+.outcome ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.outcome li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.outcome li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+}
+
+.outcome.recovery li::before {
+    color: #4caf50;
+}
+
+.outcome.death li::before {
+    color: #f44336;
+}
+
+/* Timeline */
+.timeline {
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+    border-left: 3px solid var(--border);
+}
+
+.timeline-item {
+    padding: 1rem 0 1rem 1.5rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 1.25rem;
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 2px solid var(--bg);
+}
+
+.timeline-period {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+.timeline-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Related section */
+.related-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.related-card {
+    display: block;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.related-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: var(--accent);
+}
+
+.related-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.related-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.related-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* References */
+.references-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.references-section h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.references-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.references-list li {
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    border-bottom: 1px solid var(--border);
+}
+
+.references-list li:last-child {
+    border-bottom: none;
+}
+
+.references-list em {
+    font-style: italic;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 0 1rem 3rem;
+    }
+    
+    .bleaching-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .stress-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .key-point {
+        padding: 1rem 1.25rem;
+    }
+    
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .stress-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Content figures */
+.content-figure {
+    margin: 2rem 0;
+}
+
+.content-figure img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.content-figure figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Diagram figures */
+.content-figure.diagram {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid var(--border);
+}
+
+.content-figure.diagram img {
+    box-shadow: none;
+    background: transparent;
+}
+
+/* Diver guidelines */
+.diver-guidelines {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.guideline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--surface);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary);
+}
+
+.guideline-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.guideline-text {
+    flex: 1;
+}
+
+.guideline-text strong {
+    color: var(--text-primary);
+}
+
+@media (max-width: 480px) {
+    .guideline-item {
+        padding: 0.75rem;
+    }
+    
+    .guideline-icon {
+        font-size: 1.25rem;
+    }
+}
+
+/* Evidence list */
+.evidence-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.evidence-list li {
+    padding: 1rem 1rem 1rem 1.5rem;
+    background: var(--surface);
+    border-radius: 8px;
+    border-left: 3px solid #4caf50;
+    line-height: 1.6;
+}
+
+.evidence-list li em {
+    color: var(--text-secondary);
+}

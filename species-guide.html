@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coral Species Guide | marine-obs.org</title>
+    <!-- SEO / OGP -->
+    <meta name="description" content="サンゴの種別ガイド。白化に脆弱な種と耐性のある種を写真付きで解説。">
+    <meta property="og:title" content="サンゴ種別ガイド | marine-obs.org">
+    <meta property="og:description" content="サンゴの種別ガイド。白化に脆弱な種と耐性のある種を写真付きで解説。">
+    <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
+    <meta property="og:url" content="https://marine-obs.org/species-guide.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/species-guide.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="images/logo-circle.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+                        <nav class="nav-desktop">
+                <ul class="nav-links">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Details</span>
+                            <span data-lang="ja">データ詳細</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                            <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                            <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge">計画中</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Bleaching</span>
+                            <span data-lang="ja">白化</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                            <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                            <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Learn</span>
+                            <span data-lang="ja">サンゴを知る</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                            <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                            <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">For Divers</span>
+                            <span data-lang="ja">ダイバー向け</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                            <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Reference</span>
+                            <span data-lang="ja">リファレンス</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                            <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                            <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                            <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button id="lang-en" class="active">English</button>
+                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <button id="lang-ja">日本語</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Details</span>
+                    <span data-lang="ja">データ詳細</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                    <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                    <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                    <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge-mobile">計画中</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Bleaching</span>
+                    <span data-lang="ja">白化</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                    <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                    <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Learn</span>
+                    <span data-lang="ja">サンゴを知る</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                    <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                    <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">For Divers</span>
+                    <span data-lang="ja">ダイバー向け</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                    <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Reference</span>
+                    <span data-lang="ja">リファレンス</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                    <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                    <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                    <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> / 
+            <span data-lang="en">Coral Species Guide</span>
+            <span data-lang="ja">サンゴ種別ガイド</span>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>
+                <span data-lang="en">Coral Species Guide</span>
+                <span data-lang="ja">サンゴ種別ガイド</span>
+            </h1>
+            <p class="lead">
+                <span data-lang="en">Not all corals respond equally to thermal stress. Learn to identify the "canaries" that bleach first and the resilient species that survive.</span>
+                <span data-lang="ja">すべてのサンゴが熱ストレスに同じ反応をするわけではありません。最初に白化する「カナリア」と、生き残る耐性種を見分けましょう。</span>
+            </p>
+        </div>
+
+        <!-- Species Gallery -->
+        <section class="species-gallery">
+            <div class="species-row">
+                <!-- Vulnerable Column -->
+                <div class="species-column">
+                    <div class="species-column-header vulnerable">
+                        <span style="font-size: 1.2em;">●</span>
+                        <span data-lang="en">Vulnerable</span>
+                        <span data-lang="ja">脆弱種</span>
+                    </div>
+                    
+                    <!-- Acropora -->
+                    <div class="species-card">
+                        <img src="img/coral/acropora.jpg" alt="Acropora hyacinthus" loading="lazy">
+                        <div class="species-card-body">
+                            <div class="name-ja">
+                                <span data-lang="en">Table Coral</span>
+                                <span data-lang="ja">ミドリイシ</span>
+                            </div>
+                            <div class="name-sci">Acropora</div>
+                            <div class="desc">
+                                <span data-lang="en">First to bleach, first to recover. Thin tissue makes them the "canary in the coal mine."</span>
+                                <span data-lang="ja">最初に白化し、最初に回復する。薄い組織が「炭鉱のカナリア」たる所以。</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pocillopora -->
+                    <div class="species-card">
+                        <img src="img/coral/pocillopora.jpg" alt="Pocillopora grandis" loading="lazy">
+                        <div class="species-card-body">
+                            <div class="name-ja">
+                                <span data-lang="en">Cauliflower Coral</span>
+                                <span data-lang="ja">ハナヤサイサンゴ</span>
+                            </div>
+                            <div class="name-sci">Pocillopora</div>
+                            <div class="desc">
+                                <span data-lang="en">Fast-growing branching coral. Response varies by region.</span>
+                                <span data-lang="ja">成長が速い枝状サンゴ。白化応答は地域差がある。</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Stylophora -->
+                    <div class="species-card">
+                        <img src="img/coral/stylophora.jpg" alt="Stylophora" loading="lazy">
+                        <div class="species-card-body">
+                            <div class="name-ja">
+                                <span data-lang="en">Hood Coral</span>
+                                <span data-lang="ja">ショウガサンゴ</span>
+                            </div>
+                            <div class="name-sci">Stylophora</div>
+                            <div class="desc">
+                                <span data-lang="en">Rounded branch tips. Sensitive to both heat and cold.</span>
+                                <span data-lang="ja">丸い枝先が特徴。高温・低温の両方に弱い。</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Montipora -->
+                    <div class="species-card">
+                        <img src="img/coral/montipora.jpg" alt="Montipora" loading="lazy">
+                        <div class="species-card-body">
+                            <div class="name-ja">
+                                <span data-lang="en">Plate Coral</span>
+                                <span data-lang="ja">コモンサンゴ</span>
+                            </div>
+                            <div class="name-sci">Montipora</div>
+                            <div class="desc">
+                                <span data-lang="en">Thin plate-like colonies. Often bleaches with Acropora.</span>
+                                <span data-lang="ja">薄い板状群体。ミドリイシと共に白化しやすい。</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Seriatopora -->
+                    <div class="species-card">
+                        <img src="img/coral/seriatopora.jpg" alt="Seriatopora hystrix" loading="lazy">
+                        <div class="species-card-body">
+                            <div class="name-ja">
+                                <span data-lang="en">Needle Coral</span>
+                                <span data-lang="ja">トゲサンゴ</span>
+                            </div>
+                            <div class="name-sci">Seriatopora</div>
+                            <div class="desc">
+                                <span data-lang="en">Delicate needle-like branches. Very fragile.</span>
+                                <span data-lang="ja">針のように細い枝。非常に繊細な構造。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resistant Column -->
+                <div class="species-column">
+                    <div class="species-column-header resistant">
+                        <span style="font-size: 1.2em;">●</span>
+                        <span data-lang="en">Resistant</span>
+                        <span data-lang="ja">耐性種</span>
+                    </div>
+                    
+                    <!-- Porites -->
+                    <div class="species-card">
+                        <img src="img/coral/porites.jpg" alt="Porites lobata" loading="lazy">
+                        <div class="species-card-body">
+                            <div class="name-ja">
+                                <span data-lang="en">Boulder Coral</span>
+                                <span data-lang="ja">ハマサンゴ</span>
+                            </div>
+                            <div class="name-sci">Porites</div>
+                            <div class="desc">
+                                <span data-lang="en">Thick tissue buffers stress. If this bleaches, the reef is in serious trouble.</span>
+                                <span data-lang="ja">厚い組織がストレスを緩衝。これが白化したら深刻。</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Heliopora -->
+                    <div class="species-card">
+                        <img src="img/coral/heliopora.jpg" alt="Heliopora coerulea" loading="lazy">
+                        <div class="species-card-body">
+                            <div class="name-ja">
+                                <span data-lang="en">Blue Coral</span>
+                                <span data-lang="ja">アオサンゴ</span>
+                            </div>
+                            <div class="name-sci">Heliopora coerulea</div>
+                            <div class="desc">
+                                <span data-lang="en">Living fossil with blue skeleton. High thermal tolerance.</span>
+                                <span data-lang="ja">青い骨格を持つ生きた化石。熱耐性が高い。</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Turbinaria -->
+                    <div class="species-card">
+                        <img src="img/coral/turbinaria.jpg" alt="Turbinaria reniformis" loading="lazy">
+                        <div class="species-card-body">
+                            <div class="name-ja">
+                                <span data-lang="en">Scroll Coral</span>
+                                <span data-lang="ja">スリバチサンゴ</span>
+                            </div>
+                            <div class="name-sci">Turbinaria</div>
+                            <div class="desc">
+                                <span data-lang="en">Scroll-shaped plates. Tolerates turbid waters.</span>
+                                <span data-lang="ja">渦巻き状の葉状群体。濁った水にも耐える。</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Goniastrea -->
+                    <div class="species-card">
+                        <img src="img/coral/goniastrea.jpg" alt="Goniastrea pectinata" loading="lazy">
+                        <div class="species-card-body">
+                            <div class="name-ja">
+                                <span data-lang="en">Brain Coral</span>
+                                <span data-lang="ja">カメノコキクメイシ</span>
+                            </div>
+                            <div class="name-sci">Goniastrea</div>
+                            <div class="desc">
+                                <span data-lang="en">Dense honeycomb structure. Slow-growing but persistent.</span>
+                                <span data-lang="ja">密なハニカム構造。成長は遅いが粘り強い。</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pavona -->
+                    <div class="species-card">
+                        <img src="img/coral/pavona.jpg" alt="Pavona" loading="lazy">
+                        <div class="species-card-body">
+                            <div class="name-ja">
+                                <span data-lang="en">Cactus Coral</span>
+                                <span data-lang="ja">シコロサンゴ</span>
+                            </div>
+                            <div class="name-sci">Pavona</div>
+                            <div class="desc">
+                                <span data-lang="en">Encrusting to foliose. Adapts to various conditions.</span>
+                                <span data-lang="ja">被覆～葉状。様々な環境に適応する。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related link -->
+        <div class="related-link">
+            <span class="icon">📖</span>
+            <span class="text">
+                <span data-lang="en">Want to understand why these differences exist? See </span>
+                <span data-lang="ja">なぜこのような差があるのか？詳しくは </span>
+                <a href="vulnerability.html">
+                    <span data-lang="en">Species Vulnerability</span>
+                    <span data-lang="ja">種別脆弱性</span>
+                </a>
+            </span>
+        </div>
+
+        <!-- Photo credits -->
+        <div class="photo-credit">
+            <span data-lang="en">Photos: Wikimedia Commons (CC BY-SA). See individual image pages for attribution.</span>
+            <span data-lang="ja">写真: Wikimedia Commons (CC BY-SA)。帰属表示は各画像ページを参照。</span>
+        </div>
+
+    </main>
+
+    <footer>
+        <a href="index.html">← 
+            <span data-lang="en">Back to Home</span>
+            <span data-lang="ja">ホームに戻る</span>
+        </a>
+        <p style="margin-top: 0.5rem;">© 2026 marine-obs.org</p>
+    </footer>
+
+    <script>
+        // Language toggle
+        function setLang(lang) {
+            document.body.classList.toggle('ja', lang === 'ja');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
+            localStorage.setItem('lang', lang);
+        }
+
+        // Restore language preference
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang) setLang(savedLang);
+
+        document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
+        document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
+    </script>
+
+    <!-- Navigation JS -->
+    <script>
+    (function() {
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        const sidebarClose = document.getElementById('sidebar-close');
+        
+        function openSidebar() {
+            sidebar.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            hamburger.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        hamburger.addEventListener('click', function() {
+            if (sidebar.classList.contains('active')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+        
+        sidebarOverlay.addEventListener('click', closeSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                closeSidebar();
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

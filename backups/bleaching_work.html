@@ -29,32 +29,21 @@
             </a>
             
             <!-- Desktop Navigation -->
-                        <nav class="nav-desktop">
+            <nav class="nav-desktop">
                 <ul class="nav-links">
                     <li class="nav-item has-dropdown">
                         <a href="#" class="nav-link">
-                            <span data-lang="en">Details</span>
-                            <span data-lang="ja">データ詳細</span>
+                            <span data-lang="en">Monitoring</span>
+                            <span data-lang="ja">モニタリング</span>
                             <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
                             <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
                             <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="global-bleaching.html"><span data-lang="en">Global Bleaching</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Bleaching</span><span data-lang="ja">日本の白化状況</span></a></li>
                             <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge">計画中</span></a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-dropdown">
-                        <a href="#" class="nav-link">
-                            <span data-lang="en">Bleaching</span>
-                            <span data-lang="ja">白化</span>
-                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
-                            <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
-                            <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
-                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
                         </ul>
                     </li>
                     <li class="nav-item has-dropdown">
@@ -64,8 +53,8 @@
                             <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
-                            <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching?</span><span data-lang="ja">白化とは</span></a></li>
+                            <li><a href="species.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
                             <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
                         </ul>
                     </li>
@@ -90,8 +79,13 @@
                             <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
                             <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
                             <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
-                            <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <span data-lang="en">Contact</span>
+                            <span data-lang="ja">お問い合わせ</span>
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -115,7 +109,7 @@
 
     <!-- Mobile Sidebar -->
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
-        <nav class="sidebar" id="sidebar">
+    <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <span class="sidebar-title">Menu</span>
             <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
@@ -125,26 +119,16 @@
         <ul class="sidebar-menu">
             <li class="sidebar-section">
                 <span class="sidebar-section-title">
-                    <span data-lang="en">Details</span>
-                    <span data-lang="ja">データ詳細</span>
+                    <span data-lang="en">Monitoring</span>
+                    <span data-lang="ja">モニタリング</span>
                 </span>
                 <ul class="sidebar-submenu">
                     <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
                     <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
                     <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                    <li><a href="global-bleaching.html"><span data-lang="en">Global Bleaching</span><span data-lang="ja">世界の白化状況</span></a></li>
+                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Bleaching</span><span data-lang="ja">日本の白化状況</span></a></li>
                     <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge-mobile">計画中</span></a></li>
-                </ul>
-            </li>
-            <li class="sidebar-section">
-                <span class="sidebar-section-title">
-                    <span data-lang="en">Bleaching</span>
-                    <span data-lang="ja">白化</span>
-                </span>
-                <ul class="sidebar-submenu">
-                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
-                    <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
-                    <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
-                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
                 </ul>
             </li>
             <li class="sidebar-section">
@@ -153,8 +137,8 @@
                     <span data-lang="ja">サンゴを知る</span>
                 </span>
                 <ul class="sidebar-submenu">
-                    <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
-                    <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching?</span><span data-lang="ja">白化とは</span></a></li>
+                    <li><a href="species.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
                     <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
                 </ul>
             </li>
@@ -177,11 +161,17 @@
                     <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
                     <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
                     <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
-                    <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
                 </ul>
+            </li>
+            <li class="sidebar-item">
+                <a href="contact.html">
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="ja">お問い合わせ</span>
+                </a>
             </li>
         </ul>
     </nav>
+
     <main>
         <section class="hero">
             <h1 data-lang="en">What is Coral Bleaching?</h1>
@@ -521,13 +511,6 @@
                         <div class="related-desc" data-lang="en">Daily SST data and thermal thresholds</div>
                         <div class="related-desc" data-lang="ja">日次水温データと閾値</div>
                     </a>
-                    <a href="extreme.html" class="related-card">
-                        <div class="related-icon">🔥</div>
-                        <div class="related-title" data-lang="en">Extreme Temperature Days</div>
-                        <div class="related-title" data-lang="ja">極端水温日数</div>
-                        <div class="related-desc" data-lang="en">Days exceeding thermal thresholds</div>
-                        <div class="related-desc" data-lang="ja">閾値を超えた日数</div>
-                    </a>
                     <a href="dhw.html" class="related-card">
                         <div class="related-icon">📊</div>
                         <div class="related-title" data-lang="en">Degree Heating Weeks</div>
@@ -535,19 +518,12 @@
                         <div class="related-desc" data-lang="en">Accumulated thermal stress and recovery time</div>
                         <div class="related-desc" data-lang="ja">DHWと回復期間</div>
                     </a>
-                    <a href="vulnerability.html" class="related-card">
+                    <a href="species.html" class="related-card">
                         <div class="related-icon">🪸</div>
                         <div class="related-title" data-lang="en">Species Vulnerability</div>
                         <div class="related-title" data-lang="ja">種別脆弱性</div>
                         <div class="related-desc" data-lang="en">Which corals bleach first?</div>
                         <div class="related-desc" data-lang="ja">どの種が白化しやすいか</div>
-                    </a>
-                    <a href="global-bleaching.html" class="related-card">
-                        <div class="related-icon">🌍</div>
-                        <div class="related-title" data-lang="en">Global Bleaching</div>
-                        <div class="related-title" data-lang="ja">世界の白化状況</div>
-                        <div class="related-desc" data-lang="en">Worldwide mass bleaching events</div>
-                        <div class="related-desc" data-lang="ja">世界規模の大量白化</div>
                     </a>
                     <a href="japan-bleaching.html" class="related-card">
                         <div class="related-icon">🗾</div>

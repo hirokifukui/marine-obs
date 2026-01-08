@@ -1,0 +1,181 @@
+/* ===============================================
+   coral-species.css - Species Photo Gallery
+   2026-01-08
+   =============================================== */
+
+:root {
+    --header-bg: #1a1f2e;
+    --header-text: #ffffff;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-card: #ffffff;
+    --text-primary: #1a202c;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --accent-teal: #2b6cb0;
+    --accent-warm: #c05621;
+    --accent-green: #2f855a;
+    --border: #e2e8f0;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Page header */
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+
+body.ja .page-header h1 {
+    font-size: 1.5rem;
+}
+
+.page-header .lead {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* Species Gallery */
+.species-gallery {
+    margin: 2rem 0;
+}
+
+.species-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .species-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.species-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.species-column-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid;
+    margin-bottom: 0.5rem;
+}
+
+.species-column-header.vulnerable {
+    color: var(--accent-warm);
+    border-color: var(--accent-warm);
+}
+
+.species-column-header.resistant {
+    color: var(--accent-green);
+    border-color: var(--accent-green);
+}
+
+.species-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.species-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.species-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.species-card-body {
+    padding: 0.75rem 1rem;
+}
+
+.species-card-body .name-ja {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 0.15rem;
+}
+
+.species-card-body .name-sci {
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.species-card-body .desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Related link */
+.related-link {
+    margin-top: 2rem;
+    padding: 1rem 1.25rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.related-link .icon {
+    font-size: 1.25rem;
+}
+
+.related-link .text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.related-link a {
+    color: var(--accent-teal);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.related-link a:hover {
+    text-decoration: underline;
+}
+
+/* Photo credit */
+.photo-credit {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.photo-credit a {
+    color: var(--accent-teal);
+    text-decoration: none;
+}
+
+.photo-credit a:hover {
+    text-decoration: underline;
+}

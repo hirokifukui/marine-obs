@@ -51,32 +51,21 @@
             </a>
             
             <!-- Desktop Navigation -->
-                        <nav class="nav-desktop">
+            <nav class="nav-desktop">
                 <ul class="nav-links">
                     <li class="nav-item has-dropdown">
                         <a href="#" class="nav-link">
-                            <span data-lang="en">Details</span>
-                            <span data-lang="ja">データ詳細</span>
+                            <span data-lang="en">Monitoring</span>
+                            <span data-lang="ja">モニタリング</span>
                             <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
                             <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
                             <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="global-bleaching.html"><span data-lang="en">Global Bleaching</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Bleaching</span><span data-lang="ja">日本の白化状況</span></a></li>
                             <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge">計画中</span></a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-dropdown">
-                        <a href="#" class="nav-link">
-                            <span data-lang="en">Bleaching</span>
-                            <span data-lang="ja">白化</span>
-                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
-                            <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
-                            <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
-                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
                         </ul>
                     </li>
                     <li class="nav-item has-dropdown">
@@ -86,8 +75,7 @@
                             <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
-                            <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                            <li><a href="species.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
                             <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
                         </ul>
                     </li>
@@ -112,8 +100,13 @@
                             <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
                             <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
                             <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
-                            <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <span data-lang="en">Contact</span>
+                            <span data-lang="ja">お問い合わせ</span>
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -137,7 +130,7 @@
 
     <!-- Mobile Sidebar -->
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
-        <nav class="sidebar" id="sidebar">
+    <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <span class="sidebar-title">Menu</span>
             <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
@@ -147,26 +140,16 @@
         <ul class="sidebar-menu">
             <li class="sidebar-section">
                 <span class="sidebar-section-title">
-                    <span data-lang="en">Details</span>
-                    <span data-lang="ja">データ詳細</span>
+                    <span data-lang="en">Monitoring</span>
+                    <span data-lang="ja">モニタリング</span>
                 </span>
                 <ul class="sidebar-submenu">
                     <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
                     <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
                     <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                    <li><a href="global-bleaching.html"><span data-lang="en">Global Bleaching</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Bleaching</span><span data-lang="ja">日本の白化状況</span></a></li>
                     <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge-mobile">計画中</span></a></li>
-                </ul>
-            </li>
-            <li class="sidebar-section">
-                <span class="sidebar-section-title">
-                    <span data-lang="en">Bleaching</span>
-                    <span data-lang="ja">白化</span>
-                </span>
-                <ul class="sidebar-submenu">
-                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
-                    <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
-                    <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
-                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
                 </ul>
             </li>
             <li class="sidebar-section">
@@ -175,8 +158,7 @@
                     <span data-lang="ja">サンゴを知る</span>
                 </span>
                 <ul class="sidebar-submenu">
-                    <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
-                    <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                    <li><a href="species.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
                     <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
                 </ul>
             </li>
@@ -199,11 +181,17 @@
                     <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
                     <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
                     <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
-                    <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
                 </ul>
+            </li>
+            <li class="sidebar-item">
+                <a href="contact.html">
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="ja">お問い合わせ</span>
+                </a>
             </li>
         </ul>
     </nav>
+
     <main>
         <section class="hero">
             <h1 data-lang="en">Glossary</h1>
@@ -248,20 +236,6 @@
                 <div class="glossary-term" data-lang="ja">被度</div>
                 <p class="glossary-def" data-lang="en">The percentage of reef substrate covered by living coral. A key metric for assessing reef health. Sekisei Lagoon's coral cover dropped to a record low of 13.7% after repeated bleaching events.</p>
                 <p class="glossary-def" data-lang="ja">サンゴ礁基盤のうち生きたサンゴに覆われている割合。サンゴ礁の健全性を評価する主要指標。石西礁湖の被度は繰り返す白化で過去最低の13.7%まで低下。</p>
-            </div>
-
-            <div class="glossary-card">
-                <div class="glossary-term" data-lang="en">Polyp</div>
-                <div class="glossary-term" data-lang="ja">ポリプ</div>
-                <p class="glossary-def" data-lang="en">The basic unit of a coral—a tiny sac-like animal a few millimeters in diameter. Most reef-building corals are colonial: millions of genetically identical polyps connected by living tissue (coenosarc), sharing a common skeleton.</p>
-                <p class="glossary-def" data-lang="ja">サンゴの基本単位。直径数ミリメートルの袋状の動物。造礁サンゴの多くは群体性で、遺伝的に同一な数百万のポリプが共肉（coenosarc）でつながり、骨格を共有する。</p>
-            </div>
-
-            <div class="glossary-card">
-                <div class="glossary-term" data-lang="en">Calcification</div>
-                <div class="glossary-term" data-lang="ja">石灰化</div>
-                <p class="glossary-def" data-lang="en">The process by which corals secrete calcium carbonate (aragonite) to build their skeletons. Light-enhanced: calcification rates are 3× higher during the day due to symbiont photosynthesis. Ocean acidification threatens this process.</p>
-                <p class="glossary-def" data-lang="ja">サンゴが炭酸カルシウム（アラゴナイト）を分泌して骨格を形成するプロセス。共生藻の光合成により、日中の石灰化速度は3倍。海洋酸性化がこのプロセスを脅かす。</p>
             </div>
 
             <div class="glossary-card">
@@ -410,13 +384,6 @@
                 <div class="glossary-term" data-lang="ja">回復 / レジリエンス</div>
                 <p class="glossary-def" data-lang="en">The ability of coral reefs to bounce back after disturbances. Recovery depends on recruitment, water quality, absence of chronic stressors, and time between disturbances. Full recovery from major bleaching can take 10-15 years.</p>
                 <p class="glossary-def" data-lang="ja">撹乱後にサンゴ礁が回復する能力。加入、水質、慢性的ストレスの不在、撹乱間隔に依存する。大規模白化からの完全回復には10〜15年かかることがある。</p>
-            </div>
-
-            <div class="glossary-card">
-                <div class="glossary-term" data-lang="en">Fluorescent Bleaching</div>
-                <div class="glossary-term" data-lang="ja">蛍光白化</div>
-                <p class="glossary-def" data-lang="en">During bleaching, some corals display vivid pink, purple, or blue colors instead of turning white. This occurs when corals produce fluorescent proteins as a natural sunscreen to protect remaining zooxanthellae from excess light. A glowing coral is still fighting—these corals often have better recovery potential.</p>
-                <p class="glossary-def" data-lang="ja">白化の過程で、単に白くなるのではなく鮮やかなピンク、紫、青色を呈するサンゴがいる。これはサンゴが蛍光タンパク質を産生し、天然の日焼け止めとして残った褐虫藻を過剰な光から守る防御反応。光っているサンゴはまだ戦っており、回復の可能性が比較的高い。</p>
             </div>
         </div>
 

@@ -1,62 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Divers | marine-obs.org</title>
-    <!-- SEO / OGP -->
-    <meta name="description" content="海況予報・推奨装備・白化観察のポイントなど、フィールドで役立つ実践情報を掲載。">
-    <meta property="og:title" content="ダイバー向け情報 | marine-obs.org">
-    <meta property="og:description" content="海況予報・推奨装備・白化観察のポイントなど、フィールドで役立つ実践情報を掲載。">
-    <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
-    <meta property="og:url" content="https://marine-obs.org/divers.html">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="/favicon.ico" sizes="32x32">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <style>
-        .site-rationale {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-left: 3px solid var(--accent-teal);
-            border-radius: 0 12px 12px 0;
-            padding: 1.25rem 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow);
-        }
-        .site-rationale p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin: 0;
-        }
-        body.ja .site-rationale p {
-            line-height: 2;
-        }
-        .site-rationale a {
-            color: var(--accent-teal);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .site-rationale a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="header-content">
-            <a href="index.html" class="logo">
-                <div class="logo-icon"><img src="images/logo-circle.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
-                <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
-            </a>
-            
-            <!-- Desktop Navigation -->
-                        <nav class="nav-desktop">
+#!/usr/bin/env python3
+"""
+ナビゲーション一括置換スクリプト
+"""
+import os
+import re
+import glob
+
+BASE_DIR = "/Users/hirokifukui/Dropbox (個人)/Scripts/marine-obs"
+
+# 新しいデスクトップナビ
+NEW_NAV_DESKTOP = '''            <nav class="nav-desktop">
                 <ul class="nav-links">
                     <li class="nav-item has-dropdown">
                         <a href="#" class="nav-link">
@@ -121,28 +74,10 @@
                         </ul>
                     </li>
                 </ul>
-            </nav>
+            </nav>'''
 
-            <!-- Mobile Hamburger Button -->
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-
-            <div class="header-controls">
-                <div class="lang-switch">
-                    <button id="lang-en" class="active">English</button>
-                    <span style="color:rgba(255,255,255,0.4)">/</span>
-                    <button id="lang-ja">日本語</button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mobile Sidebar -->
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
-        <nav class="sidebar" id="sidebar">
+# 新しいモバイルサイドバー
+NEW_NAV_SIDEBAR = '''    <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <span class="sidebar-title">Menu</span>
             <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
@@ -208,106 +143,64 @@
                 </ul>
             </li>
         </ul>
-    </nav>
-    <main>
-        <section class="hero">
-            <h1 data-lang="en">For Divers</h1>
-            <h1 data-lang="ja">ダイバー向け情報</h1>
-            <p class="hero-subtitle" data-lang="en">
-                Water temperature, waves, and wind from Kushimoto to Sekisei.
-            </p>
-            <p class="hero-subtitle" data-lang="ja">
-                串本から石西礁湖まで、水温・波・風をモニタリング。
-            </p>
-        </section>
-
-        <!-- Site Selection Rationale -->
-        <div class="site-rationale">
-            <p data-lang="en">
-                These 7 sites are bleaching hotspots documented in <a href="japan-bleaching.html">Japan Bleaching History</a>—from Kushimoto (northern limit of reef-building corals) to Sekisei Lagoon (Japan's largest reef).
-            </p>
-            <p data-lang="ja">
-                この7地点は<a href="japan-bleaching.html">日本の白化状況</a>で記録された白化ホットスポットです。串本（造礁サンゴの北限）から石西礁湖（日本最大のサンゴ礁）まで、主要なサンゴ域をカバーしています。
-            </p>
-        </div>
-
-        <!-- Marine Monitor Section -->
-        <section class="marine-monitor">
-            <div class="marine-monitor-header">
-                <h2 class="marine-monitor-title">
-                    <span data-lang="en">Marine Conditions</span><span data-lang="ja">海況モニター</span>
-                </h2>
-                <span class="marine-monitor-update" id="marine-update-time-divers"></span>
-            </div>
-            <div class="marine-summary-grid" id="marine-grid-divers">
-                <div style="color: var(--text-muted); padding: 2rem; text-align: center;">
-                    <span data-lang="en">Loading...</span><span data-lang="ja">読み込み中...</span>
-                </div>
-            </div>
-        </section>
+    </nav>'''
 
 
+def replace_nav_desktop(content):
+    """デスクトップナビを置換"""
+    pattern = r'<nav class="nav-desktop">.*?</nav>'
+    return re.sub(pattern, NEW_NAV_DESKTOP, content, flags=re.DOTALL)
 
-    </main>
 
-    <footer>
-        <div class="footer-content">
-            <div>
-                <span data-lang="en">© 2026 marine-obs.org · Independent research project</span>
-                <span data-lang="ja">© 2026 marine-obs.org · 個人プロジェクト</span>
-            </div>
-            <div class="footer-links">
-                <a href="https://github.com/hirokifukui/marine-obs" target="_blank" rel="noopener">GitHub</a>
-                <a href="contact.html">
-                    <span data-lang="en">Contact</span>
-                    <span data-lang="ja">お問い合わせ</span>
-                </a>
-            </div>
-        </div>
-    </footer>
+def replace_nav_sidebar(content):
+    """モバイルサイドバーを置換"""
+    pattern = r'<nav class="sidebar" id="sidebar">.*?</nav>\s*(?=\n\s*<main|\n\s*<!--|\n\s*<div class="page-container")'
+    match = re.search(pattern, content, flags=re.DOTALL)
+    if match:
+        return content[:match.start()] + NEW_NAV_SIDEBAR + content[match.end():]
+    return content
 
-    <script src="js/lang-simple.js"></script>
-    <script src="js/marine-monitor.js"></script>
 
-    <!-- Navigation JS -->
-    <script>
-    (function() {
-        const hamburger = document.getElementById('hamburger');
-        const sidebar = document.getElementById('sidebar');
-        const sidebarOverlay = document.getElementById('sidebar-overlay');
-        const sidebarClose = document.getElementById('sidebar-close');
-        
-        function openSidebar() {
-            sidebar.classList.add('active');
-            sidebarOverlay.classList.add('active');
-            hamburger.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeSidebar() {
-            sidebar.classList.remove('active');
-            sidebarOverlay.classList.remove('active');
-            hamburger.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        
-        hamburger.addEventListener('click', function() {
-            if (sidebar.classList.contains('active')) {
-                closeSidebar();
-            } else {
-                openSidebar();
-            }
-        });
-        
-        sidebarOverlay.addEventListener('click', closeSidebar);
-        sidebarClose.addEventListener('click', closeSidebar);
-        
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
-                closeSidebar();
-            }
-        });
-    })();
-    </script>
-</body>
-</html>
+def process_file(filepath):
+    """ファイルを処理"""
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # ナビがあるか確認
+    if 'nav-desktop' not in content:
+        return False, "No nav found"
+    
+    original = content
+    
+    # デスクトップナビ置換
+    content = replace_nav_desktop(content)
+    
+    # サイドバー置換
+    content = replace_nav_sidebar(content)
+    
+    if content == original:
+        return False, "No changes"
+    
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(content)
+    
+    return True, "Updated"
+
+
+def main():
+    html_files = glob.glob(os.path.join(BASE_DIR, "*.html"))
+    
+    results = []
+    for filepath in sorted(html_files):
+        filename = os.path.basename(filepath)
+        success, msg = process_file(filepath)
+        results.append((filename, success, msg))
+        status = "✅" if success else "⏭️"
+        print(f"{status} {filename}: {msg}")
+    
+    updated = sum(1 for _, s, _ in results if s)
+    print(f"\n合計: {updated}/{len(results)} ファイル更新")
+
+
+if __name__ == "__main__":
+    main()

@@ -29,32 +29,21 @@
             </a>
             
             <!-- Desktop Navigation -->
-                        <nav class="nav-desktop">
+            <nav class="nav-desktop">
                 <ul class="nav-links">
                     <li class="nav-item has-dropdown">
                         <a href="#" class="nav-link">
-                            <span data-lang="en">Details</span>
-                            <span data-lang="ja">データ詳細</span>
+                            <span data-lang="en">Monitoring</span>
+                            <span data-lang="ja">モニタリング</span>
                             <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
                             <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
                             <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="global-bleaching.html"><span data-lang="en">Global Bleaching</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Bleaching</span><span data-lang="ja">日本の白化状況</span></a></li>
                             <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge">計画中</span></a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-dropdown">
-                        <a href="#" class="nav-link">
-                            <span data-lang="en">Bleaching</span>
-                            <span data-lang="ja">白化</span>
-                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
-                            <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
-                            <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
-                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
                         </ul>
                     </li>
                     <li class="nav-item has-dropdown">
@@ -64,8 +53,9 @@
                             <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
-                            <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                            <li><a href="coral-basics.html"><span data-lang="en">What is Coral?</span><span data-lang="ja">サンゴとは</span></a></li>
+                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching?</span><span data-lang="ja">白化とは</span></a></li>
+                            <li><a href="species.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
                             <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
                         </ul>
                     </li>
@@ -90,8 +80,13 @@
                             <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
                             <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
                             <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
-                            <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <span data-lang="en">Contact</span>
+                            <span data-lang="ja">お問い合わせ</span>
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -115,7 +110,7 @@
 
     <!-- Mobile Sidebar -->
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
-        <nav class="sidebar" id="sidebar">
+    <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <span class="sidebar-title">Menu</span>
             <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
@@ -125,26 +120,16 @@
         <ul class="sidebar-menu">
             <li class="sidebar-section">
                 <span class="sidebar-section-title">
-                    <span data-lang="en">Details</span>
-                    <span data-lang="ja">データ詳細</span>
+                    <span data-lang="en">Monitoring</span>
+                    <span data-lang="ja">モニタリング</span>
                 </span>
                 <ul class="sidebar-submenu">
                     <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
                     <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
                     <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                    <li><a href="global-bleaching.html"><span data-lang="en">Global Bleaching</span><span data-lang="ja">世界の白化状況</span></a></li>
+                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Bleaching</span><span data-lang="ja">日本の白化状況</span></a></li>
                     <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge-mobile">計画中</span></a></li>
-                </ul>
-            </li>
-            <li class="sidebar-section">
-                <span class="sidebar-section-title">
-                    <span data-lang="en">Bleaching</span>
-                    <span data-lang="ja">白化</span>
-                </span>
-                <ul class="sidebar-submenu">
-                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
-                    <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
-                    <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
-                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
                 </ul>
             </li>
             <li class="sidebar-section">
@@ -153,8 +138,9 @@
                     <span data-lang="ja">サンゴを知る</span>
                 </span>
                 <ul class="sidebar-submenu">
-                    <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
-                    <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                    <li><a href="coral-basics.html"><span data-lang="en">What is Coral?</span><span data-lang="ja">サンゴとは</span></a></li>
+                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching?</span><span data-lang="ja">白化とは</span></a></li>
+                    <li><a href="species.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
                     <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
                 </ul>
             </li>
@@ -177,11 +163,17 @@
                     <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
                     <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
                     <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
-                    <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
                 </ul>
+            </li>
+            <li class="sidebar-item">
+                <a href="contact.html">
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="ja">お問い合わせ</span>
+                </a>
             </li>
         </ul>
     </nav>
+
     <main>
         <section class="hero">
             <h1 data-lang="en">What is Coral?</h1>
@@ -325,6 +317,16 @@
                         <p data-lang="ja"><strong>時間スケール:</strong> 直径1mのハマサンゴ塊は100年以上の成長を表す。年輪のように、サンゴ骨格には過去の水温や水質を記録した年輪状の密度帯がある。この貴重な気候アーカイブが、海洋温暖化により失われつつある。</p>
                     </div>
 
+                    <!-- 画像プレースホルダー: 成長形態比較 -->
+                    <figure class="content-figure">
+                        <div class="placeholder-image">
+                            <span>[ Growth form comparison photos - coming soon ]</span>
+                        </div>
+                        <figcaption>
+                            <span data-lang="en">Four main coral growth forms: branching (Acropora), tabular (A. hyacinthus), massive (Porites), and encrusting (Montipora).</span>
+                            <span data-lang="ja">4つの主要なサンゴ成長形態：枝状（ミドリイシ）、テーブル状（クシハダミドリイシ）、塊状（ハマサンゴ）、被覆状（コモンサンゴ）。</span>
+                        </figcaption>
+                    </figure>
                 </div>
             </section>
 
@@ -378,8 +380,8 @@
                     <figure class="content-figure">
                         <img src="images/coral-bleaching-comparison.webp" alt="Coral bleaching comparison: healthy vs bleached" loading="lazy">
                         <figcaption>
-                            <span data-lang="en">Left: Healthy coral with zooxanthellae. Right: The same reef 6 months later—bleached, with the white skeleton visible through the tissue.</span>
-                            <span data-lang="ja">左：褐虫藻を持つ健康なサンゴ。右：6ヶ月後に白化したサンゴ。白い骨格が組織を通して透けて見える。</span>
+                            <span data-lang="en">Right: Healthy coral with zooxanthellae. Left: The same reef 6 months later—bleached, with the white skeleton visible through the tissue.</span>
+                            <span data-lang="ja">右：褐虫藻を持つ健康なサンゴ。左：6ヶ月後に白化したサンゴ。白い骨格が組織を通して透けて見える。</span>
                         </figcaption>
                     </figure>
                 </div>
@@ -466,12 +468,14 @@
                         <p data-lang="ja"><strong>北上—ただし注意が必要:</strong> サンゴの分布は年間約14kmのペースで北上している（国環研）。かつて沖縄にしかいなかった種が、和歌山、静岡、千葉で観察されるようになった。しかし、「分布拡大」≠「生態系拡大」である。サンゴ礁の複雑な生態系機能—魚類群集、無脊椎動物の多様性、炭酸塩生産—は追随しない可能性がある。冬季の寒波が依然として制限要因であり、13°C以下が1週間続くと温帯サンゴは死亡しうる（Yamashiro 2012）。</p>
                     </div>
 
-                    <!-- サンゴ礁生態系写真 -->
+                    <!-- 画像プレースホルダー: 日本のサンゴ分布マップ -->
                     <figure class="content-figure">
-                        <img src="images/coral-reef-diver.webp" alt="Coral reef ecosystem with diver" loading="lazy">
+                        <div class="placeholder-image">
+                            <span>[ Japan coral distribution map - coming soon ]</span>
+                        </div>
                         <figcaption>
-                            <span data-lang="en">A healthy coral reef ecosystem with branching corals, sea anemones, and reef fish.</span>
-                            <span data-lang="ja">健康なサンゴ礁生態系。枝状サンゴ、イソギンチャク、魚類が共存する。</span>
+                            <span data-lang="en">Coral distribution in Japan: from Sekisei Lagoon (true coral reef, 24°N) to Kushimoto (northernmost reef, 33.5°N) and Tateyama (high-latitude community, 35°N).</span>
+                            <span data-lang="ja">日本のサンゴ分布：石西礁湖（真のサンゴ礁、北緯24度）から串本（最北のサンゴ礁、北緯33.5度）、館山（高緯度群集、北緯35度）まで。</span>
                         </figcaption>
                     </figure>
                 </div>
@@ -491,7 +495,7 @@
                         <div class="related-desc" data-lang="en">When symbiosis breaks down</div>
                         <div class="related-desc" data-lang="ja">サンゴと藻類の共生が崩壊するとき</div>
                     </a>
-                    <a href="vulnerability.html" class="related-card">
+                    <a href="species.html" class="related-card">
                         <div class="related-icon">🐚</div>
                         <div class="related-title" data-lang="en">Species Vulnerability</div>
                         <div class="related-title" data-lang="ja">種別脆弱性</div>

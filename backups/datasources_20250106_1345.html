@@ -86,32 +86,21 @@
             </a>
             
             <!-- Desktop Navigation -->
-                        <nav class="nav-desktop">
+            <nav class="nav-desktop">
                 <ul class="nav-links">
                     <li class="nav-item has-dropdown">
                         <a href="#" class="nav-link">
-                            <span data-lang="en">Details</span>
-                            <span data-lang="ja">データ詳細</span>
+                            <span data-lang="en">Monitoring</span>
+                            <span data-lang="ja">モニタリング</span>
                             <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
                             <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
                             <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="global-bleaching.html"><span data-lang="en">Global Bleaching</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Bleaching</span><span data-lang="ja">日本の白化状況</span></a></li>
                             <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge">計画中</span></a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-dropdown">
-                        <a href="#" class="nav-link">
-                            <span data-lang="en">Bleaching</span>
-                            <span data-lang="ja">白化</span>
-                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
-                            <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
-                            <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
-                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
                         </ul>
                     </li>
                     <li class="nav-item has-dropdown">
@@ -121,8 +110,7 @@
                             <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
-                            <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                            <li><a href="species.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
                             <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
                         </ul>
                     </li>
@@ -147,8 +135,13 @@
                             <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
                             <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
                             <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
-                            <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <span data-lang="en">Contact</span>
+                            <span data-lang="ja">お問い合わせ</span>
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -172,7 +165,7 @@
 
     <!-- Mobile Sidebar -->
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
-        <nav class="sidebar" id="sidebar">
+    <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <span class="sidebar-title">Menu</span>
             <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
@@ -182,26 +175,16 @@
         <ul class="sidebar-menu">
             <li class="sidebar-section">
                 <span class="sidebar-section-title">
-                    <span data-lang="en">Details</span>
-                    <span data-lang="ja">データ詳細</span>
+                    <span data-lang="en">Monitoring</span>
+                    <span data-lang="ja">モニタリング</span>
                 </span>
                 <ul class="sidebar-submenu">
                     <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
                     <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
                     <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                    <li><a href="global-bleaching.html"><span data-lang="en">Global Bleaching</span><span data-lang="ja">世界の白化状況</span></a></li>
+                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Bleaching</span><span data-lang="ja">日本の白化状況</span></a></li>
                     <li><a href="turbidity.html"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度観測</span><span class="nav-badge-mobile">計画中</span></a></li>
-                </ul>
-            </li>
-            <li class="sidebar-section">
-                <span class="sidebar-section-title">
-                    <span data-lang="en">Bleaching</span>
-                    <span data-lang="ja">白化</span>
-                </span>
-                <ul class="sidebar-submenu">
-                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
-                    <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
-                    <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
-                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
                 </ul>
             </li>
             <li class="sidebar-section">
@@ -210,8 +193,7 @@
                     <span data-lang="ja">サンゴを知る</span>
                 </span>
                 <ul class="sidebar-submenu">
-                    <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
-                    <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                    <li><a href="species.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
                     <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
                 </ul>
             </li>
@@ -234,11 +216,17 @@
                     <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
                     <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
                     <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
-                    <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
                 </ul>
+            </li>
+            <li class="sidebar-item">
+                <a href="contact.html">
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="ja">お問い合わせ</span>
+                </a>
             </li>
         </ul>
     </nav>
+
     <main>
         <section class="hero">
             <h1 data-lang="en">Data Sources</h1>
@@ -404,50 +392,6 @@
                 </div>
 
                 <div class="literature-subsection">
-                    <span data-lang="en">Bleaching Mechanisms & Adaptation</span>
-                    <span data-lang="ja">白化メカニズム・適応</span>
-                </div>
-                <div class="literature-grid">
-                    <div class="literature-card">
-                        <div class="paper-title">Bollati E et al. (2020)</div>
-                        <div class="paper-journal">Current Biology 30:2510-2518</div>
-                        <p class="paper-desc">
-                            <span data-lang="en">Optical feedback loop drives colorful coral bleaching—fluorescent proteins as photoprotection.</span>
-                            <span data-lang="ja">蛍光タンパク質による光保護—カラフルな白化を引き起こす光学フィードバック。</span>
-                        </p>
-                        <a href="https://doi.org/10.1016/j.cub.2020.04.055" target="_blank" class="paper-link">DOI →</a>
-                    </div>
-                    <div class="literature-card">
-                        <div class="paper-title">Lachs L et al. (2023)</div>
-                        <div class="paper-journal">Nature Communications 14:6216</div>
-                        <p class="paper-desc">
-                            <span data-lang="en">Coral thermal tolerance rising ~0.1°C per decade in Pacific—emergent adaptation signal.</span>
-                            <span data-lang="ja">太平洋でサンゴの熱耐性が10年あたり約0.1℃上昇—適応の兆候。</span>
-                        </p>
-                        <a href="https://doi.org/10.1038/s41467-023-41872-x" target="_blank" class="paper-link">DOI →</a>
-                    </div>
-                    <div class="literature-card">
-                        <div class="paper-title">Frade PR et al. (2018)</div>
-                        <div class="paper-journal">Nature Communications 9:3447</div>
-                        <p class="paper-desc">
-                            <span data-lang="en">Deep reefs (40m) offer limited thermal refuge—bleaching 40% vs 60-69% in shallows.</span>
-                            <span data-lang="ja">深場（40m）の避難所効果は限定的—白化率40% vs 浅場60-69%。</span>
-                        </p>
-                        <a href="https://doi.org/10.1038/s41467-018-05741-0" target="_blank" class="paper-link">DOI →</a>
-                    </div>
-
-                    <div class="literature-card">
-                        <div class="paper-title">LaJeunesse TC et al. (2018)</div>
-                        <div class="paper-journal">Current Biology 28:2570-2580</div>
-                        <p class="paper-desc">
-                            <span data-lang="en">Systematic revision of Symbiodiniaceae—reclassification of coral symbionts into multiple genera.</span>
-                            <span data-lang="ja">Symbiodiniaceaeの系統分類改訂—サンゴ共生藻を複数属に再分類。</span>
-                        </p>
-                        <a href="https://doi.org/10.1016/j.cub.2018.07.008" target="_blank" class="paper-link">DOI →</a>
-                    </div>
-                </div>
-
-                <div class="literature-subsection">
                     <span data-lang="en">DHW & Thermal Stress</span>
                     <span data-lang="ja">DHW・熱ストレス</span>
                 </div>
@@ -557,16 +501,6 @@
                             <span data-lang="ja">ミドリイシの北限は低温白化への耐性で決定される。</span>
                         </p>
                         <a href="https://doi.org/10.1038/srep18467" target="_blank" class="paper-link">DOI →</a>
-                    </div>
-
-                    <div class="literature-card">
-                        <div class="paper-title">Nakabayashi A et al. (2019)</div>
-                        <div class="paper-journal">Scientific Reports 9:1892</div>
-                        <p class="paper-desc">
-                            <span data-lang="en">Temperate Japanese regions as potential refugia for Acropora hyacinthus.</span>
-                            <span data-lang="ja">日本温帯域がクシハダミドリイシの避難所となる可能性。</span>
-                        </p>
-                        <a href="https://doi.org/10.1038/s41598-018-38333-5" target="_blank" class="paper-link">DOI →</a>
                     </div>
 
                 </div>
