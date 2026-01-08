@@ -191,9 +191,9 @@
             const jaEl = document.getElementById('extreme-latest-ja');
             
             // 7地点の値を表示
-            const hot24Vals = ALL_SITES.map(s => hot24[s] || 0).join('/');
-            const hot25Vals = ALL_SITES.map(s => hot25[s] || 0).join('/');
-            const cold26Vals = ALL_SITES.map(s => cold26[s] || 0).join('/');
+            const hot24Vals = ALL_SITES.map(s => hot24[s] || 0).join(' / ');
+            const hot25Vals = ALL_SITES.map(s => hot25[s] || 0).join(' / ');
+            const cold26Vals = ALL_SITES.map(s => cold26[s] || 0).join(' / ');
             
             if (enEl) {
                 enEl.innerHTML = `🔥24: ${hot24Vals}<br>　25: ${hot25Vals}<br>❄️W26: ${cold26Vals}<br><small style="opacity:0.7">Data: ${dataJa}</small>`;
@@ -289,8 +289,8 @@
             const enEl = document.getElementById('dhw-latest-en');
             const jaEl = document.getElementById('dhw-latest-ja');
             
-            const dhw24Vals = ALL_SITES.map(s => Math.round(peak2024[s])).join('/');
-            const dhw25Vals = ALL_SITES.map(s => Math.round(peak2025[s])).join('/');
+            const dhw24Vals = ALL_SITES.map(s => Math.round(peak2024[s])).join(' / ');
+            const dhw25Vals = ALL_SITES.map(s => Math.round(peak2025[s])).join(' / ');
             
             if (enEl) {
                 enEl.innerHTML = `'24: ${dhw24Vals}<br>'25: ${dhw25Vals}<br><small style="opacity:0.7">Data: ${dataJa}</small>`;
