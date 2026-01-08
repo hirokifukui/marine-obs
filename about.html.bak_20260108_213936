@@ -186,24 +186,36 @@
     <main>
         <div class="about-content">
             <div data-lang="en">
-                <h1>About</h1>
+                <h1>About MarineObservations</h1>
                 <img src="images/diving.jpg" alt="Diving observation" style="width: 100%; max-width: 500px; border-radius: 12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                 
-                <h2>What this site does</h2>
-                <p>marine-obs.org monitors thermal stress on coral reefs in Japanese waters. It translates satellite data from NASA and NOAA into accessible visualizations for divers and anyone interested in ocean conditions.</p>
-                <p>The site tracks sea surface temperature, degree heating weeks (DHW), and bleaching risk across seven monitoring sites—from Kushimoto, the northernmost coral habitat in Japan, to the Sekisei Lagoon in Okinawa.</p>
+                <h2>What I saw</h2>
+                <p>In the summer of 2024, I went diving in Onna Village, Okinawa. What I saw underwater stopped me cold: coral, bleached white, stretching across the reef. Not in patches—everywhere. The coral that local communities had spent years cultivating was gone.</p>
+                <p>I had heard about coral bleaching before. I knew the graphs, the rising temperatures, the warnings. None of it moved me to act. This did.</p>
 
-                <h2>Who runs it</h2>
-                <p>I am a physician based in Tokyo. Not a marine biologist. But I dive—over a hundred times a year, across Japan and beyond. In my clinical work, I observe people over long periods. Watching the ocean, I have found, requires the same discipline: patient observation, careful recording, resistance to easy conclusions.</p>
+                <h2>Who I am</h2>
+                <p>I am a physician based in Japan. I am not a marine biologist, not an environmental scientist. But I dive—over a hundred times a year, in Okinawa, Ogasawara, the Maldives, and elsewhere. Diving is not my profession. It is how I stay connected to something larger than myself.</p>
+                <p>In my clinical work, I observe people over long periods of time. Change is slow, complex, and rarely reducible to simple cause and effect. Watching the ocean, I have come to feel, requires the same discipline: patient observation, careful recording, resistance to easy conclusions.</p>
 
-                <h2>Why it exists</h2>
-                <p>In the summer of 2024, I went diving in Okinawa. The coral was white—not in patches, but across entire reefs. I had seen the graphs before. They never moved me. This did.</p>
-                <p>Divers feel the change. But those observations remain impressions—shared over dinner, forgotten by the next dive. This site is an attempt to record what we see, and to understand what it means.</p>
+                <h2>Why this project</h2>
+                <p>Divers feel the change. "The coral is whiter than before." "There used to be more fish here." "The water is warmer." These observations come up constantly—over dinner, on the boat, between dives. But they remain impressions. They are not recorded, not accumulated, not shared beyond the moment.</p>
+                <p>MarineObservations is an attempt to change that. The goal is simple: to document what is happening in the waters where I dive, and to share it in a way that others can understand and use.</p>
+                <p>I am not here to tell anyone what to think. I have no political agenda—at least not yet. I do not know enough to take a position. What I do know is that understanding must come before judgment. First, observe. First, record. The rest can follow.</p>
 
-                <h2>How it's run</h2>
-                <p>This is a non-commercial, independent project. No ads, no sponsors. Satellite data comes from publicly available sources. In-situ measurements come from my own diving.</p>
+                <h2>Who this is for</h2>
+                <p>For anyone who wants to know what is happening beneath the surface.</p>
+                <p>For divers who sense the change but have not found a way to articulate it.</p>
+                <p>For those who believe that paying attention—even without expertise, even without authority—is itself a form of responsibility.</p>
 
-                <p class="about-signature">marine-obs.org is a project by a physician who dives, documenting ocean conditions from outside the boundaries of formal expertise.</p>
+                <h2>Ten years from now</h2>
+                <p>If this project is still running in ten years, what would make it worthwhile?</p>
+                <p>A world where more people think about the ocean while enjoying its beauty. That would be enough.</p>
+
+                <h2>How this project is run</h2>
+                <p>marine-obs.org is a non-commercial, independent project. There are no advertisements, paid memberships, or sponsorships. All data collection and publication is carried out under my personal responsibility.</p>
+                <p>Satellite data is sourced from publicly available datasets provided by NOAA and NASA. In-situ measurements are collected during my own diving activities.</p>
+
+                <p class="about-signature">MarineObservations is a project by a physician and diver, documenting ocean conditions from outside the boundaries of formal expertise.</p>
             </div>
 
             <div data-lang="ja">

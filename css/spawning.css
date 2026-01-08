@@ -939,3 +939,111 @@
         background-position: center !important;
     }
 }
+
+/* ===== TOGGLE/ACCORDION ===== */
+.science-toggle {
+    margin-bottom: 1rem;
+}
+
+.science-toggle summary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    transition: all 0.2s;
+    list-style: none;
+}
+
+.science-toggle summary::-webkit-details-marker {
+    display: none;
+}
+
+.science-toggle summary::before {
+    content: '▶';
+    font-size: 0.7rem;
+    transition: transform 0.2s;
+    color: var(--spawning-purple);
+}
+
+.science-toggle[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.science-toggle summary:hover {
+    background: var(--bg-secondary);
+    border-color: var(--spawning-border);
+}
+
+.science-toggle .toggle-content {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    background: var(--bg-card);
+    margin-top: -1px;
+}
+
+.science-toggle .toggle-hint {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-left: auto;
+}
+
+/* Part dividers */
+.part-header {
+    margin: 3rem 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.part-header h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--spawning-purple);
+    margin-bottom: 0.25rem;
+}
+
+.part-header .part-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Quick summary box */
+.quick-summary {
+    background: linear-gradient(135deg, var(--spawning-light) 0%, #f0fdfa 100%);
+    border: 1px solid var(--spawning-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.quick-summary .summary-title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--spawning-purple);
+    margin-bottom: 0.75rem;
+}
+
+.quick-summary p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    margin-bottom: 0.75rem;
+}
+
+.quick-summary p:last-child {
+    margin-bottom: 0;
+}
+
+.quick-summary .key-point {
+    font-weight: 600;
+    color: var(--neap-teal);
+}
