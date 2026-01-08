@@ -357,14 +357,35 @@
         <span data-lang="en">Advanced</span>
         <span data-lang="ja">発展</span>
       </span>
-      <div class="six-card-chart" style="position: relative; overflow: hidden;">
-        <img src="img/iStock-1387739628.jpg" alt="Cloudy sky over ocean" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85);">
-        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);"></div>
-        <div style="position: absolute; bottom: 12px; left: 12px; right: 12px; color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">
-          <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; opacity: 0.9;">
-            <span data-lang="en">CLOUD COVER EFFECT</span>
-            <span data-lang="ja">雲量効果</span>
-          </div>
+      <div class="six-card-chart" style="background: linear-gradient(180deg, #0ea5e9 0%, #38bdf8 40%, #7dd3fc 70%, #e0f2fe 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+        <!-- 太陽 -->
+        <svg width="50" height="50" viewBox="0 0 50 50" style="position: absolute; top: 8px; right: 15px; opacity: 0.9;">
+          <circle cx="25" cy="25" r="12" fill="#fbbf24"/>
+          <g stroke="#fbbf24" stroke-width="2" stroke-linecap="round">
+            <line x1="25" y1="5" x2="25" y2="10"/>
+            <line x1="25" y1="40" x2="25" y2="45"/>
+            <line x1="5" y1="25" x2="10" y2="25"/>
+            <line x1="40" y1="25" x2="45" y2="25"/>
+            <line x1="10.86" y1="10.86" x2="14.4" y2="14.4"/>
+            <line x1="35.6" y1="35.6" x2="39.14" y2="39.14"/>
+            <line x1="10.86" y1="39.14" x2="14.4" y2="35.6"/>
+            <line x1="35.6" y1="14.4" x2="39.14" y2="10.86"/>
+          </g>
+        </svg>
+        <!-- 雲 -->
+        <svg width="100" height="60" viewBox="0 0 100 60" style="position: absolute; top: 20px; left: 10px; opacity: 0.85;">
+          <ellipse cx="35" cy="40" rx="25" ry="15" fill="white"/>
+          <ellipse cx="55" cy="35" rx="20" ry="18" fill="white"/>
+          <ellipse cx="70" cy="42" rx="18" ry="12" fill="white"/>
+          <ellipse cx="45" cy="45" rx="30" ry="10" fill="white"/>
+        </svg>
+        <!-- DHW矢印 -->
+        <div style="position: absolute; bottom: 25px; display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 0.7rem; font-weight: 600; color: #dc2626;">DHW</span>
+          <svg width="40" height="12" viewBox="0 0 40 12">
+            <path d="M0,6 L30,6 M25,2 L30,6 L25,10" stroke="#22c55e" stroke-width="2" fill="none"/>
+          </svg>
+          <span style="font-size: 0.65rem; color: #22c55e; font-weight: 600;">−20%</span>
         </div>
         <div class="six-card-wave">
           <svg viewBox="0 0 1200 20" preserveAspectRatio="none">
@@ -383,8 +404,8 @@
           <span data-lang="ja">7地点・Stormglass雲量データ</span>
         </div>
         <div class="six-card-desc">
-          <span data-lang="en">Same temperature, different outcomes. Cloud cover reduces bleaching risk by blocking the light that drives coral stress.</span>
-          <span data-lang="ja">同じ水温でも結果は異なる。雲がサンゴストレスの原因となる光を遮り、白化リスクを軽減。</span>
+          <span data-lang="en">Cloudy skies reduce bleaching risk at the same temperature. DHW corrected for actual solar radiation based on Butcherine 2023.</span>
+          <span data-lang="ja">曇天は同じ水温でも白化リスクを軽減。Butcherine 2023に基づき実際の日射量で補正したDHW。</span>
         </div>
         <a href="light-adjusted-dhw.html" class="six-card-btn">
           <span data-lang="en">Explore data</span>
@@ -400,17 +421,38 @@
         <span data-lang="en">4th Global Event</span>
         <span data-lang="ja">第4次世界白化</span>
       </span>
-      <div class="six-card-chart" style="position: relative; overflow: hidden;">
-        <img src="img/iStock-964888346.jpg" alt="World Map" style="width: 100%; height: 100%; object-fit: cover;">
-        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,50,80,0.3) 0%, rgba(0,50,80,0.6) 100%);"></div>
-        <!-- Hotspot indicators -->
-        <div style="position: absolute; top: 35%; left: 20%; width: 10px; height: 10px; background: #ef4444; border-radius: 50%; box-shadow: 0 0 10px #ef4444; animation: pulse 2s infinite;"></div>
-        <div style="position: absolute; top: 55%; left: 75%; width: 12px; height: 12px; background: #ef4444; border-radius: 50%; box-shadow: 0 0 12px #ef4444; animation: pulse 2s infinite 0.5s;"></div>
-        <div style="position: absolute; top: 45%; left: 55%; width: 8px; height: 8px; background: #f97316; border-radius: 50%; box-shadow: 0 0 8px #f97316; animation: pulse 2s infinite 1s;"></div>
-        <div style="position: absolute; bottom: 12px; left: 12px; right: 12px; color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">
-          <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em;">
-            <span data-lang="en">77% OF REEFS AFFECTED</span>
-            <span data-lang="ja">世界のサンゴ礁77%が被害</span>
+      <div class="six-card-chart" style="background: linear-gradient(180deg, #1e3a5f 0%, #2d5a87 50%, #3b82a0 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+        <!-- 世界地図シルエット（簡略化） -->
+        <svg width="160" height="70" viewBox="0 0 160 70" style="opacity: 0.3;">
+          <ellipse cx="80" cy="35" rx="75" ry="32" fill="none" stroke="#fff" stroke-width="1"/>
+          <!-- 大陸の簡易表現 -->
+          <path d="M20,25 Q30,20 45,25 Q50,30 45,35 Q35,40 25,35 Z" fill="#fff" opacity="0.5"/>
+          <path d="M55,20 Q70,15 85,20 Q95,25 90,35 Q80,45 65,40 Q55,35 55,25 Z" fill="#fff" opacity="0.5"/>
+          <path d="M100,30 Q115,25 130,30 Q135,40 125,45 Q110,50 100,40 Z" fill="#fff" opacity="0.5"/>
+        </svg>
+        <!-- 白化ホットスポット表示 -->
+        <div style="position: absolute; display: flex; gap: 6px; top: 50%; transform: translateY(-50%);">
+          <div style="width: 8px; height: 8px; background: #ef4444; border-radius: 50%; animation: pulse 2s infinite;"></div>
+          <div style="width: 8px; height: 8px; background: #f97316; border-radius: 50%; animation: pulse 2s infinite 0.3s;"></div>
+          <div style="width: 8px; height: 8px; background: #ef4444; border-radius: 50%; animation: pulse 2s infinite 0.6s;"></div>
+        </div>
+        <!-- タイムライン -->
+        <div style="position: absolute; bottom: 12px; display: flex; align-items: flex-end; gap: 12px;">
+          <div style="text-align: center;">
+            <div style="width: 6px; height: 14px; background: #f87171; border-radius: 2px; margin: 0 auto;"></div>
+            <span style="font-size: 0.5rem; color: #fff; opacity: 0.8;">98</span>
+          </div>
+          <div style="text-align: center;">
+            <div style="width: 6px; height: 10px; background: #fca5a5; border-radius: 2px; margin: 0 auto;"></div>
+            <span style="font-size: 0.5rem; color: #fff; opacity: 0.8;">10</span>
+          </div>
+          <div style="text-align: center;">
+            <div style="width: 6px; height: 22px; background: #ef4444; border-radius: 2px; margin: 0 auto;"></div>
+            <span style="font-size: 0.5rem; color: #fff; opacity: 0.8;">14-17</span>
+          </div>
+          <div style="text-align: center;">
+            <div style="width: 6px; height: 30px; background: #dc2626; border-radius: 2px; margin: 0 auto; box-shadow: 0 0 8px #dc2626;"></div>
+            <span style="font-size: 0.5rem; color: #fff; font-weight: 600;">23-</span>
           </div>
         </div>
         <div class="six-card-wave">
@@ -430,8 +472,8 @@
           <span data-lang="ja">世界規模・NOAA CRW</span>
         </div>
         <div class="six-card-desc">
-          <span data-lang="en">The 4th global bleaching event (2023-) is the longest and most severe on record. GBR alone has bleached 8 times since 1998.</span>
-          <span data-lang="ja">第4次地球規模白化（2023年〜）は観測史上最長・最悪。GBRは1998年以降8回の大規模白化。</span>
+          <span data-lang="en">The 4th global bleaching event (2023-) affects 77% of reef areas worldwide—the longest and most severe on record.</span>
+          <span data-lang="ja">第4次地球規模白化（2023年〜）は世界のサンゴ礁の77%に影響。観測史上最長・最悪の被害。</span>
         </div>
         <a href="global-bleaching.html" class="six-card-btn">
           <span data-lang="en">View history</span>
@@ -447,17 +489,25 @@
         <span data-lang="en">2024 Crisis</span>
         <span data-lang="ja">2024年危機</span>
       </span>
-      <div class="six-card-chart" style="position: relative; overflow: hidden;">
-        <img src="img/iStock-2247514440.jpg" alt="Japan Map" style="width: 100%; height: 100%; object-fit: cover;">
-        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,60,60,0.2) 0%, rgba(0,60,60,0.5) 100%);"></div>
-        <!-- Hotspot for Okinawa area -->
-        <div style="position: absolute; top: 75%; left: 15%; width: 14px; height: 14px; background: #ef4444; border-radius: 50%; box-shadow: 0 0 12px #ef4444; animation: pulse 2s infinite;"></div>
-        <div style="position: absolute; top: 65%; left: 80%; width: 10px; height: 10px; background: #f97316; border-radius: 50%; box-shadow: 0 0 10px #f97316; animation: pulse 2s infinite 0.7s;"></div>
-        <div style="position: absolute; bottom: 12px; left: 12px; right: 12px; color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">
-          <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em;">
-            <span data-lang="en">SEKISEI LAGOON: 97% BLEACHED (2016)</span>
-            <span data-lang="ja">石西礁湖: 97%白化（2016年）</span>
-          </div>
+      <div class="six-card-chart" style="background: linear-gradient(180deg, #065f46 0%, #047857 50%, #10b981 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+        <!-- 石西礁湖被度推移グラフ -->
+        <svg width="140" height="70" viewBox="0 0 140 70" style="margin-top: 5px;">
+          <!-- グリッドライン -->
+          <line x1="20" y1="60" x2="130" y2="60" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
+          <line x1="20" y1="40" x2="130" y2="40" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
+          <line x1="20" y1="20" x2="130" y2="20" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
+          <!-- 被度推移ライン（2016白化→回復→2024白化）-->
+          <polyline points="25,30 40,25 50,55 65,45 80,35 95,30 110,55 125,50" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- データポイント -->
+          <circle cx="50" cy="55" r="4" fill="#fbbf24"/>
+          <circle cx="110" cy="55" r="4" fill="#ef4444"/>
+          <!-- ラベル -->
+          <text x="50" y="68" fill="#fff" font-size="7" text-anchor="middle" opacity="0.8">2016</text>
+          <text x="110" y="68" fill="#fff" font-size="7" text-anchor="middle" opacity="0.8">2024</text>
+        </svg>
+        <div style="font-size: 0.65rem; color: #fff; opacity: 0.9; margin-top: 2px;">
+          <span data-lang="en">Sekisei Lagoon Coral Cover</span>
+          <span data-lang="ja">石西礁湖サンゴ被度推移</span>
         </div>
         <div class="six-card-wave">
           <svg viewBox="0 0 1200 20" preserveAspectRatio="none">
@@ -476,8 +526,8 @@
           <span data-lang="ja">沖縄・環境省データ</span>
         </div>
         <div class="six-card-desc">
-          <span data-lang="en">Sekisei Lagoon, Japan's largest reef, suffered catastrophic bleaching in 2016 and 2024. Recovery requires 10-15 years.</span>
-          <span data-lang="ja">日本最大のサンゴ礁・石西礁湖は2016年と2024年に壊滅的被害。回復には10-15年を要する。</span>
+          <span data-lang="en">Sekisei Lagoon, Japan's largest reef, lost significant cover in 2016 and 2024. Recovery takes 10-15 years under ideal conditions.</span>
+          <span data-lang="ja">日本最大の石西礁湖は2016年と2024年に壊滅的被害。理想的条件でも回復に10-15年を要する。</span>
         </div>
         <a href="japan-bleaching.html" class="six-card-btn">
           <span data-lang="en">View history</span>
@@ -493,7 +543,7 @@
 <style>
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.3); }
+  50% { opacity: 0.5; transform: scale(1.2); }
 }
 </style>
 
