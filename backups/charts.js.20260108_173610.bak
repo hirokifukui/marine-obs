@@ -76,12 +76,12 @@
             const pubDateObj = new Date(Date.UTC(
                 ...publishedDate.split('-').map(Number).map((v, i) => i === 1 ? v - 1 : v)
             ));
-            // データ日付をそのまま使用
-            const dataJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
+            const obsDateObj = new Date(pubDateObj);
+            obsDateObj.setUTCDate(obsDateObj.getUTCDate() - 3);
             
             // 表示用フォーマット
             const pubJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
-            
+            const obsJa = `${obsDateObj.getUTCMonth() + 1}/${obsDateObj.getUTCDate()}`;
             
             const enEl = document.getElementById('sst-latest-en');
             const jaEl = document.getElementById('sst-latest-ja');
@@ -90,14 +90,14 @@
             const sstValues = ALL_SITES.map(s => latest[s]?.toFixed(1) || '--').join(' / ');
             
             if (enEl) {
-                enEl.innerHTML = `${sstValues}°C<br><small style="opacity:0.7">Data: ${dataJa}</small>`;
+                enEl.innerHTML = `${sstValues}°C<br><small style="opacity:0.7">Data: ${obsJa}</small>`;
             }
             if (jaEl) {
-                jaEl.innerHTML = `${sstValues}°C<br><small style="opacity:0.7">データ: ${dataJa}</small>`;
+                jaEl.innerHTML = `${sstValues}°C<br><small style="opacity:0.7">データ: ${obsJa}</small>`;
             }
             
             // バッジと説明文を動的更新
-            updateSSTStatus(latest, pubDateObj.getUTCMonth() + 1);
+            updateSSTStatus(latest, obsDateObj.getUTCMonth() + 1);
             
             console.log('✅ SST latest loaded from Supabase:', publishedDate);
         } catch (e) {
@@ -176,11 +176,11 @@
             const pubDateObj = new Date(Date.UTC(
                 ...data.latest_date.split('-').map(Number).map((v, i) => i === 1 ? v - 1 : v)
             ));
-            // データ日付をそのまま使用
-            const dataJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
+            const obsDateObj = new Date(pubDateObj);
+            obsDateObj.setUTCDate(obsDateObj.getUTCDate() - 3);
             
             const pubJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
-            
+            const obsJa = `${obsDateObj.getUTCMonth() + 1}/${obsDateObj.getUTCDate()}`;
             
             const hot24 = data.hot_2024 || {};
             const hot25 = data.hot_2025 || {};
@@ -196,10 +196,10 @@
             const cold26Vals = ALL_SITES.map(s => cold26[s] || 0).join('/');
             
             if (enEl) {
-                enEl.innerHTML = `🔥24: ${hot24Vals} | 25: ${hot25Vals}<br>❄️W26: ${cold26Vals}<br><small style="opacity:0.7">Data: ${dataJa}</small>`;
+                enEl.innerHTML = `🔥24: ${hot24Vals} | 25: ${hot25Vals}<br>❄️W26: ${cold26Vals}<br><small style="opacity:0.7">Data: ${obsJa}</small>`;
             }
             if (jaEl) {
-                jaEl.innerHTML = `🔥24: ${hot24Vals} | 25: ${hot25Vals}<br>❄️26冬: ${cold26Vals}<br><small style="opacity:0.7">データ: ${dataJa}</small>`;
+                jaEl.innerHTML = `🔥24: ${hot24Vals} | 25: ${hot25Vals}<br>❄️26冬: ${cold26Vals}<br><small style="opacity:0.7">データ: ${obsJa}</small>`;
             }
             
             updateExtremeStatus(hot25, cold26);
@@ -280,11 +280,11 @@
             const pubDateObj = new Date(Date.UTC(
                 ...data.latest_date.split('-').map(Number).map((v, i) => i === 1 ? v - 1 : v)
             ));
-            // データ日付をそのまま使用
-            const dataJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
+            const obsDateObj = new Date(pubDateObj);
+            obsDateObj.setUTCDate(obsDateObj.getUTCDate() - 3);
             
             const pubJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
-            
+            const obsJa = `${obsDateObj.getUTCMonth() + 1}/${obsDateObj.getUTCDate()}`;
             
             const enEl = document.getElementById('dhw-latest-en');
             const jaEl = document.getElementById('dhw-latest-ja');
@@ -293,10 +293,10 @@
             const dhw25Vals = ALL_SITES.map(s => peak2025[s].toFixed(1)).join('/');
             
             if (enEl) {
-                enEl.innerHTML = `24: ${dhw24Vals}<br>25: ${dhw25Vals}<br><small style="opacity:0.7">Data: ${dataJa}</small>`;
+                enEl.innerHTML = `24: ${dhw24Vals}<br>25: ${dhw25Vals}<br><small style="opacity:0.7">Data: ${obsJa}</small>`;
             }
             if (jaEl) {
-                jaEl.innerHTML = `24: ${dhw24Vals}<br>25: ${dhw25Vals}<br><small style="opacity:0.7">データ: ${dataJa}</small>`;
+                jaEl.innerHTML = `24: ${dhw24Vals}<br>25: ${dhw25Vals}<br><small style="opacity:0.7">データ: ${obsJa}</small>`;
             }
             
             window.dhwAllYearsData = data;
