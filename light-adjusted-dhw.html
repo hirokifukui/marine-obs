@@ -109,6 +109,35 @@
             display: block;
             margin: 0.5rem 0;
         }
+    
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .insight-card {
+            padding: 1.25rem;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+        .insight-card.acclimatization {
+            background: #f0fdf4;
+            border-color: #22c55e;
+        }
+        .insight-card.limitation {
+            background: #fef3c7;
+            border-color: #f59e0b;
+        }
+        .insight-card h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1rem;
+        }
+        .insight-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
@@ -1147,6 +1176,76 @@
                     <div><span style="display: inline-block; width: 12px; height: 12px; background: #93c5fd; border-radius: 2px; margin-right: 4px;"></span><span data-lang="en">Adjusted DHW</span><span data-lang="ja">調整DHW</span></div>
                     <div><span style="display: inline-block; width: 12px; height: 12px; background: #f59e0b; border-radius: 2px; margin-right: 4px;"></span><span data-lang="en">Cloud Cover %</span><span data-lang="ja">雲量%</span></div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Insights from Light Adjustment -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">What Light Adjustment Reveals</span>
+                <span data-lang="ja">光補正で見えてくるもの</span>
+            </h2>
+            <p>
+                <span data-lang="en">Beyond simple correction, incorporating cloud data reveals site characteristics and temporal patterns that raw DHW alone cannot show.</span>
+                <span data-lang="ja">単なる補正を超えて、雲量データを組み込むことで、元のDHWだけでは見えない地点特性や時間的パターンが浮かび上がります。</span>
+            </p>
+
+            <div class="insight-grid">
+                <div class="insight-card acclimatization">
+                    <h3>
+                        🌴 <span data-lang="en">Sekisei Lagoon: Natural Shading</span><span data-lang="ja">石西礁湖：自然の日よけ</span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">
+                            Japan's largest coral reef consistently shows the <strong>highest mitigation effect</strong> (average +4.7% across 6 years). 
+                            Located in the typhoon corridor, Sekisei experiences higher cloud cover during summer stress periods. 
+                            This unintentional natural shading may partly explain why some corals survive despite extreme DHW values.
+                        </span>
+                        <span data-lang="ja">
+                            日本最大のサンゴ礁は、一貫して<strong>最も高い軽減効果</strong>（6年間平均+4.7%）を示しています。
+                            台風の通り道に位置する石西礁湖は、夏のストレス期間中により高い雲量を経験します。
+                            この意図せぬ自然の遮光が、極端なDHW値にもかかわらず一部のサンゴが生き残る理由の一端かもしれません。
+                        </span>
+                    </p>
+                </div>
+
+                <div class="insight-card limitation">
+                    <h3>
+                        🏝️ <span data-lang="en">Ogasawara: Clear Sky Risk</span><span data-lang="ja">小笠原：晴天リスク</span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">
+                            The remote Ogasawara Islands, often considered "pristine," show a different vulnerability. 
+                            In 2020 and 2025, cloud cover dropped below 50%, resulting in <strong>negative adjustment effects</strong> (DHW effectively increased). 
+                            Isolation doesn't guarantee protection—the clear Pacific skies may amplify heat stress beyond what DHW alone suggests.
+                        </span>
+                        <span data-lang="ja">
+                            「手つかずの自然」とされる小笠原諸島は、異なる脆弱性を示しています。
+                            2020年と2025年には雲量が50%を下回り、<strong>調整効果がマイナス</strong>（DHWが実質的に増加）となりました。
+                            孤立は保護を保証しません—晴れ渡る太平洋の空は、DHWだけが示す以上に熱ストレスを増幅させる可能性があります。
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="story-box" style="margin-top: 1.5rem;">
+                <p class="story-lead">
+                    <span data-lang="en">2021: A Window for Recovery</span>
+                    <span data-lang="ja">2021年：回復の窓</span>
+                </p>
+                <p>
+                    <span data-lang="en">
+                        2021 stands out as the only year with both low thermal stress (average DHW 2.9) and high cloud cover (65%). 
+                        The combined effect—adjusted DHW of just 2.8 with +4.6% mitigation—created <strong>ideal conditions for coral recovery</strong> 
+                        after the stress of 2020. Such "double relief" years may be critical intervals that allow damaged reefs to rebuild 
+                        before the next major bleaching event.
+                    </span>
+                    <span data-lang="ja">
+                        2021年は、低い熱ストレス（平均DHW 2.9）と高い雲量（65%）の両方を備えた唯一の年として際立っています。
+                        この複合効果—調整DHWわずか2.8、軽減効果+4.6%—は、2020年のストレス後の<strong>サンゴ回復に理想的な条件</strong>を生み出しました。
+                        このような「ダブルの救い」となる年は、次の大規模白化イベントの前に損傷したサンゴ礁が再建するための重要な期間かもしれません。
+                    </span>
+                </p>
             </div>
         </section>
 
