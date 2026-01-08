@@ -519,7 +519,7 @@
             text-align: right;
         }
         .dhw-year-row .number {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
         }
         .dhw-year-row.current .number {
             color: #fbbf24;
