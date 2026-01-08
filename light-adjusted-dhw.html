@@ -1107,7 +1107,48 @@
                 <span data-lang="ja"> 雲量が50%を下回ると、光ストレスが実質的な熱ストレスを悪化させる可能性があります。2025年には異常に晴れた状態がほとんどの地点で観測され、調整効果がマイナス（DHWが減少ではなく増加）となりました。</span>
             </div>
 
-        <!-- Phase 3: Charts will be inserted here -->
+        <!-- Charts Section -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Visual Comparison: DHW vs Adjusted DHW</span>
+                <span data-lang="ja">視覚比較：DHW vs 調整DHW</span>
+            </h2>
+            <p>
+                <span data-lang="en">The charts below compare original DHW (darker) with cloud-adjusted DHW (lighter). When adjusted DHW is lower, cloud cover provided mitigation. When higher, clear skies increased effective stress.</span>
+                <span data-lang="ja">以下のチャートは、元のDHW（濃色）と雲量補正後のDHW（淡色）を比較しています。調整DHWが低い場合、雲量が軽減効果をもたらしました。高い場合、晴天が実質的ストレスを増加させました。</span>
+            </p>
+
+            <!-- Chart: All Sites 2024 -->
+            <div class="card" style="margin-top: 1.5rem;">
+                <div class="card-title">
+                    <span data-lang="en">2024 Peak DHW by Site</span>
+                    <span data-lang="ja">2024年 地点別ピークDHW</span>
+                </div>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="chart2024"></canvas>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.75rem; text-align: center;">
+                    <span data-lang="en">Dark = Original DHW | Light = Adjusted DHW</span>
+                    <span data-lang="ja">濃色 = 元DHW | 淡色 = 調整DHW</span>
+                </p>
+            </div>
+
+            <!-- Chart: Year Trend (All Sites Average) -->
+            <div class="card" style="margin-top: 1.5rem;">
+                <div class="card-title">
+                    <span data-lang="en">Annual Trend: Average DHW (2020–2025)</span>
+                    <span data-lang="ja">年別推移：平均DHW（2020–2025年）</span>
+                </div>
+                <div class="chart-container" style="height: 280px;">
+                    <canvas id="chartTrend"></canvas>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; font-size: 0.8rem;">
+                    <div><span style="display: inline-block; width: 12px; height: 12px; background: #3b82f6; border-radius: 2px; margin-right: 4px;"></span><span data-lang="en">Original DHW</span><span data-lang="ja">元DHW</span></div>
+                    <div><span style="display: inline-block; width: 12px; height: 12px; background: #93c5fd; border-radius: 2px; margin-right: 4px;"></span><span data-lang="en">Adjusted DHW</span><span data-lang="ja">調整DHW</span></div>
+                    <div><span style="display: inline-block; width: 12px; height: 12px; background: #f59e0b; border-radius: 2px; margin-right: 4px;"></span><span data-lang="en">Cloud Cover %</span><span data-lang="ja">雲量%</span></div>
+                </div>
+            </div>
+        </section>
 
         <!-- Limitations -->
         <section class="content-section">
@@ -1216,6 +1257,135 @@
 
         document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
         document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
+
+        // Chart.js for Light-Adjusted DHW
+        (function() {
+            // 2024 Data by Site
+            const sites2024 = ['Kushimoto', 'Ogasawara', 'Amami', 'Sesoko', 'Manza', 'Kerama', 'Sekisei'];
+            const sites2024Ja = ['串本', '小笠原', '奄美', '瀬底', '万座', '慶良間', '石西礁湖'];
+            const dhw2024 = [10.29, 8.28, 14.12, 10.96, 12.57, 12.01, 11.89];
+            const adjDhw2024 = [10.15, 7.84, 14.02, 10.61, 12.39, 11.78, 11.61];
+            const colors2024 = ['#805ad5', '#2f855a', '#d53f8c', '#2b6cb0', '#c05621', '#0891b2', '#e53e3e'];
+
+            const ctx2024 = document.getElementById('chart2024');
+            if (ctx2024) {
+                new Chart(ctx2024.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: sites2024,
+                        datasets: [
+                            {
+                                label: 'Original DHW',
+                                data: dhw2024,
+                                backgroundColor: colors2024,
+                                borderColor: colors2024,
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'Adjusted DHW',
+                                data: adjDhw2024,
+                                backgroundColor: colors2024.map(c => c + '66'),
+                                borderColor: colors2024,
+                                borderWidth: 1
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            x: { grid: { display: false } },
+                            y: {
+                                beginAtZero: true,
+                                max: 16,
+                                grid: { color: '#e2e8f0' }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Trend Data (All Sites Average)
+            const years = ['2020', '2021', '2022', '2023', '2024', '2025'];
+            const avgDhw = [8.3, 2.9, 9.0, 4.5, 11.4, 9.1];
+            const avgAdjDhw = [8.0, 2.8, 8.7, 4.4, 11.2, 9.2];
+            const avgCloud = [63, 65, 62, 60, 58, 46];
+
+            const ctxTrend = document.getElementById('chartTrend');
+            if (ctxTrend) {
+                new Chart(ctxTrend.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: years,
+                        datasets: [
+                            {
+                                label: 'Original DHW',
+                                data: avgDhw,
+                                backgroundColor: '#3b82f6',
+                                borderColor: '#3b82f6',
+                                borderWidth: 1,
+                                yAxisID: 'y'
+                            },
+                            {
+                                label: 'Adjusted DHW',
+                                data: avgAdjDhw,
+                                backgroundColor: '#93c5fd',
+                                borderColor: '#93c5fd',
+                                borderWidth: 1,
+                                yAxisID: 'y'
+                            },
+                            {
+                                label: 'Cloud Cover %',
+                                data: avgCloud,
+                                type: 'line',
+                                borderColor: '#f59e0b',
+                                backgroundColor: '#f59e0b',
+                                pointRadius: 4,
+                                pointBackgroundColor: '#f59e0b',
+                                borderWidth: 2,
+                                fill: false,
+                                yAxisID: 'y1'
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            x: { grid: { display: false } },
+                            y: {
+                                type: 'linear',
+                                position: 'left',
+                                beginAtZero: true,
+                                max: 14,
+                                grid: { color: '#e2e8f0' },
+                                title: {
+                                    display: true,
+                                    text: 'DHW'
+                                }
+                            },
+                            y1: {
+                                type: 'linear',
+                                position: 'right',
+                                min: 30,
+                                max: 80,
+                                grid: { display: false },
+                                title: {
+                                    display: true,
+                                    text: 'Cloud %'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        })();
     </script>
 
     <!-- Navigation JS -->
