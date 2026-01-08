@@ -196,10 +196,10 @@
             const cold26Vals = ALL_SITES.map(s => cold26[s] || 0).join('/');
             
             if (enEl) {
-                enEl.innerHTML = `🔥24: ${hot24Vals}<br>　25: ${hot25Vals}<br>❄️W26: ${cold26Vals}<br><small style="opacity:0.7">Data: ${dataJa}</small>`;
+                enEl.innerHTML = `🔥24: ${hot24Vals} | 25: ${hot25Vals}<br>❄️W26: ${cold26Vals}<br><small style="opacity:0.7">Data: ${dataJa}</small>`;
             }
             if (jaEl) {
-                jaEl.innerHTML = `🔥24: ${hot24Vals}<br>　25: ${hot25Vals}<br>❄️26冬: ${cold26Vals}<br><small style="opacity:0.7">データ: ${dataJa}</small>`;
+                jaEl.innerHTML = `🔥24: ${hot24Vals} | 25: ${hot25Vals}<br>❄️26冬: ${cold26Vals}<br><small style="opacity:0.7">データ: ${dataJa}</small>`;
             }
             
             updateExtremeStatus(hot25, cold26);
@@ -293,10 +293,10 @@
             const dhw25Vals = ALL_SITES.map(s => peak2025[s].toFixed(1)).join('/');
             
             if (enEl) {
-                enEl.innerHTML = `'24: ${dhw24Vals}<br>'25: ${dhw25Vals}<br><small style="opacity:0.7">Data: ${dataJa}</small>`;
+                enEl.innerHTML = `24: ${dhw24Vals}<br>25: ${dhw25Vals}<br><small style="opacity:0.7">Data: ${dataJa}</small>`;
             }
             if (jaEl) {
-                jaEl.innerHTML = `'24: ${dhw24Vals}<br>'25: ${dhw25Vals}<br><small style="opacity:0.7">データ: ${dataJa}</small>`;
+                jaEl.innerHTML = `24: ${dhw24Vals}<br>25: ${dhw25Vals}<br><small style="opacity:0.7">データ: ${dataJa}</small>`;
             }
             
             window.dhwAllYearsData = data;
