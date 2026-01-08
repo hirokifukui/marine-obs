@@ -364,130 +364,15 @@
                     Corals can tolerate brief temperature spikes, but sustained heat exposure disrupts 
                     the symbiosis with their algal partners. DHW tracks cumulative thermal stress over 
                     the past 8 weeks, predicting bleaching risk before visible damage occurs. 
-                    The threshold DHW ≥ 4 indicates likely bleaching; DHW ≥ 8 indicates severe stress (per NOAA standards).
+                    The threshold DHW ≥ 4 indicates likely bleaching; DHW ≥ 8 indicates likely mortality.
                 </span>
                 <span data-lang="ja">
                     サンゴは短時間の高温スパイクには耐えられますが、持続的な熱曝露は共生藻との関係を破壊します。
                     DHWは過去8週間の累積熱ストレスを追跡し、目に見える被害が発生する前に白化リスクを予測します。
-                    DHW ≥ 4で白化の可能性、DHW ≥ 8で深刻なストレス域を示します（NOAA基準）。
+                    DHW ≥ 4で白化の可能性、DHW ≥ 8で死亡の可能性を示します。
                 </span>
             </p>
         </div>
-
-
-        <!-- About Our DHW Calculation -->
-        <section class="content-section calculation-notice">
-            <h2>
-                <span data-lang="en">⚠️ About Our DHW Calculation</span>
-                <span data-lang="ja">⚠️ 本サイトのDHW計算について</span>
-            </h2>
-            
-            <div class="notice-box">
-                <h3>
-                    <span data-lang="en">Why We Use an Optimized Method</span>
-                    <span data-lang="ja">なぜ独自計算を採用しているか</span>
-                </h3>
-                <p>
-                    <span data-lang="en">
-                        Traditional DHW calculations that derive MMM (Maximum Monthly Mean) from recent warming data 
-                        tend to set thresholds too high, underestimating bleaching risk. 
-                        To address this, we adopted the optimized methodology from Lachs et al. (2021).
-                    </span>
-                    <span data-lang="ja">
-                        従来の計算方法では、MMM（最暖月平均水温）を近年の温暖化したデータから算出していたため、
-                        閾値が高くなりすぎ、白化リスクを過小評価する問題がありました。
-                        この問題に対処するため、Lachs et al. (2021) の最適化された方法論を採用しています。
-                    </span>
-                </p>
-            </div>
-
-            <div class="method-box">
-                <h3>
-                    <span data-lang="en">Our Methodology (Lachs et al. 2021)</span>
-                    <span data-lang="ja">採用した方法論（Lachs et al. 2021）</span>
-                </h3>
-                <p>
-                    <span data-lang="en">
-                        Lachs et al. (2021) systematically compared 234 DHW calculation patterns against 
-                        37,871 bleaching observations, identifying parameters that maximize prediction accuracy 
-                        (hit rate improved by 7.9%).
-                    </span>
-                    <span data-lang="ja">
-                        Lachs et al. (2021) は37,871件の白化観測データと234パターンのDHW計算方法を系統的に比較し、
-                        白化予測精度を最大化するパラメータを特定しました（的中率7.9%向上）。
-                    </span>
-                </p>
-                <table class="method-table">
-                    <thead>
-                        <tr>
-                            <th><span data-lang="en">Parameter</span><span data-lang="ja">パラメータ</span></th>
-                            <th><span data-lang="en">Our Setting</span><span data-lang="ja">当サイトの設定</span></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>MMM</td>
-                            <td>
-                                <span data-lang="en">NOAA CRW v3.1 fixed values (1985-1990+1993 baseline)</span>
-                                <span data-lang="ja">NOAA CRW v3.1固定値（1985-1990+1993年基準）</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>HotSpot</td>
-                            <td>
-                                <span data-lang="en">SST > MMM (removed traditional +1°C cutoff)</span>
-                                <span data-lang="ja">SST > MMM（従来のMMM+1℃カットオフを除去）</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><span data-lang="en">Accumulation</span><span data-lang="ja">累積期間</span></td>
-                            <td>
-                                <span data-lang="en">56 days (8 weeks)</span>
-                                <span data-lang="ja">56日間（8週間）</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="caution-box">
-                <h3>
-                    <span data-lang="en">Important Notes</span>
-                    <span data-lang="ja">注意事項</span>
-                </h3>
-                <ul>
-                    <li>
-                        <span data-lang="en">
-                            <strong>Higher values than NOAA:</strong> This method produces higher DHW values than 
-                            NOAA's official DHW (84-day accumulation, MMM+1°C threshold).
-                        </span>
-                        <span data-lang="ja">
-                            <strong>NOAAより高い値：</strong> この方法はNOAA公式DHW（84日累積、MMM+1℃基準）より高い値が出ます。
-                        </span>
-                    </li>
-                    <li>
-                        <span data-lang="en">
-                            <strong>Satellite vs. in-situ:</strong> Satellite-derived DHW tends to be 2-3× higher 
-                            than in-situ measurements (e.g., Sesoko 2016: satellite 8.25 vs. local 3.3).
-                        </span>
-                        <span data-lang="ja">
-                            <strong>衛星と現地の乖離：</strong> 衛星DHWは現地測定より2〜3倍高く出る傾向があります
-                            （例：瀬底2016年 衛星8.25 vs 現地3.3）。
-                        </span>
-                    </li>
-                    <li>
-                        <span data-lang="en">
-                            <strong>Use for comparison:</strong> Our values are best used for relative comparison 
-                            across years and sites, not for direct comparison with NOAA alert thresholds (DHW 4/8).
-                        </span>
-                        <span data-lang="ja">
-                            <strong>相対比較として利用：</strong> 当サイトの数値は、年ごと・地点ごとの相対比較の目安としてご利用ください。
-                            NOAA警報レベル（DHW 4/8）との直接比較は推奨しません。
-                        </span>
-                    </li>
-                </ul>
-            </div>
-        </section>
 
         <!-- 2024: A Record Year -->
         <section class="content-section">
@@ -635,19 +520,6 @@
                     </div>
                 </div>
             </div>
-
-            <p class="alert-note">
-                <span data-lang="en">
-                    <strong>Note:</strong> The above are NOAA official thresholds based on in-situ measurements 
-                    and 84-day accumulation. Our satellite-based calculations use different parameters, 
-                    so direct threshold comparisons are not recommended.
-                </span>
-                <span data-lang="ja">
-                    <strong>注：</strong> 上記はNOAA公式基準（現地測定値・84日累積）です。
-                    当サイトの衛星ベース計算は異なるパラメータを使用しているため、
-                    閾値との直接比較は推奨しません。
-                </span>
-            </p>
         </section>
 
         <!-- Annual DHW Charts - Split into 2 groups -->
@@ -1003,18 +875,6 @@
                 <span data-lang="ja">参考文献</span>
             </h2>
             
-
-            <div class="ref-category">
-                <h3>
-                    <span data-lang="en">DHW Calculation Method</span>
-                    <span data-lang="ja">DHW計算方法</span>
-                </h3>
-                <ul class="ref-list">
-                    <li>Lachs L et al. (2021) Fine-tuning heat stress algorithms to optimise global predictions of mass coral bleaching. <em>Remote Sensing</em> 13:2677. <a href="https://doi.org/10.3390/rs13142677" target="_blank">DOI</a></li>
-                    <li>Skirving W et al. (2020) Coraltemp and the Coral Reef Watch Coral Bleaching Heat Stress Product Suite Version 3.1. <em>Remote Sensing</em> 12:3856. <a href="https://doi.org/10.3390/rs12233856" target="_blank">DOI</a></li>
-                    <li>DeCarlo TM (2020) Treating coral bleaching as weather: a framework to validate and optimize prediction skill. <em>PeerJ</em> 8:e9449. <a href="https://doi.org/10.7717/peerj.9449" target="_blank">DOI</a></li>
-                </ul>
-            </div>
             <div class="ref-category">
                 <h3>
                     <span data-lang="en">Foundation Studies</span>
