@@ -1156,22 +1156,18 @@
             
             // 日付表示
             if (data.latest_date) {
-                const pubDateObj = new Date(Date.UTC(
+                const dataDateObj = new Date(Date.UTC(
                     ...data.latest_date.split('-').map(Number).map((v, i) => i === 1 ? v - 1 : v)
                 ));
-                const obsDateObj = new Date(pubDateObj);
-                obsDateObj.setUTCDate(obsDateObj.getUTCDate() - 3);
                 
                 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-                const pubEn = months[pubDateObj.getUTCMonth()] + ' ' + pubDateObj.getUTCDate();
-                const obsEn = months[obsDateObj.getUTCMonth()] + ' ' + obsDateObj.getUTCDate();
-                const pubJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
-                const obsJa = `${obsDateObj.getUTCMonth() + 1}/${obsDateObj.getUTCDate()}`;
+                const dataEn = months[dataDateObj.getUTCMonth()] + ' ' + dataDateObj.getUTCDate();
+                const dataJa = `${dataDateObj.getUTCMonth() + 1}/${dataDateObj.getUTCDate()}`;
                 
                 const enEl = document.getElementById('dhw-hero-date-en');
                 const jaEl = document.getElementById('dhw-hero-date-ja');
-                if (enEl) enEl.textContent = `Data: ${obsEn} (observation date)`;
-                if (jaEl) jaEl.textContent = `データ: ${obsJa}（観測日）`;
+                if (enEl) enEl.textContent = `Data: ${dataEn} (observation date)`;
+                if (jaEl) jaEl.textContent = `データ: ${dataJa}（観測日）`;
             }
         }
 
