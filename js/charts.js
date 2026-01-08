@@ -289,8 +289,8 @@
             const enEl = document.getElementById('dhw-latest-en');
             const jaEl = document.getElementById('dhw-latest-ja');
             
-            const dhw24Vals = ALL_SITES.map(s => peak2024[s].toFixed(1)).join('/');
-            const dhw25Vals = ALL_SITES.map(s => peak2025[s].toFixed(1)).join('/');
+            const dhw24Vals = ALL_SITES.map(s => Math.round(peak2024[s])).join('/');
+            const dhw25Vals = ALL_SITES.map(s => Math.round(peak2025[s])).join('/');
             
             if (enEl) {
                 enEl.innerHTML = `'24: ${dhw24Vals}<br>'25: ${dhw25Vals}<br><small style="opacity:0.7">Data: ${dataJa}</small>`;
