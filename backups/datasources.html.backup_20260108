@@ -462,15 +462,6 @@
                         <a href="https://doi.org/10.1016/j.rse.2013.08.036" target="_blank" class="paper-link">DOI →</a>
                     </div>
                     <div class="literature-card">
-                        <div class="paper-title">Lachs L et al. (2021)</div>
-                        <div class="paper-journal">Remote Sensing 13:2677</div>
-                        <p class="paper-desc">
-                            <span data-lang="en">Fine-tuning heat stress algorithms: 234 DHW configurations tested against 37,871 observations. Our calculation method.</span>
-                            <span data-lang="ja">熱ストレスアルゴリズムの最適化：234種のDHW設定を37,871件の観測データと照合。当サイトの計算方法。</span>
-                        </p>
-                        <a href="https://doi.org/10.3390/rs13142677" target="_blank" class="paper-link">DOI →</a>
-                    </div>
-                    <div class="literature-card">
                         <div class="paper-title">Singh T et al. (2023)</div>
                         <div class="paper-journal">PeerJ 11:e14629</div>
                         <p class="paper-desc">
