@@ -196,7 +196,7 @@
             <span data-lang="ja">ENSO監視</span>
         </div>
 
-        <!-- Hero Section with Live Data -->
+        <!-- Hero Section -->
         <section class="hero-section" style="background: linear-gradient(135deg, rgba(26, 31, 46, 0.95), rgba(30, 58, 92, 0.9));">
             <div class="hero-header">
                 <h1 class="hero-tagline">
@@ -207,13 +207,6 @@
                     <span data-lang="en">How climate oscillations drive mass bleaching events</span>
                     <span data-lang="ja">気候振動が大規模白化を引き起こすメカニズム</span>
                 </p>
-                <!-- Live ENSO Status Badge in Hero -->
-                <div id="hero-enso-status" class="hero-enso-badge">
-                    <span class="hero-enso-loading">
-                        <span data-lang="en">Loading current status...</span>
-                        <span data-lang="ja">最新データを読み込み中...</span>
-                    </span>
-                </div>
             </div>
         </section>
 
@@ -359,180 +352,6 @@
             </div>
         </section>
 
-        <!-- 2024 Case Study: NEW SECTION -->
-        <section class="content-section">
-            <h2>
-                <span data-lang="en">Case Study: 2024 Okinawa — History Repeats</span>
-                <span data-lang="ja">事例：2024年沖縄 — 繰り返される歴史</span>
-            </h2>
-
-            <div class="case-study-2024">
-                <div class="case-highlight">
-                    <div class="case-stat">
-                        <span class="case-number">48</span>
-                        <span class="case-unit">
-                            <span data-lang="en">days</span>
-                            <span data-lang="ja">日間</span>
-                        </span>
-                    </div>
-                    <p class="case-desc">
-                        <span data-lang="en">No typhoon existed anywhere in the world from June 2 to July 19, 2024 — a historically rare 48-day gap.</span>
-                        <span data-lang="ja">2024年6月2日〜7月19日の48日間、世界中で台風が発生しなかった——統計的にまれな現象。</span>
-                    </p>
-                </div>
-
-                <div class="case-highlight">
-                    <div class="case-stat">
-                        <span class="case-number">31.8</span>
-                        <span class="case-unit">°C</span>
-                    </div>
-                    <p class="case-desc">
-                        <span data-lang="en">SST near South Daito Island reached 31.79°C in July — the highest since records began in 1982, approximately 3°C above normal.</span>
-                        <span data-lang="ja">南大東島南の海面水温が7月に31.79℃を記録——1982年の統計開始以来最高値、平年比+3℃。</span>
-                    </p>
-                </div>
-
-                <div class="case-highlight">
-                    <div class="case-stat">
-                        <span class="case-number">~90%</span>
-                        <span class="case-unit">
-                            <span data-lang="en">mortality</span>
-                            <span data-lang="ja">死滅</span>
-                        </span>
-                    </div>
-                    <p class="case-desc">
-                        <span data-lang="en">Shallow corals on Okinawa Main Island suffered approximately 90% mortality by late September 2024.</span>
-                        <span data-lang="ja">沖縄本島の浅瀬のサンゴは2024年9月末までに約9割が死滅。</span>
-                    </p>
-                </div>
-            </div>
-
-            <div class="mechanism-box" style="border-left-color: var(--coral-severe);">
-                <h4>
-                    <span data-lang="en">📊 JMA Data: Typhoon Approaches to Okinawa in 2024</span>
-                    <span data-lang="ja">📊 気象庁データ：2024年の沖縄への台風接近</span>
-                </h4>
-                <table class="typhoon-table">
-                    <thead>
-                        <tr>
-                            <th><span data-lang="en">Month</span><span data-lang="ja">月</span></th>
-                            <th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th>
-                            <th><span data-lang="en">Total</span><span data-lang="ja">年間</span></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2024</td>
-                            <td>1</td><td class="critical">0</td><td>1</td><td>2</td><td>3</td><td>1</td><td>1</td>
-                            <td>8</td>
-                        </tr>
-                        <tr class="average-row">
-                            <td><span data-lang="en">Avg</span><span data-lang="ja">平年</span></td>
-                            <td>0.5</td><td>0.6</td><td>1.4</td><td>2.2</td><td>1.7</td><td>0.9</td><td>0.3</td>
-                            <td>7.7</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem;">
-                    <span data-lang="en">
-                        <strong>Key insight:</strong> Annual total (8) was near average, but <span style="color: var(--coral-severe);">June had zero approaches</span>. Combined with no typhoon formation worldwide until late July, the critical summer months lacked any cooling mechanism.
-                    </span>
-                    <span data-lang="ja">
-                        <strong>重要な点：</strong> 年間接近数（8個）は平年並みだが、<span style="color: var(--coral-severe);">6月の接近はゼロ</span>。7月下旬まで世界中で台風が発生しなかったことと合わせ、最も重要な夏季に冷却メカニズムが機能しなかった。
-                    </span>
-                </p>
-            </div>
-
-            <div class="voice-from-field">
-                <h4>
-                    <span data-lang="en">🤿 Voices from the Field</span>
-                    <span data-lang="ja">🤿 現場の声</span>
-                </h4>
-                
-                <blockquote class="field-quote">
-                    <p data-lang="en">
-                        "Because typhoons hadn't come for so long, this year the water temperature got incredibly high and the coral took serious damage... By mid-August, corals that had looked pastel in late July had turned almost completely white, and day by day we watched them getting covered in algae and dying before our eyes."
-                    </p>
-                    <p data-lang="ja">
-                        「台風が長らく来なかった影響で今年は水温がかなり高くなりサンゴに大きなダメージを受けている……7月末頃にはふんわりパステルカラーに見えていたサンゴが8月中にはほとんど白っぽくなり、日に日にコケが生え始め、目に見える速度で消えていっている」
-                    </p>
-                    <cite>
-                        <span data-lang="en">— Kerama dive shop operator, August 2024</span>
-                        <span data-lang="ja">— 慶良間ダイビングショップ、2024年8月</span>
-                    </cite>
-                </blockquote>
-
-                <blockquote class="field-quote">
-                    <p data-lang="en">
-                        "I've been in Okinawa for nearly 20 years, and both air and water temperatures have been rising rapidly. With global warming and few typhoons approaching, water temperatures aren't dropping and bleaching is spreading from the shallows."
-                    </p>
-                    <p data-lang="ja">
-                        「私は沖縄に移住して20年近くなりますが、ここ数年で地球温暖化のため気温も水温もどんどん上昇しています。沖縄本島では地球温暖化の影響と台風の接近が少ないため、水温が下がらなく、浅瀬からサンゴの白化現象が進んでいます」
-                    </p>
-                    <cite>
-                        <span data-lang="en">— Long-term Okinawa resident/diver</span>
-                        <span data-lang="ja">— 沖縄在住ダイバー（20年）</span>
-                    </cite>
-                </blockquote>
-            </div>
-
-            <div class="card" style="border-left: 4px solid var(--coral-critical);">
-                <h4 style="margin-top: 0;">
-                    <span data-lang="en">2024 vs 2016: The Same Pattern</span>
-                    <span data-lang="ja">2024年 vs 2016年：同じパターン</span>
-                </h4>
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>2016</th>
-                            <th>2024</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td data-lang="en">Summer typhoon gap</td>
-                            <td data-lang="ja">夏季の台風空白</td>
-                            <td><span data-lang="en">None until Sept</span><span data-lang="ja">9月まで接近なし</span></td>
-                            <td><span data-lang="en">None until late July</span><span data-lang="ja">7月下旬まで発生なし</span></td>
-                        </tr>
-                        <tr>
-                            <td data-lang="en">SST anomaly</td>
-                            <td data-lang="ja">SST偏差</td>
-                            <td>+1~2°C</td>
-                            <td>+2~3°C</td>
-                        </tr>
-                        <tr>
-                            <td data-lang="en">Sekisei bleaching</td>
-                            <td data-lang="ja">石西礁湖白化</td>
-                            <td>97%</td>
-                            <td><span data-lang="en">Under survey</span><span data-lang="ja">調査中</span></td>
-                        </tr>
-                        <tr>
-                            <td data-lang="en">Main Island shallow mortality</td>
-                            <td data-lang="ja">本島浅瀬死滅</td>
-                            <td><span data-lang="en">Severe</span><span data-lang="ja">深刻</span></td>
-                            <td>~90%</td>
-                        </tr>
-                        <tr>
-                            <td data-lang="en">Annual temp record</td>
-                            <td data-lang="ja">年間気温記録</td>
-                            <td><span data-lang="en">Highest (at time)</span><span data-lang="ja">当時最高</span></td>
-                            <td><span data-lang="en">Highest since 1946</span><span data-lang="ja">1946年以来最高</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; margin-bottom: 0;">
-                    <span data-lang="en">
-                        The 2024 event demonstrates that annual typhoon count alone is misleading — <strong>timing</strong> determines coral fate. Both years saw critical summer months without the cooling that typhoons provide.
-                    </span>
-                    <span data-lang="ja">
-                        2024年の事例は、年間台風接近数だけでは判断できないことを示している——サンゴの運命を決めるのは<strong>タイミング</strong>。両年とも、台風がもたらす冷却効果が夏の最重要期に欠けていた。
-                    </span>
-                </p>
-            </div>
-        </section>
-
         <!-- Related Pages -->
         <section class="content-section">
             <h2>
@@ -589,8 +408,6 @@
                 <ul>
                     <li>NOAA Climate Prediction Center — Oceanic Niño Index (ONI). <a href="https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php" target="_blank">cpc.ncep.noaa.gov</a></li>
                     <li>NOAA Coral Reef Watch — Bleaching alerts and DHW data. <a href="https://coralreefwatch.noaa.gov/" target="_blank">coralreefwatch.noaa.gov</a></li>
-                    <li><span data-lang="en">Japan Meteorological Agency — Typhoon approach statistics</span><span data-lang="ja">気象庁 — 台風接近数統計</span>. <a href="https://www.data.jma.go.jp/typhoon/statistics/accession/okinawa.html" target="_blank">data.jma.go.jp</a></li>
-                    <li><span data-lang="en">Okinawa Regional Headquarters, JMA — 2024 temperature records</span><span data-lang="ja">沖縄気象台 — 2024年気温記録</span>. <a href="https://www.jma-net.go.jp/okinawa/" target="_blank">jma-net.go.jp/okinawa</a></li>
                 </ul>
 
                 <strong style="display:block; margin-top:1rem;">
@@ -602,16 +419,6 @@
                     <li>Bernardo LPC et al. (2017) Impact of typhoon on seawater temperature in Sekisei Lagoon. <i>Ocean Dynamics</i>.</li>
                     <li>Progress in Earth and Planetary Science (2025) ENSO-IOD correlation with Ryukyu high-temperature events.</li>
                     <li>Nakamura T (2017) Mass coral bleaching event in Sekisei Lagoon observed in the summer of 2016. <i>J. Japan Coral Reef Soc.</i> 19:29-40.</li>
-                </ul>
-
-                <strong style="display:block; margin-top:1rem;">
-                    <span data-lang="en">2024 Field Reports</span>
-                    <span data-lang="ja">2024年現場レポート</span>
-                </strong>
-                <ul>
-                    <li><span data-lang="en">World Diving Okinawa — Coral bleaching documentation (Sept 2024)</span><span data-lang="ja">ワールドダイビング — サンゴ白化現象記録（2024年9月）</span></li>
-                    <li><span data-lang="en">Ryukyu Shimpo — Typhoon approach and SST reports (Aug 2024)</span><span data-lang="ja">琉球新報 — 台風接近・海水温報道（2024年8月）</span></li>
-                    <li><span data-lang="en">NACS-J — Okinawa coastal coral bleaching survey</span><span data-lang="ja">日本自然保護協会 — 沖縄沿岸サンゴ白化調査</span></li>
                 </ul>
             </div>
         </section>

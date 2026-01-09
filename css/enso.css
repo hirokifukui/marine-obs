@@ -1038,3 +1038,271 @@
     color: var(--text-muted);
     font-size: 0.9rem;
 }
+
+/* Hero ENSO Badge */
+.hero-enso-badge {
+    margin-top: 1.5rem;
+}
+
+.hero-enso-loading {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+}
+
+.hero-enso-error {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+}
+
+.hero-enso-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 0.6rem 1.25rem;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.hero-enso-content.el-nino {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.hero-enso-content.la-nina {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.hero-enso-content.neutral {
+    background: rgba(156, 163, 175, 0.2);
+    border-color: rgba(156, 163, 175, 0.3);
+}
+
+.hero-enso-icon {
+    font-size: 1.1rem;
+}
+
+.hero-enso-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hero-enso-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.hero-enso-period {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.hero-enso-status {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+@media (max-width: 640px) {
+    .hero-enso-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .hero-enso-label {
+        display: none;
+    }
+    
+    .hero-enso-value {
+        font-size: 1.1rem;
+    }
+}
+
+/* 2024 Case Study Section */
+.case-study-2024 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .case-study-2024 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.case-highlight {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.case-stat {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.case-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--coral-severe);
+    line-height: 1;
+}
+
+.case-unit {
+    font-size: 1rem;
+    color: var(--coral-severe);
+    font-weight: 500;
+}
+
+.case-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Typhoon Table */
+.typhoon-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+}
+
+.typhoon-table th,
+.typhoon-table td {
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.typhoon-table th {
+    background: rgba(30, 64, 175, 0.1);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.typhoon-table td {
+    color: var(--text-secondary);
+}
+
+.typhoon-table td:first-child {
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: left;
+}
+
+.typhoon-table td.critical {
+    color: var(--coral-severe);
+    font-weight: 700;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.typhoon-table .average-row td {
+    background: var(--bg-secondary);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Field Voices Section */
+.voice-from-field {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.voice-from-field h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.field-quote {
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--accent-teal);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin: 0 0 1rem 0;
+}
+
+.field-quote:last-of-type {
+    margin-bottom: 0;
+}
+
+.field-quote p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-style: italic;
+    margin: 0;
+}
+
+.field-quote cite {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+    font-style: normal;
+}
+
+/* Comparison Table */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.comparison-table th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.comparison-table th:first-child {
+    width: 40%;
+}
+
+.comparison-table td {
+    color: var(--text-secondary);
+}
+
+.comparison-table td:first-child {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+@media (max-width: 640px) {
+    .comparison-table {
+        font-size: 0.8rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.5rem;
+    }
+}

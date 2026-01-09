@@ -48,15 +48,15 @@
 
     function getENSOStatus(value) {
         const isJa = document.body.classList.contains('ja');
-        if (value >= 2.0) return { text: isJa ? '非常に強いEl Niño' : 'Very Strong El Niño', class: 'el-nino', icon: '🔴' };
-        if (value >= 1.5) return { text: isJa ? '強いEl Niño' : 'Strong El Niño', class: 'el-nino', icon: '🔴' };
-        if (value >= 1.0) return { text: isJa ? '中程度El Niño' : 'Moderate El Niño', class: 'el-nino', icon: '🟠' };
-        if (value >= 0.5) return { text: isJa ? '弱いEl Niño' : 'Weak El Niño', class: 'el-nino', icon: '🟡' };
-        if (value <= -2.0) return { text: isJa ? '非常に強いLa Niña' : 'Very Strong La Niña', class: 'la-nina', icon: '🔵' };
-        if (value <= -1.5) return { text: isJa ? '強いLa Niña' : 'Strong La Niña', class: 'la-nina', icon: '🔵' };
-        if (value <= -1.0) return { text: isJa ? '中程度La Niña' : 'Moderate La Niña', class: 'la-nina', icon: '🟢' };
-        if (value <= -0.5) return { text: isJa ? '弱いLa Niña' : 'Weak La Niña', class: 'la-nina', icon: '🟢' };
-        return { text: isJa ? '中立' : 'Neutral', class: 'neutral', icon: '⚪' };
+        if (value >= 2.0) return { text: isJa ? '非常に強いEl Niño' : 'Very Strong El Niño', class: 'el-nino' };
+        if (value >= 1.5) return { text: isJa ? '強いEl Niño' : 'Strong El Niño', class: 'el-nino' };
+        if (value >= 1.0) return { text: isJa ? '中程度El Niño' : 'Moderate El Niño', class: 'el-nino' };
+        if (value >= 0.5) return { text: isJa ? '弱いEl Niño' : 'Weak El Niño', class: 'el-nino' };
+        if (value <= -2.0) return { text: isJa ? '非常に強いLa Niña' : 'Very Strong La Niña', class: 'la-nina' };
+        if (value <= -1.5) return { text: isJa ? '強いLa Niña' : 'Strong La Niña', class: 'la-nina' };
+        if (value <= -1.0) return { text: isJa ? '中程度La Niña' : 'Moderate La Niña', class: 'la-nina' };
+        if (value <= -0.5) return { text: isJa ? '弱いLa Niña' : 'Weak La Niña', class: 'la-nina' };
+        return { text: isJa ? '中立' : 'Neutral', class: 'neutral' };
     }
 
     function updateCurrentStatus(latestData) {
@@ -66,28 +66,6 @@
         const status = getENSOStatus(latestData.anomaly);
         statusEl.className = `oni-status ${status.class}`;
         statusEl.innerHTML = `<strong>${latestData.season} ${latestData.year}</strong>: ${latestData.anomaly.toFixed(1)} (${status.text})`;
-    }
-
-    function updateHeroStatus(latestData) {
-        const heroEl = document.getElementById('hero-enso-status');
-        if (!heroEl || !latestData) return;
-
-        const status = getENSOStatus(latestData.anomaly);
-        const isJa = document.body.classList.contains('ja');
-        
-        const signedValue = latestData.anomaly >= 0 ? `+${latestData.anomaly.toFixed(1)}` : latestData.anomaly.toFixed(1);
-        
-        heroEl.innerHTML = `
-            <div class="hero-enso-content ${status.class}">
-                <span class="hero-enso-icon">${status.icon}</span>
-                <span class="hero-enso-label">
-                    ${isJa ? '最新ONI' : 'Current ONI'}
-                </span>
-                <span class="hero-enso-value">${signedValue}°C</span>
-                <span class="hero-enso-period">${latestData.season} ${latestData.year}</span>
-                <span class="hero-enso-status">${status.text}</span>
-            </div>
-        `;
     }
 
     function createChart(data) {
@@ -232,18 +210,12 @@
             if (wrapper) {
                 wrapper.innerHTML = '<div class="chart-loading">Failed to load ONI data</div>';
             }
-            // Hero also shows error
-            const heroEl = document.getElementById('hero-enso-status');
-            if (heroEl) {
-                heroEl.innerHTML = '<span class="hero-enso-error">Data unavailable</span>';
-            }
             return;
         }
 
         // 最新データでステータス更新
         const latestData = data[data.length - 1];
         updateCurrentStatus(latestData);
-        updateHeroStatus(latestData);
 
         // チャート作成
         createChart(data);
@@ -253,9 +225,7 @@
     document.addEventListener('langChanged', async function() {
         const data = await fetchONIData();
         if (data && data.length > 0) {
-            const latestData = data[data.length - 1];
-            updateCurrentStatus(latestData);
-            updateHeroStatus(latestData);
+            updateCurrentStatus(data[data.length - 1]);
         }
     });
 
