@@ -1368,3 +1368,18 @@
         padding: 0.4rem 0.5rem;
     }
 }
+
+/* Approximate symbol before number */
+.case-approx {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--coral-severe);
+    margin-right: 0.1rem;
+}
+
+@media (max-width: 640px) {
+    .case-approx {
+        font-size: 1.25rem;
+    }
+}
