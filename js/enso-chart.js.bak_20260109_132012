@@ -59,40 +59,13 @@
         return { text: isJa ? '中立' : 'Neutral', class: 'neutral', icon: '⚪' };
     }
 
-    /**
-     * ONI値に応じた日本向けリスクメッセージを返す
-     */
-    function getRiskMessage(value) {
-        const isJa = document.body.classList.contains('ja');
-        
-        if (value >= 1.5) {
-            // 強いEl Niño
-            return isJa 
-                ? '全球的な高温リスク — 世界規模の白化に警戒'
-                : 'Global heat risk — Watch for worldwide bleaching';
-        }
-        if (value >= 0.5) {
-            // 弱〜中程度El Niño
-            return isJa 
-                ? '東太平洋が高温 — グローバル白化の可能性'
-                : 'Eastern Pacific warming — Potential global bleaching';
-        }
-        if (value <= -1.5) {
-            // 強いLa Niña
-            return isJa 
-                ? '西太平洋が高温 — 沖縄・GBR・パラオに警戒'
-                : 'West Pacific heating — Alert for Okinawa, GBR, Palau';
-        }
-        if (value <= -0.5) {
-            // 弱〜中程度La Niña
-            return isJa 
-                ? '西太平洋に暖水が集中 — 日本の白化リスクに注意'
-                : 'Warm water pools in West Pacific — Japan at elevated risk';
-        }
-        // 中立
-        return isJa 
-            ? 'ENSO中立 — 他の要因（台風、IOD）に注目'
-            : 'ENSO neutral — Watch typhoons and IOD';
+    function updateCurrentStatus(latestData) {
+        const statusEl = document.getElementById('oni-current-status');
+        if (!statusEl || !latestData) return;
+
+        const status = getENSOStatus(latestData.anomaly);
+        statusEl.className = `oni-status ${status.class}`;
+        statusEl.innerHTML = `<strong>${latestData.season} ${latestData.year}</strong>: ${latestData.anomaly.toFixed(1)} (${status.text})`;
     }
 
     function updateHeroStatus(latestData) {
@@ -100,21 +73,19 @@
         if (!heroEl || !latestData) return;
 
         const status = getENSOStatus(latestData.anomaly);
-        const riskMessage = getRiskMessage(latestData.anomaly);
         const isJa = document.body.classList.contains('ja');
         
         const signedValue = latestData.anomaly >= 0 ? `+${latestData.anomaly.toFixed(1)}` : latestData.anomaly.toFixed(1);
         
         heroEl.innerHTML = `
             <div class="hero-enso-content ${status.class}">
-                <div class="hero-enso-main">
-                    <span class="hero-enso-icon">${status.icon}</span>
-                    <span class="hero-enso-label">${isJa ? '最新ONI' : 'Current ONI'}</span>
-                    <span class="hero-enso-value">${signedValue}°C</span>
-                    <span class="hero-enso-period">${latestData.season} ${latestData.year}</span>
-                    <span class="hero-enso-status">${status.text}</span>
-                </div>
-                <div class="hero-enso-risk">${riskMessage}</div>
+                <span class="hero-enso-icon">${status.icon}</span>
+                <span class="hero-enso-label">
+                    ${isJa ? '最新ONI' : 'Current ONI'}
+                </span>
+                <span class="hero-enso-value">${signedValue}°C</span>
+                <span class="hero-enso-period">${latestData.season} ${latestData.year}</span>
+                <span class="hero-enso-status">${status.text}</span>
             </div>
         `;
     }
@@ -269,8 +240,9 @@
             return;
         }
 
-        // 最新データでHeroステータス更新
+        // 最新データでステータス更新
         const latestData = data[data.length - 1];
+        updateCurrentStatus(latestData);
         updateHeroStatus(latestData);
 
         // チャート作成
@@ -282,6 +254,7 @@
         const data = await fetchONIData();
         if (data && data.length > 0) {
             const latestData = data[data.length - 1];
+            updateCurrentStatus(latestData);
             updateHeroStatus(latestData);
         }
     });
