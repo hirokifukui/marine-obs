@@ -1397,3 +1397,17 @@
         font-size: 1.25rem;
     }
 }
+
+/* Hero data info line */
+.hero-enso-data-info {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .hero-enso-data-info {
+        font-size: 0.75rem;
+    }
+}

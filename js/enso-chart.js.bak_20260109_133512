@@ -15,22 +15,6 @@
     // Season順序（グラフのX軸用）
     const seasonOrder = ['DJF', 'JFM', 'FMA', 'MAM', 'AMJ', 'MJJ', 'JJA', 'JAS', 'ASO', 'SON', 'OND', 'NDJ'];
 
-    // Season to month range mapping
-    const seasonMonths = {
-        'DJF': { ja: '12-2月', en: 'Dec-Feb' },
-        'JFM': { ja: '1-3月', en: 'Jan-Mar' },
-        'FMA': { ja: '2-4月', en: 'Feb-Apr' },
-        'MAM': { ja: '3-5月', en: 'Mar-May' },
-        'AMJ': { ja: '4-6月', en: 'Apr-Jun' },
-        'MJJ': { ja: '5-7月', en: 'May-Jul' },
-        'JJA': { ja: '6-8月', en: 'Jun-Aug' },
-        'JAS': { ja: '7-9月', en: 'Jul-Sep' },
-        'ASO': { ja: '8-10月', en: 'Aug-Oct' },
-        'SON': { ja: '9-11月', en: 'Sep-Nov' },
-        'OND': { ja: '10-12月', en: 'Oct-Dec' },
-        'NDJ': { ja: '11-1月', en: 'Nov-Jan' }
-    };
-
     let chartInstance = null;
 
     async function fetchONIData() {
@@ -111,29 +95,12 @@
             : 'ENSO neutral — Watch typhoons and IOD';
     }
 
-    /**
-     * データ期間の説明文を生成
-     */
-    function getDataPeriodText(season, year) {
-        const isJa = document.body.classList.contains('ja');
-        const months = seasonMonths[season];
-        
-        if (!months) return '';
-        
-        if (isJa) {
-            return `データ: ${year}年${months.ja}平均 | ONIは3ヶ月移動平均で更新`;
-        } else {
-            return `Data: ${months.en} ${year} average | ONI updated as 3-month running mean`;
-        }
-    }
-
     function updateHeroStatus(latestData) {
         const heroEl = document.getElementById('hero-enso-status');
         if (!heroEl || !latestData) return;
 
         const status = getENSOStatus(latestData.anomaly);
         const riskMessage = getRiskMessage(latestData.anomaly);
-        const dataPeriodText = getDataPeriodText(latestData.season, latestData.year);
         const isJa = document.body.classList.contains('ja');
         
         const signedValue = latestData.anomaly >= 0 ? `+${latestData.anomaly.toFixed(1)}` : latestData.anomaly.toFixed(1);
@@ -144,11 +111,11 @@
                     <span class="hero-enso-icon">${status.icon}</span>
                     <span class="hero-enso-label">${isJa ? '最新ONI' : 'Current ONI'}</span>
                     <span class="hero-enso-value">${signedValue}°C</span>
+                    <span class="hero-enso-period">${latestData.season} ${latestData.year}</span>
                     <span class="hero-enso-status">${status.text}</span>
                 </div>
                 <div class="hero-enso-risk">${riskMessage}</div>
             </div>
-            <div class="hero-enso-data-info">${dataPeriodText}</div>
         `;
     }
 
