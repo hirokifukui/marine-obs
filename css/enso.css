@@ -1331,3 +1331,40 @@
         font-size: 0.8rem;
     }
 }
+
+/* Fix: Case study numbers - match other pages */
+.case-number {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.case-unit {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+@media (max-width: 640px) {
+    .case-number {
+        font-size: 1.75rem;
+    }
+}
+
+/* Fix: Typhoon table mobile overflow */
+.mechanism-box {
+    overflow-x: auto;
+}
+
+.typhoon-table {
+    min-width: 500px;
+}
+
+@media (max-width: 640px) {
+    .typhoon-table {
+        font-size: 0.75rem;
+    }
+    
+    .typhoon-table th,
+    .typhoon-table td {
+        padding: 0.4rem 0.5rem;
+    }
+}
