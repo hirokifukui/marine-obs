@@ -1383,3 +1383,17 @@
         font-size: 1.25rem;
     }
 }
+
+/* Inline unit (%) next to number */
+.case-unit-inline {
+    font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--coral-severe);
+}
+
+@media (max-width: 640px) {
+    .case-unit-inline {
+        font-size: 1.25rem;
+    }
+}
