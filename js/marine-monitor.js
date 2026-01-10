@@ -1,5 +1,5 @@
 // Marine Monitor - Supabase Data Fetcher
-// Updated: 2026-01-10 - 気温・UV・日出日没・潮汐追加
+// Updated: 2026-01-10 - UV from uv_daily table (OpenWeather)
 (function() {
     const SUPABASE_URL = 'https://pegiuiblpliainpdggfj.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlZ2l1aWJscGxpYWlucGRnZ2ZqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NDIwOTM3NCwiZXhwIjoyMDc5Nzg1Mzc0fQ.V3C2newkAdn6gW2TR_ct-_WupVKZapXKtD9Cr3aMk2M';
@@ -16,36 +16,6 @@
     
     const WEEKDAYS_JA = ['日', '月', '火', '水', '木', '金', '土'];
     const WEEKDAYS_EN = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    
-    // ========== 日出日没計算（簡易版） ==========
-    function calcSunTimes(lat, lng, date) {
-        // 簡易計算（精度±2分程度）
-        const dayOfYear = Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 86400000);
-        const decl = 23.45 * Math.sin(2 * Math.PI * (284 + dayOfYear) / 365) * Math.PI / 180;
-        const latRad = lat * Math.PI / 180;
-        
-        const cosHourAngle = -Math.tan(latRad) * Math.tan(decl);
-        if (cosHourAngle < -1 || cosHourAngle > 1) {
-            return { sunrise: null, sunset: null }; // 白夜または極夜
-        }
-        
-        const hourAngle = Math.acos(cosHourAngle) * 180 / Math.PI;
-        const solarNoon = 12 - lng / 15 + 9; // JST補正
-        
-        const sunrise = solarNoon - hourAngle / 15;
-        const sunset = solarNoon + hourAngle / 15;
-        
-        return {
-            sunrise: formatTime(sunrise),
-            sunset: formatTime(sunset)
-        };
-    }
-    
-    function formatTime(decimalHours) {
-        const hours = Math.floor(decimalHours);
-        const minutes = Math.round((decimalHours - hours) * 60);
-        return `${hours}:${String(minutes).padStart(2, '0')}`;
-    }
     
     // ========== UV指数のレベル ==========
     function getUVLevel(uv, isJa) {
@@ -86,7 +56,7 @@
         const results = {};
         
         for (const loc of LOCATIONS) {
-            const url = `${SUPABASE_URL}/rest/v1/marine_weather?location=eq.${loc.id}&datetime=gte.${startISO}&datetime=lt.${endISO}&order=datetime.asc&select=datetime,water_temperature,wave_height,swell_height,wind_speed,wind_direction,air_temperature,visibility,uv_index`;
+            const url = `${SUPABASE_URL}/rest/v1/marine_weather?location=eq.${loc.id}&datetime=gte.${startISO}&datetime=lt.${endISO}&order=datetime.asc&select=datetime,water_temperature,wave_height,swell_height,wind_speed,wind_direction,air_temperature,visibility`;
             
             try {
                 const resp = await fetch(url, {
@@ -111,7 +81,7 @@
         const start = new Date(now);
         start.setHours(0, 0, 0, 0);
         const end = new Date(start);
-        end.setDate(end.getDate() + 2); // 今日と明日
+        end.setDate(end.getDate() + 2);
         
         const startISO = start.toISOString();
         const endISO = end.toISOString();
@@ -139,8 +109,32 @@
         return results;
     }
     
+    async function fetchUVData() {
+        const today = new Date().toISOString().slice(0, 10);
+        const results = {};
+        
+        for (const loc of LOCATIONS) {
+            const url = `${SUPABASE_URL}/rest/v1/uv_daily?location=eq.${loc.id}&date=eq.${today}&select=uv_max,sunrise,sunset`;
+            
+            try {
+                const resp = await fetch(url, {
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                    }
+                });
+                const data = await resp.json();
+                results[loc.id] = data[0] || null;
+            } catch (e) {
+                console.error(`Error fetching UV for ${loc.id}:`, e);
+                results[loc.id] = null;
+            }
+        }
+        
+        return results;
+    }
+    
     function getTodayTides(tideData) {
-        // 今日の満潮・干潮を抽出
         const now = new Date();
         const todayStr = now.toISOString().slice(0, 10);
         
@@ -162,12 +156,20 @@
         return `${hours}:${String(minutes).padStart(2, '0')}`;
     }
     
+    function formatSunTime(isoString) {
+        if (!isoString) return '-';
+        const dt = new Date(isoString);
+        const hours = dt.getHours();
+        const minutes = dt.getMinutes();
+        return `${hours}:${String(minutes).padStart(2, '0')}`;
+    }
+    
     function groupByDate(data) {
         const groups = {};
         for (const row of data) {
             const dt = new Date(row.datetime);
             const hour = dt.getUTCHours() + 9; // JST
-            if (hour < 7 || hour > 17) continue; // 7:00-17:00 JST only
+            if (hour < 7 || hour > 17) continue;
             
             const dateKey = dt.toISOString().slice(0, 10);
             if (!groups[dateKey]) groups[dateKey] = [];
@@ -179,8 +181,7 @@
                 windSpeed: row.wind_speed,
                 windDir: row.wind_direction,
                 airTemp: row.air_temperature,
-                visibility: row.visibility,
-                uvIndex: row.uv_index
+                visibility: row.visibility
             });
         }
         return groups;
@@ -195,7 +196,6 @@
         const winds = dayData.map(d => d.windSpeed).filter(v => v != null);
         const windDirs = dayData.map(d => d.windDir).filter(v => v != null);
         const airTemps = dayData.map(d => d.airTemp).filter(v => v != null);
-        const uvs = dayData.map(d => d.uvIndex).filter(v => v != null);
         
         return {
             waterTemp: waterTemps.length ? (waterTemps.reduce((a,b) => a+b) / waterTemps.length) : null,
@@ -203,8 +203,7 @@
             swellMax: swells.length ? Math.max(...swells) : null,
             windMax: winds.length ? Math.max(...winds) : null,
             windDirAvg: windDirs.length ? (windDirs.reduce((a,b) => a+b) / windDirs.length) : null,
-            airTemp: airTemps.length ? (airTemps.reduce((a,b) => a+b) / airTemps.length) : null,
-            uvMax: uvs.length ? Math.max(...uvs) : null
+            airTemp: airTemps.length ? (airTemps.reduce((a,b) => a+b) / airTemps.length) : null
         };
     }
     
@@ -256,7 +255,7 @@
     }
     
     // Render to a specific grid
-    function renderToGrid(gridId, updateId, data, tideData) {
+    function renderToGrid(gridId, updateId, data, tideData, uvData) {
         const grid = document.getElementById(gridId);
         if (!grid) return;
         
@@ -266,6 +265,7 @@
         for (const loc of LOCATIONS) {
             const locData = data[loc.id] || [];
             const locTideData = tideData[loc.id] || [];
+            const locUvData = uvData[loc.id] || null;
             const grouped = groupByDate(locData);
             const dates = Object.keys(grouped).sort().slice(0, 4);
             
@@ -277,12 +277,15 @@
             const todaySummary = calcDailySummary(grouped[dates[0]]);
             const status = todaySummary ? getSeaStatus(todaySummary.waveMax, todaySummary.swellMax, todaySummary.windMax) : { class: 'good', textJa: '-', textEn: '-' };
             const windDir = todaySummary ? degToDirection(todaySummary.windDirAvg) : { ja: '-', en: '-' };
-            const uvLevel = todaySummary ? getUVLevel(todaySummary.uvMax, isJa) : { text: '-', class: '' };
             
-            // 日出日没
-            const sunTimes = calcSunTimes(loc.lat, loc.lng, new Date());
+            // UV from uv_daily table
+            const uvLevel = locUvData ? getUVLevel(locUvData.uv_max, isJa) : { text: '-', class: '' };
             
-            // 潮汐
+            // Sunrise/Sunset from uv_daily table
+            const sunrise = locUvData ? formatSunTime(locUvData.sunrise) : '-';
+            const sunset = locUvData ? formatSunTime(locUvData.sunset) : '-';
+            
+            // Tides
             const tides = getTodayTides(locTideData);
             
             html += `
@@ -316,15 +319,15 @@
                 <div class="marine-summary-row marine-summary-row-extra">
                     <div class="marine-summary-item">
                         <span class="label">${isJa ? '日出' : 'Rise'}</span>
-                        <span class="value">${sunTimes.sunrise || '-'}</span>
+                        <span class="value">${sunrise}</span>
                     </div>
                     <div class="marine-summary-item">
                         <span class="label">${isJa ? '日没' : 'Set'}</span>
-                        <span class="value">${sunTimes.sunset || '-'}</span>
+                        <span class="value">${sunset}</span>
                     </div>
                     <div class="marine-summary-item">
                         <span class="label">UV</span>
-                        <span class="value ${uvLevel.class}">${todaySummary?.uvMax?.toFixed(0) || '-'} <small>${uvLevel.text}</small></span>
+                        <span class="value ${uvLevel.class}">${locUvData?.uv_max?.toFixed(1) || '-'} <small>${uvLevel.text}</small></span>
                     </div>
                     <div class="marine-summary-item">
                         <span class="label">${isJa ? '潮汐' : 'Tide'}</span>
@@ -350,17 +353,18 @@
     
     // Initialize
     document.addEventListener('DOMContentLoaded', async () => {
-        const [data, tideData] = await Promise.all([
+        const [data, tideData, uvData] = await Promise.all([
             fetchMarineData(),
-            fetchTideData()
+            fetchTideData(),
+            fetchUVData()
         ]);
         
         // Render to divers page
-        renderToGrid('marine-grid-divers', 'marine-update-time-divers', data, tideData);
+        renderToGrid('marine-grid-divers', 'marine-update-time-divers', data, tideData, uvData);
         
         // Re-render on language change
         const observer = new MutationObserver(() => {
-            renderToGrid('marine-grid-divers', 'marine-update-time-divers', data, tideData);
+            renderToGrid('marine-grid-divers', 'marine-update-time-divers', data, tideData, uvData);
         });
         observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
     });
