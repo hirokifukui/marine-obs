@@ -139,7 +139,6 @@
                     <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
                     <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
                     <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
-                            <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span><span class="nav-badge">New</span></a></li>
                     <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge-mobile">計画中</span></a></li>
                 </ul>
             </li>
@@ -198,29 +197,81 @@
             <span data-lang="ja">ENSO監視</span>
         </div>
 
-        <!-- Global SST Anomaly Map -->
-        <section class="content-section">
-            <h2>
-                <span data-lang="en">Current Global SST Anomalies</span>
-                <span data-lang="ja">現在の世界海面水温偏差</span>
-            </h2>
-            
-            <div class="sst-map-container" style="background: var(--card-bg); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
-                <img src="https://www.ospo.noaa.gov/data/cb/ssta/ssta.daily.current.png" 
-                     alt="NOAA Coral Reef Watch SST Anomaly Map"
-                     style="width: 100%; height: auto; border-radius: 8px;">
-                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; margin-bottom: 0;">
-                    <span data-lang="en">
-                        Source: NOAA Coral Reef Watch Daily 5km SST Anomalies. Blue = cooler than average, Red = warmer than average. 
-                        During La Niña (current), note the blue band along the equatorial Pacific — warm water piles up in the western Pacific near Japan.
-                    </span>
-                    <span data-lang="ja">
-                        出典：NOAA Coral Reef Watch 日次5km SST偏差。青=平年より低温、赤=平年より高温。
-                        ラニーニャ期（現在）は赤道太平洋に青い帯が見える——暖水が日本近海の西太平洋に集中する。
-                    </span>
+        <!-- Hero Section with Live Data -->
+        <section class="hero-section" style="background: linear-gradient(135deg, rgba(26, 31, 46, 0.95), rgba(30, 58, 92, 0.9));">
+            <div class="hero-header">
+                <h1 class="hero-tagline">
+                    <span data-lang="en">🏝️ Onna Village Coral Bleaching Risk</span>
+                    <span data-lang="ja">🏝️ 恩納村 サンゴ白化リスク予測</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <span data-lang="en">Summer 2026 (Jun-Sep) — Based on ENSO, PDO, IOD and typhoon data</span>
+                    <span data-lang="ja">2026年夏（6-9月）— ENSO・PDO・IOD・台風データに基づく予測</span>
                 </p>
             </div>
+
+            <!-- Climate Mode Cards -->
+            <div id="climate-dashboard" class="climate-dashboard">
+                <div class="climate-dashboard-loading">
+                    <span data-lang="en">Loading forecast data...</span>
+                    <span data-lang="ja">予測データを読み込み中...</span>
+                </div>
+            </div>
+
+            <!-- ENSO Forecast -->
+            <div id="enso-forecast" class="enso-forecast" style="display: none;">
+                <div class="forecast-header">
+                    <span data-lang="en">🔮 Summer ENSO Forecast (IRI/CPC)</span>
+                    <span data-lang="ja">🔮 夏のENSO予測（IRI/CPC）</span>
+                </div>
+                <div class="forecast-bars" id="forecast-bars">
+                    <!-- Populated by JS -->
+                </div>
+                <p class="forecast-issued" id="forecast-issued"></p>
+            </div>
+
+            <!-- Typhoon Tracker -->
+            <div id="typhoon-tracker" class="typhoon-tracker" style="display: none;">
+                <div class="typhoon-header">
+                    <span data-lang="en">🌀 Typhoon Approaches (Okinawa)</span>
+                    <span data-lang="ja">🌀 台風接近（沖縄）</span>
+                </div>
+                <div class="typhoon-grid" id="typhoon-grid">
+                    <!-- Populated by JS -->
+                </div>
+                <p class="typhoon-note" id="typhoon-note"></p>
+            </div>
+
+            <!-- Risk Assessment -->
+            <div id="risk-assessment" class="risk-assessment" style="display: none;">
+                <div class="risk-header">
+                    <span data-lang="en">📊 Overall Risk Assessment</span>
+                    <span data-lang="ja">📊 総合リスク評価</span>
+                </div>
+                <div class="risk-content">
+                    <div class="risk-gauge">
+                        <div class="risk-gauge-fill" id="risk-gauge-fill"></div>
+                        <div class="risk-gauge-labels">
+                            <span>Low</span>
+                            <span>Moderate</span>
+                            <span>Elevated</span>
+                            <span>High</span>
+                        </div>
+                    </div>
+                    <div class="risk-score">
+                        <span class="risk-score-value" id="risk-score-value">--</span>
+                        <span class="risk-score-label" id="risk-score-label">
+                            <span data-lang="en">Loading...</span>
+                            <span data-lang="ja">読み込み中...</span>
+                        </span>
+                    </div>
+                </div>
+                <p class="risk-summary" id="risk-summary"></p>
+                <p class="risk-updated" id="risk-updated"></p>
+            </div>
         </section>
+
+
 
         <!-- Current Status + ONI Chart -->
         <section class="content-section">
@@ -1111,6 +1162,217 @@
                 closeSidebar();
             }
         });
+    })();
+    </script>
+
+
+    <!-- Onna Village Forecast Dashboard Script -->
+    <script>
+    (function() {
+        async function loadOnnaForecast() {
+            try {
+                const response = await fetch('data/onna-forecast.json');
+                if (!response.ok) throw new Error('Failed to load forecast data');
+                const data = await response.json();
+                
+                renderClimateCards(data);
+                renderEnsoForecast(data);
+                renderTyphoonTracker(data);
+                renderRiskAssessment(data);
+                
+                // Apply language
+                const currentLang = document.documentElement.lang || 'en';
+                if (typeof updateLanguage === 'function') {
+                    updateLanguage(currentLang);
+                }
+            } catch (error) {
+                console.error('Forecast dashboard error:', error);
+                document.querySelector('.climate-dashboard-loading').innerHTML = 
+                    '<span style="color: rgba(255,255,255,0.5);">Forecast data unavailable</span>';
+            }
+        }
+        
+        function renderClimateCards(data) {
+            const dashboard = document.getElementById('climate-dashboard');
+            const climate = data.current_climate;
+            
+            const phaseText = {
+                la_nina: { en: 'La Niña', ja: 'ラニーニャ' },
+                el_nino: { en: 'El Niño', ja: 'エルニーニョ' },
+                neutral: { en: 'Neutral', ja: '中立' },
+                negative: { en: 'Negative', ja: '負フェーズ' },
+                positive: { en: 'Positive', ja: '正フェーズ' }
+            };
+            
+            dashboard.innerHTML = `
+                <div class="climate-card ${climate.oni.phase.replace('_', '-')}">
+                    <div class="climate-card-title">ENSO (ONI)</div>
+                    <div class="climate-card-value">${climate.oni.value >= 0 ? '+' : ''}${climate.oni.value.toFixed(2)}°C</div>
+                    <div class="climate-card-phase">
+                        <span data-lang="en">${phaseText[climate.oni.phase]?.en || climate.oni.phase}</span>
+                        <span data-lang="ja">${phaseText[climate.oni.phase]?.ja || climate.oni.phase}</span>
+                    </div>
+                    <div class="climate-card-period">${climate.oni.season} ${climate.oni.period}</div>
+                </div>
+                
+                <div class="climate-card ${climate.pdo.phase}">
+                    <div class="climate-card-title">PDO</div>
+                    <div class="climate-card-value">${climate.pdo.value >= 0 ? '+' : ''}${climate.pdo.value.toFixed(2)}</div>
+                    <div class="climate-card-phase">
+                        <span data-lang="en">${phaseText[climate.pdo.phase]?.en || climate.pdo.phase}</span>
+                        <span data-lang="ja">${phaseText[climate.pdo.phase]?.ja || climate.pdo.phase}</span>
+                    </div>
+                    <div class="climate-card-period">${climate.pdo.period}</div>
+                </div>
+                
+                <div class="climate-card ${climate.dmi.phase}">
+                    <div class="climate-card-title">IOD (DMI)</div>
+                    <div class="climate-card-value">${climate.dmi.value >= 0 ? '+' : ''}${climate.dmi.value.toFixed(2)}°C</div>
+                    <div class="climate-card-phase">
+                        <span data-lang="en">${phaseText[climate.dmi.phase]?.en || climate.dmi.phase}</span>
+                        <span data-lang="ja">${phaseText[climate.dmi.phase]?.ja || climate.dmi.phase}</span>
+                    </div>
+                    <div class="climate-card-period">${climate.dmi.period}</div>
+                </div>
+            `;
+        }
+        
+        function renderEnsoForecast(data) {
+            const forecastEl = document.getElementById('enso-forecast');
+            const enso = data.forecast.enso;
+            
+            forecastEl.style.display = 'block';
+            
+            document.getElementById('forecast-bars').innerHTML = `
+                <div class="forecast-bar-row">
+                    <span class="forecast-bar-label">El Niño</span>
+                    <div class="forecast-bar-container">
+                        <div class="forecast-bar-fill el-nino" style="width: ${enso.el_nino}%"></div>
+                    </div>
+                    <span class="forecast-bar-value">${enso.el_nino}%</span>
+                </div>
+                <div class="forecast-bar-row">
+                    <span class="forecast-bar-label">
+                        <span data-lang="en">Neutral</span>
+                        <span data-lang="ja">中立</span>
+                    </span>
+                    <div class="forecast-bar-container">
+                        <div class="forecast-bar-fill neutral" style="width: ${enso.neutral}%"></div>
+                    </div>
+                    <span class="forecast-bar-value">${enso.neutral}%</span>
+                </div>
+                <div class="forecast-bar-row">
+                    <span class="forecast-bar-label">La Niña</span>
+                    <div class="forecast-bar-container">
+                        <div class="forecast-bar-fill la-nina" style="width: ${enso.la_nina}%"></div>
+                    </div>
+                    <span class="forecast-bar-value">${enso.la_nina}%</span>
+                </div>
+            `;
+            
+            document.getElementById('forecast-issued').innerHTML = `
+                <span data-lang="en">${enso.source} forecast issued ${enso.issued} for ${enso.target_season}</span>
+                <span data-lang="ja">${enso.source} ${enso.issued}発表 対象: ${enso.target_season}</span>
+            `;
+        }
+        
+        function renderTyphoonTracker(data) {
+            const trackerEl = document.getElementById('typhoon-tracker');
+            const typhoon = data.typhoon;
+            
+            trackerEl.style.display = 'block';
+            
+            const months = ['may', 'jun', 'jul', 'aug', 'sep'];
+            const monthLabels = {
+                may: { en: 'May', ja: '5月' },
+                jun: { en: 'Jun', ja: '6月' },
+                jul: { en: 'Jul', ja: '7月' },
+                aug: { en: 'Aug', ja: '8月' },
+                sep: { en: 'Sep', ja: '9月' }
+            };
+            
+            let gridHtml = '';
+            months.forEach(month => {
+                const val = typhoon.approaches[month];
+                const isPending = val === null;
+                const valueClass = isPending ? 'pending' : (val === 0 ? 'zero' : 'normal');
+                
+                gridHtml += `
+                    <div class="typhoon-cell">
+                        <div class="typhoon-cell-month">
+                            <span data-lang="en">${monthLabels[month].en}</span>
+                            <span data-lang="ja">${monthLabels[month].ja}</span>
+                        </div>
+                        <div class="typhoon-cell-value ${valueClass}">${isPending ? '-' : val}</div>
+                    </div>
+                `;
+            });
+            
+            // Total cell
+            gridHtml += `
+                <div class="typhoon-cell total">
+                    <div class="typhoon-cell-month">
+                        <span data-lang="en">Total</span>
+                        <span data-lang="ja">合計</span>
+                    </div>
+                    <div class="typhoon-cell-value">${typhoon.total}</div>
+                </div>
+            `;
+            
+            document.getElementById('typhoon-grid').innerHTML = gridHtml;
+            
+            document.getElementById('typhoon-note').innerHTML = `
+                <span data-lang="en">Climatology: ${typhoon.climatology} approaches/year (${typhoon.note})</span>
+                <span data-lang="ja">平年値: ${typhoon.climatology}回/年（${typhoon.note}）</span>
+            `;
+        }
+        
+        function renderRiskAssessment(data) {
+            const riskEl = document.getElementById('risk-assessment');
+            const risk = data.risk_assessment;
+            const summary = data.summary;
+            
+            riskEl.style.display = 'block';
+            riskEl.className = 'risk-assessment ' + risk.level;
+            
+            // Update gauge
+            document.getElementById('risk-gauge-fill').style.setProperty('--risk-position', risk.score + '%');
+            
+            // Update score
+            document.getElementById('risk-score-value').textContent = risk.score;
+            
+            // Level text
+            const levelText = {
+                low: { en: 'Low', ja: '低い' },
+                moderate: { en: 'Moderate', ja: '中程度' },
+                elevated: { en: 'Elevated', ja: 'やや高い' },
+                high: { en: 'High', ja: '高い' }
+            };
+            
+            document.getElementById('risk-score-label').innerHTML = `
+                <span data-lang="en">${levelText[risk.level]?.en || risk.level}</span>
+                <span data-lang="ja">${levelText[risk.level]?.ja || risk.level}</span>
+            `;
+            
+            // Summary
+            document.getElementById('risk-summary').innerHTML = `
+                <span data-lang="en">${summary.en}</span>
+                <span data-lang="ja">${summary.ja}</span>
+            `;
+            
+            // Updated
+            document.getElementById('risk-updated').innerHTML = `
+                <span data-lang="en">Updated: ${data.updated} | ${data.next_update}</span>
+                <span data-lang="ja">更新: ${data.updated} | ${data.next_update}</span>
+            `;
+        }
+        
+        // Load on page ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadOnnaForecast);
+        } else {
+            loadOnnaForecast();
+        }
     })();
     </script>
 </body>
