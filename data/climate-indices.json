@@ -1,0 +1,70 @@
+{
+  "updated": "2026-01-10T07:56:51.119929+00:00",
+  "current": {
+    "oni": {
+      "value": -0.55,
+      "phase": "la_nina",
+      "period": "2025-12",
+      "season": "OND"
+    },
+    "pdo": {
+      "value": -2.81,
+      "phase": "negative",
+      "period": "2025-08"
+    },
+    "dmi": {
+      "value": 0.15,
+      "phase": "neutral",
+      "period": "2025-04"
+    }
+  },
+  "risk_assessment": {
+    "score": 45,
+    "level": "moderate",
+    "factors": {
+      "baseline": 25,
+      "enso_risk": 30,
+      "pdo_modifier": -10,
+      "iod_modifier": 0,
+      "catastrophic_bonus": 0
+    }
+  },
+  "texts": {
+    "enso": {
+      "en": "La Niña (-0.55°C)",
+      "ja": "ラニーニャ（-0.55°C）"
+    },
+    "pdo": {
+      "en": "Negative (-2.81)",
+      "ja": "負フェーズ（-2.81）"
+    },
+    "iod": {
+      "en": "Neutral (+0.15°C)",
+      "ja": "中立（+0.15°C）"
+    },
+    "risk_level": {
+      "en": "Moderate",
+      "ja": "中程度"
+    },
+    "summary": {
+      "en": "La Niña conditions increase risk for western Pacific coral reefs by accumulating warm water and reducing typhoon activity.",
+      "ja": "ラニーニャは西太平洋に暖水を蓄積し、台風活動を抑制することで、日本のサンゴ礁リスクを高めます。"
+    }
+  },
+  "forecast": {
+    "enso": {
+      "source": "IRI/CPC (manual update)",
+      "note_en": "ENSO forecast probabilities are updated manually from IRI/CPC.",
+      "note_ja": "ENSO予測確率はIRI/CPCから手動で更新されます。",
+      "periods": []
+    },
+    "pdo": {
+      "text_en": "Negative phase expected to continue through 2026",
+      "text_ja": "2026年を通じて負フェーズ継続の見込み"
+    },
+    "iod": {
+      "text_en": "IOD typically develops May-June. Summer forecast available then.",
+      "text_ja": "IODは通常5-6月に発達。夏の予測はその時期に発表。"
+    }
+  }
+}

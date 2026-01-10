@@ -201,58 +201,22 @@
         <section class="hero-section" style="background: linear-gradient(135deg, rgba(26, 31, 46, 0.95), rgba(30, 58, 92, 0.9));">
             <div class="hero-header">
                 <h1 class="hero-tagline">
-                    <span data-lang="en">Climate Mode Dashboard</span>
-                    <span data-lang="ja">気候モード・ダッシュボード</span>
+                    <span data-lang="en">ENSO & Coral Bleaching</span>
+                    <span data-lang="ja">ENSO（エルニーニョ・ラニーニャ）とサンゴ白化</span>
                 </h1>
                 <p class="hero-subtitle">
-                    <span data-lang="en">Real-time monitoring of ENSO, PDO, and IOD — the climate oscillations that drive coral bleaching</span>
-                    <span data-lang="ja">サンゴ白化を引き起こす気候振動（ENSO・PDO・IOD）のリアルタイム監視</span>
+                    <span data-lang="en">How climate oscillations drive mass bleaching events</span>
+                    <span data-lang="ja">気候振動が大規模白化を引き起こすメカニズム</span>
                 </p>
-            </div>
-
-            <!-- Climate Mode Dashboard -->
-            <div id="climate-dashboard" class="climate-dashboard">
-                <div class="climate-dashboard-loading">
-                    <span data-lang="en">Loading climate data...</span>
-                    <span data-lang="ja">気候データを読み込み中...</span>
+                <!-- Live ENSO Status Badge in Hero -->
+                <div id="hero-enso-status" class="hero-enso-badge">
+                    <span class="hero-enso-loading">
+                        <span data-lang="en">Loading current status...</span>
+                        <span data-lang="ja">最新データを読み込み中...</span>
+                    </span>
                 </div>
-            </div>
-
-            <!-- Risk Assessment -->
-            <div id="risk-assessment" class="risk-assessment" style="display: none;">
-                <div class="risk-header">
-                    <span data-lang="en">Japan Coral Reef Risk Assessment</span>
-                    <span data-lang="ja">日本サンゴ礁リスク評価</span>
-                </div>
-                <div class="risk-content">
-                    <div class="risk-gauge">
-                        <div class="risk-gauge-fill" id="risk-gauge-fill"></div>
-                        <div class="risk-gauge-labels">
-                            <span>Low</span>
-                            <span>Moderate</span>
-                            <span>Elevated</span>
-                            <span>High</span>
-                        </div>
-                    </div>
-                    <div class="risk-score">
-                        <span class="risk-score-value" id="risk-score-value">--</span>
-                        <span class="risk-score-label" id="risk-score-label">
-                            <span data-lang="en">Loading...</span>
-                            <span data-lang="ja">読み込み中...</span>
-                        </span>
-                    </div>
-                </div>
-                <p class="risk-summary" id="risk-summary">
-                    <span data-lang="en"></span>
-                    <span data-lang="ja"></span>
-                </p>
-                <p class="risk-updated" id="risk-updated">
-                    <span data-lang="en">Last updated: --</span>
-                    <span data-lang="ja">最終更新: --</span>
-                </p>
             </div>
         </section>
-
 
         <!-- Current Status + ONI Chart -->
         <section class="content-section">
@@ -1143,172 +1107,6 @@
                 closeSidebar();
             }
         });
-    })();
-    </script>
-
-    <!-- Climate Dashboard Script -->
-    <script>
-    (function() {
-        const lang = localStorage.getItem('preferred-lang') || 'en';
-        
-        async function loadClimateDashboard() {
-            try {
-                const response = await fetch('data/climate-indices.json');
-                if (!response.ok) throw new Error('Failed to load climate data');
-                const data = await response.json();
-                
-                renderDashboard(data);
-                renderRiskAssessment(data);
-            } catch (error) {
-                console.error('Climate dashboard error:', error);
-                document.querySelector('.climate-dashboard-loading').innerHTML = 
-                    '<span style="color: rgba(255,255,255,0.5);">Climate data unavailable</span>';
-            }
-        }
-        
-        function renderDashboard(data) {
-            const dashboard = document.getElementById('climate-dashboard');
-            const currentLang = document.documentElement.lang || 'en';
-            
-            // ENSO card
-            const oniPhase = data.current.oni.phase;
-            const oniPhaseText = {
-                la_nina: { en: 'La Niña', ja: 'ラニーニャ' },
-                el_nino: { en: 'El Niño', ja: 'エルニーニョ' },
-                neutral: { en: 'Neutral', ja: '中立' }
-            };
-            
-            // PDO card  
-            const pdoPhase = data.current.pdo.phase;
-            const pdoPhaseText = {
-                negative: { en: 'Negative', ja: '負フェーズ' },
-                positive: { en: 'Positive', ja: '正フェーズ' },
-                neutral: { en: 'Neutral', ja: '中立' }
-            };
-            
-            // IOD card
-            const dmiPhase = data.current.dmi.phase;
-            const dmiPhaseText = {
-                negative: { en: 'Negative', ja: '負' },
-                positive: { en: 'Positive', ja: '正' },
-                neutral: { en: 'Neutral', ja: '中立' }
-            };
-            
-            // Build HTML
-            dashboard.innerHTML = `
-                <div class="climate-card ${oniPhase.replace('_', '-')}">
-                    <div class="climate-card-title">ENSO (ONI)</div>
-                    <div class="climate-card-value">${data.current.oni.value >= 0 ? '+' : ''}${data.current.oni.value.toFixed(2)}°C</div>
-                    <div class="climate-card-phase">
-                        <span data-lang="en">${oniPhaseText[oniPhase].en}</span>
-                        <span data-lang="ja">${oniPhaseText[oniPhase].ja}</span>
-                    </div>
-                    <div class="climate-card-period">${data.current.oni.season} ${data.current.oni.period}</div>
-                    <div class="phase-indicator">
-                        <span class="phase-dot ${oniPhase === 'la_nina' ? 'active' : ''}" title="La Niña"></span>
-                        <span class="phase-dot ${oniPhase === 'neutral' ? 'active' : ''}" title="Neutral"></span>
-                        <span class="phase-dot ${oniPhase === 'el_nino' ? 'active' : ''}" title="El Niño"></span>
-                    </div>
-                </div>
-                
-                <div class="climate-card ${pdoPhase}">
-                    <div class="climate-card-title">PDO</div>
-                    <div class="climate-card-value">${data.current.pdo.value >= 0 ? '+' : ''}${data.current.pdo.value.toFixed(2)}</div>
-                    <div class="climate-card-phase">
-                        <span data-lang="en">${pdoPhaseText[pdoPhase].en}</span>
-                        <span data-lang="ja">${pdoPhaseText[pdoPhase].ja}</span>
-                    </div>
-                    <div class="climate-card-period">${data.current.pdo.period}</div>
-                    <div class="phase-indicator">
-                        <span class="phase-dot ${pdoPhase === 'negative' ? 'active' : ''}" title="Negative"></span>
-                        <span class="phase-dot ${pdoPhase === 'neutral' ? 'active' : ''}" title="Neutral"></span>
-                        <span class="phase-dot ${pdoPhase === 'positive' ? 'active' : ''}" title="Positive"></span>
-                    </div>
-                </div>
-                
-                <div class="climate-card ${dmiPhase}">
-                    <div class="climate-card-title">IOD (DMI)</div>
-                    <div class="climate-card-value">${data.current.dmi.value >= 0 ? '+' : ''}${data.current.dmi.value.toFixed(2)}°C</div>
-                    <div class="climate-card-phase">
-                        <span data-lang="en">${dmiPhaseText[dmiPhase].en}</span>
-                        <span data-lang="ja">${dmiPhaseText[dmiPhase].ja}</span>
-                    </div>
-                    <div class="climate-card-period">${data.current.dmi.period}</div>
-                    <div class="phase-indicator">
-                        <span class="phase-dot ${dmiPhase === 'negative' ? 'active' : ''}" title="Negative"></span>
-                        <span class="phase-dot ${dmiPhase === 'neutral' ? 'active' : ''}" title="Neutral"></span>
-                        <span class="phase-dot ${dmiPhase === 'positive' ? 'active' : ''}" title="Positive"></span>
-                    </div>
-                </div>
-            `;
-            
-            // Apply current language
-            if (typeof updateLanguage === 'function') {
-                updateLanguage(currentLang);
-            }
-        }
-        
-        function renderRiskAssessment(data) {
-            const riskEl = document.getElementById('risk-assessment');
-            const risk = data.risk_assessment;
-            const texts = data.texts;
-            
-            // Show the risk assessment
-            riskEl.style.display = 'block';
-            riskEl.className = 'risk-assessment ' + risk.level;
-            
-            // Update gauge position
-            const gaugeFill = document.getElementById('risk-gauge-fill');
-            gaugeFill.style.setProperty('--risk-position', risk.score + '%');
-            
-            // Update score
-            document.getElementById('risk-score-value').textContent = risk.score;
-            
-            // Update label
-            const labelEl = document.getElementById('risk-score-label');
-            labelEl.innerHTML = `
-                <span data-lang="en">${texts.risk_level.en}</span>
-                <span data-lang="ja">${texts.risk_level.ja}</span>
-            `;
-            
-            // Update summary
-            const summaryEl = document.getElementById('risk-summary');
-            summaryEl.innerHTML = `
-                <span data-lang="en">${texts.summary.en}</span>
-                <span data-lang="ja">${texts.summary.ja}</span>
-            `;
-            
-            // Update timestamp
-            const updated = new Date(data.updated);
-            const formattedDate = updated.toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'short', 
-                day: 'numeric' 
-            });
-            const formattedDateJa = updated.toLocaleDateString('ja-JP', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-            
-            document.getElementById('risk-updated').innerHTML = `
-                <span data-lang="en">Data updated: ${formattedDate}</span>
-                <span data-lang="ja">データ更新: ${formattedDateJa}</span>
-            `;
-            
-            // Apply current language
-            const currentLang = document.documentElement.lang || 'en';
-            if (typeof updateLanguage === 'function') {
-                updateLanguage(currentLang);
-            }
-        }
-        
-        // Load on page ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', loadClimateDashboard);
-        } else {
-            loadClimateDashboard();
-        }
     })();
     </script>
 </body>
