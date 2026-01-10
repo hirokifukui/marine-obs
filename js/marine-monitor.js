@@ -295,7 +295,7 @@
                     <div class="marine-status">
                         <span class="status-dot ${status.class}"></span>
                         <span>${isJa ? status.textJa : status.textEn}</span>
-                        <span class="marine-expand-text">${isJa ? '詳細' : 'Details'}</span> <span class="marine-expand-icon">▼</span>
+                        <span class="marine-expand-text">${isJa ? '時間別' : 'Hourly'}</span> <span class="marine-expand-icon">▼</span>
                     </div>
                 </div>
                 <div class="marine-summary-row">
