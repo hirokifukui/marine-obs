@@ -31,7 +31,7 @@
             </a>
             
             <!-- Desktop Navigation -->
-                        <nav class="nav-desktop">
+            <nav class="nav-desktop">
                 <ul class="nav-links">
                     <li class="nav-item has-dropdown">
                         <a href="#" class="nav-link">
@@ -44,8 +44,8 @@
                             <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
                             <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
                             <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
-                            <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
                             <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span><span class="nav-badge">New</span></a></li>
+                            <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
                             <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge">計画中</span></a></li>
                         </ul>
                     </li>
@@ -101,96 +101,74 @@
                 </ul>
             </nav>
 
-            <!-- Mobile Hamburger Button -->
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-
             <div class="header-controls">
                 <div class="lang-switch">
-                    <button id="lang-en" class="active">English</button>
-                    <span style="color:rgba(255,255,255,0.4)">/</span>
-                    <button id="lang-ja">日本語</button>
+                    <button onclick="setLang('en')" id="lang-en">EN</button>
+                    <button onclick="setLang('ja')" id="lang-ja">日本語</button>
                 </div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+                </button>
             </div>
         </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" id="mobile-nav">
+            <ul class="mobile-nav-links">
+                <li class="mobile-nav-section">
+                    <span class="section-title" data-lang="en">Details</span>
+                    <span class="section-title" data-lang="ja">データ詳細</span>
+                    <ul>
+                        <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                        <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                        <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                        <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                        <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
+                        <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                        <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span></a></li>
+                    </ul>
+                </li>
+                <li class="mobile-nav-section">
+                    <span class="section-title" data-lang="en">Bleaching</span>
+                    <span class="section-title" data-lang="ja">白化</span>
+                    <ul>
+                        <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                        <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                        <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                        <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                    </ul>
+                </li>
+                <li class="mobile-nav-section">
+                    <span class="section-title" data-lang="en">Learn</span>
+                    <span class="section-title" data-lang="ja">サンゴを知る</span>
+                    <ul>
+                        <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                        <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                        <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                    </ul>
+                </li>
+                <li class="mobile-nav-section">
+                    <span class="section-title" data-lang="en">For Divers</span>
+                    <span class="section-title" data-lang="ja">ダイバー向け</span>
+                    <ul>
+                        <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                        <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                    </ul>
+                </li>
+                <li class="mobile-nav-section">
+                    <span class="section-title" data-lang="en">Reference</span>
+                    <span class="section-title" data-lang="ja">リファレンス</span>
+                    <ul>
+                        <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                        <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                        <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                        <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Mobile Sidebar -->
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
-        <nav class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <span class="sidebar-title">Menu</span>
-            <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
-                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-            </button>
-        </div>
-        <ul class="sidebar-menu">
-            <li class="sidebar-section">
-                <span class="sidebar-section-title">
-                    <span data-lang="en">Details</span>
-                    <span data-lang="ja">データ詳細</span>
-                </span>
-                <ul class="sidebar-submenu">
-                    <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
-                    <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
-                    <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
-                            <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
-                    <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
-                    <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span><span class="nav-badge-mobile">New</span></a></li>
-                    <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge-mobile">計画中</span></a></li>
-                </ul>
-            </li>
-            <li class="sidebar-section">
-                <span class="sidebar-section-title">
-                    <span data-lang="en">Bleaching</span>
-                    <span data-lang="ja">白化</span>
-                </span>
-                <ul class="sidebar-submenu">
-                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
-                    <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
-                    <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
-                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
-                </ul>
-            </li>
-            <li class="sidebar-section">
-                <span class="sidebar-section-title">
-                    <span data-lang="en">Learn</span>
-                    <span data-lang="ja">サンゴを知る</span>
-                </span>
-                <ul class="sidebar-submenu">
-                    <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
-                    <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
-                    <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
-                </ul>
-            </li>
-            <li class="sidebar-section">
-                <span class="sidebar-section-title">
-                    <span data-lang="en">For Divers</span>
-                    <span data-lang="ja">ダイバー向け</span>
-                </span>
-                <ul class="sidebar-submenu">
-                    <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
-                    <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
-                </ul>
-            </li>
-            <li class="sidebar-section">
-                <span class="sidebar-section-title">
-                    <span data-lang="en">Reference</span>
-                    <span data-lang="ja">リファレンス</span>
-                </span>
-                <ul class="sidebar-submenu">
-                    <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
-                    <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
-                    <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
-                    <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    <main>
     <main>
         <div class="breadcrumb">
             <a href="index.html">Home</a> / 
