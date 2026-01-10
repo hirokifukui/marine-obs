@@ -19,7 +19,7 @@
 | extreme.html | 極端水温日数 |
 | dhw.html | 積算熱ストレス |
 | light-adjusted-dhw.html | 光補正DHW |
-| enso.html | ENSO監視 |
+| enso.html | ENSO監視 + 恩納村予測 |
 | global-bleaching.html | 世界の白化状況 |
 | japan-bleaching.html | 日本の白化状況 |
 | sekisei-cover.html | 石西礁湖被度グラフ（iframe用） |
@@ -38,9 +38,9 @@
 
 ## 構成
 ```
-css/  main.css, dhw.css, extreme.css, vulnerability.css, species-guide.css, spawning.css, field-monitoring.css, contact.css, global-bleaching.css, bleaching.css
+css/  main.css, dhw.css, extreme.css, vulnerability.css, species-guide.css, spawning.css, field-monitoring.css, contact.css, global-bleaching.css, bleaching.css, enso.css
 js/  lang.js, lang-simple.js, charts.js, marine-monitor.js, gear-recs.js
-data/  *.json（チャート用、一部は未使用）
+data/  *.json（チャート用、onna-forecast.json含む）
 sql/  RPC関数定義
 ```
 
@@ -53,6 +53,23 @@ sql/  RPC関数定義
 | UV・日出日没 | Supabase `uv_daily` テーブル（OpenWeather） |
 | 潮汐 | Supabase `tide_extremes` テーブル |
 | 日次更新 | `~/Scripts/scheduled-jobs/sync-sst-daily/` |
+| 恩納村予測 | `data/onna-forecast.json`（月次手動更新） |
+
+## 恩納村白化リスク予測（2026年夏）
+enso.html のヒーローセクションに表示。
+
+**更新スクリプト:**
+```bash
+cd ~/Scripts/scheduled-jobs/sync-climate-indices
+python3 update_onna_forecast.py
+```
+
+**更新タイミング:** 毎月1〜5日
+
+**データ内容:**
+- 気候指標（ONI/PDO/DMI）— 自動取得
+- ENSO予測（IRI/CPC）— 手動入力
+- 台風接近数（気象庁）— 夏季に手動入力
 
 ## Supabase RPC関数
 | 関数 | 用途 |
@@ -75,4 +92,4 @@ Vercel自動デプロイ。
 `backups/` フォルダに保存。**削除禁止**。
 
 ---
-*2026-01-08*
+*2026-01-10*
