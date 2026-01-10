@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Monitoring | marine-obs.org</title>
+    <!-- SEO / OGP -->
+    <meta name="description" content="衛星データの限界を補完する現場マルチパラメータ観測。水温・塩分・溶存酸素・クロロフィル・濁度の鉛直プロファイルでサンゴ熱ストレスを評価。">
+    <meta property="og:title" content="現場モニタリング | marine-obs.org">
+    <meta property="og:description" content="衛星データの限界を補完する現場マルチパラメータ観測。水温・塩分・溶存酸素・クロロフィル・濁度の鉛直プロファイルでサンゴ熱ストレスを評価。">
+    <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
+    <meta property="og:url" content="https://marine-obs.org/field-monitoring.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/field-monitoring.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="images/logo-circle.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+                        <nav class="nav-desktop">
+                <ul class="nav-links">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Details</span>
+                            <span data-lang="ja">データ詳細</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                            <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                            <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                            <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                            <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge">計画中</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Bleaching</span>
+                            <span data-lang="ja">白化</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                            <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                            <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Learn</span>
+                            <span data-lang="ja">サンゴを知る</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                            <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                            <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">For Divers</span>
+                            <span data-lang="ja">ダイバー向け</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                            <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Reference</span>
+                            <span data-lang="ja">リファレンス</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                            <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                            <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                            <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button id="lang-en" class="active">English</button>
+                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <button id="lang-ja">日本語</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Details</span>
+                    <span data-lang="ja">データ詳細</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                    <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                    <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                    <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                    <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge-mobile">計画中</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Bleaching</span>
+                    <span data-lang="ja">白化</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                    <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                    <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Learn</span>
+                    <span data-lang="ja">サンゴを知る</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                    <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                    <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">For Divers</span>
+                    <span data-lang="ja">ダイバー向け</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                    <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Reference</span>
+                    <span data-lang="ja">リファレンス</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                    <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                    <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                    <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> / 
+            <span data-lang="en">Field Monitoring</span>
+            <span data-lang="ja">現場モニタリング</span>
+        </nav>
+
+        <div class="page-header">
+            <h1>
+                <span data-lang="en">Field Monitoring</span>
+                <span data-lang="ja">現場モニタリング</span>
+            </h1>
+            <p class="lead">
+                <span data-lang="en">
+                    Satellite SST overestimates reef thermal stress by 2-3×. It captures only surface temperature, 
+                    missing depth stratification, dissolved oxygen, and water quality—factors that determine 
+                    whether corals bleach or survive.
+                </span>
+                <span data-lang="ja">
+                    衛星SSTはサンゴ礁の熱ストレスを2〜3倍過大評価する。表層水温しか捉えられず、
+                    深度方向の成層、溶存酸素、水質を見落とす——白化するか生き残るかを左右する要因を。
+                </span>
+            </p>
+        </div>
+
+
+        <!-- Why Field Monitoring - Introduction -->
+        <div class="card">
+            <div class="card-title">
+                <span data-lang="en">The Satellite Paradox</span>
+                <span data-lang="ja">衛星データのパラドックス</span>
+            </div>
+            <p>
+                <span data-lang="en">
+                    Satellite-derived Degree Heating Weeks (DHW) have revolutionized coral bleaching prediction globally. 
+                    Yet a growing body of research reveals systematic discrepancies between satellite estimates and 
+                    actual reef conditions—differences that matter for understanding which reefs will survive.
+                </span>
+                <span data-lang="ja">
+                    衛星由来のDHW（積算熱ストレス）は、世界のサンゴ白化予測を革新した。
+                    しかし近年の研究は、衛星推定値と実際のリーフ環境との間に系統的な乖離があることを明らかにしている——
+                    どのリーフが生き残るかを理解する上で重要な差異を。
+                </span>
+            </p>
+
+            <div class="insight-box">
+                <div class="insight-label">
+                    <span data-lang="en">Satellite vs Reality</span>
+                    <span data-lang="ja">衛星 vs 現実</span>
+                </div>
+                <blockquote>
+                    <span data-lang="en">
+                        "Satellite DHW can be 2-3× higher than in-situ measurements at the same reef."
+                    </span>
+                    <span data-lang="ja">
+                        「衛星DHWは、同一リーフの現場測定値より2〜3倍高くなることがある」
+                    </span>
+                </blockquote>
+                <div class="source">— Heron et al. 2016, <em>Remote Sensing</em> (Cited 108)</div>
+            </div>
+        </div>
+
+        <!-- Three Limitations of Satellite Data -->
+        <div class="card">
+            <div class="card-title">
+                <span data-lang="en">Three Limitations of Satellite SST</span>
+                <span data-lang="ja">衛星SSTの3つの限界</span>
+            </div>
+
+            <h4 style="margin-top: 1.5rem; color: var(--accent);">
+                <span data-lang="en">1. Surface Only</span>
+                <span data-lang="ja">1. 表層のみ</span>
+            </h4>
+            <p>
+                <span data-lang="en">
+                    Satellites measure skin temperature (top ~1mm). Corals live at 2-40m depth where temperatures 
+                    can differ by 2-5°C due to thermocline dynamics. Internal waves can deliver pulses of 
+                    cold deep water, providing thermal refugia invisible to satellites.
+                </span>
+                <span data-lang="ja">
+                    衛星は皮膚温（表層約1mm）を測定する。サンゴは水深2〜40mに生息し、
+                    躍層のダイナミクスにより温度が2〜5℃異なることがある。
+                    内部波は冷たい深層水のパルスを送り込み、衛星には見えない熱refuge（避難所）を提供する。
+                </span>
+            </p>
+
+            <div class="insight-box">
+                <div class="insight-label">Storlazzi et al. 2020</div>
+                <blockquote>
+                    <span data-lang="en">
+                        Internal tides can reduce thermal stress by cooling reefs 0.5-2°C during peak heat, 
+                        potentially delaying bleaching projections by 10-20 years at some sites.
+                    </span>
+                    <span data-lang="ja">
+                        内部潮汐はピーク時にリーフを0.5〜2℃冷却し、熱ストレスを軽減する。
+                        一部のサイトでは白化予測を10〜20年遅らせる可能性がある。
+                    </span>
+                </blockquote>
+                <div class="source">— <em>Scientific Reports</em> (Cited 49)</div>
+            </div>
+
+            <h4 style="margin-top: 1.5rem; color: var(--accent);">
+                <span data-lang="en">2. Temporal Resolution</span>
+                <span data-lang="ja">2. 時間分解能</span>
+            </h4>
+            <p>
+                <span data-lang="en">
+                    Fine-resolution satellite SST (1km) captures monthly patterns well, but misses daily 
+                    temperature variability that determines coral thermal tolerance. Corals from highly 
+                    variable environments show 2-3°C higher bleaching thresholds.
+                </span>
+                <span data-lang="ja">
+                    高解像度衛星SST（1km）は月単位のパターンを捉えるが、
+                    サンゴの熱耐性を決定する日々の温度変動を見落とす。
+                    変動の大きい環境のサンゴは、白化閾値が2〜3℃高い。
+                </span>
+            </p>
+
+            <div class="insight-box">
+                <div class="insight-label">Bos & Pinsky 2025</div>
+                <blockquote>
+                    <span data-lang="en">
+                        "Fine resolution satellite SSTs capture conditions experienced by corals at monthly 
+                        but not daily timescales."
+                    </span>
+                    <span data-lang="ja">
+                        「高解像度衛星SSTはサンゴが経験する条件を月単位では捉えるが、日単位では捉えられない」
+                    </span>
+                </blockquote>
+                <div class="source">— <em>Coral Reefs</em></div>
+            </div>
+
+            <h4 style="margin-top: 1.5rem; color: var(--accent);">
+                <span data-lang="en">3. Temperature Alone Is Insufficient</span>
+                <span data-lang="ja">3. 温度だけでは不十分</span>
+            </h4>
+            <p>
+                <span data-lang="en">
+                    Bleaching is not simply a temperature response. Light intensity, water flow, dissolved oxygen, 
+                    and nutrient availability all modulate bleaching outcomes. Machine learning models show that 
+                    incorporating these factors significantly improves prediction accuracy.
+                </span>
+                <span data-lang="ja">
+                    白化は単なる温度応答ではない。光強度、水流、溶存酸素、栄養塩の利用可能性が
+                    すべて白化の結果を調節する。機械学習モデルは、これらの要因を組み込むことで
+                    予測精度が大幅に向上することを示している。
+                </span>
+            </p>
+
+            <div class="insight-box">
+                <div class="insight-label">Cheung et al. 2025</div>
+                <blockquote>
+                    <span data-lang="en">
+                        "Corals respond to acute heat stress differently depending on thermal history, 
+                        water flow and light availability."
+                    </span>
+                    <span data-lang="ja">
+                        「サンゴは熱履歴、水流、光の利用可能性によって、急性熱ストレスへの応答が異なる」
+                    </span>
+                </blockquote>
+                <div class="source">— <em>Global Ecology and Biogeography</em></div>
+            </div>
+        </div>
+
+        <!-- Depth-Dependent Thermal Stress -->
+        <div class="card">
+            <div class="card-title">
+                <span data-lang="en">Depth Matters: The Mesophotic Question</span>
+                <span data-lang="ja">深度が重要：中深海の問題</span>
+            </div>
+            <p>
+                <span data-lang="en">
+                    Can deeper reefs serve as climate refugia? The answer is complex. While mesophotic depths (30-150m) 
+                    often experience cooler temperatures, thermal protection is transient and thermocline shifts can 
+                    expose deep corals to unexpected stress.
+                </span>
+                <span data-lang="ja">
+                    深場のリーフは気候変動の避難所になれるか？答えは複雑だ。
+                    中深海（30〜150m）はしばしばより低い温度を経験するが、熱保護は一時的であり、
+                    躍層の変動が深場のサンゴを予期せぬストレスにさらすことがある。
+                </span>
+            </p>
+
+            <div class="insight-box">
+                <div class="insight-label">Frade et al. 2018</div>
+                <blockquote>
+                    <span data-lang="en">
+                        Deep reefs of the GBR "offer limited thermal refuge during mass coral bleaching" 
+                        as protection lessened in late summer months.
+                    </span>
+                    <span data-lang="ja">
+                        GBRの深場リーフは「大規模白化時に限定的な熱refuge」を提供するに過ぎず、
+                        夏の後半には保護効果が弱まった。
+                    </span>
+                </blockquote>
+                <div class="source">— <em>Nature Communications</em> (Cited 123)</div>
+            </div>
+
+            <div class="insight-box" style="margin-top: 1rem;">
+                <div class="insight-label">Diaz et al. 2023</div>
+                <blockquote>
+                    <span data-lang="en">
+                        Coral bleaching at 90m depth—despite no shallow-water bleaching—was associated 
+                        with thermocline depth changes in the Chagos Archipelago.
+                    </span>
+                    <span data-lang="ja">
+                        チャゴス諸島で、浅場の白化がないにもかかわらず水深90mで白化が観察され、
+                        躍層深度の変化との関連が示された。
+                    </span>
+                </blockquote>
+                <div class="source">— <em>Nature Communications</em> (Cited 35)</div>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                <span data-lang="en">
+                    <strong>Implication:</strong> Vertical temperature profiles are essential to understand 
+                    whether depth provides protection—information satellites cannot provide.
+                </span>
+                <span data-lang="ja">
+                    <strong>示唆：</strong>深度が保護を提供するかを理解するには鉛直温度プロファイルが不可欠——
+                    衛星では得られない情報である。
+                </span>
+            </p>
+        </div>
+
+        <!-- Beyond Temperature: Dissolved Oxygen -->
+        <div class="card">
+            <div class="card-title">
+                <span data-lang="en">Beyond Temperature: Dissolved Oxygen</span>
+                <span data-lang="ja">温度を超えて：溶存酸素</span>
+            </div>
+            <p>
+                <span data-lang="en">
+                    Ocean deoxygenation is accelerating under climate change. Hypoxic events can cause rapid 
+                    coral mortality—sometimes faster than thermal bleaching. Yet dissolved oxygen is invisible 
+                    to satellites and rarely monitored on reefs.
+                </span>
+                <span data-lang="ja">
+                    海洋の脱酸素化は気候変動下で加速している。低酸素イベントは急速なサンゴ死亡を引き起こす——
+                    時に熱白化より速く。しかし溶存酸素は衛星には見えず、リーフでのモニタリングは稀である。
+                </span>
+            </p>
+
+            <div class="insight-box">
+                <div class="insight-label">Hughes et al. 2020</div>
+                <blockquote>
+                    <span data-lang="en">
+                        "Ocean deoxygenation poses a largely unrecognized threat to coral reef ecosystems, 
+                        with oxygen declining in the ocean interior and coastal waters."
+                    </span>
+                    <span data-lang="ja">
+                        「海洋脱酸素化は、サンゴ礁生態系にほとんど認識されていない脅威をもたらしている。
+                        海洋内部と沿岸水域で酸素が減少している」
+                    </span>
+                </blockquote>
+                <div class="source">— <em>Nature Climate Change</em> (Cited 170)</div>
+            </div>
+
+            <div class="insight-box" style="margin-top: 1rem;">
+                <div class="insight-label">Johnson et al. 2021</div>
+                <blockquote>
+                    <span data-lang="en">
+                        An acute deoxygenation event in Panama caused "rapid ecosystem-scale consequences" 
+                        with mass coral mortality within days.
+                    </span>
+                    <span data-lang="ja">
+                        パナマでの急性脱酸素イベントは「急速なエコシステム規模の影響」を引き起こし、
+                        数日以内にサンゴの大量死をもたらした。
+                    </span>
+                </blockquote>
+                <div class="source">— <em>Nature Communications</em> (Cited 68)</div>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                <span data-lang="en">
+                    Hypoxia tolerance varies dramatically between coral species. Some corals show remarkable 
+                    tolerance to low oxygen, suggesting potential refugia—but only detectable through 
+                    in-situ measurements.
+                </span>
+                <span data-lang="ja">
+                    低酸素耐性はサンゴ種間で劇的に異なる。一部のサンゴは低酸素に顕著な耐性を示し、
+                    潜在的なrefugiaを示唆する——しかし現場測定でのみ検出可能である。
+                </span>
+            </p>
+        </div>
+
+        <!-- Beyond Temperature: Chlorophyll-a -->
+        <div class="card">
+            <div class="card-title">
+                <span data-lang="en">Beyond Temperature: Chlorophyll-a</span>
+                <span data-lang="ja">温度を超えて：クロロフィルa</span>
+            </div>
+            <p>
+                <span data-lang="en">
+                    Chlorophyll-a concentration—a proxy for phytoplankton abundance—shows a paradoxical 
+                    relationship with coral bleaching. Moderate levels may protect corals through two mechanisms: 
+                    light attenuation and heterotrophic feeding opportunities.
+                </span>
+                <span data-lang="ja">
+                    クロロフィルa濃度——植物プランクトン量の指標——はサンゴ白化と逆説的な関係を示す。
+                    適度なレベルは2つのメカニズムでサンゴを保護する可能性がある：
+                    光の減衰と従属栄養の機会提供。
+                </span>
+            </p>
+
+            <div class="insight-box">
+                <div class="insight-label">Keighan et al. 2023</div>
+                <blockquote>
+                    <span data-lang="en">
+                        In Yap, Micronesia, "moderate chlorophyll-a environments reduce coral bleaching 
+                        during thermal stress" through reduced irradiance and enhanced heterotrophic feeding.
+                    </span>
+                    <span data-lang="ja">
+                        ヤップ（ミクロネシア）では、「適度なクロロフィルa環境が熱ストレス時のサンゴ白化を軽減」し、
+                        光量減少と従属栄養の強化がその機序である。
+                    </span>
+                </blockquote>
+                <div class="source">— <em>Scientific Reports</em> (van Woesik group)</div>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                <span data-lang="en">
+                    <strong>Connection to ERDDAP:</strong> Satellite chlorophyll-a data from ERDDAP (1997-present) 
+                    provides long-term context, but cannot capture vertical distribution or validate 
+                    reef-scale concentrations—where RINKO-Profiler fills the gap.
+                </span>
+                <span data-lang="ja">
+                    <strong>ERDDAPとの接続：</strong>ERDDAPの衛星クロロフィルaデータ（1997年〜）は
+                    長期的な文脈を提供するが、鉛直分布やリーフスケールの濃度検証はできない——
+                    RINKO-Profilerがそのギャップを埋める。
+                </span>
+            </p>
+        </div>
+
+        <!-- Status Card -->
+        <div class="card status-card">
+            <div class="card-title">
+                <span data-lang="en">Project Status</span>
+                <span data-lang="ja">プロジェクト状況</span>
+                <span class="status-badge">
+                    <span data-lang="en">Equipment Scheduled</span>
+                    <span data-lang="ja">機材導入予定</span>
+                </span>
+            </div>
+            <p>
+                <span data-lang="en">
+                    RINKO-Profiler ASTD102 (JFE Advantech) is scheduled for delivery in March 2026.
+                    This multi-parameter profiler will enable depth-stratified measurements of temperature, salinity, depth, turbidity, chlorophyll-a, and dissolved oxygen.
+                    Data collection will begin after equipment delivery.
+                </span>
+                <span data-lang="ja">
+                    RINKO-Profiler ASTD102（JFEアドバンテック社製）を2026年3月に導入予定。
+                    このマルチパラメータプロファイラーにより、水温・塩分・深度・濁度・クロロフィル・溶存酸素の深度別測定が可能になる。
+                    機材到着後にデータ収集を開始。
+                </span>
+            </p>
+        </div>
+
+        <!-- Why Turbidity -->
+        <div class="card">
+            <div class="card-title">
+                <span data-lang="en">Why Measure Turbidity?</span>
+                <span data-lang="ja">なぜ濁度を測るのか</span>
+            </div>
+            <p>
+                <span data-lang="en">
+                    Turbidity affects corals through two opposing mechanisms: it increases disease risk by promoting pathogen growth, 
+                    but can also reduce light stress during heat waves—potentially mitigating bleaching. 
+                    Understanding this dual effect requires in-situ measurements that satellites cannot provide.
+                </span>
+                <span data-lang="ja">
+                    濁度は2つの相反するメカニズムでサンゴに影響する。病原体の増殖を促進して疾病リスクを高める一方、
+                    熱波時の光ストレスを軽減し白化を緩和する可能性もある。
+                    この二面性を理解するには、衛星では得られない現地実測が必要。
+                </span>
+            </p>
+
+            <div class="insight-box">
+                <div class="insight-label">
+                    <span data-lang="en">Research Gap</span>
+                    <span data-lang="ja">研究の空白</span>
+                </div>
+                <blockquote>
+                    <span data-lang="en">"Only 7.7% of studies reviewed here report turbidity (or suspended sediment) levels."</span>
+                    <span data-lang="ja">「レビューした研究のうち、濁度（または懸濁堆積物）レベルを報告しているのはわずか7.7%である」</span>
+                </blockquote>
+                <div class="source">— Browne et al. 2021, <em>Diversity</em></div>
+            </div>
+        </div>
+
+        <!-- Satellite vs In-situ -->
+        <div class="card">
+            <div class="card-title">
+                <span data-lang="en">Satellite vs. In-situ Measurement</span>
+                <span data-lang="ja">衛星データ vs 現地実測</span>
+            </div>
+            <p>
+                <span data-lang="en">
+                    NOAA's Kd(490) provides optical estimates of water clarity, but has significant limitations for coral reef monitoring.
+                </span>
+                <span data-lang="ja">
+                    NOAAのKd(490)は水の透明度を光学的に推定するが、サンゴ礁モニタリングには大きな限界がある。
+                </span>
+            </p>
+
+            <div class="comparison-grid">
+                <div class="comparison-item satellite">
+                    <h4>
+                        <span data-lang="en">Satellite Kd(490)</span>
+                        <span data-lang="ja">衛星 Kd(490)</span>
+                    </h4>
+                    <ul>
+                        <li data-lang="en">Surface layer only</li>
+                        <li data-lang="ja">表層のみ</li>
+                        <li data-lang="en">4km resolution</li>
+                        <li data-lang="ja">4km解像度</li>
+                        <li data-lang="en">Cloud gaps common (~70% missing)</li>
+                        <li data-lang="ja">雲で欠損多い（約70%欠損）</li>
+                        <li data-lang="en">Optical estimate, not direct NTU</li>
+                        <li data-lang="ja">光学的推定値、NTU直接測定ではない</li>
+                    </ul>
+                </div>
+                <div class="comparison-item insitu">
+                    <h4>
+                        <span data-lang="en">In-situ Profiler</span>
+                        <span data-lang="ja">現地プロファイラー</span>
+                    </h4>
+                    <ul>
+                        <li data-lang="en">Depth profiles (0-200m)</li>
+                        <li data-lang="ja">深度別プロファイル（0-200m）</li>
+                        <li data-lang="en">Point-scale precision</li>
+                        <li data-lang="ja">ポイントスケールの精度</li>
+                        <li data-lang="en">All-weather capable</li>
+                        <li data-lang="ja">全天候対応</li>
+                        <li data-lang="en">Multi-parameter (6 sensors)</li>
+                        <li data-lang="ja">マルチパラメータ（6センサー）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kd490 and Bleaching Mitigation -->
+        <div class="card">
+            <div class="card-title">
+                <span data-lang="en">Kd(490) and Bleaching Mitigation</span>
+                <span data-lang="ja">Kd(490)と白化軽減</span>
+            </div>
+            <p>
+                <span data-lang="en">
+                    A global analysis of 3,694 reef sites found that moderate turbidity can reduce coral bleaching during thermal stress events.
+                    The key metric is Kd(490)—the diffuse attenuation coefficient at 490 nm wavelength—which measures how quickly light diminishes with depth.
+                </span>
+                <span data-lang="ja">
+                    全球3,694地点の解析により、適度な濁度が熱ストレス時の白化を軽減することが判明した。
+                    重要な指標はKd(490)—490nm波長における拡散減衰係数—で、光が深度とともにどれだけ早く減衰するかを示す。
+                </span>
+            </p>
+
+            <div class="insight-box">
+                <div class="insight-label">
+                    <span data-lang="en">Bleaching Mitigation Range</span>
+                    <span data-lang="ja">白化軽減範囲</span>
+                </div>
+                <blockquote>
+                    <span data-lang="en">
+                        Kd(490) between <strong>0.080 and 0.127 m⁻¹</strong> reduced coral bleaching during thermal-stress events.<br>
+                        Approximately <strong>12% of the world's reefs</strong> exist within this "moderating turbidity" range.
+                    </span>
+                    <span data-lang="ja">
+                        Kd(490)が<strong>0.080〜0.127 m⁻¹</strong>の範囲で、熱ストレス時の白化が軽減された。<br>
+                        世界のリーフの約<strong>12%</strong>がこの「緩和濁度」範囲内に存在する。
+                    </span>
+                </blockquote>
+                <div class="source">— Sully & van Woesik 2020, <em>Global Change Biology</em> (Cited 145)</div>
+            </div>
+
+            <p>
+                <span data-lang="en">
+                    Below 0.080 m⁻¹, water is too clear—light stress remains high. Above 0.127 m⁻¹, excessive turbidity limits photosynthesis.
+                    The "sweet spot" provides enough shading to reduce photoinhibition while maintaining adequate light for coral growth.
+                </span>
+                <span data-lang="ja">
+                    0.080 m⁻¹未満では水が透明すぎて光ストレスが高いまま。0.127 m⁻¹を超えると過度の濁りが光合成を阻害する。
+                    「スイートスポット」は光阻害を軽減しつつ、サンゴの成長に必要な光を確保できる範囲。
+                </span>
+            </p>
+        </div>
+
+        <!-- Japanese Reef Sites Kd490 -->
+        <div class="card">
+            <div class="card-title">
+                <span data-lang="en">Japanese Reef Sites: Satellite Kd(490)</span>
+                <span data-lang="ja">日本のサンゴ礁：衛星Kd(490)</span>
+            </div>
+            <p>
+                <span data-lang="en">
+                    Satellite-derived Kd(490) values for our 7 monitoring sites show that most Japanese coral reefs are highly transparent—
+                    below the "moderating turbidity" threshold where bleaching mitigation occurs.
+                </span>
+                <span data-lang="ja">
+                    当サイトがモニタリングする7地点の衛星Kd(490)値を見ると、日本のサンゴ礁の多くは非常に透明で、
+                    白化軽減効果が得られる「緩和濁度」閾値を下回っている。
+                </span>
+            </p>
+
+            <table class="threshold-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <span data-lang="en">Site</span>
+                            <span data-lang="ja">地点</span>
+                        </th>
+                        <th>Kd(490) m⁻¹</th>
+                        <th>
+                            <span data-lang="en">Assessment</span>
+                            <span data-lang="ja">評価</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span data-lang="en">Ogasawara</span>
+                            <span data-lang="ja">小笠原</span>
+                        </td>
+                        <td><span class="threshold-value">0.017</span></td>
+                        <td>
+                            <span data-lang="en">Very clear</span>
+                            <span data-lang="ja">非常に透明</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span data-lang="en">Sesoko</span>
+                            <span data-lang="ja">瀬底</span>
+                        </td>
+                        <td><span class="threshold-value">0.029</span></td>
+                        <td>
+                            <span data-lang="en">Clear</span>
+                            <span data-lang="ja">透明</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span data-lang="en">Manza</span>
+                            <span data-lang="ja">万座</span>
+                        </td>
+                        <td><span class="threshold-value">0.033</span></td>
+                        <td>
+                            <span data-lang="en">Clear</span>
+                            <span data-lang="ja">透明</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span data-lang="en">Kushimoto</span>
+                            <span data-lang="ja">串本</span>
+                        </td>
+                        <td><span class="threshold-value">0.036</span></td>
+                        <td>
+                            <span data-lang="en">Clear</span>
+                            <span data-lang="ja">透明</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span data-lang="en">Amami</span>
+                            <span data-lang="ja">奄美大島</span>
+                        </td>
+                        <td><span class="threshold-value">0.038</span></td>
+                        <td>
+                            <span data-lang="en">Clear</span>
+                            <span data-lang="ja">透明</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span data-lang="en">Kerama</span>
+                            <span data-lang="ja">慶良間</span>
+                        </td>
+                        <td><span class="threshold-value">0.039</span></td>
+                        <td>
+                            <span data-lang="en">Clear</span>
+                            <span data-lang="ja">透明</span>
+                        </td>
+                    </tr>
+                    <tr style="background: rgba(255, 193, 7, 0.1);">
+                        <td>
+                            <span data-lang="en">Sekisei Lagoon</span>
+                            <span data-lang="ja">石西礁湖</span>
+                        </td>
+                        <td><span class="threshold-value" style="color: #d97706;">0.164</span></td>
+                        <td>
+                            <span data-lang="en">High turbidity</span>
+                            <span data-lang="ja">高濁度</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">
+                <span data-lang="en">
+                    Data: VIIRS SNPP satellite (Aug 2024 sample). Mitigation range: 0.080–0.127 m⁻¹ (Sully 2020).
+                    Note: Satellite data has ~70% missing rate due to cloud cover.
+                </span>
+                <span data-lang="ja">
+                    データ：VIIRS SNPP衛星（2024年8月サンプル）。軽減範囲：0.080〜0.127 m⁻¹（Sully 2020）。
+                    注：衛星データは雲の影響で約70%が欠損。
+                </span>
+            </p>
+
+            <p style="margin-top: 1rem;">
+                <span data-lang="en">
+                    <strong>Implication:</strong> Japanese reefs are generally too clear to benefit from turbidity-mediated bleaching protection.
+                    Sekisei Lagoon exceeds the upper threshold—its high turbidity may actually impair coral photosynthesis.
+                    In-situ measurements with RINKO-Profiler will help validate these satellite estimates.
+                </span>
+                <span data-lang="ja">
+                    <strong>示唆：</strong>日本のサンゴ礁は概して透明すぎるため、濁度による白化軽減効果は期待できない。
+                    石西礁湖は上限を超えており、高濁度がむしろ光合成を阻害している可能性がある。
+                    RINKO-Profilerによる現地実測で、これらの衛星推定値を検証する。
+                </span>
+            </p>
+        </div>
+
+        <!-- Sediment Stress Thresholds -->
+        <div class="card">
+            <div class="card-title">
+                <span data-lang="en">Sediment Stress Thresholds</span>
+                <span data-lang="ja">堆積物ストレス閾値</span>
+            </div>
+            <p>
+                <span data-lang="en">
+                    A systematic review of 86 studies established sediment stress thresholds used by US federal agencies for coral reef protection.
+                </span>
+                <span data-lang="ja">
+                    86研究のシステマティックレビューにより、米国連邦機関がサンゴ礁保護に使用する堆積物ストレス閾値が確立されている。
+                </span>
+            </p>
+
+            <table class="threshold-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <span data-lang="en">Stress Type</span>
+                            <span data-lang="ja">ストレス種別</span>
+                        </th>
+                        <th>
+                            <span data-lang="en">Suspended (mg/L)</span>
+                            <span data-lang="ja">懸濁 (mg/L)</span>
+                        </th>
+                        <th>
+                            <span data-lang="en">Deposited</span>
+                            <span data-lang="ja">堆積</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span data-lang="en">Adult bleaching/tissue death</span>
+                            <span data-lang="ja">成体の白化・組織死</span>
+                        </td>
+                        <td><span class="threshold-value">3.2</span></td>
+                        <td><span class="threshold-value">4.9 mg/cm²/day</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span data-lang="en">Larval growth inhibition</span>
+                            <span data-lang="ja">幼生の成長阻害</span>
+                        </td>
+                        <td><span class="threshold-value">10</span></td>
+                        <td><span class="threshold-value">1 mg/cm²/day</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">
+                <span data-lang="en">Conversion: 1 NTU ≈ 1-3 mg/L. Source: Tuttle & Donahue 2022</span>
+                <span data-lang="ja">換算目安：1 NTU ≒ 1-3 mg/L。出典：Tuttle & Donahue 2022</span>
+            </p>
+        </div>
+
+        <!-- Turbidity × Temperature -->
+        <div class="card">
+            <div class="card-title">
+                <span data-lang="en">Turbidity × Temperature Interaction</span>
+                <span data-lang="ja">濁度 × 温度の相互作用</span>
+            </div>
+            <p>
+                <span data-lang="en">
+                    Recent research reveals a paradox: during heat waves, turbid sites may experience less bleaching than clear-water sites—
+                    but only for certain coral morphologies.
+                </span>
+                <span data-lang="ja">
+                    最近の研究は逆説的な発見を示す：熱波時、濁った海域は透明な海域より白化が軽い場合がある。
+                    ただし、これは特定のサンゴ形態に限られる。
+                </span>
+            </p>
+
+            <div class="insight-box">
+                <div class="insight-label">Zweifler et al. 2024</div>
+                <blockquote>
+                    <span data-lang="en">
+                        Turbid site (Somerville): DHW 8, Bleaching Index 14<br>
+                        Clear site (Bundegi): DHW 3, Bleaching Index 19.3<br>
+                        Higher heat stress, but less bleaching in turbid water.
+                    </span>
+                    <span data-lang="ja">
+                        濁水サイト（Somerville）：DHW 8、白化指数 14<br>
+                        透明水サイト（Bundegi）：DHW 3、白化指数 19.3<br>
+                        熱ストレスは高いが、濁水では白化が軽度。
+                    </span>
+                </blockquote>
+                <div class="source">— Western Australia, 2021 marine heat wave</div>
+            </div>
+
+            <p>
+                <span data-lang="en">
+                    However, for massive and encrusting corals, sediment deposition creates synergistic stress with heat.
+                    The interaction is morphology-dependent and not yet fully understood.
+                </span>
+                <span data-lang="ja">
+                    ただし塊状・被覆状サンゴでは、堆積物が熱と相乗的なストレスを生む。
+                    相互作用は形態依存であり、まだ十分に解明されていない。
+                </span>
+            </p>
+        </div>
+
+        <!-- Planned Observation -->
+        <div class="card">
+            <div class="card-title">
+                <span data-lang="en">Planned Observation Protocol</span>
+                <span data-lang="ja">計画中の観測プロトコル</span>
+            </div>
+            <p>
+                <span data-lang="en">
+                    A recreational diver carrying a multi-parameter profiler can collect depth-stratified data that no satellite can provide.
+                    Each dive generates continuous profiles along the descent/ascent path.
+                </span>
+                <span data-lang="ja">
+                    マルチパラメータプロファイラーを携行するレクリエーショナルダイバーは、衛星では得られない深度別データを収集できる。
+                    1ダイブで潜降・浮上経路に沿った連続プロファイルを生成。
+                </span>
+            </p>
+
+            <!-- Profile mockup SVG -->
+            <div class="profile-mockup">
+                <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background -->
+                    <rect fill="#f8f9fa" width="400" height="200"/>
+                    
+                    <!-- Grid lines -->
+                    <g stroke="#e2e8f0" stroke-width="1">
+                        <line x1="50" y1="20" x2="50" y2="160"/>
+                        <line x1="50" y1="160" x2="380" y2="160"/>
+                        <line x1="50" y1="55" x2="380" y2="55" stroke-dasharray="4"/>
+                        <line x1="50" y1="90" x2="380" y2="90" stroke-dasharray="4"/>
+                        <line x1="50" y1="125" x2="380" y2="125" stroke-dasharray="4"/>
+                    </g>
+                    
+                    <!-- Y-axis labels (Depth) -->
+                    <text x="45" y="25" text-anchor="end" font-size="9" fill="#718096">0m</text>
+                    <text x="45" y="60" text-anchor="end" font-size="9" fill="#718096">10m</text>
+                    <text x="45" y="95" text-anchor="end" font-size="9" fill="#718096">20m</text>
+                    <text x="45" y="130" text-anchor="end" font-size="9" fill="#718096">30m</text>
+                    <text x="45" y="165" text-anchor="end" font-size="9" fill="#718096">40m</text>
+                    
+                    <!-- Y-axis title -->
+                    <text x="15" y="90" text-anchor="middle" font-size="9" fill="#718096" transform="rotate(-90, 15, 90)">Depth</text>
+                    
+                    <!-- Descent profile (left side) -->
+                    <path d="M 80 25 Q 100 45, 110 70 Q 120 100, 140 130 Q 160 150, 180 155" 
+                          fill="none" stroke="#8b7355" stroke-width="2.5" stroke-linecap="round"/>
+                    
+                    <!-- Bottom time -->
+                    <line x1="180" y1="155" x2="220" y2="155" stroke="#8b7355" stroke-width="2.5" stroke-dasharray="4"/>
+                    
+                    <!-- Ascent profile (right side) -->
+                    <path d="M 220 155 Q 240 150, 260 130 Q 280 100, 300 70 Q 320 45, 340 25" 
+                          fill="none" stroke="#2b6cb0" stroke-width="2.5" stroke-linecap="round"/>
+                    
+                    <!-- Data points -->
+                    <g fill="#8b7355">
+                        <circle cx="80" cy="25" r="3"/>
+                        <circle cx="95" cy="40" r="3"/>
+                        <circle cx="110" cy="70" r="3"/>
+                        <circle cx="125" cy="100" r="3"/>
+                        <circle cx="140" cy="130" r="3"/>
+                        <circle cx="160" cy="145" r="3"/>
+                        <circle cx="180" cy="155" r="3"/>
+                    </g>
+                    <g fill="#2b6cb0">
+                        <circle cx="220" cy="155" r="3"/>
+                        <circle cx="240" cy="145" r="3"/>
+                        <circle cx="260" cy="130" r="3"/>
+                        <circle cx="280" cy="100" r="3"/>
+                        <circle cx="300" cy="70" r="3"/>
+                        <circle cx="320" cy="40" r="3"/>
+                        <circle cx="340" cy="25" r="3"/>
+                    </g>
+                    
+                    <!-- Legend -->
+                    <rect x="260" y="175" width="12" height="3" fill="#8b7355"/>
+                    <text x="275" y="180" font-size="8" fill="#718096">Descent</text>
+                    <rect x="320" y="175" width="12" height="3" fill="#2b6cb0"/>
+                    <text x="335" y="180" font-size="8" fill="#718096">Ascent</text>
+                    
+                    <!-- NTU annotation -->
+                    <text x="90" y="55" font-size="8" fill="#8b7355">0.8 NTU</text>
+                    <text x="150" y="140" font-size="8" fill="#8b7355">2.1 NTU</text>
+                </svg>
+                <div class="profile-label">
+                    <span data-lang="en">Expected depth-stratified profile from a single dive (conceptual)</span>
+                    <span data-lang="ja">1ダイブから得られる深度別プロファイルのイメージ（概念図）</span>
+                </div>
+            </div>
+
+            <table class="threshold-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <span data-lang="en">Parameter</span>
+                            <span data-lang="ja">パラメータ</span>
+                        </th>
+                        <th>
+                            <span data-lang="en">Source</span>
+                            <span data-lang="ja">取得元</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span data-lang="en">Temperature</span>
+                            <span data-lang="ja">水温</span>
+                        </td>
+                        <td>RINKO-Profiler</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span data-lang="en">Depth</span>
+                            <span data-lang="ja">深度</span>
+                        </td>
+                        <td>RINKO-Profiler</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span data-lang="en">Salinity</span>
+                            <span data-lang="ja">塩分</span>
+                        </td>
+                        <td>RINKO-Profiler</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span data-lang="en">Turbidity (FTU)</span>
+                            <span data-lang="ja">濁度（FTU）</span>
+                        </td>
+                        <td>RINKO-Profiler</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span data-lang="en">Chlorophyll-a</span>
+                            <span data-lang="ja">クロロフィルa</span>
+                        </td>
+                        <td>RINKO-Profiler</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span data-lang="en">Dissolved Oxygen (DO)</span>
+                            <span data-lang="ja">溶存酸素（DO）</span>
+                        </td>
+                        <td>RINKO-Profiler</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span data-lang="en">GPS Position</span>
+                            <span data-lang="ja">GPS位置</span>
+                        </td>
+                        <td>Garmin GLO 2</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span data-lang="en">Coral Photos</span>
+                            <span data-lang="ja">サンゴ写真</span>
+                        </td>
+                        <td>Insta360 GO 3S</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- No Data Notice -->
+        <div class="no-data-notice">
+            <div class="icon">📊</div>
+            <p>
+                <span data-lang="en">
+                    <strong>No data available yet.</strong><br>
+                    Data collection will begin after equipment delivery (March 2026).
+                </span>
+                <span data-lang="ja">
+                    <strong>データはまだありません。</strong><br>
+                    機材到着後（2026年3月）にデータ収集を開始予定です。
+                </span>
+            </p>
+        </div>
+
+        <!-- References -->
+        <section class="references">
+            <h3>
+                <span data-lang="en">References</span>
+                <span data-lang="ja">参考文献</span>
+            </h3>
+
+            <div class="ref-category">
+                <span data-lang="en">Satellite SST Validation</span>
+                <span data-lang="ja">衛星SST検証</span>
+            </div>
+            <ul class="ref-list">
+                <li>
+                    Heron SF, et al. (2016) Validation of reef-scale thermal stress satellite products for coral bleaching monitoring. 
+                    <em>Remote Sensing</em> 8(1):59. 
+                    <a href="https://doi.org/10.3390/RS8010059" target="_blank">doi:10.3390/RS8010059</a>
+                    <span style="color: var(--text-muted);"> — Cited 108</span>
+                </li>
+                <li>
+                    Bos AR, Pinsky ML (2025) Fine resolution satellite SSTs capture conditions experienced by corals at monthly but not daily timescales. 
+                    <em>Coral Reefs</em>. 
+                    <a href="https://doi.org/10.1007/s00338-024-02611-8" target="_blank">doi:10.1007/s00338-024-02611-8</a>
+                </li>
+                <li>
+                    Gomez AM, et al. (2020) Comparison of satellite-based sea surface temperature to in situ observations surrounding coral reefs in La Parguera, Puerto Rico. 
+                    <em>Journal of Marine Science and Engineering</em> 8(6):453. 
+                    <a href="https://doi.org/10.3390/jmse8060453" target="_blank">doi:10.3390/jmse8060453</a>
+                </li>
+            </ul>
+
+            <div class="ref-category">
+                <span data-lang="en">Depth & Mesophotic Reefs</span>
+                <span data-lang="ja">深度・中深海リーフ</span>
+            </div>
+            <ul class="ref-list">
+                <li>
+                    Frade PR, et al. (2018) Deep reefs of the Great Barrier Reef offer limited thermal refuge during mass coral bleaching. 
+                    <em>Nature Communications</em> 9:3447. 
+                    <a href="https://doi.org/10.1038/s41467-018-05741-0" target="_blank">doi:10.1038/s41467-018-05741-0</a>
+                    <span style="color: var(--text-muted);"> — Cited 123</span>
+                </li>
+                <li>
+                    Diaz C, et al. (2023) Coral bleaching at mesophotic depths associated with thermocline depth changes. 
+                    <em>Nature Communications</em> 14:6528. 
+                    <a href="https://doi.org/10.1038/s41467-023-42279-2" target="_blank">doi:10.1038/s41467-023-42279-2</a>
+                    <span style="color: var(--text-muted);"> — Cited 35</span>
+                </li>
+                <li>
+                    Storlazzi CD, et al. (2020) Internal tides can provide thermal refugia that will buffer some coral reefs from future global warming. 
+                    <em>Scientific Reports</em> 10:13435. 
+                    <a href="https://doi.org/10.1038/s41598-020-70372-9" target="_blank">doi:10.1038/s41598-020-70372-9</a>
+                    <span style="color: var(--text-muted);"> — Cited 49</span>
+                </li>
+                <li>
+                    Smith TB, et al. (2016) Caribbean mesophotic coral ecosystems are unlikely climate change refugia. 
+                    <em>Global Change Biology</em> 22(8):2756-2765. 
+                    <a href="https://doi.org/10.1111/gcb.13175" target="_blank">doi:10.1111/gcb.13175</a>
+                    <span style="color: var(--text-muted);"> — Cited 138</span>
+                </li>
+            </ul>
+
+            <div class="ref-category">
+                <span data-lang="en">Dissolved Oxygen & Hypoxia</span>
+                <span data-lang="ja">溶存酸素・低酸素</span>
+            </div>
+            <ul class="ref-list">
+                <li>
+                    Hughes DJ, et al. (2020) Coral reef survival under accelerating ocean deoxygenation. 
+                    <em>Nature Climate Change</em> 10:296-307. 
+                    <a href="https://doi.org/10.1038/s41558-020-0737-9" target="_blank">doi:10.1038/s41558-020-0737-9</a>
+                    <span style="color: var(--text-muted);"> — Cited 170</span>
+                </li>
+                <li>
+                    Johnson MD, et al. (2021) Rapid ecosystem-scale consequences of acute deoxygenation on a Caribbean coral reef. 
+                    <em>Nature Communications</em> 12:4522. 
+                    <a href="https://doi.org/10.1038/s41467-021-24777-3" target="_blank">doi:10.1038/s41467-021-24777-3</a>
+                    <span style="color: var(--text-muted);"> — Cited 68</span>
+                </li>
+                <li>
+                    Alderdice R, et al. (2020) Hypoxia-inducible factor as a mechanism linking hypoxia and coral bleaching susceptibility. 
+                    <em>Global Change Biology</em> 27:1396-1411. 
+                    <a href="https://doi.org/10.1111/gcb.15436" target="_blank">doi:10.1111/gcb.15436</a>
+                    <span style="color: var(--text-muted);"> — Cited 55</span>
+                </li>
+            </ul>
+
+            <div class="ref-category">
+                <span data-lang="en">Chlorophyll-a & Heterotrophy</span>
+                <span data-lang="ja">クロロフィルa・従属栄養</span>
+            </div>
+            <ul class="ref-list">
+                <li>
+                    Keighan MM, et al. (2023) Moderate chlorophyll-a environments reduce coral bleaching during thermal stress in Yap, Micronesia. 
+                    <em>Scientific Reports</em> 13:9582. 
+                    <a href="https://doi.org/10.1038/s41598-023-36355-2" target="_blank">doi:10.1038/s41598-023-36355-2</a>
+                </li>
+                <li>
+                    Ferrier-Pagès C, et al. (2018) Heterotrophy promotes the re-establishment of photosynthate translocation in a symbiotic coral after heat stress. 
+                    <em>Scientific Reports</em> 8:13066. 
+                    <a href="https://doi.org/10.1038/s41598-018-31435-4" target="_blank">doi:10.1038/s41598-018-31435-4</a>
+                    <span style="color: var(--text-muted);"> — Cited 68</span>
+                </li>
+            </ul>
+
+            <div class="ref-category">
+                <span data-lang="en">Turbidity & Light Stress</span>
+                <span data-lang="ja">濁度・光ストレス</span>
+            </div>
+            <ul class="ref-list">
+                <li>
+                    Sully S, van Woesik R (2020) Turbid reefs moderate coral bleaching under climate-related temperature stress. 
+                    <em>Global Change Biology</em> 26(3):1367-1373. 
+                    <a href="https://doi.org/10.1111/gcb.14948" target="_blank">doi:10.1111/gcb.14948</a>
+                    <span style="color: var(--text-muted);"> — Cited 145</span>
+                </li>
+                <li>
+                    Cacciapaglia C, van Woesik R (2016) Climate-change refugia: shading reef corals by turbidity. 
+                    <em>Global Change Biology</em> 22:1145-1154. 
+                    <a href="https://doi.org/10.1111/gcb.13166" target="_blank">doi:10.1111/gcb.13166</a>
+                    <span style="color: var(--text-muted);"> — Ryukyu Islands identified as turbidity refuge</span>
+                </li>
+                <li>
+                    Lesser MP (2024) An irradiance dependency model of oxidative stress in coral bleaching. 
+                    <em>Coral Reefs</em> 43:1583-1599. 
+                    <a href="https://doi.org/10.1007/s00338-024-02545-1" target="_blank">doi:10.1007/s00338-024-02545-1</a>
+                </li>
+                <li>
+                    Tuttle LJ, Donahue MJ (2022) Effects of sediment exposure on corals: a systematic review of experimental studies. 
+                    <em>Environmental Evidence</em> 11:4. 
+                    <a href="https://doi.org/10.1186/s13750-022-00256-0" target="_blank">doi:10.1186/s13750-022-00256-0</a>
+                    <span style="color: var(--text-muted);"> — Cited 51</span>
+                </li>
+            </ul>
+
+            <div class="ref-category">
+                <span data-lang="en">Salinity & Compound Events</span>
+                <span data-lang="ja">塩分・複合イベント</span>
+            </div>
+            <ul class="ref-list">
+                <li>
+                    Bahr KD, et al. (2015) Temporal and spatial variability in coral health along a bleaching event on the Kohala coast in 2014. 
+                    <em>PeerJ</em> 3:e1136. 
+                    <a href="https://doi.org/10.7717/peerj.1136" target="_blank">doi:10.7717/peerj.1136</a>
+                    <span style="color: var(--text-muted);"> — Cited 79 (freshwater flood + heat)</span>
+                </li>
+            </ul>
+
+            <div class="ref-category">
+                <span data-lang="en">Multi-factor Models & Machine Learning</span>
+                <span data-lang="ja">多因子モデル・機械学習</span>
+            </div>
+            <ul class="ref-list">
+                <li>
+                    Cheung MWM, et al. (2025) Beyond temperature metrics: How thermal history, water flow, and light availability mediate coral bleaching responses. 
+                    <em>Global Ecology and Biogeography</em> 34:e70105. 
+                    <a href="https://doi.org/10.1111/geb.70105" target="_blank">doi:10.1111/geb.70105</a>
+                </li>
+                <li>
+                    Helgoe J, et al. (2024) Triggers, cascades, and endpoints: Connecting the dots of coral bleaching mechanisms. 
+                    <em>Biological Reviews</em> 99:715-752. 
+                    <a href="https://doi.org/10.1111/brv.13042" target="_blank">doi:10.1111/brv.13042</a>
+                    <span style="color: var(--text-muted);"> — Cited 63</span>
+                </li>
+            </ul>
+
+            <div class="ref-category">
+                <span data-lang="en">Japan-Specific Studies</span>
+                <span data-lang="ja">日本の研究</span>
+            </div>
+            <ul class="ref-list">
+                <li>
+                    Yasumoto K, et al. (2025) Phosphate pollution linked to coral decline in Sekisei Lagoon. 
+                    <em>Marine Biotechnology</em>. 
+                    <a href="https://doi.org/10.1007/s10126-025-10412-5" target="_blank">doi:10.1007/s10126-025-10412-5</a>
+                    <span style="color: var(--text-muted);"> — 117 sites surveyed</span>
+                </li>
+                <li>
+                    Hongo C, Yamano H (2013) Species-specific responses of corals to bleaching events on anthropogenically turbid reefs on Okinawa Island, Japan. 
+                    <em>PLoS ONE</em> 8(4):e60952. 
+                    <a href="https://doi.org/10.1371/journal.pone.0060952" target="_blank">doi:10.1371/journal.pone.0060952</a>
+                    <span style="color: var(--text-muted);"> — Cited 110</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <span data-lang="en">© 2026 marine-obs.org | <a href="index.html">Home</a></span>
+            <span data-lang="ja">© 2026 marine-obs.org | <a href="index.html">ホーム</a></span>
+        </p>
+    </footer>
+
+    <script>
+        // Language handling
+        let currentLang = localStorage.getItem('lang') || 'en';
+
+        function setLang(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            applyLang();
+            document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
+            document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
+        }
+
+        function applyLang() {
+            document.body.classList.toggle('ja', currentLang === 'ja');
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = el.dataset.lang === currentLang ? '' : 'none';
+            });
+            document.getElementById('lang-en').classList.toggle('active', currentLang === 'en');
+            document.getElementById('lang-ja').classList.toggle('active', currentLang === 'ja');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            applyLang();
+            document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
+            document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
+        });
+    </script>
+
+    <!-- Navigation JS -->
+    <script>
+    (function() {
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        const sidebarClose = document.getElementById('sidebar-close');
+        
+        function openSidebar() {
+            sidebar.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            hamburger.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        hamburger.addEventListener('click', function() {
+            if (sidebar.classList.contains('active')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+        
+        sidebarOverlay.addEventListener('click', closeSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                closeSidebar();
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

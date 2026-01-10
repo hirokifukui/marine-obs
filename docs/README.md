@@ -23,7 +23,7 @@
 | global-bleaching.html | 世界の白化状況 |
 | japan-bleaching.html | 日本の白化状況 |
 | sekisei-cover.html | 石西礁湖被度グラフ（iframe用） |
-| turbidity.html | 濁度観測（計画中） |
+| field-monitoring.html | 現場モニタリング（計画中） |
 | bleaching.html | 白化とは |
 | vulnerability.html | 種別脆弱性 |
 | coral-basics.html | サンゴとは |
@@ -38,7 +38,7 @@
 
 ## 構成
 ```
-css/  main.css, dhw.css, extreme.css, vulnerability.css, species-guide.css, spawning.css, turbidity.css, contact.css, global-bleaching.css, bleaching.css
+css/  main.css, dhw.css, extreme.css, vulnerability.css, species-guide.css, spawning.css, field-monitoring.css, contact.css, global-bleaching.css, bleaching.css
 js/  lang.js, lang-simple.js, charts.js, marine-monitor.js, gear-recs.js
 data/  *.json（チャート用、一部は未使用）
 sql/  RPC関数定義
