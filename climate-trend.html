@@ -287,6 +287,10 @@
                     <span class="site-dot" style="background: var(--kerama)"></span>
                     <span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span>
                 </button>
+                <button class="site-btn" data-site="manza">
+                    <span class="site-dot" style="background: var(--manza)"></span>
+                    <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
+                </button>
                 <button class="site-btn" data-site="sesoko">
                     <span class="site-dot" style="background: var(--sesoko)"></span>
                     <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
@@ -833,7 +837,7 @@
             const tbody = document.querySelector('#trend-table tbody');
             const lang = document.body.classList.contains('ja') ? 'ja' : 'en';
             
-            const sites = ['sekisei', 'sesoko', 'kerama', 'amami', 'ogasawara', 'kushimoto'];
+            const sites = ['sekisei', 'manza', 'sesoko', 'kerama', 'amami', 'ogasawara', 'kushimoto'];
             let html = '';
             
             sites.forEach(site => {
