@@ -1411,3 +1411,438 @@
         font-size: 0.75rem;
     }
 }
+
+/* ===== New Sections: Deep Considerations (2026-01-10) ===== */
+
+/* Recovery Interval Section */
+.recovery-interval-viz {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+    .recovery-interval-viz {
+        grid-template-columns: 1fr;
+    }
+}
+
+.interval-comparison {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.interval-comparison h5 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.interval-bar {
+    height: 20px;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0.5rem 0;
+    position: relative;
+}
+
+.interval-bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.interval-bar-fill.recovery {
+    background: var(--accent-green);
+}
+
+.interval-bar-fill.bleaching {
+    background: var(--coral-severe);
+}
+
+.interval-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.interval-value.green { color: var(--accent-green); }
+.interval-value.red { color: var(--coral-severe); }
+
+.interval-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Japan Bleaching Timeline */
+.japan-timeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.timeline-year-badge {
+    background: var(--coral-severe);
+    color: white;
+    padding: 0.4rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.timeline-year-badge::after {
+    content: attr(data-interval);
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.timeline-year-badge.severe {
+    background: var(--coral-critical);
+}
+
+/* PDO Section */
+.pdo-explainer {
+    background: linear-gradient(135deg, #fef3c7, #fef9c3);
+    border: 1px solid #fcd34d;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.pdo-explainer h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #92400e;
+    margin-bottom: 0.75rem;
+}
+
+.pdo-explainer p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.climate-matrix {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 640px) {
+    .climate-matrix {
+        grid-template-columns: 1fr;
+    }
+}
+
+.matrix-cell {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.matrix-cell h5 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.matrix-cell.danger {
+    border-left: 4px solid var(--coral-critical);
+}
+
+.matrix-cell.danger h5 {
+    color: var(--coral-critical);
+}
+
+.matrix-cell.moderate {
+    border-left: 4px solid var(--coral-moderate);
+}
+
+.matrix-cell.moderate h5 {
+    color: var(--accent-warm);
+}
+
+.matrix-cell.low {
+    border-left: 4px solid var(--accent-green);
+}
+
+.matrix-cell.low h5 {
+    color: var(--accent-green);
+}
+
+.matrix-cell p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* IOD Section */
+.iod-box {
+    background: linear-gradient(135deg, #fae8ff, #f5d0fe);
+    border: 1px solid #e879f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.iod-box h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #86198f;
+    margin-bottom: 0.75rem;
+}
+
+.iod-box p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Prediction Section */
+.prediction-timeline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.prediction-timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-teal), var(--coral-moderate));
+    border-radius: 2px;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.prediction-point {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background: var(--bg-card);
+    padding: 0.5rem;
+}
+
+.prediction-point .icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.prediction-point .label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.prediction-point .time {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+@media (max-width: 640px) {
+    .prediction-timeline {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .prediction-timeline::before {
+        width: 4px;
+        height: 80%;
+        left: 50%;
+        top: 10%;
+        bottom: 10%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Adaptation Hope Section */
+.adaptation-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+@media (max-width: 640px) {
+    .adaptation-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+.adaptation-stat {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    border: 1px solid #6ee7b7;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.adaptation-stat .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-green);
+}
+
+.adaptation-stat .label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+/* Future Projection */
+.future-scenarios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+@media (max-width: 640px) {
+    .future-scenarios {
+        grid-template-columns: 1fr;
+    }
+}
+
+.scenario-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.scenario-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.scenario-card.optimistic::before {
+    background: var(--accent-green);
+}
+
+.scenario-card.pessimistic::before {
+    background: var(--coral-critical);
+}
+
+.scenario-card h5 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.scenario-card.optimistic h5 {
+    color: var(--accent-green);
+}
+
+.scenario-card.pessimistic h5 {
+    color: var(--coral-critical);
+}
+
+.scenario-card .temp {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.scenario-card.optimistic .temp {
+    color: var(--accent-green);
+}
+
+.scenario-card.pessimistic .temp {
+    color: var(--coral-critical);
+}
+
+.scenario-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Warning callout */
+.warning-callout {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-left: 4px solid var(--coral-critical);
+    border-radius: 0 8px 8px 0;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+}
+
+.warning-callout h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--coral-critical);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.warning-callout p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Key insight box */
+.key-insight {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border: 1px solid #7dd3fc;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+}
+
+.key-insight h5 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0369a1;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.key-insight p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
