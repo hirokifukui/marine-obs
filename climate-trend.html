@@ -548,8 +548,11 @@
                 
                 const data = await response.json();
                 
+                // Filter out incomplete years (2025 has only 1 month)
+                const filteredData = data.filter(row => row.year <= 2024);
+                
                 // Group by site
-                data.forEach(row => {
+                filteredData.forEach(row => {
                     if (!annualData[row.site]) {
                         annualData[row.site] = [];
                     }
