@@ -1,0 +1,536 @@
+#!/usr/bin/env python3
+"""
+Stormglass 24時間版 一括インポート + 日次更新（予報対応）
+
+使い方:
+  # 初回: 全期間を一括インポート（2020-01-01 〜 10日後）
+  python3 bulk_import_weather.py --full
+
+  # 日次: 2日前〜10日後を取得（Cloud Schedulerで1日1回）
+  python3 bulk_import_weather.py
+
+  # オプション
+  python3 bulk_import_weather.py --location ogasawara  # 特定地点のみ
+  python3 bulk_import_weather.py --dry-run             # 確認のみ
+  python3 bulk_import_weather.py --no-notify           # 通知なし
+
+環境変数:
+  SUPABASE_URL, SUPABASE_KEY, STORMGLASS_KEY
+  TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+"""
+
+import argparse
+import os
+import sys
+import time
+import requests
+from datetime import datetime, timezone, timedelta
+
+# ========== 設定（環境変数から取得） ==========
+SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
+STORMGLASS_KEY = os.environ.get("STORMGLASS_KEY", "")
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
+
+STORMGLASS_URL = "https://api.stormglass.io/v2/weather/point"
+
+# 取得範囲: 2日前 〜 10日後（Stormglass予報上限）
+PAST_DAYS = 2
+FORECAST_DAYS = 10
+DEFAULT_START = datetime(2020, 1, 1, tzinfo=timezone.utc)
+
+PARAMS = ['waveHeight', 'wavePeriod', 'waveDirection', 'windWaveHeight', 'windWavePeriod', 'windWaveDirection', 
+          'swellHeight', 'swellPeriod', 'swellDirection', 'windSpeed', 'windDirection', 'gust', 
+          'currentSpeed', 'currentDirection', 'airTemperature', 'waterTemperature', 
+          'cloudCover', 'precipitation', 'humidity', 'pressure', 'visibility', 'seaLevel']
+
+COLUMN_MAP = {
+    'waveHeight': 'wave_height', 'wavePeriod': 'wave_period', 'waveDirection': 'wave_direction',
+    'windWaveHeight': 'wind_wave_height', 'windWavePeriod': 'wind_wave_period', 'windWaveDirection': 'wind_wave_direction',
+    'swellHeight': 'swell_height', 'swellPeriod': 'swell_period', 'swellDirection': 'swell_direction',
+    'windSpeed': 'wind_speed', 'windDirection': 'wind_direction', 'gust': 'gust',
+    'currentSpeed': 'current_speed', 'currentDirection': 'current_direction',
+    'airTemperature': 'air_temperature', 'waterTemperature': 'water_temperature',
+    'cloudCover': 'cloud_cover', 'precipitation': 'precipitation', 'humidity': 'humidity',
+    'pressure': 'pressure', 'visibility': 'visibility', 'seaLevel': 'sea_level'
+}
+
+UTC = timezone.utc
+JST = timezone(timedelta(hours=9))
+
+# 地点の短縮名
+LOCATION_SHORT = {
+    'okinawa_sesoko': '瀬底', 'okinawa_manza': '万座', 'kerama': '慶良間', 'sekisei': '石西',
+    'amami': '奄美', 'ogasawara': '小笠原', 'hachijojima': '八丈島', 'kushimoto': '串本',
+    'ishigaki_taketomi': '竹富',
+    'maldives_north_male': 'N.Male', 'maldives_south_male': 'S.Male', 
+    'maldives_north_ari': 'N.Ari', 'maldives_south_ari': 'S.Ari'
+}
+
+# 地点の表示順
+LOCATION_ORDER = ['okinawa_sesoko', 'okinawa_manza', 'kerama', 'sekisei', 'amami',
+                  'ogasawara', 'hachijojima', 'kushimoto', 'ishigaki_taketomi', 
+                  'maldives_north_male', 'maldives_south_male', 'maldives_north_ari', 'maldives_south_ari']
+
+
+def check_env():
+    """必須環境変数をチェック"""
+    missing = []
+    if not SUPABASE_URL:
+        missing.append("SUPABASE_URL")
+    if not SUPABASE_KEY:
+        missing.append("SUPABASE_KEY")
+    if not STORMGLASS_KEY:
+        missing.append("STORMGLASS_KEY")
+    
+    if missing:
+        print(f"❌ 必須環境変数が未設定: {', '.join(missing)}")
+        sys.exit(1)
+
+
+def send_telegram(message, is_error=False):
+    """Telegram通知を送信"""
+    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+        print("⚠️ Telegram設定なし（通知スキップ）")
+        return False
+    
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    try:
+        resp = requests.post(url, json={
+            "chat_id": TELEGRAM_CHAT_ID,
+            "text": message,
+            "parse_mode": "HTML"
+        }, timeout=10)
+        return resp.status_code == 200
+    except Exception as e:
+        print(f"⚠️ Telegram送信失敗: {e}")
+        return False
+
+
+def get_locations(filter_name=None):
+    """Supabaseから地点取得"""
+    headers = {"apikey": SUPABASE_KEY, "Authorization": f"Bearer {SUPABASE_KEY}"}
+    url = f"{SUPABASE_URL}/rest/v1/locations?active=eq.true&select=name,lat,lng"
+    if filter_name:
+        url += f"&name=eq.{filter_name}"
+    resp = requests.get(url, headers=headers)
+    resp.raise_for_status()
+    return resp.json()
+
+
+def get_latest_datetime(location_name):
+    """最新データのUTC日時を取得"""
+    headers = {"apikey": SUPABASE_KEY, "Authorization": f"Bearer {SUPABASE_KEY}"}
+    url = f"{SUPABASE_URL}/rest/v1/marine_weather?location=eq.{location_name}&select=datetime&order=datetime.desc&limit=1"
+    resp = requests.get(url, headers=headers)
+    resp.raise_for_status()
+    data = resp.json()
+    if data:
+        return datetime.fromisoformat(data[0]['datetime'].replace('Z', '+00:00'))
+    return None
+
+
+def get_latest_weather(location_name):
+    """最新の海況データを取得"""
+    headers = {"apikey": SUPABASE_KEY, "Authorization": f"Bearer {SUPABASE_KEY}"}
+    url = (f"{SUPABASE_URL}/rest/v1/marine_weather?location=eq.{location_name}"
+           f"&select=datetime,wave_height,swell_height,wind_speed,wind_direction,water_temperature,air_temperature,cloud_cover,precipitation"
+           f"&order=datetime.desc&limit=1")
+    resp = requests.get(url, headers=headers)
+    resp.raise_for_status()
+    data = resp.json()
+    return data[0] if data else None
+
+
+def fetch_stormglass(lat, lng, start_utc, end_utc, retry=3):
+    """Stormglass APIから取得（10日チャンク）"""
+    headers = {"Authorization": STORMGLASS_KEY}
+    all_hours = []
+    chunk_days = 10
+    current = start_utc
+    
+    while current < end_utc:
+        chunk_end = min(current + timedelta(days=chunk_days), end_utc)
+        params = {
+            'lat': lat, 'lng': lng,
+            'params': ','.join(PARAMS),
+            'start': current.strftime('%Y-%m-%dT%H:%M:%SZ'),
+            'end': chunk_end.strftime('%Y-%m-%dT%H:%M:%SZ')
+        }
+        
+        for attempt in range(retry):
+            try:
+                resp = requests.get(STORMGLASS_URL, params=params, headers=headers, timeout=60)
+                resp.raise_for_status()
+                all_hours.extend(resp.json().get('hours', []))
+                break
+            except Exception as e:
+                if attempt < retry - 1:
+                    print(f"    リトライ中... ({e})")
+                    time.sleep(2 ** attempt)
+                else:
+                    raise
+        
+        print(f"    {current.strftime('%Y-%m-%d')}...", end=" ", flush=True)
+        current = chunk_end
+        time.sleep(0.3)
+    
+    return all_hours
+
+
+def safe_get(data, key):
+    """値取得（sgソース優先）"""
+    if key not in data:
+        return None
+    val = data[key]
+    return val.get('sg') if isinstance(val, dict) else val
+
+
+def transform_to_records(hours, location_name, lat, lng):
+    """APIレスポンス → DBレコード（重複排除）"""
+    records = []
+    seen = set()
+    
+    for hour in hours:
+        utc_str = hour.get('time')
+        if not utc_str:
+            continue
+        
+        if utc_str in seen:
+            continue
+        seen.add(utc_str)
+        
+        utc_dt = datetime.fromisoformat(utc_str.replace('Z', '+00:00'))
+        
+        record = {
+            'location': location_name,
+            'datetime': utc_dt.strftime('%Y-%m-%dT%H:%M:%S+00:00'),
+            'lat': lat,
+            'lng': lng
+        }
+        for api_key, db_col in COLUMN_MAP.items():
+            record[db_col] = safe_get(hour, api_key)
+        
+        records.append(record)
+    
+    records.sort(key=lambda r: r['datetime'])
+    return records
+
+
+def upload_to_supabase(records, batch_size=500):
+    """Supabaseにupsert"""
+    headers = {
+        "apikey": SUPABASE_KEY,
+        "Authorization": f"Bearer {SUPABASE_KEY}",
+        "Content-Type": "application/json",
+        "Prefer": "resolution=merge-duplicates"
+    }
+    
+    uploaded = 0
+    for i in range(0, len(records), batch_size):
+        batch = records[i:i+batch_size]
+        resp = requests.post(
+            f"{SUPABASE_URL}/rest/v1/marine_weather?on_conflict=location,datetime",
+            headers=headers,
+            json=batch,
+            timeout=60
+        )
+        if resp.status_code in (200, 201):
+            uploaded += len(batch)
+        else:
+            print(f"    ⚠️ Error: {resp.status_code} {resp.text[:200]}")
+    
+    return uploaded
+
+
+def get_weather_emoji(cloud_cover, precipitation):
+    """天候を絵文字で表現"""
+    if precipitation and precipitation > 0:
+        return "🌧️"
+    if cloud_cover is None:
+        return "❓"
+    if cloud_cover < 30:
+        return "☀️"
+    elif cloud_cover < 70:
+        return "⛅"
+    else:
+        return "☁️"
+
+
+def get_wind_direction_arrow(degrees):
+    """風向を矢印で表現（風が吹いてくる方向）"""
+    if degrees is None:
+        return ""
+    arrows = ["↓", "↙", "←", "↖", "↑", "↗", "→", "↘"]
+    index = int((degrees + 22.5) / 45) % 8
+    return arrows[index]
+
+
+def get_temp_emoji(water_temp):
+    """水温を絵文字で表現（ウェットスーツ基準）"""
+    if water_temp is None:
+        return "❓"
+    if water_temp >= 29:
+        return "🔥"  # 3mm/ラッシュ
+    elif water_temp >= 26:
+        return "😊"  # 5mm快適
+    elif water_temp >= 23:
+        return "🌊"  # 5mm+α
+    else:
+        return "🥶"  # ドライ検討
+
+
+def get_sea_condition_emoji(wave_height, swell_height, wind_speed):
+    """海況を絵文字で表現"""
+    total_wave = (wave_height or 0) + (swell_height or 0)
+    wind = wind_speed or 0
+    
+    if total_wave >= 2.0 or wind >= 12:
+        return "🔴"
+    elif total_wave >= 1.0 or wind >= 8:
+        return "🟡"
+    else:
+        return "🟢"
+
+
+def build_weather_line(location_name, weather_data):
+    """1地点分の海況行を生成"""
+    if not weather_data:
+        short = LOCATION_SHORT.get(location_name, location_name)
+        return f"❌ {short}: 取得失敗"
+    
+    short = LOCATION_SHORT.get(location_name, location_name)
+    
+    weather_emoji = get_weather_emoji(weather_data.get('cloud_cover'), weather_data.get('precipitation'))
+    air_temp = weather_data.get('air_temperature') or 0
+    water_temp = weather_data.get('water_temperature') or 0
+    temp_emoji = get_temp_emoji(water_temp)
+    wind_speed = weather_data.get('wind_speed') or 0
+    wind_arrow = get_wind_direction_arrow(weather_data.get('wind_direction'))
+    wave = weather_data.get('wave_height') or 0
+    swell = weather_data.get('swell_height') or 0
+    sea_emoji = get_sea_condition_emoji(wave, swell, wind_speed)
+    
+    return f"{weather_emoji} {short}: {air_temp:.0f}℃/{water_temp:.0f}℃{temp_emoji} 風{wind_speed:.0f}m/s{wind_arrow} 波{wave:.1f}m うねり{swell:.1f}m {sea_emoji}"
+
+
+def build_telegram_message(weather_by_location, total_count, elapsed, errors, success_count, total_locations):
+    """Telegram通知メッセージを生成"""
+    # 最新データの日時を取得
+    sample_dt = None
+    for loc in LOCATION_ORDER:
+        w = weather_by_location.get(loc)
+        if w and w.get('datetime'):
+            sample_dt = datetime.fromisoformat(w['datetime'].replace('Z', '+00:00'))
+            break
+    
+    if sample_dt:
+        utc_str = sample_dt.strftime('%m/%d %H:%M UTC')
+        jst_dt = sample_dt.astimezone(JST)
+        jst_str = jst_dt.strftime('%m/%d %H:%M JST')
+        dt_display = f"{utc_str} / {jst_str}"
+    else:
+        dt_display = ""
+    
+    lines = [f"🌊 海況速報 ({dt_display})", "━━━━━━━━━━━━━━━"]
+    
+    # 各地点の海況
+    for loc in LOCATION_ORDER:
+        if loc in weather_by_location:
+            lines.append(build_weather_line(loc, weather_by_location[loc]))
+    
+    lines.append("━━━━━━━━━━━━━━━")
+    
+    # 取得結果
+    if errors:
+        lines.append(f"⚠️ {total_count}件取得 ({success_count}/{total_locations}地点成功)")
+    elif total_count == 0:
+        lines.append(f"✅ 0件取得（全地点最新）")
+    else:
+        lines.append(f"✅ {total_count}件取得 ({elapsed:.0f}秒)")
+    
+    lines.append("🔥29℃↑ 😊26-28℃ 🌊23-25℃ 🥶22℃↓ ｜ 🟢良好 🟡注意 🔴荒れ")
+    
+    return "\n".join(lines)
+
+
+
+
+# ========== Cloud Functions エントリーポイント ==========
+try:
+    import functions_framework
+    
+    @functions_framework.http
+    def update_marine_weather(request):
+        """Cloud Functions HTTPトリガー（Cloud Scheduler用）"""
+        import json
+        
+        try:
+            # 環境変数チェック
+            check_env()
+            
+            start_time = time.time()
+            now_utc = datetime.now(UTC)
+            default_start_utc = now_utc - timedelta(days=PAST_DAYS)
+            end_utc = now_utc + timedelta(days=FORECAST_DAYS)
+            
+            locations = get_locations()
+            if not locations:
+                return json.dumps({"error": "No locations found"}), 500
+            
+            results = []
+            errors = []
+            total = 0
+            
+            for loc in locations:
+                name = loc['name']
+                try:
+                    hours = fetch_stormglass(loc['lat'], loc['lng'], default_start_utc, end_utc)
+                    records = transform_to_records(hours, name, loc['lat'], loc['lng'])
+                    uploaded = upload_to_supabase(records)
+                    total += uploaded
+                    results.append({'name': name, 'count': uploaded, 'status': 'ok'})
+                except Exception as e:
+                    results.append({'name': name, 'count': 0, 'status': 'error', 'error': str(e)})
+                    errors.append({'name': name, 'error': str(e)})
+            
+            elapsed = time.time() - start_time
+            
+            # Telegram通知
+            weather_by_location = {}
+            for loc in locations:
+                weather_by_location[loc['name']] = get_latest_weather(loc['name'])
+            
+            success_count = len(locations) - len(errors)
+            msg = build_telegram_message(weather_by_location, total, elapsed, errors, success_count, len(locations))
+            send_telegram(msg, is_error=bool(errors))
+            
+            return json.dumps({
+                "status": "success",
+                "total_records": total,
+                "locations": len(locations),
+                "errors": len(errors),
+                "elapsed_sec": round(elapsed, 1)
+            }), 200
+            
+        except Exception as e:
+            return json.dumps({"error": str(e)}), 500
+
+except ImportError:
+    pass  # ローカル実行時はスキップ
+
+def main():
+    parser = argparse.ArgumentParser(description='Stormglass 24時間版インポート（予報対応）')
+    parser.add_argument('--location', type=str, help='特定地点のみ')
+    parser.add_argument('--full', action='store_true', help='全期間一括（2020〜10日後）')
+    parser.add_argument('--dry-run', action='store_true', help='確認のみ')
+    parser.add_argument('--no-notify', action='store_true', help='通知なし')
+    args = parser.parse_args()
+    
+    check_env()
+    
+    start_time = time.time()
+    
+    # 取得範囲: 2日前 〜 10日後
+    now_utc = datetime.now(UTC)
+    default_start_utc = now_utc - timedelta(days=PAST_DAYS)
+    end_utc = now_utc + timedelta(days=FORECAST_DAYS)
+    
+    print("=" * 50)
+    print("Stormglass 24時間版インポート（予報対応）")
+    print("=" * 50)
+    print(f"📅 現在: {now_utc.strftime('%Y-%m-%d %H:%M')} (UTC)")
+    print(f"📅 取得範囲: {default_start_utc.strftime('%Y-%m-%d')} 〜 {end_utc.strftime('%Y-%m-%d')} ({PAST_DAYS}日前〜{FORECAST_DAYS}日後)")
+    print(f"🕐 モード: {'全期間一括' if args.full else '日次更新'}")
+    print()
+    
+    locations = get_locations(args.location)
+    if not locations:
+        print("❌ 対象地点がありません")
+        return
+    
+    print(f"📍 対象地点: {len(locations)}箇所")
+    
+    location_ranges = []
+    for loc in locations:
+        name = loc['name']
+        
+        if args.full:
+            start_utc = DEFAULT_START
+        else:
+            # 日次更新: 常に2日前〜10日後を取得
+            start_utc = default_start_utc
+        
+        hours_to_fetch = int((end_utc - start_utc).total_seconds() / 3600)
+        requests_estimate = max(1, (hours_to_fetch // 240) + 1)
+        
+        location_ranges.append({
+            'name': name, 'lat': loc['lat'], 'lng': loc['lng'],
+            'start_utc': start_utc, 'end_utc': end_utc,
+            'hours': hours_to_fetch, 'requests': requests_estimate
+        })
+        
+        print(f"   - {name}: {start_utc.strftime('%m/%d')} 〜 {end_utc.strftime('%m/%d')} ({hours_to_fetch}h, {requests_estimate}req)")
+    
+    total_requests = sum(lr['requests'] for lr in location_ranges)
+    print(f"\n📊 推定APIリクエスト数: {total_requests}")
+    print()
+    
+    if args.dry_run:
+        print("🔍 dry-run: 実行しません")
+        return
+    
+    # 対話モード確認
+    if location_ranges and os.isatty(0):
+        input("Enter で開始...")
+        print()
+    
+    # 実行
+    results = []
+    errors = []
+    total = 0
+    
+    for loc in location_ranges:
+        name = loc['name']
+        print(f"🌊 {name}...")
+        
+        try:
+            hours = fetch_stormglass(loc['lat'], loc['lng'], loc['start_utc'], loc['end_utc'])
+            print(f"\n   API: {len(hours)} 時間")
+            
+            records = transform_to_records(hours, name, loc['lat'], loc['lng'])
+            print(f"   変換: {len(records)} レコード")
+            
+            uploaded = upload_to_supabase(records)
+            print(f"   ✅ {uploaded} 件 upsert")
+            total += uploaded
+            
+            results.append({'name': name, 'count': uploaded, 'status': 'ok'})
+        except Exception as e:
+            print(f"   ❌ {e}")
+            results.append({'name': name, 'count': 0, 'status': 'error', 'error': str(e)})
+            errors.append({'name': name, 'error': str(e)})
+        print()
+    
+    elapsed = time.time() - start_time
+    
+    print("=" * 50)
+    print(f"✅ 完了: 合計 {total} 件 ({elapsed:.1f}秒)")
+    print("=" * 50)
+    
+    # Telegram通知
+    if not args.no_notify:
+        # 最新の海況データを取得
+        weather_by_location = {}
+        all_locations = get_locations()
+        for loc in all_locations:
+            weather_by_location[loc['name']] = get_latest_weather(loc['name'])
+        
+        success_count = len(all_locations) - len(errors)
+        msg = build_telegram_message(weather_by_location, total, elapsed, errors, success_count, len(all_locations))
+        send_telegram(msg, is_error=bool(errors))
+
+
+if __name__ == "__main__":
+    main()

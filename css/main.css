@@ -2999,3 +2999,30 @@ main.detail-page {
     background: linear-gradient(transparent 60%, rgba(229, 62, 62, 0.2) 60%);
     padding: 0 2px;
 }
+
+/* ========================================
+   UV INDEX & TIDE STYLES (2026-01-10)
+   ======================================== */
+
+.marine-summary-row-extra {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed var(--border);
+}
+
+.uv-low { color: var(--text-secondary); }
+.uv-moderate { color: #f59e0b; }
+.uv-high { color: #f97316; }
+.uv-veryhigh { color: #ef4444; }
+.uv-extreme { color: #dc2626; font-weight: 600; }
+
+.tide-value {
+    font-size: 0.7rem;
+    letter-spacing: -0.02em;
+}
+
+.marine-summary-item small {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-left: 2px;
+}
