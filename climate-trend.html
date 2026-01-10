@@ -278,34 +278,34 @@
                 <span data-lang="en">Select Site</span>
                 <span data-lang="ja">地点を選択</span>
             </div>
-            <div class="site-selector">
-                <button class="site-btn active" data-site="sekisei">
-                    <span class="site-dot" style="background: var(--sekisei)"></span>
-                    <span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span>
-                </button>
-                <button class="site-btn" data-site="kerama">
-                    <span class="site-dot" style="background: var(--kerama)"></span>
-                    <span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span>
-                </button>
-                <button class="site-btn" data-site="manza">
-                    <span class="site-dot" style="background: var(--manza)"></span>
-                    <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
-                </button>
-                <button class="site-btn" data-site="sesoko">
-                    <span class="site-dot" style="background: var(--sesoko)"></span>
-                    <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
-                </button>
-                <button class="site-btn" data-site="amami">
-                    <span class="site-dot" style="background: var(--amami)"></span>
-                    <span data-lang="en">Amami</span><span data-lang="ja">奄美</span>
+                        <div class="site-selector">
+                <button class="site-btn" data-site="kushimoto">
+                    <span class="site-dot" style="background: var(--kushimoto)"></span>
+                    <span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span>
                 </button>
                 <button class="site-btn" data-site="ogasawara">
                     <span class="site-dot" style="background: var(--ogasawara)"></span>
                     <span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span>
                 </button>
-                <button class="site-btn" data-site="kushimoto">
-                    <span class="site-dot" style="background: var(--kushimoto)"></span>
-                    <span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span>
+                <button class="site-btn" data-site="amami">
+                    <span class="site-dot" style="background: var(--amami)"></span>
+                    <span data-lang="en">Amami</span><span data-lang="ja">奄美大島</span>
+                </button>
+                <button class="site-btn" data-site="sesoko">
+                    <span class="site-dot" style="background: var(--sesoko)"></span>
+                    <span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span>
+                </button>
+                <button class="site-btn" data-site="manza">
+                    <span class="site-dot" style="background: var(--manza)"></span>
+                    <span data-lang="en">Manza</span><span data-lang="ja">万座</span>
+                </button>
+                <button class="site-btn" data-site="kerama">
+                    <span class="site-dot" style="background: var(--kerama)"></span>
+                    <span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span>
+                </button>
+                <button class="site-btn active" data-site="sekisei">
+                    <span class="site-dot" style="background: var(--sekisei)"></span>
+                    <span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span>
                 </button>
             </div>
         </div>
@@ -837,7 +837,7 @@
             const tbody = document.querySelector('#trend-table tbody');
             const lang = document.body.classList.contains('ja') ? 'ja' : 'en';
             
-            const sites = ['sekisei', 'manza', 'sesoko', 'kerama', 'amami', 'ogasawara', 'kushimoto'];
+            const sites = ['kushimoto', 'ogasawara', 'amami', 'sesoko', 'manza', 'kerama', 'sekisei'];
             let html = '';
             
             sites.forEach(site => {
