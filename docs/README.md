@@ -50,6 +50,8 @@ sql/  RPC関数定義
 | SST最新値 | Supabase `sst_daily` テーブル |
 | 極端日数 | Supabase RPC `get_extreme_days()` |
 | DHWピーク | Supabase RPC `get_dhw_all_years()` + `dhw_annual_peak` テーブル |
+| UV・日出日没 | Supabase `uv_daily` テーブル（OpenWeather） |
+| 潮汐 | Supabase `tide_extremes` テーブル |
 | 日次更新 | `~/Scripts/scheduled-jobs/sync-sst-daily/` |
 
 ## Supabase RPC関数
