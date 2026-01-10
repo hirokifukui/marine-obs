@@ -8,20 +8,8 @@
 | モニ1000 | 実測白化率（将来） |
 | Stormglass | 海況予報 + 雲量 |
 | NOAA CPC | ONI（月次、1950〜） |
-| NOAA PSL | PDO、DMI（月次） |
-| IRI/CPC | ENSO予測（月次） |
-| 気象庁 | 台風接近数（沖縄） |
 
 衛星DHWは現地の2〜3倍高く出る。「目安」として提示。
-
-## 恩納村予測データ（onna-forecast.json）
-| 項目 | ソース | 更新頻度 |
-|------|--------|----------|
-| ONI | NOAA CPC | 自動（月次） |
-| PDO | NOAA PSL | 自動（月次） |
-| DMI | NOAA PSL | 自動（月次） |
-| ENSO予測 | IRI/CPC | 手動（月次） |
-| 台風接近 | 気象庁 | 手動（夏季） |
 
 ## 閾値
 | 指標 | 値 | 出典 |
@@ -44,7 +32,6 @@
 | Lachs 2021 | DHW計算最適化（当サイト準拠） |
 | Butcherine 2023 | 光×熱ストレス相互作用 |
 | van Woesik 2011 | Winners and losers |
-| Houk 2020 | ENSO+PDO複合リスク |
 
 Zotero: ThermalStress-Bleaching, CoralSpawning
 
@@ -58,7 +45,7 @@ Zotero: ThermalStress-Bleaching, CoralSpawning
 | 小笠原 | 27.083 | 142.179 |
 | 奄美大島 | 28.105 | 129.160 |
 | 瀬底 | 26.65 | 127.85 |
-| 万座（恩納村） | 26.515 | 127.830 |
+| 万座 | 26.515 | 127.830 |
 | 慶良間 | 26.186 | 127.374 |
 | 石西礁湖 | 24.337 | 124.035 |
 
