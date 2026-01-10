@@ -1,0 +1,74 @@
+{
+  "target": {
+    "location": "恩納村",
+    "location_en": "Onna Village",
+    "coordinates": {
+      "lat": 26.515,
+      "lon": 127.83
+    },
+    "season": "2026年夏",
+    "season_en": "Summer 2026",
+    "period": "6-9月",
+    "period_en": "Jun-Sep"
+  },
+  "current_climate": {
+    "oni": {
+      "value": -0.55,
+      "phase": "la_nina",
+      "period": "2025-12",
+      "season": "OND"
+    },
+    "pdo": {
+      "value": -2.81,
+      "phase": "negative",
+      "period": "2025-08"
+    },
+    "dmi": {
+      "value": 0.15,
+      "phase": "neutral",
+      "period": "2025-04"
+    }
+  },
+  "forecast": {
+    "enso": {
+      "source": "IRI/CPC",
+      "issued": "2026-01",
+      "target_season": "JAS 2026",
+      "el_nino": 35,
+      "neutral": 50,
+      "la_nina": 15
+    }
+  },
+  "typhoon": {
+    "year": 2026,
+    "region": "沖縄",
+    "approaches": {
+      "may": 0,
+      "jun": null,
+      "jul": null,
+      "aug": null,
+      "sep": null
+    },
+    "total": 0,
+    "climatology": 7.7,
+    "note": "5月末時点"
+  },
+  "risk_assessment": {
+    "score": 27,
+    "level": "low",
+    "factors": {
+      "baseline": 20,
+      "current_enso": 7,
+      "forecast_enso": 10,
+      "pdo_modifier": -10,
+      "iod_modifier": 0,
+      "typhoon_risk": 0
+    }
+  },
+  "summary": {
+    "ja": "現在のラニーニャは弱まり、夏までに中立へ移行する見込み。強い負のPDOが緩衝効果をもたらす。台風シーズンはこれから。現時点でのリスクは低い。",
+    "en": "Current La Niña weakening, expected transition to neutral by summer. Negative PDO provides some buffering effect."
+  },
+  "updated": "2026-01-10",
+  "next_update": "月次更新"
+}

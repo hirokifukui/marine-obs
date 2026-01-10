@@ -2097,3 +2097,178 @@
     color: rgba(255, 255, 255, 0.4);
     text-align: center;
 }
+
+/* =============================================================================
+   ENSO Forecast Section
+   ============================================================================= */
+
+.enso-forecast {
+    margin-top: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.forecast-header {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.forecast-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.forecast-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.forecast-bar-label {
+    width: 80px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: right;
+}
+
+.forecast-bar-container {
+    flex: 1;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.forecast-bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.forecast-bar-fill.el-nino {
+    background: linear-gradient(90deg, #ff8a65, #ff5722);
+}
+
+.forecast-bar-fill.neutral {
+    background: linear-gradient(90deg, #a5d6a7, #66bb6a);
+}
+
+.forecast-bar-fill.la-nina {
+    background: linear-gradient(90deg, #4fc3f7, #03a9f4);
+}
+
+.forecast-bar-value {
+    width: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.forecast-issued {
+    margin-top: 0.75rem;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+/* =============================================================================
+   Typhoon Tracker Section
+   ============================================================================= */
+
+.typhoon-tracker {
+    margin-top: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.typhoon-header {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.typhoon-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .typhoon-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.typhoon-cell {
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.typhoon-cell-month {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.25rem;
+}
+
+.typhoon-cell-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.typhoon-cell-value.zero {
+    color: #4caf50;
+}
+
+.typhoon-cell-value.low {
+    color: #ffeb3b;
+}
+
+.typhoon-cell-value.normal {
+    color: #a5d6a7;
+}
+
+.typhoon-cell-value.pending {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.typhoon-cell.total {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.typhoon-cell.total .typhoon-cell-value {
+    color: #fff;
+}
+
+.typhoon-note {
+    margin-top: 0.75rem;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+.typhoon-climatology {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.5rem;
+    text-align: center;
+}
