@@ -25,7 +25,7 @@
 .hero-section {
     background: linear-gradient(135deg, var(--header-bg) 0%, #1a3a5c 100%);
     border-radius: 12px;
-    padding: 1.75rem 2rem;
+    padding: 2.5rem 2rem;
     margin-bottom: 2.5rem;
     text-align: center;
     color: #fff;
@@ -39,7 +39,7 @@
 .hero-tagline {
     font-size: 1.6rem;
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     letter-spacing: -0.01em;
 }
 
@@ -51,7 +51,7 @@ body.ja .hero-tagline {
     font-size: 0.95rem;
     opacity: 0.9;
     max-width: 600px;
-    margin: 0 auto 1rem;
+    margin: 0 auto 1.5rem;
     line-height: 1.7;
 }
 
@@ -111,7 +111,7 @@ body.ja .hero-tagline {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .driver-icon {
@@ -139,7 +139,7 @@ body.ja .hero-tagline {
     font-size: 0.9rem;
     line-height: 1.7;
     color: var(--text-secondary);
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .driver-impact {
@@ -189,7 +189,7 @@ body.ja .hero-tagline {
     font-size: 1rem;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
@@ -262,7 +262,7 @@ body.ja .hero-tagline {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 600px) {
@@ -290,7 +290,7 @@ body.ja .hero-tagline {
 .comparison-item h5 {
     font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     color: var(--text-primary);
 }
 
@@ -400,7 +400,7 @@ body.ja .hero-tagline {
 .matrix-container {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .predictability-matrix {
