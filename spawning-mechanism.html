@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coral Spawning Mechanism | marine-obs.org</title>
+    <!-- SEO / OGP -->
+    <meta name="description" content="サンゴ産卵のメカニズムを科学的に解説。月光、水温、潮汐がどのように産卵タイミングを決定するか。">
+    <meta property="og:title" content="サンゴ産卵のしくみ | marine-obs.org">
+    <meta property="og:description" content="サンゴ産卵のメカニズムを科学的に解説。月光、水温、潮汐がどのように産卵タイミングを決定するか。">
+    <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
+    <meta property="og:url" content="https://marine-obs.org/spawning-mechanism.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/spawning.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="images/logo-circle.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
+            </a>
+            
+                        <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul class="nav-links">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Monitoring</span>
+                            <span data-lang="ja">モニタリング</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                            <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                            <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                            <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge">計画中</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Climate</span>
+                            <span data-lang="ja">気候</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                            <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span></a></li>
+                            <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Bleaching</span>
+                            <span data-lang="ja">白化</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                            <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                            <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll &amp; Bleaching</span><span data-lang="ja">クロロフィルと白化</span></a></li>
+                            <li><a href="dissolved-oxygen-bleaching.html"><span data-lang="en">Dissolved Oxygen &amp; Bleaching</span><span data-lang="ja">溶存酸素と白化</span></a></li>
+                            <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Learn</span>
+                            <span data-lang="ja">サンゴを知る</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                            <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                            <li><a href="spawning-forecast.html"><span data-lang="en">Spawning Forecast</span><span data-lang="ja">産卵予測</span></a></li>
+                            <li><a href="spawning-mechanism.html"><span data-lang="en">Spawning Mechanism</span><span data-lang="ja">産卵のしくみ</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">For Divers</span>
+                            <span data-lang="ja">ダイバー向け</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                            <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Reference</span>
+                            <span data-lang="ja">リファレンス</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                            <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                            <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                            <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button id="lang-en" class="active">English</button>
+                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <button id="lang-ja">日本語</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Monitoring</span>
+                    <span data-lang="ja">モニタリング</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                    <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                    <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                    <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                    <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge-mobile">計画中</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Climate</span>
+                    <span data-lang="ja">気候</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                    <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span></a></li>
+                    <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Bleaching</span>
+                    <span data-lang="ja">白化</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                    <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                    <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll &amp; Bleaching</span><span data-lang="ja">クロロフィルと白化</span></a></li>
+                    <li><a href="dissolved-oxygen-bleaching.html"><span data-lang="en">Dissolved Oxygen &amp; Bleaching</span><span data-lang="ja">溶存酸素と白化</span></a></li>
+                    <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Learn</span>
+                    <span data-lang="ja">サンゴを知る</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                    <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                    <li><a href="spawning-forecast.html"><span data-lang="en">Spawning Forecast</span><span data-lang="ja">産卵予測</span></a></li>
+                            <li><a href="spawning-mechanism.html"><span data-lang="en">Spawning Mechanism</span><span data-lang="ja">産卵のしくみ</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">For Divers</span>
+                    <span data-lang="ja">ダイバー向け</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                    <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Reference</span>
+                    <span data-lang="ja">リファレンス</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                    <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                    <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                    <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> / 
+            <span data-lang="en">Coral Spawning Mechanism</span>
+            <span data-lang="ja">サンゴ産卵のしくみ</span>
+        </nav>
+
+
+        <!-- ===== PART 1: THE SURPRISE ===== -->
+
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Corals Have No Eyes, No Brain. And Yet—</span>
+                <span data-lang="ja">サンゴには目も脳もない。それでも——</span>
+            </h2>
+            
+            <div class="story-box">
+                <p class="story-lead" data-lang="en">
+                    In 2007, Oren Levy and colleagues made an unexpected discovery.
+                </p>
+                <p class="story-lead" data-lang="ja">
+                    2007年、オーレン・レヴィらは予期せぬ発見をしました。
+                </p>
+                
+                <p data-lang="en" style="line-height: 1.9; margin-top: 1rem;">
+                    They found <strong>cryptochrome</strong>—a blue-light photoreceptor previously known only in plants and insects—in the reef-building coral <em>Acropora millepora</em>. A protein that senses light, in an animal without eyes.
+                </p>
+                <p data-lang="ja" style="line-height: 1.9; margin-top: 1rem;">
+                    彼らは、それまで植物や昆虫でしか知られていなかった青色光受容体<strong>クリプトクローム</strong>を、造礁サンゴ<em>Acropora millepora</em>から発見したのです。目を持たない動物の中に、光を感知するタンパク質が存在していた。
+                </p>
+                
+                <p data-lang="en" style="line-height: 1.9; margin-top: 1rem;">
+                    This was the first clue that corals are not passively reacting to their environment. They are <em>reading</em> it.
+                </p>
+                <p data-lang="ja" style="line-height: 1.9; margin-top: 1rem;">
+                    これは、サンゴが環境に受動的に反応しているのではなく、環境を<em>読んでいる</em>ことを示す最初の手がかりでした。
+                </p>
+            </div>
+            
+            <div class="story-box" style="margin-top: 1.5rem; border-left: 3px solid var(--neap-teal);">
+                <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--neap-teal);">
+                    <span data-lang="en">2022: They Can Tell Sunlight from Moonlight</span>
+                    <span data-lang="ja">2022年：太陽光と月光を区別できる</span>
+                </h3>
+                <p data-lang="en" style="line-height: 1.9;">
+                    Fifteen years later, a team in Vienna made an even more striking discovery. Working with marine bristle worms—which share an ancient lineage with corals—they found that a related cryptochrome protein (L-Cry) can <strong>distinguish between sunlight and moonlight</strong>.
+                </p>
+                <p data-lang="ja" style="line-height: 1.9;">
+                    15年後、ウィーンの研究チームはさらに驚くべき発見をしました。サンゴと古い系統を共有するゴカイを使った研究で、類似のクリプトクローム（L-Cry）が<strong>太陽光と月光を区別できる</strong>ことを明らかにしたのです。
+                </p>
+                
+                <p data-lang="en" style="line-height: 1.9; margin-top: 1rem;">
+                    Not by intensity alone. The protein's cofactor (FAD) undergoes photoreduction when exposed to light, then recovers in darkness—but <strong>the recovery kinetics differ</strong> depending on whether the light source was sun or moon. The protein literally encodes the identity of the light source in its biochemical state.
+                </p>
+                <p data-lang="ja" style="line-height: 1.9; margin-top: 1rem;">
+                    強度だけではありません。タンパク質の補因子（FAD）は光を浴びると光還元され、暗闘で回復しますが、<strong>その回復速度が光源によって異なる</strong>のです。太陽か月かという光源の「身元」が、生化学的状態として文字通りエンコードされている。
+                </p>
+                
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem;">
+                    <span data-lang="en">— Poehn et al. (2022) Nature Communications</span>
+                    <span data-lang="ja">— Poehn et al. (2022) Nature Communications</span>
+                </p>
+            </div>
+            
+            <div class="integration-insight" style="margin-top: 1.5rem;">
+                <span data-lang="en">Corals are not simply detecting "light on" or "light off." They may be reading the <em>quality</em> of light—and from that, inferring the phase of the moon.</span>
+                <span data-lang="ja">サンゴは単に「明るい」「暗い」を検知しているのではありません。光の<em>質</em>を読み取り、そこから月の満ち欠けを推測している可能性がある。</span>
+            </div>
+        </section>
+
+        <!-- ===== PART 2: THE MECHANISM ===== -->
+
+        <section class="content-section" style="background: linear-gradient(135deg, rgba(220, 38, 38, 0.03) 0%, rgba(255, 255, 255, 0) 100%);">
+            <h2>
+                <span data-lang="en">The Trigger: Darkness, Not Moonlight</span>
+                <span data-lang="ja">トリガー：月光ではなく、暗闇</span>
+            </h2>
+            
+            <div class="story-box" style="border-left: 3px solid #dc2626;">
+                <p class="story-lead" data-lang="en">
+                    For decades, researchers noted that corals spawn "5-8 days after full moon." But what is the actual signal?
+                </p>
+                <p class="story-lead" data-lang="ja">
+                    長年、研究者たちはサンゴが「満月後5-8日」に産卵することを観察してきました。しかし、実際のシグナルは何なのか？
+                </p>
+                
+                <p data-lang="en" style="line-height: 1.9; margin-top: 1rem;">
+                    In 2021, Lin and colleagues in Taiwan answered this with an elegant experiment. They covered corals with aluminum sheets at different times relative to the full moon.
+                </p>
+                <p data-lang="ja" style="line-height: 1.9; margin-top: 1rem;">
+                    2021年、台湾のリンらがエレガントな実験でこれに答えました。満月に対して異なるタイミングでサンゴをアルミシートで覆ったのです。
+                </p>
+            </div>
+            
+            <div class="story-box" style="margin-top: 1.5rem; border-left: 3px solid #dc2626;">
+                <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; color: #dc2626;">
+                    <span data-lang="en">The Result</span>
+                    <span data-lang="ja">結果</span>
+                </h3>
+                <p data-lang="en" style="line-height: 1.9;">
+                    <strong>Spawning always occurred exactly 5 days after shading began</strong>—regardless of the actual lunar phase. Cover the coral before full moon, and it spawns early. Cover it after, and it spawns on schedule.
+                </p>
+                <p data-lang="ja" style="line-height: 1.9;">
+                    <strong>産卵は遮光開始からちょうど5日後に必ず起きました</strong>——実際の月相に関係なく。満月前に遮光すれば早く産卵し、満月後に遮光すれば予定通り産卵する。
+                </p>
+                
+                <p data-lang="en" style="line-height: 1.9; margin-top: 1rem;">
+                    The insight: moonlight doesn't say "spawn now"—it says "<strong>don't spawn yet</strong>." The trigger is the <em>absence</em> of light: the dark gap between sunset and moonrise that naturally appears after full moon.
+                </p>
+                <p data-lang="ja" style="line-height: 1.9; margin-top: 1rem;">
+                    洞察：月光は「産卵せよ」ではなく「<strong>まだ産卵するな</strong>」と言っているのです。トリガーは光の<em>不在</em>——満月後に自然に現れる、日没から月の出までの暗黒期間です。
+                </p>
+                
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem;">
+                    <span data-lang="en">— Lin et al. (2021) PNAS</span>
+                    <span data-lang="ja">— Lin et al. (2021) PNAS</span>
+                </p>
+            </div>
+            
+            <div class="neap-section" style="margin-top: 1.5rem;">
+                <div class="section-title">
+                    🔬 <span data-lang="en">Confirmed in Acropora (2025)</span>
+                    <span data-lang="ja">ミドリイシでも確認（2025年）</span>
+                </div>
+                <p style="line-height: 1.9; font-size: 0.9rem; color: var(--text-secondary);">
+                    <span data-lang="en">de la Torre Cerro et al. tested <em>Acropora</em> in Palau and found the same mechanism: 2-3 consecutive nights of darkness post-sunset advanced spawning. The light gap mechanism is more widespread than previously thought.</span>
+                    <span data-lang="ja">de la Torre Cerroらはパラオでミドリイシを実験し、同じメカニズムを発見しました。日没後2-3晩連続の暗闘が産卵を前倒しにする。光のギャップメカニズムは従来考えられていたより広範に機能しています。</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== PART 3: THE COINCIDENCE MODEL ===== -->
+
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">The Circadian Gate: When Sensitivity Peaks</span>
+                <span data-lang="ja">概日リズムの門：感受性がピークに達するとき</span>
+            </h2>
+            
+            <div class="story-box">
+                <p class="story-lead" data-lang="en">
+                    But here's the puzzle: if darkness is the trigger, why don't corals spawn during every new moon, when nights are darkest?
+                </p>
+                <p class="story-lead" data-lang="ja">
+                    しかし、ここで謎が生まれます。暗闘がトリガーなら、なぜサンゴは夜が最も暗い新月のたびに産卵しないのでしょうか？
+                </p>
+                
+                <p data-lang="en" style="line-height: 1.9; margin-top: 1rem;">
+                    Komoto et al. (2022) proposed an answer: the <strong>External Coincidence Model</strong>. Corals don't respond to moonlight at all times—only during specific phases of their circadian (daily) rhythm.
+                </p>
+                <p data-lang="ja" style="line-height: 1.9; margin-top: 1rem;">
+                    Komotoら（2022）が答えを提案しました——<strong>外的一致モデル</strong>（External Coincidence Model）です。サンゴは常に月光に反応するのではなく、概日リズム（日周リズム）の特定のフェーズでのみ反応する。
+                </p>
+            </div>
+            
+            <div class="hierarchy-grid" style="margin-top: 1.5rem;">
+                <div class="hierarchy-card" style="border-top: 3px solid var(--neap-teal);">
+                    <div class="hierarchy-scale">
+                        <span data-lang="en">Merulinid Corals</span>
+                        <span data-lang="ja">キクメイシ科</span>
+                    </div>
+                    <div class="hierarchy-question">
+                        <span data-lang="en">Sensitive near sunset</span>
+                        <span data-lang="ja">日没付近に感受性</span>
+                    </div>
+                    <div class="hierarchy-factors">
+                        <span data-lang="en">Responds to the presence/absence of moonlight in the hours after sunset</span>
+                        <span data-lang="ja">日没後の数時間における月光の有無に反応</span>
+                    </div>
+                    <div class="hierarchy-precision">
+                        <span data-lang="en">→ Punctual spawning</span>
+                        <span data-lang="ja">→ 定期産卵型</span>
+                    </div>
+                </div>
+                <div class="hierarchy-card" style="border-top: 3px solid #f59e0b;">
+                    <div class="hierarchy-scale">
+                        <span data-lang="en">Acropora Corals</span>
+                        <span data-lang="ja">ミドリイシ属</span>
+                    </div>
+                    <div class="hierarchy-question">
+                        <span data-lang="en">Sensitive near midnight</span>
+                        <span data-lang="ja">真夜中付近に感受性</span>
+                    </div>
+                    <div class="hierarchy-factors">
+                        <span data-lang="en">Responds to moonlight signals around midnight; integrates temperature</span>
+                        <span data-lang="ja">真夜中頃の月光シグナルに反応；水温も統合</span>
+                    </div>
+                    <div class="hierarchy-precision">
+                        <span data-lang="en">→ Flexible spawning</span>
+                        <span data-lang="ja">→ 不定期産卵型</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="integration-insight" style="margin-top: 1.5rem;">
+                <strong><span data-lang="en">The Key Insight:</span><span data-lang="ja">鍵となる洞察：</span></strong>
+                <span data-lang="en"> The moon phase that brings darkness during a coral's "sensitive window" is what triggers spawning. Different species have different windows—explaining why some spawn like clockwork while others spread across several nights.</span>
+                <span data-lang="ja"> サンゴの「感受性ウィンドウ」に暗闇をもたらす月相が、産卵のトリガーとなります。種によってウィンドウが異なるため、時計のように正確に産卵する種もあれば、数夜にわたって産卵する種もあるのです。</span>
+            </div>
+            
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem;">
+                <span data-lang="en">— Komoto et al. (2022) Journal of Biological Rhythms</span>
+                <span data-lang="ja">— Komoto et al. (2022) Journal of Biological Rhythms</span>
+            </p>
+        </section>
+
+        <!-- ===== PART 4: THE ADVANTAGE ===== -->
+
+        <section class="content-section" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.03) 0%, rgba(255, 255, 255, 0) 100%);">
+            <h2>
+                <span data-lang="en">The Advantage: Calm Water, Better Odds</span>
+                <span data-lang="ja">利点：穏やかな海、高い成功率</span>
+            </h2>
+            
+            <div class="story-box" style="border-left: 3px solid var(--neap-teal);">
+                <p class="story-lead" data-lang="en">
+                    Why did evolution tune corals to respond to darkness at these specific times?
+                </p>
+                <p class="story-lead" data-lang="ja">
+                    なぜ進化は、これらの特定の時間に暗闇に反応するようサンゴを調整したのでしょうか？
+                </p>
+                
+                <p data-lang="en" style="line-height: 1.9; margin-top: 1rem;">
+                    Days 5-8 after full moon correspond to the <strong>last quarter moon</strong>—a period of <strong>neap tide</strong>. During neap tides, the difference between high and low water is minimal, and tidal currents are gentle.
+                </p>
+                <p data-lang="ja" style="line-height: 1.9; margin-top: 1rem;">
+                    満月後5-8日は<strong>下弦の月</strong>に相当し、<strong>小潮</strong>の時期です。小潮では潮位差が最小になり、潮流も穏やかになります。
+                </p>
+                
+                <p data-lang="en" style="line-height: 1.9; margin-top: 1rem;">
+                    For broadcast spawners like corals, this matters enormously. When egg-sperm bundles are released into calm water, they stay concentrated rather than being swept away—<strong>dramatically increasing fertilization success</strong>.
+                </p>
+                <p data-lang="ja" style="line-height: 1.9; margin-top: 1rem;">
+                    サンゴのような放卵放精生物にとって、これは極めて重要です。卵と精子のバンドルが穏やかな海に放たれると、流されずに集中したまま保たれ、<strong>受精成功率が劇的に向上</strong>します。
+                </p>
+            </div>
+            
+            <div class="neap-section" style="margin-top: 1.5rem;">
+                <div class="section-title">
+                    🌊 <span data-lang="en">Wind Matters Too</span>
+                    <span data-lang="ja">風も重要</span>
+                </div>
+                <p style="line-height: 1.9;">
+                    <span data-lang="en">Van Woesik (2010) found that regional wind patterns also correlate with spawning timing. Corals in regions with longer calm periods show tighter spawning synchrony. The "calm before the spawn" is not just about tides—surface mixing from wind also dilutes gametes.</span>
+                    <span data-lang="ja">Van Woesik（2010）は、地域の風パターンも産卵タイミングと相関することを発見しました。無風期間が長い地域のサンゴは、より厳密な産卵同期を示します。「産卵前の静けさ」は潮汐だけでなく、風による表層撹拌も配偶子を希釈するのです。</span>
+                </p>
+            </div>
+            
+            <div class="integration-insight" style="margin-top: 1.5rem;">
+                <strong><span data-lang="en">One Signal, Two Benefits:</span><span data-lang="ja">一つのシグナル、二つの利点：</span></strong>
+                <span data-lang="en"> By responding to darkness after full moon, corals achieve both synchronization (spawning together) and optimal conditions (calm water for fertilization). Evolution has refined this elegant solution over millions of years.</span>
+                <span data-lang="ja"> 満月後の暗闇に応答することで、サンゴは同期（一斉に産卵）と最適条件（受精に適した穏やかな海）の両方を達成します。進化はこの洗練された解を何百万年もかけて磨き上げてきました。</span>
+            </div>
+        </section>
+
+        <!-- ===== PART 5: THE MOLECULAR CASCADE ===== -->
+
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Inside the Coral: A Two-Week Countdown</span>
+                <span data-lang="ja">サンゴの体内：2週間のカウントダウン</span>
+            </h2>
+            
+            <div class="story-box">
+                <p class="story-lead" data-lang="en">
+                    Yoshioka et al. (2025) tracked gene expression in <em>Acropora</em> corals over the two weeks before spawning and discovered something remarkable: <span class="highlight">the internal countdown operates independently of moonlight</span>.
+                </p>
+                <p class="story-lead" data-lang="ja">
+                    Yoshioka et al. (2025) は産卵前の2週間にわたって<em>ミドリイシ</em>の遺伝子発現を追跡し、驚くべきことを発見しました——<span class="highlight">内部のカウントダウンは月光から独立して作動している</span>。
+                </p>
+            </div>
+            
+            <div class="molecule-section">
+                <p class="molecule-intro">
+                    <span data-lang="en">The spawning program unfolds in four waves:</span>
+                    <span data-lang="ja">産卵プログラムは4つの波として展開します：</span>
+                </p>
+                <div class="wave-timeline">
+                    <div class="wave-item">
+                        <div class="wave-timing">T − 14 days</div>
+                        <div class="wave-title">
+                            <span data-lang="en">Wave 1: Colony Communication</span>
+                            <span data-lang="ja">第1波：コロニー間通信</span>
+                        </div>
+                        <div class="wave-desc">
+                            <span data-lang="en">Prostaglandin secretion begins chemical "conversations" between nearby colonies.</span>
+                            <span data-lang="ja">プロスタグランジン分泌により、近隣コロニー間で化学的な「会話」が始まります。</span>
+                        </div>
+                    </div>
+                    <div class="wave-item">
+                        <div class="wave-timing">T − 7~14 days</div>
+                        <div class="wave-title">
+                            <span data-lang="en">Wave 2: Gametogenesis</span>
+                            <span data-lang="ja">第2波：配偶子形成</span>
+                        </div>
+                        <div class="wave-desc">
+                            <span data-lang="en">TGF-β signaling drives sperm formation.</span>
+                            <span data-lang="ja">TGF-βシグナリングが精子形成を駆動。</span>
+                        </div>
+                    </div>
+                    <div class="wave-item">
+                        <div class="wave-timing">T − 7 days</div>
+                        <div class="wave-title">
+                            <span data-lang="en">Wave 3: Bundle Preparation</span>
+                            <span data-lang="ja">第3波：バンドル準備</span>
+                        </div>
+                        <div class="wave-desc">
+                            <span data-lang="en">Sperm undergo capacitation (final maturation).</span>
+                            <span data-lang="ja">精子がcapacitation（最終成熟）を経験。</span>
+                        </div>
+                    </div>
+                    <div class="wave-item final">
+                        <div class="wave-timing">T − 0</div>
+                        <div class="wave-title">
+                            <span data-lang="en">Wave 4: The Trigger</span>
+                            <span data-lang="ja">第4波：トリガー</span>
+                        </div>
+                        <div class="wave-desc">
+                            <span data-lang="en">Transcription factor ELF1 activates the final cascade. Synchronized release begins.</span>
+                            <span data-lang="ja">転写因子ELF1が最終カスケードを活性化。同期した放出が始まります。</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="molecule-insight">
+                    <span data-lang="en">This moonlight-independent internal program may explain why <em>Acropora</em> is the most diverse and abundant coral genus on Earth—it has a robust timing system that works even when moonlight cues are disrupted.</span>
+                    <span data-lang="ja">この月光非依存の内部プログラムは、なぜ<em>ミドリイシ</em>が地球上で最も多様で豊富なサンゴ属であるかを説明するかもしれません——月光の手がかりが乱れても機能する堅牢なタイミングシステムを持っているのです。</span>
+                    <br><span style="font-size: 0.75rem; opacity: 0.8;">— Yoshioka et al. 2025, Molecular Ecology</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PART 6: THE THREATS ===== -->
+
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">When the System Breaks</span>
+                <span data-lang="ja">システムが壊れるとき</span>
+            </h2>
+            
+            <div class="story-box">
+                <p class="story-lead" data-lang="en">
+                    Synchrony is not enough. Density matters too.
+                </p>
+                <p class="story-lead" data-lang="ja">
+                    同期だけでは十分ではありません。密度も重要です。
+                </p>
+            </div>
+
+            <!-- Threat 1: Desynchronization -->
+            <div class="disruption-card" style="margin-top: 1.5rem;">
+                <div class="disruption-icon">💡</div>
+                <div class="disruption-title">
+                    <span data-lang="en">Artificial Light at Night (ALAN)</span>
+                    <span data-lang="ja">夜間人工光（ALAN）</span>
+                </div>
+                <div class="disruption-desc">
+                    <span data-lang="en">Davies et al. (2023) found that corals exposed to artificial light spawn <strong>1-3 days earlier</strong>—the perceived "dark period" is shortened. Coastal development is rewriting the lunar calendar for nearshore reefs.</span>
+                    <span data-lang="ja">Davies et al.（2023）は、人工光に曝されたサンゴが<strong>1-3日早く</strong>産卵することを発見しました——認知される「暗黒期間」が短縮されるためです。沿岸開発が、近岸リーフの月暦を書き換えています。</span>
+                </div>
+            </div>
+
+            <!-- Threat 2: Desynchronization within species -->
+            <div class="disruption-card" style="margin-top: 1rem;">
+                <div class="disruption-icon">🔇</div>
+                <div class="disruption-title">
+                    <span data-lang="en">Desynchronization</span>
+                    <span data-lang="ja">脱同期化</span>
+                </div>
+                <div class="disruption-desc">
+                    <span data-lang="en">Shlesinger & Loya (2019) compared Red Sea spawning records over 30 years. Three of five species now show spawning <strong>asynchrony</strong>—individuals spawning on different nights. Fertilization rates collapse even when all corals appear healthy.</span>
+                    <span data-lang="ja">Shlesinger & Loya（2019）は紅海の産卵記録を30年間にわたって比較しました。5種中3種が現在、産卵の<strong>非同期化</strong>を示しています——個体が異なる夜に産卵するのです。すべてのサンゴが健康に見えても、受精率は崩壊します。</span>
+                </div>
+            </div>
+
+            <!-- Threat 3: Density - NEW -->
+            <div class="disruption-card" style="margin-top: 1rem; border-left: 3px solid #dc2626;">
+                <div class="disruption-icon">📉</div>
+                <div class="disruption-title">
+                    <span data-lang="en">The Allee Effect: When Density Falls Below Threshold</span>
+                    <span data-lang="ja">アレー効果：密度が閾値を下回るとき</span>
+                </div>
+                <div class="disruption-desc">
+                    <span data-lang="en">Ricardo et al. (2025) conducted field experiments in the Great Barrier Reef and Palau. Their finding is stark: <strong>corals need 13-50 colonies per 100m² to achieve even 10% fertilization success</strong>. At 1-2m spacing between colonies, success drops to 1-8%.</span>
+                    <span data-lang="ja">Ricardo et al.（2025）はグレートバリアリーフとパラオで野外実験を行いました。その発見は厳しいものです：<strong>10%の受精成功を達成するだけでも、100m²あたり13-50コロニーが必要</strong>。コロニー間距離が1-2mになると、成功率は1-8%に低下します。</span>
+                </div>
+                <div style="margin-top: 1rem; padding: 1rem; background: rgba(220, 38, 38, 0.05); border-radius: 8px;">
+                    <p style="font-size: 0.9rem; line-height: 1.8; margin: 0;">
+                        <span data-lang="en">This is the <strong>Allee effect</strong>: below a critical population density, reproduction fails regardless of individual health. A reef can look alive but be reproductively dead.</span>
+                        <span data-lang="ja">これが<strong>アレー効果</strong>です：臨界個体群密度を下回ると、個体の健康状態に関係なく繁殖が失敗します。リーフは生きているように見えても、繁殖的には死んでいることがありえる。</span>
+                    </p>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem;">
+                    <span data-lang="en">— Ricardo et al. (2025) Nature Ecology & Evolution</span>
+                    <span data-lang="ja">— Ricardo et al. (2025) Nature Ecology & Evolution</span>
+                </p>
+            </div>
+
+            <div class="disruption-warning" style="margin-top: 1.5rem;">
+                <span data-lang="en">Synchrony failure and density collapse are <strong>invisible</strong>. No bleaching, no visible damage. The only way to detect reproductive decline is to <em>predict, observe, and record</em> spawning events over many years.</span>
+                <span data-lang="ja">同期の失敗と密度の崩壊は<strong>目に見えません</strong>。白化もなく、目に見える被害もない。繁殖の衰退を検出する唯一の方法は、何年にもわたって産卵イベントを<em>予測し、観察し、記録する</em>ことです。</span>
+            </div>
+        </section>
+
+        <!-- ===== PART 7: THE EVIDENCE (Churaumi) ===== -->
+
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">15 Years of Handwritten Records</span>
+                <span data-lang="ja">15年間の手書き記録</span>
+            </h2>
+            
+            <div class="story-box">
+                <p data-lang="en" style="line-height: 1.9;">
+                    From 2003 to 2017, aquarists at Okinawa Churaumi Aquarium walked to the tanks each evening and recorded spawning by hand. Not just whether corals spawned, but what proportion of each colony participated. This data lay dormant in notebooks until researchers discovered it at a conference.
+                </p>
+                <p data-lang="ja" style="line-height: 1.9;">
+                    2003年から2017年まで、沖縄美ら海水族館の飼育員たちは毎晩水槽を見回り、手書きで産卵を記録しました。産卵の有無だけでなく、各コロニーのどれくらいが参加したかまで。このデータは学会で研究者と出会うまでノートの中で眠っていました。
+                </p>
+                
+                <blockquote style="border-left: 3px solid var(--neap-teal); padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: var(--text-secondary);">
+                    <span data-lang="en">"It was all handwritten in notebooks."</span>
+                    <span data-lang="ja">「ノートに手書きで書きためた記録でした」</span>
+                </blockquote>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); text-align: right; margin-top: 0.25rem;">
+                    <span data-lang="en">— Associate Professor Shinichiro Maruyama, University of Tokyo</span>
+                    <span data-lang="ja">— 丸山真一朗准教授、東京大学</span>
+                </p>
+                
+                <p data-lang="en" style="line-height: 1.9; margin-top: 1rem;">
+                    This invaluable dataset—published by Sakai et al. (2024)—revealed that aquarium and wild coral spawning are synchronized across distances up to 81 km. The same environmental signals reach corals in tanks and on reefs.
+                </p>
+                <p data-lang="ja" style="line-height: 1.9; margin-top: 1rem;">
+                    Sakai et al.（2024）により発表されたこの貴重なデータセットは、水槽と野生のサンゴ産卵が最大81km離れていても同期していることを明らかにしました。同じ環境シグナルが水槽内とリーフ上のサンゴに届いているのです。
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== CLOSING ===== -->
+
+        <section class="content-section" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.03) 0%, rgba(255, 255, 255, 0) 100%);">
+            <div class="story-box" style="border: none; padding: 2rem; text-align: center;">
+                <p style="font-size: 1.1rem; line-height: 2; color: var(--text-primary);">
+                    <span data-lang="en">Fertilization failure leaves no trace.</span>
+                    <span data-lang="ja">受精の失敗は痕跡を残しません。</span>
+                </p>
+                <p style="font-size: 1.1rem; line-height: 2; color: var(--text-primary); margin-top: 0.5rem;">
+                    <span data-lang="en">A reef can appear healthy while losing the ability to reproduce.</span>
+                    <span data-lang="ja">リーフは健康に見えたまま、繁殖能力を失うことができる。</span>
+                </p>
+                <p style="font-size: 1.1rem; line-height: 2; color: var(--text-primary); margin-top: 0.5rem;">
+                    <span data-lang="en">The only evidence is absence—the larvae that never arrived.</span>
+                    <span data-lang="ja">唯一の証拠は不在——決して到着しなかった幼生たち。</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== LINK TO FORECAST ===== -->
+
+        <section class="content-section" style="text-align: center;">
+            <a href="spawning-forecast.html" class="card" style="display: inline-block; padding: 1.5rem 2rem; text-decoration: none; color: inherit;">
+                <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">
+                    <span data-lang="en">Based on this science, we predict:</span>
+                    <span data-lang="ja">この科学に基づき、私たちは予測します：</span>
+                </p>
+                <p style="font-size: 1.5rem; font-weight: 700; color: var(--neap-teal); margin: 0.5rem 0;">
+                    <span data-lang="en">June 6, 2026 · 21:42</span>
+                    <span data-lang="ja">2026年6月6日 · 21:42</span>
+                </p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                    <span data-lang="en">→ View the full prediction and observation guide</span>
+                    <span data-lang="ja">→ 予測の詳細と観察ガイドを見る</span>
+                </p>
+            </a>
+        </section>
+
+        <!-- ===== References ===== -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">References</span>
+                <span data-lang="ja">参考文献</span>
+            </h2>
+            <div class="source-info">
+                
+                <p style="margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">
+                    <span data-lang="en">Photoreceptors & Molecular Mechanisms</span>
+                    <span data-lang="ja">光受容体と分子メカニズム</span>
+                </p>
+                <ul>
+                    <li>Levy O et al. (2007) Light-Responsive Cryptochromes from a Simple Multicellular Animal, the Coral <i>Acropora millepora</i>. <i>Science</i>. <a href="https://doi.org/10.1126/science.1145432" target="_blank">doi:10.1126/science.1145432</a></li>
+                    <li>Poehn B et al. (2022) A Cryptochrome adopts distinct moon- and sunlight states and functions as sun- versus moonlight interpreter. <i>Nature Communications</i>. <a href="https://doi.org/10.1038/s41467-022-32562-z" target="_blank">doi:10.1038/s41467-022-32562-z</a></li>
+                    <li>Kaniewska P et al. (2015) Signaling cascades and the importance of moonlight in coral broadcast mass spawning. <i>eLife</i>. <a href="https://doi.org/10.7554/elife.09991" target="_blank">doi:10.7554/elife.09991</a></li>
+                    <li>Yoshioka Y et al. (2025) Time-Series RNA-Seq of <i>Acropora tenuis</i> Reveals Molecular Waves Leading to Synchronous Mass Spawning. <i>Molecular Ecology</i>. <a href="https://doi.org/10.1111/mec.70054" target="_blank">doi:10.1111/mec.70054</a></li>
+                </ul>
+                
+                <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">
+                    <span data-lang="en">Spawning Triggers & Environmental Cues</span>
+                    <span data-lang="ja">産卵トリガーと環境キュー</span>
+                </p>
+                <ul>
+                    <li>Lin C-H et al. (2021) Moonrise timing is key for synchronized spawning in coral <i>Dipsastraea speciosa</i>. <i>PNAS</i>. <a href="https://doi.org/10.1073/pnas.2101985118" target="_blank">doi:10.1073/pnas.2101985118</a></li>
+                    <li>de la Torre Cerro R et al. (2025) Evaluating the role of moonlight-darkness dynamics as proximate spawning cues in an <i>Acropora</i> coral. <i>Coral Reefs</i>. <a href="https://doi.org/10.1007/s00338-025-02618-9" target="_blank">doi:10.1007/s00338-025-02618-9</a></li>
+                    <li>Komoto H et al. (2022) An External Coincidence Model for the Lunar Cycle Reveals Circadian Phase-Dependent Moonlight Effects on Coral Spawning. <i>Journal of Biological Rhythms</i>. <a href="https://doi.org/10.1177/07487304221135916" target="_blank">doi:10.1177/07487304221135916</a></li>
+                    <li>van Woesik R (2010) Calm before the spawn: global coral spawning patterns are explained by regional wind fields. <i>Proc R Soc B</i>. <a href="https://doi.org/10.1098/rspb.2009.1524" target="_blank">doi:10.1098/rspb.2009.1524</a></li>
+                </ul>
+                
+                <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">
+                    <span data-lang="en">Reproductive Threats & Thresholds</span>
+                    <span data-lang="ja">繁殖への脅威と閾値</span>
+                </p>
+                <ul>
+                    <li>Ricardo G et al. (2025) Critical thresholds of adult patch density and spacing during coral fertilization. <i>Nature Ecology & Evolution</i>. <a href="https://doi.org/10.1038/s41559-025-02844-y" target="_blank">doi:10.1038/s41559-025-02844-y</a></li>
+                    <li>Shlesinger T & Loya Y (2019) Breakdown in spawning synchrony: A silent threat to coral persistence. <i>Science</i>. <a href="https://doi.org/10.1126/science.aax0110" target="_blank">doi:10.1126/science.aax0110</a></li>
+                    <li>Davies TW et al. (2023) Global disruption of coral broadcast spawning associated with artificial light at night. <i>Nature Communications</i>. <a href="https://doi.org/10.1038/s41467-023-38070-y" target="_blank">doi:10.1038/s41467-023-38070-y</a></li>
+                </ul>
+                
+                <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">
+                    <span data-lang="en">Long-term Records</span>
+                    <span data-lang="ja">長期記録</span>
+                </p>
+                <ul>
+                    <li>Sakai Y et al. (2024) Long-term aquarium records delineate the synchronized spawning strategy of <i>Acropora</i> corals. <i>Royal Society Open Science</i>. <a href="https://doi.org/10.1098/rsos.240183" target="_blank">doi:10.1098/rsos.240183</a></li>
+                    <li>東京大学 海洋アライアンス (2024) サンゴの一斉産卵の謎に迫る. <a href="https://www.oa.u-tokyo.ac.jp/column/trivia/0061/index.html" target="_blank">Link</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="index.html">← 
+            <span data-lang="en">Back to Home</span>
+            <span data-lang="ja">ホームに戻る</span>
+        </a>
+        <p style="margin-top: 0.5rem;">© 2026 marine-obs.org</p>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.body.classList.toggle('ja', lang === 'ja');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
+            localStorage.setItem('lang', lang);
+        }
+
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang) setLang(savedLang);
+
+        document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
+        document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
+    </script>
+
+        <!-- Navigation JS -->
+    <script>
+    (function() {
+        function initNavigation() {
+            const hamburger = document.getElementById('hamburger');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+            const sidebarClose = document.getElementById('sidebar-close');
+            
+            if (!hamburger || !sidebar || !sidebarOverlay) {
+                console.warn('Navigation elements not found');
+                return;
+            }
+            
+            function openSidebar() {
+                sidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+                hamburger.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeSidebar() {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            hamburger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (sidebar.classList.contains('active')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            });
+            
+            hamburger.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (sidebar.classList.contains('active')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            });
+            
+            sidebarOverlay.addEventListener('click', closeSidebar);
+            sidebarOverlay.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                closeSidebar();
+            });
+            
+            if (sidebarClose) {
+                sidebarClose.addEventListener('click', closeSidebar);
+                sidebarClose.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    closeSidebar();
+                });
+            }
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                    closeSidebar();
+                }
+            });
+            
+            sidebar.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    closeSidebar();
+                });
+            });
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initNavigation);
+        } else {
+            initNavigation();
+        }
+    })();
+    </script>
+</body>
+</html>
