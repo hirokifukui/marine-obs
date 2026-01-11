@@ -1268,3 +1268,442 @@
     color: var(--text-secondary);
     line-height: 1.7;
 }
+
+/* ===== PAGE SWITCHER ===== */
+.page-switcher {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    background: var(--bg-secondary);
+    padding: 0.35rem;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.switcher-tab {
+    padding: 0.6rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+}
+
+.switcher-tab:hover {
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--spawning-purple);
+}
+
+.switcher-tab.active {
+    background: var(--bg-card);
+    color: var(--spawning-purple);
+    box-shadow: var(--shadow);
+}
+
+/* ===== MECHANISM HERO ===== */
+.mechanism-hero {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #0f172a 100%);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.mechanism-hero h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+body.ja .mechanism-hero h1 {
+    font-size: 1.5rem;
+}
+
+.mechanism-hero .hero-sub {
+    font-size: 1rem;
+    opacity: 0.85;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ===== PART NUMBER ===== */
+.part-number {
+    display: inline-block;
+    background: var(--spawning-purple);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    margin-right: 0.75rem;
+    vertical-align: middle;
+}
+
+/* ===== EVIDENCE GRID ===== */
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .evidence-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.evidence-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.evidence-number {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--neap-teal);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.evidence-content {
+    flex: 1;
+}
+
+.evidence-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.evidence-content p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ===== KEY INSIGHT ===== */
+.key-insight {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);
+    border: 2px solid #fecaca;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+}
+
+.insight-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.insight-text {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* ===== MECHANISM DIAGRAM ===== */
+.mechanism-diagram {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.diagram-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.diagram-item {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    min-width: 100px;
+}
+
+.diagram-item.highlight {
+    background: var(--neap-light);
+    border: 1px solid var(--neap-border);
+}
+
+.diagram-item.spawning {
+    background: var(--spawning-light);
+    border: 1px solid var(--spawning-border);
+}
+
+.diagram-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.35rem;
+}
+
+.diagram-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+.diagram-desc {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.diagram-arrow {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+}
+
+/* ===== COMPARISON GRID ===== */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.comparison-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.comparison-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.comparison-window {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.comparison-result {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--neap-teal);
+}
+
+/* ===== ADVANTAGE GRID ===== */
+.advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .advantage-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.advantage-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.advantage-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.advantage-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.advantage-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ===== THREAT GRID ===== */
+.threat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .threat-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.threat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.threat-card.critical {
+    border-color: #fecaca;
+    background: #fef2f2;
+}
+
+.threat-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.threat-card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.threat-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+}
+
+.threat-card p:last-child {
+    margin-bottom: 0;
+}
+
+.threat-card p.source {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+/* ===== WARNING BOX ===== */
+.warning-box {
+    background: rgba(239, 68, 68, 0.1);
+    border-left: 3px solid #ef4444;
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.warning-box strong {
+    color: #dc2626;
+}
+
+/* ===== CTA BUTTON ===== */
+.cta-button {
+    display: inline-block;
+    background: var(--spawning-purple);
+    color: white;
+    padding: 0.85rem 1.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.cta-button:hover {
+    background: #7c3aed;
+    transform: translateY(-1px);
+}
+
+/* ===== SOURCE CLASS ===== */
+p.source {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+/* ===== DISCOVERY CARD ===== */
+.discovery-card {
+    display: flex;
+    gap: 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.discovery-year {
+    flex-shrink: 0;
+    background: var(--neap-teal);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    height: fit-content;
+}
+
+.discovery-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.discovery-content p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.discovery-content p.source {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* ===== WAVE CONTENT (update) ===== */
+.wave-content {
+    flex: 1;
+}
+
+.wave-content .wave-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.wave-content p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+}

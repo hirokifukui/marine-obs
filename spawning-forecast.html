@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coral Spawning Forecast | marine-obs.org</title>
+    <title>Coral Spawning Forecast 2026 | marine-obs.org</title>
     <!-- SEO / OGP -->
-    <meta name="description" content="沖縄のサンゴ一斉産卵時期を水温・月齢から予測。ダイバー向けに最適な観察タイミングを案内。">
-    <meta property="og:title" content="サンゴ産卵予測 | marine-obs.org">
-    <meta property="og:description" content="沖縄のサンゴ一斉産卵時期を水温・月齢から予測。ダイバー向けに最適な観察タイミングを案内。">
+    <meta name="description" content="沖縄のサンゴ一斉産卵時期を水温・月齢から予測。2026年6月6日21:42、恩納村。ダイバー向け観察ガイド。">
+    <meta property="og:title" content="サンゴ産卵予測 2026 | marine-obs.org">
+    <meta property="og:description" content="沖縄のサンゴ一斉産卵時期を水温・月齢から予測。2026年6月6日21:42、恩納村。ダイバー向け観察ガイド。">
     <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
     <meta property="og:url" content="https://marine-obs.org/spawning-forecast.html">
     <meta property="og:type" content="website">
@@ -199,9 +199,21 @@
     <main>
         <nav class="breadcrumb">
             <a href="index.html">Home</a> / 
-            <span data-lang="en">Coral Spawning Forecast</span>
-            <span data-lang="ja">サンゴ産卵予測</span>
+            <span data-lang="en">Spawning Forecast</span>
+            <span data-lang="ja">産卵予測</span>
         </nav>
+
+        <!-- ===== PAGE SWITCHER ===== -->
+        <div class="page-switcher">
+            <a href="spawning-forecast.html" class="switcher-tab active">
+                <span data-lang="en">📅 Forecast</span>
+                <span data-lang="ja">📅 予測</span>
+            </a>
+            <a href="spawning-mechanism.html" class="switcher-tab">
+                <span data-lang="en">🔬 Mechanism</span>
+                <span data-lang="ja">🔬 しくみ</span>
+            </a>
+        </div>
 
         <!-- ===== HERO: THE PREDICTION ===== -->
         <section class="hero-section">
@@ -211,16 +223,12 @@
                     <span data-lang="ja">2026年6月6日（土）</span>
                 </div>
                 <div class="prediction-time-precise">21:42 ± 23min</div>
-                <div class="prediction-time-range">
-                    <span data-lang="en">Window: 21:00 – 23:00</span>
-                    <span data-lang="ja">産卵ウィンドウ: 21:00 – 23:00</span>
-                </div>
                 <div class="prediction-location">
                     <span data-lang="en">Onna Village, Okinawa · Acropora spp.</span>
                     <span data-lang="ja">沖縄県恩納村 · ミドリイシ属</span>
                 </div>
                 <div class="prediction-basis">
-                    <span data-lang="en">🌗 2 days before Last Quarter · Neap Tide</span>
+                    <span data-lang="en">🌗 Last Quarter −2 days · Neap Tide</span>
                     <span data-lang="ja">🌗 下弦2日前 · 小潮</span>
                 </div>
                 <div class="countdown" id="countdown"></div>
@@ -228,8 +236,8 @@
 
             <div class="dark-period-viz">
                 <div class="dark-period-title">
-                    <span data-lang="en">Dark Period: The Spawning Trigger</span>
-                    <span data-lang="ja">暗黒期間：産卵のトリガー</span>
+                    <span data-lang="en">Dark Period on June 6</span>
+                    <span data-lang="ja">6月6日の暗黒期間</span>
                 </div>
                 <div class="dark-period-bar">
                     <div class="time-label">19:24<br><span style="font-size:0.6rem; opacity:0.7">sunset</span></div>
@@ -242,8 +250,8 @@
                 <div class="dark-period-legend">
                     <div class="legend-item">
                         <div class="legend-dot dark"></div>
-                        <span data-lang="en">Dark Period (3h43m)</span>
-                        <span data-lang="ja">暗黒期間 (3時間43分)</span>
+                        <span data-lang="en">Dark (3h43m)</span>
+                        <span data-lang="ja">暗黒 (3時間43分)</span>
                     </div>
                     <div class="legend-item">
                         <div class="legend-dot spawning"></div>
@@ -254,84 +262,11 @@
             </div>
         </section>
 
-        <!-- ===== WHY THIS DATE: THREE LAYERS ===== -->
-        <section class="content-section">
-            <h2>
-                <span data-lang="en">Why June 6?</span>
-                <span data-lang="ja">なぜ6月6日なのか</span>
-            </h2>
-            
-            <p style="line-height: 1.9; margin-bottom: 1.5rem;">
-                <span data-lang="en">This prediction is built on three converging lines of evidence:</span>
-                <span data-lang="ja">この予測は、3つの収束する証拠に基づいています：</span>
-            </p>
-
-            <div class="hierarchy-grid">
-                <!-- Layer 1: Temporal Synchrony -->
-                <div class="hierarchy-card" style="border-top: 3px solid #dc2626;">
-                    <div class="hierarchy-scale">① <span data-lang="en">Temporal Synchrony</span><span data-lang="ja">時間的同期</span></div>
-                    <div class="hierarchy-question">
-                        <span data-lang="en">The Dark Gap Mechanism</span>
-                        <span data-lang="ja">暗黒ギャップ・メカニズム</span>
-                    </div>
-                    <div class="hierarchy-factors">
-                        <span data-lang="en">Corals spawn 5 days after experiencing darkness between sunset and moonrise. On June 6, this gap reaches 3h43m—optimal conditions.</span>
-                        <span data-lang="ja">サンゴは日没から月の出までの暗闇を経験してから5日後に産卵します。6月6日、このギャップは3時間43分に達し、最適条件となります。</span>
-                    </div>
-                    <div class="hierarchy-precision">
-                        <span data-lang="en">Lin et al. 2021, PNAS</span>
-                        <span data-lang="ja">Lin et al. 2021, PNAS</span>
-                    </div>
-                </div>
-
-                <!-- Layer 2: Neap Tide -->
-                <div class="hierarchy-card" style="border-top: 3px solid var(--neap-teal);">
-                    <div class="hierarchy-scale">② <span data-lang="en">Calm Water</span><span data-lang="ja">穏やかな海</span></div>
-                    <div class="hierarchy-question">
-                        <span data-lang="en">Neap Tide = Higher Fertilization</span>
-                        <span data-lang="ja">小潮 = 高い受精成功率</span>
-                    </div>
-                    <div class="hierarchy-factors">
-                        <span data-lang="en">Last Quarter brings minimal tidal range. Gentle currents keep egg-sperm bundles concentrated, dramatically improving fertilization success.</span>
-                        <span data-lang="ja">下弦は潮位差が最小になります。穏やかな潮流が卵と精子のバンドルを集中させ、受精成功率を劇的に向上させます。</span>
-                    </div>
-                    <div class="hierarchy-precision">
-                        <span data-lang="en">van Woesik 2010, Proc R Soc B</span>
-                        <span data-lang="ja">van Woesik 2010, Proc R Soc B</span>
-                    </div>
-                </div>
-
-                <!-- Layer 3: Historical Record -->
-                <div class="hierarchy-card" style="border-top: 3px solid #f59e0b;">
-                    <div class="hierarchy-scale">③ <span data-lang="en">Historical Record</span><span data-lang="ja">歴史的記録</span></div>
-                    <div class="hierarchy-question">
-                        <span data-lang="en">15 Years of Churaumi Data</span>
-                        <span data-lang="ja">美ら海15年間のデータ</span>
-                    </div>
-                    <div class="hierarchy-factors">
-                        <span data-lang="en">Aquarists recorded spawning nightly from 2003-2017. Aquarium and wild corals synchronized across 81km—same signals, same timing.</span>
-                        <span data-lang="ja">飼育員が2003-2017年に毎晩産卵を記録。水槽と野生のサンゴは81km離れていても同期——同じシグナル、同じタイミング。</span>
-                    </div>
-                    <div class="hierarchy-precision">
-                        <span data-lang="en">Sakai et al. 2024, Royal Society Open Science</span>
-                        <span data-lang="ja">Sakai et al. 2024, Royal Society Open Science</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="integration-insight" style="margin-top: 1.5rem;">
-                <a href="spawning-mechanism.html" style="text-decoration: none; color: inherit;">
-                    <span data-lang="en">→ Dive deeper: How do corals sense moonlight without eyes or brain?</span>
-                    <span data-lang="ja">→ さらに深く：サンゴは目も脳もなしにどうやって月光を感知するのか？</span>
-                </a>
-            </div>
-        </section>
-
         <!-- ===== CALENDAR ===== -->
         <section class="content-section">
             <h2>
-                <span data-lang="en">June 2026 Calendar</span>
-                <span data-lang="ja">2026年6月カレンダー</span>
+                <span data-lang="en">June 2026</span>
+                <span data-lang="ja">2026年6月</span>
             </h2>
             
             <div class="calendar-container">
@@ -388,86 +323,76 @@
             </div>
             
             <div class="calendar-legend">
-                <div class="legend-item"><span class="legend-box primary"></span><span data-lang="en">Peak Night</span><span data-lang="ja">ピーク日</span></div>
-                <div class="legend-item"><span class="legend-box secondary"></span><span data-lang="en">Possible Window</span><span data-lang="ja">可能性あり</span></div>
-                <div class="legend-item"><span class="legend-box lunar"></span><span data-lang="en">Lunar Phase</span><span data-lang="ja">月相</span></div>
+                <div class="legend-item"><span class="legend-box primary"></span><span data-lang="en">Peak</span><span data-lang="ja">ピーク</span></div>
+                <div class="legend-item"><span class="legend-box secondary"></span><span data-lang="en">Possible</span><span data-lang="ja">可能性あり</span></div>
+                <div class="legend-item"><span class="legend-box lunar"></span><span data-lang="en">Moon Phase</span><span data-lang="ja">月相</span></div>
             </div>
-            
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; line-height: 1.7;">
-                <span data-lang="en">🌕 Full Moon (Jun 3) → 🌗 Last Quarter (Jun 8). Peak spawning occurs 2 days before last quarter, during the neap tide period when currents are gentlest.</span>
-                <span data-lang="ja">🌕 満月（6月3日）→ 🌗 下弦（6月8日）。産卵ピークは下弦の2日前、潮流が最も穏やかな小潮期に発生します。</span>
-            </p>
         </section>
 
-        <!-- ===== HISTORICAL RECORDS ===== -->
+        <!-- ===== WHY THIS DATE ===== -->
         <section class="content-section">
             <h2>
-                <span data-lang="en">Past Spawning Records (Okinawa)</span>
-                <span data-lang="ja">過去の産卵記録（沖縄）</span>
+                <span data-lang="en">Why June 6?</span>
+                <span data-lang="ja">なぜ6月6日か</span>
             </h2>
             
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th><span data-lang="en">Year</span><span data-lang="ja">年</span></th>
-                            <th><span data-lang="en">Peak Date</span><span data-lang="ja">ピーク日</span></th>
-                            <th><span data-lang="en">Lunar Phase</span><span data-lang="ja">月相</span></th>
-                            <th><span data-lang="en">Days After FM</span><span data-lang="ja">満月後日数</span></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2024</td>
-                            <td>Jun 1</td>
-                            <td>LQ−2</td>
-                            <td>9</td>
-                        </tr>
-                        <tr>
-                            <td>2023</td>
-                            <td>Jun 3</td>
-                            <td>FQ+3</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>2022</td>
-                            <td>May 30</td>
-                            <td>NM</td>
-                            <td>14</td>
-                        </tr>
-                        <tr>
-                            <td>2021</td>
-                            <td>May 25</td>
-                            <td>FQ+3</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>2020</td>
-                            <td>Jun 6</td>
-                            <td>FQ</td>
-                            <td>7</td>
-                        </tr>
-                        <tr>
-                            <td>2019</td>
-                            <td>May 31</td>
-                            <td>LQ−3</td>
-                            <td>12</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="evidence-grid">
+                <div class="evidence-card">
+                    <div class="evidence-number">1</div>
+                    <div class="evidence-content">
+                        <div class="evidence-title">
+                            <span data-lang="en">Dark Gap Trigger</span>
+                            <span data-lang="ja">暗黒ギャップ</span>
+                        </div>
+                        <p>
+                            <span data-lang="en">Corals spawn ~5 days after experiencing darkness between sunset and moonrise. June 6 has a 3h43m gap.</span>
+                            <span data-lang="ja">日没から月の出までの暗闇を経験してから約5日後に産卵。6月6日は3時間43分のギャップ。</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="evidence-card">
+                    <div class="evidence-number">2</div>
+                    <div class="evidence-content">
+                        <div class="evidence-title">
+                            <span data-lang="en">Neap Tide</span>
+                            <span data-lang="ja">小潮</span>
+                        </div>
+                        <p>
+                            <span data-lang="en">Calm water near Last Quarter keeps egg-sperm bundles concentrated, improving fertilization.</span>
+                            <span data-lang="ja">下弦付近の穏やかな海が卵と精子を集中させ、受精率を向上。</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="evidence-card">
+                    <div class="evidence-number">3</div>
+                    <div class="evidence-content">
+                        <div class="evidence-title">
+                            <span data-lang="en">15-Year Record</span>
+                            <span data-lang="ja">15年間の記録</span>
+                        </div>
+                        <p>
+                            <span data-lang="en">Churaumi Aquarium data (2003-2017) shows spawning 5-8 days after full moon.</span>
+                            <span data-lang="ja">美ら海水族館のデータ（2003-2017）では満月後5-8日に産卵。</span>
+                        </p>
+                    </div>
+                </div>
             </div>
             
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem;">
-                <span data-lang="en">FM = Full Moon, LQ = Last Quarter, NM = New Moon, FQ = First Quarter. Pattern: 7-14 days after full moon, typically during neap tide periods.</span>
-                <span data-lang="ja">FM = 満月, LQ = 下弦, NM = 新月, FQ = 上弦。パターン：満月後7-14日、通常は小潮期間中。</span>
+            <p style="text-align: center; margin-top: 1.5rem;">
+                <a href="spawning-mechanism.html" style="color: var(--neap-teal);">
+                    <span data-lang="en">→ Learn the science behind this prediction</span>
+                    <span data-lang="ja">→ 予測の科学的根拠を知る</span>
+                </a>
             </p>
         </section>
 
         <!-- ===== OBSERVATION GUIDE ===== -->
         <section class="content-section" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.03) 0%, rgba(255, 255, 255, 0) 100%);">
             <h2>
-                <span data-lang="en">Observation Guide for Divers</span>
-                <span data-lang="ja">ダイバーのための観察ガイド</span>
+                <span data-lang="en">Observation Guide</span>
+                <span data-lang="ja">観察ガイド</span>
             </h2>
 
             <div class="guide-grid">
@@ -478,8 +403,8 @@
                         <span data-lang="ja">タイミング</span>
                     </div>
                     <div class="guide-content">
-                        <span data-lang="en">Entry by 20:30. Position yourself near branching Acropora colonies by 21:00. Peak release typically 21:30-22:00.</span>
-                        <span data-lang="ja">20:30までにエントリー。21:00までに枝状ミドリイシ群体の近くに位置取り。放出ピークは通常21:30-22:00。</span>
+                        <span data-lang="en">Entry by 20:30. Position near Acropora by 21:00. Peak release 21:30-22:00.</span>
+                        <span data-lang="ja">20:30までにエントリー。21:00にミドリイシ付近に。ピークは21:30-22:00。</span>
                     </div>
                 </div>
                 
@@ -490,20 +415,20 @@
                         <span data-lang="ja">場所</span>
                     </div>
                     <div class="guide-content">
-                        <span data-lang="en">Depth 3-8m with dense Acropora colonies. Onna Village (Manza, Maeda), Kerama Islands, Ishigaki inner reef are reliable sites.</span>
-                        <span data-lang="ja">水深3-8mでミドリイシ群体が密集した場所。恩納村（万座、真栄田）、慶良間諸島、石垣島内海は信頼性の高いサイト。</span>
+                        <span data-lang="en">Depth 3-8m with dense Acropora. Manza, Maeda, Kerama, Sekisei are reliable.</span>
+                        <span data-lang="ja">水深3-8m、ミドリイシ密集地。万座、真栄田、慶良間、石西礁湖。</span>
                     </div>
                 </div>
                 
                 <div class="guide-card">
                     <div class="guide-icon">🔦</div>
                     <div class="guide-title">
-                        <span data-lang="en">Equipment</span>
-                        <span data-lang="ja">機材</span>
+                        <span data-lang="en">Light Etiquette</span>
+                        <span data-lang="ja">ライトのマナー</span>
                     </div>
                     <div class="guide-content">
-                        <span data-lang="en">Red filter on lights (less disturbance). Wide-angle lens recommended. Minimize artificial light—it can suppress spawning.</span>
-                        <span data-lang="ja">ライトには赤フィルター（妨害を軽減）。ワイドレンズ推奨。人工光は最小限に——産卵を抑制する可能性あり。</span>
+                        <span data-lang="en">Use red filter. Minimize exposure. Artificial light can suppress spawning.</span>
+                        <span data-lang="ja">赤フィルター使用。照射は最小限に。人工光は産卵を抑制しうる。</span>
                     </div>
                 </div>
                 
@@ -511,27 +436,55 @@
                     <div class="guide-icon">👁️</div>
                     <div class="guide-title">
                         <span data-lang="en">What to Watch</span>
-                        <span data-lang="ja">観察のポイント</span>
+                        <span data-lang="ja">観察ポイント</span>
                     </div>
                     <div class="guide-content">
-                        <span data-lang="en">"Setting" phase: bundles visible at polyp mouths. "Release" phase: buoyant bundles rise to surface. Multi-species cascade over 30-90 minutes.</span>
-                        <span data-lang="ja">「セッティング」相：ポリプの口にバンドルが見える。「放出」相：浮力を持つバンドルが水面へ上昇。30-90分かけて複数種がカスケード的に産卵。</span>
+                        <span data-lang="en">"Setting": bundles at polyp mouths. "Release": bundles rise to surface over 30-90 min.</span>
+                        <span data-lang="ja">「セッティング」：ポリプ口にバンドル。「放出」：30-90分かけて水面へ。</span>
                     </div>
                 </div>
             </div>
-
-            <div class="disruption-warning" style="margin-top: 1.5rem;">
-                <strong><span data-lang="en">⚠️ Light Etiquette:</span><span data-lang="ja">⚠️ ライトのマナー：</span></strong>
-                <span data-lang="en"> Artificial light can delay or suppress spawning (Davies et al. 2023). Use red lights, keep exposure brief, and never shine directly on coral surfaces during the critical window.</span>
-                <span data-lang="ja"> 人工光は産卵を遅らせたり抑制したりする可能性があります（Davies et al. 2023）。赤ライトを使用し、照射は短時間に、クリティカルウィンドウ中はサンゴ表面を直接照らさないでください。</span>
-            </div>
         </section>
 
-        <!-- ===== PREDICTION PHASES ===== -->
+        <!-- ===== PAST RECORDS ===== -->
         <section class="content-section">
             <h2>
-                <span data-lang="en">Prediction Update Schedule</span>
-                <span data-lang="ja">予測更新スケジュール</span>
+                <span data-lang="en">Past Records (Okinawa)</span>
+                <span data-lang="ja">過去の記録（沖縄）</span>
+            </h2>
+            
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th><span data-lang="en">Year</span><span data-lang="ja">年</span></th>
+                            <th><span data-lang="en">Peak</span><span data-lang="ja">ピーク</span></th>
+                            <th><span data-lang="en">Moon</span><span data-lang="ja">月相</span></th>
+                            <th><span data-lang="en">FM+</span><span data-lang="ja">満月後</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2024</td><td>Jun 1</td><td>LQ−2</td><td>9</td></tr>
+                        <tr><td>2023</td><td>Jun 3</td><td>FQ+3</td><td>10</td></tr>
+                        <tr><td>2022</td><td>May 30</td><td>NM</td><td>14</td></tr>
+                        <tr><td>2021</td><td>May 25</td><td>FQ+3</td><td>10</td></tr>
+                        <tr><td>2020</td><td>Jun 6</td><td>FQ</td><td>7</td></tr>
+                        <tr><td>2019</td><td>May 31</td><td>LQ−3</td><td>12</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem;">
+                <span data-lang="en">FM = Full Moon, LQ = Last Quarter, NM = New Moon, FQ = First Quarter</span>
+                <span data-lang="ja">FM = 満月, LQ = 下弦, NM = 新月, FQ = 上弦</span>
+            </p>
+        </section>
+
+        <!-- ===== UPDATE SCHEDULE ===== -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Update Schedule</span>
+                <span data-lang="ja">更新スケジュール</span>
             </h2>
             
             <div class="phase-timeline">
@@ -545,10 +498,6 @@
                         <div class="phase-date">
                             <span data-lang="en">Current (Jan 2026)</span>
                             <span data-lang="ja">現在（2026年1月）</span>
-                        </div>
-                        <div class="phase-desc">
-                            <span data-lang="en">Based on lunar calendar, historical patterns, and temperature climatology.</span>
-                            <span data-lang="ja">月暦、過去のパターン、水温平年値に基づく。</span>
                         </div>
                     </div>
                 </div>
@@ -564,10 +513,6 @@
                             <span data-lang="en">April 2026</span>
                             <span data-lang="ja">2026年4月</span>
                         </div>
-                        <div class="phase-desc">
-                            <span data-lang="en">Incorporate actual SST trajectory. If spring is warmer than average, spawning may advance.</span>
-                            <span data-lang="ja">実際のSST推移を反映。春が平年より温暖なら産卵が前倒しになる可能性。</span>
-                        </div>
                     </div>
                 </div>
                 
@@ -575,16 +520,12 @@
                     <div class="phase-marker">3</div>
                     <div class="phase-content">
                         <div class="phase-title">
-                            <span data-lang="en">Pre-Spawning Update</span>
-                            <span data-lang="ja">産卵直前更新</span>
+                            <span data-lang="en">Final Update</span>
+                            <span data-lang="ja">最終更新</span>
                         </div>
                         <div class="phase-date">
                             <span data-lang="en">June 1, 2026</span>
                             <span data-lang="ja">2026年6月1日</span>
-                        </div>
-                        <div class="phase-desc">
-                            <span data-lang="en">Final adjustment based on current SST, cloud cover, wind forecast.</span>
-                            <span data-lang="ja">現在のSST、雲量、風予報に基づく最終調整。</span>
                         </div>
                     </div>
                 </div>
@@ -600,61 +541,9 @@
                             <span data-lang="en">June 2026</span>
                             <span data-lang="ja">2026年6月</span>
                         </div>
-                        <div class="phase-desc">
-                            <span data-lang="en">Document actual timing, compare with prediction, refine model for 2027.</span>
-                            <span data-lang="ja">実際のタイミングを記録、予測と比較、2027年に向けてモデルを改良。</span>
-                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- ===== WHY THIS MATTERS ===== -->
-        <section class="content-section" style="background: linear-gradient(135deg, rgba(220, 38, 38, 0.03) 0%, rgba(255, 255, 255, 0) 100%);">
-            <h2>
-                <span data-lang="en">Why Prediction Matters</span>
-                <span data-lang="ja">なぜ予測が重要なのか</span>
-            </h2>
-            
-            <div class="story-box">
-                <p data-lang="en" style="line-height: 1.9;">
-                    Coral spawning is not just a spectacle. It is the primary mechanism by which reefs replenish themselves. When synchrony fails or density drops below critical thresholds, fertilization collapses—silently, invisibly.
-                </p>
-                <p data-lang="ja" style="line-height: 1.9;">
-                    サンゴの産卵は単なるスペクタクルではありません。リーフが自らを補充する主要なメカニズムです。同期が失敗したり、密度が臨界閾値を下回ったりすると、受精は崩壊します——静かに、見えないところで。
-                </p>
-            </div>
-            
-            <div class="disruption-card" style="margin-top: 1.5rem; border-left: 3px solid #dc2626;">
-                <div class="disruption-icon">📉</div>
-                <div class="disruption-title">
-                    <span data-lang="en">The Density Threshold (Ricardo et al. 2025)</span>
-                    <span data-lang="ja">密度閾値（Ricardo et al. 2025）</span>
-                </div>
-                <div class="disruption-desc">
-                    <span data-lang="en">Field experiments show that <strong>13-50 colonies per 100m²</strong> are needed just to achieve 10% fertilization. Many degraded reefs have already fallen below this threshold.</span>
-                    <span data-lang="ja">野外実験によると、10%の受精を達成するだけでも<strong>100m²あたり13-50コロニー</strong>が必要です。多くの劣化したリーフはすでにこの閾値を下回っています。</span>
-                </div>
-            </div>
-            
-            <p style="line-height: 1.9; margin-top: 1.5rem;">
-                <span data-lang="en">By predicting, observing, and documenting spawning events, we create the long-term record needed to detect reproductive decline—before it becomes irreversible.</span>
-                <span data-lang="ja">産卵イベントを予測し、観察し、記録することで、繁殖の衰退を——不可逆になる前に——検出するために必要な長期記録を作成します。</span>
-            </p>
-        </section>
-
-        <!-- ===== LINK TO MECHANISM ===== -->
-        <section class="content-section" style="text-align: center;">
-            <a href="spawning-mechanism.html" class="card" style="display: inline-block; padding: 1.5rem 2rem; text-decoration: none; color: inherit;">
-                <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">
-                    <span data-lang="en">Want to understand the science?</span>
-                    <span data-lang="ja">科学を理解したい？</span>
-                </p>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">
-                    <span data-lang="en">→ How corals sense moonlight without eyes or brain</span>
-                    <span data-lang="ja">→ サンゴは目も脳もなしにどうやって月光を感知するのか</span>
-                </p>
-            </a>
         </section>
 
         <!-- ===== References ===== -->
@@ -665,11 +554,10 @@
             </h2>
             <div class="source-info">
                 <ul>
-                    <li>Lin C-H et al. (2021) Moonrise timing is key for synchronized spawning in coral <i>Dipsastraea speciosa</i>. <i>PNAS</i>. <a href="https://doi.org/10.1073/pnas.2101985118" target="_blank">doi:10.1073/pnas.2101985118</a></li>
-                    <li>Sakai Y et al. (2024) Long-term aquarium records delineate the synchronized spawning strategy of <i>Acropora</i> corals. <i>Royal Society Open Science</i>. <a href="https://doi.org/10.1098/rsos.240183" target="_blank">doi:10.1098/rsos.240183</a></li>
-                    <li>van Woesik R (2010) Calm before the spawn: global coral spawning patterns are explained by regional wind fields. <i>Proc R Soc B</i>. <a href="https://doi.org/10.1098/rspb.2009.1524" target="_blank">doi:10.1098/rspb.2009.1524</a></li>
-                    <li>Ricardo G et al. (2025) Critical thresholds of adult patch density and spacing during coral fertilization. <i>Nature Ecology & Evolution</i>. <a href="https://doi.org/10.1038/s41559-025-02844-y" target="_blank">doi:10.1038/s41559-025-02844-y</a></li>
-                    <li>Davies TW et al. (2023) Global disruption of coral broadcast spawning associated with artificial light at night. <i>Nature Communications</i>. <a href="https://doi.org/10.1038/s41467-023-38070-y" target="_blank">doi:10.1038/s41467-023-38070-y</a></li>
+                    <li>Lin C-H et al. (2021) Moonrise timing is key for synchronized spawning. <i>PNAS</i>. <a href="https://doi.org/10.1073/pnas.2101985118" target="_blank">doi:10.1073/pnas.2101985118</a></li>
+                    <li>Sakai Y et al. (2024) Long-term aquarium records delineate spawning strategy. <i>Royal Society Open Science</i>. <a href="https://doi.org/10.1098/rsos.240183" target="_blank">doi:10.1098/rsos.240183</a></li>
+                    <li>van Woesik R (2010) Calm before the spawn. <i>Proc R Soc B</i>. <a href="https://doi.org/10.1098/rspb.2009.1524" target="_blank">doi:10.1098/rspb.2009.1524</a></li>
+                    <li>Davies TW et al. (2023) Artificial light disrupts coral spawning. <i>Nature Communications</i>. <a href="https://doi.org/10.1038/s41467-023-38070-y" target="_blank">doi:10.1038/s41467-023-38070-y</a></li>
                 </ul>
             </div>
         </section>
@@ -728,10 +616,7 @@
             const sidebarOverlay = document.getElementById('sidebar-overlay');
             const sidebarClose = document.getElementById('sidebar-close');
             
-            if (!hamburger || !sidebar || !sidebarOverlay) {
-                console.warn('Navigation elements not found');
-                return;
-            }
+            if (!hamburger || !sidebar || !sidebarOverlay) return;
             
             function openSidebar() {
                 sidebar.classList.add('active');
@@ -750,48 +635,17 @@
             hamburger.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                if (sidebar.classList.contains('active')) {
-                    closeSidebar();
-                } else {
-                    openSidebar();
-                }
-            });
-            
-            hamburger.addEventListener('touchend', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                if (sidebar.classList.contains('active')) {
-                    closeSidebar();
-                } else {
-                    openSidebar();
-                }
+                sidebar.classList.contains('active') ? closeSidebar() : openSidebar();
             });
             
             sidebarOverlay.addEventListener('click', closeSidebar);
-            sidebarOverlay.addEventListener('touchend', function(e) {
-                e.preventDefault();
-                closeSidebar();
-            });
-            
-            if (sidebarClose) {
-                sidebarClose.addEventListener('click', closeSidebar);
-                sidebarClose.addEventListener('touchend', function(e) {
-                    e.preventDefault();
-                    closeSidebar();
-                });
-            }
+            if (sidebarClose) sidebarClose.addEventListener('click', closeSidebar);
             
             document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
-                    closeSidebar();
-                }
+                if (e.key === 'Escape' && sidebar.classList.contains('active')) closeSidebar();
             });
             
-            sidebar.querySelectorAll('a').forEach(function(link) {
-                link.addEventListener('click', function() {
-                    closeSidebar();
-                });
-            });
+            sidebar.querySelectorAll('a').forEach(link => link.addEventListener('click', closeSidebar));
         }
         
         if (document.readyState === 'loading') {
