@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dissolved Oxygen and Bleaching | marine-obs.org</title>
+    <!-- SEO / OGP -->
+    <meta name="description" content="溶存酸素とサンゴ白化の関係。脱酸素が白化閾値を下げるメカニズム、種別耐性差、産卵との危険な関係を解説。">
+    <meta property="og:title" content="溶存酸素と白化 | marine-obs.org">
+    <meta property="og:description" content="溶存酸素とサンゴ白化の関係。脱酸素が白化閾値を下げるメカニズム、種別耐性差、産卵との危険な関係を解説。">
+    <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
+    <meta property="og:url" content="https://marine-obs.org/dissolved-oxygen-bleaching.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dhw.css">
+    <style>
+        /* Page-specific styles */
+        .oxygen-cycle {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .cycle-phases {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        @media (max-width: 600px) {
+            .cycle-phases {
+                grid-template-columns: 1fr;
+            }
+        }
+        .phase-card {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .phase-card.day {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+        }
+        .phase-card.night {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            border: 2px solid #334155;
+        }
+        .phase-card h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        .phase-card .do-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .phase-card.day .do-value { color: #b45309; }
+        .phase-card.night .do-value { color: #fbbf24; }
+        .phase-card p {
+            margin: 0.5rem 0 0 0;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        .synergy-highlight {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border-left: 4px solid #ef4444;
+            padding: 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .synergy-highlight p {
+            margin: 0;
+        }
+        .pathway-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .pathway-card {
+            padding: 1.25rem;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+        .pathway-card.vulnerable {
+            background: #fef2f2;
+            border-color: #ef4444;
+        }
+        .pathway-card.tolerant {
+            background: #f0fdf4;
+            border-color: #22c55e;
+        }
+        .pathway-card.warning {
+            background: #fffbeb;
+            border-color: #f59e0b;
+        }
+        .pathway-card.info {
+            background: #eff6ff;
+            border-color: #3b82f6;
+        }
+        .pathway-card h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1rem;
+        }
+        .pathway-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .pathway-card ul {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.25rem;
+            font-size: 0.9rem;
+        }
+        .pathway-card li {
+            margin: 0.25rem 0;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin: 1.5rem 0;
+        }
+        .data-table th, .data-table td {
+            padding: 0.5rem 0.4rem;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .data-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .data-table tr:hover {
+            background: #f8fafc;
+        }
+        .site-label {
+            text-align: left;
+            font-weight: 500;
+        }
+        .table-note {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        .do-critical { color: #dc2626; font-weight: 600; }
+        .do-low { color: #f59e0b; }
+        .do-normal { color: #059669; }
+        .do-high { color: #2563eb; font-weight: 500; }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin: 1rem 0;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 0.6rem;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #f8fafc;
+            font-weight: 600;
+        }
+        .comparison-table th:first-child {
+            width: 25%;
+        }
+        .case-study {
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+            border: 1px solid #f9a8d4;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .case-study h3 {
+            color: #be185d;
+            margin: 0 0 1rem 0;
+        }
+        .case-study-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .stat-box {
+            background: white;
+            border-radius: 8px;
+            padding: 0.75rem;
+            text-align: center;
+        }
+        .stat-box .stat-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .stat-box .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+        .stat-box.danger .stat-value { color: #dc2626; }
+        .stat-box.before .stat-value { color: #059669; }
+        .future-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-left: 4px solid #22c55e;
+            padding: 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .related-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+        .related-link:hover {
+            text-decoration: underline;
+        }
+        .threshold-diagram {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .threshold-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .threshold-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .threshold-bar .label {
+            width: 120px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .threshold-bar .bar-container {
+            flex: 1;
+            height: 24px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            position: relative;
+        }
+        .threshold-bar .bar {
+            height: 100%;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+        }
+        .threshold-bar.normal .bar {
+            width: 100%;
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+        }
+        .threshold-bar.hypoxic .bar {
+            width: 90%;
+            background: linear-gradient(90deg, #f59e0b, #d97706);
+        }
+        .rinko-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .spec-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .spec-item .spec-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .spec-item .spec-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+        .spec-item .spec-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="images/logo-circle.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul class="nav-links">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Details</span>
+                            <span data-lang="ja">データ詳細</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                            <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                            <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                            <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                            <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span></a></li>
+                            <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
+                            <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll &amp; Bleaching</span><span data-lang="ja">クロロフィルと白化</span></a></li>
+                            <li><a href="dissolved-oxygen-bleaching.html"><span data-lang="en">Dissolved Oxygen &amp; Bleaching</span><span data-lang="ja">溶存酸素と白化</span><span class="nav-badge">New</span></a></li>
+                            <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge">計画中</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Bleaching</span>
+                            <span data-lang="ja">白化</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                            <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                            <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Learn</span>
+                            <span data-lang="ja">サンゴを知る</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                            <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                            <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">For Divers</span>
+                            <span data-lang="ja">ダイバー向け</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                            <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Reference</span>
+                            <span data-lang="ja">リファレンス</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                            <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                            <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                            <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button id="lang-en" class="active">English</button>
+                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <button id="lang-ja">日本語</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Details</span>
+                    <span data-lang="ja">データ詳細</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                    <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                    <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                    <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                    <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                    <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span></a></li>
+                    <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
+                    <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll &amp; Bleaching</span><span data-lang="ja">クロロフィルと白化</span></a></li>
+                    <li><a href="dissolved-oxygen-bleaching.html"><span data-lang="en">Dissolved Oxygen &amp; Bleaching</span><span data-lang="ja">溶存酸素と白化</span><span class="nav-badge-mobile">New</span></a></li>
+                    <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge-mobile">計画中</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Bleaching</span>
+                    <span data-lang="ja">白化</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                    <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                    <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Learn</span>
+                    <span data-lang="ja">サンゴを知る</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                    <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                    <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">For Divers</span>
+                    <span data-lang="ja">ダイバー向け</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                    <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Reference</span>
+                    <span data-lang="ja">リファレンス</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                    <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                    <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                    <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> / 
+            <a href="bleaching.html"><span data-lang="en">Bleaching</span><span data-lang="ja">白化</span></a> /
+            <span data-lang="en">Dissolved Oxygen</span>
+            <span data-lang="ja">溶存酸素</span>
+        </nav>
+
+        <div class="page-header">
+            <h1>
+                <span data-lang="en">Dissolved Oxygen & Coral Bleaching</span>
+                <span data-lang="ja">溶存酸素とサンゴ白化</span>
+            </h1>
+            <p class="lead">
+                <span data-lang="en">
+                    The hidden variable in coral stress. Deoxygenation can lower bleaching thresholds by up to 1°C—
+                    making accurate oxygen monitoring essential for predicting reef futures.
+                </span>
+                <span data-lang="ja">
+                    サンゴストレスの見落とされた変数。脱酸素は白化閾値を最大1℃下げる可能性があり、
+                    正確な酸素モニタリングがサンゴ礁の未来予測に不可欠です。
+                </span>
+            </p>
+        </div>
+
+        <!-- Section 1: Why Oxygen Matters -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">The Hidden Variable</span>
+                <span data-lang="ja">見落とされた変数</span>
+            </h2>
+
+            <p>
+                <span data-lang="en">
+                    For decades, coral bleaching research focused almost exclusively on temperature. 
+                    But corals are animals—they need oxygen to breathe. And the oxygen environment around a coral 
+                    is far more dynamic and stressful than we once imagined.
+                </span>
+                <span data-lang="ja">
+                    何十年もの間、サンゴ白化研究はほぼ温度だけに焦点を当ててきました。
+                    しかしサンゴは動物であり、呼吸に酸素が必要です。そしてサンゴ周囲の酸素環境は、
+                    かつて想像されていたよりもはるかに動的でストレスフルなものでした。
+                </span>
+            </p>
+
+            <div class="pathway-grid">
+                <div class="pathway-card info">
+                    <h3>🔬 <span data-lang="en">Research Gap</span><span data-lang="ja">研究のギャップ</span></h3>
+                    <p>
+                        <span data-lang="en">
+                            Temperature-bleaching research has ~40 years of accumulated knowledge. 
+                            Oxygen-bleaching research is about a decade behind—but catching up rapidly since 2020.
+                        </span>
+                        <span data-lang="ja">
+                            温度と白化の研究には約40年の蓄積があります。
+                            酸素と白化の研究は約10年遅れていましたが、2020年以降急速に追いついています。
+                        </span>
+                    </p>
+                </div>
+
+                <div class="pathway-card warning">
+                    <h3>⚠️ <span data-lang="en">The Problem</span><span data-lang="ja">問題点</span></h3>
+                    <p>
+                        <span data-lang="en">
+                            DHW calculations assume normal oxygen levels. If oxygen is depleted, 
+                            corals may bleach at temperatures the models predict as "safe."
+                        </span>
+                        <span data-lang="ja">
+                            DHW計算は正常な酸素レベルを前提としています。酸素が減少すると、
+                            モデルが「安全」と予測する温度でもサンゴは白化する可能性があります。
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <p>
+                <span data-lang="en">
+                    A landmark 2020 review in <em>Nature Climate Change</em> (Hughes et al.) brought deoxygenation 
+                    to the forefront of coral reef science, estimating that 13% of the world's coral reefs 
+                    face low-oxygen risk—and this number is growing as oceans warm.
+                </span>
+                <span data-lang="ja">
+                    2020年の<em>Nature Climate Change</em>のレビュー論文（Hughes et al.）は、
+                    脱酸素化をサンゴ礁科学の最前線に押し上げ、世界のサンゴ礁の13%が低酸素リスクに直面していると推定しました。
+                    そしてこの数字は海洋の温暖化とともに増加しています。
+                </span>
+            </p>
+        </section>
+
+        <!-- Section 2: Daily Oxygen Cycle -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">The Daily Oxygen Rollercoaster</span>
+                <span data-lang="ja">毎日の酸素ジェットコースター</span>
+            </h2>
+
+            <p>
+                <span data-lang="en">
+                    Divers see coral reefs as serene environments. But at the microscale, corals experience 
+                    dramatic oxygen swings every 24 hours—a hidden battle for breath that few realize.
+                </span>
+                <span data-lang="ja">
+                    ダイバーにとってサンゴ礁は穏やかな環境に見えます。しかしミクロスケールでは、
+                    サンゴは24時間ごとに劇的な酸素変動を経験しています—ほとんど知られていない呼吸の戦いです。
+                </span>
+            </p>
+
+            <div class="oxygen-cycle">
+                <div class="cycle-phases">
+                    <div class="phase-card day">
+                        <h4>☀️ <span data-lang="en">Daytime</span><span data-lang="ja">日中</span></h4>
+                        <div class="do-value">>300%</div>
+                        <p>
+                            <span data-lang="en">Photosynthesis creates oxygen surplus</span>
+                            <span data-lang="ja">光合成が酸素を過剰供給</span>
+                        </p>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem;">
+                            <span data-lang="en">Hyperoxia (supersaturation)</span>
+                            <span data-lang="ja">過飽和状態</span>
+                        </p>
+                    </div>
+                    <div class="phase-card night">
+                        <h4>🌙 <span data-lang="en">Nighttime</span><span data-lang="ja">夜間</span></h4>
+                        <div class="do-value">&lt;2 mg/L</div>
+                        <p>
+                            <span data-lang="en">Respiration depletes oxygen</span>
+                            <span data-lang="ja">呼吸が酸素を消費</span>
+                        </p>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem;">
+                            <span data-lang="en">Hypoxia (oxygen stress)</span>
+                            <span data-lang="ja">低酸素状態</span>
+                        </p>
+                    </div>
+                </div>
+                <p class="table-note" style="text-align: center; margin-top: 1rem;">
+                    <span data-lang="en">Measurements from coral diffusive boundary layer (Linsmayer et al. 2020)</span>
+                    <span data-lang="ja">サンゴ拡散境界層での測定値（Linsmayer et al. 2020）</span>
+                </p>
+            </div>
+
+            <p>
+                <span data-lang="en">
+                    This daily cycle means corals routinely experience conditions that would be lethal for many marine organisms. 
+                    They survive through a combination of metabolic flexibility—including anaerobic fermentation pathways 
+                    that produce strombine as an end product.
+                </span>
+                <span data-lang="ja">
+                    この日周サイクルは、サンゴが多くの海洋生物にとって致死的な条件を日常的に経験していることを意味します。
+                    サンゴは代謝の柔軟性—ストロンビンを最終産物とする嫌気的発酵経路を含む—によって生き延びています。
+                </span>
+            </p>
+
+            <div class="story-box">
+                <p class="story-lead">
+                    <span data-lang="en">Like Mountaineers Every Night</span>
+                    <span data-lang="ja">毎晩、登山者のように</span>
+                </p>
+                <p>
+                    <span data-lang="en">
+                        Corals essentially experience the equivalent of high-altitude hypoxia every night. 
+                        Just as mountaineers at extreme elevations struggle with thin air, corals must cope 
+                        with oxygen-depleted conditions from sunset to dawn.
+                    </span>
+                    <span data-lang="ja">
+                        サンゴは本質的に毎晩、高地での低酸素に相当する状態を経験しています。
+                        極限の高度で登山者が薄い空気に苦しむように、サンゴは日没から夜明けまで
+                        酸素が枯渇した状態に対処しなければなりません。
+                    </span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 3: Oxygen × Temperature Synergy -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Oxygen × Temperature: A Dangerous Synergy</span>
+                <span data-lang="ja">酸素×温度：危険な相乗効果</span>
+            </h2>
+
+            <p>
+                <span data-lang="en">
+                    The most critical finding from recent research: <strong>low oxygen lowers the temperature threshold for bleaching</strong>. 
+                    This means corals in oxygen-depleted waters bleach at temperatures that would otherwise be survivable.
+                </span>
+                <span data-lang="ja">
+                    近年の研究からの最も重要な発見：<strong>低酸素は白化の温度閾値を下げる</strong>。
+                    これは、酸素が減少した海域のサンゴが、通常なら生存可能な温度で白化することを意味します。
+                </span>
+            </p>
+
+            <div class="threshold-diagram">
+                <h4 style="margin: 0 0 1rem 0; font-size: 0.9rem;">
+                    <span data-lang="en">Bleaching Threshold Comparison</span>
+                    <span data-lang="ja">白化閾値の比較</span>
+                </h4>
+                <div class="threshold-bars">
+                    <div class="threshold-bar normal">
+                        <span class="label"><span data-lang="en">Normal O₂</span><span data-lang="ja">通常酸素</span></span>
+                        <div class="bar-container">
+                            <div class="bar">~32°C</div>
+                        </div>
+                    </div>
+                    <div class="threshold-bar hypoxic">
+                        <span class="label"><span data-lang="en">Low O₂</span><span data-lang="ja">低酸素</span></span>
+                        <div class="bar-container">
+                            <div class="bar">~31°C <span style="font-weight: 400; opacity: 0.9;">(−1°C)</span></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="table-note" style="margin-top: 0.75rem;">
+                    <span data-lang="en">Alderdice et al. (2022): Deoxygenation lowered thermal threshold by up to 1°C in <em>Acropora</em></span>
+                    <span data-lang="ja">Alderdice et al. (2022)：脱酸素により<em>Acropora</em>の熱閾値が最大1℃低下</span>
+                </p>
+            </div>
+
+            <div class="synergy-highlight">
+                <p>
+                    <strong>⚠️ <span data-lang="en">Critical Implication:</span><span data-lang="ja">重要な示唆：</span></strong>
+                    <span data-lang="en">
+                        Current DHW-based predictions may <em>underestimate</em> bleaching risk in areas with low oxygen. 
+                        A reef showing DHW 3 under hypoxic conditions may experience bleaching equivalent to DHW 4+ under normal oxygen.
+                    </span>
+                    <span data-lang="ja">
+                        現在のDHWベースの予測は、低酸素海域での白化リスクを<em>過小評価</em>している可能性があります。
+                        低酸素条件下でDHW 3を示すサンゴ礁は、通常酸素下のDHW 4以上に相当する白化を経験する可能性があります。
+                    </span>
+                </p>
+            </div>
+
+            <h3>
+                <span data-lang="en">The HIF Response System</span>
+                <span data-lang="ja">HIF応答システム</span>
+            </h3>
+
+            <p>
+                <span data-lang="en">
+                    Corals possess a hypoxia-inducible factor (HIF) response system similar to that found in mammals. 
+                    This ancient oxygen-sensing pathway determines how well a coral can cope with low oxygen stress.
+                </span>
+                <span data-lang="ja">
+                    サンゴは哺乳類に見られるものと類似した低酸素誘導因子（HIF）応答システムを持っています。
+                    この古代の酸素感知経路が、サンゴが低酸素ストレスにどれだけうまく対処できるかを決定します。
+                </span>
+            </p>
+
+            <div class="card" style="margin-top: 1rem;">
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th><span data-lang="en">HIF Response</span><span data-lang="ja">HIF応答</span></th>
+                                <th><span data-lang="en">Coral Phenotype</span><span data-lang="ja">サンゴの表現型</span></th>
+                                <th><span data-lang="en">Example Species</span><span data-lang="ja">例</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span data-lang="en">Strong inducibility</span><span data-lang="ja">強い誘導性</span></td>
+                                <td><span data-lang="en">Bleaching resistant</span><span data-lang="ja">白化耐性</span></td>
+                                <td><em>Acropora tenuis</em></td>
+                            </tr>
+                            <tr>
+                                <td><span data-lang="en">Weak inducibility</span><span data-lang="ja">弱い誘導性</span></td>
+                                <td><span data-lang="en">Bleaching susceptible</span><span data-lang="ja">白化感受性</span></td>
+                                <td><em>Acropora selago</em></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="table-note">
+                    <span data-lang="en">HSP70 and HSP90 expression are key markers of hypoxia tolerance (Alderdice et al. 2020)</span>
+                    <span data-lang="ja">HSP70とHSP90の発現が低酸素耐性の重要なマーカー（Alderdice et al. 2020）</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 4: Species Differences -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Species-Specific Hypoxia Tolerance</span>
+                <span data-lang="ja">種別の低酸素耐性</span>
+            </h2>
+
+            <p>
+                <span data-lang="en">
+                    Just as some coral species are more vulnerable to thermal stress, 
+                    they also show dramatically different tolerances to low oxygen. 
+                    The pattern largely mirrors thermal vulnerability.
+                </span>
+                <span data-lang="ja">
+                    一部のサンゴ種が熱ストレスに対してより脆弱であるように、
+                    低酸素に対する耐性も種によって劇的に異なります。
+                    このパターンは熱脆弱性のパターンとほぼ一致しています。
+                </span>
+            </p>
+
+            <div class="pathway-grid">
+                <div class="pathway-card vulnerable">
+                    <h3>🔴 <span data-lang="en">Highly Vulnerable</span><span data-lang="ja">高脆弱性</span></h3>
+                    <p><strong><em>Acropora cervicornis</em></strong></p>
+                    <ul>
+                        <li><span data-lang="en">Dies within 24 hours at 1.0 mg/L DO</span><span data-lang="ja">DO 1.0 mg/Lで24時間以内に死亡</span></li>
+                        <li><span data-lang="en">Branching morphology = high O₂ demand</span><span data-lang="ja">枝状形態 = 高い酸素要求</span></li>
+                        <li><span data-lang="en">Also highly heat-sensitive</span><span data-lang="ja">熱にも非常に敏感</span></li>
+                    </ul>
+                </div>
+
+                <div class="pathway-card tolerant">
+                    <h3>🟢 <span data-lang="en">Remarkably Tolerant</span><span data-lang="ja">顕著な耐性</span></h3>
+                    <p><strong><em>Orbicella faveolata</em></strong></p>
+                    <ul>
+                        <li><span data-lang="en">Survives 11+ days at 1.0 mg/L DO</span><span data-lang="ja">DO 1.0 mg/Lで11日以上生存</span></li>
+                        <li><span data-lang="en">Massive morphology = lower metabolic rate</span><span data-lang="ja">塊状形態 = 低い代謝率</span></li>
+                        <li><span data-lang="en">Also relatively heat-tolerant</span><span data-lang="ja">熱にも比較的耐性</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 1.5rem;">
+                <h3 style="margin: 0 0 1rem 0; font-size: 1rem;">
+                    <span data-lang="en">Hypoxia Tolerance by Species</span>
+                    <span data-lang="ja">種別の低酸素耐性</span>
+                </h3>
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th class="site-label"><span data-lang="en">Species</span><span data-lang="ja">種</span></th>
+                                <th><span data-lang="en">Lethal DO</span><span data-lang="ja">致死DO</span></th>
+                                <th><span data-lang="en">Survival at 1.0 mg/L</span><span data-lang="ja">1.0 mg/Lでの生存</span></th>
+                                <th><span data-lang="en">Heat Sensitivity</span><span data-lang="ja">熱感受性</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="site-label"><em>Acropora cervicornis</em></td>
+                                <td class="do-critical">~1.0 mg/L</td>
+                                <td><span data-lang="en">&lt;1 day</span><span data-lang="ja">1日未満</span></td>
+                                <td><span data-lang="en">High</span><span data-lang="ja">高</span></td>
+                            </tr>
+                            <tr>
+                                <td class="site-label"><em>Porites astreoides</em></td>
+                                <td class="do-low">&lt;1.0 mg/L</td>
+                                <td><span data-lang="en">&gt;14 days</span><span data-lang="ja">14日以上</span></td>
+                                <td><span data-lang="en">Moderate</span><span data-lang="ja">中</span></td>
+                            </tr>
+                            <tr>
+                                <td class="site-label"><em>Orbicella faveolata</em></td>
+                                <td class="do-normal">&lt;1.0 mg/L</td>
+                                <td><span data-lang="en">&gt;11 days</span><span data-lang="ja">11日以上</span></td>
+                                <td><span data-lang="en">Low</span><span data-lang="ja">低</span></td>
+                            </tr>
+                            <tr>
+                                <td class="site-label"><em>Siderastrea siderea</em></td>
+                                <td class="do-normal">&lt;1.5 mg/L</td>
+                                <td><span data-lang="en">&gt;14 days</span><span data-lang="ja">14日以上</span></td>
+                                <td><span data-lang="en">Low</span><span data-lang="ja">低</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="table-note">
+                    <span data-lang="en">Data from Johnson et al. (2021) and Mallon et al. (2025)</span>
+                    <span data-lang="ja">データ：Johnson et al. (2021)、Mallon et al. (2025)</span>
+                </p>
+            </div>
+
+            <div class="insight-box adapt" style="margin-top: 1.5rem;">
+                <strong class="adapt"><span data-lang="en">Key insight:</span><span data-lang="ja">重要な知見：</span></strong>
+                <span data-lang="en">
+                    Intermediate hypoxia (2–4 mg/L) causes minimal effects in most species—suggesting there's a threshold 
+                    below which oxygen stress becomes critical. This is good news: corals may tolerate moderate deoxygenation 
+                    better than feared.
+                </span>
+                <span data-lang="ja">
+                    中程度の低酸素（2〜4 mg/L）はほとんどの種で影響が最小限であり、
+                    酸素ストレスが致命的になる閾値が存在することを示唆しています。
+                    これは良いニュースです：サンゴは中程度の脱酸素には予想より耐える可能性があります。
+                </span>
+            </div>
+        </section>
+
+        <!-- Section 5: Ningaloo Case Study -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Case Study: The Ningaloo Catastrophe</span>
+                <span data-lang="ja">事例：ニンガルーの大惨事</span>
+            </h2>
+
+            <p>
+                <span data-lang="en">
+                    In March 2022, one of the most dramatic examples of spawning-related deoxygenation 
+                    devastated Bills Bay in Coral Bay, Western Australia—a stark warning for reefs worldwide.
+                </span>
+                <span data-lang="ja">
+                    2022年3月、産卵に関連した脱酸素の最も劇的な事例が、
+                    西オーストラリア州コーラルベイのビルズベイを壊滅させました—世界中のサンゴ礁への厳しい警告です。
+                </span>
+            </p>
+
+            <div class="case-study">
+                <h3>
+                    <span data-lang="en">🚨 Bills Bay Mass Mortality Event</span>
+                    <span data-lang="ja">🚨 ビルズベイ大量死事件</span>
+                </h3>
+                
+                <p style="margin-bottom: 1rem;">
+                    <span data-lang="en"><strong>Trigger conditions:</strong> Coral spawning + calm weather + elevated temperature + flood tide</span>
+                    <span data-lang="ja"><strong>発生条件：</strong>サンゴ産卵 + 凪 + 高水温 + 満潮</span>
+                </p>
+
+                <div class="case-study-stats">
+                    <div class="stat-box before">
+                        <div class="stat-value">70%</div>
+                        <div class="stat-label"><span data-lang="en">Coral cover (2021)</span><span data-lang="ja">サンゴ被度（2021年）</span></div>
+                    </div>
+                    <div class="stat-box danger">
+                        <div class="stat-value">1%</div>
+                        <div class="stat-label"><span data-lang="en">Coral cover (2022)</span><span data-lang="ja">サンゴ被度（2022年）</span></div>
+                    </div>
+                    <div class="stat-box danger">
+                        <div class="stat-value">−84%</div>
+                        <div class="stat-label"><span data-lang="en">Genera lost</span><span data-lang="ja">属の消失</span></div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    <span data-lang="en">
+                        <strong>Sequence:</strong> Spawned material became trapped → rapid bacterial decomposition → 
+                        severe oxygen depletion → mass fish kill (first warning) → complete coral mortality within days.
+                    </span>
+                    <span data-lang="ja">
+                        <strong>経過：</strong>産卵物質が滞留 → 急速な細菌分解 → 
+                        深刻な酸素枯渇 → 魚類大量死（最初の警告） → 数日以内にサンゴ完全死亡。
+                    </span>
+                </p>
+            </div>
+
+            <div class="card" style="margin-top: 1rem;">
+                <h4 style="margin: 0 0 0.75rem 0; font-size: 0.9rem;">
+                    <span data-lang="en">Survivors vs. Victims</span>
+                    <span data-lang="ja">生存者 vs 犠牲者</span>
+                </h4>
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th><span data-lang="en">Extirpated</span><span data-lang="ja">消失</span></th>
+                                <th><span data-lang="en">Survived</span><span data-lang="ja">生存</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><em>Acropora</em>, <em>Montipora</em>, <em>Echinopora</em></td>
+                                <td><span data-lang="en">Massive <em>Porites</em>, <em>Cyphastrea</em></span><span data-lang="ja">塊状<em>Porites</em>、<em>Cyphastrea</em></span></td>
+                            </tr>
+                            <tr>
+                                <td><span data-lang="en">26 genera → 4 genera</span><span data-lang="ja">26属 → 4属</span></td>
+                                <td><span data-lang="en">Only massive morphologies</span><span data-lang="ja">塊状形態のみ</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="table-note">Richards et al. (2024) <em>Coral Reefs</em></p>
+            </div>
+
+            <div class="synergy-highlight" style="margin-top: 1.5rem;">
+                <p>
+                    <strong>🇯🇵 <span data-lang="en">Warning for Japan:</span><span data-lang="ja">日本への警告：</span></strong>
+                    <span data-lang="en">
+                        Japanese reefs experience similar spawning events (May–July). If calm conditions, high temperatures, 
+                        and restricted circulation coincide during spawning, the same catastrophic outcome could occur—
+                        particularly in semi-enclosed areas like Sekisei Lagoon.
+                    </span>
+                    <span data-lang="ja">
+                        日本のサンゴ礁も同様の産卵イベントを経験します（5〜7月）。産卵期に凪、高温、
+                        循環制限が重なれば、同様の壊滅的結果が起こりえます—
+                        特に石西礁湖のような半閉鎖的な海域では。
+                    </span>
+                </p>
+            </div>
+
+            <a href="spawning.html" class="related-link">
+                🥚 <span data-lang="en">See Coral Spawning predictions</span><span data-lang="ja">サンゴ産卵予測を見る</span> →
+            </a>
+        </section>
+
+        <!-- Section 6: Oxygen Supersaturation -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">The Protective Side: Oxygen Supersaturation</span>
+                <span data-lang="ja">保護的側面：酸素過飽和</span>
+            </h2>
+
+            <p>
+                <span data-lang="en">
+                    The oxygen story isn't all negative. Recent research reveals that elevated oxygen levels 
+                    can actually <em>protect</em> corals during heat stress—offering a glimmer of hope.
+                </span>
+                <span data-lang="ja">
+                    酸素の話はすべてネガティブではありません。最新の研究は、高い酸素レベルが
+                    熱ストレス時にサンゴを実際に<em>保護</em>できることを明らかにしています—希望の光です。
+                </span>
+            </p>
+
+            <div class="pathway-grid">
+                <div class="pathway-card tolerant">
+                    <h3>🛡️ <span data-lang="en">Supersaturation Benefits</span><span data-lang="ja">過飽和の利点</span></h3>
+                    <p>
+                        <span data-lang="en">
+                            Oxygen at 10 mg/L raised the thermal threshold by 0.4°C in two of three coral species tested.
+                            Even 0.2°C protection is biologically meaningful—heatwaves often exceed thresholds by fractions of a degree.
+                        </span>
+                        <span data-lang="ja">
+                            10 mg/Lの酸素は、テストした3種のサンゴのうち2種で熱閾値を0.4℃上昇させました。
+                            0.2℃の保護でも生物学的に意味があります—熱波はしばしばわずかな温度差で閾値を超えます。
+                        </span>
+                    </p>
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem;">
+                        <span data-lang="en">Parry et al. (2025) <em>Global Change Biology</em></span>
+                        <span data-lang="ja">Parry et al. (2025) <em>Global Change Biology</em></span>
+                    </p>
+                </div>
+
+                <div class="pathway-card info">
+                    <h3>🔄 <span data-lang="en">The Mechanism</span><span data-lang="ja">メカニズム</span></h3>
+                    <p>
+                        <span data-lang="en">
+                            When heat damages the photosynthetic machinery, corals lose their internal oxygen supply. 
+                            Bulk seawater oxygen can compensate—but only if (1) oxygen levels are high and (2) water flow delivers it to coral tissue.
+                        </span>
+                        <span data-lang="ja">
+                            熱が光合成機構を損傷すると、サンゴは内部の酸素供給を失います。
+                            周囲の海水酸素が補償できますが、それには(1)酸素レベルが高く、(2)水流がサンゴ組織に届ける必要があります。
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="story-box">
+                <p class="story-lead">
+                    <span data-lang="en">Flow Matters</span>
+                    <span data-lang="ja">水流が重要</span>
+                </p>
+                <p>
+                    <span data-lang="en">
+                        Corals in high-flow microhabitats may be more heat-tolerant because they have better access to bulk seawater oxygen. 
+                        Conversely, stagnant lagoons face double jeopardy: they accumulate heat <em>and</em> lose oxygen.
+                        This may partially explain why some reef patches survive heatwaves while nearby areas perish.
+                    </span>
+                    <span data-lang="ja">
+                        流れの強い微小生息域のサンゴは、海水酸素へのアクセスが良いため、より耐熱性が高い可能性があります。
+                        逆に、停滞したラグーンは二重の危機に直面します：熱が蓄積し、<em>かつ</em>酸素が失われます。
+                        これが、一部のサンゴ礁パッチが熱波を生き延び、近くのエリアが死滅する理由を部分的に説明するかもしれません。
+                    </span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 7: Global Deoxygenation -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Global Ocean Deoxygenation</span>
+                <span data-lang="ja">グローバルな海洋脱酸素化</span>
+            </h2>
+
+            <p>
+                <span data-lang="en">
+                    The oxygen problem isn't just local. Climate change is driving ocean-wide deoxygenation 
+                    through multiple pathways, creating an increasingly hostile environment for coral reefs.
+                </span>
+                <span data-lang="ja">
+                    酸素問題は局所的なものだけではありません。気候変動は複数の経路を通じて
+                    海洋全体の脱酸素化を引き起こし、サンゴ礁にとってますます過酷な環境を作り出しています。
+                </span>
+            </p>
+
+            <div class="card" style="margin-top: 1rem;">
+                <h3 style="margin: 0 0 1rem 0; font-size: 1rem;">
+                    <span data-lang="en">Drivers of Ocean Deoxygenation</span>
+                    <span data-lang="ja">海洋脱酸素化の要因</span>
+                </h3>
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th class="site-label"><span data-lang="en">Driver</span><span data-lang="ja">要因</span></th>
+                                <th><span data-lang="en">Mechanism</span><span data-lang="ja">メカニズム</span></th>
+                                <th><span data-lang="en">Scale</span><span data-lang="ja">スケール</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="site-label"><span data-lang="en">Warming</span><span data-lang="ja">温暖化</span></td>
+                                <td><span data-lang="en">↓ Oxygen solubility in warmer water</span><span data-lang="ja">温水での酸素溶解度低下</span></td>
+                                <td><span data-lang="en">Global</span><span data-lang="ja">全球的</span></td>
+                            </tr>
+                            <tr>
+                                <td class="site-label"><span data-lang="en">Stratification</span><span data-lang="ja">成層化</span></td>
+                                <td><span data-lang="en">↓ Vertical mixing → ↓ deep O₂</span><span data-lang="ja">鉛直混合低下 → 深層酸素低下</span></td>
+                                <td><span data-lang="en">Regional</span><span data-lang="ja">広域的</span></td>
+                            </tr>
+                            <tr>
+                                <td class="site-label"><span data-lang="en">Eutrophication</span><span data-lang="ja">富栄養化</span></td>
+                                <td><span data-lang="en">Algal blooms → decomposition → O₂ depletion</span><span data-lang="ja">藻類ブルーム → 分解 → 酸素枯渇</span></td>
+                                <td><span data-lang="en">Local</span><span data-lang="ja">局所的</span></td>
+                            </tr>
+                            <tr>
+                                <td class="site-label"><span data-lang="en">Organic loading</span><span data-lang="ja">有機物負荷</span></td>
+                                <td><span data-lang="en">Spawning, runoff → bacterial respiration</span><span data-lang="ja">産卵、流出 → 細菌呼吸</span></td>
+                                <td><span data-lang="en">Local/episodic</span><span data-lang="ja">局所/一時的</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="pathway-card warning" style="margin-top: 1.5rem;">
+                <h3>📊 <span data-lang="en">Global Statistics</span><span data-lang="ja">世界統計</span></h3>
+                <p>
+                    <span data-lang="en">
+                        Hughes et al. (2020) estimated that <strong>13% of the world's coral reefs</strong> already face 
+                        deoxygenation risk. As oceans continue to warm, this percentage will increase.
+                        Compound stress events—where heat, hypoxia, and acidification coincide—are becoming more frequent.
+                    </span>
+                    <span data-lang="ja">
+                        Hughes et al. (2020) は、<strong>世界のサンゴ礁の13%</strong>がすでに
+                        脱酸素リスクに直面していると推定しました。海洋の温暖化が続くにつれ、この割合は増加します。
+                        熱、低酸素、酸性化が同時に起こる複合ストレスイベントがより頻繁になっています。
+                    </span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 8: Field Monitoring -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Field Monitoring: Why We Measure Oxygen</span>
+                <span data-lang="ja">現場モニタリング：なぜ酸素を測るか</span>
+            </h2>
+
+            <p>
+                <span data-lang="en">
+                    Satellites cannot measure dissolved oxygen. Understanding the true stress environment 
+                    of coral reefs requires in-situ monitoring—which is why RINKO-Profiler measurements 
+                    are central to our field monitoring plans.
+                </span>
+                <span data-lang="ja">
+                    衛星は溶存酸素を測定できません。サンゴ礁の真のストレス環境を理解するには
+                    現場モニタリングが必要です—だからこそRINKO-Profilerによる測定が
+                    私たちの現場モニタリング計画の中心にあります。
+                </span>
+            </p>
+
+            <div class="rinko-specs">
+                <div class="spec-item">
+                    <div class="spec-icon">🫧</div>
+                    <div class="spec-name"><span data-lang="en">Dissolved Oxygen</span><span data-lang="ja">溶存酸素</span></div>
+                    <div class="spec-desc"><span data-lang="en">Direct stress measurement</span><span data-lang="ja">直接的ストレス測定</span></div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-icon">🌡️</div>
+                    <div class="spec-name"><span data-lang="en">Temperature</span><span data-lang="ja">水温</span></div>
+                    <div class="spec-desc"><span data-lang="en">DO×Temp synergy</span><span data-lang="ja">DO×温度相乗効果</span></div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-icon">🌿</div>
+                    <div class="spec-name"><span data-lang="en">Chlorophyll</span><span data-lang="ja">クロロフィル</span></div>
+                    <div class="spec-desc"><span data-lang="en">O₂ production proxy</span><span data-lang="ja">酸素産出の指標</span></div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-icon">🔍</div>
+                    <div class="spec-name"><span data-lang="en">Turbidity</span><span data-lang="ja">濁度</span></div>
+                    <div class="spec-desc"><span data-lang="en">Organic load indicator</span><span data-lang="ja">有機物負荷指標</span></div>
+                </div>
+            </div>
+
+            <div class="future-box">
+                <p>
+                    <strong>🔬 <span data-lang="en">Future Direction:</span><span data-lang="ja">今後の展開：</span></strong>
+                    <span data-lang="en">
+                        By measuring DO alongside temperature, we can develop "oxygen-corrected DHW" estimates 
+                        that more accurately predict bleaching risk. This is especially important during spawning season 
+                        and in semi-enclosed reef areas where oxygen depletion risk is highest.
+                    </span>
+                    <span data-lang="ja">
+                        温度とともにDOを測定することで、白化リスクをより正確に予測する「酸素補正DHW」推定値を
+                        開発できます。これは産卵期や、酸素枯渇リスクが最も高い半閉鎖的なサンゴ礁海域で特に重要です。
+                    </span>
+                </p>
+                <a href="field-monitoring.html" class="related-link">
+                    📊 <span data-lang="en">See Field Monitoring plans</span><span data-lang="ja">現場モニタリング計画を見る</span> →
+                </a>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="references-section">
+            <h2>
+                <span data-lang="en">References</span>
+                <span data-lang="ja">参考文献</span>
+            </h2>
+
+            <div class="ref-category">
+                <h3>
+                    <span data-lang="en">Key Reviews</span>
+                    <span data-lang="ja">主要レビュー</span>
+                </h3>
+                <ul class="ref-list">
+                    <li>Hughes DJ et al. (2020) Coral reef survival under accelerating ocean deoxygenation. <em>Nature Climate Change</em> 10:296-307. <a href="https://doi.org/10.1038/s41558-020-0737-9" target="_blank">DOI</a></li>
+                    <li>Helgoe J et al. (2024) Triggers, cascades, and endpoints: connecting the dots of coral bleaching mechanisms. <em>Biological Reviews</em> 99:312-342. <a href="https://doi.org/10.1111/brv.13042" target="_blank">DOI</a></li>
+                </ul>
+            </div>
+
+            <div class="ref-category">
+                <h3>
+                    <span data-lang="en">Oxygen × Temperature Synergy</span>
+                    <span data-lang="ja">酸素×温度の相乗効果</span>
+                </h3>
+                <ul class="ref-list">
+                    <li>Alderdice R et al. (2022) Deoxygenation lowers the thermal threshold of coral bleaching. <em>Scientific Reports</em> 12:18273. <a href="https://doi.org/10.1038/s41598-022-22604-3" target="_blank">DOI</a></li>
+                    <li>Alderdice R et al. (2020) Divergent expression of hypoxia response systems under deoxygenation in reef-forming corals aligns with bleaching susceptibility. <em>Global Change Biology</em> 27:312-326. <a href="https://doi.org/10.1111/gcb.15436" target="_blank">DOI</a></li>
+                </ul>
+            </div>
+
+            <div class="ref-category">
+                <h3>
+                    <span data-lang="en">Species-Specific Tolerance</span>
+                    <span data-lang="ja">種特異的耐性</span>
+                </h3>
+                <ul class="ref-list">
+                    <li>Johnson MD et al. (2021) Differential susceptibility of reef-building corals to deoxygenation reveals remarkable hypoxia tolerance. <em>Scientific Reports</em> 11:23749. <a href="https://doi.org/10.1038/s41598-021-01078-9" target="_blank">DOI</a></li>
+                    <li>Mallon JE et al. (2025) Sublethal changes to coral metabolism in response to deoxygenation. <em>Journal of Experimental Biology</em> 228:jeb249638. <a href="https://doi.org/10.1242/jeb.249638" target="_blank">DOI</a></li>
+                </ul>
+            </div>
+
+            <div class="ref-category">
+                <h3>
+                    <span data-lang="en">Daily Oxygen Dynamics</span>
+                    <span data-lang="ja">日周酸素変動</span>
+                </h3>
+                <ul class="ref-list">
+                    <li>Linsmayer LB et al. (2020) Dynamic regulation of coral energy metabolism throughout the diel cycle. <em>Scientific Reports</em> 10:19881. <a href="https://doi.org/10.1038/s41598-020-76828-2" target="_blank">DOI</a></li>
+                </ul>
+            </div>
+
+            <div class="ref-category">
+                <h3>
+                    <span data-lang="en">Case Studies</span>
+                    <span data-lang="ja">事例研究</span>
+                </h3>
+                <ul class="ref-list">
+                    <li>Richards ZT et al. (2024) Deoxygenation following coral spawning and low-level thermal stress trigger mass coral mortality at Coral Bay, Ningaloo Reef. <em>Coral Reefs</em> 43:443-453. <a href="https://doi.org/10.1007/s00338-024-02476-x" target="_blank">DOI</a></li>
+                    <li>Johnson MD et al. (2021) Rapid ecosystem-scale consequences of acute deoxygenation on a Caribbean coral reef. <em>Nature Communications</em> 12:4522. <a href="https://doi.org/10.1038/s41467-021-24777-3" target="_blank">DOI</a></li>
+                </ul>
+            </div>
+
+            <div class="ref-category">
+                <h3>
+                    <span data-lang="en">Oxygen Supersaturation</span>
+                    <span data-lang="ja">酸素過飽和</span>
+                </h3>
+                <ul class="ref-list">
+                    <li>Parry AJ et al. (2025) Oxygen supersaturation could protect reef-building corals against acute thermal stress. <em>Global Change Biology</em> 31:e70586. <a href="https://doi.org/10.1111/gcb.70586" target="_blank">DOI</a></li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <a href="chlorophyll-bleaching.html">← 
+            <span data-lang="en">Back to Chlorophyll</span>
+            <span data-lang="ja">クロロフィルページに戻る</span>
+        </a>
+        <p style="margin-top: 0.5rem;">© 2026 marine-obs.org</p>
+    </footer>
+
+    <script>
+        // Language toggle
+        function setLang(lang) {
+            document.body.classList.toggle('ja', lang === 'ja');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
+            localStorage.setItem('lang', lang);
+        }
+
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang) setLang(savedLang);
+
+        document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
+        document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
+    </script>
+
+    <!-- Navigation JS -->
+    <script>
+    (function() {
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        const sidebarClose = document.getElementById('sidebar-close');
+        
+        function openSidebar() {
+            sidebar.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            hamburger.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        hamburger.addEventListener('click', function() {
+            if (sidebar.classList.contains('active')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+        
+        sidebarOverlay.addEventListener('click', closeSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                closeSidebar();
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

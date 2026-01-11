@@ -21,6 +21,9 @@
 | light-adjusted-dhw.html | 光補正DHW |
 | enso.html | ENSO監視 |
 | climate-drivers.html | 気候ドライバー |
+| climate-trend.html | 長期トレンド |
+| chlorophyll-bleaching.html | クロロフィルと白化 |
+| dissolved-oxygen-bleaching.html | 溶存酸素と白化 |
 | global-bleaching.html | 世界の白化状況 |
 | japan-bleaching.html | 日本の白化状況 |
 | sekisei-cover.html | 石西礁湖被度グラフ（iframe用） |
