@@ -1279,19 +1279,11 @@
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div>
-                <span data-lang="en">© 2026 marine-obs.org · Independent research project</span>
-                <span data-lang="ja">© 2026 marine-obs.org · 個人プロジェクト</span>
-            </div>
-            <div class="footer-links">
-                <a href="https://github.com/hirokifukui/marine-obs" target="_blank" rel="noopener">GitHub</a>
-                <a href="contact.html">
-                    <span data-lang="en">Contact</span>
-                    <span data-lang="ja">お問い合わせ</span>
-                </a>
-            </div>
-        </div>
+        <a href="index.html">← 
+            <span data-lang="en">Back to Home</span>
+            <span data-lang="ja">ホームに戻る</span>
+        </a>
+        <p style="margin-top: 0.5rem;">© 2026 marine-obs.org</p>
     </footer>
 
     <script src="js/lang.js"></script>
