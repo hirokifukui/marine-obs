@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | marine-obs.org</title>
+    <title>For Divers | marine-obs.org</title>
     <!-- SEO / OGP -->
-    <meta name="description" content="なぜ私が海を記録するのか。医師・ダイバーとしての視点から、プロジェクトの背景と目的を紹介。">
-    <meta property="og:title" content="このサイトについて | marine-obs.org">
-    <meta property="og:description" content="なぜ私が海を記録するのか。医師・ダイバーとしての視点から、プロジェクトの背景と目的を紹介。">
+    <meta name="description" content="海況予報・推奨装備・白化観察のポイントなど、フィールドで役立つ実践情報を掲載。">
+    <meta property="og:title" content="ダイバー向け情報 | marine-obs.org">
+    <meta property="og:description" content="海況予報・推奨装備・白化観察のポイントなど、フィールドで役立つ実践情報を掲載。">
     <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
-    <meta property="og:url" content="https://marine-obs.org/about.html">
+    <meta property="og:url" content="https://marine-obs.org/divers.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -18,6 +18,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <style>
+        .site-rationale {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent-teal);
+            border-radius: 0 12px 12px 0;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+        .site-rationale p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin: 0;
+        }
+        body.ja .site-rationale p {
+            line-height: 2;
+        }
+        .site-rationale a {
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .site-rationale a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -42,8 +70,7 @@
                             <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
                             <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
                             <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
-                            <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span><span class="nav-badge">New</span></a></li>
-                            <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
+                            <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span><span class="nav-badge">New</span></a></li>
                             <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge">計画中</span></a></li>
                         </ul>
                     </li>
@@ -137,8 +164,7 @@
                     <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
                             <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
                     <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
-                            <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span><span class="nav-badge">New</span></a></li>
-                            <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
+                            <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span><span class="nav-badge">New</span></a></li>
                     <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge-mobile">計画中</span></a></li>
                 </ul>
             </li>
@@ -190,71 +216,44 @@
         </ul>
     </nav>
     <main>
-        <div class="about-content">
-            <div data-lang="en">
-                <h1>About</h1>
-                <img src="images/diving.jpg" alt="Diving observation" style="width: 100%; max-width: 500px; border-radius: 12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                
-                <h2>What this site does</h2>
-                <p>marine-obs.org monitors thermal stress on coral reefs in Japanese waters. It translates satellite data from NASA and NOAA into accessible visualizations for divers and anyone interested in ocean conditions.</p>
-                <p>The site tracks sea surface temperature, degree heating weeks (DHW), and bleaching risk across seven monitoring sites—from Kushimoto, the northernmost coral habitat in Japan, to the Sekisei Lagoon in Okinawa.</p>
+        <section class="hero">
+            <h1 data-lang="en">For Divers</h1>
+            <h1 data-lang="ja">ダイバー向け情報</h1>
+            <p class="hero-subtitle" data-lang="en">
+                Water temperature, waves, and wind from Kushimoto to Sekisei.
+            </p>
+            <p class="hero-subtitle" data-lang="ja">
+                串本から石西礁湖まで、水温・波・風をモニタリング。
+            </p>
+        </section>
 
-                <h2>Who runs it</h2>
-                <p>I am a physician based in Tokyo. Not a marine biologist. But I dive—over a hundred times a year, across Japan and beyond. In my clinical work, I observe people over long periods. Watching the ocean, I have found, requires the same discipline: patient observation, careful recording, resistance to easy conclusions.</p>
-
-                <h2>Why it exists</h2>
-                <p>In the summer of 2024, I went diving in Okinawa. The coral was white—not in patches, but across entire reefs. I had seen the graphs before. They never moved me. This did.</p>
-                <p>Divers feel the change. But those observations remain impressions—shared over dinner, forgotten by the next dive. This site is an attempt to record what we see, and to understand what it means.</p>
-
-                <h2>How it's run</h2>
-                <p>This is a non-commercial, independent project. No ads, no sponsors. Satellite data comes from publicly available sources. In-situ measurements come from my own diving.</p>
-
-                <p class="about-signature">marine-obs.org is a project by a physician who dives, documenting ocean conditions from outside the boundaries of formal expertise.</p>
-            </div>
-
-            <div data-lang="ja">
-                <h1>海洋の徴候について</h1>
-                <img src="images/diving.jpg" alt="海洋観測の様子" style="width: 100%; max-width: 500px; border-radius: 12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-
-                <h2>海に潜る瞬間</h2>
-                <p>東京で暮らしていると、自然を身体で感じる機会はほとんどない。だからこそ、海に潜った瞬間の感覚は格別である。一本目のエントリーで水中に入ると、全身の細胞が目を覚ますような感覚が走る。重力から解放され、聞こえるのは自分の呼吸音だけ。その感覚を求めて、私は潜り続けてきた。</p>
-                <p>本業は医師である。臨床の傍ら、国内外の海に年間100本以上潜っている。沖縄、小笠原、モルディブ——場所が変われば、海はまったく異なる表情を見せる。</p>
-
-                <h2>2024年、恩納村で見たもの</h2>
-                <p>転機は2024年の夏だった。</p>
-                <p>沖縄・恩納村の海に潜ったとき、異様な光景が広がっていた。サンゴが白い。それも一部ではなく、広範囲にわたってである。特に衝撃だったのは、地元の人々が長年かけて養殖してきたサンゴが、ほぼ全滅していたことだった。</p>
-                <p>正直に言えば、それまで地球温暖化という言葉は、どこか遠い政治的な議論として受け止めていた。しかし、目の前で白化したサンゴを見て、その認識は完全に覆った。これは政治の話ではない。今、この海で起きている現象なのだ。</p>
-
-                <h2>データと報道では動かなかった</h2>
-                <p>振り返れば、サンゴの白化に関する報道や研究データは以前から目にしていた。気温上昇のグラフも、海水温の変化も、知識としては知っていた。しかし、それらは私の行動を変えることはなかった。</p>
-                <p>変化が起きたのは、自分の目で見たあとだった。</p>
-                <p>この経験から、ひとつの確信を持つようになった。データや報道だけでは、人は必ずしも動かない。しかし、実際に見て、身体で感じたとき、初めて何かが変わる。少なくとも、私はそうだった。</p>
-
-                <h2>ダイバーは感じている、しかし</h2>
-                <p>海に潜るダイバーたちは、環境の変化を確実に感じ取っている。「サンゴが白くなっている」「昔はもっと魚がいた」「水温が高い」——そうした言葉は、ダイビング後の食事の席で頻繁に交わされる。</p>
-                <p>しかし、その先がない。感覚として共有されるだけで、言語化されず、記録にも残らない。「地球温暖化の影響かもしれないね」で会話は終わり、次の週にはまた別の海へ潜りに行く。</p>
-                <p>そこに、何かできる余地があるのではないか。そう考えるようになった。</p>
-
-                <h2>海洋の徴候という試み</h2>
-                <p>私は海洋生物学者でも環境科学者でもない。専門外の人間が環境観測に関わることに、どれほどの意味があるのかは、正直なところ分からない。</p>
-                <p>ただ、本業で長年続けてきた臨床の仕事と、環境の変化を見つめる行為との間に、不思議な共通点があることに気づいた。臨床では、人の変化を長期にわたって観察する。その変化は複雑な要因が絡み合い、すぐには可視化されない。環境の変化もまた、同じ構造を持っているように思える。</p>
-                <p>「観察」という行為が、両者をつないでいる。</p>
-
-                <h2>届けたい相手</h2>
-                <p>一般の人に、海で起きている変化を知ってほしい。</p>
-                <p>同時に、ダイバーたちと「何かができる」という感覚を共有したい。私たちはすでに変化を感じている。その感覚を言葉にし、記録し、データとして残すことで、新しい可能性が生まれるかもしれない。</p>
-
-                <h2>10年後に</h2>
-                <p>もしこのプロジェクトが10年続いたとしたら、何が実現していれば「やってよかった」と思えるだろうか。</p>
-                <p>海の美しさや自然の恩恵を享受しながら、人々が環境について自覚的に考えている。そうした姿勢が、ほんの少しでも広がっていれば、それで十分だと思っている。</p>
-
-                <h2>運営方針</h2>
-                <p>marine-obs.orgは非営利の個人プロジェクトです。広告掲載、有料会員制、スポンサー契約は行いません。データの収集と公開は、すべて個人の責任で行っています。</p>
-                <p>衛星データはNOAA・NASAが公開しているデータを利用しています。実測データは、自身のダイビング活動を通じて取得しています。</p>
-
-                <p class="about-signature">海洋の徴候は、医師・ダイバーである筆者が、専門外の立場から海洋環境の観察と発信に取り組むプロジェクトです。</p>
-            </div>
+        <!-- Site Selection Rationale -->
+        <div class="site-rationale">
+            <p data-lang="en">
+                These 7 sites are bleaching hotspots documented in <a href="japan-bleaching.html">Japan Bleaching History</a>—from Kushimoto (northern limit of reef-building corals) to Sekisei Lagoon (Japan's largest reef).
+            </p>
+            <p data-lang="ja">
+                この7地点は<a href="japan-bleaching.html">日本の白化状況</a>で記録された白化ホットスポットです。串本（造礁サンゴの北限）から石西礁湖（日本最大のサンゴ礁）まで、主要なサンゴ域をカバーしています。
+            </p>
         </div>
+
+        <!-- Marine Monitor Section -->
+        <section class="marine-monitor">
+            <div class="marine-monitor-header">
+                <h2 class="marine-monitor-title">
+                    <span data-lang="en">Marine Conditions</span><span data-lang="ja">海況モニター</span>
+                </h2>
+                <span class="marine-monitor-update" id="marine-update-time-divers"></span>
+            </div>
+            <div class="marine-summary-grid" id="marine-grid-divers">
+                <div style="color: var(--text-muted); padding: 2rem; text-align: center;">
+                    <span data-lang="en">Loading...</span><span data-lang="ja">読み込み中...</span>
+                </div>
+            </div>
+        </section>
+
+
+
     </main>
 
     <footer>
@@ -274,6 +273,7 @@
     </footer>
 
     <script src="js/lang-simple.js"></script>
+    <script src="js/marine-monitor.js"></script>
 
     <!-- Navigation JS -->
     <script>
