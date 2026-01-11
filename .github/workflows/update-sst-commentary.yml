@@ -24,6 +24,7 @@ jobs:
           pip install anthropic requests
 
       - name: Download NOAA image and generate commentary
+        id: generate
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
@@ -32,6 +33,7 @@ jobs:
           import base64
           import requests
           import json
+          import os
           from datetime import datetime
           from pathlib import Path
 
@@ -111,7 +113,13 @@ jobs:
               json.dump(output, f, ensure_ascii=False, indent=2)
 
           print(f"✅ Updated: {OUTPUT_PATH}")
-          print(json.dumps(output, ensure_ascii=False, indent=2))
+          
+          # Set outputs for notification
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f"image_date={output['image_date']}\n")
+              # Escape newlines for multiline
+              ja_escaped = output['commentary']['ja'].replace('\n', ' ')
+              f.write(f"commentary_ja={ja_escaped}\n")
           PYTHON
 
       - name: Commit and push changes
@@ -121,3 +129,38 @@ jobs:
           git add data/sst-map-commentary.json
           git diff --staged --quiet || git commit -m "Update SST map commentary [automated]"
           git push
+
+      - name: Send Telegram notification (success)
+        if: success()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          MESSAGE="🌊 *SST Map Commentary Updated*
+
+          📅 Map date: ${{ steps.generate.outputs.image_date }}
+          
+          ${{ steps.generate.outputs.commentary_ja }}
+          
+          🔗 [View on site](https://marine-obs.org/enso.html)"
+          
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d text="${MESSAGE}" \
+            -d parse_mode="Markdown" \
+            -d disable_web_page_preview="true"
+
+      - name: Send Telegram notification (failure)
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          MESSAGE="❌ *SST Map Commentary Failed*
+          
+          Check: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d text="${MESSAGE}" \
+            -d parse_mode="Markdown"
