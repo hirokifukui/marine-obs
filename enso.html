@@ -209,15 +209,14 @@
                 <img src="https://www.ospo.noaa.gov/data/cb/ssta/ssta.daily.current.png" 
                      alt="NOAA Coral Reef Watch SST Anomaly Map"
                      style="width: 100%; height: auto; border-radius: 8px;">
-                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; margin-bottom: 0;">
-                    <span data-lang="en">
-                        Source: NOAA Coral Reef Watch Daily 5km SST Anomalies. Blue = cooler than average, Red = warmer than average. 
-                        During La Niña (current), note the blue band along the equatorial Pacific — warm water piles up in the western Pacific near Japan.
-                    </span>
-                    <span data-lang="ja">
-                        出典：NOAA Coral Reef Watch 日次5km SST偏差。青=平年より低温、赤=平年より高温。
-                        ラニーニャ期（現在）は赤道太平洋に青い帯が見える——暖水が日本近海の西太平洋に集中する。
-                    </span>
+                <!-- AI-generated commentary (loaded from data/sst-map-commentary.json) -->
+                <div id="sst-map-commentary" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; line-height: 1.6;">
+                    <span data-lang="en">Loading analysis...</span>
+                    <span data-lang="ja">解析を読み込み中...</span>
+                </div>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.75rem; margin-bottom: 0;">
+                    <span data-lang="en">Source: NOAA Coral Reef Watch Daily 5km SST Anomalies. Blue = cooler than average, Red = warmer than average.</span>
+                    <span data-lang="ja">出典：NOAA Coral Reef Watch 日次5km SST偏差。青=平年より低温、赤=平年より高温。</span>
                 </p>
             </div>
         </section>
@@ -1111,6 +1110,35 @@
                 closeSidebar();
             }
         });
+    })();
+    </script>
+
+    <!-- SST Map Commentary Loader -->
+    <script>
+    (function() {
+        fetch('data/sst-map-commentary.json')
+            .then(r => r.json())
+            .then(data => {
+                const el = document.getElementById('sst-map-commentary');
+                if (!el || !data.commentary) return;
+                
+                const updated = data.updated ? ` (${data.image_date || data.updated})` : '';
+                
+                el.innerHTML = `
+                    <span data-lang="en">${data.commentary.en}<br><small style="color: var(--text-muted);">Map date: ${data.image_date || 'N/A'}</small></span>
+                    <span data-lang="ja">${data.commentary.ja}<br><small style="color: var(--text-muted);">マップ日付: ${data.image_date || 'N/A'}</small></span>
+                `;
+                
+                // Re-apply language setting
+                const lang = localStorage.getItem('preferred-language') || 'en';
+                document.querySelectorAll('#sst-map-commentary [data-lang]').forEach(span => {
+                    span.style.display = span.getAttribute('data-lang') === lang ? '' : 'none';
+                });
+            })
+            .catch(err => {
+                console.warn('Failed to load SST commentary:', err);
+                // Keep fallback text
+            });
     })();
     </script>
 </body>
