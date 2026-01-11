@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chlorophyll and Bleaching | marine-obs.org</title>
     <!-- SEO / OGP -->
-    <meta name="description" content="クロロフィルとサンゴ白化の関係。濁度による保護効果とオニヒトデリスクの二面性を解説。">
+    <meta name="description" content="クロロフィルとサンゴ白化の関係。水中クロロフィルと組織内クロロフィルの違い、光学フィードバックループを解説。">
     <meta property="og:title" content="クロロフィルと白化 | marine-obs.org">
-    <meta property="og:description" content="クロロフィルとサンゴ白化の関係。濁度による保護効果とオニヒトデリスクの二面性を解説。">
+    <meta property="og:description" content="クロロフィルとサンゴ白化の関係。水中クロロフィルと組織内クロロフィルの違い、光学フィードバックループを解説。">
     <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
     <meta property="og:url" content="https://marine-obs.org/chlorophyll-bleaching.html">
     <meta property="og:type" content="website">
@@ -49,6 +49,14 @@
         .pathway-card.threat {
             background: #fef2f2;
             border-color: #ef4444;
+        }
+        .pathway-card.water {
+            background: #eff6ff;
+            border-color: #3b82f6;
+        }
+        .pathway-card.tissue {
+            background: #fdf4ff;
+            border-color: #a855f7;
         }
         .pathway-card h3 {
             margin: 0 0 0.75rem 0;
@@ -114,6 +122,62 @@
         }
         .related-link:hover {
             text-decoration: underline;
+        }
+        .feedback-diagram {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        .feedback-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .feedback-step {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 0.5rem 0.75rem;
+        }
+        .feedback-step.danger {
+            background: #fef2f2;
+            border-color: #fecaca;
+            color: #dc2626;
+        }
+        .feedback-arrow {
+            color: #94a3b8;
+            font-size: 1.2rem;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin: 1rem 0;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 0.6rem;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #f8fafc;
+            font-weight: 600;
+        }
+        .comparison-table th:first-child {
+            width: 25%;
+        }
+        .future-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-left: 4px solid #22c55e;
+            padding: 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
         }
     </style>
 </head>
@@ -305,43 +369,169 @@
             </h1>
             <p class="lead">
                 <span data-lang="en">
-                    Water turbidity can both protect and threaten coral reefs. 
-                    Understanding this paradox is key to interpreting reef health from satellite data.
+                    "Chlorophyll" in coral reef science has two distinct meanings—one in the water column, one inside coral tissue.
+                    Understanding both is essential for interpreting satellite data and coral health.
                 </span>
                 <span data-lang="ja">
-                    濁度はサンゴ礁を守ることも脅かすこともあります。
-                    この逆説を理解することが、衛星データからサンゴ礁の健全性を読み解く鍵です。
+                    サンゴ礁科学における「クロロフィル」には2つの異なる意味があります。水中のものと、サンゴ組織内のもの。
+                    衛星データとサンゴの健康状態を正しく解釈するには、両方を理解する必要があります。
                 </span>
             </p>
         </div>
 
-        <!-- Paradox Box -->
-        <div class="paradox-highlight">
-            <p>
-                <strong>💡 <span data-lang="en">The Chlorophyll Paradox:</span><span data-lang="ja">クロロフィルの逆説：</span></strong>
-                <span data-lang="en">Turbid water reduces light stress and can protect corals from bleaching. But high nutrient levels that increase chlorophyll can also fuel crown-of-thorns starfish outbreaks that devastate reefs. The same indicator can signal either protection or threat.</span>
-                <span data-lang="ja">濁った水は光ストレスを軽減し、白化からサンゴを守ることがあります。しかしクロロフィルを増加させる高い栄養塩レベルは、サンゴを食い尽くすオニヒトデの大発生を招くこともあります。同じ指標が、保護と脅威の両方を示しうるのです。</span>
-            </p>
-        </div>
-
-        <!-- Section 1: Two Pathways -->
+        <!-- Section 1: Two Types of Chlorophyll -->
         <section class="content-section">
             <h2>
-                <span data-lang="en">Two Pathways: Protection vs. Threat</span>
-                <span data-lang="ja">2つの経路：保護 vs. 脅威</span>
+                <span data-lang="en">Two Types of Chlorophyll</span>
+                <span data-lang="ja">2つのクロロフィル</span>
             </h2>
+
+            <p>
+                <span data-lang="en">When discussing chlorophyll and coral reefs, we must distinguish between two fundamentally different things:</span>
+                <span data-lang="ja">クロロフィルとサンゴ礁について議論する際、根本的に異なる2つのものを区別する必要があります：</span>
+            </p>
+
+            <div class="pathway-grid">
+                <div class="pathway-card water">
+                    <h3>🌊 <span data-lang="en">Water Column Chlorophyll</span><span data-lang="ja">水中クロロフィル</span></h3>
+                    <p>
+                        <span data-lang="en">Produced by free-living phytoplankton. Measured by satellites (MODIS, SeaWiFS) and in-situ sensors. Indicates water turbidity and nutrient levels.</span>
+                        <span data-lang="ja">自由生活する植物プランクトンが生成。衛星（MODIS、SeaWiFS）や現場センサーで測定。水の濁度や栄養塩レベルを示します。</span>
+                    </p>
+                    <ul>
+                        <li><span data-lang="en">Affects light reaching corals</span><span data-lang="ja">サンゴに届く光に影響</span></li>
+                        <li><span data-lang="en">Reflects ecosystem productivity</span><span data-lang="ja">生態系の生産性を反映</span></li>
+                        <li><span data-lang="en">Linked to COTS outbreaks</span><span data-lang="ja">オニヒトデ大発生と関連</span></li>
+                    </ul>
+                </div>
+
+                <div class="pathway-card tissue">
+                    <h3>🔬 <span data-lang="en">Coral Tissue Chlorophyll</span><span data-lang="ja">組織内クロロフィル</span></h3>
+                    <p>
+                        <span data-lang="en">Produced by symbiotic zooxanthellae (Symbiodiniaceae) living inside coral tissue. Measured by fluorometry or tissue extraction. Directly indicates coral health.</span>
+                        <span data-lang="ja">サンゴ組織内に生息する共生褐虫藻（Symbiodiniaceae）が生成。蛍光計や組織抽出で測定。サンゴの健康状態を直接示します。</span>
+                    </p>
+                    <ul>
+                        <li><span data-lang="en">Loss = bleaching (by definition)</span><span data-lang="ja">喪失＝白化（定義そのもの）</span></li>
+                        <li><span data-lang="en">Fv/Fm indicates photosynthetic health</span><span data-lang="ja">Fv/Fmは光合成の健全性を示す</span></li>
+                        <li><span data-lang="en">Early stress biomarker</span><span data-lang="ja">早期ストレスバイオマーカー</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 1.5rem;">
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th><span data-lang="en">Water Column Chl-a</span><span data-lang="ja">水中Chl-a</span></th>
+                                <th><span data-lang="en">Tissue Chl-a</span><span data-lang="ja">組織内Chl-a</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong><span data-lang="en">Source</span><span data-lang="ja">由来</span></strong></td>
+                                <td><span data-lang="en">Phytoplankton</span><span data-lang="ja">植物プランクトン</span></td>
+                                <td><span data-lang="en">Symbiodiniaceae</span><span data-lang="ja">褐虫藻</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong><span data-lang="en">Measurement</span><span data-lang="ja">測定法</span></strong></td>
+                                <td><span data-lang="en">Satellite, water profiler</span><span data-lang="ja">衛星、水中プロファイラー</span></td>
+                                <td><span data-lang="en">PAM fluorometry, extraction</span><span data-lang="ja">PAM蛍光計、抽出</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong><span data-lang="en">Indicates</span><span data-lang="ja">示すもの</span></strong></td>
+                                <td><span data-lang="en">Light environment</span><span data-lang="ja">光環境</span></td>
+                                <td><span data-lang="en">Coral health</span><span data-lang="ja">サンゴの健康</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong><span data-lang="en">This site tracks</span><span data-lang="ja">当サイトでの扱い</span></strong></td>
+                                <td><span data-lang="en">Via satellite data</span><span data-lang="ja">衛星データ経由</span></td>
+                                <td><span data-lang="en">Future field monitoring</span><span data-lang="ja">将来の現場測定</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Optical Feedback Loop -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">The Optical Feedback Loop</span>
+                <span data-lang="ja">光学フィードバックループ</span>
+            </h2>
+
+            <p>
+                <span data-lang="en">Coral skeletons are highly reflective—this normally helps zooxanthellae capture light efficiently. But during bleaching, this same property accelerates the crisis through a positive feedback loop.</span>
+                <span data-lang="ja">サンゴの骨格は高い反射性を持ち、通常は褐虫藻が効率的に光を捕捉するのを助けます。しかし白化中は、この同じ特性が正のフィードバックループを通じて危機を加速させます。</span>
+            </p>
+
+            <div class="feedback-diagram">
+                <div class="feedback-steps">
+                    <span class="feedback-step"><span data-lang="en">Heat stress</span><span data-lang="ja">熱ストレス</span></span>
+                    <span class="feedback-arrow">→</span>
+                    <span class="feedback-step"><span data-lang="en">Zooxanthellae expelled</span><span data-lang="ja">褐虫藻排出</span></span>
+                    <span class="feedback-arrow">→</span>
+                    <span class="feedback-step danger"><span data-lang="en">Light intensity ×5</span><span data-lang="ja">光強度5倍に</span></span>
+                    <span class="feedback-arrow">→</span>
+                    <span class="feedback-step danger"><span data-lang="en">Remaining symbionts stressed</span><span data-lang="ja">残存共生藻にストレス</span></span>
+                    <span class="feedback-arrow">→</span>
+                    <span class="feedback-step"><span data-lang="en">More expelled...</span><span data-lang="ja">さらに排出...</span></span>
+                </div>
+                <p class="table-note" style="margin-top: 1rem;">
+                    <span data-lang="en">Wangpraseurt et al. (2017) measured up to 5× light enhancement in bleaching coral tissue.</span>
+                    <span data-lang="ja">Wangpraseurt et al. (2017) は白化中のサンゴ組織で最大5倍の光増強を測定。</span>
+                </p>
+            </div>
+
+            <p>
+                <span data-lang="en">A study of 96 coral species found that skeletal architecture determines bleaching susceptibility: corals with low-scattering skeletons experience faster light amplification during bleaching, creating a more severe feedback loop (Marcelino et al. 2013).</span>
+                <span data-lang="ja">96種のサンゴを対象とした研究では、骨格構造が白化感受性を決定することが判明：低散乱性の骨格を持つサンゴは白化中の光増幅が速く、より深刻なフィードバックループが生じます（Marcelino et al. 2013）。</span>
+            </p>
+
+            <div class="story-box">
+                <p class="story-lead">
+                    <span data-lang="en">The Ostreobium Exception</span>
+                    <span data-lang="ja">Ostreobiumの例外</span>
+                </p>
+                <p>
+                    <span data-lang="en">
+                        Endolithic algae (<em>Ostreobium</em> spp.) living inside coral skeletons may bloom during bleaching events. 
+                        These "green bands" can reduce light reaching remaining zooxanthellae by up to 50%, potentially slowing the feedback loop and aiding recovery (Galindo-Martínez et al. 2022).
+                    </span>
+                    <span data-lang="ja">
+                        サンゴ骨格内に生息する内生藻類（<em>Ostreobium</em> 属）は、白化イベント中に増殖することがあります。
+                        この「緑色帯」は残存する褐虫藻に届く光を最大50%減少させ、フィードバックループを遅らせ回復を助ける可能性があります（Galindo-Martínez et al. 2022）。
+                    </span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 3: Water Column Chlorophyll -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Water Column Chlorophyll: Protection vs. Threat</span>
+                <span data-lang="ja">水中クロロフィル：保護と脅威</span>
+            </h2>
+
+            <p>
+                <span data-lang="en">Satellite-derived chlorophyll-a (from phytoplankton) shows a paradoxical relationship with coral bleaching.</span>
+                <span data-lang="ja">衛星で観測される（植物プランクトン由来の）クロロフィルaは、サンゴ白化と逆説的な関係を示します。</span>
+            </p>
 
             <div class="pathway-grid">
                 <div class="pathway-card protection">
                     <h3>🛡️ <span data-lang="en">Protection: Turbidity as Shade</span><span data-lang="ja">保護：濁りが日よけに</span></h3>
                     <p>
-                        <span data-lang="en">A global analysis of 3,694 reef sites found that moderate turbidity (Kd490: 0.080–0.127) significantly reduced coral bleaching during thermal stress. About 12% of world's coral reefs fall within this "protective turbidity" range.</span>
-                        <span data-lang="ja">世界3,694カ所のサンゴ礁を分析した研究により、中程度の濁度（Kd490: 0.080〜0.127）が熱ストレス時の白化を有意に軽減することが判明。世界のサンゴ礁の約12%がこの「保護的濁度」範囲内にあります。</span>
+                        <span data-lang="en">A global analysis of 3,694 reef sites found that moderate turbidity (Kd490: 0.080–0.127) significantly reduced coral bleaching during thermal stress. About 12% of world's coral reefs fall within this "protective turbidity" range (Sully & van Woesik 2020).</span>
+                        <span data-lang="ja">世界3,694カ所のサンゴ礁を分析した研究により、中程度の濁度（Kd490: 0.080〜0.127）が熱ストレス時の白化を有意に軽減することが判明。世界のサンゴ礁の約12%がこの「保護的濁度」範囲内にあります（Sully & van Woesik 2020）。</span>
                     </p>
-                    <ul>
-                        <li><span data-lang="en">Reduces light penetration → less oxidative stress</span><span data-lang="ja">光の透過を軽減 → 酸化ストレス低下</span></li>
-                        <li><span data-lang="en">Allows coral repair mechanisms more time</span><span data-lang="ja">サンゴの修復機構に時間的余裕</span></li>
-                    </ul>
+                    <p style="margin-top: 0.5rem;">
+                        <span data-lang="en">In Yap, Micronesia, reefs with moderate chlorophyll-a showed only 10% bleaching versus 31% on outer reefs with clear water (Keighan et al. 2023).</span>
+                        <span data-lang="ja">ミクロネシアのヤップ島では、中程度のクロロフィルa濃度の海域で白化率が10%だったのに対し、透明度の高い外洋リーフでは31%でした（Keighan et al. 2023）。</span>
+                    </p>
                 </div>
 
                 <div class="pathway-card threat">
@@ -356,9 +546,17 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="paradox-highlight">
+                <p>
+                    <strong>💡 <span data-lang="en">The Chlorophyll Paradox:</span><span data-lang="ja">クロロフィルの逆説：</span></strong>
+                    <span data-lang="en">The same water column chlorophyll that provides shade from light stress can also fuel the larvae of coral predators. Context matters: short-term turbidity during heat events may help, but chronic eutrophication harms reefs through multiple pathways.</span>
+                    <span data-lang="ja">光ストレスからの日よけとなる水中クロロフィルは、同時にサンゴ捕食者の幼生を育てることもあります。文脈が重要です：熱波時の一時的な濁りは助けになりますが、慢性的な富栄養化は複数の経路でサンゴ礁に害を与えます。</span>
+                </p>
+            </div>
         </section>
 
-        <!-- Section 2: Site Data -->
+        <!-- Section 4: Site Data -->
         <section class="content-section">
             <h2>
                 <span data-lang="en">Chlorophyll-a at Monitoring Sites</span>
@@ -366,8 +564,8 @@
             </h2>
 
             <p>
-                <span data-lang="en">Satellite-derived chlorophyll-a concentrations vary significantly across our 7 monitoring sites, reflecting differences in oceanographic conditions and terrestrial influence.</span>
-                <span data-lang="ja">衛星から導出されたクロロフィルa濃度は、海洋環境や陸域影響の違いを反映して、7つのモニタリング地点間で大きく異なります。</span>
+                <span data-lang="en">Satellite-derived water column chlorophyll-a varies significantly across our 7 monitoring sites, reflecting differences in oceanographic conditions and terrestrial influence.</span>
+                <span data-lang="ja">衛星から観測される水中クロロフィルa濃度は、海洋環境や陸域影響の違いを反映して、7つのモニタリング地点間で大きく異なります。</span>
             </p>
 
             <div class="card" style="margin-top: 1.5rem;">
@@ -426,7 +624,119 @@
             </div>
         </section>
 
-        <!-- Section 3: Climate Connections -->
+        <!-- Section 5: Tissue Chlorophyll Measurement -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Measuring Coral Health: Tissue Chlorophyll</span>
+                <span data-lang="ja">サンゴの健康を測る：組織内クロロフィル</span>
+            </h2>
+
+            <p>
+                <span data-lang="en">While satellite data shows us the light environment corals experience, measuring the chlorophyll inside coral tissue tells us about their actual health status.</span>
+                <span data-lang="ja">衛星データはサンゴが経験する光環境を示しますが、サンゴ組織内のクロロフィルを測定することで、実際の健康状態がわかります。</span>
+            </p>
+
+            <div class="card" style="margin-top: 1rem;">
+                <h3 style="margin: 0 0 1rem 0; font-size: 1rem;">
+                    <span data-lang="en">Key Metrics from Chlorophyll Fluorescence</span>
+                    <span data-lang="ja">クロロフィル蛍光による主要指標</span>
+                </h3>
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th><span data-lang="en">Metric</span><span data-lang="ja">指標</span></th>
+                                <th><span data-lang="en">What It Measures</span><span data-lang="ja">測定対象</span></th>
+                                <th><span data-lang="en">Stress Signal</span><span data-lang="ja">ストレスサイン</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Fv/Fm</strong></td>
+                                <td><span data-lang="en">Maximum quantum yield of PSII</span><span data-lang="ja">PSIIの最大量子収率</span></td>
+                                <td><span data-lang="en">Decline indicates photodamage</span><span data-lang="ja">低下は光損傷を示唆</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>ΔF/Fm'</strong></td>
+                                <td><span data-lang="en">Effective quantum yield</span><span data-lang="ja">実効量子収率</span></td>
+                                <td><span data-lang="en">Real-time photosynthetic efficiency</span><span data-lang="ja">リアルタイムの光合成効率</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong><span data-lang="en">Chl-a/cell</span><span data-lang="ja">Chl-a/細胞</span></strong></td>
+                                <td><span data-lang="en">Pigment per zooxanthella</span><span data-lang="ja">褐虫藻あたりの色素量</span></td>
+                                <td><span data-lang="en">Decrease before visible bleaching</span><span data-lang="ja">目視できる白化の前に減少</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                <span data-lang="en">Recent advances in bio-optical monitoring show promise for predicting bleaching before it becomes visible. Hoadley et al. (2023) developed a machine learning model using chlorophyll fluorescence parameters that predicted bleaching severity with R=0.92 correlation—potentially enabling intervention before mass mortality occurs.</span>
+                <span data-lang="ja">生物光学的モニタリングの最近の進歩は、白化が目に見える前に予測できる可能性を示しています。Hoadley et al. (2023) はクロロフィル蛍光パラメータを用いた機械学習モデルを開発し、白化の重症度をR=0.92の相関で予測しました—大量死が起こる前に介入を可能にする可能性があります。</span>
+            </p>
+
+            <div class="future-box">
+                <p>
+                    <strong>🔬 <span data-lang="en">Future Direction:</span><span data-lang="ja">今後の展開：</span></strong>
+                    <span data-lang="en"> Field monitoring with RINKO-Profiler will measure water column chlorophyll-a alongside temperature, dissolved oxygen, and turbidity—providing the environmental context that satellite data cannot capture at depth. Combined with coral-level observations, this creates a more complete picture of reef stress.</span>
+                    <span data-lang="ja"> RINKO-Profilerを用いた現場モニタリングでは、水温、溶存酸素、濁度とともに水中クロロフィルaを測定します—衛星データでは捉えられない深度別の環境情報を得られます。サンゴレベルの観察と組み合わせることで、サンゴ礁ストレスのより完全な像が得られます。</span>
+                </p>
+                <a href="field-monitoring.html" class="related-link">
+                    📊 <span data-lang="en">See Field Monitoring plans</span><span data-lang="ja">現場モニタリング計画を見る</span> →
+                </a>
+            </div>
+        </section>
+
+        <!-- Section 6: The 2016 Paradox -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">The 2016 Paradox</span>
+                <span data-lang="ja">2016年の逆説</span>
+            </h2>
+
+            <p>
+                <span data-lang="en">If turbidity protects corals, why did Sekisei Lagoon—with consistently elevated chlorophyll—experience 97% bleaching in 2016?</span>
+                <span data-lang="ja">濁度がサンゴを守るなら、なぜ常に高いクロロフィル濃度を示す石西礁湖で、2016年に97%もの白化が起きたのでしょうか？</span>
+            </p>
+
+            <div class="card" style="margin-top: 1rem;">
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th><span data-lang="en">Year</span><span data-lang="ja">年</span></th>
+                                <th><span data-lang="en">Chl-a Anomaly</span><span data-lang="ja">Chl-a偏差</span></th>
+                                <th><span data-lang="en">Bleaching</span><span data-lang="ja">白化</span></th>
+                                <th><span data-lang="en">Interpretation</span><span data-lang="ja">解釈</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1998</td>
+                                <td>−0.21</td>
+                                <td><span data-lang="en">Severe</span><span data-lang="ja">深刻</span></td>
+                                <td><span data-lang="en">Low Chl-a = high light stress</span><span data-lang="ja">低Chl-a = 高い光ストレス</span></td>
+                            </tr>
+                            <tr>
+                                <td>2016</td>
+                                <td>+0.21</td>
+                                <td>97%</td>
+                                <td><span data-lang="en">Heat overwhelmed turbidity protection</span><span data-lang="ja">熱が濁度保護を圧倒</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="insight-box heat" style="margin-top: 1.5rem;">
+                <strong class="heat"><span data-lang="en">Key lesson:</span><span data-lang="ja">重要な教訓：</span></strong>
+                <span data-lang="en"> Turbidity protection has limits. When thermal stress is extreme—as in 2016 with prolonged heat and no typhoon cooling—even turbid reefs cannot escape bleaching. Water column chlorophyll can moderate stress, but it cannot prevent it when temperatures exceed physiological thresholds.</span>
+                <span data-lang="ja"> 濁度による保護には限界があります。2016年のように熱ストレスが極端な場合—長期間の熱蓄積と台風冷却の欠如—濁った海域のサンゴも白化を免れません。水中クロロフィルはストレスを緩和できますが、温度が生理的閾値を超えれば防ぐことはできません。</span>
+            </div>
+        </section>
+
+        <!-- Section 7: Climate Connections -->
         <section class="content-section">
             <h2>
                 <span data-lang="en">Climate Driver Connections</span>
@@ -434,8 +744,8 @@
             </h2>
 
             <p>
-                <span data-lang="en">The same climate oscillations that drive coral bleaching also influence chlorophyll patterns—through different pathways.</span>
-                <span data-lang="ja">サンゴ白化を引き起こす気候振動は、異なる経路を通じてクロロフィルパターンにも影響を与えます。</span>
+                <span data-lang="en">The same climate oscillations that drive coral bleaching also influence water column chlorophyll patterns—through different pathways.</span>
+                <span data-lang="ja">サンゴ白化を引き起こす気候振動は、異なる経路を通じて水中クロロフィルパターンにも影響を与えます。</span>
             </p>
 
             <div class="card climate-matrix">
@@ -486,55 +796,7 @@
             </a>
         </section>
 
-        <!-- Section 4: The 2016 Paradox -->
-        <section class="content-section">
-            <h2>
-                <span data-lang="en">The 2016 Paradox</span>
-                <span data-lang="ja">2016年の逆説</span>
-            </h2>
-
-            <p>
-                <span data-lang="en">If turbidity protects corals, why did Sekisei Lagoon—with consistently elevated chlorophyll—experience 97% bleaching in 2016?</span>
-                <span data-lang="ja">濁度がサンゴを守るなら、なぜ常に高いクロロフィル濃度を示す石西礁湖で、2016年に97%もの白化が起きたのでしょうか？</span>
-            </p>
-
-            <div class="card" style="margin-top: 1rem;">
-                <div style="overflow-x: auto;">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th><span data-lang="en">Year</span><span data-lang="ja">年</span></th>
-                                <th><span data-lang="en">Chl-a Anomaly</span><span data-lang="ja">Chl-a偏差</span></th>
-                                <th><span data-lang="en">Bleaching</span><span data-lang="ja">白化</span></th>
-                                <th><span data-lang="en">Interpretation</span><span data-lang="ja">解釈</span></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1998</td>
-                                <td>−0.21</td>
-                                <td><span data-lang="en">Severe</span><span data-lang="ja">深刻</span></td>
-                                <td><span data-lang="en">Low Chl-a = high light stress</span><span data-lang="ja">低Chl-a = 高い光ストレス</span></td>
-                            </tr>
-                            <tr>
-                                <td>2016</td>
-                                <td>+0.21</td>
-                                <td>97%</td>
-                                <td><span data-lang="en">Heat overwhelmed turbidity protection</span><span data-lang="ja">熱が濁度保護を圧倒</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="insight-box heat" style="margin-top: 1.5rem;">
-                <strong class="heat"><span data-lang="en">Key lesson:</span><span data-lang="ja">重要な教訓：</span></strong>
-                <span data-lang="en"> Turbidity protection has limits. When thermal stress is extreme—as in 2016 with prolonged heat and no typhoon cooling—even turbid reefs cannot escape bleaching.</span>
-                <span data-lang="ja"> 濁度による保護には限界があります。2016年のように熱ストレスが極端な場合—長期間の熱蓄積と台風冷却の欠如—濁った海域のサンゴも白化を免れません。</span>
-            </div>
-        </section>
-
-        <!-- Section 5: Reading Guide -->
+        <!-- Section 8: Reading Guide -->
         <section class="content-section">
             <h2>
                 <span data-lang="en">Interpreting Chlorophyll Data</span>
@@ -542,8 +804,8 @@
             </h2>
 
             <p>
-                <span data-lang="en">Chlorophyll-a alone cannot be judged as "good" or "bad" for coral reefs. It must be interpreted in combination with temperature.</span>
-                <span data-lang="ja">クロロフィルa単独では、サンゴ礁にとって「良い」「悪い」と判断できません。水温と組み合わせて解釈する必要があります。</span>
+                <span data-lang="en">Water column chlorophyll-a alone cannot be judged as "good" or "bad" for coral reefs. It must be interpreted in combination with temperature and other stressors.</span>
+                <span data-lang="ja">水中クロロフィルa単独では、サンゴ礁にとって「良い」「悪い」と判断できません。水温や他のストレス要因と組み合わせて解釈する必要があります。</span>
             </p>
 
             <div class="card" style="margin-top: 1rem;">
@@ -583,8 +845,8 @@
 
             <div class="insight-box adapt" style="margin-top: 1.5rem;">
                 <strong class="adapt"><span data-lang="en">Integrated monitoring:</span><span data-lang="ja">統合モニタリング：</span></strong>
-                <span data-lang="en"> This is why marine-obs.org tracks multiple parameters—SST, DHW, light-adjusted DHW, and chlorophyll together provide a more complete picture of reef stress than any single metric.</span>
-                <span data-lang="ja"> marine-obs.orgが複数のパラメータを追跡しているのはこのためです。SST、DHW、光補正DHW、クロロフィルを組み合わせることで、単一の指標よりもサンゴ礁ストレスの全体像が見えてきます。</span>
+                <span data-lang="en"> This is why marine-obs.org tracks multiple parameters—SST, DHW, light-adjusted DHW, and water column chlorophyll together provide context that no single metric can offer. Future field measurements will add the crucial dimension of what's happening inside coral tissue.</span>
+                <span data-lang="ja"> marine-obs.orgが複数のパラメータを追跡しているのはこのためです。SST、DHW、光補正DHW、水中クロロフィルを組み合わせることで、単一指標では得られない文脈が見えてきます。将来の現場測定では、サンゴ組織内で何が起きているかという重要な次元が加わります。</span>
             </div>
         </section>
 
@@ -597,12 +859,36 @@
 
             <div class="ref-category">
                 <h3>
+                    <span data-lang="en">Optical Feedback Loop</span>
+                    <span data-lang="ja">光学フィードバックループ</span>
+                </h3>
+                <ul class="ref-list">
+                    <li>Marcelino LA et al. (2013) Modulation of light-enhancement to symbiotic algae by light-scattering in corals and evolutionary trends in bleaching. <em>PLoS ONE</em> 8:e61492. <a href="https://doi.org/10.1371/journal.pone.0061492" target="_blank">DOI</a></li>
+                    <li>Wangpraseurt D et al. (2017) In vivo microscale measurements of light and photosynthesis during coral bleaching: Evidence for the optical feedback loop? <em>Frontiers in Microbiology</em> 8:59. <a href="https://doi.org/10.3389/fmicb.2017.00059" target="_blank">DOI</a></li>
+                    <li>Galindo-Martínez CT et al. (2022) The role of the endolithic alga <em>Ostreobium</em> spp. during coral bleaching recovery. <em>Scientific Reports</em> 12:2977. <a href="https://doi.org/10.1038/s41598-022-07017-6" target="_blank">DOI</a></li>
+                </ul>
+            </div>
+
+            <div class="ref-category">
+                <h3>
                     <span data-lang="en">Turbidity and Bleaching</span>
                     <span data-lang="ja">濁度と白化</span>
                 </h3>
                 <ul class="ref-list">
                     <li>Sully S, van Woesik R (2020) Turbid reefs moderate coral bleaching under climate-related temperature stress. <em>Global Change Biology</em> 26:1367-1373. <a href="https://doi.org/10.1111/gcb.14948" target="_blank">DOI</a></li>
+                    <li>Keighan R et al. (2023) Moderate chlorophyll-a environments reduce coral bleaching during thermal stress in Yap, Micronesia. <em>Scientific Reports</em> 13:9449. <a href="https://doi.org/10.1038/s41598-023-36355-2" target="_blank">DOI</a></li>
                     <li>González-Espinosa PC, Donner SD (2021) Cloudiness reduces the bleaching response of coral reefs. <em>Global Change Biology</em> 27:4143-4154. <a href="https://doi.org/10.1111/gcb.15676" target="_blank">DOI</a></li>
+                </ul>
+            </div>
+
+            <div class="ref-category">
+                <h3>
+                    <span data-lang="en">Chlorophyll Fluorescence Monitoring</span>
+                    <span data-lang="ja">クロロフィル蛍光モニタリング</span>
+                </h3>
+                <ul class="ref-list">
+                    <li>Hoadley KD et al. (2023) A phenomic modeling approach for using chlorophyll-a fluorescence-based measurements on coral photosymbionts. <em>Frontiers in Marine Science</em> 10:1092202. <a href="https://doi.org/10.3389/fmars.2023.1092202" target="_blank">DOI</a></li>
+                    <li>Lutz A et al. (2015) Host coenzyme Q redox state is an early biomarker of thermal stress in the coral <em>Acropora millepora</em>. <em>PLoS ONE</em> 10:e0139290. <a href="https://doi.org/10.1371/journal.pone.0139290" target="_blank">DOI</a></li>
                 </ul>
             </div>
 
