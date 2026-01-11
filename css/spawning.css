@@ -1047,3 +1047,224 @@
     font-weight: 600;
     color: var(--neap-teal);
 }
+
+/* ===== CALENDAR CONTAINER (NEW) ===== */
+.calendar-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.calendar-container .calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.calendar-container .calendar-header .cal-cell {
+    font-weight: 600;
+    font-size: 0.7rem;
+    text-align: center;
+    padding: 0.5rem 0.25rem;
+    color: var(--text-muted);
+    background: var(--bg-secondary);
+    border-radius: 4px;
+}
+
+.calendar-container .calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.25rem;
+}
+
+.calendar-container .cal-cell {
+    text-align: center;
+    padding: 0.6rem 0.25rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-container .cal-cell.empty {
+    background: transparent;
+}
+
+.calendar-container .cal-cell.lunar {
+    background: #fef3c7;
+    font-weight: 500;
+}
+
+.calendar-container .cal-cell.primary {
+    background: var(--spawning-purple);
+    color: white;
+    font-weight: 600;
+}
+
+.calendar-container .cal-cell.secondary {
+    background: var(--spawning-light);
+    border: 1px solid var(--spawning-border);
+}
+
+.calendar-legend {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.calendar-legend .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.calendar-legend .legend-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+}
+
+.calendar-legend .legend-box.primary {
+    background: var(--spawning-purple);
+}
+
+.calendar-legend .legend-box.secondary {
+    background: var(--spawning-light);
+    border: 1px solid var(--spawning-border);
+}
+
+.calendar-legend .legend-box.lunar {
+    background: #fef3c7;
+}
+
+/* ===== TABLE CONTAINER ===== */
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+/* ===== GUIDE GRID ===== */
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .guide-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.guide-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.guide-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.guide-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.guide-content {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* ===== PHASE TIMELINE ===== */
+.phase-timeline {
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.phase-timeline::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+}
+
+.phase-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.phase-item:last-child {
+    margin-bottom: 0;
+}
+
+.phase-item.current .phase-marker {
+    background: var(--spawning-purple);
+    color: white;
+}
+
+.phase-marker {
+    position: absolute;
+    left: -2rem;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.phase-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+}
+
+.phase-item.current .phase-content {
+    border-color: var(--spawning-border);
+    background: var(--spawning-light);
+}
+
+.phase-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.phase-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.phase-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
