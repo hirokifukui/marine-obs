@@ -1122,22 +1122,14 @@
                 const el = document.getElementById('sst-map-commentary');
                 if (!el || !data.commentary) return;
                 
-                const updated = data.updated ? ` (${data.image_date || data.updated})` : '';
-                
                 el.innerHTML = `
                     <span data-lang="en">${data.commentary.en}<br><small style="color: var(--text-muted);">Map date: ${data.image_date || 'N/A'}</small></span>
                     <span data-lang="ja">${data.commentary.ja}<br><small style="color: var(--text-muted);">マップ日付: ${data.image_date || 'N/A'}</small></span>
                 `;
-                
-                // Re-apply language setting
-                const lang = localStorage.getItem('preferred-language') || 'en';
-                document.querySelectorAll('#sst-map-commentary [data-lang]').forEach(span => {
-                    span.style.display = span.getAttribute('data-lang') === lang ? '' : 'none';
-                });
+                // CSS handles language visibility via body.ja class
             })
             .catch(err => {
                 console.warn('Failed to load SST commentary:', err);
-                // Keep fallback text
             });
     })();
     </script>
