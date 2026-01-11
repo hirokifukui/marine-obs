@@ -2,6 +2,15 @@
 /* Uses main.css as base */
 
 /* ========================================
+   Layout
+   ======================================== */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+}
+
+/* ========================================
    Content Section (Width Control)
    ======================================== */
 .content-section {
