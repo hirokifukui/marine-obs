@@ -564,7 +564,7 @@
                     <span data-lang="ja">🔄 黒潮大蛇行: 串本の温度調節機</span>
                 </div>
                 
-                <svg class="diagram-svg" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid meet">
+                <svg class="diagram-svg" viewBox="0 0 400 220" width="100%" style="max-width:400px;">
                     <!-- Japan outline (simplified) -->
                     <path d="M280,30 Q300,40 310,60 Q320,80 315,100 Q310,120 290,140 Q270,160 250,165 Q230,170 210,160 Q200,155 190,140" 
                           fill="#e8e0d0" stroke="#999" stroke-width="1"/>
@@ -636,7 +636,7 @@
                     <span data-lang="ja">🌊 Walker循環: ENSOとIODが台風を制御する仕組み</span>
                 </div>
                 
-                <svg class="diagram-svg" viewBox="0 0 500 280" preserveAspectRatio="xMidYMid meet">
+                <svg class="diagram-svg" viewBox="0 0 500 280" width="100%" style="max-width:500px;">
                     <!-- Background ocean -->
                     <rect x="0" y="180" width="500" height="100" fill="#4A90A4" opacity="0.2"/>
                     
