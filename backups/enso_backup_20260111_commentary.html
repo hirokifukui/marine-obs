@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENSO & Coral Bleaching | marine-obs.org</title>
+    <!-- SEO / OGP -->
+    <meta name="description" content="エルニーニョ・ラニーニャとサンゴ白化の関係。ONI時系列データと気候メカニズムの解説。">
+    <meta property="og:title" content="ENSO（エルニーニョ・ラニーニャ）| marine-obs.org">
+    <meta property="og:description" content="エルニーニョ・ラニーニャとサンゴ白化の関係。ONI時系列データと気候メカニズムの解説。">
+    <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
+    <meta property="og:url" content="https://marine-obs.org/enso.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/enso.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="images/logo-circle.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul class="nav-links">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Details</span>
+                            <span data-lang="ja">データ詳細</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                            <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                            <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                            <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                            <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span><span class="nav-badge">New</span></a></li>
+                            <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge">計画中</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Bleaching</span>
+                            <span data-lang="ja">白化</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                            <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                            <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Learn</span>
+                            <span data-lang="ja">サンゴを知る</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                            <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                            <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">For Divers</span>
+                            <span data-lang="ja">ダイバー向け</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                            <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Reference</span>
+                            <span data-lang="ja">リファレンス</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                            <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                            <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                            <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button id="lang-en" class="active">English</button>
+                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <button id="lang-ja">日本語</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Details</span>
+                    <span data-lang="ja">データ詳細</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                    <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                    <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                    <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                    <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                            <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span><span class="nav-badge">New</span></a></li>
+                    <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge-mobile">計画中</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Bleaching</span>
+                    <span data-lang="ja">白化</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                    <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                    <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Learn</span>
+                    <span data-lang="ja">サンゴを知る</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                    <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                    <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">For Divers</span>
+                    <span data-lang="ja">ダイバー向け</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                    <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Reference</span>
+                    <span data-lang="ja">リファレンス</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                    <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                    <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                    <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / 
+            <span data-lang="en">ENSO Monitor</span>
+            <span data-lang="ja">ENSO監視</span>
+        </div>
+
+        <!-- Global SST Anomaly Map -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Current Global SST Anomalies</span>
+                <span data-lang="ja">現在の世界海面水温偏差</span>
+            </h2>
+            
+            <div class="sst-map-container" style="background: var(--card-bg); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                <img src="https://www.ospo.noaa.gov/data/cb/ssta/ssta.daily.current.png" 
+                     alt="NOAA Coral Reef Watch SST Anomaly Map"
+                     style="width: 100%; height: auto; border-radius: 8px;">
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; margin-bottom: 0;">
+                    <span data-lang="en">
+                        Source: NOAA Coral Reef Watch Daily 5km SST Anomalies. Blue = cooler than average, Red = warmer than average. 
+                        During La Niña (current), note the blue band along the equatorial Pacific — warm water piles up in the western Pacific near Japan.
+                    </span>
+                    <span data-lang="ja">
+                        出典：NOAA Coral Reef Watch 日次5km SST偏差。青=平年より低温、赤=平年より高温。
+                        ラニーニャ期（現在）は赤道太平洋に青い帯が見える——暖水が日本近海の西太平洋に集中する。
+                    </span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Current Status + ONI Chart -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Current ENSO Status</span>
+                <span data-lang="ja">現在のENSO状態</span>
+            </h2>
+
+            <div class="oni-chart-container">
+                <div class="oni-chart-header">
+                    <div class="oni-chart-title">
+                        <span data-lang="en">Oceanic Niño Index (ONI) 1980–Present</span>
+                        <span data-lang="ja">海洋ニーニョ指数（ONI）1980年〜現在</span>
+                    </div>
+                </div>
+                <div class="oni-chart-wrapper">
+                    <canvas id="oni-chart"></canvas>
+                </div>
+                <div class="oni-legend">
+                    <div class="oni-legend-item">
+                        <div class="oni-legend-color el-nino"></div>
+                        <span>El Niño (≥+0.5)</span>
+                    </div>
+                    <div class="oni-legend-item">
+                        <div class="oni-legend-color neutral"></div>
+                        <span data-lang="en">Neutral</span>
+                        <span data-lang="ja">中立</span>
+                    </div>
+                    <div class="oni-legend-item">
+                        <div class="oni-legend-color la-nina"></div>
+                        <span>La Niña (≤-0.5)</span>
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: -1rem; margin-bottom: 1.5rem;">
+                <span data-lang="en">Data: NOAA CPC. Red markers indicate years with documented mass bleaching events globally or in Japan.</span>
+                <span data-lang="ja">データ：NOAA CPC。赤いマーカーは世界または日本で大規模白化が記録された年。</span>
+            </p>
+        </section>
+
+        <!-- ENSO Explanation -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">How ENSO Affects Coral Reefs</span>
+                <span data-lang="ja">ENSOがサンゴ礁に与える影響</span>
+            </h2>
+
+            <div class="enso-explainer">
+                <div class="enso-card el-nino">
+                    <h4>
+                        <span data-lang="en">🔴 El Niño</span>
+                        <span data-lang="ja">🔴 エルニーニョ</span>
+                    </h4>
+                    <p data-lang="en">
+                        Weakened trade winds allow warm water to spread eastward across the Pacific. Global average sea surface temperatures rise, triggering worldwide bleaching events.
+                    </p>
+                    <p data-lang="ja">
+                        貿易風が弱まり、暖水が太平洋を東へ広がる。全球の平均海面水温が上昇し、世界規模の白化イベントを引き起こす。
+                    </p>
+                    <ul>
+                        <li data-lang="en">1998: First global bleaching (ONI +2.4)</li>
+                        <li data-lang="ja">1998年：初のグローバル白化（ONI +2.4）</li>
+                        <li data-lang="en">2014-16: Third global bleaching (ONI +2.6)</li>
+                        <li data-lang="ja">2014-16年：第3回グローバル白化（ONI +2.6）</li>
+                        <li data-lang="en">2023-24: Fourth global bleaching</li>
+                        <li data-lang="ja">2023-24年：第4回グローバル白化</li>
+                    </ul>
+                </div>
+
+                <div class="enso-card la-nina">
+                    <h4>
+                        <span data-lang="en">🔵 La Niña — Also Dangerous</span>
+                        <span data-lang="ja">🔵 ラニーニャ — 西太平洋は危険</span>
+                    </h4>
+                    <p data-lang="en">
+                        Counterintuitively, La Niña can be more dangerous for Japan and the western Pacific. Warm water piles up in the west, raising temperatures in the Coral Triangle, Great Barrier Reef, and Okinawa.
+                    </p>
+                    <p data-lang="ja">
+                        直感に反して、ラニーニャは日本や西太平洋にとってより危険な場合がある。暖水が西に集中し、コーラルトライアングル、グレートバリアリーフ、沖縄の水温が上昇する。
+                    </p>
+                    <ul>
+                        <li data-lang="en">West Pacific SST rises during La Niña</li>
+                        <li data-lang="ja">ラニーニャ期は西太平洋のSST上昇</li>
+                        <li data-lang="en">Japan, GBR, Palau at elevated risk</li>
+                        <li data-lang="ja">日本、GBR、パラオのリスク増大</li>
+                        <li data-lang="en">2007 Yaeyama bleaching during La Niña</li>
+                        <li data-lang="ja">2007年八重山白化はラニーニャ期</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Recovery Interval Section -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">The Race Against Time: Recovery vs. Recurrence</span>
+                <span data-lang="ja">時間との競争：回復と再発</span>
+            </h2>
+
+            <div class="card">
+                <p data-lang="en" style="font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary);">
+                    One of the most critical—yet often overlooked—aspects of coral bleaching is the mismatch between recovery time and bleaching frequency. Coral reefs typically require <strong>10–15 years</strong> to fully recover from severe bleaching events. Yet ENSO cycles now drive mass bleaching events roughly every <strong>6 years</strong> on average globally. This arithmetic alone threatens reef persistence.
+                </p>
+                <p data-lang="ja" style="font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary);">
+                    サンゴ白化において最も重要でありながら見落とされがちな側面の一つが、回復に必要な時間と白化の発生頻度のミスマッチである。サンゴ礁が大規模白化から完全に回復するには通常<strong>10〜15年</strong>を要する。しかしENSOサイクルは今や世界平均で約<strong>6年</strong>ごとに大規模白化を引き起こしている。この算術だけでもサンゴ礁の存続が危ぶまれる。
+                </p>
+            </div>
+
+            <div class="recovery-interval-viz">
+                <div class="interval-comparison">
+                    <h5 data-lang="en">Recovery Time Needed</h5>
+                    <h5 data-lang="ja">必要な回復時間</h5>
+                    <div class="interval-bar">
+                        <div class="interval-bar-fill recovery" style="width: 100%;"></div>
+                    </div>
+                    <div class="interval-value green">10–15</div>
+                    <div class="interval-label" data-lang="en">years for full recovery</div>
+                    <div class="interval-label" data-lang="ja">年（完全回復まで）</div>
+                </div>
+                <div class="interval-comparison">
+                    <h5 data-lang="en">Actual Bleaching Interval</h5>
+                    <h5 data-lang="ja">実際の白化間隔</h5>
+                    <div class="interval-bar">
+                        <div class="interval-bar-fill bleaching" style="width: 40%;"></div>
+                    </div>
+                    <div class="interval-value red">~6</div>
+                    <div class="interval-label" data-lang="en">years (global average since 2016)</div>
+                    <div class="interval-label" data-lang="ja">年（2016年以降の世界平均）</div>
+                </div>
+            </div>
+
+            <div class="warning-callout">
+                <h4>
+                    <span data-lang="en">⚠️ "Ecological Memory" — The Compounding Effect</span>
+                    <span data-lang="ja">⚠️「生態学的記憶」— 複合的影響</span>
+                </h4>
+                <p data-lang="en">
+                    Hughes et al. (2018) documented that during back-to-back bleaching on the Great Barrier Reef (2016–2017), corals that survived the first event were <em>more vulnerable</em> to the second—not less. The 2017 bleaching pattern was heavily influenced by what happened in 2016. This "ecological memory" means cumulative damage accelerates faster than individual events would suggest.
+                </p>
+                <p data-lang="ja">
+                    Hughes et al. (2018) は、グレートバリアリーフでの連続白化（2016–2017年）において、最初のイベントを生き延びたサンゴが2回目に対してより脆弱であったことを記録した。2017年の白化パターンは2016年に起きたことに大きく影響されていた。この「生態学的記憶」は、累積的なダメージが個々のイベントの合計よりも速く進行することを意味する。
+                </p>
+            </div>
+
+            <div class="card" style="margin-top: 1.5rem;">
+                <h4 style="margin-top: 0;">
+                    <span data-lang="en">Japan's Bleaching Timeline: Shrinking Windows</span>
+                    <span data-lang="ja">日本の白化年表：短縮する回復期間</span>
+                </h4>
+                <div class="japan-timeline" style="margin-top: 1rem; padding-top: 1.5rem;">
+                    <span class="timeline-year-badge severe">1998</span>
+                    <span style="color: var(--text-muted); font-size: 0.8rem;">→ 9年 →</span>
+                    <span class="timeline-year-badge">2007</span>
+                    <span style="color: var(--text-muted); font-size: 0.8rem;">→ 9年 →</span>
+                    <span class="timeline-year-badge severe">2016</span>
+                    <span style="color: var(--text-muted); font-size: 0.8rem;">→ 1年 →</span>
+                    <span class="timeline-year-badge">2017</span>
+                    <span style="color: var(--text-muted); font-size: 0.8rem;">→ 7年 →</span>
+                    <span class="timeline-year-badge severe">2024</span>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; line-height: 1.7;">
+                    <span data-lang="en">
+                        Note the acceleration: 1998→2007 (9 years), 2007→2016 (9 years), then 2016→2017 (consecutive), and 2017→2024 (7 years). The 2016 event was so severe that corals barely had time to stabilize before 2017 hit. Now, the 2024 event struck reefs that had only partially recovered from 2016–2017.
+                    </span>
+                    <span data-lang="ja">
+                        加速に注目：1998→2007（9年）、2007→2016（9年）、そして2016→2017（連続）、2017→2024（7年）。2016年のイベントが非常に深刻だったため、2017年が到来する前にサンゴが安定する時間がほとんどなかった。そして2024年のイベントは、2016–2017年からまだ部分的にしか回復していなかったサンゴ礁を襲った。
+                    </span>
+                </p>
+            </div>
+        </section>
+
+        <!-- NEW: PDO Section -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Beyond ENSO: The PDO Connection</span>
+                <span data-lang="ja">ENSOを超えて：PDO（太平洋十年規模振動）との関係</span>
+            </h2>
+
+            <div class="pdo-explainer">
+                <h4>
+                    <span data-lang="en">📊 What is the PDO?</span>
+                    <span data-lang="ja">📊 PDOとは何か？</span>
+                </h4>
+                <p data-lang="en">
+                    The Pacific Decadal Oscillation (PDO) is a long-term climate pattern that shifts between warm and cool phases roughly every <strong>20–30 years</strong>. Think of it as ENSO's slower, larger cousin. While ENSO operates on 2–7 year cycles, PDO sets the background "mode" that either amplifies or dampens ENSO's effects on coral reefs.
+                </p>
+                <p data-lang="ja">
+                    太平洋十年規模振動（PDO）は、約<strong>20〜30年</strong>ごとに暖かいフェーズと冷たいフェーズの間を移行する長期的な気候パターンである。ENSOの遅い、より大きな従兄弟と考えるとよい。ENSOが2〜7年のサイクルで動くのに対し、PDOはサンゴ礁に対するENSOの影響を増幅または減衰させる背景的な「モード」を設定する。
+                </p>
+            </div>
+
+            <div class="key-insight">
+                <h5>
+                    <span data-lang="en">💡 Key Finding: Houk et al. (2020)</span>
+                    <span data-lang="ja">💡 重要な発見：Houk et al. (2020)</span>
+                </h5>
+                <p data-lang="en">
+                    ENSO alone doesn't predict bleaching well. <strong>The combination of ENSO and PDO phase</strong> is far more predictive. Different combinations create different risk profiles across the Pacific—and importantly for Japan, what matters is not just whether El Niño or La Niña is occurring, but how they interact with the current PDO phase.
+                </p>
+                <p data-lang="ja">
+                    ENSOだけでは白化をうまく予測できない。<strong>ENSOとPDOフェーズの組み合わせ</strong>がはるかに予測力が高い。異なる組み合わせが太平洋全体で異なるリスクプロファイルを生み出す——日本にとって重要なのは、エルニーニョやラニーニャが発生しているかどうかだけでなく、それらが現在のPDOフェーズとどう相互作用するかである。
+                </p>
+            </div>
+
+            <h4 style="margin-top: 1.5rem;">
+                <span data-lang="en">Climate Mode Combinations: Risk Matrix for Japan</span>
+                <span data-lang="ja">気候モードの組み合わせ：日本のリスクマトリックス</span>
+            </h4>
+
+            <div class="climate-matrix">
+                <div class="matrix-cell danger">
+                    <h5>
+                        <span data-lang="en">🔴 Positive PDO + La Niña</span>
+                        <span data-lang="ja">🔴 正のPDO + ラニーニャ</span>
+                    </h5>
+                    <p data-lang="en">
+                        <strong>Highest risk for Japan.</strong> Warm water piles up in the western Pacific. SST peaks in Okinawa, Coral Triangle, GBR. Typhoon tracks may shift, reducing cooling.
+                    </p>
+                    <p data-lang="ja">
+                        <strong>日本にとって最高リスク。</strong> 暖水が西太平洋に集中。沖縄、コーラルトライアングル、GBRでSST上昇。台風の経路が変化し、冷却効果が減少する可能性。
+                    </p>
+                </div>
+                <div class="matrix-cell moderate">
+                    <h5>
+                        <span data-lang="en">🟠 Positive PDO + El Niño</span>
+                        <span data-lang="ja">🟠 正のPDO + エルニーニョ</span>
+                    </h5>
+                    <p data-lang="en">
+                        <strong>Chlorophyll peaks.</strong> While SST may be less extreme in western Pacific, nutrient upwelling increases Crown-of-Thorns starfish (Acanthaster) outbreaks—a different threat to corals.
+                    </p>
+                    <p data-lang="ja">
+                        <strong>クロロフィル増加。</strong> 西太平洋のSSTはそれほど極端ではないかもしれないが、栄養塩の湧昇によりオニヒトデ（Acanthaster）の大発生リスク増加——サンゴへの別の脅威。
+                    </p>
+                </div>
+                <div class="matrix-cell moderate">
+                    <h5>
+                        <span data-lang="en">🟠 Negative PDO + El Niño</span>
+                        <span data-lang="ja">🟠 負のPDO + エルニーニョ</span>
+                    </h5>
+                    <p data-lang="en">
+                        <strong>Global bleaching risk elevated.</strong> Eastern Pacific and Caribbean more affected. Western Pacific relatively buffered but not immune.
+                    </p>
+                    <p data-lang="ja">
+                        <strong>グローバルな白化リスク上昇。</strong> 東太平洋とカリブ海がより影響を受ける。西太平洋は比較的緩衝されるが、免疫ではない。
+                    </p>
+                </div>
+                <div class="matrix-cell low">
+                    <h5>
+                        <span data-lang="en">🟢 Negative PDO + La Niña</span>
+                        <span data-lang="ja">🟢 負のPDO + ラニーニャ</span>
+                    </h5>
+                    <p data-lang="en">
+                        <strong>Relatively lower risk.</strong> Cooler background conditions may partially buffer western Pacific reefs, though long-term warming trend increasingly overrides this protection.
+                    </p>
+                    <p data-lang="ja">
+                        <strong>比較的低リスク。</strong> より冷たい背景条件が西太平洋のサンゴ礁を部分的に緩衝するかもしれないが、長期的な温暖化トレンドがこの保護を徐々に無効にしている。
+                    </p>
+                </div>
+            </div>
+
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem;">
+                <span data-lang="en">Current PDO phase (2019–2024): predominantly cool/negative. Forecasts suggest this will continue through 2025.</span>
+                <span data-lang="ja">現在のPDOフェーズ（2019–2024年）：主に冷却/負。予測では2025年まで継続する見込み。</span>
+            </p>
+        </section>
+
+        <!-- NEW: IOD Section -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">The Third Factor: Indian Ocean Dipole (IOD)</span>
+                <span data-lang="ja">第三の要因：インド洋ダイポール（IOD）</span>
+            </h2>
+
+            <div class="iod-box">
+                <h4>
+                    <span data-lang="en">🌊 IOD: The Missing Piece for Japan</span>
+                    <span data-lang="ja">🌊 IOD：日本にとっての欠けたピース</span>
+                </h4>
+                <p data-lang="en">
+                    The Indian Ocean Dipole (IOD) is a see-saw pattern in the Indian Ocean that affects typhoon tracks and intensity across the western Pacific. For Japan's coral reefs, the IOD matters because it influences <strong>how many typhoons reach Okinawa</strong>—and as we've seen, typhoons are critical for preventing catastrophic heat accumulation.
+                </p>
+                <p data-lang="ja">
+                    インド洋ダイポール（IOD）はインド洋のシーソーパターンで、西太平洋全体の台風の経路と強度に影響を与える。日本のサンゴ礁にとってIODが重要なのは、<strong>沖縄に到達する台風の数</strong>に影響するからである——そして既に見たように、台風は壊滅的な熱蓄積を防ぐために不可欠である。
+                </p>
+            </div>
+
+            <div class="mechanism-box" style="background: linear-gradient(135deg, #fae8ff, #f5d0fe); border-color: #e879f9;">
+                <h4 style="color: #86198f;">
+                    <span data-lang="en">⚠️ The 2016 Triple Threat: La Niña + Negative IOD + Positive PDO</span>
+                    <span data-lang="ja">⚠️ 2016年のトリプル脅威：ラニーニャ + 負のIOD + 正のPDO</span>
+                </h4>
+                <p data-lang="en">
+                    The 2016 Sekisei Lagoon disaster (97% bleaching, 70% mortality) occurred under a particularly dangerous combination: La Niña conditions were pushing warm water westward; the negative IOD phase was suppressing typhoon formation; and the positive PDO was providing a warm background. This triple alignment meant <strong>no typhoons + maximum heat accumulation</strong>—the worst possible scenario.
+                </p>
+                <p data-lang="ja">
+                    2016年の石西礁湖の壊滅（97%白化、70%死亡）は特に危険な組み合わせの下で発生した：ラニーニャ条件が暖水を西へ押しやり、負のIODフェーズが台風形成を抑制し、正のPDOが暖かい背景を提供していた。このトリプルアラインメントは<strong>台風なし + 最大の熱蓄積</strong>——最悪のシナリオを意味した。
+                </p>
+            </div>
+
+            <div class="card">
+                <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8;">
+                    <span data-lang="en">
+                        <strong>Recent research (Yasunaka et al. 2025)</strong> confirms that high-temperature events in the Ryukyu Islands correlate strongly with the <em>combined</em> effect of ENSO, IOD, and typhoon activity—not any single factor alone. This complexity makes prediction challenging but also highlights the value of monitoring all three climate modes.
+                    </span>
+                    <span data-lang="ja">
+                        <strong>最新の研究（Yasunaka et al. 2025）</strong>によれば、琉球諸島の高温イベントは、単一の要因ではなく、ENSO、IOD、台風活動の<em>複合的</em>な影響と強く相関している。この複雑さは予測を困難にするが、同時に3つの気候モードすべてをモニタリングする価値を示している。
+                    </span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Japan-specific: Typhoon Mechanism -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Japan-Specific Factor: Typhoon Suppression</span>
+                <span data-lang="ja">日本特有の要因：台風の抑制</span>
+            </h2>
+
+            <div class="mechanism-box">
+                <h4>
+                    <span data-lang="en">🌀 The 2016 Lesson: No Typhoons = Catastrophe</span>
+                    <span data-lang="ja">🌀 2016年の教訓：台風なし＝壊滅</span>
+                </h4>
+                <div class="mechanism-flow">
+                    <span data-lang="en">La Niña</span>
+                    <span data-lang="ja">ラニーニャ</span>
+                    <span class="arrow">→</span>
+                    <span data-lang="en">Fewer typhoons</span>
+                    <span data-lang="ja">台風減少</span>
+                    <span class="arrow">→</span>
+                    <span data-lang="en">No vertical mixing</span>
+                    <span data-lang="ja">鉛直混合なし</span>
+                    <span class="arrow">→</span>
+                    <span data-lang="en">Heat accumulates</span>
+                    <span data-lang="ja">熱蓄積</span>
+                    <span class="arrow">→</span>
+                    <span data-lang="en">Bleaching</span>
+                    <span data-lang="ja">白化</span>
+                </div>
+                <p data-lang="en">
+                    In 2016, no typhoons approached Okinawa until September. Without the cooling effect of storm-driven mixing, water temperatures remained elevated for months. Sekisei Lagoon recorded 97% bleaching and 70% mortality — the worst in Japan's history. A single typhoon passage can lower bottom temperatures by 5°C or more.
+                </p>
+                <p data-lang="ja">
+                    2016年は9月まで沖縄に台風が接近しなかった。台風による攪拌の冷却効果がなく、水温は数ヶ月間高止まりした。石西礁湖では97%白化、70%死亡を記録——日本史上最悪の被害。台風1回の通過で海底水温が5℃以上低下することがある。
+                </p>
+            </div>
+
+            <div class="card">
+                <p data-lang="en" style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8;">
+                    <strong>Why this matters for monitoring:</strong> Tracking ENSO phase helps predict bleaching risk in Japan. La Niña years with negative IOD (Indian Ocean Dipole) correlate with suppressed typhoon activity — a high-risk combination for Okinawa's coral reefs.
+                </p>
+                <p data-lang="ja" style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8;">
+                    <strong>モニタリングの意義：</strong> ENSOフェーズの追跡は日本の白化リスク予測に役立つ。ラニーニャ年でIOD（インド洋ダイポール）が負の場合、台風活動が抑制される傾向があり、沖縄のサンゴ礁にとって高リスクの組み合わせとなる。
+                </p>
+            </div>
+        </section>
+
+        <!-- NEW: Prediction and Early Warning -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Prediction Capabilities: How Far Ahead Can We See?</span>
+                <span data-lang="ja">予測能力：どこまで先を見通せるか？</span>
+            </h2>
+
+            <div class="card">
+                <p data-lang="en" style="font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary);">
+                    One of the most actionable aspects of ENSO monitoring is its predictability. Modern climate models can forecast ENSO state <strong>9–24 months in advance</strong> with reasonable accuracy. This means we can often know by winter whether the following summer will be high-risk for coral bleaching.
+                </p>
+                <p data-lang="ja" style="font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary);">
+                    ENSOモニタリングの最も実用的な側面の一つは、その予測可能性である。現代の気候モデルは、ENSOの状態を<strong>9〜24ヶ月先</strong>まで合理的な精度で予測できる。これは、冬の時点で翌夏がサンゴ白化の高リスクかどうかを知ることができることを意味する。
+                </p>
+            </div>
+
+            <div class="prediction-timeline">
+                <div class="prediction-point">
+                    <div class="icon">❄️</div>
+                    <div class="time">
+                        <span data-lang="en">Winter</span>
+                        <span data-lang="ja">冬</span>
+                    </div>
+                    <div class="label">
+                        <span data-lang="en">ENSO forecast available</span>
+                        <span data-lang="ja">ENSO予報発表</span>
+                    </div>
+                </div>
+                <div class="prediction-point">
+                    <div class="icon">🌸</div>
+                    <div class="time">
+                        <span data-lang="en">Spring</span>
+                        <span data-lang="ja">春</span>
+                    </div>
+                    <div class="label">
+                        <span data-lang="en">Risk assessment</span>
+                        <span data-lang="ja">リスク評価</span>
+                    </div>
+                </div>
+                <div class="prediction-point">
+                    <div class="icon">☀️</div>
+                    <div class="time">
+                        <span data-lang="en">Summer</span>
+                        <span data-lang="ja">夏</span>
+                    </div>
+                    <div class="label">
+                        <span data-lang="en">Peak bleaching risk</span>
+                        <span data-lang="ja">白化リスクのピーク</span>
+                    </div>
+                </div>
+                <div class="prediction-point">
+                    <div class="icon">🌊</div>
+                    <div class="time">
+                        <span data-lang="en">Fall</span>
+                        <span data-lang="ja">秋</span>
+                    </div>
+                    <div class="label">
+                        <span data-lang="en">Damage assessment</span>
+                        <span data-lang="ja">被害評価</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-insight">
+                <h5>
+                    <span data-lang="en">🎯 Practical Value for Divers and Managers</span>
+                    <span data-lang="ja">🎯 ダイバーと管理者にとっての実用的価値</span>
+                </h5>
+                <p data-lang="en">
+                    For dive operators and reef managers, this predictability offers lead time for preparation. High-risk summers may warrant increased monitoring, stress-reduction measures (limiting boat anchoring, reducing nutrient runoff), or documentation efforts before potential mass bleaching events.
+                </p>
+                <p data-lang="ja">
+                    ダイビング事業者やサンゴ礁管理者にとって、この予測可能性は準備のためのリードタイムを提供する。高リスクの夏には、モニタリングの強化、ストレス軽減措置（ボートのアンカリング制限、栄養塩流出の削減）、または潜在的な大規模白化イベント前の記録活動が必要かもしれない。
+                </p>
+            </div>
+        </section>
+
+        <!-- NEW: Adaptation and Hope -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Signs of Adaptation — And Its Limits</span>
+                <span data-lang="ja">適応の兆候 — そしてその限界</span>
+            </h2>
+
+            <div class="hope-section">
+                <h3>
+                    <span data-lang="en">🌱 Evidence of Increasing Thermal Tolerance</span>
+                    <span data-lang="ja">🌱 熱耐性向上の証拠</span>
+                </h3>
+                <div class="hope-items">
+                    <div class="hope-item">
+                        <span class="hope-icon">📈</span>
+                        <p class="hope-text">
+                            <span data-lang="en">
+                                <strong>Lachs et al. (2023)</strong> documented that coral thermal tolerance in Palau has increased at approximately <strong>0.1°C per decade</strong> since the late 1980s. This emergent tolerance led to less severe bleaching than DHW values alone would predict.
+                            </span>
+                            <span data-lang="ja">
+                                <strong>Lachs et al. (2023)</strong> は、パラオにおけるサンゴの熱耐性が1980年代後半から10年あたり約<strong>0.1°C</strong>上昇していることを記録した。この創発的な耐性により、DHW値だけから予測されるよりも軽度の白化が起きた。
+                            </span>
+                        </p>
+                    </div>
+                    <div class="hope-item">
+                        <span class="hope-icon">🧬</span>
+                        <p class="hope-text">
+                            <span data-lang="en">
+                                Multiple mechanisms may contribute: genetic adaptation through selection of heat-tolerant individuals, symbiont shuffling to more heat-resistant zooxanthellae strains, and epigenetic modifications that confer stress memory.
+                            </span>
+                            <span data-lang="ja">
+                                複数のメカニズムが寄与している可能性がある：耐熱性個体の選択による遺伝的適応、より耐熱性の褐虫藻株へのシンビオント・シャッフリング、ストレス記憶を与えるエピジェネティックな修飾。
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="adaptation-stats">
+                <div class="adaptation-stat">
+                    <div class="value">0.1°C</div>
+                    <div class="label">
+                        <span data-lang="en">tolerance increase per decade</span>
+                        <span data-lang="ja">10年あたりの耐性上昇</span>
+                    </div>
+                </div>
+                <div class="adaptation-stat">
+                    <div class="value">0.2°C</div>
+                    <div class="label">
+                        <span data-lang="en">ocean warming per decade</span>
+                        <span data-lang="ja">10年あたりの海洋温暖化</span>
+                    </div>
+                </div>
+                <div class="adaptation-stat">
+                    <div class="value">2×</div>
+                    <div class="label">
+                        <span data-lang="en">warming outpacing adaptation</span>
+                        <span data-lang="ja">温暖化が適応を上回る</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-callout">
+                <h4>
+                    <span data-lang="en">⚠️ The Math Problem: Adaptation Cannot Keep Pace</span>
+                    <span data-lang="ja">⚠️ 算術の問題：適応は追いつけない</span>
+                </h4>
+                <p data-lang="en">
+                    While 0.1°C/decade of adaptation is remarkable, oceans are warming at approximately <strong>0.2°C/decade</strong>. Under low-to-medium emission scenarios (SSP1-2.6, SSP2-4.5), adaptation may significantly reduce bleaching frequency. However, under high emissions (SSP5-8.5), the gap between warming and adaptation widens catastrophically. Adaptation buys time; it does not solve the fundamental problem.
+                </p>
+                <p data-lang="ja">
+                    10年あたり0.1°Cの適応は注目に値するが、海洋は約<strong>0.2°C/10年</strong>の速度で温暖化している。低〜中排出シナリオ（SSP1-2.6、SSP2-4.5）の下では、適応が白化頻度を大幅に減少させる可能性がある。しかし、高排出シナリオ（SSP5-8.5）の下では、温暖化と適応のギャップは壊滅的に拡大する。適応は時間を稼ぐが、根本的な問題を解決するわけではない。
+                </p>
+            </div>
+        </section>
+
+        <!-- NEW: Future Projections -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Future Projections: What Lies Ahead</span>
+                <span data-lang="ja">将来予測：何が待ち受けているか</span>
+            </h2>
+
+            <div class="future-scenarios">
+                <div class="scenario-card optimistic">
+                    <h5>
+                        <span data-lang="en">🌿 Low Emissions (1.5°C)</span>
+                        <span data-lang="ja">🌿 低排出シナリオ（1.5°C）</span>
+                    </h5>
+                    <div class="temp">+1.5°C</div>
+                    <p data-lang="en">
+                        <strong>70–90% of coral reefs decline</strong>, but some refugia may persist. If thermal tolerance continues increasing at current rates, high-frequency bleaching could be significantly mitigated for surviving populations. Japan's deeper, cooler sites (Kushimoto, Amami) may serve as refugia.
+                    </p>
+                    <p data-lang="ja">
+                        <strong>サンゴ礁の70〜90%が衰退</strong>するが、一部の避難場所は残る可能性がある。熱耐性が現在の速度で上昇し続ければ、生き残った個体群の高頻度白化は大幅に軽減される可能性がある。日本のより深く冷たい地点（串本、奄美）が避難場所として機能する可能性。
+                    </p>
+                </div>
+                <div class="scenario-card pessimistic">
+                    <h5>
+                        <span data-lang="en">🔥 High Emissions (2.0°C+)</span>
+                        <span data-lang="ja">🔥 高排出シナリオ（2.0°C以上）</span>
+                    </h5>
+                    <div class="temp">+2.0°C</div>
+                    <p data-lang="en">
+                        <strong>99%+ of coral reefs face annual bleaching</strong> by mid-century. Adaptation mechanisms become overwhelmed. Recovery intervals shrink below 1 year—insufficient for even minimal regeneration. Functional extinction of reef ecosystems becomes likely in many regions.
+                    </p>
+                    <p data-lang="ja">
+                        <strong>サンゴ礁の99%以上が今世紀半ばまでに年次白化に直面</strong>。適応メカニズムは圧倒される。回復間隔は1年未満に短縮——最小限の再生にも不十分。多くの地域でサンゴ礁生態系の機能的絶滅が起こりうる。
+                    </span>
+                </p>
+                </div>
+            </div>
+
+            <div class="key-insight">
+                <h5>
+                    <span data-lang="en">📅 Timeline: Annual Bleaching Threshold</span>
+                    <span data-lang="ja">📅 タイムライン：年次白化閾値</span>
+                </h5>
+                <p data-lang="en">
+                    Based on current projections, most of Japan's coral reef sites will cross the threshold for <strong>annual severe bleaching (DHW ≥8 every year)</strong> between 2040–2060 under medium-high emissions. This represents the point at which sustained coral reef ecosystems become impossible without dramatic intervention or unprecedented adaptation.
+                </p>
+                <p data-lang="ja">
+                    現在の予測に基づくと、日本のサンゴ礁地点のほとんどは、中〜高排出シナリオの下で<strong>2040〜2060年の間に年次重度白化（毎年DHW≥8）の閾値</strong>を超える。これは、劇的な介入または前例のない適応がなければ、持続的なサンゴ礁生態系が不可能になる時点を表している。
+                </p>
+            </div>
+        </section>
+
+        <!-- 2024 Case Study -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Case Study: 2024 Okinawa — History Repeats</span>
+                <span data-lang="ja">事例：2024年沖縄 — 繰り返される歴史</span>
+            </h2>
+
+            <div class="case-study-2024">
+                <div class="case-highlight">
+                    <div class="case-stat">
+                        <span class="case-number">48</span>
+                        <span class="case-unit">
+                            <span data-lang="en">days</span>
+                            <span data-lang="ja">日間</span>
+                        </span>
+                    </div>
+                    <p class="case-desc">
+                        <span data-lang="en">No typhoon existed anywhere in the world from June 2 to July 19, 2024 — a historically rare 48-day gap.</span>
+                        <span data-lang="ja">2024年6月2日〜7月19日の48日間、世界中で台風が発生しなかった——統計的にまれな現象。</span>
+                    </p>
+                </div>
+
+                <div class="case-highlight">
+                    <div class="case-stat">
+                        <span class="case-number">31.8</span>
+                        <span class="case-unit">°C</span>
+                    </div>
+                    <p class="case-desc">
+                        <span data-lang="en">SST near South Daito Island reached 31.79°C in July — the highest since records began in 1982, approximately 3°C above normal.</span>
+                        <span data-lang="ja">南大東島南の海面水温が7月に31.79℃を記録——1982年の統計開始以来最高値、平年比+3℃。</span>
+                    </p>
+                </div>
+
+                <div class="case-highlight">
+                    <div class="case-stat">
+                        <span class="case-approx">~</span><span class="case-number">90</span><span class="case-unit-inline">%</span>
+                        <span class="case-unit">
+                            <span data-lang="en">mortality</span>
+                            <span data-lang="ja">死滅</span>
+                        </span>
+                    </div>
+                    <p class="case-desc">
+                        <span data-lang="en">Shallow corals on Okinawa Main Island suffered approximately 90% mortality by late September 2024.</span>
+                        <span data-lang="ja">沖縄本島の浅瀬のサンゴは2024年9月末までに約9割が死滅。</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="mechanism-box" style="border-left-color: var(--coral-severe);">
+                <h4>
+                    <span data-lang="en">📊 JMA Data: Typhoon Approaches to Okinawa in 2024</span>
+                    <span data-lang="ja">📊 気象庁データ：2024年の沖縄への台風接近</span>
+                </h4>
+                <table class="typhoon-table">
+                    <thead>
+                        <tr>
+                            <th><span data-lang="en">Month</span><span data-lang="ja">月</span></th>
+                            <th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th>
+                            <th><span data-lang="en">Total</span><span data-lang="ja">年間</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024</td>
+                            <td>1</td><td class="critical">0</td><td>1</td><td>2</td><td>3</td><td>1</td><td>1</td>
+                            <td>8</td>
+                        </tr>
+                        <tr class="average-row">
+                            <td><span data-lang="en">Avg</span><span data-lang="ja">平年</span></td>
+                            <td>0.5</td><td>0.6</td><td>1.4</td><td>2.2</td><td>1.7</td><td>0.9</td><td>0.3</td>
+                            <td>7.7</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem;">
+                    <span data-lang="en">
+                        <strong>Key insight:</strong> Annual total (8) was near average, but <span style="color: var(--coral-severe);">June had zero approaches</span>. Combined with no typhoon formation worldwide until late July, the critical summer months lacked any cooling mechanism.
+                    </span>
+                    <span data-lang="ja">
+                        <strong>重要な点：</strong> 年間接近数（8個）は平年並みだが、<span style="color: var(--coral-severe);">6月の接近はゼロ</span>。7月下旬まで世界中で台風が発生しなかったことと合わせ、最も重要な夏季に冷却メカニズムが機能しなかった。
+                    </span>
+                </p>
+            </div>
+
+            <div class="voice-from-field">
+                <h4>
+                    <span data-lang="en">🤿 Voices from the Field</span>
+                    <span data-lang="ja">🤿 現場の声</span>
+                </h4>
+                
+                <blockquote class="field-quote">
+                    <p data-lang="en">
+                        "Because typhoons hadn't come for so long, this year the water temperature got incredibly high and the coral took serious damage... By mid-August, corals that had looked pastel in late July had turned almost completely white, and day by day we watched them getting covered in algae and dying before our eyes."
+                    </p>
+                    <p data-lang="ja">
+                        「台風が長らく来なかった影響で今年は水温がかなり高くなりサンゴに大きなダメージを受けている……7月末頃にはふんわりパステルカラーに見えていたサンゴが8月中にはほとんど白っぽくなり、日に日にコケが生え始め、目に見える速度で消えていっている」
+                    </p>
+                    <cite>
+                        <span data-lang="en">— Kerama dive shop operator, August 2024</span>
+                        <span data-lang="ja">— 慶良間ダイビングショップ、2024年8月</span>
+                    </cite>
+                </blockquote>
+
+                <blockquote class="field-quote">
+                    <p data-lang="en">
+                        "I've been in Okinawa for nearly 20 years, and both air and water temperatures have been rising rapidly. With global warming and few typhoons approaching, water temperatures aren't dropping and bleaching is spreading from the shallows."
+                    </p>
+                    <p data-lang="ja">
+                        「私は沖縄に移住して20年近くなりますが、ここ数年で地球温暖化のため気温も水温もどんどん上昇しています。沖縄本島では地球温暖化の影響と台風の接近が少ないため、水温が下がらなく、浅瀬からサンゴの白化現象が進んでいます」
+                    </p>
+                    <cite>
+                        <span data-lang="en">— Long-term Okinawa resident/diver</span>
+                        <span data-lang="ja">— 沖縄在住ダイバー（20年）</span>
+                    </cite>
+                </blockquote>
+            </div>
+
+            <div class="card" style="border-left: 4px solid var(--coral-critical);">
+                <h4 style="margin-top: 0;">
+                    <span data-lang="en">2024 vs 2016: The Same Pattern</span>
+                    <span data-lang="ja">2024年 vs 2016年：同じパターン</span>
+                </h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>2016</th>
+                            <th>2024</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-lang="en">Summer typhoon gap</td>
+                            <td data-lang="ja">夏季の台風空白</td>
+                            <td><span data-lang="en">None until Sept</span><span data-lang="ja">9月まで接近なし</span></td>
+                            <td><span data-lang="en">None until late July</span><span data-lang="ja">7月下旬まで発生なし</span></td>
+                        </tr>
+                        <tr>
+                            <td data-lang="en">SST anomaly</td>
+                            <td data-lang="ja">SST偏差</td>
+                            <td>+1~2°C</td>
+                            <td>+2~3°C</td>
+                        </tr>
+                        <tr>
+                            <td data-lang="en">Sekisei bleaching</td>
+                            <td data-lang="ja">石西礁湖白化</td>
+                            <td>97%</td>
+                            <td><span data-lang="en">Under survey</span><span data-lang="ja">調査中</span></td>
+                        </tr>
+                        <tr>
+                            <td data-lang="en">Main Island shallow mortality</td>
+                            <td data-lang="ja">本島浅瀬死滅</td>
+                            <td><span data-lang="en">Severe</span><span data-lang="ja">深刻</span></td>
+                            <td>~90%</td>
+                        </tr>
+                        <tr>
+                            <td data-lang="en">Annual temp record</td>
+                            <td data-lang="ja">年間気温記録</td>
+                            <td><span data-lang="en">Highest (at time)</span><span data-lang="ja">当時最高</span></td>
+                            <td><span data-lang="en">Highest since 1946</span><span data-lang="ja">1946年以来最高</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; margin-bottom: 0;">
+                    <span data-lang="en">
+                        The 2024 event demonstrates that annual typhoon count alone is misleading — <strong>timing</strong> determines coral fate. Both years saw critical summer months without the cooling that typhoons provide.
+                    </span>
+                    <span data-lang="ja">
+                        2024年の事例は、年間台風接近数だけでは判断できないことを示している——サンゴの運命を決めるのは<strong>タイミング</strong>。両年とも、台風がもたらす冷却効果が夏の最重要期に欠けていた。
+                    </span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Related Pages -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Related Pages</span>
+                <span data-lang="ja">関連ページ</span>
+            </h2>
+            <div class="enso-explainer">
+                <a href="bleaching.html" class="enso-card" style="text-decoration: none; border-left: 4px solid var(--accent-coral);">
+                    <h4 style="color: var(--text-primary);">
+                        <span data-lang="en">🪸 What is Bleaching?</span>
+                        <span data-lang="ja">🪸 白化とは</span>
+                    </h4>
+                    <p data-lang="en">The biology of coral bleaching — what happens at the cellular level.</p>
+                    <p data-lang="ja">サンゴ白化の生物学——細胞レベルで何が起きているか。</p>
+                </a>
+                <a href="global-bleaching.html" class="enso-card" style="text-decoration: none; border-left: 4px solid var(--coral-severe);">
+                    <h4 style="color: var(--text-primary);">
+                        <span data-lang="en">🌍 Global Bleaching Events</span>
+                        <span data-lang="ja">🌍 世界の白化状況</span>
+                    </h4>
+                    <p data-lang="en">Timeline of the four global mass bleaching events since 1998.</p>
+                    <p data-lang="ja">1998年以降の4回のグローバル白化イベントの年表。</p>
+                </a>
+                <a href="japan-bleaching.html" class="enso-card" style="text-decoration: none; border-left: 4px solid var(--coral-critical);">
+                    <h4 style="color: var(--text-primary);">
+                        <span data-lang="en">🗾 Japan Bleaching History</span>
+                        <span data-lang="ja">🗾 日本の白化状況</span>
+                    </h4>
+                    <p data-lang="en">Sekisei Lagoon and Okinawa — seven major events since 1998.</p>
+                    <p data-lang="ja">石西礁湖と沖縄——1998年以降7回の大規模白化。</p>
+                </a>
+                <a href="dhw.html" class="enso-card" style="text-decoration: none; border-left: 4px solid var(--accent-teal);">
+                    <h4 style="color: var(--text-primary);">
+                        <span data-lang="en">📊 Degree Heating Weeks</span>
+                        <span data-lang="ja">📊 積算熱ストレス</span>
+                    </h4>
+                    <p data-lang="en">DHW data for Japan's monitoring sites — the metric that predicts bleaching.</p>
+                    <p data-lang="ja">日本のモニタリング地点のDHWデータ——白化を予測する指標。</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">References</span>
+                <span data-lang="ja">参考文献</span>
+            </h2>
+            <div class="source-info">
+                <strong>
+                    <span data-lang="en">Data Sources</span>
+                    <span data-lang="ja">データソース</span>
+                </strong>
+                <ul>
+                    <li>NOAA Climate Prediction Center — Oceanic Niño Index (ONI). <a href="https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php" target="_blank">cpc.ncep.noaa.gov</a></li>
+                    <li>NOAA Coral Reef Watch — Bleaching alerts and DHW data. <a href="https://coralreefwatch.noaa.gov/" target="_blank">coralreefwatch.noaa.gov</a></li>
+                    <li>NOAA Physical Sciences Laboratory — Pacific Decadal Oscillation. <a href="https://psl.noaa.gov/pdo/" target="_blank">psl.noaa.gov/pdo</a></li>
+                    <li><span data-lang="en">Japan Meteorological Agency — Typhoon approach statistics</span><span data-lang="ja">気象庁 — 台風接近数統計</span>. <a href="https://www.data.jma.go.jp/typhoon/statistics/accession/okinawa.html" target="_blank">data.jma.go.jp</a></li>
+                    <li><span data-lang="en">Okinawa Regional Headquarters, JMA — 2024 temperature records</span><span data-lang="ja">沖縄気象台 — 2024年気温記録</span>. <a href="https://www.jma-net.go.jp/okinawa/" target="_blank">jma-net.go.jp/okinawa</a></li>
+                </ul>
+
+                <strong style="display:block; margin-top:1rem;">
+                    <span data-lang="en">Key Literature — Climate Mechanisms</span>
+                    <span data-lang="ja">主要文献 — 気候メカニズム</span>
+                </strong>
+                <ul>
+                    <li>Houk P et al. (2020) Predicting coral-reef futures from El Niño and Pacific Decadal Oscillation events. <i>Scientific Reports</i>. <a href="https://doi.org/10.1038/s41598-020-64411-8" target="_blank">doi:10.1038/s41598-020-64411-8</a></li>
+                    <li>Yasunaka S et al. (2025) ENSO-IOD correlation with Ryukyu high-temperature events. <i>Progress in Earth and Planetary Science</i>.</li>
+                    <li>Claar DC et al. (2018) Global patterns and impacts of El Niño events on coral reefs. <i>PLOS ONE</i>. <a href="https://doi.org/10.1371/journal.pone.0190957" target="_blank">doi:10.1371/journal.pone.0190957</a></li>
+                </ul>
+
+                <strong style="display:block; margin-top:1rem;">
+                    <span data-lang="en">Key Literature — Recovery &amp; Adaptation</span>
+                    <span data-lang="ja">主要文献 — 回復と適応</span>
+                </strong>
+                <ul>
+                    <li>Hughes TP et al. (2018) Spatial and temporal patterns of mass bleaching of corals in the Anthropocene. <i>Science</i> 359:80–83. <a href="https://doi.org/10.1126/science.aan8048" target="_blank">doi:10.1126/science.aan8048</a></li>
+                    <li>Hughes TP et al. (2019) Ecological memory modifies the cumulative impact of recurrent climate extremes. <i>Nature Climate Change</i> 9:40–43. <a href="https://doi.org/10.1038/s41558-018-0351-2" target="_blank">doi:10.1038/s41558-018-0351-2</a></li>
+                    <li>Hughes TP et al. (2019) Global warming impairs stock–recruitment dynamics of corals. <i>Nature</i> 568:387–390. <a href="https://doi.org/10.1038/s41586-019-1081-y" target="_blank">doi:10.1038/s41586-019-1081-y</a></li>
+                    <li>Lachs L et al. (2023) Emergent increase in coral thermal tolerance reduces mass bleaching under climate change. <i>Nature Communications</i>. <a href="https://doi.org/10.1038/s41467-023-40601-6" target="_blank">doi:10.1038/s41467-023-40601-6</a></li>
+                    <li>Gilmour JP et al. (2013) Recovery of an isolated coral reef system following severe disturbance. <i>Science</i> 340:69–71.</li>
+                </ul>
+
+                <strong style="display:block; margin-top:1rem;">
+                    <span data-lang="en">Japan-Specific Literature</span>
+                    <span data-lang="ja">日本関連文献</span>
+                </strong>
+                <ul>
+                    <li>Nakamura T (2017) Mass coral bleaching event in Sekisei Lagoon observed in the summer of 2016. <i>J. Japan Coral Reef Soc.</i> 19:29-40.</li>
+                    <li>Bernardo LPC et al. (2017) Impact of typhoon on seawater temperature in Sekisei Lagoon. <i>Ocean Dynamics</i>.</li>
+                </ul>
+
+                <strong style="display:block; margin-top:1rem;">
+                    <span data-lang="en">2024 Field Reports</span>
+                    <span data-lang="ja">2024年現場レポート</span>
+                </strong>
+                <ul>
+                    <li><span data-lang="en">World Diving Okinawa — Coral bleaching documentation (Sept 2024)</span><span data-lang="ja">ワールドダイビング — サンゴ白化現象記録（2024年9月）</span></li>
+                    <li><span data-lang="en">Ryukyu Shimpo — Typhoon approach and SST reports (Aug 2024)</span><span data-lang="ja">琉球新報 — 台風接近・海水温報道（2024年8月）</span></li>
+                    <li><span data-lang="en">NACS-J — Okinawa coastal coral bleaching survey</span><span data-lang="ja">日本自然保護協会 — 沖縄沿岸サンゴ白化調査</span></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="index.html">← 
+            <span data-lang="en">Back to Home</span>
+            <span data-lang="ja">ホームに戻る</span>
+        </a>
+        <p style="margin-top: 0.5rem;">© 2026 marine-obs.org</p>
+    </footer>
+
+    <script src="js/lang.js"></script>
+    <script src="js/enso-chart.js"></script>
+
+    <!-- Navigation JS -->
+    <script>
+    (function() {
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        const sidebarClose = document.getElementById('sidebar-close');
+        
+        function openSidebar() {
+            sidebar.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            hamburger.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        hamburger.addEventListener('click', function() {
+            if (sidebar.classList.contains('active')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+        
+        sidebarOverlay.addEventListener('click', closeSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                closeSidebar();
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

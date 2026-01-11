@@ -1,0 +1,123 @@
+name: Update SST Map Commentary
+
+on:
+  schedule:
+    # 毎週月曜 UTC 00:00 (JST 09:00)
+    - cron: '0 0 * * 1'
+  workflow_dispatch:  # 手動実行も可能
+
+jobs:
+  update-commentary:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install anthropic requests
+
+      - name: Download NOAA image and generate commentary
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python3 << 'PYTHON'
+          import anthropic
+          import base64
+          import requests
+          import json
+          from datetime import datetime
+          from pathlib import Path
+
+          NOAA_IMAGE_URL = "https://www.ospo.noaa.gov/data/cb/ssta/ssta.daily.current.png"
+          OUTPUT_PATH = Path("data/sst-map-commentary.json")
+          MODEL = "claude-sonnet-4-20250514"
+
+          PROMPT = """You are analyzing NOAA's daily SST anomaly map for a coral reef monitoring website (marine-obs.org).
+
+          Target audience: Japanese divers and people interested in coral reef health.
+
+          Analyze this image and provide:
+
+          1. Extract the date shown in the image title (format: "8 Jan 2026")
+
+          2. Brief commentary (2-3 sentences) covering:
+             - ENSO pattern visible in the equatorial Pacific (El Niño/La Niña/Neutral)
+             - Implications for western Pacific coral reefs, especially Japan/Okinawa region
+             - Any notable marine heatwave areas that could affect coral health
+
+          Guidelines:
+          - Be informative but not alarmist
+          - Focus on what divers and reef enthusiasts would find useful
+          - Mention specific regions when relevant (Great Barrier Reef, Coral Triangle, Okinawa, etc.)
+
+          Respond ONLY with valid JSON (no markdown, no code blocks):
+          {
+            "image_date": "8 Jan 2026",
+            "en": "English commentary here...",
+            "ja": "日本語の解説をここに..."
+          }"""
+
+          # Download image
+          print(f"Downloading image from {NOAA_IMAGE_URL}")
+          response = requests.get(NOAA_IMAGE_URL, timeout=30)
+          response.raise_for_status()
+          img_base64 = base64.standard_b64encode(response.content).decode("utf-8")
+
+          # Call Claude API
+          print(f"Calling Claude API ({MODEL})")
+          client = anthropic.Anthropic()
+          message = client.messages.create(
+              model=MODEL,
+              max_tokens=1024,
+              messages=[{
+                  "role": "user",
+                  "content": [
+                      {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": img_base64}},
+                      {"type": "text", "text": PROMPT}
+                  ],
+              }],
+          )
+
+          response_text = message.content[0].text
+          print(f"Raw response: {response_text[:200]}...")
+
+          # Parse JSON
+          cleaned = response_text.strip()
+          if cleaned.startswith("```"):
+              lines = cleaned.split("\n")
+              cleaned = "\n".join(lines[1:-1])
+          result = json.loads(cleaned)
+
+          # Build output
+          output = {
+              "updated": datetime.now().strftime("%Y-%m-%d"),
+              "image_date": result.get("image_date", ""),
+              "commentary": {
+                  "en": result.get("en", ""),
+                  "ja": result.get("ja", "")
+              }
+          }
+
+          # Write JSON
+          OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+          with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+              json.dump(output, f, ensure_ascii=False, indent=2)
+
+          print(f"✅ Updated: {OUTPUT_PATH}")
+          print(json.dumps(output, ensure_ascii=False, indent=2))
+          PYTHON
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/sst-map-commentary.json
+          git diff --staged --quiet || git commit -m "Update SST map commentary [automated]"
+          git push

@@ -20,6 +20,7 @@
 | dhw.html | 積算熱ストレス |
 | light-adjusted-dhw.html | 光補正DHW |
 | enso.html | ENSO監視 |
+| climate-drivers.html | 気候ドライバー |
 | global-bleaching.html | 世界の白化状況 |
 | japan-bleaching.html | 日本の白化状況 |
 | sekisei-cover.html | 石西礁湖被度グラフ（iframe用） |
@@ -81,4 +82,4 @@ Vercel自動デプロイ。
 `backups/` フォルダに保存。**削除禁止**。
 
 ---
-*2026-01-10*
+*2026-01-11*
