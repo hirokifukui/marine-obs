@@ -626,6 +626,123 @@
                     <span data-lang="ja">2017年8月以降、黒潮は観測史上最長の大蛇行期にある。串本付近に暖水渦が形成され、局所的なSSTが上昇。出典: 気象庁、Hirata et al. (2025)。</span>
                 </div>
             </div>
+
+            <!-- Walker Circulation Diagram -->
+            <div class="diagram-container">
+                <div class="diagram-title">
+                    <span data-lang="en">🌊 Walker Circulation: How ENSO & IOD Control Typhoons</span>
+                    <span data-lang="ja">🌊 Walker循環: ENSOとIODが台風を制御する仕組み</span>
+                </div>
+                
+                <svg class="diagram-svg" viewBox="0 0 500 280" width="100%" style="max-width:500px;">
+                    <!-- Background ocean -->
+                    <rect x="0" y="180" width="500" height="100" fill="#4A90A4" opacity="0.2"/>
+                    
+                    <!-- Region labels at top -->
+                    <text x="80" y="20" text-anchor="middle" font-size="11" fill="#666" font-weight="600">
+                        <tspan data-lang="en">Indian Ocean</tspan>
+                        <tspan data-lang="ja">インド洋</tspan>
+                    </text>
+                    <text x="250" y="20" text-anchor="middle" font-size="11" fill="#666" font-weight="600">
+                        <tspan data-lang="en">Maritime Continent</tspan>
+                        <tspan data-lang="ja">海洋大陸</tspan>
+                    </text>
+                    <text x="420" y="20" text-anchor="middle" font-size="11" fill="#666" font-weight="600">
+                        <tspan data-lang="en">Pacific Ocean</tspan>
+                        <tspan data-lang="ja">太平洋</tspan>
+                    </text>
+                    
+                    <!-- Walker Cell - Normal/La Niña -->
+                    <defs>
+                        <marker id="arrowWalker" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                            <path d="M0,1 L0,7 L7,4 z" fill="#4A90A4"/>
+                        </marker>
+                        <marker id="arrowUp" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto">
+                            <path d="M1,7 L7,7 L4,0 z" fill="#F78A81"/>
+                        </marker>
+                        <marker id="arrowDown" markerWidth="8" markerHeight="8" refX="4" refY="2" orient="auto">
+                            <path d="M1,0 L7,0 L4,7 z" fill="#4A90A4"/>
+                        </marker>
+                    </defs>
+                    
+                    <!-- Upper level flow (west to east) -->
+                    <path d="M100,60 Q250,40 400,60" fill="none" stroke="#4A90A4" stroke-width="3" stroke-dasharray="8,4" marker-end="url(#arrowWalker)"/>
+                    <text x="250" y="38" text-anchor="middle" font-size="9" fill="#4A90A4">
+                        <tspan data-lang="en">Upper atmosphere</tspan>
+                        <tspan data-lang="ja">上層大気</tspan>
+                    </text>
+                    
+                    <!-- Lower level flow (east to west - Trade winds) -->
+                    <path d="M400,160 Q250,175 100,160" fill="none" stroke="#4A90A4" stroke-width="4" marker-end="url(#arrowWalker)"/>
+                    <text x="250" y="195" text-anchor="middle" font-size="10" fill="#4A90A4" font-weight="600">
+                        <tspan data-lang="en">Trade Winds →</tspan>
+                        <tspan data-lang="ja">貿易風 →</tspan>
+                    </text>
+                    
+                    <!-- Rising air over Maritime Continent -->
+                    <path d="M250,150 L250,80" stroke="#F78A81" stroke-width="4" marker-end="url(#arrowUp)"/>
+                    <ellipse cx="250" cy="140" rx="40" ry="15" fill="#F78A81" opacity="0.3"/>
+                    <text x="250" y="145" text-anchor="middle" font-size="9" fill="#F78A81">
+                        <tspan data-lang="en">Convection</tspan>
+                        <tspan data-lang="ja">対流</tspan>
+                    </text>
+                    
+                    <!-- Sinking air over East Pacific -->
+                    <path d="M420,80 L420,150" stroke="#4A90A4" stroke-width="3" marker-end="url(#arrowDown)"/>
+                    <text x="420" y="115" text-anchor="middle" font-size="8" fill="#4A90A4">
+                        <tspan data-lang="en">Subsidence</tspan>
+                        <tspan data-lang="ja">下降</tspan>
+                    </text>
+                    
+                    <!-- Warm Pool -->
+                    <ellipse cx="180" cy="220" rx="80" ry="25" fill="#F78A81" opacity="0.4"/>
+                    <text x="180" y="225" text-anchor="middle" font-size="10" fill="#F78A81" font-weight="600">
+                        <tspan data-lang="en">Warm Pool 29°C+</tspan>
+                        <tspan data-lang="ja">暖水プール 29°C+</tspan>
+                    </text>
+                    
+                    <!-- Cold Tongue -->
+                    <ellipse cx="400" cy="230" rx="60" ry="20" fill="#4A90A4" opacity="0.4"/>
+                    <text x="400" y="235" text-anchor="middle" font-size="9" fill="#4A90A4">
+                        <tspan data-lang="en">Cold Tongue</tspan>
+                        <tspan data-lang="ja">冷水舌</tspan>
+                    </text>
+                    
+                    <!-- Typhoon genesis zone -->
+                    <rect x="200" y="200" width="100" height="40" fill="none" stroke="#F7C948" stroke-width="2" stroke-dasharray="4" rx="5"/>
+                    <text x="250" y="248" text-anchor="middle" font-size="9" fill="#F7C948" font-weight="600">
+                        <tspan data-lang="en">🌀 TC Genesis Zone</tspan>
+                        <tspan data-lang="ja">🌀 台風発生域</tspan>
+                    </text>
+                    
+                    <!-- Japan marker -->
+                    <circle cx="320" cy="200" r="8" fill="#333" stroke="#fff" stroke-width="2"/>
+                    <text x="335" y="195" font-size="9" fill="#333" font-weight="600">
+                        <tspan data-lang="en">Japan</tspan>
+                        <tspan data-lang="ja">日本</tspan>
+                    </text>
+                    
+                    <!-- IOD annotation -->
+                    <rect x="20" y="200" width="90" height="55" fill="#fff" stroke="#ddd" rx="5"/>
+                    <text x="65" y="218" text-anchor="middle" font-size="9" fill="#333">
+                        <tspan data-lang="en">-IOD: Warm here</tspan>
+                        <tspan data-lang="ja">負IOD: 高温</tspan>
+                    </text>
+                    <text x="65" y="235" text-anchor="middle" font-size="8" fill="#F78A81">
+                        <tspan data-lang="en">→ Walker strengthens</tspan>
+                        <tspan data-lang="ja">→ Walker強化</tspan>
+                    </text>
+                    <text x="65" y="250" text-anchor="middle" font-size="8" fill="#F78A81">
+                        <tspan data-lang="en">→ Fewer typhoons</tspan>
+                        <tspan data-lang="ja">→ 台風減少</tspan>
+                    </text>
+                </svg>
+                
+                <div class="diagram-caption">
+                    <span data-lang="en"><strong>La Niña + negative IOD</strong>: Walker circulation strengthens → convection concentrated over Maritime Continent → westerly monsoon jet weakens → fewer typhoons reach Japan → heat accumulates on coral reefs. This mechanism drove the 2016 catastrophe (Doi et al. 2025).</span>
+                    <span data-lang="ja"><strong>ラニーニャ + 負のIOD</strong>: Walker循環が強化 → 対流が海洋大陸上に集中 → モンスーン西風ジェットが弱化 → 日本に到達する台風が減少 → サンゴ礁に熱が蓄積。このメカニズムが2016年の大規模白化を引き起こした（Doi et al. 2025）。</span>
+                </div>
+            </div>
         </section>
 
         <!-- Site Profiles Section -->
