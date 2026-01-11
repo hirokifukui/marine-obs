@@ -44,9 +44,7 @@ jobs:
           OUTPUT_PATH = Path("data/sst-map-commentary.json")
           MODEL = "claude-sonnet-4-20250514"
 
-          PROMPT = """You are analyzing NOAA's daily SST anomaly map for a coral reef monitoring website (marine-obs.org).
-
-          Target audience: Japanese divers and people interested in coral reef health.
+          PROMPT = """You are analyzing NOAA's daily SST anomaly map for marine-obs.org, a coral reef thermal stress monitoring site.
 
           Analyze this image and provide:
 
@@ -54,19 +52,19 @@ jobs:
 
           2. Brief commentary (2-3 sentences) covering:
              - ENSO pattern visible in the equatorial Pacific (El Niño/La Niña/Neutral)
-             - Implications for western Pacific coral reefs, especially Japan/Okinawa region
-             - Any notable marine heatwave areas that could affect coral health
+             - Implications for coral reefs, with attention to Japan/Okinawa and western Pacific
+             - Any notable marine heatwave areas globally
 
           Guidelines:
-          - Be informative but not alarmist
-          - Focus on what divers and reef enthusiasts would find useful
+          - Objective, factual tone
+          - No direct address to readers (avoid "you", "divers", "皆様")
           - Mention specific regions when relevant (Great Barrier Reef, Coral Triangle, Okinawa, etc.)
 
           Respond ONLY with valid JSON (no markdown, no code blocks):
           {
             "image_date": "8 Jan 2026",
-            "en": "English commentary here...",
-            "ja": "日本語の解説をここに..."
+            "en": "English commentary...",
+            "ja": "日本語の解説..."
           }"""
 
           # Download image
