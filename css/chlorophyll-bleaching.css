@@ -1,35 +1,5 @@
 /* Chlorophyll & Bleaching - Page-specific styles */
-/* Full standalone styles (similar to DHW page) */
-
-:root {
-    --header-bg: #1a1f2e;
-    --header-text: #ffffff;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --bg-card: #ffffff;
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --text-muted: #718096;
-    --accent-teal: #2b6cb0;
-    --accent-green: #2f855a;
-    --accent-warm: #c05621;
-    --border: #e2e8f0;
-    --shadow: 0 1px 3px rgba(0,0,0,0.08);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-    line-height: 1.6;
-    min-height: 100vh;
-}
-
-body.ja {
-    font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
-}
+/* Uses main.css as base */
 
 /* ========================================
    Layout
@@ -504,38 +474,6 @@ body.ja .section-intro {
 .references-list em {
     font-style: italic;
 }
-
-/* ========================================
-   Language Toggle
-   ======================================== */
-[data-lang="ja"] { display: none; }
-body.ja [data-lang="en"] { display: none; }
-body.ja [data-lang="ja"] { display: inline; }
-
-/* Block-level language elements */
-p[data-lang], h1[data-lang], h2[data-lang], h3[data-lang], 
-li[data-lang], tr[data-lang], div[data-lang] {
-    display: none;
-}
-p[data-lang="en"], h1[data-lang="en"], h2[data-lang="en"], h3[data-lang="en"],
-li[data-lang="en"], tr[data-lang="en"], div[data-lang="en"] {
-    display: block;
-}
-body.ja p[data-lang="en"], body.ja h1[data-lang="en"], body.ja h2[data-lang="en"], 
-body.ja h3[data-lang="en"], body.ja li[data-lang="en"], body.ja tr[data-lang="en"],
-body.ja div[data-lang="en"] {
-    display: none;
-}
-body.ja p[data-lang="ja"], body.ja h1[data-lang="ja"], body.ja h2[data-lang="ja"], 
-body.ja h3[data-lang="ja"], body.ja li[data-lang="ja"], body.ja tr[data-lang="ja"],
-body.ja div[data-lang="ja"] {
-    display: block;
-}
-
-/* Table rows need table-row display */
-tr[data-lang="en"] { display: table-row; }
-body.ja tr[data-lang="en"] { display: none; }
-body.ja tr[data-lang="ja"] { display: table-row; }
 
 /* ========================================
    Mobile Adjustments
