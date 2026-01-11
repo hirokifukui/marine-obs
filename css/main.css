@@ -1798,6 +1798,11 @@ body.ja .hero-tagline-sub {
     color: #4a5568;
 }
 
+.source-badge.archive {
+    background: #e2e8f0;
+    color: #718096;
+}
+
 
 /* Introduction Section */
 .intro-section {
