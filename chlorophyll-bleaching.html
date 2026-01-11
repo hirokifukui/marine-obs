@@ -18,7 +18,104 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/bleaching.css">
+    <link rel="stylesheet" href="css/dhw.css">
+    <style>
+        /* Page-specific styles */
+        .paradox-highlight {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .paradox-highlight p {
+            margin: 0;
+        }
+        .pathway-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .pathway-card {
+            padding: 1.25rem;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+        .pathway-card.protection {
+            background: #f0fdf4;
+            border-color: #22c55e;
+        }
+        .pathway-card.threat {
+            background: #fef2f2;
+            border-color: #ef4444;
+        }
+        .pathway-card h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1rem;
+        }
+        .pathway-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .pathway-card ul {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.25rem;
+            font-size: 0.9rem;
+        }
+        .pathway-card li {
+            margin: 0.25rem 0;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin: 1.5rem 0;
+        }
+        .data-table th, .data-table td {
+            padding: 0.5rem 0.4rem;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .data-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .data-table tr:hover {
+            background: #f8fafc;
+        }
+        .site-label {
+            text-align: left;
+            font-weight: 500;
+        }
+        .table-note {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        .chl-low { color: #059669; }
+        .chl-mid { color: #d97706; }
+        .chl-high { color: #dc2626; font-weight: 500; }
+        .climate-matrix {
+            margin: 1.5rem 0;
+        }
+        .related-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+        .related-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -43,9 +140,9 @@
                             <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
                             <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
                             <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
-                            <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span></a></li>
+                            <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span><span class="nav-badge">New</span></a></li>
                             <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
-                            <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll & Bleaching</span><span data-lang="ja">クロロフィルと白化</span><span class="nav-badge">New</span></a></li>
+                            <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll &amp; Bleaching</span><span data-lang="ja">クロロフィルと白化</span><span class="nav-badge">New</span></a></li>
                             <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge">計画中</span></a></li>
                         </ul>
                     </li>
@@ -139,9 +236,9 @@
                     <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
                     <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
                     <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
-                    <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span></a></li>
+                    <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span><span class="nav-badge">New</span></a></li>
                     <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
-                    <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll & Bleaching</span><span data-lang="ja">クロロフィルと白化</span><span class="nav-badge-mobile">New</span></a></li>
+                    <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll &amp; Bleaching</span><span data-lang="ja">クロロフィルと白化</span><span class="nav-badge-mobile">New</span></a></li>
                     <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge-mobile">計画中</span></a></li>
                 </ul>
             </li>
@@ -194,151 +291,155 @@
     </nav>
 
     <main>
-        <section class="hero">
-            <h1 data-lang="en">Chlorophyll & Coral Bleaching</h1>
-            <h1 data-lang="ja">クロロフィルとサンゴ白化</h1>
-            <p class="hero-subtitle" data-lang="en">Water turbidity can both protect and threaten coral reefs—understanding this paradox is key to interpreting reef health.</p>
-            <p class="hero-subtitle" data-lang="ja">濁度はサンゴ礁を守ることも脅かすこともある。この逆説を理解することがサンゴ礁の健全性を読み解く鍵です。</p>
-        </section>
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> / 
+            <a href="bleaching.html"><span data-lang="en">Bleaching</span><span data-lang="ja">白化</span></a> /
+            <span data-lang="en">Chlorophyll</span>
+            <span data-lang="ja">クロロフィル</span>
+        </nav>
 
-        <div class="content-wrapper">
-            <!-- Key Concept -->
-            <div class="key-point">
-                <p>
-                    <strong data-lang="en">💡 The Chlorophyll Paradox</strong>
-                    <strong data-lang="ja">💡 クロロフィルの逆説</strong>
-                </p>
-                <p data-lang="en">Turbid water can reduce light stress and protect corals from bleaching. But high nutrient levels that increase chlorophyll can also fuel crown-of-thorns starfish outbreaks that devastate reefs. The same indicator can signal either protection or threat.</p>
-                <p data-lang="ja">濁った水は光ストレスを軽減し、白化からサンゴを守ることがあります。しかしクロロフィルを増加させる高い栄養塩レベルは、サンゴを食い尽くすオニヒトデの大発生を招くこともあります。同じ指標が、保護と脅威の両方を示しうるのです。</p>
-            </div>
+        <div class="page-header">
+            <h1>
+                <span data-lang="en">Chlorophyll & Coral Bleaching</span>
+                <span data-lang="ja">クロロフィルとサンゴ白化</span>
+            </h1>
+            <p class="lead">
+                <span data-lang="en">
+                    Water turbidity can both protect and threaten coral reefs. 
+                    Understanding this paradox is key to interpreting reef health from satellite data.
+                </span>
+                <span data-lang="ja">
+                    濁度はサンゴ礁を守ることも脅かすこともあります。
+                    この逆説を理解することが、衛星データからサンゴ礁の健全性を読み解く鍵です。
+                </span>
+            </p>
+        </div>
 
-            <!-- Section 1: Protection -->
-            <section class="bleaching-section">
-                <h2>
-                    <span data-lang="en">🛡️ Protection: When Turbidity Helps</span>
-                    <span data-lang="ja">🛡️ 保護効果：濁りが味方になるとき</span>
-                </h2>
-                
-                <div class="section-content">
-                    <p data-lang="en">A global analysis of 3,694 reef sites found that moderate turbidity (Kd490 between 0.080 and 0.127) significantly reduced coral bleaching during thermal stress events. About 12% of the world's coral reefs fall within this "protective turbidity" range.</p>
-                    <p data-lang="ja">世界3,694カ所のサンゴ礁を分析した研究により、中程度の濁度（Kd490が0.080〜0.127）が熱ストレス時の白化を有意に軽減することがわかりました。世界のサンゴ礁の約12%がこの「保護的濁度」の範囲内にあります。</p>
+        <!-- Paradox Box -->
+        <div class="paradox-highlight">
+            <p>
+                <strong>💡 <span data-lang="en">The Chlorophyll Paradox:</span><span data-lang="ja">クロロフィルの逆説：</span></strong>
+                <span data-lang="en">Turbid water reduces light stress and can protect corals from bleaching. But high nutrient levels that increase chlorophyll can also fuel crown-of-thorns starfish outbreaks that devastate reefs. The same indicator can signal either protection or threat.</span>
+                <span data-lang="ja">濁った水は光ストレスを軽減し、白化からサンゴを守ることがあります。しかしクロロフィルを増加させる高い栄養塩レベルは、サンゴを食い尽くすオニヒトデの大発生を招くこともあります。同じ指標が、保護と脅威の両方を示しうるのです。</span>
+            </p>
+        </div>
 
-                    <h3>
-                        <span data-lang="en">How It Works</span>
-                        <span data-lang="ja">メカニズム</span>
-                    </h3>
-                    <p data-lang="en">Coral bleaching is caused by the combination of heat and light stress. When water temperatures rise, the symbiotic algae (zooxanthellae) inside coral tissue become hyperactive under bright light, producing toxic oxygen radicals. Turbid water reduces light penetration, lowering this oxidative stress.</p>
-                    <p data-lang="ja">サンゴの白化は、熱と光の複合ストレスによって起こります。水温が上昇すると、サンゴ組織内の共生藻（褐虫藻）が強い光の下で過活動状態になり、有害な活性酸素を産生します。濁った水は光の透過を減らし、この酸化ストレスを軽減します。</p>
+        <!-- Section 1: Two Pathways -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Two Pathways: Protection vs. Threat</span>
+                <span data-lang="ja">2つの経路：保護 vs. 脅威</span>
+            </h2>
+
+            <div class="pathway-grid">
+                <div class="pathway-card protection">
+                    <h3>🛡️ <span data-lang="en">Protection: Turbidity as Shade</span><span data-lang="ja">保護：濁りが日よけに</span></h3>
+                    <p>
+                        <span data-lang="en">A global analysis of 3,694 reef sites found that moderate turbidity (Kd490: 0.080–0.127) significantly reduced coral bleaching during thermal stress. About 12% of world's coral reefs fall within this "protective turbidity" range.</span>
+                        <span data-lang="ja">世界3,694カ所のサンゴ礁を分析した研究により、中程度の濁度（Kd490: 0.080〜0.127）が熱ストレス時の白化を有意に軽減することが判明。世界のサンゴ礁の約12%がこの「保護的濁度」範囲内にあります。</span>
+                    </p>
+                    <ul>
+                        <li><span data-lang="en">Reduces light penetration → less oxidative stress</span><span data-lang="ja">光の透過を軽減 → 酸化ストレス低下</span></li>
+                        <li><span data-lang="en">Allows coral repair mechanisms more time</span><span data-lang="ja">サンゴの修復機構に時間的余裕</span></li>
+                    </ul>
                 </div>
 
-                <!-- Chlorophyll-a Table -->
-                <div class="table-container">
+                <div class="pathway-card threat">
+                    <h3>⚠️ <span data-lang="en">Threat: COTS Connection</span><span data-lang="ja">脅威：オニヒトデとの関係</span></h3>
+                    <p>
+                        <span data-lang="en">Crown-of-thorns starfish (COTS) larvae feed on phytoplankton. Optimal development occurs at chlorophyll-a ~1 μg/L. Coastal nutrient runoff may boost larval survival, triggering population outbreaks.</span>
+                        <span data-lang="ja">オニヒトデ幼生は植物プランクトンを餌とします。クロロフィルa約1 μg/Lで発育が最適化。沿岸からの栄養塩流入が幼生生存率を高め、大発生を招く可能性があります。</span>
+                    </p>
+                    <ul>
+                        <li><span data-lang="en">2024: Larvae can develop on <em>Trichodesmium</em> alone</span><span data-lang="ja">2024年：<em>Trichodesmium</em>のみで発育可能と判明</span></li>
+                        <li><span data-lang="en">Nutrient enrichment → phytoplankton → COTS boom</span><span data-lang="ja">富栄養化 → 植物プランクトン → オニヒトデ大発生</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Site Data -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Chlorophyll-a at Monitoring Sites</span>
+                <span data-lang="ja">モニタリング地点のクロロフィルa</span>
+            </h2>
+
+            <p>
+                <span data-lang="en">Satellite-derived chlorophyll-a concentrations vary significantly across our 7 monitoring sites, reflecting differences in oceanographic conditions and terrestrial influence.</span>
+                <span data-lang="ja">衛星から導出されたクロロフィルa濃度は、海洋環境や陸域影響の違いを反映して、7つのモニタリング地点間で大きく異なります。</span>
+            </p>
+
+            <div class="card" style="margin-top: 1.5rem;">
+                <div style="overflow-x: auto;">
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th><span data-lang="en">Site</span><span data-lang="ja">地点</span></th>
+                                <th class="site-label"><span data-lang="en">Site</span><span data-lang="ja">地点</span></th>
                                 <th><span data-lang="en">Chl-a Range (mg/m³)</span><span data-lang="ja">Chl-a範囲 (mg/m³)</span></th>
                                 <th><span data-lang="en">Characteristics</span><span data-lang="ja">特徴</span></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></td>
-                                <td>0.050–0.313</td>
+                                <td class="site-label"><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></td>
+                                <td class="chl-low">0.050–0.313</td>
                                 <td><span data-lang="en">Oligotrophic, oceanic</span><span data-lang="ja">貧栄養、外洋性</span></td>
                             </tr>
                             <tr>
-                                <td><span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span></td>
-                                <td>0.056–0.315</td>
+                                <td class="site-label"><span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span></td>
+                                <td class="chl-low">0.056–0.315</td>
                                 <td><span data-lang="en">High transparency</span><span data-lang="ja">透明度高い</span></td>
                             </tr>
                             <tr>
-                                <td><span data-lang="en">Manza</span><span data-lang="ja">万座</span></td>
-                                <td>0.067–0.462</td>
+                                <td class="site-label"><span data-lang="en">Manza</span><span data-lang="ja">万座</span></td>
+                                <td class="chl-mid">0.067–0.462</td>
                                 <td><span data-lang="en">Intermediate</span><span data-lang="ja">中間的</span></td>
                             </tr>
                             <tr>
-                                <td><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></td>
-                                <td>0.080–0.487</td>
+                                <td class="site-label"><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></td>
+                                <td class="chl-mid">0.080–0.487</td>
                                 <td><span data-lang="en">Slightly elevated</span><span data-lang="ja">やや高め</span></td>
                             </tr>
                             <tr>
-                                <td><span data-lang="en">Amami</span><span data-lang="ja">奄美大島</span></td>
-                                <td>0.083–0.520</td>
+                                <td class="site-label"><span data-lang="en">Amami</span><span data-lang="ja">奄美大島</span></td>
+                                <td class="chl-mid">0.083–0.520</td>
                                 <td><span data-lang="en">River influence?</span><span data-lang="ja">河川影響？</span></td>
                             </tr>
                             <tr>
-                                <td><span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span></td>
-                                <td>0.115–14.487</td>
+                                <td class="site-label"><span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span></td>
+                                <td class="chl-high">0.115–14.487</td>
                                 <td><span data-lang="en">Extreme values (Kuroshio)</span><span data-lang="ja">極端値（黒潮変動）</span></td>
                             </tr>
                             <tr>
-                                <td><span data-lang="en">Sekisei Lagoon</span><span data-lang="ja">石西礁湖</span></td>
-                                <td>0.137–1.533</td>
+                                <td class="site-label"><span data-lang="en">Sekisei Lagoon</span><span data-lang="ja">石西礁湖</span></td>
+                                <td class="chl-high">0.137–1.533</td>
                                 <td><span data-lang="en">Consistently elevated</span><span data-lang="ja">常時高め</span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <p class="table-note" data-lang="en">Data: SeaWiFS (1997–2010) and MODIS Aqua (2003–2022), 4km monthly resolution.</p>
-                <p class="table-note" data-lang="ja">データ：SeaWiFS（1997–2010）およびMODIS Aqua（2003–2022）、4km月次解像度。</p>
-            </section>
+                <p class="table-note">
+                    <span data-lang="en">Data: SeaWiFS (1997–2010) and MODIS Aqua (2003–2022), 4km monthly resolution.</span>
+                    <span data-lang="ja">データ：SeaWiFS（1997–2010）およびMODIS Aqua（2003–2022）、4km月次解像度。</span>
+                </p>
+            </div>
+        </section>
 
-            <!-- Section 2: Threat -->
-            <section class="bleaching-section">
-                <h2>
-                    <span data-lang="en">⚠️ Threat: The Crown-of-Thorns Connection</span>
-                    <span data-lang="ja">⚠️ 脅威：オニヒトデとの関係</span>
-                </h2>
+        <!-- Section 3: Climate Connections -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Climate Driver Connections</span>
+                <span data-lang="ja">気候変動との連動</span>
+            </h2>
 
-                <figure class="content-figure">
-                    <img src="img/iStock-586939716.jpg" alt="Crown-of-thorns starfish (Acanthaster planci) on coral reef">
-                    <figcaption>
-                        <span data-lang="en">Crown-of-thorns starfish (<em>Acanthaster planci</em>). Nutrient enrichment that increases phytoplankton may enhance the survival of their larvae. Photo: iStock/7maru</span>
-                        <span data-lang="ja">オニヒトデ（<em>Acanthaster planci</em>）。植物プランクトンを増加させる富栄養化は、幼生の生存率を高める可能性がある。写真：iStock/7maru</span>
-                    </figcaption>
-                </figure>
+            <p>
+                <span data-lang="en">The same climate oscillations that drive coral bleaching also influence chlorophyll patterns—through different pathways.</span>
+                <span data-lang="ja">サンゴ白化を引き起こす気候振動は、異なる経路を通じてクロロフィルパターンにも影響を与えます。</span>
+            </p>
 
-                <div class="section-content">
-                    <h3>
-                        <span data-lang="en">The Enhanced Nutrients Hypothesis</span>
-                        <span data-lang="ja">富栄養化仮説</span>
-                    </h3>
-                    <p data-lang="en">Crown-of-thorns starfish (COTS) larvae feed on phytoplankton during their planktonic stage. Laboratory experiments show optimal larval development at chlorophyll-a concentrations around 1 μg/L. Coastal nutrient runoff that increases phytoplankton may therefore boost COTS larval survival and trigger population outbreaks.</p>
-                    <p data-lang="ja">オニヒトデの幼生は、浮遊期に植物プランクトンを餌としています。実験室での研究により、クロロフィルa濃度が約1 μg/Lで幼生の発育が最適化されることがわかっています。沿岸からの栄養塩流入が植物プランクトンを増加させることで、オニヒトデ幼生の生存率が向上し、大発生を引き起こす可能性があります。</p>
-
-                    <h3>
-                        <span data-lang="en">New Discovery: Cyanobacteria Pathway (2024)</span>
-                        <span data-lang="ja">新発見：シアノバクテリア経路（2024年）</span>
-                    </h3>
-                    <p data-lang="en">COTS larvae can complete their entire development feeding only on <em>Trichodesmium</em>, a nitrogen-fixing cyanobacterium. This means chlorophyll-a may indicate not just general phytoplankton biomass, but also potentially harmful cyanobacterial blooms that fuel COTS outbreaks.</p>
-                    <p data-lang="ja">オニヒトデの幼生が窒素固定シアノバクテリアの<em>Trichodesmium</em>だけを食べて発育を完了できることが明らかになりました。クロロフィルaが、オニヒトデ大発生を促進する有害なシアノバクテリアブルームの指標にもなりうることを意味します。</p>
-                </div>
-
-                <div class="key-point warning">
-                    <p>
-                        <strong data-lang="en">⚡ The Complication</strong>
-                        <strong data-lang="ja">⚡ 事態を複雑にするのは</strong>
-                    </p>
-                    <p data-lang="en">High-density COTS larvae have been found even in low chlorophyll environments in Sekisei Lagoon. Adult outbreaks are not necessarily triggered by food availability alone—the relationship is more complex than simple nutrient loading.</p>
-                    <p data-lang="ja">石西礁湖では低クロロフィル環境でも高密度のオニヒトデ幼生が検出されています。成体の大発生は必ずしも餌の利用可能性だけで引き起こされるわけではなく、単純な栄養塩負荷では説明できない複雑な関係があります。</p>
-                </div>
-            </section>
-
-            <!-- Section 3: Climate Connections -->
-            <section class="bleaching-section">
-                <h2>
-                    <span data-lang="en">🌊 Climate Driver Connections</span>
-                    <span data-lang="ja">🌊 気候変動との連動</span>
-                </h2>
-
-                <div class="section-content">
-                    <p data-lang="en">The same climate oscillations that drive coral bleaching also influence chlorophyll patterns—but through different pathways.</p>
-                    <p data-lang="ja">サンゴ白化を引き起こす気候振動は、クロロフィルのパターンにも影響を与えますが、異なる経路を通じてです。</p>
-                </div>
-
-                <!-- ENSO × PDO Matrix -->
-                <div class="table-container">
+            <div class="card climate-matrix">
+                <div style="overflow-x: auto;">
                     <table class="data-table">
                         <thead>
                             <tr>
@@ -351,72 +452,54 @@
                             <tr>
                                 <td><span data-lang="en">El Niño + Positive PDO</span><span data-lang="ja">エルニーニョ + 正のPDO</span></td>
                                 <td><span data-lang="en">Chlorophyll peaks</span><span data-lang="ja">クロロフィルピーク</span></td>
-                                <td><span data-lang="en">↑ COTS outbreak risk</span><span data-lang="ja">↑ オニヒトデ大発生リスク</span></td>
+                                <td>↑ <span data-lang="en">COTS outbreak risk</span><span data-lang="ja">オニヒトデ大発生リスク</span></td>
                             </tr>
                             <tr>
                                 <td><span data-lang="en">La Niña + Positive PDO</span><span data-lang="ja">ラニーニャ + 正のPDO</span></td>
                                 <td><span data-lang="en">SST peaks (western Pacific)</span><span data-lang="ja">SSTピーク（西太平洋）</span></td>
-                                <td><span data-lang="en">↑ Bleaching risk</span><span data-lang="ja">↑ 白化リスク</span></td>
+                                <td>↑ <span data-lang="en">Bleaching risk</span><span data-lang="ja">白化リスク</span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+            </div>
 
-                <div class="section-content">
-                    <h3>
-                        <span data-lang="en">The Dual Nature of Typhoons</span>
-                        <span data-lang="ja">台風の二面性</span>
-                    </h3>
-                    <p data-lang="en">Typhoons have contradictory effects on coral reef health:</p>
-                    <p data-lang="ja">台風はサンゴ礁の健全性に対して矛盾した効果を持ちます。</p>
-                </div>
-
-                <!-- Typhoon Effects Comparison -->
-                <div class="outcome-comparison">
-                    <div class="outcome recovery">
-                        <h3>
-                            <span data-lang="en">❄️ Cooling Benefit</span>
-                            <span data-lang="ja">❄️ 冷却効果</span>
-                        </h3>
-                        <ul>
-                            <li><span data-lang="en">SST drops 3–5°C after passage</span><span data-lang="ja">通過後にSST 3〜5℃低下</span></li>
-                            <li><span data-lang="en">Breaks heat wave accumulation</span><span data-lang="ja">熱波の蓄積を中断</span></li>
-                            <li><span data-lang="en">Reduces bleaching risk</span><span data-lang="ja">白化リスク低減</span></li>
-                        </ul>
-                    </div>
-                    <div class="outcome death">
-                        <h3>
-                            <span data-lang="en">🌊 Nutrient Risk</span>
-                            <span data-lang="ja">🌊 栄養塩リスク</span>
-                        </h3>
-                        <ul>
-                            <li><span data-lang="en">Vertical mixing brings deep nutrients</span><span data-lang="ja">鉛直混合で深層栄養塩が上昇</span></li>
-                            <li><span data-lang="en">Chlorophyll-a increases</span><span data-lang="ja">クロロフィルa増加</span></li>
-                            <li><span data-lang="en">May boost COTS pathway</span><span data-lang="ja">オニヒトデ経路を活性化の可能性</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <p class="section-link">
-                    <span data-lang="en">📊 See <a href="climate-drivers.html">Climate Drivers</a> for detailed analysis of ENSO, PDO, IOD, and their interactions with Japanese reef sites.</span>
-                    <span data-lang="ja">📊 ENSO、PDO、IODと日本のサンゴ礁への影響の詳細は<a href="climate-drivers.html">気候ドライバー</a>をご覧ください。</span>
+            <div class="story-box">
+                <p class="story-lead">
+                    <span data-lang="en">The Dual Nature of Typhoons</span>
+                    <span data-lang="ja">台風の二面性</span>
                 </p>
-            </section>
+                <p>
+                    <span data-lang="en">
+                        Typhoons have contradictory effects: they cool surface waters by 3–5°C (reducing bleaching risk), 
+                        but vertical mixing brings deep nutrients to the surface, potentially boosting chlorophyll and COTS larval survival.
+                    </span>
+                    <span data-lang="ja">
+                        台風は矛盾した効果を持ちます。表層水温を3〜5℃低下させ（白化リスク軽減）ますが、
+                        鉛直混合で深層の栄養塩が表層に上昇し、クロロフィルとオニヒトデ幼生の生存を促進する可能性があります。
+                    </span>
+                </p>
+            </div>
 
-            <!-- Section 4: 2016 Paradox -->
-            <section class="bleaching-section">
-                <h2>
-                    <span data-lang="en">📉 The 2016 Paradox</span>
-                    <span data-lang="ja">📉 2016年の逆説</span>
-                </h2>
+            <a href="climate-drivers.html" class="related-link">
+                📊 <span data-lang="en">See Climate Drivers for detailed ENSO/PDO/IOD analysis</span><span data-lang="ja">ENSO/PDO/IODの詳細分析は気候ドライバーへ</span> →
+            </a>
+        </section>
 
-                <div class="section-content">
-                    <p data-lang="en">If turbidity protects corals, why did Sekisei Lagoon—with its consistently elevated chlorophyll—experience 97% bleaching in 2016?</p>
-                    <p data-lang="ja">もし濁度がサンゴを守るなら、なぜ常に高いクロロフィル濃度を示す石西礁湖で、2016年に97%もの白化が起きたのでしょうか？</p>
-                </div>
+        <!-- Section 4: The 2016 Paradox -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">The 2016 Paradox</span>
+                <span data-lang="ja">2016年の逆説</span>
+            </h2>
 
-                <!-- Sekisei 2016 Table -->
-                <div class="table-container">
+            <p>
+                <span data-lang="en">If turbidity protects corals, why did Sekisei Lagoon—with consistently elevated chlorophyll—experience 97% bleaching in 2016?</span>
+                <span data-lang="ja">濁度がサンゴを守るなら、なぜ常に高いクロロフィル濃度を示す石西礁湖で、2016年に97%もの白化が起きたのでしょうか？</span>
+            </p>
+
+            <div class="card" style="margin-top: 1rem;">
+                <div style="overflow-x: auto;">
                     <table class="data-table">
                         <thead>
                             <tr>
@@ -442,31 +525,29 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
 
-                <div class="key-point warning">
-                    <p>
-                        <strong data-lang="en">🎯 The Lesson</strong>
-                        <strong data-lang="ja">🎯 教訓</strong>
-                    </p>
-                    <p data-lang="en">Turbidity protection has limits. When thermal stress is extreme enough—as in 2016 with prolonged heat accumulation and no typhoon cooling—even turbid reefs cannot escape bleaching.</p>
-                    <p data-lang="ja">濁度による保護には限界があります。2016年のように熱ストレスが極端な場合—長期間の熱蓄積と台風による冷却機会の欠如—濁った海域のサンゴも白化を免れることはできません。</p>
-                </div>
-            </section>
+            <div class="insight-box heat" style="margin-top: 1.5rem;">
+                <strong class="heat"><span data-lang="en">Key lesson:</span><span data-lang="ja">重要な教訓：</span></strong>
+                <span data-lang="en"> Turbidity protection has limits. When thermal stress is extreme—as in 2016 with prolonged heat and no typhoon cooling—even turbid reefs cannot escape bleaching.</span>
+                <span data-lang="ja"> 濁度による保護には限界があります。2016年のように熱ストレスが極端な場合—長期間の熱蓄積と台風冷却の欠如—濁った海域のサンゴも白化を免れません。</span>
+            </div>
+        </section>
 
-            <!-- Section 5: Reading Guide -->
-            <section class="bleaching-section">
-                <h2>
-                    <span data-lang="en">📖 Reading Chlorophyll: A Guide</span>
-                    <span data-lang="ja">📖 クロロフィルの読み方</span>
-                </h2>
+        <!-- Section 5: Reading Guide -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Interpreting Chlorophyll Data</span>
+                <span data-lang="ja">クロロフィルデータの解釈</span>
+            </h2>
 
-                <div class="section-content">
-                    <p data-lang="en">Chlorophyll-a alone cannot be judged as "good" or "bad" for coral reefs. It must be interpreted in combination with temperature and other factors.</p>
-                    <p data-lang="ja">クロロフィルa単独では、サンゴ礁にとって「良い」「悪い」とは判断できません。水温や他の要因と組み合わせて解釈する必要があります。</p>
-                </div>
+            <p>
+                <span data-lang="en">Chlorophyll-a alone cannot be judged as "good" or "bad" for coral reefs. It must be interpreted in combination with temperature.</span>
+                <span data-lang="ja">クロロフィルa単独では、サンゴ礁にとって「良い」「悪い」と判断できません。水温と組み合わせて解釈する必要があります。</span>
+            </p>
 
-                <!-- Interpretation Guide Table -->
-                <div class="table-container">
+            <div class="card" style="margin-top: 1rem;">
+                <div style="overflow-x: auto;">
                     <table class="data-table">
                         <thead>
                             <tr>
@@ -478,19 +559,19 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><span data-lang="en">Low (&lt;0.1)</span><span data-lang="ja">低い（&lt;0.1）</span></td>
+                                <td class="chl-low">&lt;0.1</td>
                                 <td><span data-lang="en">Weak</span><span data-lang="ja">弱い</span></td>
                                 <td><span data-lang="en">Low</span><span data-lang="ja">低い</span></td>
                                 <td><span data-lang="en">Light + heat stress in summer</span><span data-lang="ja">夏季の光＋熱ストレス</span></td>
                             </tr>
                             <tr>
-                                <td><span data-lang="en">Moderate (0.1–0.5)</span><span data-lang="ja">中程度（0.1–0.5）</span></td>
+                                <td class="chl-mid">0.1–0.5</td>
                                 <td><span data-lang="en">Present</span><span data-lang="ja">あり</span></td>
                                 <td><span data-lang="en">Moderate</span><span data-lang="ja">中程度</span></td>
                                 <td><span data-lang="en">Monitor both pathways</span><span data-lang="ja">両経路を監視</span></td>
                             </tr>
                             <tr>
-                                <td><span data-lang="en">High (&gt;0.5)</span><span data-lang="ja">高い（&gt;0.5）</span></td>
+                                <td class="chl-high">&gt;0.5</td>
                                 <td><span data-lang="en">Strong</span><span data-lang="ja">強い</span></td>
                                 <td><span data-lang="en">Elevated</span><span data-lang="ja">上昇</span></td>
                                 <td><span data-lang="en">COTS larvae conditions favorable</span><span data-lang="ja">オニヒトデ幼生に好適</span></td>
@@ -498,137 +579,122 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
 
-                <div class="key-point positive">
-                    <p>
-                        <strong data-lang="en">🔗 Integrated Monitoring</strong>
-                        <strong data-lang="ja">🔗 統合モニタリング</strong>
-                    </p>
-                    <p data-lang="en">This is why marine-obs.org tracks multiple parameters—SST, DHW, light-adjusted DHW, and chlorophyll together provide a more complete picture of reef stress than any single metric.</p>
-                    <p data-lang="ja">marine-obs.orgが複数のパラメータを追跡しているのはこのためです。SST、DHW、光補正DHW、クロロフィルを組み合わせることで、単一の指標よりもサンゴ礁ストレスの全体像が見えてきます。</p>
-                </div>
-            </section>
+            <div class="insight-box adapt" style="margin-top: 1.5rem;">
+                <strong class="adapt"><span data-lang="en">Integrated monitoring:</span><span data-lang="ja">統合モニタリング：</span></strong>
+                <span data-lang="en"> This is why marine-obs.org tracks multiple parameters—SST, DHW, light-adjusted DHW, and chlorophyll together provide a more complete picture of reef stress than any single metric.</span>
+                <span data-lang="ja"> marine-obs.orgが複数のパラメータを追跡しているのはこのためです。SST、DHW、光補正DHW、クロロフィルを組み合わせることで、単一の指標よりもサンゴ礁ストレスの全体像が見えてきます。</span>
+            </div>
+        </section>
 
-            <!-- Related Pages -->
-            <section class="related-section">
-                <h2>
-                    <span data-lang="en">Related Pages</span>
-                    <span data-lang="ja">関連ページ</span>
-                </h2>
-                <div class="related-grid">
-                    <a href="dhw.html" class="related-card">
-                        <div class="related-icon">🌡️</div>
-                        <div class="related-title"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></div>
-                        <div class="related-desc"><span data-lang="en">Track accumulated thermal stress</span><span data-lang="ja">積算熱ストレスを追跡</span></div>
-                    </a>
-                    <a href="light-adjusted-dhw.html" class="related-card">
-                        <div class="related-icon">☀️</div>
-                        <div class="related-title"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></div>
-                        <div class="related-desc"><span data-lang="en">DHW modified by cloud cover</span><span data-lang="ja">雲量で補正したDHW</span></div>
-                    </a>
-                    <a href="climate-drivers.html" class="related-card">
-                        <div class="related-icon">🌊</div>
-                        <div class="related-title"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span></div>
-                        <div class="related-desc"><span data-lang="en">ENSO, PDO, IOD impacts</span><span data-lang="ja">ENSO、PDO、IODの影響</span></div>
-                    </a>
-                    <a href="bleaching.html" class="related-card">
-                        <div class="related-icon">🤍</div>
-                        <div class="related-title"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></div>
-                        <div class="related-desc"><span data-lang="en">Bleaching mechanism</span><span data-lang="ja">白化のメカニズム</span></div>
-                    </a>
-                </div>
-            </section>
+        <!-- References -->
+        <section class="references-section">
+            <h2>
+                <span data-lang="en">References</span>
+                <span data-lang="ja">参考文献</span>
+            </h2>
 
-            <!-- References -->
-            <section class="references-section">
+            <div class="ref-category">
                 <h3>
-                    <span data-lang="en">References</span>
-                    <span data-lang="ja">参考文献</span>
+                    <span data-lang="en">Turbidity and Bleaching</span>
+                    <span data-lang="ja">濁度と白化</span>
                 </h3>
-                <ul class="references-list">
-                    <li>Sully, S. & van Woesik, R. (2020). Turbid reefs moderate coral bleaching under climate-related temperature stress. <em>Global Change Biology</em>, 26(3), 1367-1373.</li>
-                    <li>Houk, P., et al. (2020). Predicting coral-reef futures from El Niño and Pacific Decadal Oscillation events. <em>Scientific Reports</em>, 10, 7735.</li>
-                    <li>Wolfe, K., et al. (2015). Larval starvation to satiation: Influence of nutrient regime on the success of <em>Acanthaster planci</em>. <em>PLoS ONE</em>, 10(3), e0122010.</li>
-                    <li>Mos, B., et al. (2024). Crown-of-thorns starfish complete their larval phase eating only nitrogen-fixing <em>Trichodesmium</em> cyanobacteria. <em>Science Advances</em>, 10, eado2682.</li>
-                    <li>Suzuki, G., et al. (2016). Detection of a high-density brachiolaria-stage larval population of crown-of-thorns sea star in Sekisei Lagoon. <em>Diversity</em>, 8(2), 9.</li>
-                    <li>Liu, F., et al. (2019). Chlorophyll concentration response to the typhoon wind-pump induced upper ocean processes. <em>Remote Sensing</em>, 11(15), 1825.</li>
+                <ul class="ref-list">
+                    <li>Sully S, van Woesik R (2020) Turbid reefs moderate coral bleaching under climate-related temperature stress. <em>Global Change Biology</em> 26:1367-1373. <a href="https://doi.org/10.1111/gcb.14948" target="_blank">DOI</a></li>
+                    <li>González-Espinosa PC, Donner SD (2021) Cloudiness reduces the bleaching response of coral reefs. <em>Global Change Biology</em> 27:4143-4154. <a href="https://doi.org/10.1111/gcb.15676" target="_blank">DOI</a></li>
                 </ul>
-            </section>
-        </div>
+            </div>
+
+            <div class="ref-category">
+                <h3>
+                    <span data-lang="en">Crown-of-Thorns Starfish</span>
+                    <span data-lang="ja">オニヒトデ</span>
+                </h3>
+                <ul class="ref-list">
+                    <li>Wolfe K et al. (2015) Larval starvation to satiation: Influence of nutrient regime on <em>Acanthaster planci</em>. <em>PLoS ONE</em> 10:e0122010. <a href="https://doi.org/10.1371/journal.pone.0122010" target="_blank">DOI</a></li>
+                    <li>Mos B et al. (2024) Crown-of-thorns starfish complete larval phase on <em>Trichodesmium</em> alone. <em>Science Advances</em> 10:eado2682. <a href="https://doi.org/10.1126/sciadv.ado2682" target="_blank">DOI</a></li>
+                    <li>Suzuki G et al. (2016) High-density brachiolaria larvae in Sekisei Lagoon. <em>Diversity</em> 8:9. <a href="https://doi.org/10.3390/d8020009" target="_blank">DOI</a></li>
+                </ul>
+            </div>
+
+            <div class="ref-category">
+                <h3>
+                    <span data-lang="en">Climate-Chlorophyll Links</span>
+                    <span data-lang="ja">気候-クロロフィル関連</span>
+                </h3>
+                <ul class="ref-list">
+                    <li>Houk P et al. (2020) Predicting coral-reef futures from El Niño and PDO events. <em>Scientific Reports</em> 10:7735. <a href="https://doi.org/10.1038/s41598-020-64411-8" target="_blank">DOI</a></li>
+                    <li>Liu F et al. (2019) Chlorophyll response to typhoon wind-pump processes. <em>Remote Sensing</em> 11:1825. <a href="https://doi.org/10.3390/rs11151825" target="_blank">DOI</a></li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-main">
-                <div class="footer-brand">
-                    <a href="index.html" class="footer-logo">
-                        <div class="logo-icon"><img src="images/logo-circle.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
-                        <span>marine-obs.org</span>
-                    </a>
-                    <p class="footer-tagline" data-lang="en">Independent coral reef monitoring for Japanese waters</p>
-                    <p class="footer-tagline" data-lang="ja">日本の海域における独立したサンゴ礁モニタリング</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4 data-lang="en">Data</h4>
-                        <h4 data-lang="ja">データ</h4>
-                        <ul>
-                            <li><a href="sst.html"><span data-lang="en">Sea Temperature</span><span data-lang="ja">海水温</span></a></li>
-                            <li><a href="dhw.html"><span data-lang="en">Heat Stress</span><span data-lang="ja">熱ストレス</span></a></li>
-                            <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4 data-lang="en">Learn</h4>
-                        <h4 data-lang="ja">学ぶ</h4>
-                        <ul>
-                            <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
-                            <li><a href="bleaching.html"><span data-lang="en">Bleaching</span><span data-lang="ja">白化</span></a></li>
-                            <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4 data-lang="en">About</h4>
-                        <h4 data-lang="ja">サイト情報</h4>
-                        <ul>
-                            <li><a href="about.html"><span data-lang="en">About Us</span><span data-lang="ja">このサイトについて</span></a></li>
-                            <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
-                            <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p data-lang="en">Data: NOAA Coral Reef Watch, NASA MUR SST, Stormglass | Updated daily</p>
-                <p data-lang="ja">データ：NOAA Coral Reef Watch、NASA MUR SST、Stormglass｜毎日更新</p>
-                <p class="copyright">© 2025 marine-obs.org</p>
-            </div>
-        </div>
+        <a href="bleaching.html">← 
+            <span data-lang="en">Back to Bleaching</span>
+            <span data-lang="ja">白化ページに戻る</span>
+        </a>
+        <p style="margin-top: 0.5rem;">© 2026 marine-obs.org</p>
     </footer>
 
-    <script src="js/lang.js"></script>
     <script>
-        // Mobile menu
+        // Language toggle
+        function setLang(lang) {
+            document.body.classList.toggle('ja', lang === 'ja');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
+            localStorage.setItem('lang', lang);
+        }
+
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang) setLang(savedLang);
+
+        document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
+        document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
+    </script>
+
+    <!-- Navigation JS -->
+    <script>
+    (function() {
         const hamburger = document.getElementById('hamburger');
         const sidebar = document.getElementById('sidebar');
         const sidebarOverlay = document.getElementById('sidebar-overlay');
         const sidebarClose = document.getElementById('sidebar-close');
-
+        
         function openSidebar() {
-            sidebar.classList.add('open');
-            sidebarOverlay.classList.add('show');
+            sidebar.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            hamburger.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-
+        
         function closeSidebar() {
-            sidebar.classList.remove('open');
-            sidebarOverlay.classList.remove('show');
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            hamburger.classList.remove('active');
             document.body.style.overflow = '';
         }
-
-        hamburger.addEventListener('click', openSidebar);
-        sidebarClose.addEventListener('click', closeSidebar);
+        
+        hamburger.addEventListener('click', function() {
+            if (sidebar.classList.contains('active')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+        
         sidebarOverlay.addEventListener('click', closeSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                closeSidebar();
+            }
+        });
+    })();
     </script>
 </body>
 </html>
