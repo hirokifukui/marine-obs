@@ -1,5 +1,35 @@
 /* Chlorophyll & Bleaching - Page-specific styles */
-/* Uses main.css as base */
+/* Full standalone styles (similar to DHW page) */
+
+:root {
+    --header-bg: #1a1f2e;
+    --header-text: #ffffff;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-card: #ffffff;
+    --text-primary: #1a202c;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --accent-teal: #2b6cb0;
+    --accent-green: #2f855a;
+    --accent-warm: #c05621;
+    --border: #e2e8f0;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+body.ja {
+    font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
+}
 
 /* ========================================
    Layout
@@ -11,39 +41,15 @@ main {
 }
 
 /* ========================================
-   Content Section (Width Control)
-   ======================================== */
-.content-section {
-    max-width: 800px;
-    margin: 0 auto 2.5rem;
-}
-
-.content-section h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--border);
-}
-
-.section-intro {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-}
-
-/* ========================================
    Hero Section
    ======================================== */
 .hero-section {
     background: linear-gradient(135deg, #1a4d3e 0%, #2d6a4f 50%, #40916c 100%);
+    color: white;
+    padding: 2.5rem 2rem;
     border-radius: 12px;
-    padding: 2rem 1.5rem;
     margin-bottom: 2.5rem;
     text-align: center;
-    color: #fff;
 }
 
 .hero-content {
@@ -79,7 +85,7 @@ body.ja .hero-tagline {
 
 .hero-badge {
     background: rgba(255,255,255,0.15);
-    padding: 0.35rem 0.75rem;
+    padding: 0.4rem 0.85rem;
     border-radius: 20px;
     font-size: 0.8rem;
     display: flex;
@@ -95,12 +101,11 @@ body.ja .hero-tagline {
    Paradox Box (Key Concept)
    ======================================== */
 .paradox-box {
-    background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
-    border: 1px solid #fcd34d;
-    border-left: 4px solid #f59e0b;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 1px solid #d69e2e;
     border-radius: 12px;
     padding: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .paradox-title {
@@ -114,15 +119,40 @@ body.ja .hero-tagline {
 }
 
 .paradox-content {
-    font-size: 0.95rem;
-    line-height: 1.7;
+    font-size: 0.9rem;
+    line-height: 1.8;
     color: #78350f;
 }
 
 /* ========================================
-   Info Cards
+   Content Section
    ======================================== */
-.info-card {
+.content-section {
+    margin-bottom: 2.5rem;
+}
+
+.content-section h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+}
+
+.section-intro {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+body.ja .section-intro {
+    line-height: 2.1;
+}
+
+/* ========================================
+   Card (white box)
+   ======================================== */
+.card {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -131,71 +161,82 @@ body.ja .hero-tagline {
     box-shadow: var(--shadow);
 }
 
-.info-card h3 {
-    font-size: 1.05rem;
+.card h3 {
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
-.info-card p {
-    font-size: 0.95rem;
+.card p {
+    font-size: 0.9rem;
     line-height: 1.8;
     color: var(--text-secondary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
-.info-card p:last-child {
+.card p:last-child {
     margin-bottom: 0;
 }
 
 /* ========================================
-   Data Table
+   Data Table (styled like DHW)
    ======================================== */
-.table-container {
-    overflow-x: auto;
-    margin: 1.5rem 0;
-    border-radius: 8px;
+.table-card {
+    background: var(--bg-card);
     border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.table-card-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-secondary);
 }
 
 .data-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.9rem;
-    background: var(--bg-card);
+    font-size: 0.85rem;
 }
 
 .data-table th {
     text-align: left;
-    padding: 0.875rem 1rem;
+    padding: 0.75rem 1rem;
     background: var(--bg-secondary);
     color: var(--text-primary);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     border-bottom: 2px solid var(--border);
 }
 
 .data-table td {
-    padding: 0.75rem 1rem;
+    padding: 0.65rem 1rem;
     color: var(--text-secondary);
     border-bottom: 1px solid var(--border);
     line-height: 1.5;
 }
 
-.data-table tr:last-child td {
+.data-table tbody tr:last-child td {
     border-bottom: none;
 }
 
-.data-table tr:hover td {
-    background: rgba(0, 180, 216, 0.04);
+.data-table tbody tr:hover td {
+    background: rgba(45, 106, 79, 0.04);
 }
 
 .table-note {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
-    margin-top: 0.75rem;
-    line-height: 1.5;
+    padding: 0.75rem 1rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
 }
 
 /* ========================================
@@ -206,6 +247,7 @@ body.ja .hero-tagline {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow);
+    border: 1px solid var(--border);
 }
 
 .content-figure img {
@@ -215,20 +257,20 @@ body.ja .hero-tagline {
 }
 
 .content-figure figcaption {
-    padding: 1rem;
+    padding: 1rem 1.25rem;
     background: var(--bg-secondary);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
     line-height: 1.6;
 }
 
 /* ========================================
-   Pathway Comparison (Protection vs Threat)
+   Pathway Comparison Grid
    ======================================== */
 .pathway-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    gap: 1rem;
     margin: 1.5rem 0;
 }
 
@@ -241,16 +283,17 @@ body.ja .hero-tagline {
 .pathway-card {
     border-radius: 12px;
     padding: 1.25rem;
+    border: 1px solid;
 }
 
 .pathway-card.protection {
     background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-    border: 1px solid #6ee7b7;
+    border-color: #6ee7b7;
 }
 
 .pathway-card.threat {
     background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
-    border: 1px solid #f87171;
+    border-color: #f87171;
 }
 
 .pathway-header {
@@ -265,7 +308,7 @@ body.ja .hero-tagline {
 }
 
 .pathway-title {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
 }
 
@@ -284,9 +327,9 @@ body.ja .hero-tagline {
 }
 
 .pathway-list li {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.6;
-    padding: 0.35rem 0;
+    padding: 0.3rem 0;
     padding-left: 1.25rem;
     position: relative;
 }
@@ -310,31 +353,35 @@ body.ja .hero-tagline {
    Key Point Boxes
    ======================================== */
 .key-point {
-    border-radius: 12px;
-    padding: 1.25rem 1.5rem;
+    border-radius: 8px;
+    padding: 1.25rem;
     margin: 1.5rem 0;
+    border-left: 4px solid;
 }
 
 .key-point.warning {
-    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    background: #fffbeb;
+    border-left-color: #f59e0b;
     border: 1px solid #fcd34d;
     border-left: 4px solid #f59e0b;
 }
 
 .key-point.insight {
-    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    background: #eff6ff;
+    border-left-color: #3b82f6;
     border: 1px solid #93c5fd;
     border-left: 4px solid #3b82f6;
 }
 
 .key-point.success {
-    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    background: #ecfdf5;
+    border-left-color: #10b981;
     border: 1px solid #6ee7b7;
     border-left: 4px solid #10b981;
 }
 
 .key-point p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     line-height: 1.7;
     margin: 0;
 }
@@ -354,73 +401,12 @@ body.ja .hero-tagline {
 .key-point strong {
     display: block;
     margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-}
-
-/* ========================================
-   Summary Guide Table
-   ======================================== */
-.guide-table {
-    margin: 1.5rem 0;
-}
-
-.guide-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 2fr;
-    gap: 0.5rem;
-    padding: 0.75rem;
-    border-bottom: 1px solid var(--border);
-    align-items: center;
-}
-
-.guide-row.header {
-    background: var(--bg-secondary);
-    font-weight: 600;
     font-size: 0.85rem;
-    color: var(--text-primary);
-    border-radius: 8px 8px 0 0;
 }
 
-.guide-row:last-child {
-    border-bottom: none;
-}
-
-.guide-cell {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
-.guide-cell.level-low {
-    color: #0891b2;
-    font-weight: 500;
-}
-
-.guide-cell.level-mid {
-    color: #ca8a04;
-    font-weight: 500;
-}
-
-.guide-cell.level-high {
-    color: #dc2626;
-    font-weight: 500;
-}
-
-@media (max-width: 600px) {
-    .guide-row {
-        grid-template-columns: 1fr;
-        gap: 0.25rem;
-    }
-    .guide-row.header {
-        display: none;
-    }
-    .guide-cell::before {
-        content: attr(data-label);
-        font-weight: 600;
-        color: var(--text-muted);
-        font-size: 0.75rem;
-        display: block;
-        margin-bottom: 0.15rem;
-    }
+.key-point a {
+    color: inherit;
+    text-decoration: underline;
 }
 
 /* ========================================
@@ -433,7 +419,7 @@ body.ja .hero-tagline {
 }
 
 .related-section h2 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 1.25rem;
     color: var(--text-primary);
@@ -441,7 +427,7 @@ body.ja .hero-tagline {
 
 .related-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1rem;
 }
 
@@ -456,7 +442,7 @@ body.ja .hero-tagline {
 }
 
 .related-card:hover {
-    border-color: var(--accent-teal);
+    border-color: var(--accent-green);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
@@ -467,14 +453,14 @@ body.ja .hero-tagline {
 }
 
 .related-title {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 0.35rem;
 }
 
 .related-desc {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
     line-height: 1.5;
 }
@@ -484,13 +470,14 @@ body.ja .hero-tagline {
    ======================================== */
 .references-section {
     margin-top: 2.5rem;
-    padding: 1.5rem;
-    background: var(--bg-secondary);
+    padding: 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 12px;
 }
 
 .references-section h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--text-primary);
@@ -503,7 +490,7 @@ body.ja .hero-tagline {
 }
 
 .references-list li {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     line-height: 1.6;
     color: var(--text-secondary);
     padding: 0.5rem 0;
@@ -519,6 +506,38 @@ body.ja .hero-tagline {
 }
 
 /* ========================================
+   Language Toggle
+   ======================================== */
+[data-lang="ja"] { display: none; }
+body.ja [data-lang="en"] { display: none; }
+body.ja [data-lang="ja"] { display: inline; }
+
+/* Block-level language elements */
+p[data-lang], h1[data-lang], h2[data-lang], h3[data-lang], 
+li[data-lang], tr[data-lang], div[data-lang] {
+    display: none;
+}
+p[data-lang="en"], h1[data-lang="en"], h2[data-lang="en"], h3[data-lang="en"],
+li[data-lang="en"], tr[data-lang="en"], div[data-lang="en"] {
+    display: block;
+}
+body.ja p[data-lang="en"], body.ja h1[data-lang="en"], body.ja h2[data-lang="en"], 
+body.ja h3[data-lang="en"], body.ja li[data-lang="en"], body.ja tr[data-lang="en"],
+body.ja div[data-lang="en"] {
+    display: none;
+}
+body.ja p[data-lang="ja"], body.ja h1[data-lang="ja"], body.ja h2[data-lang="ja"], 
+body.ja h3[data-lang="ja"], body.ja li[data-lang="ja"], body.ja tr[data-lang="ja"],
+body.ja div[data-lang="ja"] {
+    display: block;
+}
+
+/* Table rows need table-row display */
+tr[data-lang="en"] { display: table-row; }
+body.ja tr[data-lang="en"] { display: none; }
+body.ja tr[data-lang="ja"] { display: table-row; }
+
+/* ========================================
    Mobile Adjustments
    ======================================== */
 @media (max-width: 768px) {
@@ -527,32 +546,32 @@ body.ja .hero-tagline {
     }
     
     .hero-section {
-        padding: 1.5rem 1rem;
+        padding: 2rem 1.25rem;
         margin-bottom: 2rem;
     }
     
     .hero-tagline {
-        font-size: 1.3rem;
+        font-size: 1.35rem;
     }
     
     body.ja .hero-tagline {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
     }
     
     .content-section h2 {
-        font-size: 1.15rem;
+        font-size: 1.05rem;
     }
     
-    .info-card {
+    .card {
         padding: 1.25rem;
     }
     
     .data-table {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
     
     .data-table th,
     .data-table td {
-        padding: 0.625rem 0.75rem;
+        padding: 0.5rem 0.75rem;
     }
 }
