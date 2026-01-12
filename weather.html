@@ -647,26 +647,38 @@
             { id: 'sekisei', nameEn: 'Sekisei', nameJa: '石西礁湖', lat: 24.337, lon: 124.035, zoom: 11 }
         ];
 
-        // ===== Layer Data (ordered by coral stress relevance) =====
+        // ===== Layer Data =====
         const layers = [
-            { id: 'sst', icon: '🌡️', nameEn: 'SST', nameJa: '水温', 
-              descEn: 'Sea Surface Temperature—the primary indicator of coral thermal stress. Compare with our SST monitoring page for detailed local analysis.',
-              descJa: '海面水温—サンゴ熱ストレスの主要指標。詳細な分析はSST監視ページもご活用ください。' },
+            { id: 'temp', icon: '🌡️', nameEn: 'Temp', nameJa: '気温', 
+              descEn: 'Air temperature at 2m height.',
+              descJa: '地上2mの気温。' },
+            { id: 'sst', icon: '🌊', nameEn: 'SST', nameJa: '水温', 
+              descEn: 'Sea Surface Temperature—the primary indicator of coral thermal stress.',
+              descJa: '海面水温—サンゴ熱ストレスの主要指標。' },
             { id: 'currents', icon: '↔️', nameEn: 'Currents', nameJa: '海流', 
-              descEn: 'Ocean surface currents. Affects temperature distribution, nutrient transport, and coral recovery potential.',
-              descJa: '海面の海流。水温分布、栄養塩輸送、サンゴの回復可能性に影響します。' },
+              descEn: 'Ocean surface currents. Affects temperature distribution and nutrient transport.',
+              descJa: '海面の海流。水温分布、栄養塩輸送に影響します。' },
             { id: 'wind', icon: '💨', nameEn: 'Wind', nameJa: '風', 
-              descEn: 'Wind speed and direction at 10m height. Essential for boat operations and surface conditions.',
-              descJa: '地上10mの風速と風向。ボートオペレーションや海面状況の把握に不可欠です。' },
+              descEn: 'Wind speed and direction at 10m height.',
+              descJa: '地上10mの風速と風向。' },
             { id: 'waves', icon: '🌊', nameEn: 'Waves', nameJa: '波', 
-              descEn: 'Combined wave height from wind waves and swell. Shows overall sea state.',
-              descJa: '風浪とうねりを合成した波高。全体的な海況を把握できます。' },
+              descEn: 'Combined wave height from wind waves and swell.',
+              descJa: '風浪とうねりを合成した波高。' },
             { id: 'swell1', icon: '〰️', nameEn: 'Swell', nameJa: 'うねり', 
-              descEn: 'Primary swell height and direction. Critical for entry/exit planning and site selection.',
-              descJa: 'うねりの高さと方向。エントリー・エキジットやポイント選びに重要です。' },
+              descEn: 'Primary swell height and direction.',
+              descJa: 'うねりの高さと方向。' },
+            { id: 'clouds', icon: '☁️', nameEn: 'Clouds', nameJa: '雲量', 
+              descEn: 'Cloud cover percentage.',
+              descJa: '雲量。' },
             { id: 'rain', icon: '🌧️', nameEn: 'Rain', nameJa: '降水', 
-              descEn: 'Precipitation forecast. Affects visibility and freshwater runoff—a stress factor for coastal corals.',
-              descJa: '降水予報。透視度や淡水流入に影響し、沿岸サンゴへのストレス要因となります。' }
+              descEn: 'Precipitation forecast.',
+              descJa: '降水予報。' },
+            { id: 'rh', icon: '💧', nameEn: 'Humidity', nameJa: '湿度', 
+              descEn: 'Relative humidity.',
+              descJa: '相対湿度。' },
+            { id: 'pressure', icon: '📊', nameEn: 'Pressure', nameJa: '気圧', 
+              descEn: 'Sea level pressure.',
+              descJa: '海面気圧。' }
         ];
 
         // ===== State =====
