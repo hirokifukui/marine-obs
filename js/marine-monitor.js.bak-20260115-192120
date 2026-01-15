@@ -218,14 +218,9 @@
             const wd = isJa ? WEEKDAYS_JA[dt.getUTCDay()] : WEEKDAYS_EN[dt.getUTCDay()];
             const dateLabel = `${dt.getUTCMonth()+1}/${dt.getUTCDate()} (${wd})`;
             
-            // Calculate status for this day
-            const daySummary = calcDailySummary(dayData);
-            const dayStatus = daySummary ? getSeaStatus(daySummary.waveMax, daySummary.swellMax, daySummary.windMax) : { class: "good", textJa: "-", textEn: "-" };
-            const statusHtml = `<span class="status-dot ${dayStatus.class}"></span><span class="day-status-text">${isJa ? dayStatus.textJa : dayStatus.textEn}</span>`;
-            
             html += `
             <div class="marine-day-group">
-                <div class="marine-day-header">${dateLabel} ${statusHtml}</div>
+                <div class="marine-day-header">${dateLabel}</div>
                 <table class="marine-table">
                     <thead>
                         <tr>
