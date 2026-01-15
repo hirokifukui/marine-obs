@@ -3031,21 +3031,3 @@ main.detail-page {
     color: var(--text-muted);
     margin-left: 2px;
 }
-
-/* Daily forecast status in marine-day-header */
-.marine-day-header .status-dot {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 0.5rem;
-}
-
-.marine-day-header .day-status-text {
-    font-size: 0.7rem;
-    font-weight: 500;
-    margin-left: 0.25rem;
-    vertical-align: middle;
-}
-
-.marine-day-header .status-dot.good + .day-status-text { color: #5a9a7a; }
-.marine-day-header .status-dot.caution + .day-status-text { color: #d69e2e; }
-.marine-day-header .status-dot.warning + .day-status-text { color: #e53e3e; }
