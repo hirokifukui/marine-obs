@@ -3,22 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coral Species Guide | marine-obs.org</title>
+    <title>Moni1000 | marine-obs.org</title>
     <!-- SEO / OGP -->
-    <meta name="description" content="サンゴの種別ガイド。白化に脆弱な種と耐性のある種を写真付きで解説。">
-    <meta property="og:title" content="サンゴ種別ガイド | marine-obs.org">
-    <meta property="og:description" content="サンゴの種別ガイド。白化に脆弱な種と耐性のある種を写真付きで解説。">
+    <meta name="description" content="環境省モニタリングサイト1000サンゴ礁調査データを用いた分析。衛星DHWと実測白化率の照合検証。">
+    <meta property="og:title" content="モニ1000分析 | marine-obs.org">
+    <meta property="og:description" content="環境省モニタリングサイト1000サンゴ礁調査データを用いた分析。衛星DHWと実測白化率の照合検証。">
     <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
-    <meta property="og:url" content="https://marine-obs.org/species-guide.html">
+    <meta property="og:url" content="https://marine-obs.org/moni1000.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/species-guide.css">
+    <style>
+        /* Page-specific styles */
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .analysis-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .analysis-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        .analysis-card.available {
+            border-left: 4px solid #22c55e;
+        }
+        .analysis-card.coming {
+            border-left: 4px solid #94a3b8;
+            opacity: 0.7;
+        }
+        .analysis-card h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .analysis-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .status-available {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .status-coming {
+            background: #f1f5f9;
+            color: #64748b;
+        }
+        .data-overview {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+        }
+        .data-overview h3 {
+            margin: 0 0 1rem 0;
+            font-size: 1rem;
+        }
+        .data-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+        .data-stat {
+            text-align: center;
+        }
+        .data-stat .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .data-stat .label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        .external-links {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        .external-links h3 {
+            margin: 0 0 1rem 0;
+            font-size: 1rem;
+        }
+        .external-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .external-links li {
+            margin-bottom: 0.5rem;
+        }
+        .external-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .external-links a:hover {
+            text-decoration: underline;
+        }
+        .acknowledgment-box {
+            background: #fffbeb;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .acknowledgment-box strong {
+            color: #92400e;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -213,233 +332,246 @@
             </li>
         </ul>
     </nav>
+
     <main>
         <nav class="breadcrumb">
             <a href="index.html">Home</a> / 
-            <span data-lang="en">Coral Species Guide</span>
-            <span data-lang="ja">サンゴ種別ガイド</span>
+            <span data-lang="en">Moni1000</span>
+            <span data-lang="ja">モニ1000</span>
         </nav>
 
-        <!-- Page Header -->
         <div class="page-header">
             <h1>
-                <span data-lang="en">Coral Species Guide</span>
-                <span data-lang="ja">サンゴ種別ガイド</span>
+                <span data-lang="en">Moni1000 Coral Reef Analysis</span>
+                <span data-lang="ja">モニ1000サンゴ礁調査分析</span>
             </h1>
             <p class="lead">
-                <span data-lang="en">Not all corals respond equally to thermal stress. Learn to identify the "canaries" that bleach first and the resilient species that survive.</span>
-                <span data-lang="ja">すべてのサンゴが熱ストレスに同じ反応をするわけではありません。最初に白化する「カナリア」と、生き残る耐性種を見分けましょう。</span>
+                <span data-lang="en">
+                    Validating satellite-derived thermal stress indicators against field observations 
+                    from Japan's national coral reef monitoring program.
+                </span>
+                <span data-lang="ja">
+                    環境省の長期モニタリング事業「モニタリングサイト1000」のサンゴ礁調査データを用いて、
+                    衛星由来の熱ストレス指標を実測データで検証します。
+                </span>
             </p>
         </div>
 
-        <!-- Species Gallery -->
-        <section class="species-gallery">
-            <div class="species-row">
-                <!-- Vulnerable Column -->
-                <div class="species-column">
-                    <div class="species-column-header vulnerable">
-                        <span style="font-size: 1.2em;">●</span>
-                        <span data-lang="en">Vulnerable</span>
-                        <span data-lang="ja">脆弱種</span>
-                    </div>
-                    
-                    <!-- Acropora -->
-                    <div class="species-card">
-                        <img src="img/coral/acropora.jpg" alt="Acropora hyacinthus" loading="lazy">
-                        <div class="species-card-body">
-                            <div class="name-ja">
-                                <span data-lang="en">Table Coral</span>
-                                <span data-lang="ja">ミドリイシ</span>
-                            </div>
-                            <div class="name-sci">Acropora</div>
-                            <div class="desc">
-                                <span data-lang="en">First to bleach, first to recover. Thin tissue makes them the "canary in the coal mine."</span>
-                                <span data-lang="ja">最初に白化し、最初に回復する。薄い組織が「炭鉱のカナリア」たる所以。</span>
-                            </div>
+        <!-- What is Moni1000 -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">What is Monitoring Sites 1000?</span>
+                <span data-lang="ja">モニタリングサイト1000とは</span>
+            </h2>
+            <p>
+                <span data-lang="en">
+                    Monitoring Sites 1000 (Moni1000) is Japan's national long-term ecological monitoring program, 
+                    launched by the Ministry of the Environment's Biodiversity Center in 2004. 
+                    The coral reef survey component monitors 24 sites across the Nansei Islands 
+                    (from Amami to Yaeyama) and Ogasawara, documenting coral cover, bleaching rates, 
+                    species composition, and environmental conditions.
+                </span>
+                <span data-lang="ja">
+                    モニタリングサイト1000（モニ1000）は、環境省生物多様性センターが2004年に開始した
+                    日本の長期生態モニタリング事業です。サンゴ礁調査では、南西諸島（奄美〜八重山）と
+                    小笠原の24サイトで、サンゴ被度、白化率、種構成、環境条件を継続的に記録しています。
+                </span>
+            </p>
+
+            <div class="acknowledgment-box">
+                <strong>
+                    <span data-lang="en">Data Acknowledgment:</span>
+                    <span data-lang="ja">データ提供：</span>
+                </strong>
+                <span data-lang="en">
+                    The analyses on this page use data from the Ministry of the Environment's Monitoring Sites 1000 
+                    Coral Reef Survey (FY2020–2024), provided with permission for non-commercial research use.
+                </span>
+                <span data-lang="ja">
+                    本ページの分析には、環境省モニタリングサイト1000サンゴ礁調査（2020〜2024年度）の
+                    データを使用しています。非営利研究目的での使用許可を得ています。
+                </span>
+            </div>
+
+            <div class="data-overview">
+                <h3>
+                    <span data-lang="en">Available Data (FY2020–2024)</span>
+                    <span data-lang="ja">利用可能なデータ（2020〜2024年度）</span>
+                </h3>
+                <div class="data-stats">
+                    <div class="data-stat">
+                        <div class="value">5</div>
+                        <div class="label">
+                            <span data-lang="en">Years</span>
+                            <span data-lang="ja">年間</span>
                         </div>
                     </div>
-                    
-                    <!-- Pocillopora -->
-                    <div class="species-card">
-                        <img src="img/coral/pocillopora.jpg" alt="Pocillopora grandis" loading="lazy">
-                        <div class="species-card-body">
-                            <div class="name-ja">
-                                <span data-lang="en">Cauliflower Coral</span>
-                                <span data-lang="ja">ハナヤサイサンゴ</span>
-                            </div>
-                            <div class="name-sci">Pocillopora</div>
-                            <div class="desc">
-                                <span data-lang="en">Fast-growing branching coral. Response varies by region.</span>
-                                <span data-lang="ja">成長が速い枝状サンゴ。白化応答は地域差がある。</span>
-                            </div>
+                    <div class="data-stat">
+                        <div class="value">24</div>
+                        <div class="label">
+                            <span data-lang="en">Sites</span>
+                            <span data-lang="ja">サイト</span>
                         </div>
                     </div>
-                    
-                    <!-- Stylophora -->
-                    <div class="species-card">
-                        <img src="img/coral/stylophora.jpg" alt="Stylophora" loading="lazy">
-                        <div class="species-card-body">
-                            <div class="name-ja">
-                                <span data-lang="en">Hood Coral</span>
-                                <span data-lang="ja">ショウガサンゴ</span>
-                            </div>
-                            <div class="name-sci">Stylophora</div>
-                            <div class="desc">
-                                <span data-lang="en">Rounded branch tips. Sensitive to both heat and cold.</span>
-                                <span data-lang="ja">丸い枝先が特徴。高温・低温の両方に弱い。</span>
-                            </div>
+                    <div class="data-stat">
+                        <div class="value">592</div>
+                        <div class="label">
+                            <span data-lang="en">Survey Points</span>
+                            <span data-lang="ja">調査地点</span>
                         </div>
                     </div>
-                    
-                    <!-- Montipora -->
-                    <div class="species-card">
-                        <img src="img/coral/montipora.jpg" alt="Montipora" loading="lazy">
-                        <div class="species-card-body">
-                            <div class="name-ja">
-                                <span data-lang="en">Plate Coral</span>
-                                <span data-lang="ja">コモンサンゴ</span>
-                            </div>
-                            <div class="name-sci">Montipora</div>
-                            <div class="desc">
-                                <span data-lang="en">Thin plate-like colonies. Often bleaches with Acropora.</span>
-                                <span data-lang="ja">薄い板状群体。ミドリイシと共に白化しやすい。</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Seriatopora -->
-                    <div class="species-card">
-                        <img src="img/coral/seriatopora.jpg" alt="Seriatopora hystrix" loading="lazy">
-                        <div class="species-card-body">
-                            <div class="name-ja">
-                                <span data-lang="en">Needle Coral</span>
-                                <span data-lang="ja">トゲサンゴ</span>
-                            </div>
-                            <div class="name-sci">Seriatopora</div>
-                            <div class="desc">
-                                <span data-lang="en">Delicate needle-like branches. Very fragile.</span>
-                                <span data-lang="ja">針のように細い枝。非常に繊細な構造。</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Resistant Column -->
-                <div class="species-column">
-                    <div class="species-column-header resistant">
-                        <span style="font-size: 1.2em;">●</span>
-                        <span data-lang="en">Resistant</span>
-                        <span data-lang="ja">耐性種</span>
-                    </div>
-                    
-                    <!-- Porites -->
-                    <div class="species-card">
-                        <img src="img/coral/porites.jpg" alt="Porites lobata" loading="lazy">
-                        <div class="species-card-body">
-                            <div class="name-ja">
-                                <span data-lang="en">Boulder Coral</span>
-                                <span data-lang="ja">ハマサンゴ</span>
-                            </div>
-                            <div class="name-sci">Porites</div>
-                            <div class="desc">
-                                <span data-lang="en">Thick tissue buffers stress. If this bleaches, the reef is in serious trouble.</span>
-                                <span data-lang="ja">厚い組織がストレスを緩衝。これが白化したら深刻。</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Heliopora -->
-                    <div class="species-card">
-                        <img src="img/coral/heliopora.jpg" alt="Heliopora coerulea" loading="lazy">
-                        <div class="species-card-body">
-                            <div class="name-ja">
-                                <span data-lang="en">Blue Coral</span>
-                                <span data-lang="ja">アオサンゴ</span>
-                            </div>
-                            <div class="name-sci">Heliopora coerulea</div>
-                            <div class="desc">
-                                <span data-lang="en">Living fossil with blue skeleton. High thermal tolerance.</span>
-                                <span data-lang="ja">青い骨格を持つ生きた化石。熱耐性が高い。</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Turbinaria -->
-                    <div class="species-card">
-                        <img src="img/coral/turbinaria.jpg" alt="Turbinaria reniformis" loading="lazy">
-                        <div class="species-card-body">
-                            <div class="name-ja">
-                                <span data-lang="en">Scroll Coral</span>
-                                <span data-lang="ja">スリバチサンゴ</span>
-                            </div>
-                            <div class="name-sci">Turbinaria</div>
-                            <div class="desc">
-                                <span data-lang="en">Scroll-shaped plates. Tolerates turbid waters.</span>
-                                <span data-lang="ja">渦巻き状の葉状群体。濁った水にも耐える。</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Goniastrea -->
-                    <div class="species-card">
-                        <img src="img/coral/goniastrea.jpg" alt="Goniastrea pectinata" loading="lazy">
-                        <div class="species-card-body">
-                            <div class="name-ja">
-                                <span data-lang="en">Brain Coral</span>
-                                <span data-lang="ja">カメノコキクメイシ</span>
-                            </div>
-                            <div class="name-sci">Goniastrea</div>
-                            <div class="desc">
-                                <span data-lang="en">Dense honeycomb structure. Slow-growing but persistent.</span>
-                                <span data-lang="ja">密なハニカム構造。成長は遅いが粘り強い。</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Pavona -->
-                    <div class="species-card">
-                        <img src="img/coral/pavona.jpg" alt="Pavona" loading="lazy">
-                        <div class="species-card-body">
-                            <div class="name-ja">
-                                <span data-lang="en">Cactus Coral</span>
-                                <span data-lang="ja">シコロサンゴ</span>
-                            </div>
-                            <div class="name-sci">Pavona</div>
-                            <div class="desc">
-                                <span data-lang="en">Encrusting to foliose. Adapts to various conditions.</span>
-                                <span data-lang="ja">被覆～葉状。様々な環境に適応する。</span>
-                            </div>
+                    <div class="data-stat">
+                        <div class="value">188</div>
+                        <div class="label">
+                            <span data-lang="en">Logger Files</span>
+                            <span data-lang="ja">ロガーデータ</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Related link -->
-        <div class="related-link">
-            <span class="icon">📖</span>
-            <span class="text">
-                <span data-lang="en">Want to understand why these differences exist? See </span>
-                <span data-lang="ja">なぜこのような差があるのか？詳しくは </span>
-                <a href="vulnerability.html">
-                    <span data-lang="en">Species Vulnerability</span>
-                    <span data-lang="ja">種別脆弱性</span>
-                </a>
-            </span>
-        </div>
+        <!-- Analysis Index -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Analysis Reports</span>
+                <span data-lang="ja">分析レポート</span>
+            </h2>
 
-        <!-- Photo credits -->
-        <div class="photo-credit">
-            <span data-lang="en">Photos: Wikimedia Commons (CC BY-SA). See individual image pages for attribution.</span>
-            <span data-lang="ja">写真: Wikimedia Commons (CC BY-SA)。帰属表示は各画像ページを参照。</span>
-        </div>
+            <div class="analysis-grid">
+                <!-- DHW Validation - Available -->
+                <a href="moni1000/dhw-validation.html" class="analysis-card available" style="text-decoration: none; color: inherit;">
+                    <h3>
+                        📊 
+                        <span data-lang="en">Satellite DHW Validation</span>
+                        <span data-lang="ja">衛星DHW検証</span>
+                        <span class="status-badge status-available">
+                            <span data-lang="en">Available</span>
+                            <span data-lang="ja">公開中</span>
+                        </span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">
+                            Can satellite-derived DHW predict actual bleaching? Comparing our Lachs-method DHW 
+                            calculations against 5 years of field observations from 24 monitoring sites.
+                        </span>
+                        <span data-lang="ja">
+                            衛星由来のDHWは実際の白化を予測できるか？Lachs法で計算したDHWと
+                            24サイト5年分の現場観測データを照合検証しました。
+                        </span>
+                    </p>
+                </a>
+
+                <!-- Bleaching Trends - Coming Soon -->
+                <div class="analysis-card coming">
+                    <h3>
+                        📈 
+                        <span data-lang="en">Bleaching Trends</span>
+                        <span data-lang="ja">白化トレンド</span>
+                        <span class="status-badge status-coming">
+                            <span data-lang="en">Coming</span>
+                            <span data-lang="ja">準備中</span>
+                        </span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">
+                            Five-year trends in bleaching rates across regions. How did the 2024 global 
+                            bleaching event affect Japanese reefs compared to previous years?
+                        </span>
+                        <span data-lang="ja">
+                            地域別の白化率5年間推移。2024年の世界的白化イベントは
+                            過去と比べて日本のサンゴ礁にどのような影響を与えたか？
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Temperature Logger - Coming Soon -->
+                <div class="analysis-card coming">
+                    <h3>
+                        🌡️ 
+                        <span data-lang="en">Temperature Logger Analysis</span>
+                        <span data-lang="ja">水温ロガー分析</span>
+                        <span class="status-badge status-coming">
+                            <span data-lang="en">Coming</span>
+                            <span data-lang="ja">準備中</span>
+                        </span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">
+                            In-situ temperature measurements from 188 logger deployments. 
+                            How much do satellite SST and actual reef temperatures differ?
+                        </span>
+                        <span data-lang="ja">
+                            188台のロガーから得られた現場水温データの分析。
+                            衛星SSTと実際のサンゴ礁水温はどれだけ異なるか？
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Species Vulnerability - Coming Soon -->
+                <div class="analysis-card coming">
+                    <h3>
+                        🪸 
+                        <span data-lang="en">Species Vulnerability</span>
+                        <span data-lang="ja">種別脆弱性</span>
+                        <span class="status-badge status-coming">
+                            <span data-lang="en">Coming</span>
+                            <span data-lang="ja">準備中</span>
+                        </span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">
+                            Which coral genera are most vulnerable? Analyzing bleaching rates 
+                            by taxonomic group across different thermal stress levels.
+                        </span>
+                        <span data-lang="ja">
+                            どの属のサンゴが最も脆弱か？異なる熱ストレスレベルでの
+                            分類群別白化率を分析します。
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- External Links -->
+        <section class="content-section">
+            <div class="external-links">
+                <h3>
+                    <span data-lang="en">Official Resources</span>
+                    <span data-lang="ja">公式リソース</span>
+                </h3>
+                <ul>
+                    <li>
+                        <a href="https://www.biodic.go.jp/moni1000/" target="_blank" rel="noopener">
+                            <span data-lang="en">Monitoring Sites 1000 Portal (Biodiversity Center)</span>
+                            <span data-lang="ja">モニタリングサイト1000（生物多様性センター）</span>
+                            ↗
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.biodic.go.jp/moni1000/moni1000_coral.html" target="_blank" rel="noopener">
+                            <span data-lang="en">Coral Reef Survey Overview</span>
+                            <span data-lang="ja">サンゴ礁調査について</span>
+                            ↗
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.biodic.go.jp/" target="_blank" rel="noopener">
+                            <span data-lang="en">Biodiversity Center of Japan</span>
+                            <span data-lang="ja">生物多様性センター</span>
+                            ↗
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
     </main>
 
     <footer>
         <a href="index.html">← 
-            <span data-lang="en">Back to Home</span>
-            <span data-lang="ja">ホームに戻る</span>
+            <span data-lang="en">Back to Dashboard</span>
+            <span data-lang="ja">ダッシュボードに戻る</span>
         </a>
         <p style="margin-top: 0.5rem;">© 2026 marine-obs.org</p>
     </footer>
@@ -453,7 +585,6 @@
             localStorage.setItem('lang', lang);
         }
 
-        // Restore language preference
         const savedLang = localStorage.getItem('lang');
         if (savedLang) setLang(savedLang);
 

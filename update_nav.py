@@ -15,7 +15,7 @@ HTML_FILES = [
     'dissolved-oxygen-bleaching.html', 'field-monitoring.html', 'bleaching.html',
     'vulnerability.html', 'global-bleaching.html', 'japan-bleaching.html', 'coral-basics.html',
     'species-guide.html', 'spawning.html', 'conditions.html', 'weather.html',
-    'about.html', 'glossary.html', 'datasources.html', 'contact.html',
+    'about.html', 'glossary.html', 'datasources.html', 'contact.html', 'moni1000.html',
 ]
 
 # 新しいデスクトップナビゲーション
@@ -33,6 +33,7 @@ NAV_DESKTOP_NEW = '''            <!-- Desktop Navigation -->
                             <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
                             <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
                             <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                            <li><a href="moni1000.html"><span data-lang="en">Moni1000</span><span data-lang="ja">モニ1000</span></a></li>
                             <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge">計画中</span></a></li>
                         </ul>
                     </li>
@@ -123,6 +124,7 @@ NAV_SIDEBAR_NEW = '''    <!-- Mobile Sidebar -->
                     <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
                     <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
                     <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                    <li><a href="moni1000.html"><span data-lang="en">Moni1000</span><span data-lang="ja">モニ1000</span></a></li>
                     <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge-mobile">計画中</span></a></li>
                 </ul>
             </li>
