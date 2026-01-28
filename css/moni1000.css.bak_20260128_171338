@@ -1,0 +1,246 @@
+/* moni1000.css - Moni1000 page specific styles */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, rgba(26, 54, 93, 0.75), rgba(43, 108, 176, 0.6)), url("../images/bg-moni1000.webp");
+    color: white;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-main {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+body.ja .hero-tagline {
+    font-size: 1.3rem;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Hero stats row */
+.hero-stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-stat-card {
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    min-width: 100px;
+}
+
+.hero-stat-card .number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.75rem;
+    font-weight: 600;
+    display: block;
+}
+
+.hero-stat-card .label {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    margin-top: 0.25rem;
+}
+
+/* Data overview */
+.data-overview {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+}
+
+.data-overview h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+}
+
+.data-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.data-stat {
+    text-align: center;
+}
+
+.data-stat .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.data-stat .label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+/* Analysis grid */
+.analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.analysis-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.analysis-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.analysis-card.available {
+    border-left: 4px solid #22c55e;
+}
+
+.analysis-card.coming {
+    border-left: 4px solid #94a3b8;
+    opacity: 0.7;
+}
+
+.analysis-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.analysis-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Status badges */
+.status-badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-available {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-coming {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+/* Acknowledgment box */
+.acknowledgment-box {
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+.acknowledgment-box strong {
+    color: #92400e;
+}
+
+/* External links */
+.external-links {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.external-links h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+}
+
+.external-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.external-links li {
+    margin-bottom: 0.5rem;
+}
+
+.external-links a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.external-links a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile-optimized background images */
+@media (max-width: 768px) {
+    .hero-section {
+        background: linear-gradient(135deg, rgba(26, 54, 93, 0.8), rgba(43, 108, 176, 0.7)), url("../images/bg-moni1000-mobile.webp") !important;
+        background-size: cover !important;
+        background-position: center !important;
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.25rem;
+    }
+
+    .hero-stat-card {
+        padding: 0.75rem 1rem;
+        min-width: 80px;
+    }
+
+    .hero-stat-card .number {
+        font-size: 1.5rem;
+    }
+
+    .hero-stat-card .label {
+        font-size: 0.7rem;
+    }
+}
