@@ -58,3 +58,19 @@
         } else if (navigator.language.startsWith('ja')) {
             setLang('ja');
         }
+
+// Table scroll indicator
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.table-scroll').forEach(function(container) {
+        // Check if scrollable
+        if (container.scrollWidth > container.clientWidth) {
+            container.classList.add('has-scroll');
+            
+            // Update on scroll
+            container.addEventListener('scroll', function() {
+                const atEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 5;
+                container.classList.toggle('scrolled-end', atEnd);
+            });
+        }
+    });
+});

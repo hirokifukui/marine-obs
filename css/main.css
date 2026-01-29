@@ -3053,31 +3053,16 @@ main.detail-page {
 .marine-day-header .status-dot.warning + .day-status-text { color: #e53e3e; }
 
 /* Table scroll indicator for mobile */
-.table-scroll {
-    position: relative;
+.table-scroll.has-scroll {
+    box-shadow: inset -20px 0 15px -15px rgba(0, 0, 0, 0.15);
 }
 
-.table-scroll::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 30px;
-    background: linear-gradient(to left, var(--card-bg, #ffffff) 0%, transparent 100%);
-    pointer-events: none;
-    opacity: 1;
-    transition: opacity 0.3s;
+.table-scroll.has-scroll.scrolled-end {
+    box-shadow: none;
 }
 
-/* Hide indicator when scrolled to end */
-.table-scroll.scrolled-end::after {
-    opacity: 0;
-}
-
-/* Only show on mobile/tablet */
 @media (min-width: 900px) {
-    .table-scroll::after {
-        display: none;
+    .table-scroll.has-scroll {
+        box-shadow: none;
     }
 }
