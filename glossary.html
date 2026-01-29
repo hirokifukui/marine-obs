@@ -14,31 +14,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <!-- Critical CSS (inline for FCP) -->
-    <style>
-        :root{--bg-dark:#0a1628;--text-primary:#e5e7eb}
-        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-        html{font-size:16px;-webkit-text-size-adjust:100%}
-        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg-dark);color:var(--text-primary);line-height:1.6}
-        header{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,0.95);z-index:1000;display:flex;align-items:center}
-        .header-content{width:100%;max-width:1400px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
-        .logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:var(--text-primary);font-weight:600}
-        .logo-icon{width:36px;height:36px;border-radius:50%;overflow:hidden}
-        main{padding-top:64px}
-        [data-lang="ja"]{display:none}
-        .hero-visual{min-height:50vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem}
-    </style>
-    <!-- Preload CSS -->
-    <link rel="preload" href="css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/main.css"></noscript>
-    <!-- Preconnect to fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Non-blocking font load -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap"></noscript>
-
-<style>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
         .glossary-category {
             margin-top: 3rem;
             margin-bottom: 1.5rem;
@@ -358,6 +338,7 @@
                 <p class="glossary-note" data-lang="ja">注：衛星DHWは現地観測より2〜3倍高く出る傾向がある（瀬底の研究による）。</p>
             </div>
 
+
             <div class="glossary-card">
                 <div class="glossary-term" data-lang="en">Light-Adjusted DHW</div>
                 <div class="glossary-term" data-lang="ja">光補正DHW</div>
@@ -441,6 +422,7 @@
                 <p class="glossary-def" data-lang="ja">台風は海洋を撹拌して海面水温を冷却する——強風が冷たい深層水を表層に持ち上げ、SSTを1〜5°C低下させる。サンゴ礁にとって夏の台風は重要な熱緩和をもたらす。2024年沖縄白化は、史上稀な48日間の全球台風空白期間（6月2日〜7月19日）と関連し、最も暑い時期に自然の冷却メカニズムが機能しなかった。</p>
             </div>
         </div>
+
 
         <!-- ========== 気候ドライバー ========== -->
         <div class="glossary-category">
@@ -694,6 +676,7 @@
                 <p class="glossary-def" data-lang="ja">カリフラワー状の枝分かれサンゴ。白化感受性は地域により異なる——ある地域では脆弱、別の地域では比較的耐性あり。浅いリーフ環境で一般的。</p>
             </div>
 
+
             <div class="glossary-card">
                 <div class="glossary-term" data-lang="en">Lobophyllia</div>
                 <div class="glossary-term" data-lang="ja">コブハマサンゴ</div>
@@ -796,6 +779,7 @@
                 <p class="glossary-def" data-lang="en">A reproductive strategy where spawning is spread across multiple nights rather than concentrated on a single predictable night. If a typhoon strikes one night, not all offspring are lost. Acropora uses this strategy, trading synchrony precision for reduced catastrophic risk.</p>
                 <p class="glossary-def" data-lang="ja">産卵を予測可能な一夜に集中させず、複数夜に分散させる繁殖戦略。台風が一夜を襲っても全滅を避けられる。ミドリイシはこの戦略を採用し、同期精度を犠牲に壊滅的リスクを軽減する。</p>
             </div>
+
 
             <div class="glossary-card">
                 <div class="glossary-term" data-lang="en">Broadcast Spawner</div>
@@ -920,6 +904,7 @@
                 <p class="glossary-def" data-lang="en">Japan's largest coral reef, located between Ishigaki and Iriomote islands in Okinawa. A critical monitoring site that experienced 97.2% bleaching in 2016 and reached record-low 13.7% coral cover.</p>
                 <p class="glossary-def" data-lang="ja">沖縄の石垣島と西表島の間に位置する日本最大のサンゴ礁。2016年に97.2%の白化を経験し、被度は過去最低の13.7%を記録した重要なモニタリング地点。</p>
             </div>
+
 
             <div class="glossary-card">
                 <div class="glossary-term" data-lang="en">RINKO-Profiler</div>
