@@ -148,7 +148,7 @@
 
         /* Hero Section with Map */
         .hero-section {
-            background: linear-gradient(135deg, rgba(26, 31, 46, 0.95), rgba(26, 58, 92, 0.9)), url("img/iStock-964888346.jpg");
+            background: linear-gradient(135deg, rgba(26, 31, 46, 0.95), rgba(26, 58, 92, 0.9)), url("../img/iStock-964888346.jpg");
             color: white;
             border-radius: 12px;
             margin-bottom: 2.5rem;
