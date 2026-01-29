@@ -1,0 +1,184 @@
+#!/usr/bin/env python3
+"""
+モニ1000地点のSST時系列を取得するスクリプト
+NASA MUR SST (ERDDAP) から2019-2024年のデータを取得
+
+使用方法:
+    python fetch_sst_moni1000.py
+
+出力:
+    analysis/sst_daily_moni1000.csv
+"""
+
+import pandas as pd
+import numpy as np
+import requests
+import time
+import os
+from datetime import datetime, timedelta
+from pathlib import Path
+
+# 設定
+SCRIPT_DIR = Path(__file__).parent
+SPOTS_FILE = SCRIPT_DIR / "moni1000_spots.csv"
+OUTPUT_FILE = SCRIPT_DIR / "sst_daily_moni1000.csv"
+CHECKPOINT_FILE = SCRIPT_DIR / "sst_checkpoint.csv"
+
+# ERDDAP設定（複数サーバーを順に試行）
+ERDDAP_SERVERS = [
+    "https://upwell.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv",
+    "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv",
+]
+
+# 取得期間
+START_DATE = "2019-01-01"
+END_DATE = "2024-12-31"
+
+# リクエスト設定
+TIMEOUT = 120  # 秒
+RETRY_COUNT = 3
+RETRY_DELAY = 5  # 秒
+REQUEST_DELAY = 1  # リクエスト間隔（秒）
+
+
+def fetch_sst_point(lat: float, lon: float, start_date: str, end_date: str) -> pd.DataFrame | None:
+    """指定地点のSST時系列を取得"""
+    
+    for server in ERDDAP_SERVERS:
+        url = f"{server}?analysed_sst[({start_date}):1:({end_date})][({lat}):1:({lat})][({lon}):1:({lon})]"
+        
+        for attempt in range(RETRY_COUNT):
+            try:
+                response = requests.get(url, timeout=TIMEOUT)
+                
+                if response.status_code == 200:
+                    lines = response.text.strip().split('\n')
+                    data = []
+                    for line in lines[2:]:  # 最初の2行はヘッダー
+                        parts = line.split(',')
+                        if len(parts) >= 4:
+                            date = parts[0][:10]  # YYYY-MM-DD
+                            try:
+                                sst = float(parts[3]) - 273.15  # ケルビン→摂氏
+                                data.append({'date': date, 'sst': round(sst, 3)})
+                            except ValueError:
+                                continue
+                    
+                    if data:
+                        return pd.DataFrame(data)
+                
+                elif response.status_code == 404:
+                    # データなし（陸地など）
+                    return None
+                
+            except requests.Timeout:
+                if attempt < RETRY_COUNT - 1:
+                    print(f"    タイムアウト、リトライ {attempt + 2}/{RETRY_COUNT}...")
+                    time.sleep(RETRY_DELAY)
+                continue
+                
+            except Exception as e:
+                if attempt < RETRY_COUNT - 1:
+                    print(f"    エラー: {e}, リトライ {attempt + 2}/{RETRY_COUNT}...")
+                    time.sleep(RETRY_DELAY)
+                continue
+    
+    return None
+
+
+def main():
+    print("=" * 60)
+    print("モニ1000 SST取得スクリプト")
+    print(f"期間: {START_DATE} 〜 {END_DATE}")
+    print("=" * 60)
+    
+    # 地点リスト読み込み
+    if not SPOTS_FILE.exists():
+        print(f"エラー: {SPOTS_FILE} が見つかりません")
+        return
+    
+    spots = pd.read_csv(SPOTS_FILE)
+    print(f"\n対象地点数: {len(spots)}")
+    
+    # チェックポイント読み込み（途中再開用）
+    completed_spots = set()
+    all_sst_data = []
+    
+    if CHECKPOINT_FILE.exists():
+        checkpoint = pd.read_csv(CHECKPOINT_FILE)
+        completed_spots = set(checkpoint['spot_id'].unique())
+        all_sst_data.append(checkpoint)
+        print(f"チェックポイントから再開: {len(completed_spots)}地点完了済み")
+    
+    # 未処理地点を取得
+    remaining = spots[~spots['spot_id'].isin(completed_spots)]
+    print(f"残り: {len(remaining)}地点\n")
+    
+    if len(remaining) == 0:
+        print("全地点完了済み")
+        return
+    
+    # 取得開始
+    start_time = datetime.now()
+    success_count = 0
+    fail_count = 0
+    
+    for idx, row in remaining.iterrows():
+        spot_id = row['spot_id']
+        lat = row['lat']
+        lon = row['lon']
+        site = row['サイト名']
+        
+        progress = len(completed_spots) + success_count + fail_count + 1
+        total = len(spots)
+        
+        print(f"[{progress}/{total}] {spot_id} ({lat:.4f}, {lon:.4f})", end=" ... ")
+        
+        df = fetch_sst_point(lat, lon, START_DATE, END_DATE)
+        
+        if df is not None and len(df) > 0:
+            df['spot_id'] = spot_id
+            df['lat'] = lat
+            df['lon'] = lon
+            df['site'] = site
+            all_sst_data.append(df)
+            success_count += 1
+            print(f"OK ({len(df)}日)")
+        else:
+            fail_count += 1
+            print("失敗")
+        
+        # 定期的にチェックポイント保存（10地点ごと）
+        if (success_count + fail_count) % 10 == 0 and all_sst_data:
+            checkpoint_df = pd.concat(all_sst_data, ignore_index=True)
+            checkpoint_df.to_csv(CHECKPOINT_FILE, index=False)
+            print(f"  [チェックポイント保存: {len(checkpoint_df)}行]")
+        
+        time.sleep(REQUEST_DELAY)
+    
+    # 最終出力
+    if all_sst_data:
+        final_df = pd.concat(all_sst_data, ignore_index=True)
+        final_df = final_df[['spot_id', 'site', 'lat', 'lon', 'date', 'sst']]
+        final_df.to_csv(OUTPUT_FILE, index=False)
+        
+        # チェックポイント削除
+        if CHECKPOINT_FILE.exists():
+            os.remove(CHECKPOINT_FILE)
+        
+        elapsed = datetime.now() - start_time
+        
+        print("\n" + "=" * 60)
+        print("完了!")
+        print(f"  成功: {success_count}地点")
+        print(f"  失敗: {fail_count}地点")
+        print(f"  総レコード: {len(final_df)}行")
+        print(f"  出力: {OUTPUT_FILE}")
+        print(f"  所要時間: {elapsed}")
+        print("=" * 60)
+    else:
+        print("\nデータ取得なし")
+
+
+if __name__ == "__main__":
+    main()

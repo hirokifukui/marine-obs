@@ -1,0 +1,354 @@
+[
+  {
+    "site_no": 1,
+    "spot_no": 5,
+    "site_name": "屋久島・種子島周辺",
+    "spot_name": "屋久島タンク下　",
+    "lat": 30.457658,
+    "lon": 130.48885
+  },
+  {
+    "site_no": 3,
+    "spot_no": 11,
+    "site_name": "奄美大島",
+    "spot_name": "和瀬",
+    "lat": 28.292611,
+    "lon": 129.475444
+  },
+  {
+    "site_no": 3,
+    "spot_no": 13,
+    "site_name": "奄美大島",
+    "spot_name": "デリキョンマ崎",
+    "lat": 28.188778,
+    "lon": 129.243833
+  },
+  {
+    "site_no": 4,
+    "spot_no": 3,
+    "site_name": "東村～奥",
+    "spot_name": "大度海岸礁斜面",
+    "lat": 26.085917,
+    "lon": 127.706667
+  },
+  {
+    "site_no": 4,
+    "spot_no": 15,
+    "site_name": "東村～奥",
+    "spot_name": "伊計島東礁斜面",
+    "lat": 26.384111,
+    "lon": 128.003833
+  },
+  {
+    "site_no": 4,
+    "spot_no": 26,
+    "site_name": "東村～奥",
+    "spot_name": "宇佐浜東",
+    "lat": 26.865694,
+    "lon": 128.26625
+  },
+  {
+    "site_no": 5,
+    "spot_no": 14,
+    "site_name": "恩納村～残波岬",
+    "spot_name": "残波岬西礁斜面",
+    "lat": 26.438639,
+    "lon": 127.709333
+  },
+  {
+    "site_no": 5,
+    "spot_no": 29,
+    "site_name": "恩納村～残波岬",
+    "spot_name": "古宇利島北礁斜面",
+    "lat": 26.715278,
+    "lon": 128.021278
+  },
+  {
+    "site_no": 6,
+    "spot_no": 5,
+    "site_name": "水納島・伊是名島・伊平屋島",
+    "spot_name": "伊江島湧出北",
+    "lat": 26.734722,
+    "lon": 127.789306
+  },
+  {
+    "site_no": 7,
+    "spot_no": 5,
+    "site_name": "慶良間諸島中心海域（阿嘉島、座間味、渡嘉敷周辺）",
+    "spot_name": "阿嘉ニシハマ",
+    "lat": 26.202194,
+    "lon": 127.289306
+  },
+  {
+    "site_no": 7,
+    "spot_no": 8,
+    "site_name": "慶良間諸島中心海域（阿嘉島、座間味、渡嘉敷周辺）",
+    "spot_name": "阿嘉マエノハマ",
+    "lat": 26.1865,
+    "lon": 127.280694
+  },
+  {
+    "site_no": 9,
+    "spot_no": 1,
+    "site_name": "宮古島周辺",
+    "spot_name": "池間島北カギンミ",
+    "lat": 24.941528,
+    "lon": 125.245306
+  },
+  {
+    "site_no": 9,
+    "spot_no": 3,
+    "site_name": "宮古島周辺",
+    "spot_name": "平良狩俣西",
+    "lat": 24.9005,
+    "lon": 125.259639
+  },
+  {
+    "site_no": 9,
+    "spot_no": 5,
+    "site_name": "宮古島周辺",
+    "spot_name": "伊良部下地島渡口沖離礁",
+    "lat": 24.797806,
+    "lon": 125.161917
+  },
+  {
+    "site_no": 9,
+    "spot_no": 6,
+    "site_name": "宮古島周辺",
+    "spot_name": "来間島東ヨコターラ",
+    "lat": 24.719444,
+    "lon": 125.264278
+  },
+  {
+    "site_no": 9,
+    "spot_no": 9,
+    "site_name": "宮古島周辺",
+    "spot_name": "城辺ツフツワ干瀬北",
+    "lat": 24.841083,
+    "lon": 125.391639
+  },
+  {
+    "site_no": 10,
+    "spot_no": 2,
+    "site_name": "八重干瀬",
+    "spot_name": "八重干瀬カナマラ中央南",
+    "lat": 25.016917,
+    "lon": 125.267417
+  },
+  {
+    "site_no": 10,
+    "spot_no": 3,
+    "site_name": "八重干瀬",
+    "spot_name": "八重干瀬クンカディ・ガマ",
+    "lat": 24.996944,
+    "lon": 125.234778
+  },
+  {
+    "site_no": 11,
+    "spot_no": 19,
+    "site_name": "平久保崎～宮良湾",
+    "spot_name": "伊原間牧場前",
+    "lat": 24.515917,
+    "lon": 124.298611
+  },
+  {
+    "site_no": 12,
+    "spot_no": 3,
+    "site_name": "川平～大崎",
+    "spot_name": "平久保集落南",
+    "lat": 24.583722,
+    "lon": 124.300028
+  },
+  {
+    "site_no": 12,
+    "spot_no": 23,
+    "site_name": "川平～大崎",
+    "spot_name": "川平水路北西",
+    "lat": 24.47275,
+    "lon": 124.144667
+  },
+  {
+    "site_no": 12,
+    "spot_no": 40,
+    "site_name": "川平～大崎",
+    "spot_name": "真栄里海岸前",
+    "lat": 24.327889,
+    "lon": 124.175861
+  },
+  {
+    "site_no": 13,
+    "spot_no": 42,
+    "site_name": "小浜島周辺",
+    "spot_name": "小浜島東沖礁湖内①***",
+    "lat": 24.342278,
+    "lon": 124.032889
+  },
+  {
+    "site_no": 13,
+    "spot_no": 64,
+    "site_name": "小浜島周辺",
+    "spot_name": "ヨナラ水道中央部①***",
+    "lat": 24.348278,
+    "lon": 123.945944
+  },
+  {
+    "site_no": 13,
+    "spot_no": 72,
+    "site_name": "小浜島周辺",
+    "spot_name": "嘉弥真島北岸礁外縁①***",
+    "lat": 24.369806,
+    "lon": 124.009528
+  },
+  {
+    "site_no": 14,
+    "spot_no": 77,
+    "site_name": "カタグァー周辺",
+    "spot_name": "ウマノハピー礁内①***",
+    "lat": 24.291417,
+    "lon": 124.128139
+  },
+  {
+    "site_no": 14,
+    "spot_no": 82,
+    "site_name": "カタグァー周辺",
+    "spot_name": "ウマノハピー内縁③***",
+    "lat": 24.252139,
+    "lon": 124.111
+  },
+  {
+    "site_no": 15,
+    "spot_no": 22,
+    "site_name": "シモビシ～仲間崎沖",
+    "spot_name": "黒島ー小浜島間離礁①***",
+    "lat": 24.301194,
+    "lon": 123.999611
+  },
+  {
+    "site_no": 15,
+    "spot_no": 104,
+    "site_name": "シモビシ～仲間崎沖",
+    "spot_name": "新城島ー西表島間離礁②***",
+    "lat": 24.263861,
+    "lon": 123.938222
+  },
+  {
+    "site_no": 16,
+    "spot_no": 95,
+    "site_name": "黒島～新城島",
+    "spot_name": "黒島南岸礁外縁***",
+    "lat": 24.211111,
+    "lon": 124.008306
+  },
+  {
+    "site_no": 17,
+    "spot_no": 126,
+    "site_name": "崎山湾（西表島西部）周辺",
+    "spot_name": "星砂浜前礁縁***",
+    "lat": 24.439778,
+    "lon": 123.774528
+  },
+  {
+    "site_no": 17,
+    "spot_no": 131,
+    "site_name": "崎山湾（西表島西部）周辺",
+    "spot_name": "崎山礁縁***",
+    "lat": 24.323056,
+    "lon": 123.673556
+  },
+  {
+    "site_no": 18,
+    "spot_no": 4,
+    "site_name": "父島周辺",
+    "spot_name": "父島　宮之浜",
+    "lat": 27.10675,
+    "lon": 142.194292
+  },
+  {
+    "site_no": 18,
+    "spot_no": 7,
+    "site_name": "父島周辺",
+    "spot_name": "父島　巽東海岸",
+    "lat": 27.055272,
+    "lon": 142.22905
+  },
+  {
+    "site_no": 19,
+    "spot_no": 1,
+    "site_name": "館山湾",
+    "spot_name": "沖ノ島①",
+    "lat": 34.983333,
+    "lon": 139.816667
+  },
+  {
+    "site_no": 20,
+    "spot_no": 9,
+    "site_name": "壱岐・対馬・五島列島",
+    "spot_name": "対馬　瀬ノ浦",
+    "lat": 34.4,
+    "lon": 129.266667
+  },
+  {
+    "site_no": 20,
+    "spot_no": 14,
+    "site_name": "壱岐・対馬・五島列島",
+    "spot_name": "若松島　滝ケ原",
+    "lat": 32.866667,
+    "lon": 128.966667
+  },
+  {
+    "site_no": 21,
+    "spot_no": 11,
+    "site_name": "串本周辺",
+    "spot_name": "展望塔前",
+    "lat": 33.480556,
+    "lon": 135.74625
+  },
+  {
+    "site_no": 21,
+    "spot_no": 13,
+    "site_name": "串本周辺",
+    "spot_name": "双島①",
+    "lat": 33.484042,
+    "lon": 135.691486
+  },
+  {
+    "site_no": 22,
+    "spot_no": 1,
+    "site_name": "四国南西岸(宇和海～足摺岬)",
+    "spot_name": "須ノ川",
+    "lat": 33.043639,
+    "lon": 132.484667
+  },
+  {
+    "site_no": 22,
+    "spot_no": 6,
+    "site_name": "四国南西岸(宇和海～足摺岬)",
+    "spot_name": "網代",
+    "lat": 32.824611,
+    "lon": 132.64925
+  },
+  {
+    "site_no": 22,
+    "spot_no": 11,
+    "site_name": "四国南西岸(宇和海～足摺岬)",
+    "spot_name": "西泊",
+    "lat": 32.776528,
+    "lon": 132.732083
+  },
+  {
+    "site_no": 24,
+    "spot_no": 3,
+    "site_name": "天草周辺",
+    "spot_name": "天草海中公園、大ガ瀬",
+    "lat": 32.344694,
+    "lon": 129.967694
+  },
+  {
+    "site_no": 24,
+    "spot_no": 7,
+    "site_name": "天草周辺",
+    "spot_name": "大島北",
+    "lat": 32.186778,
+    "lon": 129.968528
+  }
+]
