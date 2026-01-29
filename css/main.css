@@ -3051,18 +3051,3 @@ main.detail-page {
 .marine-day-header .status-dot.good + .day-status-text { color: #5a9a7a; }
 .marine-day-header .status-dot.caution + .day-status-text { color: #d69e2e; }
 .marine-day-header .status-dot.warning + .day-status-text { color: #e53e3e; }
-
-/* Table scroll indicator for mobile */
-.table-scroll.has-scroll {
-    box-shadow: inset -20px 0 15px -15px rgba(0, 0, 0, 0.15);
-}
-
-.table-scroll.has-scroll.scrolled-end {
-    box-shadow: none;
-}
-
-@media (min-width: 900px) {
-    .table-scroll.has-scroll {
-        box-shadow: none;
-    }
-}
