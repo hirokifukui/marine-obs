@@ -483,20 +483,53 @@ main {
 }
 
 /* Hero Section */
-/* Hero Section - moni1000 style */
 .hero-section {
-    background: linear-gradient(135deg, rgba(26, 54, 93, 0.75), rgba(43, 108, 176, 0.6)), url("../images/bg-moni1000.webp");
-    color: white;
-    padding: 2.5rem 2rem;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    height: 400px;
+    overflow: hidden;
     border-radius: 12px;
-    margin-bottom: 2.5rem;
-    background-size: cover;
-    background-position: center;
 }
 
+@media (max-width: 768px) {
+    .hero-section {
+        height: 320px;
+        border-radius: 0;
+        max-width: 100%;
+    }
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 20, 40, 0.3) 0%,
+        rgba(0, 20, 40, 0.5) 50%,
+        rgba(0, 20, 40, 0.7) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    padding-bottom: 3rem;
+}
+
+
+
 .hero-breadcrumb {
-    margin-bottom: 1.25rem;
-    font-size: 0.9rem;
+    margin-bottom: 1rem;
 }
 
 .hero-breadcrumb,
@@ -509,90 +542,30 @@ main {
     color: #fff;
 }
 
-.hero-main {
-    text-align: center;
-    margin-bottom: 1.5rem;
+.hero-section h1 {
+    color: #fff;
+    margin: 0 0 0.75rem 0;
+    font-size: 2.25rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: none;
+    padding: 0;
 }
 
-.hero-tagline {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-}
-
-body.ja .hero-tagline {
-    font-size: 1.3rem;
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 1.75rem;
+    }
 }
 
 .hero-subtitle {
-    font-size: 1rem;
-    opacity: 0.9;
-    max-width: 600px;
-    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin: 0;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Hero stats row */
-.hero-stats-row {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.hero-stat-card {
-    background: rgba(255,255,255,0.15);
-    border-radius: 8px;
-    padding: 1rem 1.5rem;
-    text-align: center;
-    min-width: 100px;
-}
-
-.hero-stat-card.highlight {
-    background: rgba(255,255,255,0.25);
-    border: 1px solid rgba(255,255,255,0.3);
-}
-
-.hero-stat-card .number {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.75rem;
-    font-weight: 600;
-    display: block;
-}
-
-.hero-stat-card .label {
-    font-size: 0.8rem;
-    opacity: 0.9;
-    margin-top: 0.25rem;
-}
-
-/* Mobile-optimized hero */
 @media (max-width: 768px) {
-    .hero-section {
-        background: linear-gradient(135deg, rgba(26, 54, 93, 0.8), rgba(43, 108, 176, 0.7)), url("../images/bg-moni1000-mobile.webp") !important;
-        background-size: cover !important;
-        background-position: center !important;
-        padding: 2rem 1.5rem;
-        border-radius: 0;
-    }
-
-    .hero-tagline {
-        font-size: 1.25rem;
-    }
-
-    body.ja .hero-tagline {
-        font-size: 1.1rem;
-    }
-
-    .hero-stat-card {
-        padding: 0.75rem 1rem;
-        min-width: 70px;
-    }
-
-    .hero-stat-card .number {
-        font-size: 1.4rem;
-    }
-
-    .hero-stat-card .label {
-        font-size: 0.7rem;
+    .hero-subtitle {
+        font-size: 1rem;
     }
 }

@@ -1,0 +1,16 @@
+.hero-section {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 320px;
+        border-radius: 0;
+        max-width: 100%;
+    }
+}

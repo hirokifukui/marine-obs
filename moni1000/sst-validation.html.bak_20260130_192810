@@ -218,56 +218,27 @@
     <main>
         <!-- Hero Section -->
         <section class="hero-section">
-            <nav class="breadcrumb hero-breadcrumb">
-                <a href="../moni1000.html">
-                    <span data-lang="en">Moni1000</span>
-                    <span data-lang="ja">モニ1000</span>
-                </a>
-                <span class="separator">›</span>
-                <span>
-                    <span data-lang="en">SST Validation</span>
-                    <span data-lang="ja">衛星SST検証</span>
-                </span>
-            </nav>
-            <div class="hero-main">
-                <div class="hero-tagline">
+            <img src="../img/moni1000/sst-validation-hero.jpg" alt="Underwater view looking up at ocean surface with sunlight" class="hero-image">
+            <div class="hero-overlay">
+                <nav class="breadcrumb hero-breadcrumb">
+                    <a href="../moni1000.html">
+                        <span data-lang="en">Moni1000</span>
+                        <span data-lang="ja">モニ1000</span>
+                    </a>
+                    <span class="separator">›</span>
+                    <span>
+                        <span data-lang="en">SST Validation</span>
+                        <span data-lang="ja">衛星SST検証</span>
+                    </span>
+                </nav>
+                <h1>
                     <span data-lang="en">Satellite SST vs In-Situ Temperature</span>
                     <span data-lang="ja">衛星海水温 vs 実測水温</span>
-                </div>
-                <div class="hero-subtitle">
-                    <span data-lang="en">Validating satellite data with temperature logger measurements</span>
-                    <span data-lang="ja">水温ロガーによる衛星データの検証</span>
-                </div>
-            </div>
-            <div class="hero-stats-row">
-                <div class="hero-stat-card highlight">
-                    <span class="number">0.98</span>
-                    <span class="label">
-                        <span data-lang="en">Correlation</span>
-                        <span data-lang="ja">相関係数</span>
-                    </span>
-                </div>
-                <div class="hero-stat-card">
-                    <span class="number">44</span>
-                    <span class="label">
-                        <span data-lang="en">Sites</span>
-                        <span data-lang="ja">地点</span>
-                    </span>
-                </div>
-                <div class="hero-stat-card">
-                    <span class="number">~70K</span>
-                    <span class="label">
-                        <span data-lang="en">Data Pairs</span>
-                        <span data-lang="ja">データペア</span>
-                    </span>
-                </div>
-                <div class="hero-stat-card">
-                    <span class="number">+0.21℃</span>
-                    <span class="label">
-                        <span data-lang="en">Mean Bias</span>
-                        <span data-lang="ja">平均バイアス</span>
-                    </span>
-                </div>
+                </h1>
+                <p class="hero-subtitle">
+                    <span data-lang="en">Validating satellite data with 70,000 temperature measurements</span>
+                    <span data-lang="ja">約7万件の実測データによる衛星データの検証</span>
+                </p>
             </div>
         </section>
 
