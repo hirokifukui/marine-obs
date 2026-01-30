@@ -578,3 +578,8 @@ footer {
         font-size: 1.25rem;
     }
 }
+
+/* Force breadcrumb spans to display inline */
+.breadcrumb span[data-lang] {
+    display: inline !important;
+}
