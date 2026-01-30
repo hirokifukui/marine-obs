@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-01-30T14:42:43.405116",
+  "n_pairs": 69739,
+  "n_sites": 44,
+  "date_range": {
+    "start": "2019-09-03",
+    "end": "2025-01-28"
+  },
+  "overall": {
+    "correlation": 0.9789,
+    "bias_mean": 0.271,
+    "bias_std": 0.753,
+    "rmse": 0.8
+  },
+  "meta_analysis": {
+    "pooled_r": 0.9774,
+    "pooled_r_ci": [
+      0.977,
+      0.9777
+    ],
+    "Q_statistic": 2429.7,
+    "df": 43,
+    "I_squared": 98.2
+  },
+  "by_region": [
+    {
+      "region": "本州・外洋離島",
+      "n_sites": 13,
+      "slope_mean": 0.9,
+      "slope_std": 0.066,
+      "slope_min": 0.803,
+      "slope_max": 1.021
+    },
+    {
+      "region": "沖縄本島周辺",
+      "n_sites": 10,
+      "slope_mean": 0.944,
+      "slope_std": 0.022,
+      "slope_min": 0.924,
+      "slope_max": 0.992
+    },
+    {
+      "region": "先島諸島",
+      "n_sites": 21,
+      "slope_mean": 1.028,
+      "slope_std": 0.049,
+      "slope_min": 0.945,
+      "slope_max": 1.096
+    }
+  ]
+}

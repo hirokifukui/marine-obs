@@ -69,11 +69,11 @@
             maxZoom: 19
         }).addTo(map);
 
-        // 地域ごとの色（新区分）
+        // 地域ごとの色（もっとビビッドに）
         const regionColors = {
-            '本州・外洋離島': '#2563eb',   // 青
-            '沖縄本島周辺': '#16a34a',     // 緑
-            '先島諸島': '#ea580c'          // オレンジ
+            '本州・高緯度': '#2563eb',   // 青
+            '沖縄本島周辺': '#16a34a',   // 緑
+            '先島諸島': '#ea580c'        // オレンジ
         };
 
         fetch('data/sst_validation_points.json')
@@ -109,15 +109,15 @@
                 ], { padding: [20, 20] });
             });
 
-        // 凡例（新区分）
+        // 凡例
         const legend = L.control({ position: 'bottomright' });
         legend.onAdd = function() {
             const div = L.DomUtil.create('div', 'legend');
             div.innerHTML = `
                 <div style="font-weight: bold; margin-bottom: 8px;">地域区分</div>
-                <div class="legend-item"><span class="legend-circle" style="background:#2563eb"></span> 本州・外洋離島 (13地点)</div>
+                <div class="legend-item"><span class="legend-circle" style="background:#2563eb"></span> 本州・高緯度 (11地点)</div>
                 <div class="legend-item"><span class="legend-circle" style="background:#16a34a"></span> 沖縄本島周辺 (10地点)</div>
-                <div class="legend-item"><span class="legend-circle" style="background:#ea580c"></span> 先島諸島 (21地点)</div>
+                <div class="legend-item"><span class="legend-circle" style="background:#ea580c"></span> 先島諸島 (23地点)</div>
             `;
             return div;
         };
