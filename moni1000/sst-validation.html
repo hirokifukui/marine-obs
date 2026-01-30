@@ -216,16 +216,37 @@
     </nav>
 
     <main>
+        <!-- Breadcrumb + Page Header (moni1000 style) -->
+        <nav class="breadcrumb">
+            <a href="../index.html">Home</a> / 
+            <a href="../moni1000.html"><span data-lang="en">Moni1000</span><span data-lang="ja">モニ1000</span></a> /
+            <span data-lang="en">SST Validation</span>
+            <span data-lang="ja">SST検証</span>
+        </nav>
+
+        <div class="page-header">
+            <h1>
+                <span data-lang="en">Satellite SST vs In-Situ Temperature</span>
+                <span data-lang="ja">衛星海水温 vs 実測水温</span>
+            </h1>
+            <p class="lead">
+                <span data-lang="en">
+                    How accurately do satellites measure sea surface temperature? We compared NASA satellite data 
+                    with temperature loggers installed at 44 coral reef sites across Japan — and found remarkably close agreement.
+                </span>
+                <span data-lang="ja">
+                    衛星から測った海水温は、実際に潜って測った温度とどれくらい一致するのでしょうか？
+                    環境省モニ1000の水温ロガーデータ（44地点）とNASA衛星データを比較検証しました。結果は、驚くほど高い一致を示しています。
+                </span>
+            </p>
+        </div>
+
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-main">
                 <div class="hero-tagline">
                     <span data-lang="en">Satellite SST vs In-Situ Temperature</span>
                     <span data-lang="ja">衛星海水温 vs 実測水温</span>
-                </div>
-                <div class="hero-subtitle">
-                    <span data-lang="en">Validating satellite data with temperature logger measurements</span>
-                    <span data-lang="ja">水温ロガーによる衛星データの検証</span>
                 </div>
             </div>
             <div class="hero-stats-row">
@@ -251,7 +272,7 @@
                     </span>
                 </div>
                 <div class="hero-stat-card">
-                    <span class="number">+0.21℃</span>
+                    <span class="number">+0.27℃</span>
                     <span class="label">
                         <span data-lang="en">Mean Bias</span>
                         <span data-lang="ja">平均バイアス</span>
@@ -260,49 +281,7 @@
             </div>
         </section>
 
-        <!-- Lead Section -->
-        <section class="lead-section">
-            <p data-lang="en">
-                How accurately do satellites measure sea surface temperature? We compared NASA satellite data with temperature loggers installed at 44 coral reef sites across Japan — and found remarkably close agreement.
-            </p>
-            <p data-lang="ja">
-                衛星から測った海水温は、実際に潜って測った温度とどれくらい一致するのでしょうか？環境省モニ1000の水温ロガーデータ（44地点）とNASA衛星データを比較検証しました。結果は、驚くほど高い一致を示しています。
-            </p>
-        </section>
-
-        <!-- Key Stats Cards -->
-        <section class="stats-grid">
-            <div class="stat-card highlight">
-                <div class="stat-number">0.98</div>
-                <div class="stat-label">
-                    <span data-lang="en">Correlation</span>
-                    <span data-lang="ja">相関係数</span>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">+0.27℃</div>
-                <div class="stat-label">
-                    <span data-lang="en">Bias (satellite higher)</span>
-                    <span data-lang="ja">バイアス（衛星が高め）</span>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">±0.8℃</div>
-                <div class="stat-label">
-                    <span data-lang="en">RMSE</span>
-                    <span data-lang="ja">誤差幅</span>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">69,739</div>
-                <div class="stat-label">
-                    <span data-lang="en">Data pairs</span>
-                    <span data-lang="ja">データペア</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Data Description -->
+        <!-- What We Compared -->
         <section class="content-section">
             <h2>
                 <span data-lang="en">What We Compared</span>
@@ -578,43 +557,28 @@
         <!-- Navigation -->
         <nav class="page-nav">
             <a href="../moni1000.html" class="nav-link prev">
-                <span class="nav-direction">
-                    <span data-lang="en">← Back to</span>
-                    <span data-lang="ja">← 戻る</span>
-                </span>
+                <span class="nav-direction">←</span>
                 <span class="nav-title">
                     <span data-lang="en">Moni1000 Overview</span>
                     <span data-lang="ja">モニ1000概要</span>
                 </span>
             </a>
             <a href="../dhw.html" class="nav-link next">
-                <span class="nav-direction">
-                    <span data-lang="en">Related →</span>
-                    <span data-lang="ja">関連 →</span>
-                </span>
                 <span class="nav-title">
                     <span data-lang="en">Degree Heating Weeks</span>
                     <span data-lang="ja">積算熱ストレス</span>
                 </span>
+                <span class="nav-direction">→</span>
             </a>
         </nav>
     </main>
 
     <footer>
         <div class="footer-content">
-            <div class="footer-left">
-                <div class="footer-logo">
-                    <img src="../images/logo-circle.png" alt="marine-obs logo" style="width: 32px; height: 32px;">
-                    <span>marine-obs.org</span>
-                </div>
-                <p class="footer-tagline">
-                    <span data-lang="en">Coral thermal stress monitoring for Japanese divers</span>
-                    <span data-lang="ja">サンゴ熱ストレスモニタリング</span>
-                </p>
-            </div>
-            <div class="footer-right">
-                <p>© 2025 marine-obs.org</p>
-            </div>
+            <a href="../index.html" class="footer-back-link">
+                ← <span data-lang="en">Back to Dashboard</span><span data-lang="ja">ダッシュボードに戻る</span>
+            </a>
+            <p>© 2026 marine-obs.org</p>
         </div>
     </footer>
 
