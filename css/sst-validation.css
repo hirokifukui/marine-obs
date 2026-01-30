@@ -485,16 +485,18 @@ main {
 /* Hero Section */
 .hero-section {
     position: relative;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
     height: 400px;
     overflow: hidden;
-    margin-bottom: 3rem;
+    border-radius: 12px;
 }
 
 @media (max-width: 768px) {
     .hero-section {
         height: 320px;
+        border-radius: 0;
+        max-width: 100%;
     }
 }
 
@@ -524,12 +526,7 @@ main {
     padding-bottom: 3rem;
 }
 
-@media (min-width: 900px) {
-    .hero-overlay {
-        padding-left: calc((100vw - 900px) / 2 + 2rem);
-        padding-right: calc((100vw - 900px) / 2 + 2rem);
-    }
-}
+
 
 .hero-breadcrumb {
     margin-bottom: 1rem;
