@@ -485,28 +485,13 @@ main {
 /* Hero Section */
 /* Hero Section - moni1000 style */
 .hero-section {
-    background: linear-gradient(135deg, rgba(26, 54, 93, 0.75), rgba(43, 108, 176, 0.6)), url("../images/bg-moni1000.webp");
+    background: linear-gradient(135deg, rgba(26, 54, 93, 0.75), rgba(43, 108, 176, 0.6)), url("../images/bg-sst-validation.webp");
     color: white;
     padding: 2.5rem 2rem;
     border-radius: 12px;
     margin-bottom: 2.5rem;
     background-size: cover;
     background-position: center;
-}
-
-.hero-breadcrumb {
-    margin-bottom: 1.25rem;
-    font-size: 0.9rem;
-}
-
-.hero-breadcrumb,
-.hero-breadcrumb a,
-.hero-breadcrumb .separator {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.hero-breadcrumb a:hover {
-    color: #fff;
 }
 
 .hero-main {
@@ -568,7 +553,7 @@ body.ja .hero-tagline {
 /* Mobile-optimized hero */
 @media (max-width: 768px) {
     .hero-section {
-        background: linear-gradient(135deg, rgba(26, 54, 93, 0.8), rgba(43, 108, 176, 0.7)), url("../images/bg-moni1000-mobile.webp") !important;
+        background: linear-gradient(135deg, rgba(26, 54, 93, 0.8), rgba(43, 108, 176, 0.7)), url("../images/bg-sst-validation-mobile.webp") !important;
         background-size: cover !important;
         background-position: center !important;
         padding: 2rem 1.5rem;
