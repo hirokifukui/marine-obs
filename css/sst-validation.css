@@ -595,3 +595,82 @@ footer {
 .region-card.honshu .region-meaning { border-color: #2563eb; }
 .region-card.okinawa .region-meaning { border-color: #16a34a; }
 .region-card.sakishima .region-meaning { border-color: #ea580c; }
+
+/* ===========================================
+   Limitations Section (added 2026-01-30)
+   =========================================== */
+
+.limitation-item {
+    background: var(--bg-secondary, #f8f9fa);
+    border-left: 4px solid var(--accent-primary, #0d6efd);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.limitation-item h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary, #212529);
+    font-size: 1rem;
+}
+
+.limitation-item p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* Can/Cannot Grid */
+.can-cannot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .can-cannot-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.can-box, .cannot-box {
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.can-box {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border: 1px solid #28a745;
+}
+
+.can-box h4 {
+    color: #155724;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.cannot-box {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%);
+    border: 1px solid #ffc107;
+}
+
+.cannot-box h4 {
+    color: #856404;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.can-box ul, .cannot-box ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.can-box li, .cannot-box li {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.can-box li:last-child, .cannot-box li:last-child {
+    margin-bottom: 0;
+}

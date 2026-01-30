@@ -506,7 +506,118 @@
             </p>
         </section>
 
-        <!-- Technical Details (Collapsible) -->
+
+        <!-- Limitations and Caveats (added 2026-01-30) -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Limitations and Caveats</span>
+                <span data-lang="ja">限界と留意点</span>
+            </h2>
+            <p data-lang="en">
+                The high correlation (r = 0.98) supports the continued use of satellite-derived indices for broad-scale thermal stress monitoring. <strong>However</strong>, three limitations should inform interpretation:
+            </p>
+            <p data-lang="ja">
+                衛星と実測の高い相関（r = 0.98）は、広域的な熱ストレスモニタリングにおける衛星由来指標の有用性を支持します。<strong>ただし</strong>、解釈にあたっては以下の3点を考慮する必要があります。
+            </p>
+
+            <div class="limitation-item">
+                <h4>
+                    <span data-lang="en">1. Systematic Positive Bias</span>
+                    <span data-lang="ja">1. 系統的な正のバイアス</span>
+                </h4>
+                <p data-lang="en">
+                    The +0.27°C mean bias reflects the inherent difference between skin temperature (~1mm) and sub-surface conditions (~5m). This bias varies with solar radiation and wind speed, reaching its maximum under calm, sunny conditions. Over a 12-week DHW accumulation period, this could translate to <strong>1–2 DHW units of uncertainty</strong>.
+                </p>
+                <p data-lang="ja">
+                    +0.27℃の平均バイアスは、皮膚温（〜1mm）と水中環境（〜5m）の本質的な差異を反映しています。この差は日射や風速によって変動し、穏やかな晴天時に最大となります。12週間のDHW累積期間では、<strong>1〜2 DHW単位の不確実性</strong>に相当しうる値です。
+                </p>
+            </div>
+
+            <div class="limitation-item">
+                <h4>
+                    <span data-lang="en">2. Regional Heterogeneity</span>
+                    <span data-lang="ja">2. 地域間の異質性</span>
+                </h4>
+                <p data-lang="en">
+                    Regression slopes varied from 0.81 (Ogasawara) to 1.10 (eastern Ishigaki), with a coefficient of variation of 7.75%. This means:
+                </p>
+                <p data-lang="ja">
+                    回帰傾きは0.81（小笠原）から1.10（石垣東部）まで変動し、変動係数は7.75%でした。これは以下を意味します：
+                </p>
+                <ul>
+                    <li>
+                        <span data-lang="en"><strong>Honshu & remote islands (slope ~0.90):</strong> Satellite DHW may <strong>overestimate</strong> thermal stress by up to 10%</span>
+                        <span data-lang="ja"><strong>本州・離島（傾き〜0.90）：</strong> 衛星DHWは熱ストレスを<strong>最大10%過大評価</strong>する可能性</span>
+                    </li>
+                    <li>
+                        <span data-lang="en"><strong>Sakishima Islands (slope ~1.05):</strong> Satellite DHW may <strong>underestimate</strong> thermal stress by up to 5–10%</span>
+                        <span data-lang="ja"><strong>先島諸島（傾き〜1.05）：</strong> 衛星DHWは熱ストレスを<strong>5〜10%過小評価</strong>する可能性</span>
+                    </li>
+                </ul>
+                <p data-lang="en">
+                    A uniform correction factor cannot fully capture this geographic variation.
+                </p>
+                <p data-lang="ja">
+                    単一の補正係数では、この地理的変動を完全には捉えられません。
+                </p>
+            </div>
+
+            <div class="limitation-item">
+                <h4>
+                    <span data-lang="en">3. Temporal Smoothing</span>
+                    <span data-lang="ja">3. 時間的平滑化</span>
+                </h4>
+                <p data-lang="en">
+                    Daily satellite composites average out sub-daily thermal extremes. Brief but intense heat spikes — which may be physiologically significant for corals — are not captured in the satellite record.
+                </p>
+                <p data-lang="ja">
+                    日次の衛星コンポジットは、日内の極端な温度変動を平均化します。サンゴにとって生理学的に重要かもしれない、短時間だが強烈な熱スパイクは、衛星記録には反映されません。
+                </p>
+            </div>
+
+            <p data-lang="en">
+                Despite these limitations, satellite SST remains the <strong>only practical tool</strong> for monitoring thermal stress across the 500+ reef sites where in-situ data are unavailable.
+            </p>
+            <p data-lang="ja">
+                これらの限界にもかかわらず、衛星SSTは、実測データが存在しない500以上のサンゴ礁地点で熱ストレスを監視するための<strong>唯一の実用的手段</strong>であり続けます。
+            </p>
+        </section>
+
+        <!-- What Satellite SST Can and Cannot Do (added 2026-01-30) -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">What Satellite SST Can and Cannot Do</span>
+                <span data-lang="ja">衛星SSTで「できること」と「できないこと」</span>
+            </h2>
+            <div class="can-cannot-grid">
+                <div class="can-box">
+                    <h4>
+                        <span data-lang="en">✓ Reliable For</span>
+                        <span data-lang="ja">✓ 信頼できる用途</span>
+                    </h4>
+                    <ul>
+                        <li><span data-lang="en">Tracking temperature trends over time</span><span data-lang="ja">経時的な温度トレンドの追跡</span></li>
+                        <li><span data-lang="en">Broad-scale regional monitoring</span><span data-lang="ja">広域的な地域モニタリング</span></li>
+                        <li><span data-lang="en">Relative thermal stress comparison</span><span data-lang="ja">相対的な熱ストレス比較</span></li>
+                        <li><span data-lang="en">Early warning of bleaching risk</span><span data-lang="ja">白化リスクの早期警告</span></li>
+                        <li><span data-lang="en">Long-term climate trend analysis</span><span data-lang="ja">長期的な気候トレンド分析</span></li>
+                    </ul>
+                </div>
+                <div class="cannot-box">
+                    <h4>
+                        <span data-lang="en">⚠ Use With Caution</span>
+                        <span data-lang="ja">⚠ 注意が必要な用途</span>
+                    </h4>
+                    <ul>
+                        <li><span data-lang="en">Precise absolute temperature estimates</span><span data-lang="ja">絶対温度の精密推定（バイアス +0.27℃）</span></li>
+                        <li><span data-lang="en">Direct comparison across distant regions</span><span data-lang="ja">離れた地域間の直接比較（傾き 0.81〜1.10）</span></li>
+                        <li><span data-lang="en">Proxy for temperature at coral depth</span><span data-lang="ja">サンゴ生息深度の温度の代替</span></li>
+                        <li><span data-lang="en">Detecting sub-daily thermal extremes</span><span data-lang="ja">日内の極端温度イベントの検出</span></li>
+                        <li><span data-lang="en">Site-specific bleaching threshold prediction</span><span data-lang="ja">地点固有の白化閾値予測</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
         <section class="content-section">
             <details class="technical-details">
                 <summary>
