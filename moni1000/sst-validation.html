@@ -327,9 +327,13 @@
                 <span data-lang="ja">相関図</span>
             </h2>
             <div class="figure-container">
-                <picture>
+                <picture data-lang="en">
+                    <source media="(max-width: 600px)" srcset="../img/moni1000/sst_validation_scatter_en.png">
+                    <img src="../img/moni1000/sst_validation_scatter_en.png" alt="SST validation scatter plot" class="main-figure">
+                </picture>
+                <picture data-lang="ja">
                     <source media="(max-width: 600px)" srcset="../img/moni1000/sst_validation_scatter_mobile.png">
-                    <img src="../img/moni1000/sst_validation_scatter.png" alt="SST validation scatter plot" class="main-figure">
+                    <img src="../img/moni1000/sst_validation_scatter.png" alt="衛星SST検証散布図" class="main-figure">
                 </picture>
                 <p class="figure-caption">
                     <span data-lang="en">Hexbin density plot showing satellite SST vs. in-situ temperature (n=69,739). The red dashed line indicates perfect agreement (1:1). The color intensity represents data density.</span>
@@ -428,7 +432,7 @@
             </div>
 
             <div class="figure-container">
-                <img src="../img/moni1000/sst_validation_slopes.png" alt="Regional slope comparison" class="main-figure">
+                <img src="../img/moni1000/sst_validation_slopes_en.png" alt="Regional slope comparison" class="main-figure" data-lang="en"><img src="../img/moni1000/sst_validation_slopes.png" alt="地域別傾き比較" class="main-figure" data-lang="ja">
                 <p class="figure-caption">
                     <span data-lang="en">Regression slopes by site with 95% confidence intervals. Dashed line at 1.0 indicates perfect agreement.</span>
                     <span data-lang="ja">地点別の回帰傾き（95%信頼区間付き）。破線（1.0）は完全一致を示す。</span>
