@@ -8,7 +8,9 @@ main {
 
 /* Breadcrumb */
 .breadcrumb {
-    white-space: nowrap;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
     color: var(--text-secondary);
@@ -579,8 +581,3 @@ footer {
     }
 }
 
-/* Force breadcrumb spans to display inline */
-.breadcrumb span[data-lang],
-.breadcrumb a span[data-lang] {
-    display: inline !important;
-}
