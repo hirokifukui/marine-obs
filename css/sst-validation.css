@@ -8,6 +8,7 @@ main {
 
 /* Breadcrumb */
 .breadcrumb {
+    white-space: nowrap;
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
     color: var(--text-secondary);
