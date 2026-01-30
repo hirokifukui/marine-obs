@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <!-- Sea gradient -->
+    <linearGradient id="seaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4db8ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0066aa;stop-opacity:1" />
+    </linearGradient>
+    <!-- Sunlight -->
+    <linearGradient id="sunRay" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffdd00;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ffdd00;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky -->
+  <rect x="0" y="0" width="600" height="120" fill="#87ceeb"/>
+  
+  <!-- Sun -->
+  <circle cx="100" cy="50" r="35" fill="#ffdd00"/>
+  <circle cx="100" cy="50" r="45" fill="#ffdd00" opacity="0.3"/>
+  
+  <!-- Sunlight rays -->
+  <polygon points="130,70 280,120 260,120" fill="url(#sunRay)" opacity="0.5"/>
+  <polygon points="115,80 320,120 300,120" fill="url(#sunRay)" opacity="0.4"/>
+  
+  <!-- Satellite -->
+  <g transform="translate(480, 45)">
+    <!-- Body -->
+    <rect x="-15" y="-10" width="30" height="20" fill="#666" rx="3"/>
+    <!-- Solar panels -->
+    <rect x="-50" y="-5" width="30" height="10" fill="#2563eb"/>
+    <rect x="20" y="-5" width="30" height="10" fill="#2563eb"/>
+    <!-- Antenna -->
+    <line x1="0" y1="10" x2="0" y2="25" stroke="#666" stroke-width="2"/>
+    <circle cx="0" cy="28" r="5" fill="none" stroke="#666" stroke-width="2"/>
+  </g>
+  
+  <!-- Observation lines from satellite -->
+  <line x1="480" y1="70" x2="350" y2="120" stroke="#2563eb" stroke-width="2" stroke-dasharray="8,4" opacity="0.8"/>
+  <line x1="480" y1="70" x2="400" y2="120" stroke="#2563eb" stroke-width="2" stroke-dasharray="8,4" opacity="0.8"/>
+  
+  <!-- Sea surface -->
+  <rect x="0" y="120" width="600" height="280" fill="url(#seaGrad)"/>
+  
+  <!-- Waves -->
+  <path d="M0,120 Q30,110 60,120 T120,120 T180,120 T240,120 T300,120 T360,120 T420,120 T480,120 T540,120 T600,120" 
+        fill="none" stroke="#fff" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Surface layer 1mm (what satellite sees) -->
+  <rect x="200" y="120" width="200" height="8" fill="#ff6b6b" opacity="0.6"/>
+  
+  <!-- Temperature logger -->
+  <g transform="translate(300, 250)">
+    <!-- Logger body -->
+    <rect x="-12" y="-20" width="24" height="40" fill="#f0f0f0" stroke="#333" stroke-width="2" rx="4"/>
+    <!-- LED -->
+    <circle cx="0" cy="-8" r="4" fill="#16a34a"/>
+    <!-- Text -->
+    <text x="0" y="8" text-anchor="middle" font-size="8" fill="#333">TEMP</text>
+  </g>
+  
+  <!-- Logger tether -->
+  <line x1="300" y1="230" x2="300" y2="140" stroke="#888" stroke-width="2" stroke-dasharray="5,3"/>
+  <circle cx="300" cy="138" r="5" fill="#ea580c"/>
+  
+  <!-- Depth scale -->
+  <line x1="50" y1="120" x2="50" y2="350" stroke="#fff" stroke-width="2"/>
+  <line x1="45" y1="120" x2="55" y2="120" stroke="#fff" stroke-width="2"/>
+  <line x1="45" y1="250" x2="55" y2="250" stroke="#fff" stroke-width="2"/>
+  <text x="40" y="125" text-anchor="end" font-size="12" fill="#fff">0m</text>
+  <text x="40" y="255" text-anchor="end" font-size="12" fill="#fff">5m</text>
+  
+  <!-- Label: Satellite -->
+  <text x="480" y="90" text-anchor="middle" font-size="13" fill="#2563eb" font-weight="bold">Satellite</text>
+  
+  <!-- Label: Surface layer -->
+  <rect x="410" y="105" width="140" height="24" fill="rgba(255,255,255,0.9)" rx="4"/>
+  <text x="480" y="122" text-anchor="middle" font-size="12" fill="#d63031" font-weight="bold">Skin layer ~1mm</text>
+  
+  <!-- Label: Underwater logger -->
+  <rect x="340" y="235" width="130" height="24" fill="rgba(255,255,255,0.9)" rx="4"/>
+  <text x="405" y="252" text-anchor="middle" font-size="12" fill="#0066aa" font-weight="bold">Underwater Logger</text>
+  
+  <!-- Temperature display -->
+  <g transform="translate(520, 180)">
+    <rect x="-50" y="-15" width="100" height="55" fill="rgba(255,255,255,0.95)" rx="6" stroke="#ddd"/>
+    <text x="0" y="2" text-anchor="middle" font-size="11" fill="#d63031">Satellite SST</text>
+    <text x="0" y="18" text-anchor="middle" font-size="14" fill="#d63031" font-weight="bold">28.5°C</text>
+    <line x1="-40" y1="24" x2="40" y2="24" stroke="#ddd"/>
+    <text x="0" y="38" text-anchor="middle" font-size="11" fill="#0066aa">In-situ</text>
+    <text x="0" y="54" text-anchor="middle" font-size="14" fill="#0066aa" font-weight="bold">28.2°C</text>
+  </g>
+  
+  <!-- Bottom explanation -->
+  <rect x="10" y="360" width="580" height="35" fill="rgba(0,0,0,0.7)" rx="6"/>
+  <text x="300" y="382" text-anchor="middle" font-size="13" fill="#fff">
+    Satellites measure the ocean "skin temperature" — the surface heats up during the day, making satellite SST slightly higher
+  </text>
+</svg>
