@@ -581,3 +581,17 @@ footer {
     }
 }
 
+
+/* Region meaning - added for clarity */
+.region-meaning {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0.75rem 0 0.5rem 0;
+    padding-left: 0.5rem;
+    border-left: 2px solid currentColor;
+    font-weight: 500;
+}
+
+.region-card.honshu .region-meaning { border-color: #2563eb; }
+.region-card.okinawa .region-meaning { border-color: #16a34a; }
+.region-card.sakishima .region-meaning { border-color: #ea580c; }

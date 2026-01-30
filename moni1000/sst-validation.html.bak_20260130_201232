@@ -354,10 +354,10 @@
                 <span data-lang="ja">地域による違い</span>
             </h2>
             <p data-lang="en">
-                The relationship between satellite and in-situ measurements varies by region. A slope of 1.0 means perfect tracking — when the satellite reads 1°C higher, the actual water temperature is also 1°C higher. Lower slopes mean satellites overestimate warming at high temperatures; higher slopes mean the opposite.
+                The relationship between satellite and in-situ measurements varies slightly by region. We quantified this using regression slopes — a slope of 1.0 means perfect agreement, while deviations indicate systematic differences.
             </p>
             <p data-lang="ja">
-                衛星と実測の関係は、地域によって異なることがわかりました。傾き1.0は完全な追従を意味します——衛星が1℃高いとき、実際の水温も1℃高い。傾きが1.0より低いと、衛星は高温時に温度を過大評価する傾向があり、1.0より高いとその逆です。
+                衛星と実測の関係は、地域によって微妙に異なることがわかりました。回帰直線の傾きで定量化すると、1.0が完全一致、それ以外は系統的な違いを示します。
             </p>
 
             <div class="region-cards">
@@ -376,10 +376,6 @@
                             <span data-lang="ja">範囲: 0.80–1.02</span>
                         </div>
                     </div>
-                    <p class="region-meaning">
-                        <span data-lang="en">→ Satellites tend to overestimate high temperatures by about 1°C</span>
-                        <span data-lang="ja">→ 高温時に衛星は約1℃高く見積もる傾向</span>
-                    </p>
                     <p class="region-sites">
                         <span data-lang="en">13 sites: Tateyama, Kushimoto, Shikoku, Amakusa, Yakushima, Iki-Tsushima, Ogasawara</span>
                         <span data-lang="ja">13地点: 館山、串本、四国、天草、屋久島、壱岐対馬、小笠原</span>
@@ -400,10 +396,6 @@
                             <span data-lang="ja">範囲: 0.92–0.99</span>
                         </div>
                     </div>
-                    <p class="region-meaning">
-                        <span data-lang="en">→ Satellite values can be used as a reliable reference</span>
-                        <span data-lang="ja">→ 衛星の値をそのまま参考にできる</span>
-                    </p>
                     <p class="region-sites">
                         <span data-lang="en">10 sites: Amami, Onna, Higashi, Kerama, Minna</span>
                         <span data-lang="ja">10地点: 奄美、恩納、東村、慶良間、水納島</span>
@@ -424,10 +416,6 @@
                             <span data-lang="ja">範囲: 0.95–1.10</span>
                         </div>
                     </div>
-                    <p class="region-meaning">
-                        <span data-lang="en">→ Satellites track actual temperatures very closely</span>
-                        <span data-lang="ja">→ 衛星と実測がほぼ一致</span>
-                    </p>
                     <p class="region-sites">
                         <span data-lang="en">21 sites: Miyako, Yaeyama, Ishigaki, Iriomote</span>
                         <span data-lang="ja">21地点: 宮古、八重干瀬、石垣、西表</span>
