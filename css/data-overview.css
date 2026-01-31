@@ -648,3 +648,52 @@
     color: #dc2626;
     font-size: 0.9rem;
 }
+
+/* --------------------------------------------------------------------------
+   Data Structure Tree (SVG)
+   -------------------------------------------------------------------------- */
+.data-tree-visual {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.tree-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Language toggle for images */
+img[data-lang="ja"] {
+    display: none;
+}
+img[data-lang="en"] {
+    display: inline-block;
+}
+body.ja img[data-lang="en"] {
+    display: none;
+}
+body.ja img[data-lang="ja"] {
+    display: inline-block;
+}
+
+.figure-caption {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #4a5568);
+    text-align: center;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .data-tree-visual {
+        padding: 0.75rem;
+        overflow-x: auto;
+    }
+    
+    .tree-img {
+        min-width: 600px;
+    }
+}
