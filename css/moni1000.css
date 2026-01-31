@@ -314,3 +314,22 @@ body.ja .hero-tagline {
         font-size: 0.7rem;
     }
 }
+
+/* Card Link for available analysis cards */
+.analysis-card .card-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--primary, #1a365d);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.analysis-card .card-link:hover {
+    background: #2b6cb0;
+    transform: translateY(-1px);
+}

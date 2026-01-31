@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moni1000 | marine-obs.org</title>
+    <!-- SEO / OGP -->
+    <meta name="description" content="環境省モニタリングサイト1000サンゴ礁調査（2020-2024年度）のデータを用いた分析。5年間の白化・回復・脅威の実態。">
+    <meta property="og:title" content="モニ1000サンゴ礁調査分析 | marine-obs.org">
+    <meta property="og:description" content="環境省モニタリングサイト1000サンゴ礁調査（2020-2024年度）のデータを用いた分析。日本のサンゴ礁の5年間の記録。">
+    <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
+    <meta property="og:url" content="https://marine-obs.org/moni1000.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/moni1000.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="images/logo-circle.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul class="nav-links">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Monitoring</span>
+                            <span data-lang="ja">モニタリング</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                            <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                            <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                            <li><a href="moni1000.html"><span data-lang="en">Moni1000</span><span data-lang="ja">モニ1000</span></a></li>
+                            <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge">計画中</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Climate</span>
+                            <span data-lang="ja">気候</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                            <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span></a></li>
+                            <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Bleaching</span>
+                            <span data-lang="ja">白化</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                            <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                            <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll &amp; Bleaching</span><span data-lang="ja">クロロフィルと白化</span></a></li>
+                            <li><a href="dissolved-oxygen-bleaching.html"><span data-lang="en">Dissolved Oxygen &amp; Bleaching</span><span data-lang="ja">溶存酸素と白化</span></a></li>
+                            <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Learn</span>
+                            <span data-lang="ja">サンゴを知る</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                            <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                            <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">For Divers</span>
+                            <span data-lang="ja">ダイバー向け</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                            <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Reference</span>
+                            <span data-lang="ja">リファレンス</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                            <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                            <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                            <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button id="lang-en" class="active">English</button>
+                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <button id="lang-ja">日本語</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Monitoring</span>
+                    <span data-lang="ja">モニタリング</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                    <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                    <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                    <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                    <li><a href="moni1000.html"><span data-lang="en">Moni1000</span><span data-lang="ja">モニ1000</span></a></li>
+                    <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge-mobile">計画中</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Climate</span>
+                    <span data-lang="ja">気候</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                    <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span></a></li>
+                    <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Bleaching</span>
+                    <span data-lang="ja">白化</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                    <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                    <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll &amp; Bleaching</span><span data-lang="ja">クロロフィルと白化</span></a></li>
+                    <li><a href="dissolved-oxygen-bleaching.html"><span data-lang="en">Dissolved Oxygen &amp; Bleaching</span><span data-lang="ja">溶存酸素と白化</span></a></li>
+                    <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Learn</span>
+                    <span data-lang="ja">サンゴを知る</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                    <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                    <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">For Divers</span>
+                    <span data-lang="ja">ダイバー向け</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                    <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Reference</span>
+                    <span data-lang="ja">リファレンス</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                    <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                    <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                    <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> / 
+            <span data-lang="en">Moni1000</span>
+            <span data-lang="ja">モニ1000</span>
+        </nav>
+
+        <div class="page-header">
+            <h1>
+                <span data-lang="en">Moni1000 Coral Reef Survey Analysis</span>
+                <span data-lang="ja">モニ1000サンゴ礁調査分析</span>
+            </h1>
+            <p class="lead">
+                <span data-lang="en">
+                    Exploring five years of field observations from Japan's national coral reef monitoring program—
+                    tracking bleaching, recovery, and ecological threats across 24 sites.
+                </span>
+                <span data-lang="ja">
+                    環境省の長期モニタリング事業「モニタリングサイト1000」による5年間の現場観測データから、
+                    日本のサンゴ礁における白化・回復・生態的脅威の実態を読み解きます。
+                </span>
+            </p>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-main">
+                <div class="hero-tagline">
+                    <span data-lang="en">Monitoring Sites 1000</span>
+                    <span data-lang="ja">モニタリングサイト1000</span>
+                </div>
+                <div class="hero-subtitle">
+                    <span data-lang="en">Japan's National Long-term Coral Reef Monitoring Program (FY2020–2024)</span>
+                    <span data-lang="ja">環境省による日本の長期サンゴ礁モニタリング事業（2020〜2024年度）</span>
+                </div>
+            </div>
+            <div class="hero-stats-row">
+                <div class="hero-stat-card">
+                    <span class="number">5</span>
+                    <span class="label">
+                        <span data-lang="en">Years</span>
+                        <span data-lang="ja">年間</span>
+                    </span>
+                </div>
+                <div class="hero-stat-card">
+                    <span class="number">24</span>
+                    <span class="label">
+                        <span data-lang="en">Sites</span>
+                        <span data-lang="ja">サイト</span>
+                    </span>
+                </div>
+                <div class="hero-stat-card">
+                    <span class="number">~2,600</span>
+                    <span class="label">
+                        <span data-lang="en">Observations</span>
+                        <span data-lang="ja">観測記録</span>
+                    </span>
+                </div>
+                <div class="hero-stat-card">
+                    <span class="number">44</span>
+                    <span class="label">
+                        <span data-lang="en">Logger Sites</span>
+                        <span data-lang="ja">水温ロガー地点</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- What is Moni1000 -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">What is Monitoring Sites 1000?</span>
+                <span data-lang="ja">モニタリングサイト1000とは</span>
+            </h2>
+            <p>
+                <span data-lang="en">
+                    Monitoring Sites 1000 (Moni1000) is Japan's national long-term ecological monitoring program, 
+                    launched by the Ministry of the Environment's Biodiversity Center in 2004. 
+                    The coral reef survey component covers 24 sites from Amami to Yaeyama in the Nansei Islands, 
+                    as well as Ogasawara, providing standardized annual assessments of coral reef health 
+                    that enable meaningful comparisons across time and space.
+                </span>
+                <span data-lang="ja">
+                    モニタリングサイト1000（モニ1000）は、環境省自然環境局生物多様性センターが2004年に開始した
+                    日本の長期生態モニタリング事業です。サンゴ礁調査では、南西諸島（奄美〜八重山）と
+                    小笠原諸島の24サイトを対象に、統一された手法で毎年調査を実施。
+                    時間的・空間的に比較可能なサンゴ礁の健康状態の記録を蓄積しています。
+                </span>
+            </p>
+        </section>
+
+        <!-- Data Overview -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Survey Contents</span>
+                <span data-lang="ja">調査内容</span>
+            </h2>
+            <div class="data-overview-grid">
+                <div class="data-category">
+                    <h4>
+                        <span data-lang="en">🪸 Coral Status</span>
+                        <span data-lang="ja">🪸 サンゴの状態</span>
+                    </h4>
+                    <ul>
+                        <li>
+                            <span data-lang="en">Coral cover (%)</span>
+                            <span data-lang="ja">サンゴ被度</span>
+                        </li>
+                        <li>
+                            <span data-lang="en">Bleaching rate (all / Acropora)</span>
+                            <span data-lang="ja">白化率（全体／ミドリイシ）</span>
+                        </li>
+                        <li>
+                            <span data-lang="en">Mortality rate</span>
+                            <span data-lang="ja">死滅率</span>
+                        </li>
+                        <li>
+                            <span data-lang="en">Recruitment (juvenile corals)</span>
+                            <span data-lang="ja">加入数（新規サンゴ）</span>
+                        </li>
+                        <li>
+                            <span data-lang="en">Growth form composition</span>
+                            <span data-lang="ja">生育型組成</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="data-category">
+                    <h4>
+                        <span data-lang="en">🦑 Biological Threats</span>
+                        <span data-lang="ja">🦑 生物的脅威</span>
+                    </h4>
+                    <ul>
+                        <li>
+                            <span data-lang="en">Crown-of-thorns starfish (COTS)</span>
+                            <span data-lang="ja">オニヒトデ発生状況</span>
+                        </li>
+                        <li>
+                            <span data-lang="en">Corallivorous snails (Drupella)</span>
+                            <span data-lang="ja">サンゴ食巻貝</span>
+                        </li>
+                        <li>
+                            <span data-lang="en">Coral predation rates</span>
+                            <span data-lang="ja">食害率</span>
+                        </li>
+                        <li>
+                            <span data-lang="en">Disease presence</span>
+                            <span data-lang="ja">病気の有無</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="data-category">
+                    <h4>
+                        <span data-lang="en">🌡️ Environmental Data</span>
+                        <span data-lang="ja">🌡️ 環境データ</span>
+                    </h4>
+                    <ul>
+                        <li>
+                            <span data-lang="en">Temperature loggers (44 sites)</span>
+                            <span data-lang="ja">水温ロガー（44地点）</span>
+                        </li>
+                        <li>
+                            <span data-lang="en">Hourly records since 2019</span>
+                            <span data-lang="ja">2019年以降の1時間毎記録</span>
+                        </li>
+                        <li>
+                            <span data-lang="en">~2.1 million measurements</span>
+                            <span data-lang="ja">約210万の計測値</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="data-category">
+                    <h4>
+                        <span data-lang="en">🐟 Reef Community</span>
+                        <span data-lang="ja">🐟 群集構造</span>
+                    </h4>
+                    <ul>
+                        <li>
+                            <span data-lang="en">Large fish counts (groupers, wrasses, parrotfish)</span>
+                            <span data-lang="ja">大型魚類（ハタ、ベラ、ブダイ）</span>
+                        </li>
+                        <li>
+                            <span data-lang="en">SPSS (Sedimented/Polluted Site Score)</span>
+                            <span data-lang="ja">SPSS指標</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Acknowledgment -->
+        <section class="content-section">
+            <div class="acknowledgment-box">
+                <h3>
+                    <span data-lang="en">Data Acknowledgment</span>
+                    <span data-lang="ja">謝辞</span>
+                </h3>
+                <p>
+                    <span data-lang="en">
+                        The analyses presented on this page utilize data from the <strong>Monitoring Sites 1000 
+                        Coral Reef Survey (FY2020–2024)</strong>, conducted by the Biodiversity Center of Japan, 
+                        Nature Conservation Bureau, Ministry of the Environment. We extend our sincere gratitude 
+                        to the Biodiversity Center and all survey personnel at each monitoring site for their 
+                        dedicated efforts in data collection over the years. This data has been provided for 
+                        non-commercial research purposes.
+                    </span>
+                    <span data-lang="ja">
+                        本ページの分析には、<strong>環境省自然環境局生物多様性センター</strong>が実施する
+                        「<strong>モニタリングサイト1000 サンゴ礁調査</strong>」（2020〜2024年度）のデータを
+                        使用しています。長年にわたりデータ収集にご尽力いただいた生物多様性センター、
+                        および各調査サイトの調査員の皆様に深く感謝申し上げます。
+                        本データは非営利研究目的での使用許可を得ています。
+                    </span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Analysis Index -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Analysis Reports</span>
+                <span data-lang="ja">分析レポート</span>
+            </h2>
+
+            <div class="analysis-grid">
+                <!-- 1. Bleaching Trends -->
+                <div class="analysis-card coming">
+                    <h3>
+                        📈 
+                        <span data-lang="en">Bleaching Trends</span>
+                        <span data-lang="ja">白化トレンド</span>
+                        <span class="status-badge status-coming">
+                            <span data-lang="en">Coming</span>
+                            <span data-lang="ja">準備中</span>
+                        </span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">
+                            Five-year trends in bleaching rates across regions. How did the 2024 global 
+                            bleaching event affect Japanese reefs compared to previous years?
+                        </span>
+                        <span data-lang="ja">
+                            地域別の白化率5年間推移。2024年の世界的白化イベントは
+                            過去と比べて日本のサンゴ礁にどのような影響を与えたか？
+                        </span>
+                    </p>
+                </div>
+
+                <!-- 2. Coral Cover Changes -->
+                <div class="analysis-card coming">
+                    <h3>
+                        🗺️ 
+                        <span data-lang="en">Coral Cover Changes</span>
+                        <span data-lang="ja">サンゴ被度の変化</span>
+                        <span class="status-badge status-coming">
+                            <span data-lang="en">Coming</span>
+                            <span data-lang="ja">準備中</span>
+                        </span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">
+                            Tracking changes in coral cover across 24 sites over 5 years. 
+                            Which reefs are recovering, and which are declining?
+                        </span>
+                        <span data-lang="ja">
+                            24サイト5年間のサンゴ被度変化を追跡。
+                            回復しているサンゴ礁と衰退しているサンゴ礁はどこか？
+                        </span>
+                    </p>
+                </div>
+
+                <!-- 3. Temperature Logger -->
+                <div class="analysis-card coming">
+                    <h3>
+                        🌡️ 
+                        <span data-lang="en">Temperature Logger Analysis</span>
+                        <span data-lang="ja">水温ロガー分析</span>
+                        <span class="status-badge status-coming">
+                            <span data-lang="en">Coming</span>
+                            <span data-lang="ja">準備中</span>
+                        </span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">
+                            In-situ temperature records from 44 logger sites. Examining the 2024 
+                            marine heatwave and its relationship to observed bleaching.
+                        </span>
+                        <span data-lang="ja">
+                            44地点の水温ロガーによる現場水温記録。
+                            2024年の海洋熱波と観測された白化との関係を検証。
+                        </span>
+                    </p>
+                </div>
+
+                <!-- 4. Biological Threats -->
+                <div class="analysis-card coming">
+                    <h3>
+                        🦑 
+                        <span data-lang="en">Biological Threats</span>
+                        <span data-lang="ja">生物的脅威</span>
+                        <span class="status-badge status-coming">
+                            <span data-lang="en">Coming</span>
+                            <span data-lang="ja">準備中</span>
+                        </span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">
+                            Distribution and impact of crown-of-thorns starfish and corallivorous snails. 
+                            Where are biological threats concentrated?
+                        </span>
+                        <span data-lang="ja">
+                            オニヒトデとサンゴ食巻貝の分布と影響。
+                            生物的脅威はどこに集中しているか？
+                        </span>
+                    </p>
+                </div>
+
+                <!-- 5. Species Vulnerability -->
+                <div class="analysis-card coming">
+                    <h3>
+                        🪸 
+                        <span data-lang="en">Species Vulnerability</span>
+                        <span data-lang="ja">種別脆弱性</span>
+                        <span class="status-badge status-coming">
+                            <span data-lang="en">Coming</span>
+                            <span data-lang="ja">準備中</span>
+                        </span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">
+                            Comparing bleaching susceptibility between Acropora and other genera. 
+                            Are heat-sensitive species disproportionately affected?
+                        </span>
+                        <span data-lang="ja">
+                            ミドリイシと他属の白化感受性を比較。
+                            熱感受性の高い種は不均衡な影響を受けているか？
+                        </span>
+                    </p>
+                </div>
+
+                <!-- 6. Satellite DHW Validation -->
+                <div class="analysis-card coming">
+                    <h3>
+                        📊 
+                        <span data-lang="en">Satellite DHW Validation</span>
+                        <span data-lang="ja">衛星DHW検証</span>
+                        <span class="status-badge status-coming">
+                            <span data-lang="en">Coming</span>
+                            <span data-lang="ja">準備中</span>
+                        </span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">
+                            Validating satellite-derived thermal stress indicators against field observations. 
+                            How well do remote sensing products predict actual bleaching?
+                        </span>
+                        <span data-lang="ja">
+                            衛星由来の熱ストレス指標を現場観測で検証。
+                            リモートセンシング製品は実際の白化をどの程度予測できるか？
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Survey Area Map Placeholder -->
+        <section class="content-section">
+            <h2>
+                <span data-lang="en">Survey Areas</span>
+                <span data-lang="ja">調査海域</span>
+            </h2>
+            <p>
+                <span data-lang="en">
+                    The Moni1000 coral reef survey covers the major coral reef regions of Japan, 
+                    spanning from the warm-temperate reefs of Kushimoto and Amami to the subtropical 
+                    reefs of Okinawa and Yaeyama, as well as the oceanic reefs of Ogasawara.
+                </span>
+                <span data-lang="ja">
+                    モニ1000サンゴ礁調査は、串本・奄美の暖温帯サンゴ群集から、
+                    沖縄・八重山の亜熱帯サンゴ礁、小笠原の海洋島サンゴ礁まで、
+                    日本の主要なサンゴ礁海域を網羅しています。
+                </span>
+            </p>
+            <div class="region-list">
+                <div class="region-item">
+                    <strong>
+                        <span data-lang="en">Mainland Japan</span>
+                        <span data-lang="ja">本州・四国・九州</span>
+                    </strong>
+                    <span data-lang="en">Kushimoto, Tanabe, Tateyama, Shikoku SW coast, Amakusa</span>
+                    <span data-lang="ja">串本、田辺、館山、四国南西岸、天草</span>
+                </div>
+                <div class="region-item">
+                    <strong>
+                        <span data-lang="en">Kagoshima</span>
+                        <span data-lang="ja">鹿児島</span>
+                    </strong>
+                    <span data-lang="en">Yakushima, Tanegashima, Takarajima, Amami</span>
+                    <span data-lang="ja">屋久島、種子島、小宝島、奄美</span>
+                </div>
+                <div class="region-item">
+                    <strong>
+                        <span data-lang="en">Okinawa Main Island</span>
+                        <span data-lang="ja">沖縄本島</span>
+                    </strong>
+                    <span data-lang="en">Higashi, Onna, Minna, Kerama</span>
+                    <span data-lang="ja">東村、恩納村、水納島、慶良間</span>
+                </div>
+                <div class="region-item">
+                    <strong>
+                        <span data-lang="en">Miyako & Yaeyama</span>
+                        <span data-lang="ja">宮古・八重山</span>
+                    </strong>
+                    <span data-lang="en">Miyako, Yabiji, Ishigaki, Iriomote, Kohama, Kuroshima</span>
+                    <span data-lang="ja">宮古島、八重干瀬、石垣、西表、小浜、黒島</span>
+                </div>
+                <div class="region-item">
+                    <strong>
+                        <span data-lang="en">Remote Islands</span>
+                        <span data-lang="ja">離島</span>
+                    </strong>
+                    <span data-lang="en">Ogasawara, Daito, Iki-Tsushima-Goto</span>
+                    <span data-lang="ja">小笠原、大東、壱岐・対馬・五島</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- External Links -->
+        <section class="content-section">
+            <div class="external-links">
+                <h3>
+                    <span data-lang="en">Official Resources</span>
+                    <span data-lang="ja">公式リソース</span>
+                </h3>
+                <ul>
+                    <li>
+                        <a href="https://www.biodic.go.jp/moni1000/" target="_blank" rel="noopener">
+                            <span data-lang="en">Monitoring Sites 1000 Portal (Biodiversity Center)</span>
+                            <span data-lang="ja">モニタリングサイト1000（生物多様性センター）</span>
+                            ↗
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.biodic.go.jp/moni1000/moni1000_coral.html" target="_blank" rel="noopener">
+                            <span data-lang="en">Coral Reef Survey Overview</span>
+                            <span data-lang="ja">サンゴ礁調査について</span>
+                            ↗
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.biodic.go.jp/" target="_blank" rel="noopener">
+                            <span data-lang="en">Biodiversity Center of Japan</span>
+                            <span data-lang="ja">生物多様性センター</span>
+                            ↗
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <a href="index.html">← 
+            <span data-lang="en">Back to Dashboard</span>
+            <span data-lang="ja">ダッシュボードに戻る</span>
+        </a>
+        <p style="margin-top: 0.5rem;">© 2026 marine-obs.org</p>
+    </footer>
+
+    <script>
+        // Language toggle
+        function setLang(lang) {
+            document.body.classList.toggle('ja', lang === 'ja');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
+            localStorage.setItem('lang', lang);
+        }
+
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang) setLang(savedLang);
+
+        document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
+        document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
+    </script>
+
+    <!-- Navigation JS -->
+    <script>
+    (function() {
+        function initNavigation() {
+            const hamburger = document.getElementById('hamburger');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+            const sidebarClose = document.getElementById('sidebar-close');
+            
+            if (!hamburger || !sidebar || !sidebarOverlay) {
+                console.warn('Navigation elements not found');
+                return;
+            }
+            
+            function openSidebar() {
+                sidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+                hamburger.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeSidebar() {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            hamburger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (sidebar.classList.contains('active')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            });
+            
+            hamburger.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (sidebar.classList.contains('active')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            });
+            
+            sidebarOverlay.addEventListener('click', closeSidebar);
+            sidebarOverlay.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                closeSidebar();
+            });
+            
+            if (sidebarClose) {
+                sidebarClose.addEventListener('click', closeSidebar);
+                sidebarClose.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    closeSidebar();
+                });
+            }
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                    closeSidebar();
+                }
+            });
+            
+            sidebar.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    closeSidebar();
+                });
+            });
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initNavigation);
+        } else {
+            initNavigation();
+        }
+    })();
+    </script>
+</body>
+</html>
