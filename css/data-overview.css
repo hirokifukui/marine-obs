@@ -632,3 +632,19 @@
         font-size: 1rem;
     }
 }
+
+/* --------------------------------------------------------------------------
+   Map Legend (Leaflet custom)
+   -------------------------------------------------------------------------- */
+.map-legend {
+    font-family: var(--font-sans, 'DM Sans', sans-serif);
+}
+
+.map-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #dc2626;
+    font-size: 0.9rem;
+}

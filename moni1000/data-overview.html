@@ -741,13 +741,124 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="../js/lang.js"></script>
     <script>
-        // Data Structure Tree SVG (inline for simplicity)
+        // Study Area Map
         document.addEventListener('DOMContentLoaded', function() {
-            const treeContainer = document.getElementById('data-structure-tree');
-            if (treeContainer) {
-                // SVG will be loaded from external file or generated here
-                // Placeholder for now
-            }
+            const mapContainer = document.getElementById('study-area-map');
+            if (!mapContainer) return;
+            
+            // Clear placeholder
+            mapContainer.innerHTML = '';
+            
+            const map = L.map('study-area-map', {
+                center: [28.5, 131],
+                zoom: 5,
+                minZoom: 4,
+                maxZoom: 12
+            });
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '© OpenStreetMap, © CARTO',
+                maxZoom: 19
+            }).addTo(map);
+
+            // Region colors
+            const regionColors = {
+                'mainland': '#64748b',    // Gray - Honshu, etc.
+                'kagoshima': '#16a34a',   // Green - Kagoshima islands
+                'okinawa': '#2563eb',     // Blue - Okinawa main
+                'sakishima': '#ea580c',   // Orange - Miyako-Yaeyama
+                'remote': '#9333ea'       // Purple - Ogasawara
+            };
+
+            // Get current language
+            const getCurrentLang = () => document.documentElement.lang || 'en';
+
+            fetch('../data/moni1000_study_area.json')
+                .then(res => res.json())
+                .then(sites => {
+                    sites.forEach(site => {
+                        const color = regionColors[site.region] || '#888';
+                        const radius = site.has_logger ? 12 : 8;
+                        
+                        const marker = L.circleMarker([site.lat, site.lon], {
+                            radius: radius,
+                            fillColor: color,
+                            color: site.has_logger ? '#fbbf24' : '#fff',
+                            weight: site.has_logger ? 3 : 2,
+                            opacity: 1,
+                            fillOpacity: 0.85
+                        }).addTo(map);
+
+                        const lang = getCurrentLang();
+                        const siteName = lang === 'ja' ? site.site_name : site.site_name_en;
+                        const loggerText = site.has_logger 
+                            ? (lang === 'ja' ? `<br>🌡️ ロガー: ${site.loggers}地点` : `<br>🌡️ Loggers: ${site.loggers}`)
+                            : '';
+                        
+                        marker.bindPopup(`
+                            <strong style="font-size: 14px;">${siteName}</strong><br>
+                            <span style="color: #666; font-size: 12px;">Site ${String(site.site_no).padStart(2, '0')}</span>
+                            <hr style="margin: 6px 0; border: none; border-top: 1px solid #ddd;">
+                            <span style="color: ${color}; font-weight: 600;">● ${site.prefecture}</span><br>
+                            ${lang === 'ja' ? '調査区' : 'Spots'}: <strong>${site.spots}</strong>
+                            ${loggerText}
+                        `);
+                    });
+
+                    // Fit bounds to Japan coral regions
+                    map.fitBounds([
+                        [24, 123],
+                        [35, 143]
+                    ], { padding: [20, 20] });
+                })
+                .catch(err => {
+                    console.error('Failed to load study area data:', err);
+                    mapContainer.innerHTML = '<div class="map-error">Failed to load map data</div>';
+                });
+
+            // Legend
+            const legend = L.control({ position: 'bottomright' });
+            legend.onAdd = function() {
+                const div = L.DomUtil.create('div', 'map-legend');
+                const lang = getCurrentLang();
+                
+                const labels = {
+                    en: {
+                        title: 'Regional Groups',
+                        mainland: 'Mainland & Kyushu',
+                        kagoshima: 'Kagoshima Islands',
+                        okinawa: 'Okinawa Main',
+                        sakishima: 'Miyako-Yaeyama',
+                        remote: 'Ogasawara',
+                        logger: 'Has temp logger'
+                    },
+                    ja: {
+                        title: '地域区分',
+                        mainland: '本州・九州沿岸',
+                        kagoshima: '鹿児島離島',
+                        okinawa: '沖縄本島周辺',
+                        sakishima: '宮古・八重山',
+                        remote: '小笠原',
+                        logger: '水温ロガーあり'
+                    }
+                };
+                const l = labels[lang] || labels.en;
+                
+                div.innerHTML = `
+                    <div style="background: rgba(255,255,255,0.95); padding: 12px 16px; border-radius: 8px; font-size: 12px; line-height: 1.9; box-shadow: 0 2px 10px rgba(0,0,0,0.15);">
+                        <div style="font-weight: 600; margin-bottom: 8px; font-size: 13px;">${l.title}</div>
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:50%;background:#64748b;border:2px solid #fff;display:inline-block;box-shadow:0 1px 3px rgba(0,0,0,0.2);"></span> ${l.mainland}</div>
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:50%;background:#16a34a;border:2px solid #fff;display:inline-block;box-shadow:0 1px 3px rgba(0,0,0,0.2);"></span> ${l.kagoshima}</div>
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:50%;background:#2563eb;border:2px solid #fff;display:inline-block;box-shadow:0 1px 3px rgba(0,0,0,0.2);"></span> ${l.okinawa}</div>
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:50%;background:#ea580c;border:2px solid #fff;display:inline-block;box-shadow:0 1px 3px rgba(0,0,0,0.2);"></span> ${l.sakishima}</div>
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:50%;background:#9333ea;border:2px solid #fff;display:inline-block;box-shadow:0 1px 3px rgba(0,0,0,0.2);"></span> ${l.remote}</div>
+                        <hr style="margin: 8px 0; border: none; border-top: 1px solid #e5e7eb;">
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:50%;background:#888;border:3px solid #fbbf24;display:inline-block;box-shadow:0 1px 3px rgba(0,0,0,0.2);"></span> ${l.logger}</div>
+                    </div>
+                `;
+                return div;
+            };
+            legend.addTo(map);
         });
     </script>
 </body>
