@@ -697,3 +697,132 @@ body.ja img[data-lang="ja"] {
         min-width: 600px;
     }
 }
+
+/* --------------------------------------------------------------------------
+   Temporal Coverage Heatmap (CSS Grid)
+   -------------------------------------------------------------------------- */
+.coverage-heatmap-wrapper {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+}
+
+.coverage-heatmap {
+    display: grid;
+    grid-template-columns: minmax(120px, 140px) repeat(5, minmax(50px, 70px));
+    gap: 3px;
+    font-size: 0.85rem;
+    min-width: 450px;
+}
+
+.heatmap-header {
+    background: #1e293b;
+    color: white;
+    padding: 10px 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.heatmap-header.heatmap-site-header {
+    text-align: left;
+    padding-left: 12px;
+}
+
+.heatmap-site {
+    background: #f1f5f9;
+    padding: 8px 12px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: var(--text-primary, #1a202c);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.heatmap-site.has-logger {
+    background: linear-gradient(90deg, #fef3c7 0%, #f1f5f9 30%);
+    border-left: 3px solid #f59e0b;
+}
+
+.heatmap-site .site-no {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #64748b;
+}
+
+.heatmap-cell {
+    padding: 8px;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: transform 0.1s ease;
+}
+
+.heatmap-cell:hover {
+    transform: scale(1.05);
+}
+
+.heatmap-cell.has-data {
+    background: #2563eb;
+    color: white;
+}
+
+.heatmap-cell.no-data {
+    background: #e2e8f0;
+    color: #94a3b8;
+}
+
+.coverage-summary {
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.coverage-summary p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary, #4a5568);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .coverage-heatmap-wrapper {
+        padding: 1rem;
+    }
+    
+    .coverage-heatmap {
+        font-size: 0.75rem;
+        grid-template-columns: minmax(100px, 120px) repeat(5, minmax(40px, 55px));
+    }
+    
+    .heatmap-header {
+        padding: 8px 4px;
+        font-size: 0.7rem;
+    }
+    
+    .heatmap-site {
+        padding: 6px 8px;
+        font-size: 0.7rem;
+    }
+    
+    .heatmap-cell {
+        padding: 6px 4px;
+        font-size: 0.75rem;
+    }
+    
+    .coverage-legend {
+        gap: 1rem;
+    }
+    
+    .legend-item {
+        font-size: 0.75rem;
+    }
+}
