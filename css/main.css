@@ -1885,6 +1885,7 @@ body.ja .hero-tagline-sub {
 
 /* Breadcrumb */
 .breadcrumb {
+    white-space: nowrap;
     font-size: 0.8rem;
     color: var(--text-muted);
     margin-bottom: 1.5rem;
