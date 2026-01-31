@@ -131,12 +131,12 @@
   <text x="280" y="360" text-anchor="middle" fill="#64748b" font-size="10" font-style="italic">補正適用</text>
   
   <!-- ========== LEGEND ========== -->
-  <g transform="translate(620, 450)">
-    <rect x="0" y="0" width="160" height="40" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <g transform="translate(580, 450)">
+    <rect x="0" y="0" width="200" height="40" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1"/>
     <rect x="15" y="10" width="14" height="14" rx="3" fill="#2563eb"/>
     <text x="38" y="21" fill="#475569" font-size="10">ロガー地点（44）</text>
-    <rect x="100" y="10" width="14" height="14" rx="3" fill="#94a3b8"/>
-    <text x="123" y="21" fill="#475569" font-size="10">他</text>
+    <rect x="130" y="10" width="14" height="14" rx="3" fill="#94a3b8"/>
+    <text x="153" y="21" fill="#475569" font-size="10">他</text>
   </g>
   
 </svg>

@@ -4,23 +4,16 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   P1: Main width - match moni1000.css (900px)
-   -------------------------------------------------------------------------- */
-main {
-    max-width: 900px;
-}
-
-/* --------------------------------------------------------------------------
-   P2: Hero Section - match moni1000.css values
+   Hero Section (override background only)
    -------------------------------------------------------------------------- */
 .hero-section {
     background: linear-gradient(135deg, rgba(26, 54, 93, 0.75), rgba(43, 108, 176, 0.6)), 
                 url("../images/bg-data-overview.webp");
     background-size: cover;
     background-position: center 30%;
-    padding: 2.5rem 2rem;
-    border-radius: 12px;
-    margin-bottom: 2.5rem;
+    padding: 3rem 2rem 2rem;
+    border-radius: 16px;
+    margin-bottom: 3rem;
 }
 
 .hero-main {
@@ -29,7 +22,7 @@ main {
 }
 
 .hero-tagline {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: white;
     text-shadow: 0 2px 8px rgba(0,0,0,0.3);
@@ -87,7 +80,7 @@ main {
     }
     
     .hero-stat-card .number {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     
     .hero-stat-card .label {
@@ -429,7 +422,7 @@ main {
 }
 
 .flow-arrow {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #94a3b8;
     padding: 0.25rem 0;
 }
@@ -606,9 +599,18 @@ main {
 /* --------------------------------------------------------------------------
    Content Section Spacing
    -------------------------------------------------------------------------- */
+.content-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.content-section:last-of-type {
+    border-bottom: none;
+}
 
 .content-section h2 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--text-primary, #1a202c);
     margin: 0 0 1rem 0;
@@ -623,7 +625,7 @@ main {
 
 @media (max-width: 768px) {
     .content-section h2 {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
     }
     
     .content-section h3 {
@@ -823,24 +825,4 @@ body.ja img[data-lang="ja"] {
     .legend-item {
         font-size: 0.75rem;
     }
-}
-
-
-/* --------------------------------------------------------------------------
-   Fix: Map z-index lower than header
-   -------------------------------------------------------------------------- */
-.map-container {
-    position: relative;
-    z-index: 0 !important;
-    isolation: isolate;
-}
-
-#site-map {
-    z-index: 0 !important;
-}
-
-.map-container .leaflet-pane,
-.map-container .leaflet-top,
-.map-container .leaflet-bottom {
-    z-index: auto !important;
 }
