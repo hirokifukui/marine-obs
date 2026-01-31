@@ -778,6 +778,7 @@ body:not(.ja) .diver-cta-card.coming-soon .title::after {
         .breadcrumb [data-lang] { display: inline !important; }
         body.ja .breadcrumb [data-lang="en"] { display: none !important; }
         body:not(.ja) .breadcrumb [data-lang="ja"] { display: none !important; }
+        body.ja .breadcrumb [data-lang="ja"] { display: inline !important; }
         span[data-lang="ja"], span[data-lang="en"] { display: inline; }
         body.ja span[data-lang="en"] { display: none; }
         body:not(.ja) span[data-lang="ja"] { display: none; }
