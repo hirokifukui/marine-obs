@@ -1,0 +1,6 @@
+metric,dhw_logger,dhw_sat_raw,dhw_sat_corrected
+AUC (raw),0.521,0.504,0.523
+Mixed Model Coef,0.932,0.71,0.925
+p-value,0.0006,0.003,0.0001
+Within-site median ρ,0.5,-,-
+ICC,0.488,-,-
