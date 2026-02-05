@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\centering
+\caption{Prediction skill metrics for CoralTemp SST by threshold (n=204)}
+\label{tab:threshold_metrics}
+\begin{tabular}{cccccccccc}
+\toprule
+Threshold & ETS & Bias & POD & FAR & H & FA & M & CN \\
+(days) & & & & & & & & \\
+\midrule
+1 & 0.803 & 1.18 & 0.78 & 0.34 & 59 & 31 & 17 & 97 \\
+3 & 0.806 & 1.13 & 0.76 & 0.33 & 58 & 28 & 18 & 100 \\
+\textbf{5} & \textbf{0.843} & 0.97 & 0.74 & 0.24 & 56 & 18 & 20 & 110 \\
+7 & 0.742 & 0.87 & 0.66 & 0.24 & 50 & 16 & 26 & 112 \\
+10 & 0.548 & 0.66 & 0.50 & 0.24 & 38 & 12 & 38 & 116 \\
+14 & 0.438 & 0.54 & 0.41 & 0.24 & 31 & 10 & 45 & 118 \\
+\bottomrule
+\end{tabular}
+
+\begin{tablenotes}
+\small
+\item ETS = Equitable Threat Score; POD = Probability of Detection; FAR = False Alarm Ratio; 
+H = Hits; FA = False Alarms; M = Misses; CN = Correct Negatives. Bold indicates optimal threshold.
+\end{tablenotes}
+\end{table}

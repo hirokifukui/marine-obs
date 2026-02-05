@@ -1,0 +1,4 @@
+metric,coraltemp_all,coraltemp_paired,logger_paired,decarlo_2020
+AUC,0.811,0.878,0.805,N/A
+ETS (optimal threshold),0.84,0.99,0.79,0.218
+Optimal threshold,5 days,5 days,5 days,5.4 DHW
