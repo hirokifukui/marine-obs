@@ -4,15 +4,19 @@
 # Dev tools
 color-palette.html
 
-# Large data (reference only)
+# Large data (NOAA NetCDF)
 data/noaa-crw/*.nc
-moni1000_reports/
-提供データ一式_モニ1000サンゴ調査2020-2024/
 
-# Backups & archive
+# Backups
 backups/
 archive/
-analysis/backups/
 
 # Auto-generated backups
 *.bak_*
+
+# Research assets moved to marine-research repository
+analysis/
+drafts/
+moni1000_reports/
+提供データ一式_モニ1000サンゴ調査2020-2024/
+CLAUDE.md
