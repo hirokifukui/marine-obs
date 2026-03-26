@@ -16,6 +16,7 @@ HTML_FILES = [
     'vulnerability.html', 'global-bleaching.html', 'japan-bleaching.html', 'coral-basics.html',
     'species-guide.html', 'spawning.html', 'conditions.html', 'weather.html',
     'about.html', 'glossary.html', 'datasources.html', 'contact.html', 'moni1000.html',
+    'diving-population.html',
 ]
 
 # 新しいデスクトップナビゲーション
@@ -85,6 +86,7 @@ NAV_DESKTOP_NEW = '''            <!-- Desktop Navigation -->
                         <ul class="dropdown-menu">
                             <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
                             <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                            <li><a href="diving-population.html"><span data-lang="en">Diving Population</span><span data-lang="ja">ダイビング人口</span></a></li>
                         </ul>
                     </li>
                     <li class="nav-item has-dropdown">
@@ -172,6 +174,7 @@ NAV_SIDEBAR_NEW = '''    <!-- Mobile Sidebar -->
                 <ul class="sidebar-submenu">
                     <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
                     <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                    <li><a href="diving-population.html"><span data-lang="en">Diving Population</span><span data-lang="ja">ダイビング人口</span></a></li>
                 </ul>
             </li>
             <li class="sidebar-section">

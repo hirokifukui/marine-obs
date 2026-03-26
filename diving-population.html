@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diving Population Trends | marine-obs.org</title>
+    <!-- SEO / OGP -->
+    <meta name="description" content="世界および日本のダイビング人口動態を定量データで整理。レジャー白書・Cカード協議会・海上保安庁等の公的統計をグラフ化。">
+    <meta property="og:title" content="ダイビング人口動態 | marine-obs.org">
+    <meta property="og:description" content="世界および日本のダイビング人口動態を定量データで整理。レジャー白書・Cカード協議会・海上保安庁等の公的統計をグラフ化。">
+    <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
+    <meta property="og:url" content="https://marine-obs.org/diving-population.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .section-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+        .section-block h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .section-block h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 1.25rem 0 0.5rem;
+        }
+        .section-block p, .section-block li {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        body.ja .section-block p, body.ja .section-block li {
+            line-height: 2;
+        }
+        .section-block ul {
+            padding-left: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        .section-block li {
+            margin-bottom: 0.25rem;
+        }
+        .chart-wrapper {
+            position: relative;
+            height: 300px;
+            margin: 1rem 0;
+        }
+        @media (max-width: 768px) {
+            .chart-wrapper { height: 250px; }
+        }
+        .source-link {
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .source-link:hover {
+            text-decoration: underline;
+        }
+        .data-note {
+            font-size: 0.8rem !important;
+            color: var(--text-muted) !important;
+            font-style: italic;
+        }
+        .sources-list {
+            list-style: none !important;
+            padding-left: 0 !important;
+        }
+        .sources-list li {
+            font-size: 0.8rem !important;
+            padding: 0.35rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .sources-list li:last-child {
+            border-bottom: none;
+        }
+        .limitation-tag {
+            display: inline-block;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 0.1rem 0.4rem;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-left: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="images/logo-circle.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
+            </a>
+
+                                                <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul class="nav-links">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Monitoring</span>
+                            <span data-lang="ja">モニタリング</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                            <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                            <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                            <li><a href="moni1000.html"><span data-lang="en">Moni1000</span><span data-lang="ja">モニ1000</span></a></li>
+                            <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge">計画中</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Climate</span>
+                            <span data-lang="ja">気候</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                            <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span></a></li>
+                            <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Bleaching</span>
+                            <span data-lang="ja">白化</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                            <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                            <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll &amp; Bleaching</span><span data-lang="ja">クロロフィルと白化</span></a></li>
+                            <li><a href="dissolved-oxygen-bleaching.html"><span data-lang="en">Dissolved Oxygen &amp; Bleaching</span><span data-lang="ja">溶存酸素と白化</span></a></li>
+                            <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Learn</span>
+                            <span data-lang="ja">サンゴを知る</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                            <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                            <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">For Divers</span>
+                            <span data-lang="ja">ダイバー向け</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                            <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                            <li><a href="diving-population.html"><span data-lang="en">Diving Population</span><span data-lang="ja">ダイビング人口</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Reference</span>
+                            <span data-lang="ja">リファレンス</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                            <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                            <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                            <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button id="lang-en" class="active">English</button>
+                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <button id="lang-ja">日本語</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+                <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Monitoring</span>
+                    <span data-lang="ja">モニタリング</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                    <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                    <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                    <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                    <li><a href="moni1000.html"><span data-lang="en">Moni1000</span><span data-lang="ja">モニ1000</span></a></li>
+                    <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge-mobile">計画中</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Climate</span>
+                    <span data-lang="ja">気候</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                    <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span></a></li>
+                    <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Bleaching</span>
+                    <span data-lang="ja">白化</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                    <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                    <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll &amp; Bleaching</span><span data-lang="ja">クロロフィルと白化</span></a></li>
+                    <li><a href="dissolved-oxygen-bleaching.html"><span data-lang="en">Dissolved Oxygen &amp; Bleaching</span><span data-lang="ja">溶存酸素と白化</span></a></li>
+                    <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Learn</span>
+                    <span data-lang="ja">サンゴを知る</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                    <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                    <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">For Divers</span>
+                    <span data-lang="ja">ダイバー向け</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                    <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                    <li><a href="diving-population.html"><span data-lang="en">Diving Population</span><span data-lang="ja">ダイビング人口</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Reference</span>
+                    <span data-lang="ja">リファレンス</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                    <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                    <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                    <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <h1 data-lang="en">Diving Population Trends</h1>
+            <h1 data-lang="ja">ダイビング人口動態</h1>
+            <p class="hero-subtitle" data-lang="en">
+                Quantitative overview of global and Japanese diving demographics, based on industry statistics.
+            </p>
+            <p class="hero-subtitle" data-lang="ja">
+                業界統計に基づく世界および日本のダイビング人口の定量的整理。
+            </p>
+        </section>
+
+        <!-- Key Numbers -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">PADI Cumulative Certs</span>
+                    <span data-lang="ja">PADI累計認定</span>
+                </div>
+                <div class="kpi-value highlight">30M+</div>
+                <div class="kpi-context">
+                    <span data-lang="en">As of 2024, across 184 countries</span>
+                    <span data-lang="ja">2024年時点、184カ国・地域</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Japan Participation</span>
+                    <span data-lang="ja">日本 参加人口</span>
+                </div>
+                <div class="kpi-value warning">~80<span class="kpi-unit" data-lang="en">K</span><span class="kpi-unit" data-lang="ja">万人</span></div>
+                <div class="kpi-context">
+                    <span data-lang="en">2022 est. (peak: 1.8M in 2010)</span>
+                    <span data-lang="ja">2022年推定（ピーク: 2010年180万人）</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Japan New Certs</span>
+                    <span data-lang="ja">日本 新規認定</span>
+                </div>
+                <div class="kpi-value">27,995</div>
+                <div class="kpi-context">
+                    <span data-lang="en">Entry-level, 2025 (C-Card Council)</span>
+                    <span data-lang="ja">エントリーレベル、2025年（Cカード協議会）</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Diving Tourism Market</span>
+                    <span data-lang="ja">ダイビングツーリズム市場</span>
+                </div>
+                <div class="kpi-value highlight">$4.8B</div>
+                <div class="kpi-context">
+                    <span data-lang="en">2024 → $8.2B by 2033 (CAGR 6.1%)</span>
+                    <span data-lang="ja">2024年 → 2033年$8.2B（年率6.1%）</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: Global Overview -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">Global Diving Industry</span>
+                <span data-lang="ja">世界のダイビング産業</span>
+            </h2>
+
+            <h3>
+                <span data-lang="en">Market Growth</span>
+                <span data-lang="ja">市場の成長</span>
+            </h3>
+            <p data-lang="en">
+                The global diving tourism market was valued at $4.82 billion in 2024, projected to reach $8.19 billion by 2033 (CAGR 6.1%). The diving equipment market stands at $2.2 billion (2025), growing at 4.0% annually toward $3.2 billion by 2035.
+            </p>
+            <p data-lang="ja">
+                世界のダイビングツーリズム市場は2024年に48.2億ドル、2033年には81.9億ドルに達する見込みである（年率6.1%）。ダイビング機器市場は2025年に22億ドル、年率4.0%で2035年に32億ドルへ成長する。
+            </p>
+
+            <h3>
+                <span data-lang="en">PADI Certification Trends (2024)</span>
+                <span data-lang="ja">PADI認定トレンド（2024年）</span>
+            </h3>
+            <ul>
+                <li>
+                    <span data-lang="en">Cumulative certifications exceed 30 million; 128,000 professionals across 6,600 dive centers/resorts in 184 countries</span>
+                    <span data-lang="ja">累計認定数3,000万件超。184カ国・地域の6,600ダイブセンター／リゾートに128,000名のプロフェッショナル</span>
+                </li>
+                <li>
+                    <span data-lang="en">Top 5 certification destinations: USA, Thailand, Malaysia, Egypt, Philippines</span>
+                    <span data-lang="ja">認定先トップ5: 米国、タイ、マレーシア、エジプト、フィリピン</span>
+                </li>
+                <li>
+                    <span data-lang="en">Asia-Pacific is the largest certification region</span>
+                    <span data-lang="ja">アジア太平洋が最大の認定地域</span>
+                </li>
+                <li>
+                    <span data-lang="en">Female ratio: 40% (rising annually); under-39 age group: ~77% of new certifications</span>
+                    <span data-lang="ja">女性比率: 40%（年々上昇）。39歳以下が新規認定の約77%</span>
+                </li>
+            </ul>
+
+            <h3>
+                <span data-lang="en">US Market (DEMA/SFIA)</span>
+                <span data-lang="ja">米国市場（DEMA/SFIA）</span>
+            </h3>
+            <p data-lang="en">
+                US entry-level certifications declined from 198,000 (2001) to 128,000 (2023). Active divers number approximately 2.59 million (2020). Casual participation shows 5-year AAGR of +2.7%, while core participation is -0.7%, indicating a shift toward occasional, experience-oriented diving.
+            </p>
+            <p data-lang="ja">
+                米国のエントリーレベル認定数は2001年の198,000件から2023年の128,000件に減少した。アクティブダイバーは約259万人（2020年）。カジュアル参加の5年平均成長率は+2.7%、コア参加は-0.7%であり、体験型・非定期的な参加へのシフトが見られる。
+            </p>
+        </div>
+
+        <!-- Section 2: Japan Participation -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">Japan: Participation Decline</span>
+                <span data-lang="ja">日本: 参加人口の縮小</span>
+            </h2>
+
+            <h3>
+                <span data-lang="en">Leisure White Paper — Diving Participation</span>
+                <span data-lang="ja">レジャー白書 — ダイビング参加人口推移</span>
+            </h3>
+            <p data-lang="en">
+                The Leisure White Paper (published by Japan Productivity Center) tracks annual participation in "skin diving &amp; scuba diving" via a ~3,000-person sample survey. The figures below reflect the number of people who participated at least once during each year. Year-to-year volatility is inherent to the small sample size.
+            </p>
+            <p data-lang="ja">
+                レジャー白書（日本生産性本部発行）は「スキンダイビング・スキューバダイビング」への年間参加人口を約3,000人のサンプル調査で推計している。以下の数値は各年に1回以上参加した人数である。サンプル規模に起因する年次変動が大きい点に留意が必要である。
+            </p>
+            <div class="chart-wrapper">
+                <canvas id="chart-participation"></canvas>
+            </div>
+            <p class="data-note">
+                <span data-lang="en">Source: Leisure White Paper via Diver Lounge. Category includes skin diving + scuba diving combined.</span>
+                <span data-lang="ja">出典: レジャー白書（Diver Lounge経由）。カテゴリはスキンダイビング＋スキューバダイビングの合算。</span>
+            </p>
+
+            <h3>
+                <span data-lang="en">C-Card Council — Certification Trends</span>
+                <span data-lang="ja">Cカード協議会 — 認定数推移</span>
+            </h3>
+            <p data-lang="en">
+                The C-Card Council aggregates annual certification data from its member organizations (14 companies as of 2025, estimated to cover 90%+ of the Japanese market). Entry-level certifications have roughly halved from ~52,000 (2012) to ~28,000 (2025). Male/female ratio at entry level has shifted from near-parity (2012) to approximately 59:41 (2025).
+            </p>
+            <p data-lang="ja">
+                Cカード協議会は加盟団体（2025年時点で14社、日本市場の推定90%超をカバー）の年間認定数を集計している。エントリーレベル認定は2012年の約52,000件から2025年の約28,000件へほぼ半減した。エントリーレベルの男女比は2012年のほぼ同数から、2025年には約59:41に変化している。
+            </p>
+            <div class="chart-wrapper">
+                <canvas id="chart-ccard"></canvas>
+            </div>
+            <p class="data-note">
+                <span data-lang="en">Source: C-Card Council annual reports (c-card.org). Entry-level certifications shown with male/female breakdown.</span>
+                <span data-lang="ja">出典: Cカード協議会年次報告（c-card.org）。エントリーレベル認定を男女別に表示。</span>
+            </p>
+
+            <h3>
+                <span data-lang="en">Structural Gap</span>
+                <span data-lang="ja">構造的ギャップ</span>
+            </h3>
+            <p data-lang="en">
+                Industry estimates suggest a "latent demand" pool of around 6 million Japanese who have ever held a C-card, versus ~800,000 actual annual participants (Leisure White Paper 2022). This 7:1 ratio between certified-ever and active-now reflects a large population of lapsed divers.
+            </p>
+            <p data-lang="ja">
+                業界推定では、Cカードを取得したことのある「潜在層」は約600万人に対し、年間実参加者は約80万人（レジャー白書2022年）である。認定累計と実参加の7:1の比率は、休眠ダイバーの多さを示している。
+            </p>
+        </div>
+
+        <!-- Section 3: Okinawa -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">Okinawa: Diving Tourism Hub</span>
+                <span data-lang="ja">沖縄: ダイビング観光の拠点</span>
+            </h2>
+            <ul>
+                <li>
+                    <span data-lang="en">2024 inbound tourists: 9.66 million (domestic 7.54M — record high); FY2024: 9.95 million (2nd highest ever)</span>
+                    <span data-lang="ja">2024年入域観光客: 966万人（国内客753.6万人で過去最多）。2024年度: 995.2万人（過去2番目）</span>
+                </li>
+                <li>
+                    <span data-lang="en">Diving participation rate: domestic tourists 7.8%, foreign tourists 7.4% (FY2022 data)</span>
+                    <span data-lang="ja">ダイビング参加率: 国内客7.8%、外国客7.4%（2022年度データ）</span>
+                </li>
+                <li>
+                    <span data-lang="en">Marine leisure industry market size: approx. &yen;13.4 billion (FY2022)</span>
+                    <span data-lang="ja">マリンレジャー業界市場規模: 約134億円（2022年度）</span>
+                </li>
+                <li>
+                    <span data-lang="en">Marine leisure business registrations: 3,758 (May 2024, increasing annually)</span>
+                    <span data-lang="ja">マリンレジャー事業届出件数: 3,758件（2024年5月時点、年々増加）</span>
+                </li>
+            </ul>
+            <p data-lang="en">
+                Applying the 7.8% diving participation rate to domestic tourists alone yields an estimated 590,000 domestic diving participants in Okinawa in 2024. This figure includes trial/introductory dives (taiken diving), which do not require certification.
+            </p>
+            <p data-lang="ja">
+                国内客のダイビング参加率7.8%を2024年の国内客数に適用すると、沖縄だけで約59万人の国内ダイビング参加者が推計される。この数値には、Cカード不要の体験ダイビングが含まれる。
+            </p>
+        </div>
+
+        <!-- Section 4: Safety & Demographics -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">Safety &amp; Demographics</span>
+                <span data-lang="ja">安全と年齢構成</span>
+            </h2>
+
+            <h3>
+                <span data-lang="en">Japan Coast Guard — Diving Accident Statistics</span>
+                <span data-lang="ja">海上保安庁 — ダイビング事故統計</span>
+            </h3>
+            <p data-lang="en">
+                The JCG records scuba diving accidents in maritime areas (inland water accidents fall under police jurisdiction). Over 2014–2023, annual accident victims ranged from 32 to 58, with deaths/missing from 7 to 17. The average mortality rate is approximately 30%.
+            </p>
+            <p data-lang="ja">
+                海上保安庁は海域でのスキューバダイビング事故を記録している（内水面の事故は警察庁管轄）。2014〜2023年の事故者数は年間32〜58人、死者・行方不明者は7〜17人で推移し、平均死亡率は約30%である。
+            </p>
+            <div class="chart-wrapper">
+                <canvas id="chart-accidents"></canvas>
+            </div>
+            <p class="data-note">
+                <span data-lang="en">Source: JCG "海難の現況と対策" via Scuba Diving Fandom News, Diver Lounge. Maritime accidents only.</span>
+                <span data-lang="ja">出典: 海上保安庁「海難の現況と対策」（Scuba Diving Fandom News、Diver Lounge経由）。海域の事故のみ。</span>
+            </p>
+
+            <h3>
+                <span data-lang="en">Age Profile of Accidents (2023)</span>
+                <span data-lang="ja">事故の年齢構成（2023年）</span>
+            </h3>
+            <ul>
+                <li>
+                    <span data-lang="en">50s: 14 persons (29%), 40s: 11 (23%), 60+: 10 (23%) — ages 40+ account for 75% of all victims</span>
+                    <span data-lang="ja">50代: 14人（29%）、40代: 11人（23%）、60歳以上: 10人（23%）— 40代以上が全体の75%</span>
+                </li>
+                <li>
+                    <span data-lang="en">Leading causes: drowning (19), illness (14, doubled from prior year), inability to return (13)</span>
+                    <span data-lang="ja">事故内容: 溺水19人、病気14人（前年から倍増）、帰還不能13人</span>
+                </li>
+                <li>
+                    <span data-lang="en">Region: Third Regional Coast Guard HQ (Izu) accounts for the largest share</span>
+                    <span data-lang="ja">管区別: 第三管区（伊豆）が突出して多い</span>
+                </li>
+            </ul>
+            <p data-lang="en">
+                The concentration of accidents in older age groups, combined with illness-related incidents, suggests elevated risk among returning divers with long gaps in activity.
+            </p>
+            <p data-lang="ja">
+                高齢層への事故集中と病気関連事故の増加は、長期間のブランクを経て復帰するダイバーのリスクの高さを示唆している。
+            </p>
+        </div>
+
+        <!-- Section 5: Data Sources & Limitations -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">Data Sources &amp; Limitations</span>
+                <span data-lang="ja">データソースと限界</span>
+            </h2>
+            <ul class="sources-list">
+                <li>
+                    <strong>
+                        <span data-lang="en">Leisure White Paper</span>
+                        <span data-lang="ja">レジャー白書</span>
+                    </strong>
+                    <span class="limitation-tag">
+                        <span data-lang="en">~3,000 sample</span>
+                        <span data-lang="ja">約3,000人調査</span>
+                    </span><br>
+                    <span data-lang="en">Published by Japan Productivity Center. Combines skin diving + scuba diving. Survey-based estimates with significant year-to-year variability.</span>
+                    <span data-lang="ja">日本生産性本部発行。スキンダイビング＋スキューバダイビング合算。サンプル調査のため年次変動が大きい。</span><br>
+                    <a class="source-link" href="https://diverlounge.com/fundiving/diving-market/" target="_blank" rel="noopener">Diver Lounge (2007–2019)</a> ·
+                    <a class="source-link" href="https://diverlounge.com/fundiving/diving-market-2021-2022/" target="_blank" rel="noopener">Diver Lounge (2020–2022)</a>
+                </li>
+                <li>
+                    <strong>
+                        <span data-lang="en">C-Card Council</span>
+                        <span data-lang="ja">Cカード協議会</span>
+                    </strong>
+                    <span class="limitation-tag">
+                        <span data-lang="en">14 orgs (est. 90%+ coverage)</span>
+                        <span data-lang="ja">14社（推定カバー率90%超）</span>
+                    </span><br>
+                    <span data-lang="en">Annual certification reports from member organizations. Coverage rate not officially published.</span>
+                    <span data-lang="ja">加盟団体の年次認定報告。カバー率は公式に非公表。</span><br>
+                    <a class="source-link" href="https://c-card.org/archives/category/research" target="_blank" rel="noopener">c-card.org/archives/category/research</a>
+                </li>
+                <li>
+                    <strong>
+                        <span data-lang="en">Japan Coast Guard (JCG)</span>
+                        <span data-lang="ja">海上保安庁</span>
+                    </strong>
+                    <span class="limitation-tag">
+                        <span data-lang="en">maritime only</span>
+                        <span data-lang="ja">海域のみ</span>
+                    </span><br>
+                    <span data-lang="en">Covers maritime diving accidents only. Inland water accidents are under police jurisdiction and not included.</span>
+                    <span data-lang="ja">海域でのダイビング事故のみ。内水面の事故は警察庁管轄であり含まれない。</span><br>
+                    <a class="source-link" href="https://www.kaiho.mlit.go.jp/doc/hakkou/toukei/toukei.html" target="_blank" rel="noopener">kaiho.mlit.go.jp</a> ·
+                    <a class="source-link" href="https://scuba-diving-fandom.com/news/kaiho-2023/" target="_blank" rel="noopener">Scuba Diving Fandom News</a>
+                </li>
+                <li>
+                    <strong>PADI</strong><br>
+                    <span data-lang="en">Worldwide corporate statistics (2024). Reported via PADI press materials.</span>
+                    <span data-lang="ja">2024年の全世界統計。PADIプレスリリースより。</span>
+                </li>
+                <li>
+                    <strong>DEMA / SFIA</strong><br>
+                    <span data-lang="en">US diving participation data. SFIA (Sports &amp; Fitness Industry Association) Topline Report.</span>
+                    <span data-lang="ja">米国ダイビング参加データ。SFIA（スポーツ&amp;フィットネス産業協会）トップラインレポート。</span>
+                </li>
+                <li>
+                    <strong>
+                        <span data-lang="en">Okinawa Prefecture</span>
+                        <span data-lang="ja">沖縄県</span>
+                    </strong><br>
+                    <span data-lang="en">Visitor statistics and marine leisure data. Diving participation rate is from FY2022 survey; includes introductory (trial) dives.</span>
+                    <span data-lang="ja">入域観光客統計およびマリンレジャーデータ。ダイビング参加率は2022年度調査値で、体験ダイビングを含む。</span>
+                </li>
+            </ul>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <span data-lang="en">© 2026 marine-obs.org · Independent research project</span>
+                <span data-lang="ja">© 2026 marine-obs.org · 個人プロジェクト</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/hirokifukui/marine-obs" target="_blank" rel="noopener">GitHub</a>
+                <a href="contact.html">
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="ja">お問い合わせ</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/lang-simple.js"></script>
+
+    <!-- Charts -->
+    <script>
+    (function() {
+        // ============================================================
+        // DATA (all hardcoded from source documents for easy annual update)
+        // ============================================================
+        const DATA = {
+            // Leisure White Paper — diving participation (ten-thousands / 万人)
+            // Source: Diver Lounge compilation of レジャー白書
+            leisureWhitePaper: {
+                years:  [2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+                values: [ 170,  100,  170,  180,  130,  120,  150,  120,  110,  140,  120,   80,  100,   50,   70,   80]
+            },
+
+            // C-Card Council — entry-level certifications (male / female)
+            // Source: c-card.org annual reports
+            ccard: {
+                years:  [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+                male:   [26620,20804,21936,21579,23179,22447,24159,23810,20337,19699,20175,17317,17050,16547],
+                female: [24941,24288,19948,20257,20647,19363,19841,17837,15285,15617,15955,13628,12747,11448]
+            },
+
+            // JCG diving accident statistics
+            // Source: 海上保安庁「海難の現況と対策」via diving media
+            accidents: {
+                years:    [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023],
+                victims:  [  40,   32,   42,   58,   45,   41,   36,   35,   42,   48],
+                deaths:   [  11,   11,   11,   16,   17,   14,   17,    7,   14,   16]
+            }
+        };
+
+        const COLORS = {
+            blue:     '#2b6cb0',
+            blueLight:'rgba(43,108,176,0.15)',
+            orange:   '#c05621',
+            orangeLight:'rgba(192,86,33,0.15)',
+            green:    '#2f855a',
+            coral:    '#996060',
+            coralLight:'rgba(153,96,96,0.15)',
+            muted:    '#6b7280'
+        };
+
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: { font: { family: "'DM Sans', 'Noto Sans JP', sans-serif", size: 11 }, padding: 16, usePointStyle: true }
+                }
+            },
+            scales: {
+                x: {
+                    grid: { display: false },
+                    ticks: { font: { family: "'JetBrains Mono', monospace", size: 10 }, color: '#6b7280' }
+                },
+                y: {
+                    grid: { color: '#e2e8f0' },
+                    ticks: { font: { family: "'JetBrains Mono', monospace", size: 10 }, color: '#6b7280' }
+                }
+            }
+        };
+
+        // ----- Chart 1: Leisure White Paper participation -----
+        new Chart(document.getElementById('chart-participation'), {
+            type: 'line',
+            data: {
+                labels: DATA.leisureWhitePaper.years,
+                datasets: [{
+                    label: 'Participation (万人)',
+                    data: DATA.leisureWhitePaper.values,
+                    borderColor: COLORS.blue,
+                    backgroundColor: COLORS.blueLight,
+                    fill: true,
+                    tension: 0.3,
+                    pointRadius: 3,
+                    pointHoverRadius: 5
+                }]
+            },
+            options: {
+                ...commonOptions,
+                plugins: {
+                    ...commonOptions.plugins,
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) { return ctx.parsed.y + '万人 (' + (ctx.parsed.y * 10000).toLocaleString() + ')'; }
+                        }
+                    }
+                },
+                scales: {
+                    ...commonOptions.scales,
+                    y: {
+                        ...commonOptions.scales.y,
+                        beginAtZero: true,
+                        title: { display: true, text: '万人', font: { size: 10 }, color: '#6b7280' }
+                    }
+                }
+            }
+        });
+
+        // ----- Chart 2: C-Card entry-level certifications (stacked bar) -----
+        new Chart(document.getElementById('chart-ccard'), {
+            type: 'bar',
+            data: {
+                labels: DATA.ccard.years,
+                datasets: [
+                    {
+                        label: 'Male (男性)',
+                        data: DATA.ccard.male,
+                        backgroundColor: COLORS.blue,
+                        borderRadius: 2
+                    },
+                    {
+                        label: 'Female (女性)',
+                        data: DATA.ccard.female,
+                        backgroundColor: COLORS.orange,
+                        borderRadius: 2
+                    }
+                ]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    ...commonOptions.scales,
+                    x: { ...commonOptions.scales.x, stacked: true },
+                    y: {
+                        ...commonOptions.scales.y,
+                        stacked: true,
+                        beginAtZero: true,
+                        title: { display: true, text: 'Certifications', font: { size: 10 }, color: '#6b7280' }
+                    }
+                }
+            }
+        });
+
+        // ----- Chart 3: Diving accidents (bar + line combo) -----
+        new Chart(document.getElementById('chart-accidents'), {
+            type: 'bar',
+            data: {
+                labels: DATA.accidents.years,
+                datasets: [
+                    {
+                        label: 'Victims (事故者数)',
+                        data: DATA.accidents.victims,
+                        backgroundColor: COLORS.blueLight,
+                        borderColor: COLORS.blue,
+                        borderWidth: 1,
+                        borderRadius: 2,
+                        order: 2
+                    },
+                    {
+                        label: 'Deaths/Missing (死者・行方不明)',
+                        data: DATA.accidents.deaths,
+                        type: 'line',
+                        borderColor: COLORS.coral,
+                        backgroundColor: COLORS.coralLight,
+                        fill: false,
+                        tension: 0.3,
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
+                        pointBackgroundColor: COLORS.coral,
+                        order: 1
+                    }
+                ]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    ...commonOptions.scales,
+                    y: {
+                        ...commonOptions.scales.y,
+                        beginAtZero: true,
+                        title: { display: true, text: 'Persons', font: { size: 10 }, color: '#6b7280' }
+                    }
+                }
+            }
+        });
+    })();
+    </script>
+
+        <!-- Navigation JS -->
+    <script>
+    (function() {
+        function initNavigation() {
+            const hamburger = document.getElementById('hamburger');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+            const sidebarClose = document.getElementById('sidebar-close');
+            
+            if (!hamburger || !sidebar || !sidebarOverlay) {
+                console.warn('Navigation elements not found');
+                return;
+            }
+            
+            function openSidebar() {
+                sidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+                hamburger.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeSidebar() {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            hamburger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (sidebar.classList.contains('active')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            });
+            
+            hamburger.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (sidebar.classList.contains('active')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            });
+            
+            sidebarOverlay.addEventListener('click', closeSidebar);
+            sidebarOverlay.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                closeSidebar();
+            });
+            
+            if (sidebarClose) {
+                sidebarClose.addEventListener('click', closeSidebar);
+                sidebarClose.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    closeSidebar();
+                });
+            }
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                    closeSidebar();
+                }
+            });
+            
+            sidebar.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    closeSidebar();
+                });
+            });
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initNavigation);
+        } else {
+            initNavigation();
+        }
+    })();
+    </script>
+</body>
+</html>
