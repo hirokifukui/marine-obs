@@ -17,6 +17,7 @@ HTML_FILES = [
     'species-guide.html', 'spawning.html', 'conditions.html', 'weather.html',
     'about.html', 'glossary.html', 'datasources.html', 'contact.html', 'moni1000.html',
     'diving-population.html',
+    'instructor-health.html',
 ]
 
 # 新しいデスクトップナビゲーション
@@ -87,6 +88,7 @@ NAV_DESKTOP_NEW = '''            <!-- Desktop Navigation -->
                             <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
                             <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
                             <li><a href="diving-population.html"><span data-lang="en">Diving Population</span><span data-lang="ja">ダイビング人口</span></a></li>
+                            <li><a href="instructor-health.html"><span data-lang="en">Instructor Health</span><span data-lang="ja">インストラクターの健康</span></a></li>
                         </ul>
                     </li>
                     <li class="nav-item has-dropdown">
@@ -175,6 +177,7 @@ NAV_SIDEBAR_NEW = '''    <!-- Mobile Sidebar -->
                     <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
                     <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
                     <li><a href="diving-population.html"><span data-lang="en">Diving Population</span><span data-lang="ja">ダイビング人口</span></a></li>
+                    <li><a href="instructor-health.html"><span data-lang="en">Instructor Health</span><span data-lang="ja">インストラクターの健康</span></a></li>
                 </ul>
             </li>
             <li class="sidebar-section">

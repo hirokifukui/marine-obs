@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Health Risks | marine-obs.org</title>
+    <!-- SEO / OGP -->
+    <meta name="description" content="ダイビングインストラクター・ガイドの職業健康リスク。減圧性骨壊死・腰痛・耳疾患・心血管・認知機能・精神面まで査読論文に基づき整理。">
+    <meta property="og:title" content="インストラクターの職業健康リスク | marine-obs.org">
+    <meta property="og:description" content="ダイビングインストラクター・ガイドの職業健康リスク。減圧性骨壊死・腰痛・耳疾患・心血管・認知機能・精神面まで査読論文に基づき整理。">
+    <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
+    <meta property="og:url" content="https://marine-obs.org/instructor-health.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .section-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+        .section-block h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .section-block h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 1.25rem 0 0.5rem;
+        }
+        .section-block h3:first-child {
+            margin-top: 0;
+        }
+        .section-block p, .section-block li {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        body.ja .section-block p, body.ja .section-block li {
+            line-height: 2;
+        }
+        .section-block ul {
+            padding-left: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        .section-block li {
+            margin-bottom: 0.25rem;
+        }
+        .disclaimer {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent-warm);
+            border-radius: 0 8px 8px 0;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .disclaimer p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin: 1rem 0;
+        }
+        .data-table th {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-weight: 600;
+            text-align: left;
+            padding: 0.6rem 0.75rem;
+            border-bottom: 2px solid var(--border);
+            white-space: nowrap;
+        }
+        .data-table td {
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+        .data-table tr:hover td {
+            background: var(--bg-secondary);
+        }
+        .table-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1rem 0;
+        }
+        .ref-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--accent-teal);
+            vertical-align: super;
+            cursor: help;
+        }
+        .ref-list {
+            list-style: none !important;
+            padding-left: 0 !important;
+            counter-reset: ref-counter;
+        }
+        .ref-list li {
+            font-size: 0.8rem !important;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--border);
+            counter-increment: ref-counter;
+            padding-left: 2rem;
+            position: relative;
+        }
+        .ref-list li::before {
+            content: counter(ref-counter) ".";
+            position: absolute;
+            left: 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-teal);
+            font-weight: 500;
+        }
+        .ref-list li:last-child {
+            border-bottom: none;
+        }
+        .source-link {
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .source-link:hover {
+            text-decoration: underline;
+        }
+        .risk-high { color: var(--accent-coral); font-weight: 600; }
+        .risk-mod { color: var(--accent-warm); font-weight: 600; }
+        .risk-low { color: var(--accent-green); font-weight: 600; }
+        .prevent-yes { color: var(--accent-green); }
+        .prevent-partial { color: var(--accent-warm); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="images/logo-circle.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
+            </a>
+
+                                                <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul class="nav-links">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Monitoring</span>
+                            <span data-lang="ja">モニタリング</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                            <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                            <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                            <li><a href="moni1000.html"><span data-lang="en">Moni1000</span><span data-lang="ja">モニ1000</span></a></li>
+                            <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge">計画中</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Climate</span>
+                            <span data-lang="ja">気候</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                            <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span></a></li>
+                            <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Bleaching</span>
+                            <span data-lang="ja">白化</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                            <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                            <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll &amp; Bleaching</span><span data-lang="ja">クロロフィルと白化</span></a></li>
+                            <li><a href="dissolved-oxygen-bleaching.html"><span data-lang="en">Dissolved Oxygen &amp; Bleaching</span><span data-lang="ja">溶存酸素と白化</span></a></li>
+                            <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Learn</span>
+                            <span data-lang="ja">サンゴを知る</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                            <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                            <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">For Divers</span>
+                            <span data-lang="ja">ダイバー向け</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                            <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                            <li><a href="diving-population.html"><span data-lang="en">Diving Population</span><span data-lang="ja">ダイビング人口</span></a></li>
+                            <li><a href="instructor-health.html"><span data-lang="en">Instructor Health</span><span data-lang="ja">インストラクターの健康</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Reference</span>
+                            <span data-lang="ja">リファレンス</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                            <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                            <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                            <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button id="lang-en" class="active">English</button>
+                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <button id="lang-ja">日本語</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+                <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Monitoring</span>
+                    <span data-lang="ja">モニタリング</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                    <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                    <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                    <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                    <li><a href="moni1000.html"><span data-lang="en">Moni1000</span><span data-lang="ja">モニ1000</span></a></li>
+                    <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge-mobile">計画中</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Climate</span>
+                    <span data-lang="ja">気候</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                    <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span></a></li>
+                    <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Bleaching</span>
+                    <span data-lang="ja">白化</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                    <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                    <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll &amp; Bleaching</span><span data-lang="ja">クロロフィルと白化</span></a></li>
+                    <li><a href="dissolved-oxygen-bleaching.html"><span data-lang="en">Dissolved Oxygen &amp; Bleaching</span><span data-lang="ja">溶存酸素と白化</span></a></li>
+                    <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Learn</span>
+                    <span data-lang="ja">サンゴを知る</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                    <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                    <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">For Divers</span>
+                    <span data-lang="ja">ダイバー向け</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                    <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                    <li><a href="diving-population.html"><span data-lang="en">Diving Population</span><span data-lang="ja">ダイビング人口</span></a></li>
+                    <li><a href="instructor-health.html"><span data-lang="en">Instructor Health</span><span data-lang="ja">インストラクターの健康</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Reference</span>
+                    <span data-lang="ja">リファレンス</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                    <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                    <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                    <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <h1 data-lang="en">Occupational Health Risks for Dive Professionals</h1>
+            <h1 data-lang="ja">ダイビングプロフェッショナルの職業健康リスク</h1>
+            <p class="hero-subtitle" data-lang="en">
+                Chronic health risks facing instructors and guides who dive frequently over many years.
+            </p>
+            <p class="hero-subtitle" data-lang="ja">
+                長年にわたり頻繁に潜水するインストラクター・ガイドが直面する慢性的な健康リスクの概観。
+            </p>
+        </section>
+
+        <!-- Medical Disclaimer -->
+        <div class="disclaimer">
+            <p data-lang="en">
+                <strong>Disclaimer:</strong> This page provides a narrative overview of occupational health risks based on published literature. It is not medical advice. Consult a physician experienced in diving medicine for individual health concerns.
+            </p>
+            <p data-lang="ja">
+                <strong>免責事項:</strong> このページは公表された文献に基づく職業健康リスクの概説であり、医学的助言ではない。個別の症状についてはダイビング医学に精通した医師に相談すること。
+            </p>
+        </div>
+
+        <!-- Key Numbers -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Dysbaric Osteonecrosis</span>
+                    <span data-lang="ja">減圧性骨壊死</span>
+                </div>
+                <div class="kpi-value warning">25%</div>
+                <div class="kpi-context">
+                    <span data-lang="en">of instructors with 500+ dives (Cimsit 2007)</span>
+                    <span data-lang="ja">500本超のインストラクターで検出（Cimsit 2007）</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Cognitive Complaints</span>
+                    <span data-lang="ja">認知機能の訴え</span>
+                </div>
+                <div class="kpi-value">18%</div>
+                <div class="kpi-context">
+                    <span data-lang="en">forgetfulness in pro divers vs. 6% non-divers (Ross 2007)</span>
+                    <span data-lang="ja">物忘れ: プロダイバー18% vs 非ダイバー6%（Ross 2007）</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">TMJ Pain</span>
+                    <span data-lang="ja">顎関節痛</span>
+                </div>
+                <div class="kpi-value">44%</div>
+                <div class="kpi-context">
+                    <span data-lang="en">develop TMD after starting diving (Lobbezoo 2014)</span>
+                    <span data-lang="ja">ダイビング開始後にTMD発症（Lobbezoo 2014）</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Attrition</span>
+                    <span data-lang="ja">離職率</span>
+                </div>
+                <div class="kpi-value alert">77%</div>
+                <div class="kpi-context">
+                    <span data-lang="en">leave within 5 years; median tenure 1 year (Sames 2019)</span>
+                    <span data-lang="ja">5年以内に離職。在籍中央値1年（Sames 2019）</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: Dysbaric Conditions -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">1. Dysbaric Conditions</span>
+                <span data-lang="ja">1. 圧力関連の長期リスク</span>
+            </h2>
+
+            <h3>
+                <span data-lang="en">Dysbaric Osteonecrosis (DON)</span>
+                <span data-lang="ja">減圧性骨壊死（DON）</span>
+            </h3>
+            <p data-lang="en">
+                DON is aseptic necrosis of bone caused by cumulative exposure to elevated ambient pressure. Lesions most commonly affect the femoral head and humeral head and are frequently bilateral. DON is typically asymptomatic until joint surface collapse occurs, at which point surgical intervention (arthroplasty) may be required. Age is the only independent risk factor identified in recreational instructor populations.<sup class="ref-tag">[1]</sup>
+            </p>
+            <p data-lang="ja">
+                DONは高圧環境への累積的暴露による骨の無菌性壊死である。病変は大腿骨頭と上腕骨頭に好発し、両側性であることが多い。関節面の陥没が生じるまで通常は無症候であり、陥没した場合は人工関節置換術が必要になりうる。レクリエーショナルインストラクター集団では、年齢が唯一の独立リスク因子として同定されている。<sup class="ref-tag">[1]</sup>
+            </p>
+
+            <h3>
+                <span data-lang="en">DON Prevalence by Population</span>
+                <span data-lang="ja">集団別DON有病率</span>
+            </h3>
+            <div class="table-scroll">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th><span data-lang="en">Population</span><span data-lang="ja">集団</span></th>
+                            <th><span data-lang="en">Prevalence</span><span data-lang="ja">有病率</span></th>
+                            <th><span data-lang="en">Source</span><span data-lang="ja">出典</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span data-lang="en">Hawaii breath-hold fishermen</span><span data-lang="ja">ハワイ潜水漁師</span></td>
+                            <td class="risk-high">65%</td>
+                            <td>StatPearls<sup class="ref-tag">[9]</sup></td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Japanese commercial divers</span><span data-lang="ja">日本の商業ダイバー</span></td>
+                            <td class="risk-high">50%</td>
+                            <td>StatPearls<sup class="ref-tag">[9]</sup></td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Divemasters/instructors (500+ dives)</span><span data-lang="ja">DM/インストラクター（500本超）</span></td>
+                            <td class="risk-mod">25%</td>
+                            <td>Cimsit 2007<sup class="ref-tag">[1]</sup></td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">UK commercial divers</span><span data-lang="ja">英国商業ダイバー</span></td>
+                            <td>16%</td>
+                            <td>StatPearls<sup class="ref-tag">[9]</sup></td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">US Navy divers</span><span data-lang="ja">米海軍ダイバー</span></td>
+                            <td class="risk-low">2.5%</td>
+                            <td>StatPearls<sup class="ref-tag">[9]</sup></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p data-lang="en">
+                The 25% prevalence in recreational instructors is notable given that these individuals followed standard decompression rules.<sup class="ref-tag">[1]</sup> A case report describes bilateral humeral head DON requiring hemiarthroplasty in a technical diving instructor with a 30-year career.<sup class="ref-tag">[2]</sup>
+            </p>
+            <p data-lang="ja">
+                レクリエーショナルインストラクターにおける25%の有病率は、これらの個人が標準的な減圧規則を遵守していた点で注目に値する。<sup class="ref-tag">[1]</sup> 30年のキャリアを持つテクニカルダイビングインストラクターで両側上腕骨頭DON、半関節置換術を要した症例が報告されている。<sup class="ref-tag">[2]</sup>
+            </p>
+
+            <h3>
+                <span data-lang="en">Subclinical DCS &amp; PFO</span>
+                <span data-lang="ja">亜臨床的DCSとPFO</span>
+            </h3>
+            <p data-lang="en">
+                Patent foramen ovale (PFO) is present in approximately 25% of the general population and increases DCS risk approximately 5-fold, though the absolute risk remains small.<sup class="ref-tag">[8][10]</sup> The cumulative effect of asymptomatic venous gas emboli crossing a PFO is hypothesized to contribute to long-term neurological and skeletal damage, but this has not been conclusively demonstrated in recreational populations.
+            </p>
+            <p data-lang="ja">
+                卵円孔開存（PFO）は一般人口の約25%に存在し、DCSリスクを約5倍に高めるが、絶対リスクは小さい。<sup class="ref-tag">[8][10]</sup> 無症候性の静脈ガス塞栓がPFOを通過することで長期的な神経・骨格への損傷に寄与するとの仮説があるが、レクリエーショナル集団では結論に至っていない。
+            </p>
+        </div>
+
+        <!-- Section 2: Musculoskeletal -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">2. Musculoskeletal</span>
+                <span data-lang="ja">2. 筋骨格系</span>
+            </h2>
+            <p data-lang="en">
+                Among 2,958 UK professional divers, 41% reported musculoskeletal symptoms (vs. 34% non-divers; OR 3.8).<sup class="ref-tag">[3]</sup> A study of 181 recreational scuba divers found lifetime low-back pain prevalence of 55.8% and 1-year prevalence of 50.3%. Divers with higher certification levels and heavier weight belts reported more symptoms.<sup class="ref-tag">[13]</sup>
+            </p>
+            <p data-lang="ja">
+                英国プロダイバー2,958名のうち41%が筋骨格系症状を報告した（非ダイバー34%、OR 3.8）。<sup class="ref-tag">[3]</sup> レクリエーショナルダイバー181名の調査では、腰痛の生涯有病率55.8%、1年有病率50.3%であった。上位認定保持者およびウェイトベルトの重い者で症状が多かった。<sup class="ref-tag">[13]</sup>
+            </p>
+
+            <h3>
+                <span data-lang="en">Risk Factors Specific to Instructors</span>
+                <span data-lang="ja">インストラクター固有のリスク要因</span>
+            </h3>
+            <ul>
+                <li>
+                    <span data-lang="en">Multiple daily entries with 15-20 kg equipment: beach entries, boat ladder climbs</span>
+                    <span data-lang="ja">1日複数回の15-20 kg器材装着によるエントリー: ビーチエントリー、ボートラダーの昇降</span>
+                </li>
+                <li>
+                    <span data-lang="en">Lifting and assembling student equipment on boats</span>
+                    <span data-lang="ja">ボート上での受講者器材の組立・持ち上げ</span>
+                </li>
+                <li>
+                    <span data-lang="en">Sustained non-neutral postures underwater (hovering in demonstration positions)</span>
+                    <span data-lang="ja">水中での非中立姿勢の維持（デモンストレーション姿勢でのホバリング）</span>
+                </li>
+                <li>
+                    <span data-lang="en">Physical assists for panicking or exhausted students at the surface</span>
+                    <span data-lang="ja">パニック状態や疲労した受講者への水面での身体的補助</span>
+                </li>
+            </ul>
+            <p data-lang="en">
+                Prevention: don equipment at the water's edge rather than carrying it assembled; use lift bags or boat winches for heavy cylinders; perform core strengthening exercises; use knee-flexion lifting technique on boats.
+            </p>
+            <p data-lang="ja">
+                予防: 器材は水際まで運んでから装着する。重いシリンダーにはリフトバッグやボートウインチを使用する。体幹強化運動を行う。ボート上での持ち上げは膝を曲げる方法で行う。
+            </p>
+        </div>
+
+        <!-- Section 3: Otological -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">3. Otological</span>
+                <span data-lang="ja">3. 耳鼻科系</span>
+            </h2>
+
+            <h3>
+                <span data-lang="en">External Auditory Exostosis</span>
+                <span data-lang="ja">外耳道外骨腫（サーファーズイヤー）</span>
+            </h3>
+            <p data-lang="en">
+                Cold water exposure stimulates bony overgrowth of the ear canal walls. US Navy divers showed 26% exostosis prevalence (vs. 0% in controls); cold-water divers developed exostosis at significantly higher rates than warm-water divers.<sup class="ref-tag">[14][15]</sup> Instructors working year-round in temperate waters (e.g. Izu Peninsula, Japan, where winter SST drops to 14-16&deg;C) face cumulative exposure comparable to surfers. Onset is typically in the mid-30s. Prevention: wear a neoprene hood in water below 19&deg;C.
+            </p>
+            <p data-lang="ja">
+                冷水暴露は外耳道骨壁の骨増殖を促進する。米海軍ダイバーでは外骨腫有病率26%（対照群0%）であり、冷水ダイバーは温水ダイバーより有意に高い発症率を示した。<sup class="ref-tag">[14][15]</sup> 温帯水域（伊豆半島など、冬季SST 14-16&deg;C）で通年潜水するインストラクターは、サーファーに匹敵する累積暴露を受ける。発症は通常30代半ば以降。予防: 19&deg;C以下の水域ではネオプレンフードを着用する。
+            </p>
+
+            <h3>
+                <span data-lang="en">Middle Ear Barotrauma &amp; Hearing</span>
+                <span data-lang="ja">中耳気圧外傷と聴力</span>
+            </h3>
+            <p data-lang="en">
+                Over 50% of divers experience at least one middle ear barotrauma episode during their diving career (DAN).<sup class="ref-tag">[11]</sup> Inner ear barotrauma from forceful Valsalva can rupture the oval/round window, causing acute sensorineural hearing loss, tinnitus, and vertigo.<sup class="ref-tag">[5]</sup> In the Ross 2007 survey, hearing loss was reported by 16% of divers vs. 11% of non-divers (OR 1.6).<sup class="ref-tag">[3]</sup> Instructors additionally face chronic boat engine noise exposure.
+            </p>
+            <p data-lang="ja">
+                ダイバーの50%以上がキャリア中に少なくとも1回の中耳気圧外傷を経験する（DAN）。<sup class="ref-tag">[11]</sup> 強制バルサルバによる内耳気圧外傷は卵円窓/正円窓の破裂を起こし、急性感音難聴、耳鳴、めまいの原因となる。<sup class="ref-tag">[5]</sup> Ross 2007の調査では、聴力低下はダイバーの16%（非ダイバー11%、OR 1.6）で報告された。<sup class="ref-tag">[3]</sup> インストラクターはさらにボートエンジン騒音への慢性暴露がある。
+            </p>
+        </div>
+
+        <!-- Section 4: Cardiovascular -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">4. Cardiovascular</span>
+                <span data-lang="ja">4. 心血管系</span>
+            </h2>
+            <p data-lang="en">
+                In a study of 768 former Norwegian professional divers, those diving &gt;150 dives/year had a myocardial infarction/angina prevalence of 11% vs. 4% among those diving &lt;50/year (adjusted RR significant). Divers who omitted rest days after three consecutive diving days had higher hypertension rates (28% vs. 18%, RR 1.47).<sup class="ref-tag">[4]</sup>
+            </p>
+            <p data-lang="ja">
+                ノルウェーの元プロダイバー768名の調査では、年間150本超潜水群の心筋梗塞/狭心症有病率が11%であったのに対し、50本以下群は4%であった（調整RR有意）。連続3日の潜水後に休息日を取らなかった群では高血圧率が上昇した（28% vs. 18%、RR 1.47）。<sup class="ref-tag">[4]</sup>
+            </p>
+            <p data-lang="en">
+                Cardiac events are the second leading cause of diving fatalities. Analysis of 947 US recreational diving deaths (1992-2003) found cardiac incidents as the disabling injury in 26% of cases; 60% of cardiac victims had reported chest pain or dyspnoea before or during the dive.<sup class="ref-tag">[16]</sup> In 126 Australian fatalities (2001-2013), cardiac disabling injuries accounted for 25%.<sup class="ref-tag">[17]</sup>
+            </p>
+            <p data-lang="ja">
+                心疾患はダイビング死亡事故の第2位の原因である。米国レクリエーショナルダイビング死亡947件（1992-2003年）の分析では、心臓関連が障害原因の26%を占め、心臓事故被害者の60%がダイビング前または中に胸痛や呼吸困難を訴えていた。<sup class="ref-tag">[16]</sup> オーストラリアの死亡事故126件（2001-2013年）では、心臓関連が25%であった。<sup class="ref-tag">[17]</sup>
+            </p>
+            <p data-lang="en">
+                Prevention: ensure adequate rest days (avoid >3 consecutive diving days without rest); annual cardiovascular screening for instructors over 40; maintain aerobic fitness.
+            </p>
+            <p data-lang="ja">
+                予防: 十分な休息日を確保する（3日連続潜水後は休息を取る）。40歳以上のインストラクターは年1回の心血管スクリーニング。有酸素体力を維持する。
+            </p>
+        </div>
+
+        <!-- Section 5: Neurological & Cognitive -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">5. Neurological &amp; Cognitive</span>
+                <span data-lang="ja">5. 神経・認知系</span>
+            </h2>
+            <p data-lang="en">
+                In the Ross 2007 survey of 2,958 UK professional divers, "forgetfulness and loss of concentration" was reported by 18% of divers vs. 6% of non-divers (OR 3.8). Offshore divers showed 22% prevalence (OR 4.8), while non-offshore divers showed 9% (OR 1.9).<sup class="ref-tag">[3]</sup> The DMAC stated these symptoms are "mainly mild and not linked to a clear disease entity, but affect quality of life."<sup class="ref-tag">[6]</sup>
+            </p>
+            <p data-lang="ja">
+                Ross 2007による英国プロダイバー2,958名の調査では、「物忘れ・集中力低下」がダイバーの18%で報告された（非ダイバー6%、OR 3.8）。オフショアダイバーでは22%（OR 4.8）、非オフショアダイバーでは9%（OR 1.9）であった。<sup class="ref-tag">[3]</sup> DMACはこれらの症状を「主に軽度で明確な疾患と結びつかないが、生活の質に影響する」としている。<sup class="ref-tag">[6]</sup>
+            </p>
+            <p data-lang="en">
+                Experimental studies have shown significantly lower short-term memory scores in experienced recreational divers compared to non-diving controls.<sup class="ref-tag">[18]</sup> A review found prolonged reaction times and weakened decision-making in divers performing &gt;100 dives/year at depths &gt;40 m, and significant impairment in visuoconstructional and visual long-term memory among divers with 2,000-4,000 career dives.<sup class="ref-tag">[19]</sup> The mechanism remains unclear; cumulative asymptomatic microbubble exposure is the leading hypothesis.
+            </p>
+            <p data-lang="ja">
+                実験的研究では、経験豊富なレクリエーショナルダイバーは非ダイバー対照群と比較して短期記憶スコアが有意に低いことが示されている。<sup class="ref-tag">[18]</sup> レビューでは、年間100本超・水深40 m超のダイバーで反応時間の延長と意思決定の低下が認められ、通算2,000-4,000本のダイバーでは視覚構成能力と視覚長期記憶の有意な低下が報告されている。<sup class="ref-tag">[19]</sup> メカニズムは未解明であり、累積的な無症候性微小気泡暴露が有力な仮説である。
+            </p>
+        </div>
+
+        <!-- Section 6: Eyes, Skin & Oral -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">6. Eyes, Skin &amp; Oral</span>
+                <span data-lang="ja">6. 眼・皮膚・口腔</span>
+            </h2>
+
+            <h3>
+                <span data-lang="en">Pterygium &amp; Cataract</span>
+                <span data-lang="ja">翼状片と白内障</span>
+            </h3>
+            <p data-lang="en">
+                Global pterygium prevalence is 12% (95% CI 11-14%), rising to 19.3% in high-UV areas. Outdoor occupation is an independent risk factor (OR 1.46). Sunglasses are strongly protective (OR 0.47).<sup class="ref-tag">[20]</sup> Hyperbaric oxygen exposure causes dose-dependent nuclear cataract formation; HBO patients receiving 150+ sessions showed a 47% cataract rate.<sup class="ref-tag">[21]</sup> Recreational diving involves far fewer exposures, but high-frequency Nitrox users accumulate meaningful cumulative lens PO<sub>2</sub>. No prevalence study specific to recreational divers exists.
+            </p>
+            <p data-lang="ja">
+                翼状片の世界有病率は12%（95% CI 11-14%）で、高紫外線地域では19.3%に上昇する。屋外労働は独立リスク因子である（OR 1.46）。サングラスは強い保護効果を示す（OR 0.47）。<sup class="ref-tag">[20]</sup> 高気圧酸素暴露は用量依存性に水晶体核白内障を引き起こし、150回超の高気圧酸素治療を受けた患者では47%に白内障が発生した。<sup class="ref-tag">[21]</sup> レクリエーショナルダイビングの暴露回数は遥かに少ないが、ナイトロックス常用者は累積的なPO<sub>2</sub>暴露が蓄積する。レクリエーショナルダイバー特化の有病率研究は存在しない。
+            </p>
+
+            <h3>
+                <span data-lang="en">Skin &amp; UV</span>
+                <span data-lang="ja">皮膚と紫外線</span>
+            </h3>
+            <p data-lang="en">
+                Outdoor workers face significantly elevated skin cancer risk (SCC OR 2.77, BCC OR 1.83 in farming/construction workers).<sup class="ref-tag">[22]</sup> Water sports athletes average ~4 hours of daily sun exposure, and 49.6% use inadequate sun protection; water and sand reflect UV at &gt;6 times the reflectance of grass.<sup class="ref-tag">[23]</sup> Boating participation is associated with melanoma (OR 2.43).<sup class="ref-tag">[24]</sup> Instructors conducting surface briefings, boat operations, and surface supervision accumulate comparable UV exposure.
+            </p>
+            <p data-lang="ja">
+                屋外労働者は皮膚がんリスクが有意に上昇する（農業/建設業従事者でSCC OR 2.77、BCC OR 1.83）。<sup class="ref-tag">[22]</sup> 水上スポーツ選手は1日平均約4時間の日光暴露があり、49.6%が不十分な日焼け対策しか行っていない。水面と砂浜は芝生の6倍超の紫外線を反射する。<sup class="ref-tag">[23]</sup> ボート活動はメラノーマと関連する（OR 2.43）。<sup class="ref-tag">[24]</sup> 水面ブリーフィング、ボート運営、水面監視を行うインストラクターは同等の紫外線暴露を受ける。
+            </p>
+
+            <h3>
+                <span data-lang="en">TMJ &amp; Dental Barotrauma</span>
+                <span data-lang="ja">顎関節症と歯のバロトラウマ</span>
+            </h3>
+            <p data-lang="en">
+                A study of 536 Dutch divers found that 44.1% developed TMD pain after starting diving. Clenching (OR 2.47) and poor mouthpiece quality (OR 0.89 per quality unit) were significant predictors.<sup class="ref-tag">[25]</sup> Among 287 Turkish divers, 22.6% experienced dental pain during or after dives, with 17% requiring dental treatment.<sup class="ref-tag">[26]</sup> In a survey of 1,015 French divers, 25.2% reported oral manifestations including barodontalgia (10.8%) and TMJ symptoms (13.4%).<sup class="ref-tag">[27]</sup>
+            </p>
+            <p data-lang="ja">
+                オランダ人ダイバー536名の調査では、44.1%がダイビング開始後にTMD（顎関節症）を発症した。噛みしめ（OR 2.47）とマウスピースの品質不良（品質1単位あたりOR 0.89）が有意な予測因子であった。<sup class="ref-tag">[25]</sup> トルコ人ダイバー287名のうち22.6%がダイビング中または後に歯痛を経験し、17%が歯科治療を要した。<sup class="ref-tag">[26]</sup> フランス人ダイバー1,015名の調査では、25.2%が口腔症状（歯のバロドンタルジア10.8%、TMJ症状13.4%）を報告した。<sup class="ref-tag">[27]</sup>
+            </p>
+            <p data-lang="en">
+                Prevention: use a custom-fitted mouthpiece; avoid excessive jaw clenching; pre-dive dental check-ups to identify faulty restorations.
+            </p>
+            <p data-lang="ja">
+                予防: カスタムフィットのマウスピースを使用する。過度の噛みしめを避ける。不良な歯科修復物を事前に検査する。
+            </p>
+        </div>
+
+        <!-- Section 7: Respiratory -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">7. Respiratory</span>
+                <span data-lang="ja">7. 呼吸器系</span>
+            </h2>
+            <p data-lang="en">
+                A prospective study of 468 military scuba divers found no significant difference in FEV<sub>1</sub> decline compared to non-diving controls over a mean 5-year follow-up. Smoking, rather than diving, was the main predictor of accelerated decline.<sup class="ref-tag">[28]</sup> However, occupational divers with 20+ years of experience showed significantly lower FEV<sub>1</sub>/FVC ratio and FEF<sub>25-75%</sub> (p &lt; 0.001), indicating subclinical small-airway obstruction despite normal symptoms and chest X-rays.<sup class="ref-tag">[29]</sup>
+            </p>
+            <p data-lang="ja">
+                軍のスキューバダイバー468名の前向き研究では、平均5年の追跡期間でFEV<sub>1</sub>低下に非潜水対照群との有意差は認められなかった。加速的な低下の主な予測因子は潜水ではなく喫煙であった。<sup class="ref-tag">[28]</sup> ただし、20年以上の経験を持つ職業ダイバーではFEV<sub>1</sub>/FVC比およびFEF<sub>25-75%</sub>が有意に低下しており（p &lt; 0.001）、正常な症状と胸部X線所見にもかかわらず亜臨床的な小気道閉塞が示された。<sup class="ref-tag">[29]</sup>
+            </p>
+            <p data-lang="en">
+                Chronic sinusitis from repeated pressure changes is a common complaint among high-frequency divers. Prevention: do not dive with upper respiratory infections; use nasal saline irrigation; avoid forced equalization.
+            </p>
+            <p data-lang="ja">
+                反復的な圧力変化による慢性副鼻腔炎は高頻度ダイバーの一般的な訴えである。予防: 上気道感染時に潜水しない。鼻腔の生理食塩水洗浄を行う。無理な耳抜きを避ける。
+            </p>
+        </div>
+
+        <!-- Section 8: Mental Health -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">8. Mental Health</span>
+                <span data-lang="ja">8. 精神・心理面</span>
+            </h2>
+
+            <h3>
+                <span data-lang="en">Burnout &amp; Attrition</span>
+                <span data-lang="ja">バーンアウトと離職</span>
+            </h3>
+            <p data-lang="en">
+                Burnout syndrome was identified in 29% of recreational diving instructors. Personality traits (extraversion, agreeableness, conscientiousness, openness) were negatively correlated with burnout.<sup class="ref-tag">[30]</sup> A New Zealand study found that ~77% of professional divers leave within 5 years of entry. The median tenure for quitters was only 1 year. Instructors were more than twice as likely to quit as non-instructors (38.4% vs. 17.4%). The overwhelming reason (97.1%) was job dissatisfaction (remuneration, reliability of employment), not health.<sup class="ref-tag">[7]</sup>
+            </p>
+            <p data-lang="ja">
+                レクリエーショナルダイビングインストラクターの29%にバーンアウト症候群が確認された。性格特性（外向性、協調性、誠実性、開放性）はバーンアウトと負の相関を示した。<sup class="ref-tag">[30]</sup> ニュージーランドの調査では、プロダイバーの約77%が入職後5年以内に離職し、離職者の在籍中央値はわずか1年であった。インストラクターの離職率は非インストラクターの2倍以上（38.4% vs. 17.4%）であった。離職理由の圧倒的多数（97.1%）は職務不満（報酬、雇用の不安定性）であり、健康問題ではなかった。<sup class="ref-tag">[7]</sup>
+            </p>
+
+            <h3>
+                <span data-lang="en">Trauma &amp; PTSD</span>
+                <span data-lang="ja">トラウマとPTSD</span>
+            </h3>
+            <p data-lang="en">
+                Among 40 Italian Navy and Coast Guard divers involved in mass-casualty operations, full DSM-5 PTSD was diagnosed in 7.5% and partial PTSD in 22.5%.<sup class="ref-tag">[31]</sup> In a survey of 155 Irish volunteer search-and-recovery divers, experienced divers showed lower post-traumatic stress symptoms than those without recovery experience, suggesting resilience selection or adaptation.<sup class="ref-tag">[32]</sup> Recreational instructors may witness student emergencies; while no large-scale study exists, DAN sources note that 25-50% of diving accident victims or witnesses report lasting psychological effects.
+            </p>
+            <p data-lang="ja">
+                大量死傷者事案に従事したイタリア海軍・沿岸警備隊ダイバー40名のうち、DSM-5の完全PTSD診断率は7.5%、部分的PTSDは22.5%であった。<sup class="ref-tag">[31]</sup> アイルランドのボランティア捜索・回収ダイバー155名の調査では、経験豊富なダイバーは回収経験のないダイバーより外傷後ストレス症状が低く、レジリエンスの選択効果または適応が示唆された。<sup class="ref-tag">[32]</sup> レクリエーショナルインストラクターも受講者の緊急事態に立ち会う可能性がある。大規模研究は存在しないが、DANの情報では、ダイビング事故の被害者または目撃者の25-50%が持続的な心理的影響を報告している。
+            </p>
+        </div>
+
+        <!-- Section 9: Prevention Summary Table -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">9. Organ System Risk Summary</span>
+                <span data-lang="ja">9. 臓器系統別リスクサマリー</span>
+            </h2>
+
+            <div class="table-scroll">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th><span data-lang="en">System</span><span data-lang="ja">系統</span></th>
+                            <th><span data-lang="en">Condition</span><span data-lang="ja">疾患</span></th>
+                            <th><span data-lang="en">Evidence</span><span data-lang="ja">エビデンス</span></th>
+                            <th><span data-lang="en">Preventable?</span><span data-lang="ja">予防</span></th>
+                            <th><span data-lang="en">Key Source</span><span data-lang="ja">主要出典</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span data-lang="en">Skeletal</span><span data-lang="ja">骨格</span></td>
+                            <td><span data-lang="en">DON</span><span data-lang="ja">減圧性骨壊死</span></td>
+                            <td>25% <span data-lang="en">in instructors</span><span data-lang="ja">（インストラクター）</span></td>
+                            <td class="prevent-partial"><span data-lang="en">Partially</span><span data-lang="ja">一部</span></td>
+                            <td>Cimsit 2007</td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">MSK</span><span data-lang="ja">筋骨格</span></td>
+                            <td><span data-lang="en">Low back pain</span><span data-lang="ja">腰痛</span></td>
+                            <td>55.8% <span data-lang="en">lifetime</span><span data-lang="ja">生涯</span></td>
+                            <td class="prevent-yes"><span data-lang="en">Yes</span><span data-lang="ja">可能</span></td>
+                            <td>Knaepen 2009</td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">ENT</span><span data-lang="ja">耳鼻</span></td>
+                            <td><span data-lang="en">Exostosis</span><span data-lang="ja">外骨腫</span></td>
+                            <td>26% <span data-lang="en">(cold water)</span><span data-lang="ja">（冷水）</span></td>
+                            <td class="prevent-yes"><span data-lang="en">Yes (hood)</span><span data-lang="ja">可能（フード）</span></td>
+                            <td>Karegeannes 1995</td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">ENT</span><span data-lang="ja">耳鼻</span></td>
+                            <td><span data-lang="en">Middle ear barotrauma</span><span data-lang="ja">中耳気圧外傷</span></td>
+                            <td>&gt;50% <span data-lang="en">lifetime</span><span data-lang="ja">生涯</span></td>
+                            <td class="prevent-partial"><span data-lang="en">Partially</span><span data-lang="ja">一部</span></td>
+                            <td>DAN</td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Cardio</span><span data-lang="ja">心血管</span></td>
+                            <td><span data-lang="en">MI / angina (high freq.)</span><span data-lang="ja">心筋梗塞/狭心症（高頻度）</span></td>
+                            <td>11% <span data-lang="en">vs. 4%</span><span data-lang="ja">vs. 4%</span></td>
+                            <td class="prevent-yes"><span data-lang="en">Yes (rest days)</span><span data-lang="ja">可能（休息日）</span></td>
+                            <td>Todnem 2017</td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Neuro</span><span data-lang="ja">神経</span></td>
+                            <td><span data-lang="en">Cognitive complaints</span><span data-lang="ja">認知機能低下</span></td>
+                            <td>18% <span data-lang="en">vs. 6%</span><span data-lang="ja">vs. 6%</span></td>
+                            <td class="prevent-partial"><span data-lang="en">Unknown</span><span data-lang="ja">不明</span></td>
+                            <td>Ross 2007</td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Eyes</span><span data-lang="ja">眼科</span></td>
+                            <td><span data-lang="en">Pterygium</span><span data-lang="ja">翼状片</span></td>
+                            <td>12-19% <span data-lang="en">(outdoor workers)</span><span data-lang="ja">（屋外労働者）</span></td>
+                            <td class="prevent-yes"><span data-lang="en">Yes (sunglasses)</span><span data-lang="ja">可能（サングラス）</span></td>
+                            <td>Rezvan 2018</td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Skin</span><span data-lang="ja">皮膚</span></td>
+                            <td><span data-lang="en">UV damage / skin cancer</span><span data-lang="ja">紫外線障害/皮膚がん</span></td>
+                            <td>SCC OR 2.77</td>
+                            <td class="prevent-yes"><span data-lang="en">Yes (sunscreen)</span><span data-lang="ja">可能（日焼け止め）</span></td>
+                            <td>Trakatelli 2016</td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Oral</span><span data-lang="ja">口腔</span></td>
+                            <td><span data-lang="en">TMD</span><span data-lang="ja">顎関節症</span></td>
+                            <td>44% <span data-lang="en">after starting diving</span><span data-lang="ja">ダイビング開始後</span></td>
+                            <td class="prevent-yes"><span data-lang="en">Yes (mouthpiece)</span><span data-lang="ja">可能（マウスピース）</span></td>
+                            <td>Lobbezoo 2014</td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Lung</span><span data-lang="ja">呼吸器</span></td>
+                            <td><span data-lang="en">Small airway obstruction (20+ yr)</span><span data-lang="ja">小気道閉塞（20年超）</span></td>
+                            <td><span data-lang="en">Subclinical</span><span data-lang="ja">亜臨床</span></td>
+                            <td class="prevent-partial"><span data-lang="en">Unknown</span><span data-lang="ja">不明</span></td>
+                            <td>Ozgok-Kangal 2020</td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Mental</span><span data-lang="ja">精神</span></td>
+                            <td><span data-lang="en">Burnout</span><span data-lang="ja">バーンアウト</span></td>
+                            <td>29%</td>
+                            <td class="prevent-partial"><span data-lang="en">Partially</span><span data-lang="ja">一部</span></td>
+                            <td>Kannenberg 2022</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 10: Recommended Screening -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">10. Recommended Periodic Screening</span>
+                <span data-lang="ja">10. 推奨定期検診</span>
+            </h2>
+            <p data-lang="en">
+                The following recommendations are synthesized from DAN guidelines and the literature reviewed above. They apply to active dive professionals conducting &gt;100 dives/year.
+            </p>
+            <p data-lang="ja">
+                以下はDANガイドラインおよび上記レビュー文献から整理した推奨事項であり、年間100本超の潜水を行うアクティブなダイビングプロフェッショナルを対象とする。
+            </p>
+            <div class="table-scroll">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th><span data-lang="en">Examination</span><span data-lang="ja">検査項目</span></th>
+                            <th><span data-lang="en">Target</span><span data-lang="ja">対象</span></th>
+                            <th><span data-lang="en">Frequency</span><span data-lang="ja">頻度</span></th>
+                            <th><span data-lang="en">Notes</span><span data-lang="ja">備考</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span data-lang="en">Dive medical fitness</span><span data-lang="ja">潜水医学適性検査</span></td>
+                            <td><span data-lang="en">All</span><span data-lang="ja">全員</span></td>
+                            <td><span data-lang="en">Annual</span><span data-lang="ja">年1回</span></td>
+                            <td><span data-lang="en">Required by most certifying agencies for professionals</span><span data-lang="ja">ほとんどの指導団体がプロに要求</span></td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Cardiovascular screening</span><span data-lang="ja">心血管スクリーニング</span></td>
+                            <td><span data-lang="en">Age 40+</span><span data-lang="ja">40歳以上</span></td>
+                            <td><span data-lang="en">Annual</span><span data-lang="ja">年1回</span></td>
+                            <td><span data-lang="en">ECG, blood pressure, lipids; exercise stress test if risk factors present</span><span data-lang="ja">心電図、血圧、脂質。リスク因子あれば運動負荷試験</span></td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Audiometry</span><span data-lang="ja">聴力検査</span></td>
+                            <td><span data-lang="en">All</span><span data-lang="ja">全員</span></td>
+                            <td><span data-lang="en">Every 2-3 years</span><span data-lang="ja">2-3年ごと</span></td>
+                            <td><span data-lang="en">Baseline at career start; monitor high-frequency range</span><span data-lang="ja">キャリア開始時にベースライン。高周波数域を監視</span></td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Spirometry</span><span data-lang="ja">スパイロメトリー</span></td>
+                            <td><span data-lang="en">10+ year career</span><span data-lang="ja">キャリア10年超</span></td>
+                            <td><span data-lang="en">Every 2-3 years</span><span data-lang="ja">2-3年ごと</span></td>
+                            <td><span data-lang="en">Monitor FEV<sub>1</sub>/FVC and FEF<sub>25-75%</sub></span><span data-lang="ja">FEV<sub>1</sub>/FVCとFEF<sub>25-75%</sub>を監視</span></td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Long bone X-ray (DON screening)</span><span data-lang="ja">長管骨X線（DONスクリーニング）</span></td>
+                            <td><span data-lang="en">500+ career dives, age 35+</span><span data-lang="ja">通算500本超、35歳以上</span></td>
+                            <td><span data-lang="en">Every 5 years</span><span data-lang="ja">5年ごと</span></td>
+                            <td><span data-lang="en">Shoulders and hips; MRI if symptoms arise</span><span data-lang="ja">肩と股関節。症状出現時はMRI</span></td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Dermatological screening</span><span data-lang="ja">皮膚科スクリーニング</span></td>
+                            <td><span data-lang="en">Tropical / high-UV sites</span><span data-lang="ja">熱帯/高紫外線地域</span></td>
+                            <td><span data-lang="en">Annual</span><span data-lang="ja">年1回</span></td>
+                            <td><span data-lang="en">Full-body mole check</span><span data-lang="ja">全身のほくろチェック</span></td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Dental examination</span><span data-lang="ja">歯科検診</span></td>
+                            <td><span data-lang="en">All</span><span data-lang="ja">全員</span></td>
+                            <td><span data-lang="en">Every 6 months</span><span data-lang="ja">6ヶ月ごと</span></td>
+                            <td><span data-lang="en">Check restorations before dive season</span><span data-lang="ja">ダイブシーズン前に修復物を確認</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 11: References -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">References</span>
+                <span data-lang="ja">引用文献</span>
+            </h2>
+            <ol class="ref-list">
+                <li>Cimsit M, Ilgezdi S, Cimsit C, Uzun G. Dysbaric osteonecrosis in experienced dive masters and instructors. <em>Aviat Space Environ Med</em>. 2007;78:1150-4. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/18064920/" target="_blank" rel="noopener">PMID: 18064920</a></li>
+                <li>Coleman B, Davis FM. Dysbaric osteonecrosis in technical divers: The new 'at-risk' group? <em>Diving Hyperb Med</em>. 2020;50(3):295-299. <a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7819721/" target="_blank" rel="noopener">PMC7819721</a></li>
+                <li>Ross JAS, Macdiarmid JI, Osman LM, et al. Health status of professional divers and offshore oil industry workers. <em>Occup Med</em>. 2007;57(4):254-261. <a class="source-link" href="https://doi.org/10.1093/occmed/kqm005" target="_blank" rel="noopener">DOI: 10.1093/occmed/kqm005</a></li>
+                <li>Todnem K, Nyland H, Skeidsvoll H, et al. Diving and long-term cardiovascular health. <em>Occup Med</em>. 2017;67(5):371-376. <a class="source-link" href="https://doi.org/10.1093/occmed/kqx042" target="_blank" rel="noopener">DOI: 10.1093/occmed/kqx042</a></li>
+                <li>Livingstone DM, Smith KA. Scuba diving and otology: a systematic review. <em>J Laryngol Otol</em>. 2017;131(12):1049-1056. <a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6147252/" target="_blank" rel="noopener">PMC6147252</a></li>
+                <li>DMAC. Statement on Commercial Diving and Health. 2006.</li>
+                <li>Sames C, Gorman DF, Mitchell SJ, Zhou L. The impact of health on professional diver attrition. <em>Diving Hyperb Med</em>. 2019;49(2):107-111. <a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6704000/" target="_blank" rel="noopener">PMC6704000</a></li>
+                <li>Karttunen V, et al. Patent foramen ovale and decompression illness in divers. <em>Tidsskr Nor Laegeforen</em>. 2010;130:401-404. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/20418929/" target="_blank" rel="noopener">PMID: 20418929</a></li>
+                <li>Cooper JS, Hanson KC. Dysbaric Osteonecrosis. <em>StatPearls</em> [Internet]. <a class="source-link" href="https://www.ncbi.nlm.nih.gov/books/NBK482310/" target="_blank" rel="noopener">NBK482310</a></li>
+                <li>Smerz RW. Patent Foramen Ovale in Diving. <em>StatPearls</em> [Internet]. <a class="source-link" href="https://www.ncbi.nlm.nih.gov/books/NBK431111/" target="_blank" rel="noopener">NBK431111</a></li>
+                <li>DAN. Dive Medical Reference Books: Ears &amp; Diving, Chapter 2: Injuries.</li>
+                <li>Buzzacott P, Denoble PJ (eds). DAN Annual Diving Report. Divers Alert Network.</li>
+                <li>Knaepen K, Cumps E, Zinzen E, Meeusen R. Low-back problems in recreational self-contained underwater breathing apparatus divers. <em>Ergonomics</em>. 2009;52(4):461-473. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/19401898/" target="_blank" rel="noopener">PMID: 19401898</a></li>
+                <li>Karegeannes JC. Incidence of bony outgrowths of the external ear canal in U.S. Navy divers. <em>Undersea Hyperb Med</em>. 1995;22(2):137-141. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/7580769/" target="_blank" rel="noopener">PMID: 7580769</a></li>
+                <li>Ito M, Ikeda M. Does cold water truly promote diver's ear? <em>Undersea Hyperb Med</em>. 1998;25(1):15-19. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/9566088/" target="_blank" rel="noopener">PMID: 9566088</a></li>
+                <li>Denoble P, Caruso J, Dear GdeL, Pieper C, Vann R. Common causes of open-circuit recreational diving fatalities. <em>Undersea Hyperb Med</em>. 2008;35(6):393-406. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/19175095/" target="_blank" rel="noopener">PMID: 19175095</a></li>
+                <li>Lippmann J, Taylor DM. Scuba diving fatalities in Australia 2001-2013. <em>Diving Hyperb Med</em>. 2020;50(2):98-104. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/32557410/" target="_blank" rel="noopener">PMID: 32557410</a></li>
+                <li>Hemelryck W, Germonpre P, Papadopoulou V, Rozloznik M, Balestra C. Long term effects of recreational SCUBA diving on higher cognitive function. <em>Scand J Med Sci Sports</em>. 2014;24(6):928-934. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/23902533/" target="_blank" rel="noopener">PMID: 23902533</a></li>
+                <li>Sharma RI, Marcinkowska AB, Mankowska ND, et al. Cognitive Functions in Divers: A Review. <em>Biology</em>. 2023;12(2):229. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/36829505/" target="_blank" rel="noopener">PMID: 36829505</a></li>
+                <li>Rezvan F, Khabazkhoob M, Hooshmand E, et al. Prevalence and risk factors of pterygium: a systematic review and meta-analysis. <em>Surv Ophthalmol</em>. 2018;63(5):719-735. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/29551597/" target="_blank" rel="noopener">PMID: 29551597</a></li>
+                <li>Palmquist BM, Philipson B, Barr PO. Nuclear cataract and myopia during hyperbaric oxygen therapy. <em>Br J Ophthalmol</em>. 1984;68(2):113-117. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/6691953/" target="_blank" rel="noopener">PMID: 6691953</a></li>
+                <li>Trakatelli M, Barkitzi K, Apap C, et al. Skin cancer risk in outdoor workers: a European multicenter case-control study. <em>J Eur Acad Dermatol Venereol</em>. 2016;30(S3):5-11. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/26995016/" target="_blank" rel="noopener">PMID: 26995016</a></li>
+                <li>De Castro-Maqueda G, Gutierrez-Manzanedo JV, et al. Sun exposure and sun protection among water sports athletes. <em>Int J Environ Res Public Health</em>. 2021;18(2):800. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/33477791/" target="_blank" rel="noopener">PMID: 33477791</a></li>
+                <li>Bennett HG, et al. Skin cancer risk in participants of water-based sports: a scoping review. <em>Photodermatol Photoimmunol Photomed</em>. 2022;38(3):197-214. DOI: 10.1111/phpp.12737</li>
+                <li>Lobbezoo F, van Wijk AJ, Klingler MC, et al. Predictors for the development of temporomandibular disorders in scuba divers. <em>J Oral Rehabil</em>. 2014;41(8):573-578. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/24766672/" target="_blank" rel="noopener">PMID: 24766672</a></li>
+                <li>Sumen SG, Dumlu A, Altun BD. Incidence of dental barotrauma and temporomandibular joint problems of divers in Turkey. <em>Undersea Hyperb Med</em>. 2023;50(1):39-46. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/37302074/" target="_blank" rel="noopener">PMID: 37302074</a></li>
+                <li>Moyaux PA, Fernandez de Grado G, Musset AM, Offner D. Orofacial problems in scuba diving: prevalence and prevention. <em>Odontology</em>. 2022;110(4):769-778. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/35637398/" target="_blank" rel="noopener">PMID: 35637398</a></li>
+                <li>Tetzlaff K, Theysohn J, Stahl C, et al. Decline of FEV1 in scuba divers. <em>Chest</em>. 2006;130(1):238-243. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/16840408/" target="_blank" rel="noopener">PMID: 16840408</a></li>
+                <li>Ozgok-Kangal K, Canarslan-Demir K, Zaman T, Simsek K. The changes in pulmonary functions in occupational divers. <em>Int Marit Health</em>. 2020;71(3):206-210. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/33001433/" target="_blank" rel="noopener">PMID: 33001433</a></li>
+                <li>Kannenberg A. Occupational burnout among recreational diving instructors. <em>Adv Cogn Psychol</em>. 2022;18(3). DOI: 10.5709/acp-0361-6</li>
+                <li>Carmassi C, Porta I, Bertelloni CA, et al. PTSD in rescue divers involved in mass-casualty events. <em>J Psychiatr Res</em>. 2020;129:141-146. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/32912594/" target="_blank" rel="noopener">PMID: 32912594</a></li>
+                <li>Carey T, Gallagher J, Greiner BA. Post-traumatic stress in volunteer search and recovery divers. <em>Occup Med</em>. 2014;64(1):31-33. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/24192142/" target="_blank" rel="noopener">PMID: 24192142</a></li>
+            </ol>
+        </div>
+
+        <!-- Closing Disclaimer -->
+        <div class="disclaimer">
+            <p data-lang="en">
+                <strong>Limitations:</strong> Most data cited here derive from studies of commercial or military divers. Large-scale epidemiological studies specific to recreational diving instructors are scarce. Recreational instructors typically dive shallower profiles than commercial divers, but their annual dive counts may be comparable or higher. This page is a narrative overview, not a systematic review. Consult a diving medicine physician for personalized advice.
+            </p>
+            <p data-lang="ja">
+                <strong>本ページの限界:</strong> ここで引用したデータの大半は、商業ダイバーまたは軍事ダイバーを対象とした研究に由来する。レクリエーショナルダイビングインストラクターに特化した大規模疫学研究は極めて少ない。レクリエーショナルインストラクターの潜水プロファイルは商業ダイバーほど深くないが、年間潜水本数では匹敵またはそれ以上になりうる。このページは系統的レビューではなくナラティブな概説である。個別のアドバイスについてはダイビング医学の専門医に相談すること。
+            </p>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <span data-lang="en">&copy; 2026 marine-obs.org &middot; Independent research project</span>
+                <span data-lang="ja">&copy; 2026 marine-obs.org &middot; 個人プロジェクト</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/hirokifukui/marine-obs" target="_blank" rel="noopener">GitHub</a>
+                <a href="contact.html">
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="ja">お問い合わせ</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/lang-simple.js"></script>
+
+        <!-- Navigation JS -->
+    <script>
+    (function() {
+        function initNavigation() {
+            const hamburger = document.getElementById('hamburger');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+            const sidebarClose = document.getElementById('sidebar-close');
+            
+            if (!hamburger || !sidebar || !sidebarOverlay) {
+                console.warn('Navigation elements not found');
+                return;
+            }
+            
+            function openSidebar() {
+                sidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+                hamburger.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeSidebar() {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            hamburger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (sidebar.classList.contains('active')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            });
+            
+            hamburger.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (sidebar.classList.contains('active')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            });
+            
+            sidebarOverlay.addEventListener('click', closeSidebar);
+            sidebarOverlay.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                closeSidebar();
+            });
+            
+            if (sidebarClose) {
+                sidebarClose.addEventListener('click', closeSidebar);
+                sidebarClose.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    closeSidebar();
+                });
+            }
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                    closeSidebar();
+                }
+            });
+            
+            sidebar.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    closeSidebar();
+                });
+            });
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initNavigation);
+        } else {
+            initNavigation();
+        }
+    })();
+    </script>
+</body>
+</html>
