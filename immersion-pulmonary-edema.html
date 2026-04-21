@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immersion Pulmonary Edema in Divers | marine-obs.org</title>
+    <!-- SEO / OGP -->
+    <meta name="description" content="浸水性肺水腫（IPE/IPO/SIPE）の概説: 病態生理、リスク因子、臨床像、急性期対応、インストラクターにとっての意味、再発とダイビング復帰、予防。2024年SPUMS/UKDMC共同声明を含む査読論文に基づく。">
+    <meta property="og:title" content="ダイバーにおける浸水性肺水腫 | marine-obs.org">
+    <meta property="og:description" content="浸水性肺水腫（IPE/IPO/SIPE）の概説: 病態生理、リスク因子、臨床像、急性期対応、インストラクターにとっての意味、再発とダイビング復帰、予防。2024年SPUMS/UKDMC共同声明を含む査読論文に基づく。">
+    <meta property="og:image" content="https://marine-obs.org/images/ogp.jpg">
+    <meta property="og:url" content="https://marine-obs.org/immersion-pulmonary-edema.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .section-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+        .section-block h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .section-block h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 1.25rem 0 0.5rem;
+        }
+        .section-block h3:first-child {
+            margin-top: 0;
+        }
+        .section-block h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 1rem 0 0.4rem;
+        }
+        .section-block p, .section-block li {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        body.ja .section-block p, body.ja .section-block li {
+            line-height: 2;
+        }
+        .section-block ul {
+            padding-left: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        .section-block li {
+            margin-bottom: 0.25rem;
+        }
+        .disclaimer {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent-warm);
+            border-radius: 0 8px 8px 0;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .disclaimer p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin: 1rem 0;
+        }
+        .data-table th {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-weight: 600;
+            text-align: left;
+            padding: 0.6rem 0.75rem;
+            border-bottom: 2px solid var(--border);
+            white-space: nowrap;
+        }
+        .data-table td {
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+        .data-table tr:hover td {
+            background: var(--bg-secondary);
+        }
+        .table-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1rem 0;
+        }
+        .ref-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--accent-teal);
+            vertical-align: super;
+            cursor: help;
+        }
+        .ref-list {
+            list-style: none !important;
+            padding-left: 0 !important;
+            counter-reset: ref-counter;
+        }
+        .ref-list li {
+            font-size: 0.8rem !important;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--border);
+            counter-increment: ref-counter;
+            padding-left: 2rem;
+            position: relative;
+        }
+        .ref-list li::before {
+            content: counter(ref-counter) ".";
+            position: absolute;
+            left: 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-teal);
+            font-weight: 500;
+        }
+        .ref-list li:last-child {
+            border-bottom: none;
+        }
+        .source-link {
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .source-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="images/logo-circle.png" alt="marine-obs logo" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <span data-lang="en">marine-obs.org</span><span data-lang="ja">海洋の徴候</span>
+            </a>
+
+                                                            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul class="nav-links">
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Monitoring</span>
+                            <span data-lang="ja">モニタリング</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                            <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                            <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                            <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                            <li><a href="moni1000.html"><span data-lang="en">Moni1000</span><span data-lang="ja">モニ1000</span></a></li>
+                            <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge">計画中</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Climate</span>
+                            <span data-lang="ja">気候</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                            <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span></a></li>
+                            <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Bleaching</span>
+                            <span data-lang="ja">白化</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                            <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                            <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll &amp; Bleaching</span><span data-lang="ja">クロロフィルと白化</span></a></li>
+                            <li><a href="dissolved-oxygen-bleaching.html"><span data-lang="en">Dissolved Oxygen &amp; Bleaching</span><span data-lang="ja">溶存酸素と白化</span></a></li>
+                            <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                            <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Learn</span>
+                            <span data-lang="ja">サンゴを知る</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                            <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                            <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">For Divers</span>
+                            <span data-lang="ja">ダイバー向け</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                            <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                            <li><a href="diving-population.html"><span data-lang="en">Diving Population</span><span data-lang="ja">ダイビング人口</span></a></li>
+                            <li><a href="immersion-pulmonary-edema.html"><span data-lang="en">Immersion Pulmonary Edema</span><span data-lang="ja">ダイバーの浸水性肺水腫</span></a></li>
+                            <li><a href="instructor-health.html"><span data-lang="en">Instructor Health</span><span data-lang="ja">インストラクターの健康</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            <span data-lang="en">Reference</span>
+                            <span data-lang="ja">リファレンス</span>
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                            <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                            <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                            <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <div class="header-controls">
+                <div class="lang-switch">
+                    <button id="lang-en" class="active">English</button>
+                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <button id="lang-ja">日本語</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+                    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu</span>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Monitoring</span>
+                    <span data-lang="ja">モニタリング</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="sst.html"><span data-lang="en">Sea Surface Temperature</span><span data-lang="ja">海水温</span></a></li>
+                    <li><a href="extreme.html"><span data-lang="en">Extreme Temperature Days</span><span data-lang="ja">極端水温日数</span></a></li>
+                    <li><a href="dhw.html"><span data-lang="en">Degree Heating Weeks</span><span data-lang="ja">積算熱ストレス</span></a></li>
+                    <li><a href="light-adjusted-dhw.html"><span data-lang="en">Light-Adjusted DHW</span><span data-lang="ja">光補正DHW</span></a></li>
+                    <li><a href="moni1000.html"><span data-lang="en">Moni1000</span><span data-lang="ja">モニ1000</span></a></li>
+                    <li><a href="field-monitoring.html"><span data-lang="en">Field Monitoring</span><span data-lang="ja">現場モニタリング</span><span class="nav-badge-mobile">計画中</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Climate</span>
+                    <span data-lang="ja">気候</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="enso.html"><span data-lang="en">ENSO Monitor</span><span data-lang="ja">ENSO監視</span></a></li>
+                    <li><a href="climate-drivers.html"><span data-lang="en">Climate Drivers</span><span data-lang="ja">気候ドライバー</span></a></li>
+                    <li><a href="climate-trend.html"><span data-lang="en">Climate Trend</span><span data-lang="ja">長期トレンド</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Bleaching</span>
+                    <span data-lang="ja">白化</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="bleaching.html"><span data-lang="en">What is Bleaching</span><span data-lang="ja">白化とは</span></a></li>
+                    <li><a href="vulnerability.html"><span data-lang="en">Species Vulnerability</span><span data-lang="ja">種別脆弱性</span></a></li>
+                    <li><a href="chlorophyll-bleaching.html"><span data-lang="en">Chlorophyll &amp; Bleaching</span><span data-lang="ja">クロロフィルと白化</span></a></li>
+                    <li><a href="dissolved-oxygen-bleaching.html"><span data-lang="en">Dissolved Oxygen &amp; Bleaching</span><span data-lang="ja">溶存酸素と白化</span></a></li>
+                    <li><a href="global-bleaching.html"><span data-lang="en">Global Status</span><span data-lang="ja">世界の白化状況</span></a></li>
+                    <li><a href="japan-bleaching.html"><span data-lang="en">Japan Status</span><span data-lang="ja">日本の白化状況</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Learn</span>
+                    <span data-lang="ja">サンゴを知る</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="coral-basics.html"><span data-lang="en">Coral Basics</span><span data-lang="ja">サンゴとは</span></a></li>
+                    <li><a href="species-guide.html"><span data-lang="en">Species Guide</span><span data-lang="ja">サンゴ図鑑</span></a></li>
+                    <li><a href="spawning.html"><span data-lang="en">Coral Spawning</span><span data-lang="ja">サンゴ産卵予測</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">For Divers</span>
+                    <span data-lang="ja">ダイバー向け</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="conditions.html"><span data-lang="en">Conditions</span><span data-lang="ja">海況</span></a></li>
+                    <li><a href="weather.html"><span data-lang="en">Weather Map</span><span data-lang="ja">天気図</span></a></li>
+                    <li><a href="diving-population.html"><span data-lang="en">Diving Population</span><span data-lang="ja">ダイビング人口</span></a></li>
+                    <li><a href="immersion-pulmonary-edema.html"><span data-lang="en">Immersion Pulmonary Edema</span><span data-lang="ja">ダイバーの浸水性肺水腫</span></a></li>
+                    <li><a href="instructor-health.html"><span data-lang="en">Instructor Health</span><span data-lang="ja">インストラクターの健康</span></a></li>
+                </ul>
+            </li>
+            <li class="sidebar-section">
+                <span class="sidebar-section-title">
+                    <span data-lang="en">Reference</span>
+                    <span data-lang="ja">リファレンス</span>
+                </span>
+                <ul class="sidebar-submenu">
+                    <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
+                    <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
+                    <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
+                    <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="ja">お問い合わせ</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <h1 data-lang="en">Immersion Pulmonary Edema in Divers</h1>
+            <h1 data-lang="ja">ダイバーにおける浸水性肺水腫</h1>
+            <p class="hero-subtitle" data-lang="en">
+                An acute cardiogenic pulmonary edema triggered by immersion, distinct from drowning and decompression illness, with meaningful recurrence and fatality risk.
+            </p>
+            <p class="hero-subtitle" data-lang="ja">
+                浸水により誘発される急性心原性肺水腫。溺水や減圧障害とは異なる病態であり、再発と致死のリスクを伴う。
+            </p>
+        </section>
+
+        <!-- Medical Disclaimer -->
+        <div class="disclaimer">
+            <p data-lang="en">
+                <strong>Disclaimer:</strong> This page provides an overview of immersion pulmonary edema based on published medical literature, including the 2024 SPUMS/UKDMC joint position statement. It is not medical advice. Any diver who has experienced symptoms consistent with IPE should consult a physician experienced in diving medicine before returning to the water.
+            </p>
+            <p data-lang="ja">
+                <strong>免責事項:</strong> このページは2024年SPUMS/UKDMC共同声明を含む公表された医学文献に基づく浸水性肺水腫の概説であり、医学的助言ではない。IPEと矛盾しない症状を経験したダイバーは、水中活動を再開する前にダイビング医学に精通した医師に相談すること。
+            </p>
+        </div>
+
+        <!-- Key Numbers -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Prevalence in Scuba</span>
+                    <span data-lang="ja">スクーバでの有病率</span>
+                </div>
+                <div class="kpi-value">~1.1%</div>
+                <div class="kpi-context">
+                    <span data-lang="en">estimated in scuba divers (Miller 2010)</span>
+                    <span data-lang="ja">スクーバダイバーでの推定（Miller 2010）</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Triathlete Prevalence</span>
+                    <span data-lang="ja">トライアスリートの有病率</span>
+                </div>
+                <div class="kpi-value">~1.4%</div>
+                <div class="kpi-context">
+                    <span data-lang="en">among triathletes (Miller 2010)</span>
+                    <span data-lang="ja">トライアスリートにおいて（Miller 2010）</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Recurrence</span>
+                    <span data-lang="ja">再発率</span>
+                </div>
+                <div class="kpi-value warning">16&ndash;30%</div>
+                <div class="kpi-context">
+                    <span data-lang="en">after first episode (literature range)</span>
+                    <span data-lang="ja">初回発症後（文献による幅）</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">
+                    <span data-lang="en">Female/Male Risk</span>
+                    <span data-lang="ja">女性/男性リスク比</span>
+                </div>
+                <div class="kpi-value">OR 2.1</div>
+                <div class="kpi-context">
+                    <span data-lang="en">civilian divers (Wolff 2023)</span>
+                    <span data-lang="ja">一般集団（Wolff 2023）</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: What is IPE -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">1. What is Immersion Pulmonary Edema?</span>
+                <span data-lang="ja">1. 浸水性肺水腫とは</span>
+            </h2>
+            <p data-lang="en">
+                Immersion pulmonary edema is an acute accumulation of fluid in the alveoli that occurs during or shortly after immersion in water. It is a form of cardiogenic (hemodynamic) pulmonary edema, driven primarily by elevated pulmonary capillary pressure, and is unrelated to decompression sickness or pulmonary barotrauma. This distinction is clinically critical: recompression is not indicated for IPE and may be harmful when applied without cause.<sup class="ref-tag">[1][3]</sup>
+            </p>
+            <p data-lang="ja">
+                浸水性肺水腫は、水中への浸水中または直後に生じる急性の肺胞内液貯留である。肺毛細血管圧の上昇を主因とする心原性（血行動態性）肺水腫の一型であり、減圧症や肺気圧外傷とは病態が異なる。この区別は臨床的に極めて重要で、IPEに対する再圧は適応がなく、根拠なく施行すれば有害となりうる。<sup class="ref-tag">[1][3]</sup>
+            </p>
+
+            <h3>
+                <span data-lang="en">Nomenclature</span>
+                <span data-lang="ja">用語の整理</span>
+            </h3>
+            <p data-lang="en">
+                Several near-synonymous terms appear in the literature. <strong>IPE</strong> (Immersion Pulmonary Edema) is the term favored in US sources; <strong>IPO</strong> (Immersion Pulmonary Oedema) is the UK/Commonwealth equivalent, used in the 2024 SPUMS/UKDMC statement.<sup class="ref-tag">[1]</sup> <strong>SIPE</strong> (Swimming-Induced Pulmonary Edema) refers to the subtype observed in triathletes and open-water swimmers, while <strong>DIPE</strong> or <strong>SDPE</strong> (Diving-Induced or Scuba-Diver Pulmonary Edema) refers to the subtype in divers. The underlying physiology overlaps substantially, though the precipitating factors differ in emphasis.<sup class="ref-tag">[2][13]</sup>
+            </p>
+            <p data-lang="ja">
+                文献では複数の類縁用語が用いられる。<strong>IPE</strong>（Immersion Pulmonary Edema）は米国文献で好まれ、<strong>IPO</strong>（Immersion Pulmonary Oedema）は英国・英連邦の表記であり、2024年SPUMS/UKDMC声明でも用いられている。<sup class="ref-tag">[1]</sup> <strong>SIPE</strong>（Swimming-Induced Pulmonary Edema）はトライアスロンや遠泳で観察される亜型、<strong>DIPE</strong>/<strong>SDPE</strong>（Diving-Induced / Scuba-Diver Pulmonary Edema）はダイバーの亜型を指す。基盤となる病態生理は大きく重複するが、誘因の比重が異なる。<sup class="ref-tag">[2][13]</sup>
+            </p>
+
+            <h3>
+                <span data-lang="en">Under-recognition in Fatal Cases</span>
+                <span data-lang="ja">致死例における過小診断</span>
+            </h3>
+            <p data-lang="en">
+                Autopsy findings in fatal IPE &mdash; heavy waterlogged lungs and frothy airway contents &mdash; closely resemble those of drowning. As a result, fatal IPE is probably under-recognized in case series that rely on post-mortem examination alone, and the true case-fatality rate is likely to be underestimated.<sup class="ref-tag">[3][13]</sup>
+            </p>
+            <p data-lang="ja">
+                致死例IPEの剖検所見（浮腫性に重い肺と気道内の泡沫状内容）は、溺水のそれと酷似する。そのため、剖検所見のみに依拠する症例集積では致死例IPEが見逃されている可能性が高く、真の致死率は過小評価されていると考えられる。<sup class="ref-tag">[3][13]</sup>
+            </p>
+        </div>
+
+        <!-- Section 2: Pathophysiology -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">2. Pathophysiology</span>
+                <span data-lang="ja">2. 病態生理</span>
+            </h2>
+            <p data-lang="en">
+                Immersion alone is a powerful hemodynamic stimulus. On entering the water, hydrostatic compression of the lower limbs redistributes approximately 500&ndash;700 mL of blood from the peripheral venous reservoir into the thoracic cavity, raising right atrial pressure and pulmonary blood volume.<sup class="ref-tag">[2][3]</sup> If the left ventricle cannot accommodate this increased preload &mdash; because of age, hypertension, diastolic dysfunction, or any condition reducing LV compliance &mdash; pulmonary capillary pressure rises, overwhelms the transudation threshold of the alveolar-capillary barrier, and fluid moves into the alveolar space. Reduced left ventricular compliance is therefore a central risk factor rather than a peripheral one.<sup class="ref-tag">[3][14]</sup>
+            </p>
+            <p data-lang="ja">
+                浸水はそれ自体が強力な血行動態刺激である。入水と同時に下肢への静水圧により末梢静脈系から約500&ndash;700 mLの血液が胸腔内へ再分布し、右房圧と肺血液量が上昇する。<sup class="ref-tag">[2][3]</sup> 左室が加齢・高血圧・拡張機能障害その他の原因でコンプライアンスを失い、この増加した前負荷を受け入れられない場合、肺毛細血管圧が上昇して肺胞-毛細血管関門の液漏出閾値を超え、肺胞内へ液が移動する。したがって左室コンプライアンス低下はIPEの周辺因子ではなく中核因子である。<sup class="ref-tag">[3][14]</sup>
+            </p>
+            <p data-lang="en">
+                Afterload rises in parallel. Cold water induces peripheral vasoconstriction, and exertion &mdash; strong finning, surface swimming, assisting a panicked student &mdash; amplifies sympathetic drive, raising systemic vascular resistance and further elevating LV filling pressure.<sup class="ref-tag">[2][4]</sup> Negative-pressure breathing compounds the mechanism. Inspiratory resistance from a regulator (especially at depth, with increased gas density, or with poorly serviced equipment) or the inspiratory effort required during hard swimming generates a more negative alveolar pressure than normal breathing, which itself promotes transudation across the alveolar-capillary barrier.<sup class="ref-tag">[11]</sup>
+            </p>
+            <p data-lang="ja">
+                後負荷も並行して上昇する。冷水は末梢血管収縮を引き起こし、強いフィンキック、水面遊泳、パニックに陥った受講者の補助などの労作が交感神経緊張を増幅して体血管抵抗を上昇させ、左室充満圧をさらに高める。<sup class="ref-tag">[2][4]</sup> 陰圧呼吸はこの機序を増強する。レギュレータの吸気抵抗（特に水深下、ガス密度増大時、整備不良器材下）や激しい遊泳時の吸気努力は通常呼吸より強い肺胞内陰圧を生み、それ自体が肺胞-毛細血管関門を介する漏出を促進する。<sup class="ref-tag">[11]</sup>
+            </p>
+            <p data-lang="en">
+                Two further mechanisms are specific to scuba. First, elevated inspired oxygen tension during diving reduces heart rate by approximately 10&ndash;15% through autonomic effects; this hyperoxia-induced bradycardia can contribute to impaired cardiac output during the period of peak preload.<sup class="ref-tag">[3]</sup> Second, cold-water immersion simultaneously activates the parasympathetic dive reflex and the sympathetic cold-shock response &mdash; an "autonomic conflict" that can provoke bradyarrhythmias and appears to play a role in some cold-water sudden deaths.<sup class="ref-tag">[12]</sup> The net picture is one of convergent pressures on a left ventricle that may have little margin to begin with.
+            </p>
+            <p data-lang="ja">
+                スクーバに特異的な機序が二つ加わる。第一に、潜水中の高吸気酸素分圧は自律神経反射を介して心拍数を約10&ndash;15%低下させる。この高酸素誘発性徐脈は前負荷ピーク期の心拍出量を損なう可能性がある。<sup class="ref-tag">[3]</sup> 第二に、冷水浸水は副交感神経優位の潜水反射と交感神経優位の寒冷ショック反応を同時に賦活する「自律神経葛藤（autonomic conflict）」を生じ、徐脈性不整脈を誘発しうる。一部の冷水突然死にはこの機序が関与すると考えられる。<sup class="ref-tag">[12]</sup> 総合すると、もともと余力の乏しい左室に対して複数の圧が同時に収束する構図である。
+            </p>
+        </div>
+
+        <!-- Section 3: Risk Factors -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">3. Risk Factors</span>
+                <span data-lang="ja">3. リスク因子</span>
+            </h2>
+            <div class="table-scroll">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th><span data-lang="en">Category</span><span data-lang="ja">カテゴリ</span></th>
+                            <th><span data-lang="en">Factors</span><span data-lang="ja">因子</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span data-lang="en">Individual</span><span data-lang="ja">個体</span></td>
+                            <td>
+                                <span data-lang="en">Age &gt;50; female sex (OR 2.1); known or undiagnosed hypertension; reduced LV compliance / diastolic dysfunction; prior IPE episode; Takotsubo predisposition</span>
+                                <span data-lang="ja">50歳超、女性（OR 2.1）、既知または未診断の高血圧、左室コンプライアンス低下／拡張機能障害、IPE既往、たこつぼ型心筋症の素因</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Environmental</span><span data-lang="ja">環境</span></td>
+                            <td>
+                                <span data-lang="en">Cold water (especially &lt;20&deg;C); wetsuit-induced peripheral vasoconstriction; depth; rough seas</span>
+                                <span data-lang="ja">冷水（特に20&deg;C未満）、ウェットスーツによる末梢血管収縮、水深、荒天下の海況</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Behavioral</span><span data-lang="ja">行動</span></td>
+                            <td>
+                                <span data-lang="en">Pre-dive over-hydration; NSAID use; strenuous finning; stress and anxiety</span>
+                                <span data-lang="ja">潜水前の過剰水分摂取、NSAIDs使用、激しいフィンキック、ストレス・不安</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span data-lang="en">Equipment</span><span data-lang="ja">機材</span></td>
+                            <td>
+                                <span data-lang="en">High inspiratory resistance regulator; poorly serviced gear; increased gas density at depth</span>
+                                <span data-lang="ja">吸気抵抗の高いレギュレータ、整備不良器材、水深によるガス密度の増大</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p data-lang="en">
+                Approximately 50% of IPE patients are found to have underlying cardiovascular disease &mdash; most commonly hypertension, diastolic dysfunction, or coronary disease &mdash; when worked up after their first episode.<sup class="ref-tag">[3][5][7]</sup> This is directly relevant to the over-40 recreational diver demographic, in whom asymptomatic hypertension is common and often undertreated.
+            </p>
+            <p data-lang="ja">
+                IPE患者のおよそ50%は、初回発症後の精査で基礎心血管疾患（最多は高血圧、次いで拡張機能障害、冠動脈疾患）を有することが判明する。<sup class="ref-tag">[3][5][7]</sup> この事実は、無症候性高血圧がしばしば未治療のまま放置されている40歳超のレクリエーショナルダイバー層に直接関係する。
+            </p>
+        </div>
+
+        <!-- Section 4: Clinical Presentation -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">4. Clinical Presentation</span>
+                <span data-lang="ja">4. 臨床像</span>
+            </h2>
+
+            <h3>
+                <span data-lang="en">Symptoms and Onset</span>
+                <span data-lang="ja">症状と発症時期</span>
+            </h3>
+            <p data-lang="en">
+                The classic presentation is acute dyspnea with a wet cough producing frothy or blood-tinged sputum, hypoxemia, and occasionally cyanosis. Symptoms typically begin early in the dive, at depth, during ascent, or shortly after surfacing, and are disproportionate to the diver's level of exertion. Haemoptysis, when present, is usually modest &mdash; pink-tinged rather than frank.<sup class="ref-tag">[1][3][13]</sup>
+            </p>
+            <p data-lang="ja">
+                典型的な呈示は、泡沫状または血性の喀痰を伴う湿性咳嗽、急性呼吸困難、低酸素血症であり、時にチアノーゼを伴う。症状はダイビング初期、水深下、浮上中、あるいは浮上直後に始まることが多く、労作量に不釣り合いな強さで出現する。喀血を認める場合でも通常は軽度で、ピンク色を帯びた程度であることが多い。<sup class="ref-tag">[1][3][13]</sup>
+            </p>
+
+            <h3>
+                <span data-lang="en">Differential Diagnosis</span>
+                <span data-lang="ja">鑑別診断</span>
+            </h3>
+            <p data-lang="en">
+                A diver who develops sudden dyspnea at depth is often assumed to have run out of gas, experienced regulator failure, or panicked. IPE belongs on the differential diagnosis list for any of these scenarios. Other entities to consider are drowning, decompression sickness, pulmonary barotrauma, acute coronary syndrome, asthma exacerbation, and aspiration pneumonitis. Because the initial management of IPE differs fundamentally from recompression therapy, the diagnostic distinction matters.<sup class="ref-tag">[1][3][13]</sup>
+            </p>
+            <p data-lang="ja">
+                水深下で突然の呼吸困難を生じたダイバーは、しばしばガス切れ、レギュレータ故障、あるいはパニックと見なされる。これらのいずれの場面でもIPEは鑑別に含めるべきである。その他、溺水、減圧症、肺気圧外傷、急性冠症候群、気管支喘息増悪、誤嚥性肺臓炎が鑑別対象となる。IPEの初期治療は再圧療法と根本的に異なるため、この診断区別は臨床的に重要である。<sup class="ref-tag">[1][3][13]</sup>
+            </p>
+
+            <h3>
+                <span data-lang="en">Workup</span>
+                <span data-lang="ja">検査</span>
+            </h3>
+            <p data-lang="en">
+                Chest CT typically shows bilateral basal ground-glass opacities consistent with pulmonary edema. Troponin, BNP, and echocardiography are useful on emergency department workup, both to characterize the severity of the event and to identify transient left ventricular dysfunction. Takotsubo-like reversible LV dysfunction is increasingly reported in IPE survivors, and its presence alters the subsequent return-to-diving conversation.<sup class="ref-tag">[3][8][13]</sup>
+            </p>
+            <p data-lang="ja">
+                胸部CTでは肺水腫に矛盾しない両側下肺野優位のすりガラス陰影を認めることが多い。救急外来での精査ではトロポニン、BNP、心エコーが有用で、イベントの重症度評価に加え、一過性の左室機能障害の同定にも役立つ。IPE生存例における可逆的なたこつぼ様左室機能障害の報告は増加傾向にあり、その有無はその後のダイビング復帰判断に影響する。<sup class="ref-tag">[3][8][13]</sup>
+            </p>
+        </div>
+
+        <!-- Section 5: Acute Management -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">5. Acute Management</span>
+                <span data-lang="ja">5. 急性期対応</span>
+            </h2>
+
+            <h4>
+                <span data-lang="en">In-water</span>
+                <span data-lang="ja">水中</span>
+            </h4>
+            <p data-lang="en">
+                Initiate a safe, controlled ascent. Clinicians and buddies should be aware that ascending reduces the inspired partial pressure of oxygen; in a diver whose cerebral oxygenation has been marginal because of pulmonary edema, the ascent itself can precipitate loss of consciousness. Monitor mental status throughout and continue at a controlled rate rather than rushing.<sup class="ref-tag">[1][13]</sup>
+            </p>
+            <p data-lang="ja">
+                安全で制御された浮上を開始する。浮上に伴い吸気酸素分圧が低下するため、肺水腫のために脳の酸素化が辛うじて維持されていたダイバーでは、浮上そのものが意識消失の引き金になりうる。バディおよび医療者は、浮上中にも意識レベルを監視し、急速浮上ではなく定速で継続することが重要である。<sup class="ref-tag">[1][13]</sup>
+            </p>
+
+            <h4>
+                <span data-lang="en">At the surface</span>
+                <span data-lang="ja">水面</span>
+            </h4>
+            <p data-lang="en">
+                Remove the diver from the water as soon as safely possible and position upright or semi-recumbent. Removing the immersion stimulus itself resolves the hemodynamic driver in many mild cases, and clinical improvement within minutes of exiting the water is characteristic.<sup class="ref-tag">[1][3]</sup>
+            </p>
+            <p data-lang="ja">
+                安全が確保でき次第、可及的速やかに水から引き上げ、座位または半座位に保持する。浸水という刺激を取り除くこと自体が血行動態的誘因を解除するため、軽症例では水から離脱して数分以内に臨床症状が改善することが特徴的である。<sup class="ref-tag">[1][3]</sup>
+            </p>
+
+            <h4>
+                <span data-lang="en">Pre-hospital</span>
+                <span data-lang="ja">プレホスピタル</span>
+            </h4>
+            <p data-lang="en">
+                Administer supplemental oxygen. CPAP or positive expiratory pressure (PEP) devices have been demonstrated to be effective in the prehospital management of SIPE and are appropriate where available and tolerated.<sup class="ref-tag">[10]</sup> Recompression is <strong>not</strong> indicated for IPE and risks worsening the situation; the hyperbaric chamber is not part of this pathway.<sup class="ref-tag">[1][3]</sup>
+            </p>
+            <p data-lang="ja">
+                酸素投与を行う。CPAPや陽性呼気圧（PEP）デバイスはSIPEのプレホスピタル管理で有効性が示されており、利用可能かつ忍容性があれば適切である。<sup class="ref-tag">[10]</sup> IPEに対して再圧療法は<strong>適応外</strong>であり、施行すれば病態を悪化させうる。高気圧チャンバーはこの経路に含まれない。<sup class="ref-tag">[1][3]</sup>
+            </p>
+
+            <h4>
+                <span data-lang="en">Hospital</span>
+                <span data-lang="ja">病院</span>
+            </h4>
+            <p data-lang="en">
+                Management mirrors that of cardiogenic pulmonary edema from other causes: loop diuretics, non-invasive ventilation for persistent hypoxemia, and beta-adrenergic agonists as indicated. A cardiac workup including troponin, BNP, ECG, and echocardiography is essential. Most patients recover within 24&ndash;48 hours; severe cases may require ICU admission, and a minority progress to intubation.<sup class="ref-tag">[3][13][14]</sup>
+            </p>
+            <p data-lang="ja">
+                管理は他原因の心原性肺水腫と同様である。ループ利尿薬、持続低酸素血症に対する非侵襲的換気、適応があればβ刺激薬。トロポニン、BNP、心電図、心エコーを含む心臓系精査は必須。多くは24&ndash;48時間以内に回復するが、重症例はICU入室を要し、一部は気管挿管に至る。<sup class="ref-tag">[3][13][14]</sup>
+            </p>
+        </div>
+
+        <!-- Section 6: Relevance to Instructors -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">6. Relevance to Instructors</span>
+                <span data-lang="ja">6. インストラクターにとっての意味</span>
+            </h2>
+
+            <h3>
+                <span data-lang="en">(a) Personal Risk</span>
+                <span data-lang="ja">(a) 自身のリスク</span>
+            </h3>
+            <p data-lang="en">
+                Instructors over 40 conducting 100+ dives per year accumulate the exact risk profile the literature identifies: repeated cold-water immersion, frequent exertion, and the age-related decline in LV compliance. Hypertension is common in this age bracket and is often both undiagnosed and undertreated. The cumulative effect of repeated immersion on left ventricular function in this population is not well studied but is plausibly adverse. The annual cardiovascular screening already recommended on the <a href="instructor-health.html">instructor health</a> page includes blood pressure assessment, which directly addresses the primary modifiable IPE risk factor.
+            </p>
+            <p data-lang="ja">
+                年間100本超を行う40歳以上のインストラクターは、文献が挙げるリスクプロファイル（反復する冷水浸水、頻繁な労作、加齢に伴う左室コンプライアンス低下）をそのまま満たす。高血圧はこの年齢層で高頻度にみられ、未診断・未治療のまま放置されがちである。この集団における反復浸水の左室機能への累積的影響はよく研究されていないが、有害に働く可能性は十分にある。<a href="instructor-health.html">インストラクターの健康</a>ページですでに推奨されている年1回の心血管スクリーニングには血圧評価が含まれており、IPEの主要な修正可能リスク因子に直接対応する。
+            </p>
+
+            <h3>
+                <span data-lang="en">(b) Recognition in Students and Guests</span>
+                <span data-lang="ja">(b) 受講者・ゲストでの認識</span>
+            </h3>
+            <p data-lang="en">
+                An instructor is statistically more likely to witness IPE in a student or guest than to experience it personally. Early symptoms &mdash; unexplained cough, breathlessness disproportionate to the workload, pink-tinged sputum, and poor response to "just breathe normally" reassurance &mdash; can easily be mistaken for panic, overexertion, or simple regulator discomfort. A diver who remains dyspneic after surfacing and removing the regulator should be treated as a medical emergency, not a fitness issue.
+            </p>
+            <p data-lang="ja">
+                統計的にみて、インストラクターがIPEに遭遇する場面は自身の発症より受講者・ゲストでの目撃のほうが多い。初期症状（説明のつかない咳、労作量に不釣り合いな息切れ、ピンク色を帯びた喀痰、「普通に呼吸して」という声かけへの反応不良）は、パニック、オーバーエクザーション、あるいは単なるレギュレータ不調と誤認されやすい。浮上してレギュレータを外した後も呼吸困難が持続するダイバーは、体力の問題ではなく医学的緊急事態として扱うべきである。
+            </p>
+
+            <h3>
+                <span data-lang="en">(c) Documentation and Follow-up</span>
+                <span data-lang="ja">(c) 記録と追跡</span>
+            </h3>
+            <p data-lang="en">
+                When a suspected IPE episode occurs during a dive operation, prompt documentation &mdash; time of onset, depth, water temperature, exertion level, gas mix, equipment used, and any prior symptoms &mdash; is valuable both for immediate medical management and for the diver's subsequent return-to-diving assessment. The instructor's observational record may be the only contemporaneous account of the event; its quality materially affects the decisions physicians can make later.
+            </p>
+            <p data-lang="ja">
+                ダイビング運営中に疑い例が発生した際には、発症時刻、水深、水温、労作レベル、使用ガス、使用器材、先行症状の有無を速やかに記録することが、急性期対応と後日の復帰可否判断の双方において有用となる。インストラクターの観察記録は当該イベントに関する唯一の同時代記録である場合が多く、その質が後日医師の下しうる判断の質を実質的に左右する。
+            </p>
+        </div>
+
+        <!-- Section 7: Recurrence and Return to Diving -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">7. Recurrence and Return to Diving</span>
+                <span data-lang="ja">7. 再発とダイビング復帰</span>
+            </h2>
+            <p data-lang="en">
+                Two positions are currently represented in the diving medicine literature, and they should be presented without editorializing.
+            </p>
+            <p data-lang="ja">
+                現在のダイビング医学文献には二つの立場が併存しており、いずれか一方を優先して論じるのは適切でない。
+            </p>
+
+            <h3>
+                <span data-lang="en">SPUMS/UKDMC 2024 Joint Position</span>
+                <span data-lang="ja">SPUMS/UKDMC 2024合同声明</span>
+            </h3>
+            <p data-lang="en">
+                The 2024 joint statement from the South Pacific Underwater Medicine Society and the UK Diving Medical Committee strongly advises against further compressed-gas diving after a confirmed IPE episode, citing recurrence rates, the potential for fatal outcomes, and the inability to reliably predict who will recur.<sup class="ref-tag">[1]</sup>
+            </p>
+            <p data-lang="ja">
+                南太平洋水中医学会（SPUMS）と英国潜水医療委員会（UKDMC）による2024年合同声明は、確定したIPEエピソード後の圧縮ガス潜水を強く非推奨とする。再発率、致死的転帰の可能性、および再発者を事前に確実に同定できないことを理由とする。<sup class="ref-tag">[1]</sup>
+            </p>
+
+            <h3>
+                <span data-lang="en">Individualized Assessment Approach</span>
+                <span data-lang="ja">個別評価アプローチ</span>
+            </h3>
+            <p data-lang="en">
+                Other groups (e.g. DDRC Healthcare UK, Duke Dive Medicine) recognize that an absolute prohibition may not be accepted by every patient. For divers who choose to continue, these groups recommend thorough cardiology evaluation, optimization of blood pressure, avoidance of cold water and high-exertion profiles, use of low-resistance regulators, and explicit acceptance of residual risk. The position is more conservative than "cleared to dive" and more permissive than "never again".<sup class="ref-tag">[3][7]</sup>
+            </p>
+            <p data-lang="ja">
+                他のグループ（英国DDRC Healthcare、米国Duke Dive Medicineなど）は、絶対禁止がすべての患者に受け入れられるわけではないという現実を踏まえる。継続を選ぶダイバーに対しては、循環器評価、血圧管理の最適化、冷水および高労作プロファイルの回避、低抵抗レギュレータの使用、そして残存リスクの明示的な受容を推奨する。この姿勢は「潜水許可」より保守的で、「生涯禁止」よりは許容的である。<sup class="ref-tag">[3][7]</sup>
+            </p>
+            <p data-lang="en">
+                This is an area where medical conservatism and patient autonomy come into tension. The decision should be made with a diving medicine physician rather than a generalist, and should be documented in terms the diver understands.
+            </p>
+            <p data-lang="ja">
+                この領域は医学的保守性と患者の自己決定が緊張関係に立つ論点であり、意思決定は一般内科医ではなくダイビング医学の専門医とともに行い、ダイバー自身が理解できる言葉で記録されるべきである。
+            </p>
+        </div>
+
+        <!-- Section 8: Prevention -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">8. Prevention</span>
+                <span data-lang="ja">8. 予防</span>
+            </h2>
+            <p data-lang="en">
+                Primary prevention overlaps substantially with general cardiovascular hygiene for divers over 40. Blood pressure should be measured, documented, and treated to target before dive seasons rather than after a near-miss. Pre-dive over-hydration &mdash; the "extra water just in case" habit popular in warm-water destinations &mdash; is counterproductive because it adds to the preload that IPE physiology is already struggling with; hydration sufficient for the conditions is the goal, not hydration as a talisman.<sup class="ref-tag">[3]</sup>
+            </p>
+            <p data-lang="ja">
+                一次予防は40歳超ダイバーの一般的な心血管ケアと大きく重なる。血圧は、ヒヤリハットを経験してからではなく、ダイブシーズン前に計測・記録し目標まで治療しておく。温暖地のダイビングで人気の「念のため多めに水分」習慣は、IPEが既に苦慮している前負荷をさらに増やすため逆効果である。目標は条件に十分な水分摂取であって、お守り的な過剰摂取ではない。<sup class="ref-tag">[3]</sup>
+            </p>
+            <p data-lang="en">
+                Equipment contributes a meaningful share of the inspiratory-resistance load. Annual regulator servicing to manufacturer specification minimizes this component and is already a standard of practice; it becomes a health intervention, not merely a maintenance one, in this context. Habitual NSAID use prior to diving should be reconsidered; if medically indicated, this is a conversation for a diving medicine physician rather than an over-the-counter decision.
+            </p>
+            <p data-lang="ja">
+                機材は吸気抵抗負荷のうち相当分を占める。メーカー規定に沿った年次レギュレータ整備はこの寄与を最小化し、すでに標準的な実務である。IPEの文脈では、それは単なる保守ではなく健康対策としての意味を持つ。潜水前のNSAIDs常用は再考すべきで、医学的適応がある場合はOTCの判断ではなくダイビング医学専門医との相談事項である。
+            </p>
+            <p data-lang="en">
+                Operationally, avoid the combination of cold water and vigorous finning at the very start of a dive &mdash; the period of maximum preload shift. Take early surface-level dyspnea seriously; do not "push through" it, and do not allow a student to do so either. The diver who signals distress and is told to calm down and continue is a case report waiting to happen.
+            </p>
+            <p data-lang="ja">
+                運用面では、前負荷シフトが最大となるダイビング開始直後に、冷水と強いフィンキックを組み合わせることを避ける。水面での初期呼吸困難は軽視せず、自身でも「押し切って進める」ことはせず、受講者にもそれを許さない。苦しさを訴えたダイバーに「落ち着いて続けろ」と指示する場面は、症例報告の一歩手前である。
+            </p>
+        </div>
+
+        <!-- Section 9: Sources and Limitations -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">9. Sources and Limitations</span>
+                <span data-lang="ja">9. 出典と限界</span>
+            </h2>
+            <p data-lang="en">
+                IPE remains an under-diagnosed condition, particularly in fatal cases where autopsy findings are indistinguishable from drowning. Published prevalence estimates derive from surveys and case series rather than from prospective cohort studies, and the true incidence in recreational diving populations is not precisely known. Very few studies focus specifically on recreational diving instructors, whose cumulative exposure pattern differs from both military cohorts (most extensively studied) and occasional recreational divers. The 2024 SPUMS/UKDMC joint position statement is the current international consensus reference for clinical management and return-to-diving guidance.<sup class="ref-tag">[1]</sup>
+            </p>
+            <p data-lang="ja">
+                IPEは依然として過小診断される病態であり、特に剖検所見が溺水と区別困難な致死例で顕著である。公表されている有病率推定値は前向きコホートではなく調査票・症例集積に由来し、レクリエーショナル潜水集団における真の発症率は精密に把握されていない。累積暴露パターンが軍事コホート（最もよく研究されている）や一般レクリエーショナルダイバーと異なるレクリエーショナルインストラクターに特化した研究は極めて少ない。臨床管理と復帰判断に関する現時点での国際的コンセンサス基準は2024年SPUMS/UKDMC合同声明である。<sup class="ref-tag">[1]</sup>
+            </p>
+        </div>
+
+        <!-- Section 10: References -->
+        <div class="section-block">
+            <h2>
+                <span data-lang="en">References</span>
+                <span data-lang="ja">引用文献</span>
+            </h2>
+            <ol class="ref-list">
+                <li>Banham N, Smart D, Wilmshurst P, Mitchell SJ, Turner MS, Bryson P. Joint position statement on immersion pulmonary oedema and diving from SPUMS and UKDMC 2024. <em>Diving Hyperb Med</em>. 2024;54(4):344-349. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/39675743/" target="_blank" rel="noopener">PMID: 39675743</a> &middot; <a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11779524/" target="_blank" rel="noopener">PMC11779524</a> &middot; <a class="source-link" href="https://doi.org/10.28920/dhm54.4.344-349" target="_blank" rel="noopener">DOI: 10.28920/dhm54.4.344-349</a></li>
+                <li>Koch A, Radermacher P, K&ouml;nigstein K, K&auml;hler W, Werr H, Klapa S. The immersion-induced pulmonary edema in swimming and diving. <em>Dtsch Z Sportmed</em>. 2024;75:231-236. <a class="source-link" href="https://doi.org/10.5960/dzsm.2024.614" target="_blank" rel="noopener">DOI: 10.5960/dzsm.2024.614</a></li>
+                <li>Wilmshurst PT. Immersion pulmonary oedema: a cardiological perspective. <em>Diving Hyperb Med</em>. 2019;49:30-40. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/30856665/" target="_blank" rel="noopener">PMID: 30856665</a> &middot; <a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6526048/" target="_blank" rel="noopener">PMC6526048</a></li>
+                <li>Wilmshurst PT, Nuri M, Crowther A, Webb-Peploe MM. Cold-induced pulmonary oedema in scuba divers and swimmers and subsequent development of hypertension. <em>Lancet</em>. 1989;1(8629):62-65. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/2562880/" target="_blank" rel="noopener">PMID: 2562880</a></li>
+                <li>Wolff D, Castagna O, Morin J, et al. Characterizing Immersion Pulmonary Edema (IPE): A Comparative Study of Military and Recreational Divers. <em>Sports Med Open</em>. 2023;9:108. <a class="source-link" href="https://doi.org/10.1186/s40798-023-00659-4" target="_blank" rel="noopener">DOI: 10.1186/s40798-023-00659-4</a></li>
+                <li>Miller CC, Calder-Becker K, Modave F. Swimming-induced pulmonary edema in triathletes. <em>Am J Emerg Med</em>. 2010;28:941-946. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/20887912/" target="_blank" rel="noopener">PMID: 20887912</a></li>
+                <li>Gempp E, Demaistre S, Louge P. Hypertension is predictive of recurrent immersion pulmonary edema in scuba divers. <em>Int J Cardiol</em>. 2014;172:528-529. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/24485640/" target="_blank" rel="noopener">PMID: 24485640</a></li>
+                <li>Gempp E, Louge P, Henckes A, et al. Reversible myocardial dysfunction and clinical outcome in scuba divers with immersion pulmonary edema. <em>Am J Cardiol</em>. 2013;111:1655-1659. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/23528026/" target="_blank" rel="noopener">PMID: 23528026</a></li>
+                <li>Henckes A, Cochard G, Gatineau F, et al. Risk factors for immersion pulmonary edema in recreational scuba divers: a case-control study. <em>Undersea Hyperb Med</em>. 2019;46(5):611-618. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/31683362/" target="_blank" rel="noopener">PMID: 31683362</a></li>
+                <li>Seiler C, Kristiansson L, Klingberg C, et al. Swimming-Induced Pulmonary Edema: Evaluation of Prehospital Treatment with CPAP or Positive Expiratory Pressure Device. <em>Chest</em>. 2022;162:410-420. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/35405115/" target="_blank" rel="noopener">PMID: 35405115</a></li>
+                <li>Castagna O, Regnard J, Gempp E, et al. The key roles of negative pressure breathing and exercise in the development of interstitial pulmonary edema in professional male scuba divers. <em>Sports Med Open</em>. 2018;4:1. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/29299780/" target="_blank" rel="noopener">PMID: 29299780</a> &middot; <a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5752643/" target="_blank" rel="noopener">PMC5752643</a></li>
+                <li>Shattock MJ, Tipton MJ. "Autonomic conflict": a different way to die during cold water immersion? <em>J Physiol</em>. 2012;590:3219-3230. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/22547634/" target="_blank" rel="noopener">PMID: 22547634</a></li>
+                <li>Hageman SM, Chakraborty RK, Murphy-Lavoie HM. Immersion Pulmonary Edema. <em>StatPearls</em> [Internet]. 2025 Jan. <a class="source-link" href="https://www.ncbi.nlm.nih.gov/books/NBK499853/" target="_blank" rel="noopener">NBK499853</a></li>
+                <li>Peacher DF, Martina SD, Otteni CE, et al. Immersion pulmonary edema and comorbidities: case series and updated review. <em>Med Sci Sports Exerc</em>. 2015;47:1128-1134. <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/25202842/" target="_blank" rel="noopener">PMID: 25202842</a></li>
+            </ol>
+        </div>
+
+        <!-- Closing Disclaimer / Limitations -->
+        <div class="disclaimer">
+            <p data-lang="en">
+                <strong>Limitations:</strong> This page is a narrative overview of immersion pulmonary edema targeted at divers and instructors, not a systematic review. IPE is probably under-diagnosed &mdash; particularly in fatal cases mistaken for drowning &mdash; and most prevalence figures derive from surveys or case series rather than prospective cohorts. Studies specific to recreational diving instructors are very few. Clinical decisions regarding return to diving after a confirmed IPE episode should be made with a physician experienced in diving medicine, referring to the 2024 SPUMS/UKDMC joint position statement as the current international consensus.
+            </p>
+            <p data-lang="ja">
+                <strong>本ページの限界:</strong> このページはダイバーおよびインストラクターを対象とした浸水性肺水腫のナラティブな概説であり、系統的レビューではない。IPEはおそらく過小診断されており、とりわけ溺水と混同される致死例で顕著である。また、有病率の多くは前向きコホート研究ではなく調査票または症例集積に由来する。レクリエーショナルダイビングインストラクターに特化した研究は極めて少ない。確定したIPEエピソード後のダイビング復帰に関する臨床判断は、ダイビング医学に精通した医師とともに、現時点の国際的コンセンサスである2024年SPUMS/UKDMC合同声明を参照して行うべきである。
+            </p>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <span data-lang="en">&copy; 2026 marine-obs.org &middot; Independent research project</span>
+                <span data-lang="ja">&copy; 2026 marine-obs.org &middot; 個人プロジェクト</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/hirokifukui/marine-obs" target="_blank" rel="noopener">GitHub</a>
+                <a href="contact.html">
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="ja">お問い合わせ</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/lang-simple.js"></script>
+
+            <!-- Navigation JS -->
+    <script>
+    (function() {
+        function initNavigation() {
+            const hamburger = document.getElementById('hamburger');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+            const sidebarClose = document.getElementById('sidebar-close');
+            
+            if (!hamburger || !sidebar || !sidebarOverlay) {
+                console.warn('Navigation elements not found');
+                return;
+            }
+            
+            function openSidebar() {
+                sidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+                hamburger.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeSidebar() {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            hamburger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (sidebar.classList.contains('active')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            });
+            
+            hamburger.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (sidebar.classList.contains('active')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            });
+            
+            sidebarOverlay.addEventListener('click', closeSidebar);
+            sidebarOverlay.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                closeSidebar();
+            });
+            
+            if (sidebarClose) {
+                sidebarClose.addEventListener('click', closeSidebar);
+                sidebarClose.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    closeSidebar();
+                });
+            }
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                    closeSidebar();
+                }
+            });
+            
+            sidebar.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    closeSidebar();
+                });
+            });
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initNavigation);
+        } else {
+            initNavigation();
+        }
+    })();
+    </script>
+</body>
+</html>
