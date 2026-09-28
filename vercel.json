@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "marine-obs.vercel.app"
+        }
+      ],
+      "destination": "https://marine-obs.org/:path*",
+      "permanent": true
+    }
+  ]
+}

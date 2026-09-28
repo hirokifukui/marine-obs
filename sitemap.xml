@@ -148,4 +148,19 @@
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
+<url>
+    <loc>https://marine-obs.org/moni1000/data-overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://marine-obs.org/moni1000/sst-validation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://marine-obs.org/immersion-pulmonary-edema.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
