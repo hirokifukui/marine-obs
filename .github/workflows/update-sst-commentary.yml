@@ -78,7 +78,7 @@ jobs:
           client = anthropic.Anthropic()
           message = client.messages.create(
               model=MODEL,
-              max_tokens=1024,
+              max_tokens=16000,
               messages=[{
                   "role": "user",
                   "content": [
