@@ -42,7 +42,7 @@ jobs:
 
           NOAA_IMAGE_URL = "https://www.ospo.noaa.gov/data/cb/ssta/ssta.daily.current.png"
           OUTPUT_PATH = Path("data/sst-map-commentary.json")
-          MODEL = "claude-sonnet-4-20250514"
+          MODEL = "claude-opus-5-5"
 
           PROMPT = """You are analyzing NOAA's daily SST anomaly map for marine-obs.org, a coral reef thermal stress monitoring site.
 
