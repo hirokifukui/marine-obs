@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Shippori+Mincho:wght@500;600;700&family=Source+Sans+3:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F2F5F4;--ink:#1C2427;--soft:#435257;--faint:#6A787C;--ai:#1E3A5C;--deep:#14283F;--rule:#C6D1D4;--asagi:#3A8790;--coral:#BF3F46;--amber:#A9781C}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px;overflow:hidden}
+body{font-family:'Source Sans 3','Noto Sans JP',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;background:var(--paper)}
+.slide{width:1080px;height:1350px;position:relative;display:none;overflow:hidden}
+.slide.on{display:block}
+.pad{position:absolute;left:96px;right:96px}
+.foot{position:absolute;left:96px;right:96px;bottom:72px;display:flex;justify-content:space-between;align-items:center;font-size:22px;color:var(--faint);border-top:1px solid var(--rule);padding-top:22px}
+.foot b{font-family:'Source Serif 4',serif;font-weight:600;color:var(--ai);font-size:25px}
+.kicker{font-size:22px;color:var(--faint);letter-spacing:.04em}
+h2{font-family:'Shippori Mincho',serif;font-weight:600;font-size:52px;line-height:1.45;letter-spacing:.05em;color:var(--deep)}
+.h2en{font-family:'Source Serif 4',serif;font-style:italic;font-size:27px;color:var(--soft);margin-top:14px;line-height:1.45}
+
+/* 1 hook */
+#p1{background:#14283F;color:#F2F5F4}
+#p1 .mark{position:absolute;left:96px;top:96px;width:64px;height:64px}
+#p1 .lab{position:absolute;left:184px;top:104px;font-size:22px;opacity:.7;line-height:1.45}
+#p1 .lab b{display:block;font-family:'Source Serif 4',serif;font-weight:600;font-size:26px;opacity:1}
+#p1 .hook{position:absolute;left:96px;right:96px;top:470px}
+#p1 .hook .ja{font-family:'Shippori Mincho',serif;font-weight:600;font-size:88px;line-height:1.42;letter-spacing:.06em}
+#p1 .hook .en{font-family:'Source Serif 4',serif;font-style:italic;font-size:38px;opacity:.75;margin-top:40px}
+#p1 .rule{position:absolute;left:96px;right:96px;bottom:150px;border-top:1px solid rgba(242,245,244,.22)}
+#p1 .cite{position:absolute;left:96px;right:96px;bottom:84px;display:flex;justify-content:space-between;font-size:22px;opacity:.6}
+
+/* 3 mechanism */
+#p3 svg.fig{position:absolute;left:96px;top:390px;width:888px;height:720px}
+
+/* 4 dots */
+.dots{position:absolute;left:96px;right:96px;top:470px;display:grid;grid-template-columns:repeat(13,1fr);gap:22px 18px}
+.dot{width:52px;height:52px;border-radius:50%;background:var(--coral)}
+.dot.out{background:none;border:3px solid var(--faint)}
+.big{position:absolute;left:96px;right:96px;top:690px}
+.big .n{font-family:'Source Serif 4',serif;font-weight:600;font-size:190px;line-height:1;color:var(--coral);letter-spacing:-.02em}
+.big .n small{font-size:72px;color:var(--soft);font-weight:400;margin-left:8px}
+.big p{font-family:'Shippori Mincho',serif;font-size:36px;line-height:1.65;letter-spacing:.04em;margin-top:26px;color:var(--ink)}
+.big p.en{font-family:'Source Serif 4',serif;font-style:italic;font-size:25px;color:var(--soft);letter-spacing:0;margin-top:12px;line-height:1.5}
+
+/* 5 result */
+.bars{position:absolute;left:96px;right:96px;top:440px}
+.bar{display:grid;grid-template-columns:360px 1fr 120px;align-items:center;gap:24px;margin-bottom:34px}
+.bar .lab{font-size:24px;line-height:1.35;color:var(--soft)}
+.bar .lab b{display:block;font-family:'Shippori Mincho',serif;font-size:32px;color:var(--deep);font-weight:600}
+.track{height:54px;background:#E3E9EA;position:relative}
+.fill{position:absolute;left:0;top:0;bottom:0}
+.val{font-family:'Source Serif 4',serif;font-weight:600;font-size:46px;text-align:right}
+.chance{position:absolute;top:-14px;bottom:-14px;border-left:2px dotted var(--faint)}
+.axisnote{font-size:20px;color:var(--faint);margin:-16px 0 0 384px;line-height:1.5}
+.share{position:absolute;left:96px;right:96px;top:790px;border-top:2px solid var(--deep);padding-top:34px;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center}
+.share .pct{font-family:'Source Serif 4',serif;font-weight:600;font-size:128px;color:var(--deep);line-height:1}
+.share p{font-family:'Shippori Mincho',serif;font-size:33px;line-height:1.6;letter-spacing:.04em}
+.share p.en{font-family:'Source Serif 4',serif;font-style:italic;font-size:23px;color:var(--soft);letter-spacing:0;line-height:1.45;margin-top:8px}
+.ref{position:absolute;left:96px;right:96px;top:1100px;font-size:22px;color:var(--soft);line-height:1.55}
+.ref i{font-family:'Source Serif 4',serif}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="mk" viewBox="0 0 32 32"><circle cx="16" cy="16" r="13.5" fill="none" stroke="#F2F5F4" stroke-width="1.8"/><path d="M6 11.5 Q11 8.5 16 11.5 T26 11.5" fill="none" stroke="#F2F5F4" stroke-width="1.6"/><path d="M4.5 16.5 Q10 13.5 16 16.5 T27.5 16.5" fill="none" stroke="#E07A80" stroke-width="1.8"/><path d="M6 21.5 Q11 18.5 16 21.5 T26 21.5" fill="none" stroke="#F2F5F4" stroke-width="1.6"/></symbol>
+</defs></svg>
+
+<section class="slide" id="p1">
+  <svg class="mark"><use href="#mk"/></svg>
+  <div class="lab"><b>論文紹介 · New paper</b>Frontiers in Marine Science, 2026</div>
+  <div class="hook">
+    <div class="ja">警報が鳴る前に、<br>サンゴは白くなる。</div>
+    <div class="en">Corals bleach before the alarm sounds.</div>
+  </div>
+  <div class="rule"></div>
+  <div class="cite"><span>Fukui H. · doi:10.3389/fmars.2026.1835611</span><span>marine-obs.org</span></div>
+</section>
+
+<section class="slide" id="p3">
+  <div class="pad" style="top:110px">
+    <div class="kicker">しくみ · The mechanism</div>
+    <h2 style="margin-top:18px">暖かい海ほど、<br>「積み上がる余地」がない。</h2>
+    <div class="h2en">The warmer the baseline, the less room heat stress has to build up.</div>
+  </div>
+  <svg class="fig" viewBox="0 0 888 720" font-family="Source Sans 3, Noto Sans JP, sans-serif">
+    <!-- ceiling -->
+    <line x1="40" y1="120" x2="860" y2="120" stroke="#BF3F46" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="40" y="96" font-size="26" fill="#BF3F46" font-weight="600">夏の水温の上限（これ以上はめったに上がらない）</text>
+    <!-- cool sea -->
+    <rect x="110" y="120" width="250" height="330" fill="#3A8790" opacity="0.16"/>
+    <rect x="110" y="450" width="250" height="200" fill="#1E3A5C"/>
+    <text x="235" y="560" text-anchor="middle" font-size="27" fill="#F2F5F4" font-weight="600">平年の夏の水温</text>
+    <text x="235" y="596" text-anchor="middle" font-size="22" fill="#F2F5F4" opacity=".8">baseline (MMM)</text>
+    <line x1="235" y1="440" x2="235" y2="134" stroke="#3A8790" stroke-width="3"/>
+    <path d="M222 150 L235 128 L248 150" fill="#3A8790"/>
+    <text x="235" y="270" text-anchor="middle" font-size="27" fill="#2A6870" font-weight="600">余地が大きい</text>
+    <text x="235" y="306" text-anchor="middle" font-size="22" fill="#2A6870">DHWは警報まで届く</text>
+    <text x="235" y="700" text-anchor="middle" font-size="27" fill="#1C2427" font-weight="600">涼しい海　cool baseline</text>
+    <!-- warm sea -->
+    <rect x="528" y="120" width="250" height="72" fill="#BF3F46" opacity="0.16"/>
+    <rect x="528" y="192" width="250" height="458" fill="#14283F"/>
+    <text x="653" y="430" text-anchor="middle" font-size="27" fill="#F2F5F4" font-weight="600">平年の夏の水温</text>
+    <text x="653" y="466" text-anchor="middle" font-size="22" fill="#F2F5F4" opacity=".8">baseline (MMM)</text>
+    <text x="653" y="166" text-anchor="middle" font-size="24" fill="#BF3F46" font-weight="600">余地がほとんどない</text>
+    <text x="653" y="252" text-anchor="middle" font-size="22" fill="#F2F5F4" opacity=".85">DHWは警報に届かない</text>
+    <text x="653" y="700" text-anchor="middle" font-size="27" fill="#1C2427" font-weight="600">暖かい海　warm baseline</text>
+    <text x="653" y="612" text-anchor="middle" font-size="22" fill="#F2F5F4" opacity=".7">約28.5℃を超える海</text>
+  </svg>
+  <div class="foot"><span>DHW＝平年を超えた分の水温を8〜12週ぶん積み上げた値</span><b>marine-obs.org</b></div>
+</section>
+
+<section class="slide" id="p4">
+  <div class="pad" style="top:110px">
+    <div class="kicker">日本のデータ · Evidence from Japan</div>
+    <h2 style="margin-top:18px">重い白化の大半は、<br>警報の手前で起きていた。</h2>
+    <div class="h2en">Most severe bleaching happened below the alert level.</div>
+  </div>
+  <div class="dots" id="dots"></div>
+  <div class="big">
+    <div class="n">24<small>/ 26</small></div>
+    <p>白化率50%以上の観測26件のうち24件（92%）は、DHWが警報の目安「4」に届く前だった。</p>
+    <p class="en">24 of 26 severe-bleaching observations (≥50%) occurred at DHW below 4, NOAA's bleaching-warning threshold.</p>
+  </div>
+  <div class="foot"><span>環境省モニタリングサイト1000（26サイト・5年）</span><b>marine-obs.org</b></div>
+</section>
+
+<section class="slide" id="p5">
+  <div class="pad" style="top:110px">
+    <div class="kicker">結論 · What works instead</div>
+    <h2 style="margin-top:18px">平年との差ではなく、<br>水温そのものを見る。</h2>
+    <div class="h2en">Look at the temperature itself, not the anomaly.</div>
+  </div>
+  <div class="bars">
+    <div class="bar"><div class="lab"><b>DHW</b>平年との差を積む</div><div class="track"><div class="fill" style="width:62.4%;background:#BF3F46"></div><div class="chance" style="left:50%"></div></div><div class="val" style="color:#BF3F46">0.62</div></div>
+    <div class="bar"><div class="lab"><b>絶対温度の指標</b>30℃を超えた分を積む</div><div class="track"><div class="fill" style="width:88.4%;background:#1E3A5C"></div><div class="chance" style="left:50%"></div></div><div class="val" style="color:#1E3A5C">0.88</div></div>
+    <div class="axisnote">日本のサイトで白化率50%以上を当てる精度（AUC）。点線0.5は当て推量と同じ<br>Skill at predicting ≥50% bleaching (AUC); dotted line = chance</div>
+  </div>
+  <div class="share">
+    <div class="pct">63%</div>
+    <div><p>世界のサンゴ礁の6割あまりが、この「警報が届かない海」にある。</p><p class="en">of the world's reef area lies in this constraint zone.</p></div>
+  </div>
+  <div class="ref">Fukui H. (2026) <i>The thermal gap constraint: why satellite degree heating weeks fail where reefs need them most.</i> Frontiers in Marine Science 13:1835611 · オープンアクセス</div>
+  <div class="foot"><span>論文・コード・データ · Paper, code and data</span><b>marine-obs.org</b></div>
+</section>
+
+<script>
+const d=document.getElementById('dots');for(let i=0;i<26;i++){const e=document.createElement('div');e.className='dot'+(i>=24?' out':'');d.appendChild(e);}
+document.getElementById((location.hash||'#p1').slice(1)).classList.add('on');
+</script>
+</body></html>
