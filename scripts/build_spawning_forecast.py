@@ -28,7 +28,7 @@ Usage: build_spawning_forecast.py [--as-of YYYY-MM-DD] [--out PATH] [--log-dir D
 import argparse, json, os, urllib.request, urllib.parse, datetime as dt
 from pathlib import Path
 import ephem
-from build_site_data import rows_since
+from build_site_data import get
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / 'data'
@@ -72,9 +72,15 @@ _ROWS = None
 
 
 def sst_rows(year):
+    """Spawning-season SST (1 Mar - 30 Jun) for the four sites, 2003 to the target year.
+    One small request per year instead of paging the whole table."""
     global _ROWS
     if _ROWS is None:
-        _ROWS = [r for r in rows_since(f'{year - 24}-01-01') if r['sst'] is not None]
+        _ROWS, sites = [], ','.join(SITES)
+        for y in range(2003, max(year, dt.date.today().year) + 1):
+            _ROWS += [r for r in get(f'/rest/v1/sst_daily?select=site_code,date,sst&site_code=in.({sites})'
+                                     f'&date=gte.{y}-03-01&date=lte.{y}-06-30&order=date.asc&limit=1000')
+                      if r['sst'] is not None]
     return _ROWS
 
 
