@@ -22,7 +22,6 @@ jobs:
           python-version: '3.11'
       - run: python scripts/build_site_data.py
       - run: python scripts/build_onna_outlook.py
-      - run: python scripts/build_rounds.py
       - run: pip install ephem && python scripts/build_spawning_forecast.py
       - name: Commit if changed
         run: |
