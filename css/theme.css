@@ -114,7 +114,7 @@ header { background: var(--surface-deep); border-bottom: 1px solid light-dark(#0
 .logo { font-family: var(--serif-ja); font-weight: 600; letter-spacing: 0.06em; font-size: 1.02rem; }
 .logo-icon { border-radius: 50%; background: none; }
 .nav-link { font-size: 0.92rem; letter-spacing: 0.02em; }
-.dropdown-menu { border-radius: 2px; border: 1px solid var(--rule); box-shadow: 0 6px 18px light-dark(rgba(20, 40, 63, 0.12), rgba(0, 0, 0, 0.5)); }
+.dropdown-menu { border-radius: 2px; border: 1px solid rgba(242, 245, 244, 0.12); box-shadow: 0 6px 18px light-dark(rgba(20, 40, 63, 0.12), rgba(0, 0, 0, 0.5)); }
 .nav-about { color: #DCE4E6; text-decoration: none; font-size: 0.85rem; margin-right: 1rem; white-space: nowrap; }
 .nav-about:hover { color: #fff; }
 
@@ -297,9 +297,6 @@ body:not(.ja) .stamp { font-family: var(--serif); font-size: 0.72rem; letter-spa
     :root:not([data-theme="light"]) img:not([src$=".svg"]):not(.logo-icon img) { filter: brightness(0.92); }
 }
 :root[data-theme="dark"] img:not([src$=".svg"]) { filter: brightness(0.92); }
-.dropdown-menu { background: var(--paper-raised); color: var(--ink); }
-.dropdown-menu a { color: var(--ink); }
-.dropdown-menu a:hover { background: var(--hover); }
 input, select, textarea, button { color: inherit; }
 .leaflet-container { background: var(--paper); }
 
@@ -325,5 +322,5 @@ html, body { overflow-x: clip; }
 body.ja .about-content li { line-height: 2; }
 .about-content li strong { color: var(--text-primary); font-weight: 600; }
 
-/* mobile menu stays on the dark surface in both schemes */
-.sidebar { background: var(--surface-deep); }
+/* menus stay on the dark surface in both schemes (their links are white) */
+.sidebar, .dropdown-menu { background: var(--surface-deep); }
