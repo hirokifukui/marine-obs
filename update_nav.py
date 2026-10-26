@@ -19,6 +19,7 @@ HTML_FILES = [
     'diving-population.html',
     'instructor-health.html',
     'immersion-pulmonary-edema.html',
+    'publications.html',
 ]
 
 # 新しいデスクトップナビゲーション
@@ -100,6 +101,7 @@ NAV_DESKTOP_NEW = '''            <!-- Desktop Navigation -->
                             <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
                         </a>
                         <ul class="dropdown-menu">
+                            <li><a href="publications.html"><span data-lang="en">Publications</span><span data-lang="ja">研究成果</span></a></li>
                             <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
                             <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
                             <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
@@ -189,6 +191,7 @@ NAV_SIDEBAR_NEW = '''    <!-- Mobile Sidebar -->
                     <span data-lang="ja">リファレンス</span>
                 </span>
                 <ul class="sidebar-submenu">
+                    <li><a href="publications.html"><span data-lang="en">Publications</span><span data-lang="ja">研究成果</span></a></li>
                     <li><a href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a></li>
                     <li><a href="glossary.html"><span data-lang="en">Glossary</span><span data-lang="ja">用語解説</span></a></li>
                     <li><a href="datasources.html"><span data-lang="en">Data Sources</span><span data-lang="ja">データソース</span></a></li>
