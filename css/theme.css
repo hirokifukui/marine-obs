@@ -297,9 +297,9 @@ body:not(.ja) .stamp { font-family: var(--serif); font-size: 0.72rem; letter-spa
     :root:not([data-theme="light"]) img:not([src$=".svg"]):not(.logo-icon img) { filter: brightness(0.92); }
 }
 :root[data-theme="dark"] img:not([src$=".svg"]) { filter: brightness(0.92); }
-.dropdown-menu, .sidebar, .sidebar-menu { background: var(--paper-raised); color: var(--ink); }
-.dropdown-menu a, .sidebar-menu a { color: var(--ink); }
-.dropdown-menu a:hover, .sidebar-menu a:hover { background: var(--hover); }
+.dropdown-menu { background: var(--paper-raised); color: var(--ink); }
+.dropdown-menu a { color: var(--ink); }
+.dropdown-menu a:hover { background: var(--hover); }
 input, select, textarea, button { color: inherit; }
 .leaflet-container { background: var(--paper); }
 
@@ -324,3 +324,6 @@ html, body { overflow-x: clip; }
 .about-content li { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 0.4rem; }
 body.ja .about-content li { line-height: 2; }
 .about-content li strong { color: var(--text-primary); font-weight: 600; }
+
+/* mobile menu stays on the dark surface in both schemes */
+.sidebar { background: var(--surface-deep); }
