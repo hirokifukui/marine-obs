@@ -55,11 +55,43 @@ h2{font-family:'Shippori Mincho',serif;font-weight:600;font-size:52px;line-heigh
 .share p.en{font-family:'Source Serif 4',serif;font-style:italic;font-size:23px;color:var(--soft);letter-spacing:0;line-height:1.45;margin-top:8px}
 .ref{position:absolute;left:96px;right:96px;top:1100px;font-size:22px;color:var(--soft);line-height:1.55}
 .ref i{font-family:'Source Serif 4',serif}
+
+/* 0 paper cover */
+#p0{background:#FBFBF9}
+#p0 .bar{position:absolute;left:0;right:0;top:0;height:18px;background:#BF3F46}
+#p0 .jr{position:absolute;left:96px;right:96px;top:110px;display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #1C2427;padding-bottom:22px}
+#p0 .jr b{font-family:'Source Serif 4',serif;font-weight:600;font-size:34px;color:#1C2427}
+#p0 .jr span{font-size:24px;color:#6A787C}
+#p0 .type{position:absolute;left:96px;top:232px;font-size:24px;color:#BF3F46;font-weight:600;letter-spacing:.02em}
+#p0 .ttl{position:absolute;left:96px;right:96px;top:290px;font-family:'Source Serif 4',serif;font-weight:600;font-size:74px;line-height:1.14;color:#14283F;letter-spacing:-.005em}
+#p0 .au{position:absolute;left:96px;right:96px;top:690px;font-size:30px;color:#1C2427}
+#p0 .au small{display:block;font-size:22px;color:#6A787C;margin-top:8px}
+#p0 .abs{position:absolute;left:96px;right:96px;top:820px;border-top:1px solid #C6D1D4;border-bottom:1px solid #C6D1D4;padding:34px 0;display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:center}
+#p0 .abs .ja{font-family:'Shippori Mincho',serif;font-weight:600;font-size:44px;line-height:1.5;letter-spacing:.05em;color:#1C2427}
+#p0 .abs .en{font-family:'Source Serif 4',serif;font-style:italic;font-size:24px;color:#435257;margin-top:12px}
+#p0 .mini{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+#p0 .mini i{width:30px;height:30px;border-radius:50%;background:#BF3F46;display:block}
+#p0 .mini i.o{background:none;border:2px solid #6A787C}
+#p0 .mini-cap{font-size:18px;color:#6A787C;margin-top:12px;line-height:1.4}
+#p0 .doi{position:absolute;left:96px;right:96px;bottom:84px;display:flex;justify-content:space-between;align-items:center;font-size:22px;color:#6A787C}
+#p0 .doi .oa{color:#3A8790;font-weight:600}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><defs>
 <symbol id="mk" viewBox="0 0 32 32"><circle cx="16" cy="16" r="13.5" fill="none" stroke="#F2F5F4" stroke-width="1.8"/><path d="M6 11.5 Q11 8.5 16 11.5 T26 11.5" fill="none" stroke="#F2F5F4" stroke-width="1.6"/><path d="M4.5 16.5 Q10 13.5 16 16.5 T27.5 16.5" fill="none" stroke="#E07A80" stroke-width="1.8"/><path d="M6 21.5 Q11 18.5 16 21.5 T26 21.5" fill="none" stroke="#F2F5F4" stroke-width="1.6"/></symbol>
 </defs></svg>
 
+<section class="slide" id="p0">
+  <div class="bar"></div>
+  <div class="jr"><b>Frontiers in Marine Science</b><span>2026 · Vol. 13 · 1835611</span></div>
+  <div class="type">論文 · Brief Research Report</div>
+  <div class="ttl">The thermal gap constraint: why satellite degree heating weeks fail where reefs need them most</div>
+  <div class="au">Hiroki Fukui<small>marine-obs.org</small></div>
+  <div class="abs">
+    <div><div class="ja">警報が鳴る前に、<br>サンゴは白くなる。</div><div class="en">Corals bleach before the alarm sounds.</div></div>
+    <div><div class="mini" id="mini"></div><div class="mini-cap">重い白化26件のうち24件は<br>警報の手前で起きていた</div></div>
+  </div>
+  <div class="doi"><span>doi:10.3389/fmars.2026.1835611</span><span class="oa">オープンアクセス · Open access</span></div>
+</section>
 <section class="slide" id="p1">
   <svg class="mark"><use href="#mk"/></svg>
   <div class="lab"><b>論文紹介 · New paper</b>Frontiers in Marine Science, 2026</div>
@@ -139,6 +171,7 @@ h2{font-family:'Shippori Mincho',serif;font-weight:600;font-size:52px;line-heigh
 </section>
 
 <script>
+const m=document.getElementById('mini');for(let i=0;i<26;i++){const e=document.createElement('i');if(i>=24)e.className='o';m.appendChild(e);}
 const d=document.getElementById('dots');for(let i=0;i<26;i++){const e=document.createElement('div');e.className='dot'+(i>=24?' out':'');d.appendChild(e);}
 document.getElementById((location.hash||'#p1').slice(1)).classList.add('on');
 </script>
