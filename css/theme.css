@@ -318,3 +318,9 @@ html, body { overflow-x: clip; }
     .logo [data-lang="en"] { font-size: 0.88rem; }
     header .lang-switch button { padding: 0.2rem 0.3rem; }
 }
+
+/* about: lists read like the paragraphs around them */
+.about-content ul { padding-left: 1.2em; margin: 0 0 1rem; }
+.about-content li { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 0.4rem; }
+body.ja .about-content li { line-height: 2; }
+.about-content li strong { color: var(--text-primary); font-weight: 600; }
