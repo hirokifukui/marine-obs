@@ -1,0 +1,69 @@
+{
+  "year": 2027,
+  "site": "Onna Village (Manza)",
+  "phase": 1,
+  "full_moon": "2027-05-20 19:58",
+  "base_night": "2027-05-25",
+  "sst_anomaly_30d": null,
+  "sst_days": 0,
+  "sst_shift_candidate": null,
+  "sst_shift_applied": false,
+  "shift_nights": 0,
+  "peak": {
+    "date": "2027-05-25",
+    "time": "21:57",
+    "tolerance_min": 30,
+    "sunset": "19:13",
+    "moonrise": "23:17"
+  },
+  "window": [
+    "2027-05-23",
+    "2027-05-28"
+  ],
+  "nights": [
+    {
+      "date": "2027-05-23",
+      "sunset": "19:12",
+      "moonrise": "21:54",
+      "predicted": "21:56",
+      "peak": false
+    },
+    {
+      "date": "2027-05-24",
+      "sunset": "19:13",
+      "moonrise": "22:38",
+      "predicted": "21:57",
+      "peak": false
+    },
+    {
+      "date": "2027-05-25",
+      "sunset": "19:13",
+      "moonrise": "23:17",
+      "predicted": "21:57",
+      "peak": true
+    },
+    {
+      "date": "2027-05-26",
+      "sunset": "19:14",
+      "moonrise": "23:52",
+      "predicted": "21:58",
+      "peak": false
+    },
+    {
+      "date": "2027-05-27",
+      "sunset": "19:14",
+      "moonrise": "00:24",
+      "predicted": "21:58",
+      "peak": false
+    },
+    {
+      "date": "2027-05-28",
+      "sunset": "19:15",
+      "moonrise": "00:53",
+      "predicted": "21:59",
+      "peak": false
+    }
+  ],
+  "method": "scripts/build_spawning_forecast.py",
+  "updated": "2026-10-26"
+}
