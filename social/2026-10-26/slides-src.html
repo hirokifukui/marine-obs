@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Shippori+Mincho:wght@500;600;700&family=Source+Sans+3:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F2F5F4;--raised:#FAFBFB;--ink:#1C2427;--soft:#435257;--faint:#6A787C;--ai:#1E3A5C;--deep:#14283F;--rule:#C6D1D4;--asagi:#3A8790;--coral:#BF3F46;--amber:#A9781C}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:960px;overflow:hidden}
+body{font-family:'Source Sans 3','Noto Sans JP',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.slide{width:1440px;height:960px;position:relative;display:none}
+.slide.on{display:block}
+.serif{font-family:'Source Serif 4','Shippori Mincho',serif}
+.ja-serif{font-family:'Shippori Mincho','Source Serif 4',serif}
+.en{font-family:'Source Serif 4',serif;color:var(--faint);font-weight:400}
+.foot{position:absolute;left:112px;right:112px;bottom:64px;display:flex;justify-content:space-between;align-items:center;font-size:24px;color:var(--faint);border-top:1px solid var(--rule);padding-top:22px}
+.foot b{font-family:'Source Serif 4',serif;font-weight:600;color:var(--ai);font-size:26px;letter-spacing:.01em}
+.mark{display:inline-block;vertical-align:middle}
+
+/* 2 title */
+#s2{background:#14283F;color:#F2F5F4}
+#s2 .wrap{position:absolute;left:128px;top:0;bottom:0;right:128px;display:flex;flex-direction:column;justify-content:center}
+#s2 .mark{width:104px;height:104px;margin-bottom:56px}
+#s2 h1{font-family:'Shippori Mincho',serif;font-weight:600;font-size:92px;letter-spacing:.08em;line-height:1.1}
+#s2 .sub{font-family:'Source Serif 4',serif;font-weight:600;font-size:40px;margin-top:20px;opacity:.82;letter-spacing:.01em}
+#s2 .line{font-family:'Shippori Mincho',serif;font-size:38px;letter-spacing:.08em;margin-top:64px;line-height:1.6}
+#s2 .line-en{font-family:'Source Serif 4',serif;font-size:28px;opacity:.72;margin-top:6px;font-style:italic}
+#s2 .url{position:absolute;right:128px;bottom:72px;font-family:'Source Serif 4',serif;font-size:28px;opacity:.6}
+
+/* 3 rounds */
+#s3,#s4,#s5{background:var(--paper)}
+.head{position:absolute;left:112px;right:112px;top:76px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid var(--deep);padding-bottom:20px}
+.head h2{font-family:'Shippori Mincho',serif;font-weight:600;font-size:56px;color:var(--deep);letter-spacing:.06em;line-height:1.1}
+.head h2 .en{display:block;font-size:26px;letter-spacing:.01em;margin-top:10px;color:var(--faint)}
+.head .meta{text-align:right;font-size:24px;color:var(--faint);line-height:1.5}
+.head .meta strong{display:block;font-family:'Source Serif 4',serif;font-size:36px;color:var(--ink);font-weight:600}
+table{position:absolute;left:112px;right:112px;top:236px;width:1216px;border-collapse:collapse;font-variant-numeric:tabular-nums lining-nums}
+th{font-size:21px;font-weight:600;color:var(--soft);text-align:right;padding:0 12px 12px;border-bottom:1px solid var(--soft)}
+th:first-child{text-align:left}
+td{padding:8px 12px;border-bottom:1px solid #DDE4E6;text-align:right;font-size:31px;font-family:'Source Serif 4',serif;font-weight:600}
+td.site{text-align:left;font-family:'Shippori Mincho',serif;font-size:31px;letter-spacing:.06em;color:var(--deep)}
+td.site span{font-family:'Source Serif 4',serif;font-size:21px;color:var(--faint);letter-spacing:0;margin-left:14px;font-weight:400}
+td .u{font-size:20px;color:var(--faint);font-weight:400;margin-left:3px}
+td.up{color:var(--coral)}
+td.st{width:110px}
+.stamp{display:inline-grid;place-items:center;width:50px;height:50px;border:2px solid var(--asagi);color:var(--asagi);font-family:'Shippori Mincho',serif;font-weight:700;font-size:17px;transform:rotate(-6deg);border-radius:3px}
+.note{position:absolute;left:112px;right:112px;top:812px;font-size:23px;color:var(--soft)}
+
+/* 4 spawning */
+#s4 .big{position:absolute;left:112px;top:270px}
+#s4 .date{font-family:'Source Serif 4',serif;font-weight:600;font-size:148px;color:var(--deep);line-height:1;letter-spacing:-.01em}
+#s4 .time{font-family:'Source Serif 4',serif;font-weight:600;font-size:96px;color:var(--ink);margin-top:20px;line-height:1}
+#s4 .time small{font-size:40px;color:var(--faint);font-weight:400;margin-left:14px}
+#s4 .where{font-size:30px;color:var(--soft);margin-top:30px}
+#s4 .where .en{font-size:26px;margin-left:16px}
+#s4 .side{position:absolute;right:112px;top:290px;width:440px;border-left:2px solid var(--deep);padding-left:36px}
+#s4 .side h3{font-family:'Shippori Mincho',serif;font-size:28px;color:var(--deep);letter-spacing:.06em;margin-bottom:18px}
+#s4 .side p{font-size:24px;line-height:1.65;color:var(--soft);margin-bottom:14px}
+#s4 .side p.en{font-family:'Source Serif 4',serif;font-size:21px}
+#s4 .ok{color:var(--asagi);font-weight:600}
+#s4 .ng{color:var(--coral);font-weight:600}
+
+/* 5 research */
+#s5 .paper{position:absolute;left:112px;right:112px;top:272px}
+#s5 .venue{font-size:24px;color:var(--faint);letter-spacing:.02em}
+#s5 .title{font-family:'Source Serif 4',serif;font-weight:600;font-size:56px;line-height:1.2;color:var(--deep);margin-top:16px;max-width:1150px}
+#s5 .claim{font-family:'Shippori Mincho',serif;font-size:36px;line-height:1.7;letter-spacing:.04em;margin-top:44px;color:var(--ink);max-width:1150px}
+#s5 .claim-en{font-family:'Source Serif 4',serif;font-size:26px;line-height:1.55;color:var(--soft);margin-top:16px;max-width:1150px;font-style:italic}
+</style></head><body>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="mk-light" viewBox="0 0 32 32"><circle cx="16" cy="16" r="13.5" fill="none" stroke="#F2F5F4" stroke-width="1.8"/><path d="M6 11.5 Q11 8.5 16 11.5 T26 11.5" fill="none" stroke="#F2F5F4" stroke-width="1.6"/><path d="M4.5 16.5 Q10 13.5 16 16.5 T27.5 16.5" fill="none" stroke="#E07A80" stroke-width="1.8"/><path d="M6 21.5 Q11 18.5 16 21.5 T26 21.5" fill="none" stroke="#F2F5F4" stroke-width="1.6"/></symbol>
+<symbol id="mk-ink" viewBox="0 0 32 32"><circle cx="16" cy="16" r="13.5" fill="none" stroke="#1E3A5C" stroke-width="1.8"/><path d="M6 11.5 Q11 8.5 16 11.5 T26 11.5" fill="none" stroke="#1E3A5C" stroke-width="1.6"/><path d="M4.5 16.5 Q10 13.5 16 16.5 T27.5 16.5" fill="none" stroke="#BF3F46" stroke-width="1.8"/><path d="M6 21.5 Q11 18.5 16 21.5 T26 21.5" fill="none" stroke="#1E3A5C" stroke-width="1.6"/></symbol>
+</defs></svg>
+
+<section class="slide" id="s2"><div class="wrap">
+  <svg class="mark"><use href="#mk-light"/></svg>
+  <h1>海洋の徴候</h1>
+  <div class="sub">Signs of the Sea</div>
+  <div class="line">サンゴは声を出せない。だから私たちが潜る。</div>
+  <div class="line-en">Corals cannot speak. So we dive.</div>
+</div><div class="url">marine-obs.org</div></section>
+
+<section class="slide" id="s3">
+  <div class="head"><h2>今日の回診<span class="en">Daily rounds at seven Japanese reefs</span></h2>
+  <div class="meta">衛星観測日 · observed<strong>2026.10.23</strong></div></div>
+  <table>
+    <tr><th>地点 · site</th><th>水温 SST</th><th>平年差</th><th>DHW</th><th>30℃超 (30d)</th><th></th></tr>
+    <tr><td class="site">串本<span>Kushimoto</span></td><td>26.6<span class="u">°C</span></td><td class="up">+1.7</td><td>1.2</td><td>1<span class="u">d</span></td><td class="st"><span class="stamp">平常</span></td></tr>
+    <tr><td class="site">小笠原<span>Ogasawara</span></td><td>26.9<span class="u">°C</span></td><td>±0.0</td><td>2.8</td><td>11<span class="u">d</span></td><td class="st"><span class="stamp">平常</span></td></tr>
+    <tr><td class="site">奄美<span>Amami</span></td><td>27.1<span class="u">°C</span></td><td>+0.5</td><td>0.1</td><td>0<span class="u">d</span></td><td class="st"><span class="stamp">平常</span></td></tr>
+    <tr><td class="site">瀬底<span>Sesoko</span></td><td>27.1<span class="u">°C</span></td><td>+0.3</td><td>0.2</td><td>0<span class="u">d</span></td><td class="st"><span class="stamp">平常</span></td></tr>
+    <tr><td class="site">万座<span>Manza</span></td><td>27.1<span class="u">°C</span></td><td>+0.4</td><td>0.6</td><td>0<span class="u">d</span></td><td class="st"><span class="stamp">平常</span></td></tr>
+    <tr><td class="site">慶良間<span>Kerama</span></td><td>27.0<span class="u">°C</span></td><td>+0.1</td><td>1.1</td><td>3<span class="u">d</span></td><td class="st"><span class="stamp">平常</span></td></tr>
+    <tr><td class="site">石西礁湖<span>Sekisei</span></td><td>28.0<span class="u">°C</span></td><td>+1.0</td><td>0.6</td><td>12<span class="u">d</span></td><td class="st"><span class="stamp">平常</span></td></tr>
+  </table>
+  <div class="foot"><span>7地点とも熱ストレスの警報なし · No heat-stress alert at any site</span><b>marine-obs.org</b></div>
+</section>
+
+<section class="slide" id="s4">
+  <div class="head"><h2>次のサンゴ産卵<span class="en">The next coral spawning, predicted to the minute</span></h2>
+  <div class="meta">恩納村 · Onna, Okinawa<strong>Acropora</strong></div></div>
+  <div class="big">
+    <div class="date">2027.5.25</div>
+    <div class="time">21:57<small>± 30 min</small></div>
+    <div class="where">産卵ウィンドウ 5/23–5/28<span class="en">window May 23–28</span></div>
+  </div>
+  <div class="side">
+    <h3>2026年の答え合わせ</h3>
+    <p>月と産卵ウィンドウ <span class="ok">的中</span><br>当夜の時刻 <span class="ok">15分以内</span><br>ピークの夜 <span class="ng">2日ずれ</span></p>
+    <p class="en">2026: month and window hit, time within 15 min, peak night 2 days off.</p>
+  </div>
+  <div class="foot"><span>冬至後6回目の満月 + 5夜 · 日没 + 2時間44分</span><b>marine-obs.org</b></div>
+</section>
+
+<section class="slide" id="s5">
+  <div class="head"><h2>研究<span class="en">Research behind the site</span></h2>
+  <div class="meta">Frontiers in Marine Science<strong>2026</strong></div></div>
+  <div class="paper">
+    <div class="venue">Fukui H. · doi:10.3389/fmars.2026.1835611</div>
+    <div class="title">The thermal gap constraint: why satellite degree heating weeks fail where reefs need them most</div>
+    <div class="claim">平年の水温が約28.5℃を超える海域では、平年からの偏差が積み上がる余地が狭く、サンゴが白化していても衛星指標DHWは警報に届かない。世界のサンゴ礁の約63%がこの海域にある。</div>
+    <div class="claim-en">Above a climatological SST of about 28.5 °C, anomalies have little room to accumulate, so DHW can stay below alert while reefs bleach. About 63% of the world's reef area lies in this zone.</div>
+  </div>
+  <div class="foot"><span>論文・コード・データはサイトから · Paper, code and data on the site</span><b>marine-obs.org</b></div>
+</section>
+
+<script>
+const id=(location.hash||'#s2').slice(1);document.getElementById(id).classList.add('on');
+document.querySelectorAll('.slide svg.mark').forEach(()=>{});
+</script>
+</body></html>
