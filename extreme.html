@@ -266,17 +266,17 @@
             </div>
             <div class="hero-stats-row">
                 <div class="hero-stat-card">
-                    <span class="number" style="color: #fca5a5;" id="hero-hot-2024">--</span>
+                    <span class="number" style="color: #fca5a5;" id="hero-hot-cur">--</span>
                     <span class="label">
-                        <span data-lang="en">Sekisei hot days (2024)</span>
-                        <span data-lang="ja">石西礁湖 高温日 (2024)</span>
+                        <span data-lang="en">Sekisei hot days (<span class="yr-hot">2026</span>)</span>
+                        <span data-lang="ja">石西礁湖 高温日 (<span class="yr-hot">2026</span>)</span>
                     </span>
                 </div>
                 <div class="hero-stat-card">
-                    <span class="number" style="color: #67e8f9;" id="hero-cold-2025">--</span>
+                    <span class="number" style="color: #67e8f9;" id="hero-cold-cur">--</span>
                     <span class="label">
-                        <span data-lang="en">Kushimoto cold days (2025)</span>
-                        <span data-lang="ja">串本 低温日 (2025)</span>
+                        <span data-lang="en">Kushimoto cold days (winter <span class="yr-win">2026</span>)</span>
+                        <span data-lang="ja">串本 低温日 (<span class="yr-win">2026</span>年冬)</span>
                     </span>
                 </div>
             </div>
@@ -300,18 +300,18 @@
             <div class="summary-card hot">
                 <div class="icon">🔥</div>
                 <div class="label">
-                    <span data-lang="en">Hot Days 2024 (≥30°C)</span>
-                    <span data-lang="ja">2024年 高温日（30°C以上）</span>
+                    <span data-lang="en">Hot Days <span class="yr-hot">2026</span> (≥30°C)</span>
+                    <span data-lang="ja"><span class="yr-hot">2026</span>年 高温日（30°C以上）</span>
                 </div>
                 <div class="sites">
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span></div>
-                        <div class="site-value" id="hot24-kushimoto">--</div>
+                        <div class="site-value" id="hotcur-kushimoto">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
-                        <div class="site-value" id="hot24-ogasawara">--</div>
+                        <div class="site-value" id="hotcur-ogasawara">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                 </div>
@@ -321,18 +321,18 @@
             <div class="summary-card cold">
                 <div class="icon">❄️</div>
                 <div class="label">
-                    <span data-lang="en">Cold Days 2025 (≤20°C)</span>
-                    <span data-lang="ja">2025年 低温日（20°C以下）</span>
+                    <span data-lang="en">Cold Days, winter <span class="yr-win">2026</span> (≤20°C)</span>
+                    <span data-lang="ja"><span class="yr-win">2026</span>年冬 低温日（20°C以下）</span>
                 </div>
                 <div class="sites">
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Kushimoto</span><span data-lang="ja">串本</span></div>
-                        <div class="site-value" id="cold25-kushimoto">--</div>
+                        <div class="site-value" id="coldcur-kushimoto">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Ogasawara</span><span data-lang="ja">小笠原</span></div>
-                        <div class="site-value" id="cold25-ogasawara">--</div>
+                        <div class="site-value" id="coldcur-ogasawara">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                 </div>
@@ -349,33 +349,33 @@
             <div class="summary-card hot">
                 <div class="icon">🔥</div>
                 <div class="label">
-                    <span data-lang="en">Hot Days 2024 (≥30°C)</span>
-                    <span data-lang="ja">2024年 高温日（30°C以上）</span>
+                    <span data-lang="en">Hot Days <span class="yr-hot-prev">2025</span> (≥30°C)</span>
+                    <span data-lang="ja"><span class="yr-hot-prev">2025</span>年 高温日（30°C以上）</span>
                 </div>
                 <div class="sites">
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Amami</span><span data-lang="ja">奄美</span></div>
-                        <div class="site-value" id="hot24-amami">--</div>
+                        <div class="site-value" id="hotprev-amami">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                        <div class="site-value" id="hot24-sesoko">--</div>
+                        <div class="site-value" id="hotprev-sesoko">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                        <div class="site-value" id="hot24-manza">--</div>
+                        <div class="site-value" id="hotprev-manza">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span></div>
-                        <div class="site-value" id="hot24-kerama">--</div>
+                        <div class="site-value" id="hotprev-kerama">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span></div>
-                        <div class="site-value" id="hot24-sekisei">--</div>
+                        <div class="site-value" id="hotprev-sekisei">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                 </div>
@@ -385,33 +385,33 @@
             <div class="summary-card hot">
                 <div class="icon">🔥</div>
                 <div class="label">
-                    <span data-lang="en">Hot Days 2025 (≥30°C)</span>
-                    <span data-lang="ja">2025年 高温日（30°C以上）</span>
+                    <span data-lang="en">Hot Days <span class="yr-hot">2026</span> (≥30°C)</span>
+                    <span data-lang="ja"><span class="yr-hot">2026</span>年 高温日（30°C以上）</span>
                 </div>
                 <div class="sites">
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Amami</span><span data-lang="ja">奄美</span></div>
-                        <div class="site-value" id="hot25-amami">--</div>
+                        <div class="site-value" id="hotcur-amami">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Sesoko</span><span data-lang="ja">瀬底</span></div>
-                        <div class="site-value" id="hot25-sesoko">--</div>
+                        <div class="site-value" id="hotcur-sesoko">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Manza</span><span data-lang="ja">万座</span></div>
-                        <div class="site-value" id="hot25-manza">--</div>
+                        <div class="site-value" id="hotcur-manza">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Kerama</span><span data-lang="ja">慶良間</span></div>
-                        <div class="site-value" id="hot25-kerama">--</div>
+                        <div class="site-value" id="hotcur-kerama">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                     <div class="site-item">
                         <div class="site-name"><span data-lang="en">Sekisei</span><span data-lang="ja">石西礁湖</span></div>
-                        <div class="site-value" id="hot25-sekisei">--</div>
+                        <div class="site-value" id="hotcur-sekisei">--</div>
                         <div class="site-unit"><span data-lang="en">days</span><span data-lang="ja">日</span></div>
                     </div>
                 </div>
@@ -987,37 +987,22 @@
                 
                 const sites = ['kushimoto', 'ogasawara', 'amami', 'sesoko', 'manza', 'kerama', 'sekisei'];
                 
-                // Hot Days 2024
+                // Rolling years (2026-10): hot_year / winter_year come from the RPC
+                const setYr = (cls, v) => document.querySelectorAll('.' + cls).forEach(el => el.textContent = v);
+                setYr('yr-hot', data.hot_year);
+                setYr('yr-hot-prev', data.hot_year - 1);
+                setYr('yr-win', data.winter_year);
                 sites.forEach(site => {
-                    const el = document.getElementById(`hot24-${site}`);
-                    if (el) el.textContent = data.hot_2024?.[site] ?? 0;
+                    const put = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v ?? 0; };
+                    put(`hotcur-${site}`, data.hot_current?.[site]);
+                    put(`hotprev-${site}`, data.hot_previous?.[site]);
+                    put(`coldcur-${site}`, data.cold_current?.[site]);
                 });
-                
-                // Hot Days 2025
-                sites.forEach(site => {
-                    const el = document.getElementById(`hot25-${site}`);
-                    if (el) el.textContent = data.hot_2025?.[site] ?? 0;
-                });
-                
-                // Cold Days Winter 2025
-                sites.forEach(site => {
-                    const el = document.getElementById(`cold25-${site}`);
-                    if (el) el.textContent = data.cold_winter_2025?.[site] ?? 0;
-                });
-                
-                // Cold Days Winter 2026 (ongoing)
-                sites.forEach(site => {
-                    const el = document.getElementById(`cold26-${site}`);
-                    if (el) el.textContent = data.cold_winter_2026?.[site] ?? 0;
-                });
-                
-                // Hero stats
-                const heroHot = document.getElementById('hero-hot-2024');
-                if (heroHot) heroHot.textContent = data.hot_2024?.sekisei ?? '--';
-                
-                const heroCold = document.getElementById('hero-cold-2025');
-                if (heroCold) heroCold.textContent = data.cold_winter_2025?.kushimoto ?? '--';
-                
+                const heroHot = document.getElementById('hero-hot-cur');
+                if (heroHot) heroHot.textContent = data.hot_current?.sekisei ?? '--';
+                const heroCold = document.getElementById('hero-cold-cur');
+                if (heroCold) heroCold.textContent = data.cold_current?.kushimoto ?? '--';
+
                 // Date display (use latest_date directly as observation date)
                 if (data.latest_date) {
                     const dataDateObj = new Date(Date.UTC(

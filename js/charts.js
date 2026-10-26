@@ -52,6 +52,14 @@
     const SUPABASE_URL = 'https://pegiuiblpliainpdggfj.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlZ2l1aWJscGxpYWlucGRnZ2ZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQyMDkzNzQsImV4cCI6MjA3OTc4NTM3NH0.r9dBAsMLoXbgZL93lvA756r74U6YfCCfftHHlxYqZIw';
 
+
+    // 表示年の決定（2026-10 動的化）: 夏季は6月以降のデータがあればその年、なければ前年。
+    function hotYearFrom(latestDate) {
+        const [y, m] = latestDate.split('-').map(Number);
+        return m >= 6 ? y : y - 1;
+    }
+    const yy = (y) => String(y).slice(-2);
+
     // SST最新値をSupabaseから取得（7地点）
     async function loadSSTLatestFromSupabase() {
         try {
@@ -182,10 +190,10 @@
             const pubJa = `${pubDateObj.getUTCMonth() + 1}/${pubDateObj.getUTCDate()}`;
             
             
-            const hot24 = data.hot_2024 || {};
-            const hot25 = data.hot_2025 || {};
-            const cold25 = data.cold_winter_2025 || {};
-            const cold26 = data.cold_winter_2026 || {};
+            const hotY = data.hot_year, winY = data.winter_year;
+            const hot24 = data.hot_previous || {};
+            const hot25 = data.hot_current || {};
+            const cold26 = data.cold_current || {};
             
             const enEl = document.getElementById('extreme-latest-en');
             const jaEl = document.getElementById('extreme-latest-ja');
@@ -196,13 +204,13 @@
             const cold26Vals = ALL_SITES.map(s => cold26[s] || 0).join(' / ');
             
             if (enEl) {
-                enEl.innerHTML = `🔥24: ${hot24Vals}<br>　25: ${hot25Vals}<br>❄️W26: ${cold26Vals}<br><small style="opacity:0.7">Data: ${dataJa}</small>`;
+                enEl.innerHTML = `🔥${yy(hotY - 1)}: ${hot24Vals}<br>　${yy(hotY)}: ${hot25Vals}<br>❄️W${yy(winY)}: ${cold26Vals}<br><small style="opacity:0.7">Data: ${dataJa}</small>`;
             }
             if (jaEl) {
-                jaEl.innerHTML = `🔥24: ${hot24Vals}<br>　25: ${hot25Vals}<br>❄️26冬: ${cold26Vals}<br><small style="opacity:0.7">データ: ${dataJa}</small>`;
+                jaEl.innerHTML = `🔥${yy(hotY - 1)}: ${hot24Vals}<br>　${yy(hotY)}: ${hot25Vals}<br>❄️${yy(winY)}冬: ${cold26Vals}<br><small style="opacity:0.7">データ: ${dataJa}</small>`;
             }
             
-            updateExtremeStatus(hot25, cold26);
+            updateExtremeStatus(hot25, cold26, hotY, winY);
             
             console.log('✅ Extreme days loaded from Supabase RPC');
         } catch (e) {
@@ -211,7 +219,7 @@
     }
 
     // 極端日数ステータスを動的更新
-    function updateExtremeStatus(hot2025, cold2026) {
+    function updateExtremeStatus(hot2025, cold2026, hotY, winY) {
         const hotValues = ALL_SITES.map(s => hot2025[s] || 0);
         const coldValues = ALL_SITES.map(s => cold2026[s] || 0);
         const maxHotDays = Math.max(...hotValues);
@@ -235,11 +243,11 @@
             if (badgeJaEl) badgeJaEl.textContent = '注意';
             
             if (maxHotDays >= maxColdDays && maxHotDays >= 20) {
-                if (descEnEl) descEnEl.textContent = `2025: ${siteNames.en[maxHotSite]} ${maxHotDays} hot days.`;
-                if (descJaEl) descJaEl.textContent = `2025年: ${siteNames.ja[maxHotSite]}で${maxHotDays}日の高温。`;
+                if (descEnEl) descEnEl.textContent = `${hotY}: ${siteNames.en[maxHotSite]} ${maxHotDays} hot days.`;
+                if (descJaEl) descJaEl.textContent = `${hotY}年: ${siteNames.ja[maxHotSite]}で${maxHotDays}日の高温。`;
             } else {
-                if (descEnEl) descEnEl.textContent = `W26: ${siteNames.en[maxColdSite]} ${maxColdDays} cold days.`;
-                if (descJaEl) descJaEl.textContent = `26冬: ${siteNames.ja[maxColdSite]}で${maxColdDays}日の低温。`;
+                if (descEnEl) descEnEl.textContent = `W${yy(winY)}: ${siteNames.en[maxColdSite]} ${maxColdDays} cold days.`;
+                if (descJaEl) descJaEl.textContent = `${yy(winY)}冬: ${siteNames.ja[maxColdSite]}で${maxColdDays}日の低温。`;
             }
         } else {
             if (cardEl) cardEl.className = 'six-card status-safe';
@@ -249,8 +257,8 @@
             
             const totalHot = hotValues.reduce((a, b) => a + b, 0);
             const totalCold = coldValues.reduce((a, b) => a + b, 0);
-            if (descEnEl) descEnEl.textContent = `2025 hot: ${totalHot}d. W26 cold: ${totalCold}d. Normal.`;
-            if (descJaEl) descJaEl.textContent = `2025高温${totalHot}日・26冬低温${totalCold}日。正常範囲。`;
+            if (descEnEl) descEnEl.textContent = `${hotY} hot: ${totalHot}d. W${yy(winY)} cold: ${totalCold}d. Normal.`;
+            if (descJaEl) descJaEl.textContent = `${hotY}高温${totalHot}日・${yy(winY)}冬低温${totalCold}日。正常範囲。`;
         }
     }
 
@@ -267,8 +275,9 @@
             if (!response.ok) throw new Error('Supabase RPC failed');
             const data = await response.json();
             
-            const get2024 = (site) => data[site]?.find(d => d.year === 2024)?.peak_dhw || 0;
-            const get2025 = (site) => data[site]?.find(d => d.year === 2025)?.peak_dhw || 0;
+            const hotY = hotYearFrom(data.latest_date);
+            const get2024 = (site) => data[site]?.find(d => d.year === hotY - 1)?.peak_dhw || 0;
+            const get2025 = (site) => data[site]?.find(d => d.year === hotY)?.peak_dhw || 0;
             
             const peak2024 = {};
             const peak2025 = {};
@@ -293,14 +302,14 @@
             const dhw25Vals = ALL_SITES.map(s => Math.round(peak2025[s])).join(' / ');
             
             if (enEl) {
-                enEl.innerHTML = `'24: ${dhw24Vals}<br>'25: ${dhw25Vals}<br><small style="opacity:0.7">Data: ${dataJa}</small>`;
+                enEl.innerHTML = `'${yy(hotY - 1)}: ${dhw24Vals}<br>'${yy(hotY)}: ${dhw25Vals}<br><small style="opacity:0.7">Data: ${dataJa}</small>`;
             }
             if (jaEl) {
-                jaEl.innerHTML = `'24: ${dhw24Vals}<br>'25: ${dhw25Vals}<br><small style="opacity:0.7">データ: ${dataJa}</small>`;
+                jaEl.innerHTML = `'${yy(hotY - 1)}: ${dhw24Vals}<br>'${yy(hotY)}: ${dhw25Vals}<br><small style="opacity:0.7">データ: ${dataJa}</small>`;
             }
             
             window.dhwAllYearsData = data;
-            updateDHWStatus(peak2025);
+            updateDHWStatus(peak2025, hotY);
             
             console.log('✅ DHW peaks loaded from Supabase RPC');
             return data;
@@ -311,7 +320,7 @@
     }
 
     // DHWステータスを動的更新
-    function updateDHWStatus(peak2025) {
+    function updateDHWStatus(peak2025, hotY) {
         const values = ALL_SITES.map(s => peak2025[s]);
         const maxDHW = Math.max(...values);
         const maxSite = ALL_SITES[values.indexOf(maxDHW)];
@@ -328,22 +337,22 @@
             if (badgeEl) badgeEl.className = 'six-card-badge badge-alert';
             if (badgeEnEl) badgeEnEl.textContent = 'Alert';
             if (badgeJaEl) badgeJaEl.textContent = '警報';
-            if (descEnEl) descEnEl.textContent = `2025: ${siteNames.en[maxSite]} DHW ${maxDHW.toFixed(1)}. Severe risk.`;
-            if (descJaEl) descJaEl.textContent = `2025: ${siteNames.ja[maxSite]}がDHW ${maxDHW.toFixed(1)}。深刻なリスク。`;
+            if (descEnEl) descEnEl.textContent = `${hotY}: ${siteNames.en[maxSite]} DHW ${maxDHW.toFixed(1)}. Severe risk.`;
+            if (descJaEl) descJaEl.textContent = `${hotY}: ${siteNames.ja[maxSite]}がDHW ${maxDHW.toFixed(1)}。深刻なリスク。`;
         } else if (maxDHW >= 4) {
             if (cardEl) cardEl.className = 'six-card status-alert';
             if (badgeEl) badgeEl.className = 'six-card-badge badge-alert';
             if (badgeEnEl) badgeEnEl.textContent = 'Alert';
             if (badgeJaEl) badgeJaEl.textContent = '警報';
-            if (descEnEl) descEnEl.textContent = `2025: ${siteNames.en[maxSite]} DHW ${maxDHW.toFixed(1)}. Bleaching possible.`;
-            if (descJaEl) descJaEl.textContent = `2025: ${siteNames.ja[maxSite]}がDHW ${maxDHW.toFixed(1)}。白化の可能性。`;
+            if (descEnEl) descEnEl.textContent = `${hotY}: ${siteNames.en[maxSite]} DHW ${maxDHW.toFixed(1)}. Bleaching possible.`;
+            if (descJaEl) descJaEl.textContent = `${hotY}: ${siteNames.ja[maxSite]}がDHW ${maxDHW.toFixed(1)}。白化の可能性。`;
         } else {
             if (cardEl) cardEl.className = 'six-card status-safe';
             if (badgeEl) badgeEl.className = 'six-card-badge badge-safe';
             if (badgeEnEl) badgeEnEl.textContent = 'Safe';
             if (badgeJaEl) badgeJaEl.textContent = '安全';
-            if (descEnEl) descEnEl.textContent = `2025: All sites below DHW 4. Low stress year.`;
-            if (descJaEl) descJaEl.textContent = `2025: 全地点DHW 4未満。低ストレス年。`;
+            if (descEnEl) descEnEl.textContent = `${hotY}: All sites below DHW 4. Low stress year.`;
+            if (descJaEl) descJaEl.textContent = `${hotY}: 全地点DHW 4未満。低ストレス年。`;
         }
     }
 
@@ -362,14 +371,15 @@
             const sstCtx = document.getElementById('chart-sst-compare');
             if (sstCtx && sstData) {
                 const sst = sstData.chart.kushimoto || sstData.chart.manza;
+                const [yPrev, yCur] = (sstData.chart.years || ['2024', '2025']).map(String);
                 new Chart(sstCtx, {
                     type: 'line',
                     data: {
                         labels: sstData.chart.labels,
                         datasets: [
                             {
-                                label: '2025',
-                                data: sst['2025'],
+                                label: yCur,
+                                data: sst[yCur],
                                 borderColor: '#a65d5d',
                                 backgroundColor: 'rgba(231,76,60,0.1)',
                                 fill: true,
@@ -378,8 +388,8 @@
                                 borderWidth: 2
                             },
                             {
-                                label: '2024',
-                                data: sst['2024'],
+                                label: yPrev,
+                                data: sst[yPrev],
                                 borderColor: '#3498db',
                                 borderDash: [5, 5],
                                 fill: false,
@@ -465,7 +475,8 @@
             const dhwTrendCtx = document.getElementById('chart-dhw-trend');
             if (dhwTrendCtx && window.dhwAllYearsData) {
                 const dhwData = window.dhwAllYearsData;
-                const recentYears = [2021, 2022, 2023, 2024, 2025];
+                const lastY = hotYearFrom(dhwData.latest_date);
+                const recentYears = [lastY - 4, lastY - 3, lastY - 2, lastY - 1, lastY];
                 
                 const datasets = ALL_SITES.map(site => ({
                     label: siteNames.en[site],

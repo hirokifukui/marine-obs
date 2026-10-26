@@ -74,9 +74,10 @@
                 const sstArr = sstData[loc.id] || [];
                 const latestSST = sstArr.length > 0 ? sstArr[sstArr.length - 1] : null;
                 
-                // 2024 peak DHW
+                // 直近夏季のピークDHW（データ内の最新年）
                 const dhwArr = dhwData[loc.id] || [];
-                const dhw2024 = dhwArr.find(d => d.year === 2024);
+                const dhw2024 = dhwArr.length ? dhwArr[dhwArr.length - 1] : null;
+                const dhwYear = dhw2024 ? dhw2024.year : '';
                 
                 const name = isJa ? loc.ja : loc.en;
                 const currentSST = latestSST ? latestSST.sst.toFixed(1) : '-';
@@ -110,7 +111,7 @@
                     <div class="coral-stress-row">
                         <div class="coral-stress-metric">
                             <span class="coral-stress-value">${peakDHW}</span>
-                            <span class="coral-stress-label">${isJa ? '2024最大DHW' : '2024 Peak DHW'}</span>
+                            <span class="coral-stress-label">${isJa ? `${dhwYear}最大DHW` : `${dhwYear} Peak DHW`}</span>
                         </div>
                         <div class="coral-stress-status ${statusCls}">${statusTxt}</div>
                     </div>
