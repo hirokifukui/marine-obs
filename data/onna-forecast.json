@@ -1,74 +1,211 @@
 {
   "target": {
-    "location": "恩納村",
-    "location_en": "Onna Village",
-    "coordinates": {
-      "lat": 26.515,
-      "lon": 127.83
-    },
-    "season": "2026年夏",
-    "season_en": "Summer 2026",
-    "period": "6-9月",
-    "period_en": "Jun-Sep"
+    "location": "恩納村（万座）",
+    "location_en": "Onna Village (Manza)",
+    "site_code": "manza",
+    "season": "2027年夏",
+    "season_en": "Summer 2027",
+    "period": "6〜10月",
+    "period_en": "Jun–Oct"
   },
-  "current_climate": {
-    "oni": {
-      "value": -0.55,
-      "phase": "la_nina",
-      "period": "2025-12",
-      "season": "OND"
-    },
-    "pdo": {
-      "value": -2.81,
-      "phase": "negative",
-      "period": "2025-08"
-    },
-    "dmi": {
-      "value": 0.15,
-      "phase": "neutral",
-      "period": "2025-04"
+  "predictor": {
+    "name": "ONI, Jul–Sep 2026",
+    "value": 2.16,
+    "threshold": 1.0,
+    "latest_oni": {
+      "year": 2026,
+      "season": "JAS",
+      "value": 2.16
     }
   },
-  "forecast": {
-    "enso": {
-      "source": "IRI/CPC",
-      "issued": "2026-01",
-      "target_season": "JAS 2026",
-      "el_nino": 35,
-      "neutral": 50,
-      "la_nina": 15
-    }
+  "outlook": {
+    "level": "elevated",
+    "extreme_rate_analog": 1.0,
+    "n_analog": 2,
+    "extreme_rate_other": 0.19,
+    "n_other": 21,
+    "extreme_rate_all": 0.26,
+    "n_all": 23,
+    "definition": "extreme summer = peak DHW >= 8 (site method, 8-week, no 1C cut-off)"
   },
-  "typhoon": {
-    "year": 2026,
-    "region": "沖縄",
-    "approaches": {
-      "may": 0,
-      "jun": null,
-      "jul": null,
-      "aug": null,
-      "sep": null
+  "analog_years": [
+    2016,
+    2024
+  ],
+  "record": [
+    {
+      "year": 2003,
+      "days30": 9,
+      "peak_dhw": 8.02,
+      "prev_jas_oni": 0.86,
+      "extreme": true
     },
-    "total": 0,
-    "climatology": 7.7,
-    "note": "5月末時点"
-  },
-  "risk_assessment": {
-    "score": 27,
-    "level": "low",
-    "factors": {
-      "baseline": 20,
-      "current_enso": 7,
-      "forecast_enso": 10,
-      "pdo_modifier": -10,
-      "iod_modifier": 0,
-      "typhoon_risk": 0
+    {
+      "year": 2004,
+      "days30": 4,
+      "peak_dhw": 3.39,
+      "prev_jas_oni": 0.21,
+      "extreme": false
+    },
+    {
+      "year": 2005,
+      "days30": 0,
+      "peak_dhw": 3.0,
+      "prev_jas_oni": 0.64,
+      "extreme": false
+    },
+    {
+      "year": 2006,
+      "days30": 0,
+      "peak_dhw": 2.54,
+      "prev_jas_oni": -0.14,
+      "extreme": false
+    },
+    {
+      "year": 2007,
+      "days30": 0,
+      "peak_dhw": 5.16,
+      "prev_jas_oni": 0.3,
+      "extreme": false
+    },
+    {
+      "year": 2008,
+      "days30": 4,
+      "peak_dhw": 4.95,
+      "prev_jas_oni": -0.81,
+      "extreme": false
+    },
+    {
+      "year": 2009,
+      "days30": 0,
+      "peak_dhw": 4.81,
+      "prev_jas_oni": -0.23,
+      "extreme": false
+    },
+    {
+      "year": 2010,
+      "days30": 2,
+      "peak_dhw": 5.95,
+      "prev_jas_oni": 0.58,
+      "extreme": false
+    },
+    {
+      "year": 2011,
+      "days30": 0,
+      "peak_dhw": 1.94,
+      "prev_jas_oni": -1.35,
+      "extreme": false
+    },
+    {
+      "year": 2012,
+      "days30": 0,
+      "peak_dhw": 2.62,
+      "prev_jas_oni": -0.58,
+      "extreme": false
+    },
+    {
+      "year": 2013,
+      "days30": 12,
+      "peak_dhw": 7.11,
+      "prev_jas_oni": 0.41,
+      "extreme": false
+    },
+    {
+      "year": 2014,
+      "days30": 8,
+      "peak_dhw": 5.48,
+      "prev_jas_oni": -0.28,
+      "extreme": false
+    },
+    {
+      "year": 2015,
+      "days30": 0,
+      "peak_dhw": 3.21,
+      "prev_jas_oni": 0.11,
+      "extreme": false
+    },
+    {
+      "year": 2016,
+      "days30": 26,
+      "peak_dhw": 11.12,
+      "prev_jas_oni": 1.91,
+      "extreme": true
+    },
+    {
+      "year": 2017,
+      "days30": 34,
+      "peak_dhw": 12.26,
+      "prev_jas_oni": -0.5,
+      "extreme": true
+    },
+    {
+      "year": 2018,
+      "days30": 0,
+      "peak_dhw": 3.84,
+      "prev_jas_oni": -0.07,
+      "extreme": false
+    },
+    {
+      "year": 2019,
+      "days30": 1,
+      "peak_dhw": 4.12,
+      "prev_jas_oni": 0.27,
+      "extreme": false
+    },
+    {
+      "year": 2020,
+      "days30": 4,
+      "peak_dhw": 6.6,
+      "prev_jas_oni": 0.19,
+      "extreme": false
+    },
+    {
+      "year": 2021,
+      "days30": 0,
+      "peak_dhw": 2.56,
+      "prev_jas_oni": -0.53,
+      "extreme": false
+    },
+    {
+      "year": 2022,
+      "days30": 15,
+      "peak_dhw": 8.27,
+      "prev_jas_oni": -0.45,
+      "extreme": true
+    },
+    {
+      "year": 2023,
+      "days30": 0,
+      "peak_dhw": 3.89,
+      "prev_jas_oni": -0.87,
+      "extreme": false
+    },
+    {
+      "year": 2024,
+      "days30": 39,
+      "peak_dhw": 12.57,
+      "prev_jas_oni": 1.37,
+      "extreme": true
+    },
+    {
+      "year": 2025,
+      "days30": 14,
+      "peak_dhw": 8.91,
+      "prev_jas_oni": -0.07,
+      "extreme": true
+    }
+  ],
+  "manual": {
+    "enso_outlook": {
+      "issued": "2026-10",
+      "ja": "気象庁（10月9日）：エルニーニョ監視海域の9月の海面水温は基準値より+4.0℃で、1949年以降で最大。冬にかけて続く見込み。インド洋熱帯域は高温が続く見通し。NOAA CPC（10月8日）：Niño-3.4 は +2.1℃。2027年1〜3月まで強〜非常に強いエルニーニョが続く可能性が高い。",
+      "en": "JMA (9 Oct): September SST in the El Niño monitoring region was +4.0°C, the highest since 1949; El Niño expected to persist through winter, with the tropical Indian Ocean staying warm. NOAA CPC (8 Oct): Niño-3.4 +2.1°C; a strong-to-very strong El Niño is likely through Jan–Mar 2027.",
+      "sources": [
+        "https://tenki.jp/forecaster/deskpart/2026/10/09/40914.html",
+        "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_disc_oct2026/ensodisc.shtml"
+      ]
     }
   },
-  "summary": {
-    "ja": "現在のラニーニャは弱まり、夏までに中立へ移行する見込み。強い負のPDOが緩衝効果をもたらす。台風シーズンはこれから。現時点でのリスクは低い。",
-    "en": "Current La Niña weakening, expected transition to neutral by summer. Negative PDO provides some buffering effect."
-  },
-  "updated": "2026-01-10",
-  "next_update": "月次更新"
+  "method": "scripts/build_onna_outlook.py",
+  "updated": "2026-10-26"
 }

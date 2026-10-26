@@ -295,6 +295,52 @@
             </p>
         </section>
 
+        <!-- Onna outlook (data/onna-forecast.json, scripts/build_onna_outlook.py) -->
+        <section class="content-section" id="onna-outlook">
+            <h2>
+                <span data-lang="en">Onna Village: Bleaching Outlook for <span class="ol-season-en">next summer</span></span>
+                <span data-lang="ja">恩納村：<span class="ol-season-ja">来夏</span>の白化リスク見通し</span>
+            </h2>
+            <div class="story-box" id="ol-box">
+                <p class="story-lead">
+                    <span data-lang="en" id="ol-lead-en">Loading…</span>
+                    <span data-lang="ja" id="ol-lead-ja">読み込み中…</span>
+                </p>
+                <p>
+                    <span data-lang="en">
+                        The rule is simple and checkable. Okinawa's mass-bleaching summers (1998, 2016, 2024) each followed a strong El Niño. Here the predictor is the Oceanic Niño Index for July–September of the year before (≥ +1.0 marks an analog year); the outcome is the summer at Manza, Onna Village, measured by satellite. An "extreme summer" means a peak DHW of 8 or more (this site's method).
+                    </span>
+                    <span data-lang="ja">
+                        判断の規則は単純で、検証できる形にしています。沖縄の大規模白化の夏（1998年・2016年・2024年）は、いずれも強いエルニーニョの翌年でした。そこで、前年7〜9月の海洋ニーニョ指数（ONI）が+1.0以上の年を「類似年」とし、恩納村・万座の夏を衛星データで評価します。「極端な夏」はピークDHWが8以上（このサイトの算出法）の年です。
+                    </span>
+                </p>
+                <div style="overflow-x: auto;">
+                    <table class="data-table" id="ol-table" style="width: 100%; font-size: 0.85rem;">
+                        <thead><tr>
+                            <th><span data-lang="en">Summer</span><span data-lang="ja">夏</span></th>
+                            <th><span data-lang="en">ONI Jul–Sep of previous year</span><span data-lang="ja">前年7〜9月のONI</span></th>
+                            <th><span data-lang="en">Days ≥30°C</span><span data-lang="ja">30℃以上の日数</span></th>
+                            <th><span data-lang="en">Peak DHW</span><span data-lang="ja">ピークDHW</span></th>
+                        </tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.75rem;">
+                    <span data-lang="en" id="ol-rates-en"></span>
+                    <span data-lang="ja" id="ol-rates-ja"></span>
+                </p>
+            </div>
+            <div class="insight-box heat">
+                <strong class="heat"><span data-lang="en">Official ENSO outlook</span><span data-lang="ja">公的機関のENSO見通し</span></strong>
+                <span data-lang="en" id="ol-enso-en"></span>
+                <span data-lang="ja" id="ol-enso-ja"></span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">
+                <span data-lang="en">Limits: only two analog years fall within the satellite record (2003–), and extreme summers also occur without El Niño (2017, 2022, 2025). Typhoons can cool a hot summer abruptly. This is an outlook of odds, not a forecast of a date. Updated automatically from the latest ONI and satellite SST. <span id="ol-updated-en"></span></span>
+                <span data-lang="ja">限界：衛星記録（2003年〜）の中で類似年は2年しかなく、エルニーニョと無関係な極端な夏もあります（2017年・2022年・2025年）。台風が通れば暑い夏も急に冷えます。これは確率の見通しであって、日付の予報ではありません。最新のONIと衛星水温から自動更新しています。<span id="ol-updated-ja"></span></span>
+            </p>
+        </section>
+
         <!-- ENSO Explanation -->
         <section class="content-section">
             <h2>
@@ -1103,6 +1149,44 @@
         <p style="margin-top: 0.5rem;">© 2026 marine-obs.org</p>
     </footer>
 
+    <script>
+    // Onna outlook renderer
+    (async function () {
+        try {
+            const d = await (await fetch('data/onna-forecast.json')).json();
+            const o = d.outlook, pr = d.predictor, t = d.target;
+            document.querySelectorAll('.ol-season-en').forEach(e => e.textContent = t.season_en);
+            document.querySelectorAll('.ol-season-ja').forEach(e => e.textContent = t.season);
+            const pct = v => Math.round(v * 100) + '%';
+            const prevYear = Number(t.season_en.replace(/\D/g, '')) - 1;
+            if (o.level === 'elevated') {
+                document.getElementById('ol-lead-en').textContent = `Elevated. The ONI for Jul–Sep ${prevYear} is +${pr.value.toFixed(2)}, putting ${t.season_en} among the analog years. In the satellite record, ${o.n_analog} of ${o.n_analog} analog summers were extreme (${d.analog_years.join(', ')}), against ${pct(o.extreme_rate_other)} of other summers.`;
+                document.getElementById('ol-lead-ja').textContent = `高い。${prevYear}年7〜9月のONIは+${pr.value.toFixed(2)}で、${t.season}は類似年にあたります。衛星記録では類似年の夏は${o.n_analog}回中${Math.round(o.extreme_rate_analog * o.n_analog)}回が極端な夏でした（${d.analog_years.join('年・')}年）。それ以外の年では${pct(o.extreme_rate_other)}です。`;
+            } else {
+                document.getElementById('ol-lead-en').textContent = `Baseline. The ONI for Jul–Sep ${prevYear} is ${pr.value >= 0 ? '+' : ''}${pr.value.toFixed(2)}, below the analog threshold. Extreme summers still occurred in ${pct(o.extreme_rate_other)} of such years.`;
+                document.getElementById('ol-lead-ja').textContent = `平常。${prevYear}年7〜9月のONIは${pr.value >= 0 ? '+' : ''}${pr.value.toFixed(2)}で、類似年の基準に届きません。ただし、こうした年でも${pct(o.extreme_rate_other)}は極端な夏でした。`;
+            }
+            const tb = document.querySelector('#ol-table tbody');
+            d.record.slice().reverse().forEach(r => {
+                const tr = document.createElement('tr');
+                if (d.analog_years.includes(r.year)) tr.style.fontWeight = '600';
+                if (r.extreme) tr.style.background = 'rgba(239,68,68,0.08)';
+                const oni = r.prev_jas_oni == null ? '–' : (r.prev_jas_oni >= 0 ? '+' : '') + r.prev_jas_oni.toFixed(2);
+                tr.innerHTML = `<td>${r.year}</td><td>${oni}</td><td>${r.days30}</td><td>${r.peak_dhw.toFixed(1)}</td>`;
+                tb.appendChild(tr);
+            });
+            document.getElementById('ol-rates-en').textContent = `Bold: analog years. Shaded: extreme summers (${Math.round(o.extreme_rate_all * o.n_all)} of ${o.n_all}).`;
+            document.getElementById('ol-rates-ja').textContent = `太字：類似年。色付き：極端な夏（${o.n_all}年中${Math.round(o.extreme_rate_all * o.n_all)}年）。`;
+            const m = (d.manual || {}).enso_outlook;
+            if (m) {
+                document.getElementById('ol-enso-en').innerHTML = ' ' + m.en + ` <small>(${m.issued})</small>`;
+                document.getElementById('ol-enso-ja').innerHTML = ' ' + m.ja + `<small>（${m.issued}）</small>`;
+            }
+            document.getElementById('ol-updated-en').textContent = `Last updated ${d.updated}.`;
+            document.getElementById('ol-updated-ja').textContent = `最終更新 ${d.updated}。`;
+        } catch (e) { console.error('onna outlook', e); }
+    })();
+    </script>
     <script src="js/lang.js"></script>
     <script src="js/enso-chart.js"></script>
 
