@@ -1,17 +1,17 @@
         :root {
             --header-bg: #1a1f2e;
             --header-text: #ffffff;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8f9fa;
-            --bg-card: #ffffff;
-            --text-primary: #1a202c;
-            --text-secondary: #4a5568;
-            --text-muted: #718096;
+            --bg-primary: light-dark(#ffffff, #1c1c1c);
+            --bg-secondary: light-dark(#f8f9fa, #1c1f22);
+            --bg-card: light-dark(#ffffff, #1c1c1c);
+            --text-primary: light-dark(#1a202c, #d8dde7);
+            --text-secondary: light-dark(#4a5568, #a6afbf);
+            --text-muted: light-dark(#718096, #a7b0be);
             --accent-teal: #2b6cb0;
             --accent-coral: #996060;
             --accent-warm: #c05621;
             --accent-green: #2f855a;
-            --border: #e2e8f0;
+            --border: light-dark(#e2e8f0, #212e3e);
             --shadow: 0 1px 3px rgba(0,0,0,0.08);
             --manza: #c05621;
             --sesoko: #2b6cb0;
@@ -20,10 +20,10 @@
             --amami: #d53f8c;
             --kerama: #0891b2;
             --sekisei: #e53e3e;
-            --alert-bg: #fef2f2;
-            --alert-border: #c05621;
-            --warning-bg: #fffbeb;
-            --warning-border: #d69e2e;
+            --alert-bg: light-dark(#fef2f2, #281818);
+            --alert-border: light-dark(#c05621, #dd713b);
+            --warning-bg: light-dark(#fffbeb, #2a2719);
+            --warning-border: light-dark(#d69e2e, #d9a63f);
             --hot-color: #dc2626;
         }
 
@@ -196,23 +196,23 @@
         }
 
         .dhw-level.watch {
-            background: #fefce8;
-            border: 1px solid #facc15;
+            background: light-dark(#fefce8, #2b2a1a);
+            border: 1px solid light-dark(#facc15, #face1e);
         }
 
         .dhw-level.warning {
-            background: #fff7ed;
-            border: 1px solid #f97316;
+            background: light-dark(#fff7ed, #292219);
+            border: 1px solid light-dark(#f97316, #f9791f);
         }
 
         .dhw-level.alert1 {
-            background: #fef2f2;
-            border: 1px solid #ef4444;
+            background: light-dark(#fef2f2, #281818);
+            border: 1px solid light-dark(#ef4444, #9b5454);
         }
 
         .dhw-level.alert2 {
-            background: #fdf2f8;
-            border: 1px solid #be185d;
+            background: light-dark(#fdf2f8, #281821);
+            border: 1px solid light-dark(#be185d, #e5337d);
         }
 
         .dhw-level .level-name {
@@ -255,7 +255,7 @@
         }
 
         .kpi-item.highlight {
-            background: #fef2f2;
+            background: light-dark(#fef2f2, #281818);
             border: 1px solid var(--accent-warm);
         }
 
@@ -396,8 +396,8 @@
 
         /* Observation box */
         .observation-box {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            border: 1px solid #d69e2e;
+            background: linear-gradient(135deg, light-dark(#fef3c7, #373221) 0%, light-dark(#fde68a, #4c462e) 100%);
+            border: 1px solid light-dark(#d69e2e, #d9a63f);
             border-radius: 8px;
             padding: 1.25rem;
             margin: 1.5rem 0;
@@ -406,7 +406,7 @@
         .observation-box .obs-title {
             font-size: 0.8rem;
             font-weight: 600;
-            color: #92400e;
+            color: light-dark(#92400e, #ebbea2);
             margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
@@ -414,7 +414,7 @@
         }
 
         .observation-box p {
-            color: #78350f;
+            color: light-dark(#78350f, #ebbda2);
             font-size: 0.85rem;
             line-height: 1.7;
             margin: 0;
@@ -533,8 +533,8 @@
 
         /* Story box */
         .story-box {
-            background: #fffbeb;
-            border: 1px solid #fde68a;
+            background: light-dark(#fffbeb, #2a2719);
+            border: 1px solid light-dark(#fde68a, #6a6039);
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 2rem;
@@ -568,7 +568,7 @@
             padding: 1.5rem;
             box-shadow: var(--shadow);
         }
-        .insight-card.limitation { border-left: 4px solid #f59e0b; }
+        .insight-card.limitation { border-left: 4px solid light-dark(#f59e0b, #f6a723); }
         .insight-card.acclimatization { border-left: 4px solid var(--accent-green); }
         .insight-card h3 {
             font-size: 0.95rem;
@@ -578,7 +578,7 @@
             align-items: center;
             gap: 0.5rem;
         }
-        .insight-card.limitation h3 { color: #d97706; }
+        .insight-card.limitation h3 { color: light-dark(#d97706, #e5b986); }
         .insight-card.acclimatization h3 { color: var(--accent-green); }
         .insight-card p {
             font-size: 0.85rem;
@@ -672,7 +672,7 @@
     gap: 0.75rem;
 }
 .hero-stat-card {
-    border-left: 3px solid rgba(255,255,255,0.5);
+    border-left: 3px solid light-dark(rgba(255,255,255,0.5), rgba(28, 28, 28, 0.5));
 }
 @media (max-width: 768px) {
     .hero-stats-row.hero-stats-5 {
@@ -693,20 +693,20 @@
 
 /* Calculation Notice Section */
 .calculation-notice {
-    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-    border: 2px solid #f59e0b;
+    background: linear-gradient(135deg, light-dark(#fef3c7, #373221) 0%, light-dark(#fde68a, #4c462e) 100%);
+    border: 2px solid light-dark(#f59e0b, #f6a723);
     border-radius: 12px;
     padding: 1.5rem;
     margin: 2rem 0;
 }
 
 .calculation-notice h2 {
-    color: #92400e;
+    color: light-dark(#92400e, #ebbea2);
     margin-bottom: 1rem;
 }
 
 .calculation-notice h3 {
-    color: #78350f;
+    color: light-dark(#78350f, #ebbda2);
     font-size: 0.95rem;
     margin-bottom: 0.5rem;
 }
@@ -727,13 +727,13 @@
 
 .method-table th, .method-table td {
     padding: 0.5rem;
-    border: 1px solid #d97706;
+    border: 1px solid light-dark(#d97706, #f99420);
     text-align: left;
 }
 
 .method-table th {
-    background: #fbbf24;
-    color: #78350f;
+    background: light-dark(#fbbf24, #5f553a);
+    color: light-dark(#78350f, #ebbda2);
 }
 
 .method-table td {
@@ -751,23 +751,23 @@
 }
 
 .caution-box strong {
-    color: #92400e;
+    color: light-dark(#92400e, #ebbea2);
 }
 
 /* Alert Note */
 .alert-note {
     margin-top: 1rem;
     padding: 0.75rem 1rem;
-    background: #fef3c7;
-    border-left: 3px solid #f59e0b;
+    background: light-dark(#fef3c7, #373221);
+    border-left: 3px solid light-dark(#f59e0b, #f6a723);
     border-radius: 4px;
     font-size: 0.85rem;
-    color: #78350f;
+    color: light-dark(#78350f, #ebbda2);
     line-height: 1.6;
 }
 
 .alert-note strong {
-    color: #92400e;
+    color: light-dark(#92400e, #ebbea2);
 }
 
 /* Data Note in Hero */

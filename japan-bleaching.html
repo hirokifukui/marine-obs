@@ -49,6 +49,8 @@
     <link rel="canonical" href="https://marine-obs.org/japan-bleaching.html">
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/theme.css">
+    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+    <script src="js/theme.js" defer></script>
 </head>
 <body>
     <header>
@@ -139,7 +141,7 @@
                 <a class="nav-about" href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a>
                 <div class="lang-switch">
                     <button id="lang-en" class="active">English</button>
-                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <span style="color: rgba(255,255,255,0.4)">/</span>
                     <button id="lang-ja">日本語</button>
                 </div>
             </div>
@@ -1156,19 +1158,19 @@
                 </p>
 
             <!-- Coral Cover Chart (iframe) -->
-            <div style="margin-top: 1.5rem; background: var(--card-bg, #fff); border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-                <h4 style="margin-bottom: 0.5rem; color: var(--text-primary, #1a1a2e);">
+            <div style="margin-top: 1.5rem; background: var(--card-bg, light-dark(#fff, #1c1c1c)); border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <h4 style="margin-bottom: 0.5rem; color: var(--text-primary, light-dark(#1a1a2e, #d6d6e7));">
                     <span data-lang="en">📊 Sekisei Lagoon Coral Cover Decline</span>
                     <span data-lang="ja">📊 石西礁湖 サンゴ被度の推移</span>
                 </h4>
-                <p style="margin-bottom: 1rem; color: var(--text-secondary, #64748b); font-size: 0.9rem;">
+                <p style="margin-bottom: 1rem; color: var(--text-secondary, light-dark(#64748b, #a6b0bf)); font-size: 0.9rem;">
                     <span data-lang="en">1970s-2024: From ~80% (pristine) to record low 13.7% — over 80% decline</span>
                     <span data-lang="ja">1970年代〜2024年：原生状態の約80%から過去最低13.7%へ — 80%以上減少</span>
                 </p>
-                <div style="background: #f8fafc; border-radius: 8px; overflow: hidden;">
+                <div style="background: light-dark(#f8fafc, #181f26); border-radius: 8px; overflow: hidden;">
                     <iframe id="chart-iframe" src="sekisei-cover.html" style="width: 100%; height: 350px; border: none;"></iframe>
                 </div>
-                <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-secondary, #64748b);">
+                <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-secondary, light-dark(#64748b, #a6b0bf));">
                     <span data-lang="en">Data: Ministry of the Environment, Monitoring Sites 1000 | Dashed line: estimated, solid line: observed. Red dots: bleaching years</span>
                     <span data-lang="ja">データ：環境省、モニタリングサイト1000 ｜ 点線：推定値、実線：実測値。赤い点：白化イベント年</span>
                 </p>

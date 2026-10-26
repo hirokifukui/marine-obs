@@ -110,11 +110,11 @@ body.ja .hero-tagline {
     box-shadow: var(--shadow);
 }
 
-.driver-card.enso { border-left-color: #ef4444; }
-.driver-card.typhoon { border-left-color: #06b6d4; }
-.driver-card.kuroshio { border-left-color: #f97316; }
-.driver-card.iod { border-left-color: #22c55e; }
-.driver-card.pdo { border-left-color: #8b5cf6; }
+.driver-card.enso { border-left-color: light-dark(#ef4444, #9b5454); }
+.driver-card.typhoon { border-left-color: light-dark(#06b6d4, #20d9f9); }
+.driver-card.kuroshio { border-left-color: light-dark(#f97316, #f9791f); }
+.driver-card.iod { border-left-color: light-dark(#22c55e, #3bdd77); }
+.driver-card.pdo { border-left-color: light-dark(#8b5cf6, #5d4a89); }
 
 .driver-header {
     display: flex;
@@ -175,8 +175,8 @@ body.ja .hero-tagline {
 
 .driver-warning {
     font-size: 0.85rem;
-    color: #92400e;
-    background: #fef3c7;
+    color: light-dark(#92400e, #ebbea2);
+    background: light-dark(#fef3c7, #373221);
     padding: 0.75rem 1rem;
     border-radius: 6px;
     line-height: 1.6;
@@ -224,8 +224,8 @@ body.ja .hero-tagline {
 }
 
 .mechanism-result {
-    background: #fef2f2;
-    color: #dc2626;
+    background: light-dark(#fef2f2, #281818);
+    color: light-dark(#dc2626, #e17070);
     padding: 0.35rem 0.75rem;
     border-radius: 6px;
     font-weight: 600;
@@ -287,13 +287,13 @@ body.ja .hero-tagline {
 }
 
 .comparison-item.danger {
-    background: #fef2f2;
-    border: 1px solid #fecaca;
+    background: light-dark(#fef2f2, #281818);
+    border: 1px solid light-dark(#fecaca, #442525);
 }
 
 .comparison-item.safe {
-    background: #f0fdf4;
-    border: 1px solid #bbf7d0;
+    background: light-dark(#f0fdf4, #19291e);
+    border: 1px solid light-dark(#bbf7d0, #2c5139);
 }
 
 .comparison-item h5 {
@@ -444,7 +444,7 @@ body.ja .hero-tagline {
 
 /* Influence indicators */
 .influence-strong {
-    color: #059669;
+    color: light-dark(#059669, #a2ebd5);
     font-weight: 600;
 }
 
@@ -465,7 +465,7 @@ body.ja .hero-tagline {
    ======================================== */
 .key-insight {
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    border: 1px solid light-dark(rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.2));
     border-radius: 12px;
     padding: 1.25rem;
     margin-top: 1.5rem;
@@ -498,7 +498,7 @@ body.ja .hero-tagline {
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.25rem;
-    border-left: 4px solid #ef4444;
+    border-left: 4px solid light-dark(#ef4444, #9b5454);
     box-shadow: var(--shadow);
 }
 

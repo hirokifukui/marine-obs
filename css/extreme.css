@@ -1,17 +1,17 @@
         :root {
             --header-bg: #1a1f2e;
             --header-text: #ffffff;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8f9fa;
-            --bg-card: #ffffff;
-            --text-primary: #1a202c;
-            --text-secondary: #4a5568;
-            --text-muted: #718096;
+            --bg-primary: light-dark(#ffffff, #1c1c1c);
+            --bg-secondary: light-dark(#f8f9fa, #1c1f22);
+            --bg-card: light-dark(#ffffff, #1c1c1c);
+            --text-primary: light-dark(#1a202c, #d8dde7);
+            --text-secondary: light-dark(#4a5568, #a6afbf);
+            --text-muted: light-dark(#718096, #a7b0be);
             --accent-teal: #2b6cb0;
             --accent-coral: #996060;
             --accent-warm: #c05621;
             --accent-green: #2f855a;
-            --border: #e2e8f0;
+            --border: light-dark(#e2e8f0, #212e3e);
             --shadow: 0 1px 3px rgba(0,0,0,0.08);
             --manza: #c05621;
             --sesoko: #2b6cb0;
@@ -186,13 +186,13 @@
         }
 
         .summary-card.hot {
-            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-            border: 1px solid #fca5a5;
+            background: linear-gradient(135deg, light-dark(#fef2f2, #281818) 0%, light-dark(#fee2e2, #2d1b1b) 100%);
+            border: 1px solid light-dark(#fca5a5, #5b3131);
         }
 
         .summary-card.cold {
-            background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
-            border: 1px solid #67e8f9;
+            background: linear-gradient(135deg, light-dark(#ecfeff, #19292a) 0%, light-dark(#cffafe, #1f3234) 100%);
+            border: 1px solid light-dark(#67e8f9, #457a81);
         }
 
         .summary-card .icon {
@@ -359,7 +359,7 @@
         }
 
         .highlight-box.cold-note {
-            background: #ecfeff;
+            background: light-dark(#ecfeff, #19292a);
             border-left: 4px solid var(--cold-color);
         }
 
@@ -438,8 +438,8 @@
 
         /* Story box */
         .story-box {
-            background: #fffbeb;
-            border: 1px solid #fde68a;
+            background: light-dark(#fffbeb, #2a2719);
+            border: 1px solid light-dark(#fde68a, #6a6039);
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 2rem;
@@ -476,8 +476,8 @@
             padding: 1.5rem;
             box-shadow: var(--shadow);
         }
-        .mechanism-card.hot-stress { border-left: 4px solid var(--hot-color); background: #fff5f5; }
-        .mechanism-card.cold-stress { border-left: 4px solid var(--cold-color); background: #ecfeff; }
+        .mechanism-card.hot-stress { border-left: 4px solid var(--hot-color); background: light-dark(#fff5f5, #261717); }
+        .mechanism-card.cold-stress { border-left: 4px solid var(--cold-color); background: light-dark(#ecfeff, #19292a); }
         .mechanism-card h3 {
             font-size: 1rem;
             font-weight: 600;
@@ -515,8 +515,8 @@
 
         /* Ogasawara vulnerability */
         .ogasawara-highlight {
-            background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
-            border: 1px solid #67e8f9;
+            background: linear-gradient(135deg, light-dark(#ecfeff, #19292a) 0%, light-dark(#cffafe, #1f3234) 100%);
+            border: 1px solid light-dark(#67e8f9, #457a81);
             border-left: 4px solid var(--cold-color);
             border-radius: 8px;
             padding: 1.5rem;

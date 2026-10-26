@@ -1,17 +1,17 @@
         :root {
             --header-bg: #1a1f2e;
             --header-text: #ffffff;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8f9fa;
-            --bg-card: #ffffff;
-            --text-primary: #1a202c;
-            --text-secondary: #4a5568;
-            --text-muted: #718096;
+            --bg-primary: light-dark(#ffffff, #1c1c1c);
+            --bg-secondary: light-dark(#f8f9fa, #1c1f22);
+            --bg-card: light-dark(#ffffff, #1c1c1c);
+            --text-primary: light-dark(#1a202c, #d8dde7);
+            --text-secondary: light-dark(#4a5568, #a6afbf);
+            --text-muted: light-dark(#718096, #a7b0be);
             --accent-teal: #2b6cb0;
             --accent-coral: #996060;
             --accent-warm: #c05621;
             --accent-green: #2f855a;
-            --border: #e2e8f0;
+            --border: light-dark(#e2e8f0, #212e3e);
             --shadow: 0 1px 3px rgba(0,0,0,0.08);
             --coral-critical: #d90429;
             --coral-severe: #ef476f;
@@ -232,7 +232,7 @@
             left: 50%;
             transform: translateX(-50%);
             background: rgba(10, 22, 40, 0.95);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid light-dark(rgba(255,255,255,0.2), rgba(28, 28, 28, 0.2));
             border-radius: 8px;
             padding: 0.75rem 1rem;
             min-width: 180px;
@@ -612,8 +612,8 @@
 
         /* Frequency Chart */
         .frequency-note {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
+            background: light-dark(#fef2f2, #281818);
+            border: 1px solid light-dark(#fecaca, #442525);
             border-radius: 8px;
             padding: 1rem 1.25rem;
             margin-top: 1.5rem;
@@ -634,8 +634,8 @@
 
         /* Hope Section */
         .hope-section {
-            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
-            border: 1px solid #a7f3d0;
+            background: linear-gradient(135deg, light-dark(#f0fdf4, #19291e), light-dark(#ecfdf5, #192a22));
+            border: 1px solid light-dark(#a7f3d0, #335f4b);
             border-radius: 8px;
             padding: 1.5rem;
         }

@@ -22,6 +22,8 @@
     <link rel="canonical" href="https://marine-obs.org/publications.html">
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/theme.css">
+    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+    <script src="js/theme.js" defer></script>
 </head>
 <body>
     <header>
@@ -112,7 +114,7 @@
                 <a class="nav-about" href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a>
                 <div class="lang-switch">
                     <button id="lang-en" class="active">English</button>
-                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <span style="color: rgba(255,255,255,0.4)">/</span>
                     <button id="lang-ja">日本語</button>
                 </div>
             </div>
@@ -204,8 +206,8 @@
         .pubs h2 { font-size: 1.05rem; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: .5rem; }
         .pub { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 1.5rem 1.25rem; margin-bottom: 1.25rem; box-shadow: var(--shadow); }
         .pub-status { display: inline-block; font-size: .75rem; font-weight: 600; padding: .2rem .6rem; border-radius: 999px; margin-bottom: .75rem; }
-        .pub-status.published { background: #e6f4ea; color: var(--accent-green); }
-        .pub-status.review { background: #fdf0e6; color: var(--accent-warm); }
+        .pub-status.published { background: light-dark(#e6f4ea, #1e2e22); color: var(--accent-green); }
+        .pub-status.review { background: light-dark(#fdf0e6, #2c221b); color: var(--accent-warm); }
         .pub-title { font-size: 1.15rem; font-weight: 600; line-height: 1.5; margin: 0 0 .5rem; }
         .pub-cite { font-size: .9rem; color: var(--text-secondary); margin-bottom: .9rem; line-height: 1.6; }
         .pub-cite { overflow-wrap: anywhere; }

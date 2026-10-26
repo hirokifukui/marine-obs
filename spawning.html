@@ -23,6 +23,8 @@
     <link rel="canonical" href="https://marine-obs.org/spawning.html">
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/theme.css">
+    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+    <script src="js/theme.js" defer></script>
 </head>
 <body>
     <header>
@@ -113,7 +115,7 @@
                 <a class="nav-about" href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a>
                 <div class="lang-switch">
                     <button id="lang-en" class="active">English</button>
-                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <span style="color: rgba(255,255,255,0.4)">/</span>
                     <button id="lang-ja">日本語</button>
                 </div>
             </div>
@@ -268,7 +270,7 @@
                     </span>
                 </div>
                 <div style="background: rgba(255,255,255,0.2); border-radius: 4px; height: 8px; overflow: hidden;">
-                    <div style="background: #fbbf24; width: 25%; height: 100%;"></div>
+                    <div style="background: light-dark(#fbbf24, #5f553a); width: 25%; height: 100%;"></div>
                 </div>
                 <div style="font-size: 0.8rem; margin-top: 0.75rem; opacity: 0.85;">
                     <span data-lang="en">🔄 From April 2027: Manza SST anomaly shown alongside</span>
@@ -448,7 +450,7 @@
                 <span data-lang="ja">メカニズム：暗闇がシグナル</span>
             </h2>
             
-            <div class="story-box" style="border-left: 3px solid #dc2626;">
+            <div class="story-box" style="border-left: 3px solid light-dark(#dc2626, #df3939);">
                 <p class="story-lead" data-lang="en">
                     The answer to "HOW do corals know?" was revealed through an elegant experiment.
                 </p>
@@ -457,8 +459,8 @@
                 </p>
             </div>
             
-            <div class="story-box" style="margin-top: 1.5rem; border-left: 3px solid #dc2626;">
-                <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; color: #dc2626;">
+            <div class="story-box" style="margin-top: 1.5rem; border-left: 3px solid light-dark(#dc2626, #df3939);">
+                <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; color: light-dark(#dc2626, #e17070);">
                     <span data-lang="en">The Lin et al. Experiment (PNAS, 2021)</span>
                     <span data-lang="ja">Lin et al. の実験（PNAS, 2021）</span>
                 </h3>

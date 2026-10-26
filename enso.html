@@ -25,6 +25,8 @@
     <link rel="canonical" href="https://marine-obs.org/enso.html">
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/theme.css">
+    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+    <script src="js/theme.js" defer></script>
 </head>
 <body>
     <header>
@@ -115,7 +117,7 @@
                 <a class="nav-about" href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a>
                 <div class="lang-switch">
                     <button id="lang-en" class="active">English</button>
-                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <span style="color: rgba(255,255,255,0.4)">/</span>
                     <button id="lang-ja">日本語</button>
                 </div>
             </div>
@@ -563,8 +565,8 @@
                 </p>
             </div>
 
-            <div class="mechanism-box" style="background: linear-gradient(135deg, #fae8ff, #f5d0fe); border-color: #e879f9;">
-                <h4 style="color: #86198f;">
+            <div class="mechanism-box" style="background: linear-gradient(135deg, light-dark(#fae8ff, #271a2b), light-dark(#f5d0fe, #2f1f33)); border-color: light-dark(#e879f9, #6f4076);">
+                <h4 style="color: light-dark(#86198f, #e6a2eb);">
                     <span data-lang="en">⚠️ The 2016 Triple Threat: La Niña + Negative IOD + Positive PDO</span>
                     <span data-lang="ja">⚠️ 2016年のトリプル脅威：ラニーニャ + 負のIOD + 正のPDO</span>
                 </h4>

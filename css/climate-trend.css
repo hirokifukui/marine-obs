@@ -3,17 +3,17 @@
 :root {
     --header-bg: #1a1f2e;
     --header-text: #ffffff;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --bg-card: #ffffff;
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --text-muted: #718096;
+    --bg-primary: light-dark(#ffffff, #1c1c1c);
+    --bg-secondary: light-dark(#f8f9fa, #1c1f22);
+    --bg-card: light-dark(#ffffff, #1c1c1c);
+    --text-primary: light-dark(#1a202c, #d8dde7);
+    --text-secondary: light-dark(#4a5568, #a6afbf);
+    --text-muted: light-dark(#718096, #a7b0be);
     --accent-teal: #2b6cb0;
     --accent-coral: #996060;
     --accent-warm: #c05621;
     --accent-green: #2f855a;
-    --border: #e2e8f0;
+    --border: light-dark(#e2e8f0, #212e3e);
     --shadow: 0 1px 3px rgba(0,0,0,0.08);
     --manza: #c05621;
     --sesoko: #2b6cb0;
@@ -96,7 +96,7 @@ body.ja .hero-tagline {
 
 .hero-stat-card.highlight {
     background: rgba(239, 68, 68, 0.2);
-    border: 1px solid rgba(239, 68, 68, 0.4);
+    border: 1px solid light-dark(rgba(239, 68, 68, 0.4), rgba(155, 84, 84, 0.4));
 }
 
 .hero-stat-card .stat-label {
@@ -158,8 +158,8 @@ body.ja .page-header .lead {
 .key-finding-box {
     display: flex;
     gap: 1rem;
-    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-    border: 1px solid #f59e0b;
+    background: linear-gradient(135deg, light-dark(#fef3c7, #373221) 0%, light-dark(#fde68a, #4c462e) 100%);
+    border: 1px solid light-dark(#f59e0b, #f6a723);
     border-radius: 12px;
     padding: 1.5rem;
     margin-bottom: 2rem;
@@ -173,13 +173,13 @@ body.ja .page-header .lead {
 .finding-content h3 {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #92400e;
+    color: light-dark(#92400e, #ebbea2);
     margin-bottom: 0.5rem;
 }
 
 .finding-content p {
     font-size: 0.9rem;
-    color: #78350f;
+    color: light-dark(#78350f, #ebbda2);
     line-height: 1.7;
     margin: 0;
 }
@@ -405,7 +405,7 @@ body.ja .page-header .lead {
 }
 
 .timeline-event.current {
-    background: #fef2f2;
+    background: light-dark(#fef2f2, #281818);
     border-left-color: var(--hot-color);
 }
 
@@ -680,7 +680,7 @@ body.ja .analysis-content p {
 
 /* Quote Box */
 .quote-box {
-    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, light-dark(#f1f5f9, #1a2229) 0%, light-dark(#e2e8f0, #21272f) 100%);
     border-left: 4px solid var(--accent-teal);
     padding: 1.5rem;
     margin: 1.5rem 0;
@@ -727,13 +727,13 @@ body.ja .quote-box blockquote {
 }
 
 .comparison-item.warming-rate {
-    background: #fef2f2;
-    border: 1px solid #fecaca;
+    background: light-dark(#fef2f2, #281818);
+    border: 1px solid light-dark(#fecaca, #442525);
 }
 
 .comparison-item.adaptation-rate {
-    background: #ecfdf5;
-    border: 1px solid #a7f3d0;
+    background: light-dark(#ecfdf5, #192a22);
+    border: 1px solid light-dark(#a7f3d0, #335f4b);
 }
 
 .comparison-label {
@@ -769,8 +769,8 @@ body.ja .quote-box blockquote {
 
 /* Local Finding Box */
 .local-finding-box {
-    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-    border: 1px solid #f59e0b;
+    background: linear-gradient(135deg, light-dark(#fef3c7, #373221) 0%, light-dark(#fde68a, #4c462e) 100%);
+    border: 1px solid light-dark(#f59e0b, #f6a723);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1.5rem 0;
@@ -779,13 +779,13 @@ body.ja .quote-box blockquote {
 .local-finding-box h4 {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #92400e;
+    color: light-dark(#92400e, #ebbea2);
     margin-bottom: 0.75rem;
 }
 
 .local-finding-box p {
     font-size: 0.85rem;
-    color: #78350f;
+    color: light-dark(#78350f, #ebbda2);
     line-height: 1.8;
     margin-bottom: 0.75rem;
 }
@@ -793,7 +793,7 @@ body.ja .quote-box blockquote {
 .local-finding-box .citation {
     display: block;
     font-size: 0.75rem;
-    color: #a16207;
+    color: light-dark(#a16207, #ebcea2);
     font-style: italic;
 }
 
@@ -801,8 +801,8 @@ body.ja .quote-box blockquote {
 .diver-perspective-box {
     display: flex;
     gap: 1.25rem;
-    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
-    border: 1px solid #7dd3fc;
+    background: linear-gradient(135deg, light-dark(#e0f2fe, #1c272e) 0%, light-dark(#bae6fd, #24333b) 100%);
+    border: 1px solid light-dark(#7dd3fc, #3e6172);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1.5rem 0;
@@ -816,13 +816,13 @@ body.ja .quote-box blockquote {
 .perspective-content h4 {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #0369a1;
+    color: light-dark(#0369a1, #a2d2eb);
     margin-bottom: 0.5rem;
 }
 
 .perspective-content p {
     font-size: 0.85rem;
-    color: #0c4a6e;
+    color: light-dark(#0c4a6e, #baccd6);
     line-height: 1.8;
     margin: 0;
 }
@@ -855,18 +855,18 @@ body.ja .quote-box blockquote {
 }
 
 .outlook-item.pessimistic {
-    background: #fef2f2;
-    border: 1px solid #fecaca;
+    background: light-dark(#fef2f2, #281818);
+    border: 1px solid light-dark(#fecaca, #442525);
 }
 
 .outlook-item.moderate {
-    background: #fffbeb;
-    border: 1px solid #fde68a;
+    background: light-dark(#fffbeb, #2a2719);
+    border: 1px solid light-dark(#fde68a, #6a6039);
 }
 
 .outlook-item.optimistic {
-    background: #ecfdf5;
-    border: 1px solid #a7f3d0;
+    background: light-dark(#ecfdf5, #192a22);
+    border: 1px solid light-dark(#a7f3d0, #335f4b);
 }
 
 .outlook-scenario {
@@ -878,7 +878,7 @@ body.ja .quote-box blockquote {
 }
 
 .outlook-item.pessimistic .outlook-scenario { color: var(--hot-color); }
-.outlook-item.moderate .outlook-scenario { color: #d97706; }
+.outlook-item.moderate .outlook-scenario { color: light-dark(#d97706, #e5b986); }
 .outlook-item.optimistic .outlook-scenario { color: var(--accent-green); }
 
 .outlook-label {

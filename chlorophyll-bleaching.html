@@ -23,8 +23,8 @@
     <style>
         /* Page-specific styles */
         .paradox-highlight {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            border-left: 4px solid #f59e0b;
+            background: linear-gradient(135deg, light-dark(#fef3c7, #373221) 0%, light-dark(#fde68a, #4c462e) 100%);
+            border-left: 4px solid light-dark(#f59e0b, #f6a723);
             padding: 1.25rem;
             border-radius: 0 8px 8px 0;
             margin: 1.5rem 0;
@@ -44,20 +44,20 @@
             border-left: 4px solid;
         }
         .pathway-card.protection {
-            background: #f0fdf4;
-            border-color: #22c55e;
+            background: light-dark(#f0fdf4, #19291e);
+            border-color: light-dark(#22c55e, #3bdd77);
         }
         .pathway-card.threat {
-            background: #fef2f2;
-            border-color: #ef4444;
+            background: light-dark(#fef2f2, #281818);
+            border-color: light-dark(#ef4444, #9b5454);
         }
         .pathway-card.water {
-            background: #eff6ff;
-            border-color: #3b82f6;
+            background: light-dark(#eff6ff, #181f28);
+            border-color: light-dark(#3b82f6, #3b82f6);
         }
         .pathway-card.tissue {
-            background: #fdf4ff;
-            border-color: #a855f7;
+            background: light-dark(#fdf4ff, #241727);
+            border-color: light-dark(#a855f7, #6d4c8d);
         }
         .pathway-card h3 {
             margin: 0 0 0.75rem 0;
@@ -85,17 +85,17 @@
         .data-table th, .data-table td {
             padding: 0.5rem 0.4rem;
             text-align: center;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid light-dark(#e2e8f0, #212e3e);
         }
         .data-table th {
-            background: #f8fafc;
+            background: light-dark(#f8fafc, #181f26);
             font-weight: 600;
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.03em;
         }
         .data-table tr:hover {
-            background: #f8fafc;
+            background: light-dark(#f8fafc, #181f26);
         }
         .site-label {
             text-align: left;
@@ -106,9 +106,9 @@
             color: var(--text-secondary);
             margin-top: 0.5rem;
         }
-        .chl-low { color: #059669; }
-        .chl-mid { color: #d97706; }
-        .chl-high { color: #dc2626; font-weight: 500; }
+        .chl-low { color: light-dark(#059669, #a2ebd5); }
+        .chl-mid { color: light-dark(#d97706, #e5b986); }
+        .chl-high { color: light-dark(#dc2626, #e17070); font-weight: 500; }
         .climate-matrix {
             margin: 1.5rem 0;
         }
@@ -125,8 +125,8 @@
             text-decoration: underline;
         }
         .feedback-diagram {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
+            background: light-dark(#f8fafc, #181f26);
+            border: 1px solid light-dark(#e2e8f0, #212e3e);
             border-radius: 8px;
             padding: 1.5rem;
             margin: 1.5rem 0;
@@ -141,15 +141,15 @@
             font-size: 0.9rem;
         }
         .feedback-step {
-            background: white;
-            border: 1px solid #e2e8f0;
+            background: light-dark(white, #1c1c1c);
+            border: 1px solid light-dark(#e2e8f0, #212e3e);
             border-radius: 6px;
             padding: 0.5rem 0.75rem;
         }
         .feedback-step.danger {
-            background: #fef2f2;
-            border-color: #fecaca;
-            color: #dc2626;
+            background: light-dark(#fef2f2, #281818);
+            border-color: light-dark(#fecaca, #442525);
+            color: light-dark(#dc2626, #e17070);
         }
         .feedback-arrow {
             color: #94a3b8;
@@ -163,19 +163,19 @@
         }
         .comparison-table th, .comparison-table td {
             padding: 0.6rem;
-            border: 1px solid #e2e8f0;
+            border: 1px solid light-dark(#e2e8f0, #212e3e);
             text-align: left;
         }
         .comparison-table th {
-            background: #f8fafc;
+            background: light-dark(#f8fafc, #181f26);
             font-weight: 600;
         }
         .comparison-table th:first-child {
             width: 25%;
         }
         .future-box {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-            border-left: 4px solid #22c55e;
+            background: linear-gradient(135deg, light-dark(#f0fdf4, #19291e) 0%, light-dark(#dcfce7, #1d3024) 100%);
+            border-left: 4px solid light-dark(#22c55e, #3bdd77);
             padding: 1.25rem;
             border-radius: 0 8px 8px 0;
             margin: 1.5rem 0;
@@ -199,6 +199,8 @@
     <link rel="canonical" href="https://marine-obs.org/chlorophyll-bleaching.html">
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/theme.css">
+    <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+    <script src="js/theme.js" defer></script>
 </head>
 <body>
     <header>
@@ -289,7 +291,7 @@
                 <a class="nav-about" href="about.html"><span data-lang="en">About</span><span data-lang="ja">このサイトについて</span></a>
                 <div class="lang-switch">
                     <button id="lang-en" class="active">English</button>
-                    <span style="color:rgba(255,255,255,0.4)">/</span>
+                    <span style="color: rgba(255,255,255,0.4)">/</span>
                     <button id="lang-ja">日本語</button>
                 </div>
             </div>

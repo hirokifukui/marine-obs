@@ -1,17 +1,17 @@
         :root {
             --header-bg: #1a1f2e;
             --header-text: #ffffff;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8f9fa;
-            --bg-card: #ffffff;
-            --text-primary: #1a202c;
-            --text-secondary: #4a5568;
-            --text-muted: #718096;
+            --bg-primary: light-dark(#ffffff, #1c1c1c);
+            --bg-secondary: light-dark(#f8f9fa, #1c1f22);
+            --bg-card: light-dark(#ffffff, #1c1c1c);
+            --text-primary: light-dark(#1a202c, #d8dde7);
+            --text-secondary: light-dark(#4a5568, #a6afbf);
+            --text-muted: light-dark(#718096, #a7b0be);
             --accent-teal: #2b6cb0;
             --accent-coral: #996060;
             --accent-warm: #c05621;
             --accent-green: #2f855a;
-            --border: #e2e8f0;
+            --border: light-dark(#e2e8f0, #212e3e);
             --shadow: 0 1px 3px rgba(0,0,0,0.08);
             --manza: #c05621;
             --sesoko: #2b6cb0;
@@ -179,8 +179,8 @@
 
         /* Status card */
         .status-card {
-            background: #f7f5f3;
-            border: 1px solid #d4cfc7;
+            background: light-dark(#f7f5f3, #25221e);
+            border: 1px solid light-dark(#d4cfc7, #524b3f);
             border-left: 4px solid var(--turbidity-color);
         }
 
@@ -196,7 +196,7 @@
             letter-spacing: 0.05em;
             padding: 0.25rem 0.5rem;
             border-radius: 4px;
-            background: #e8e4df;
+            background: light-dark(#e8e4df, #2f2c27);
             color: var(--turbidity-color);
             margin-left: 0.5rem;
         }
@@ -301,8 +301,8 @@
 
         /* No data notice */
         .no-data-notice {
-            background: #f5f5f5;
-            border: 2px dashed #d0d0d0;
+            background: light-dark(#f5f5f5, #222222);
+            border: 2px dashed light-dark(#d0d0d0, #464646);
             border-radius: 8px;
             padding: 2rem;
             text-align: center;
@@ -386,8 +386,8 @@
 
         /* Key insight box */
         .insight-box {
-            background: linear-gradient(135deg, #faf9f7 0%, #f5f3f0 100%);
-            border: 1px solid #e8e4df;
+            background: linear-gradient(135deg, light-dark(#faf9f7, #24211c) 0%, light-dark(#f5f3f0, #27241f) 100%);
+            border: 1px solid light-dark(#e8e4df, #3d362c);
             border-radius: 8px;
             padding: 1.25rem;
             margin: 1rem 0;

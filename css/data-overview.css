@@ -49,7 +49,7 @@ main {
     border-radius: 12px;
     padding: 1.25rem 1rem;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid light-dark(rgba(255, 255, 255, 0.2), rgba(28, 28, 28, 0.2));
 }
 
 .hero-stat-card .number {
@@ -99,12 +99,12 @@ main {
    Summary Box (section intro)
    -------------------------------------------------------------------------- */
 .summary-box {
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-    border-left: 4px solid var(--primary, #1a365d);
+    background: linear-gradient(135deg, light-dark(#f8fafc, #181f26) 0%, light-dark(#f1f5f9, #1a2229) 100%);
+    border-left: 4px solid var(--primary, light-dark(#1a365d, #9fb1cb));
     padding: 1rem 1.5rem;
     margin: 1.5rem 0 2rem;
     font-size: 0.95rem;
-    color: var(--text-secondary, #4a5568);
+    color: var(--text-secondary, light-dark(#4a5568, #a6afbf));
     border-radius: 0 8px 8px 0;
 }
 
@@ -149,29 +149,29 @@ main {
 .data-table td {
     padding: 0.75rem 1rem;
     text-align: left;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid light-dark(#e2e8f0, #212e3e);
 }
 
 .data-table th {
-    background: #f8fafc;
+    background: light-dark(#f8fafc, #181f26);
     font-weight: 600;
-    color: var(--text-primary, #1a202c);
+    color: var(--text-primary, light-dark(#1a202c, #d8dde7));
     white-space: nowrap;
 }
 
 .data-table tbody tr:hover {
-    background: #f8fafc;
+    background: light-dark(#f8fafc, #181f26);
 }
 
 .data-table code {
-    background: #e2e8f0;
+    background: light-dark(#e2e8f0, #21272f);
     padding: 0.15rem 0.4rem;
     border-radius: 4px;
     font-size: 0.8rem;
 }
 
 .data-table .total-row {
-    background: #f1f5f9;
+    background: light-dark(#f1f5f9, #1a2229);
     font-weight: 600;
 }
 
@@ -187,7 +187,7 @@ main {
 .tech-notes li {
     padding: 0.5rem 0 0.5rem 1.5rem;
     position: relative;
-    color: var(--text-secondary, #4a5568);
+    color: var(--text-secondary, light-dark(#4a5568, #a6afbf));
     font-size: 0.9rem;
 }
 
@@ -195,11 +195,11 @@ main {
     content: '•';
     position: absolute;
     left: 0;
-    color: var(--primary, #1a365d);
+    color: var(--primary, light-dark(#1a365d, #bcc7d7));
 }
 
 .tech-notes code {
-    background: #e2e8f0;
+    background: light-dark(#e2e8f0, #21272f);
     padding: 0.15rem 0.4rem;
     border-radius: 4px;
     font-size: 0.8rem;
@@ -212,9 +212,9 @@ main {
     height: 450px;
     border-radius: 12px;
     margin: 1.5rem 0;
-    border: 1px solid #e2e8f0;
+    border: 1px solid light-dark(#e2e8f0, #212e3e);
     overflow: hidden;
-    background: #f1f5f9;
+    background: light-dark(#f1f5f9, #1a2229);
 }
 
 .map-placeholder {
@@ -222,7 +222,7 @@ main {
     align-items: center;
     justify-content: center;
     height: 100%;
-    color: var(--text-secondary, #64748b);
+    color: var(--text-secondary, light-dark(#64748b, #a6b0bf));
     font-size: 0.95rem;
 }
 
@@ -237,7 +237,7 @@ main {
    -------------------------------------------------------------------------- */
 .figure-caption {
     font-size: 0.85rem;
-    color: var(--text-secondary, #64748b);
+    color: var(--text-secondary, light-dark(#64748b, #a6b0bf));
     text-align: center;
     margin-top: 0.75rem;
     font-style: italic;
@@ -247,7 +247,7 @@ main {
    Data Structure Visual (SVG container)
    -------------------------------------------------------------------------- */
 .data-tree-visual {
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    background: linear-gradient(135deg, light-dark(#f8fafc, #181f26) 0%, light-dark(#f1f5f9, #1a2229) 100%);
     padding: 2rem;
     border-radius: 12px;
     margin: 1.5rem 0;
@@ -267,7 +267,7 @@ main {
    Coverage Heatmap
    -------------------------------------------------------------------------- */
 .coverage-heatmap-container {
-    background: #f8fafc;
+    background: light-dark(#f8fafc, #181f26);
     border-radius: 12px;
     padding: 1.5rem;
     margin: 1.5rem 0;
@@ -276,7 +276,7 @@ main {
 
 .placeholder-text {
     text-align: center;
-    color: var(--text-secondary, #64748b);
+    color: var(--text-secondary, light-dark(#64748b, #a6b0bf));
     font-size: 0.9rem;
 }
 
@@ -293,7 +293,7 @@ main {
     align-items: center;
     gap: 0.5rem;
     font-size: 0.85rem;
-    color: var(--text-secondary, #64748b);
+    color: var(--text-secondary, light-dark(#64748b, #a6b0bf));
 }
 
 .legend-box {
@@ -303,11 +303,11 @@ main {
 }
 
 .legend-box.has-data {
-    background: #2563eb;
+    background: light-dark(#2563eb, #3a455f);
 }
 
 .legend-box.no-data {
-    background: #e2e8f0;
+    background: light-dark(#e2e8f0, #21272f);
 }
 
 .legend-dot {
@@ -317,15 +317,15 @@ main {
 }
 
 .legend-dot.logger {
-    background: #f59e0b;
+    background: light-dark(#f59e0b, #5f513a);
 }
 
 /* --------------------------------------------------------------------------
    Note Box
    -------------------------------------------------------------------------- */
 .note-box {
-    background: #fffbeb;
-    border: 1px solid #fcd34d;
+    background: light-dark(#fffbeb, #2a2719);
+    border: 1px solid light-dark(#fcd34d, #8e7f4d);
     border-radius: 8px;
     padding: 1rem 1.5rem;
     margin: 1.5rem 0;
@@ -334,7 +334,7 @@ main {
 .note-box h4 {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #92400e;
+    color: light-dark(#92400e, #ebbea2);
     margin: 0 0 0.5rem 0;
 }
 
@@ -345,7 +345,7 @@ main {
 
 .note-box li {
     font-size: 0.85rem;
-    color: #78350f;
+    color: light-dark(#78350f, #ebbda2);
     margin-bottom: 0.25rem;
 }
 
@@ -360,11 +360,11 @@ main {
 .limitations-list li {
     margin-bottom: 0.75rem;
     font-size: 0.9rem;
-    color: var(--text-secondary, #4a5568);
+    color: var(--text-secondary, light-dark(#4a5568, #a6afbf));
 }
 
 .limitations-list strong {
-    color: var(--text-primary, #1a202c);
+    color: var(--text-primary, light-dark(#1a202c, #d8dde7));
 }
 
 /* --------------------------------------------------------------------------
@@ -381,8 +381,8 @@ main {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: white;
-    border: 2px solid #e2e8f0;
+    background: light-dark(white, #1c1c1c);
+    border: 2px solid light-dark(#e2e8f0, #212e3e);
     border-radius: 12px;
     padding: 1rem 1.5rem;
     width: 100%;
@@ -391,7 +391,7 @@ main {
 }
 
 .flow-step:hover {
-    border-color: var(--primary, #1a365d);
+    border-color: var(--primary, light-dark(#1a365d, #9fb1cb));
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
@@ -425,7 +425,7 @@ main {
 
 .step-text {
     font-size: 0.95rem;
-    color: var(--text-primary, #1a202c);
+    color: var(--text-primary, light-dark(#1a202c, #d8dde7));
 }
 
 .flow-arrow {
@@ -448,7 +448,7 @@ main {
    Related Links
    -------------------------------------------------------------------------- */
 .related-links {
-    background: #f8fafc;
+    background: light-dark(#f8fafc, #181f26);
     border-radius: 8px;
     padding: 1.25rem 1.5rem;
     margin-top: 2rem;
@@ -457,7 +457,7 @@ main {
 .related-links h4 {
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--text-primary, #1a202c);
+    color: var(--text-primary, light-dark(#1a202c, #d8dde7));
     margin: 0 0 0.75rem 0;
 }
 
@@ -472,7 +472,7 @@ main {
 }
 
 .related-links a {
-    color: var(--primary, #1a365d);
+    color: var(--primary, light-dark(#1a365d, #bcc7d7));
     text-decoration: none;
     font-size: 0.9rem;
 }
@@ -482,7 +482,7 @@ main {
 }
 
 .related-links .coming-soon {
-    color: var(--text-secondary, #64748b);
+    color: var(--text-secondary, light-dark(#64748b, #a6b0bf));
     font-size: 0.9rem;
 }
 
@@ -490,8 +490,8 @@ main {
    Acknowledgment Box
    -------------------------------------------------------------------------- */
 .acknowledgment-box {
-    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
-    border: 1px solid #86efac;
+    background: linear-gradient(135deg, light-dark(#f0fdf4, #19291e) 0%, light-dark(#ecfdf5, #192a22) 100%);
+    border: 1px solid light-dark(#86efac, #3f7552);
     border-radius: 8px;
     padding: 1.25rem 1.5rem;
     margin: 1.5rem 0;
@@ -500,13 +500,13 @@ main {
 .acknowledgment-box h4 {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #166534;
+    color: light-dark(#166534, #bad5c4);
     margin: 0 0 0.5rem 0;
 }
 
 .acknowledgment-box p {
     font-size: 0.9rem;
-    color: #15803d;
+    color: light-dark(#15803d, #a2ebbe);
     margin: 0;
     line-height: 1.6;
 }
@@ -524,11 +524,11 @@ main {
 .resource-links li {
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
-    color: var(--text-secondary, #4a5568);
+    color: var(--text-secondary, light-dark(#4a5568, #a6afbf));
 }
 
 .resource-links a {
-    color: var(--primary, #1a365d);
+    color: var(--primary, light-dark(#1a365d, #bcc7d7));
     text-decoration: none;
 }
 
@@ -544,7 +544,7 @@ main {
     justify-content: space-between;
     margin-top: 4rem;
     padding-top: 2rem;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid light-dark(#e2e8f0, #212e3e);
     gap: 1rem;
 }
 
@@ -553,7 +553,7 @@ main {
     flex-direction: column;
     text-decoration: none;
     padding: 1rem 1.5rem;
-    background: #f8fafc;
+    background: light-dark(#f8fafc, #181f26);
     border-radius: 8px;
     transition: all 0.2s ease;
     flex: 1;
@@ -561,7 +561,7 @@ main {
 }
 
 .page-nav a:hover {
-    background: #f1f5f9;
+    background: light-dark(#f1f5f9, #1a2229);
     transform: translateY(-2px);
 }
 
@@ -576,7 +576,7 @@ main {
 
 .nav-label {
     font-size: 0.75rem;
-    color: var(--text-secondary, #64748b);
+    color: var(--text-secondary, light-dark(#64748b, #a6b0bf));
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: 0.25rem;
@@ -585,7 +585,7 @@ main {
 .nav-title {
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--primary, #1a365d);
+    color: var(--primary, light-dark(#1a365d, #bcc7d7));
 }
 
 @media (max-width: 768px) {
@@ -610,14 +610,14 @@ main {
 .content-section h2 {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--text-primary, #1a202c);
+    color: var(--text-primary, light-dark(#1a202c, #d8dde7));
     margin: 0 0 1rem 0;
 }
 
 .content-section h3 {
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--text-primary, #1a202c);
+    color: var(--text-primary, light-dark(#1a202c, #d8dde7));
     margin: 2rem 0 1rem 0;
 }
 
@@ -643,7 +643,7 @@ main {
     align-items: center;
     justify-content: center;
     height: 100%;
-    color: #dc2626;
+    color: light-dark(#dc2626, #e17070);
     font-size: 0.9rem;
 }
 
@@ -651,7 +651,7 @@ main {
    Data Structure Tree (SVG)
    -------------------------------------------------------------------------- */
 .data-tree-visual {
-    background: #f8fafc;
+    background: light-dark(#f8fafc, #181f26);
     border-radius: 12px;
     padding: 1.5rem;
     margin: 1.5rem 0;
@@ -679,7 +679,7 @@ body.ja img[data-lang="ja"] {
 
 .figure-caption {
     font-size: 0.9rem;
-    color: var(--text-secondary, #4a5568);
+    color: var(--text-secondary, light-dark(#4a5568, #a6afbf));
     text-align: center;
     margin-top: 1rem;
     font-style: italic;
@@ -700,7 +700,7 @@ body.ja img[data-lang="ja"] {
    Temporal Coverage Heatmap (CSS Grid)
    -------------------------------------------------------------------------- */
 .coverage-heatmap-wrapper {
-    background: #f8fafc;
+    background: light-dark(#f8fafc, #181f26);
     border-radius: 12px;
     padding: 1.5rem;
     margin: 1.5rem 0;
@@ -730,11 +730,11 @@ body.ja img[data-lang="ja"] {
 }
 
 .heatmap-site {
-    background: #f1f5f9;
+    background: light-dark(#f1f5f9, #1a2229);
     padding: 8px 12px;
     font-weight: 500;
     font-size: 0.8rem;
-    color: var(--text-primary, #1a202c);
+    color: var(--text-primary, light-dark(#1a202c, #d8dde7));
     display: flex;
     align-items: center;
     gap: 6px;
@@ -744,14 +744,14 @@ body.ja img[data-lang="ja"] {
 }
 
 .heatmap-site.has-logger {
-    background: linear-gradient(90deg, #fef3c7 0%, #f1f5f9 30%);
-    border-left: 3px solid #f59e0b;
+    background: linear-gradient(90deg, light-dark(#fef3c7, #373221) 0%, light-dark(#f1f5f9, #1a2229) 30%);
+    border-left: 3px solid light-dark(#f59e0b, #f6a723);
 }
 
 .heatmap-site .site-no {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem;
-    color: #64748b;
+    color: light-dark(#64748b, #a6b0bf);
 }
 
 .heatmap-cell {
@@ -767,27 +767,27 @@ body.ja img[data-lang="ja"] {
 }
 
 .heatmap-cell.has-data {
-    background: #2563eb;
+    background: light-dark(#2563eb, #3a455f);
     color: white;
 }
 
 .heatmap-cell.no-data {
-    background: #e2e8f0;
+    background: light-dark(#e2e8f0, #21272f);
     color: #94a3b8;
 }
 
 .coverage-summary {
     margin-top: 1.5rem;
     padding: 1rem 1.5rem;
-    background: white;
+    background: light-dark(white, #1c1c1c);
     border-radius: 8px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid light-dark(#e2e8f0, #212e3e);
 }
 
 .coverage-summary p {
     margin: 0;
     font-size: 0.9rem;
-    color: var(--text-secondary, #4a5568);
+    color: var(--text-secondary, light-dark(#4a5568, #a6afbf));
     line-height: 1.6;
 }
 

@@ -15,18 +15,21 @@
    ========================================================================== */
 
 :root {
-    --paper: #F2F5F4;
-    --paper-raised: #FAFBFB;
-    --ink: #1C2427;
-    --ink-soft: #435257;
-    --ink-faint: #6A787C;
-    --ai: #1E3A5C;
-    --ai-deep: #14283F;
-    --rule: #C6D1D4;
-    --rule-soft: #DDE4E6;
-    --asagi: #3A8790;
-    --amber: #A9781C;
-    --coral: #BF3F46;
+    color-scheme: light dark;
+    --paper: light-dark(#F2F5F4, #0E161C);
+    --paper-raised: light-dark(#FAFBFB, #151F27);
+    --ink: light-dark(#1C2427, #DCE4E6);
+    --ink-soft: light-dark(#435257, #A9B7BB);
+    --ink-faint: light-dark(#6A787C, #7F8E93);
+    --ai: light-dark(#1E3A5C, #8FB5DA);
+    --ai-deep: light-dark(#14283F, #C8D9EA);
+    --surface-deep: light-dark(#14283F, #09121A);
+    --hover: light-dark(#EEF2F2, #1C2832);
+    --rule: light-dark(#C6D1D4, #2C3A43);
+    --rule-soft: light-dark(#DDE4E6, #222E36);
+    --asagi: light-dark(#3A8790, #5FB3BC);
+    --amber: light-dark(#A9781C, #D6A548);
+    --coral: light-dark(#BF3F46, #E8737A);
 
     --serif: 'Source Serif 4', 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
     --serif-ja: 'Shippori Mincho', 'Source Serif 4', 'Hiragino Mincho ProN', serif;
@@ -34,7 +37,7 @@
     --sans-ja: 'Noto Sans JP', 'Source Sans 3', -apple-system, sans-serif;
 
     /* map legacy tokens */
-    --header-bg: var(--ai-deep);
+    --header-bg: var(--surface-deep);
     --header-text: #F2F5F4;
     --bg-primary: var(--paper-raised);
     --bg-secondary: var(--paper);
@@ -42,7 +45,7 @@
     --text-primary: var(--ink);
     --text-secondary: var(--ink-soft);
     --text-muted: var(--ink-faint);
-    --accent-teal: var(--ai);
+    --accent-teal: light-dark(#1E3A5C, #3F6F9F);
     --accent-coral: var(--coral);
     --accent-warm: var(--amber);
     --accent-green: var(--asagi);
@@ -52,14 +55,25 @@
     --chart-line-2: var(--coral);
     --chart-line-3: var(--asagi);
 
+    /* aliases used by older pages (were undefined) */
+    --primary: var(--ai);
+    --accent: var(--ai);
+    --accent-primary: var(--ai);
+    --surface: var(--paper-raised);
+    --card-bg: var(--paper-raised);
+    --text-tertiary: var(--ink-faint);
+    --font-sans: var(--sans);
+    --border-color: var(--rule);
+    --bg: var(--paper);
+
     /* seven sites: one palette everywhere */
-    --kushimoto: #4A5B96;
-    --ogasawara: #3A8790;
-    --amami: #6A8B48;
-    --sesoko: #2E6A9C;
-    --manza: #A9781C;
-    --kerama: #7A5A9A;
-    --sekisei: #BF3F46;
+    --kushimoto: light-dark(#4A5B96, #8A9BD6);
+    --ogasawara: light-dark(#3A8790, #5FB3BC);
+    --amami: light-dark(#6A8B48, #9BBE77);
+    --sesoko: light-dark(#2E6A9C, #6FA6D6);
+    --manza: light-dark(#A9781C, #D6A548);
+    --kerama: light-dark(#7A5A9A, #B394D2);
+    --sekisei: light-dark(#BF3F46, #E8737A);
 }
 
 /* ---------- base ---------- */
@@ -96,11 +110,11 @@ table, .data-table, .method-table, .ref-table { font-variant-numeric: tabular-nu
 .data-table td, .method-table td, .ref-table td { border-bottom: 1px solid var(--rule-soft); }
 
 /* ---------- header ---------- */
-header { background: var(--ai-deep); border-bottom: 1px solid #0d1b2c; }
+header { background: var(--surface-deep); border-bottom: 1px solid light-dark(#0d1b2c, #1E2B35); }
 .logo { font-family: var(--serif-ja); font-weight: 600; letter-spacing: 0.06em; font-size: 1.02rem; }
 .logo-icon { border-radius: 50%; background: none; }
 .nav-link { font-size: 0.92rem; letter-spacing: 0.02em; }
-.dropdown-menu { border-radius: 2px; border: 1px solid var(--rule); box-shadow: 0 6px 18px rgba(20, 40, 63, 0.12); }
+.dropdown-menu { border-radius: 2px; border: 1px solid var(--rule); box-shadow: 0 6px 18px light-dark(rgba(20, 40, 63, 0.12), rgba(0, 0, 0, 0.5)); }
 .nav-about { color: #DCE4E6; text-decoration: none; font-size: 0.85rem; margin-right: 1rem; white-space: nowrap; }
 .nav-about:hover { color: #fff; }
 
@@ -115,7 +129,7 @@ header { background: var(--ai-deep); border-bottom: 1px solid #0d1b2c; }
     background: var(--paper-raised);
 }
 .story-box { border-left: 3px solid var(--ai); background: var(--paper-raised); }
-.insight-box.heat { border-left: 3px solid var(--coral); background: #FBF4F4; }
+.insight-box.heat { border-left: 3px solid var(--coral); background: light-dark(#FBF4F4, #2A1A1D); }
 
 /* ---------- footer ---------- */
 footer { background: var(--paper); border-top: 1px solid var(--rule); color: var(--ink-faint); }
@@ -153,7 +167,7 @@ body:not(.ja) .stamp { font-family: var(--serif); font-size: 0.72rem; letter-spa
 .vitals { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft); }
 .vital { padding: 0.5rem 0.4rem 0.45rem; text-decoration: none; color: inherit; }
 .vital + .vital { border-left: 1px solid var(--rule-soft); }
-.vital:hover { background: #EEF2F2; }
+.vital:hover { background: var(--hover); }
 .vital-label { font-size: 0.74rem; color: var(--ink-faint); display: block; }
 .vital-value { display: block; font-family: var(--serif); font-size: 1.45rem; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums lining-nums; line-height: 1.25; }
 .vital-value small { font-size: 0.75rem; font-weight: 400; color: var(--ink-faint); margin-left: 0.15rem; }
@@ -245,7 +259,7 @@ body:not(.ja) .stamp { font-family: var(--serif); font-size: 0.72rem; letter-spa
 
 /* ---------- page heroes: data pages on indigo, photo kept only where it is the subject ---------- */
 .hero-section:not(:has(.prediction-date)):not(:has(.map-container)) {
-    background: var(--ai-deep) !important;
+    background: var(--surface-deep) !important;
     background-image: none !important;
     border-radius: 3px;
 }
@@ -274,3 +288,33 @@ body:not(.ja) .stamp { font-family: var(--serif); font-size: 0.72rem; letter-spa
 .logo-icon img { width: 100%; height: 100%; display: block; }
 .logo [data-lang="en"] { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; letter-spacing: 0.01em; font-size: 1.08rem; }
 @media (max-width: 480px) { .logo [data-lang="en"] { font-size: 0.95rem; } .logo-icon { width: 26px; height: 26px; } }
+
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+
+/* ---------- dark scheme: legacy surfaces & media ---------- */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) img:not([src$=".svg"]):not(.logo-icon img) { filter: brightness(0.92); }
+}
+:root[data-theme="dark"] img:not([src$=".svg"]) { filter: brightness(0.92); }
+.dropdown-menu, .sidebar, .sidebar-menu { background: var(--paper-raised); color: var(--ink); }
+.dropdown-menu a, .sidebar-menu a { color: var(--ink); }
+.dropdown-menu a:hover, .sidebar-menu a:hover { background: var(--hover); }
+input, select, textarea, button { color: inherit; }
+.leaflet-container { background: var(--paper); }
+
+/* theme toggle */
+.theme-toggle { background: none; border: 1px solid rgba(242, 245, 244, 0.28); color: #DCE4E6; width: 28px; height: 28px; border-radius: 50%; display: inline-grid; place-items: center; cursor: pointer; margin-right: 0.6rem; padding: 0; }
+.theme-toggle:hover { border-color: rgba(242, 245, 244, 0.6); }
+.theme-toggle svg { width: 14px; height: 14px; }
+html, body { overflow-x: clip; }
+@media (max-width: 480px) {
+    .theme-toggle { display: none; }
+    .lang-switch { gap: 0; }
+    .logo { gap: 0.45rem; }
+}
+.hamburger { flex-shrink: 0; }
+@media (max-width: 420px) {
+    .logo [data-lang="en"] { font-size: 0.88rem; }
+    header .lang-switch button { padding: 0.2rem 0.3rem; }
+}

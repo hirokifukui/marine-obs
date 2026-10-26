@@ -137,18 +137,18 @@ body.ja .hero-tagline {
 
 .comparison-item {
     flex: 1;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
+    background: light-dark(#f8fafc, #181f26);
+    border: 1px solid light-dark(#e2e8f0, #212e3e);
     border-radius: 8px;
     padding: 1.25rem;
 }
 
 .comparison-item.satellite {
-    border-left: 4px solid #d63031;
+    border-left: 4px solid light-dark(#d63031, #d93f40);
 }
 
 .comparison-item.insitu {
-    border-left: 4px solid #0066aa;
+    border-left: 4px solid light-dark(#0066aa, #95b2c6);
 }
 
 .comparison-item h4 {
@@ -238,22 +238,22 @@ body.ja .hero-tagline {
 }
 
 .region-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
+    background: light-dark(#f8fafc, #181f26);
+    border: 1px solid light-dark(#e2e8f0, #212e3e);
     border-radius: 8px;
     padding: 1.25rem;
 }
 
 .region-card.honshu {
-    border-top: 4px solid #2563eb;
+    border-top: 4px solid light-dark(#2563eb, #2d69ec);
 }
 
 .region-card.okinawa {
-    border-top: 4px solid #16a34a;
+    border-top: 4px solid light-dark(#16a34a, #92c4a5);
 }
 
 .region-card.sakishima {
-    border-top: 4px solid #ea580c;
+    border-top: 4px solid light-dark(#ea580c, #f46c25);
 }
 
 .region-header {
@@ -269,7 +269,7 @@ body.ja .hero-tagline {
     border-radius: 50%;
 }
 
-.region-card.honshu .region-dot { background: #2563eb; }
+.region-card.honshu .region-dot { background: light-dark(#2563eb, #3a455f); }
 .region-card.okinawa .region-dot { background: #16a34a; }
 .region-card.sakishima .region-dot { background: #ea580c; }
 
@@ -290,9 +290,9 @@ body.ja .hero-tagline {
     line-height: 1.2;
 }
 
-.region-card.honshu .region-slope { color: #2563eb; }
-.region-card.okinawa .region-slope { color: #16a34a; }
-.region-card.sakishima .region-slope { color: #ea580c; }
+.region-card.honshu .region-slope { color: light-dark(#2563eb, #7093e1); }
+.region-card.okinawa .region-slope { color: light-dark(#16a34a, #a2ebbd); }
+.region-card.sakishima .region-slope { color: light-dark(#ea580c, #e19973); }
 
 .region-range {
     font-size: 0.8rem;
@@ -330,8 +330,8 @@ body.ja .hero-tagline {
     display: flex;
     gap: 1rem;
     align-items: flex-start;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
+    background: light-dark(#f8fafc, #181f26);
+    border: 1px solid light-dark(#e2e8f0, #212e3e);
     border-radius: 8px;
     padding: 1rem;
 }
@@ -355,8 +355,8 @@ body.ja .hero-tagline {
 
 /* Implication Box - moni1000 acknowledgment style */
 .implication-box {
-    background: linear-gradient(135deg, #eff6ff, #dbeafe);
-    border: 1px solid #93c5fd;
+    background: linear-gradient(135deg, light-dark(#eff6ff, #181f28), light-dark(#dbeafe, #1d2530));
+    border: 1px solid light-dark(#93c5fd, #364c65);
     border-radius: 8px;
     padding: 1.25rem;
     margin: 1.5rem 0;
@@ -365,17 +365,17 @@ body.ja .hero-tagline {
 .implication-box p {
     margin: 0;
     line-height: 1.7;
-    color: #1e40af;
+    color: light-dark(#1e40af, #95a9e9);
 }
 
 .implication-box strong {
-    color: #1e3a8a;
+    color: light-dark(#1e3a8a, #a3b6eb);
 }
 
 /* Technical Details */
 .technical-details {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
+    background: light-dark(#f8fafc, #181f26);
+    border: 1px solid light-dark(#e2e8f0, #212e3e);
     border-radius: 8px;
     margin: 1.5rem 0;
 }
@@ -407,7 +407,7 @@ body.ja .hero-tagline {
 
 .details-content {
     padding: 0 1.25rem 1.25rem;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid light-dark(#e2e8f0, #212e3e);
 }
 
 .details-content h4 {
@@ -420,8 +420,8 @@ body.ja .hero-tagline {
 }
 
 .details-content pre {
-    background: white;
-    border: 1px solid #e2e8f0;
+    background: light-dark(white, #1c1c1c);
+    border: 1px solid light-dark(#e2e8f0, #212e3e);
     border-radius: 6px;
     padding: 0.75rem 1rem;
     font-family: 'JetBrains Mono', monospace;
@@ -447,10 +447,10 @@ body.ja .hero-tagline {
 
 /* Sources Section */
 .sources-section {
-    background: #f8fafc;
+    background: light-dark(#f8fafc, #181f26);
     padding: 1.25rem;
     border-radius: 8px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid light-dark(#e2e8f0, #212e3e);
 }
 
 .sources-section h2 {
@@ -479,7 +479,7 @@ body.ja .hero-tagline {
     gap: 1rem;
     margin-top: 2.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid light-dark(#e2e8f0, #212e3e);
 }
 
 @media (max-width: 640px) {
@@ -493,8 +493,8 @@ body.ja .hero-tagline {
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1rem;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
+    background: light-dark(#f8fafc, #181f26);
+    border: 1px solid light-dark(#e2e8f0, #212e3e);
     border-radius: 8px;
     text-decoration: none;
     transition: all 0.2s;
@@ -503,7 +503,7 @@ body.ja .hero-tagline {
 
 .page-nav .nav-link:hover {
     border-color: var(--accent-primary);
-    background: white;
+    background: light-dark(white, #1c1c1c);
 }
 
 .nav-direction {
@@ -519,7 +519,7 @@ body.ja .hero-tagline {
 footer {
     margin-top: 3rem;
     padding: 1.5rem 0;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid light-dark(#e2e8f0, #212e3e);
 }
 
 .footer-content {
@@ -592,17 +592,17 @@ footer {
     font-weight: 500;
 }
 
-.region-card.honshu .region-meaning { border-color: #2563eb; }
-.region-card.okinawa .region-meaning { border-color: #16a34a; }
-.region-card.sakishima .region-meaning { border-color: #ea580c; }
+.region-card.honshu .region-meaning { border-color: light-dark(#2563eb, #2d69ec); }
+.region-card.okinawa .region-meaning { border-color: light-dark(#16a34a, #92c4a5); }
+.region-card.sakishima .region-meaning { border-color: light-dark(#ea580c, #f46c25); }
 
 /* ===========================================
    Limitations Section (added 2026-01-30)
    =========================================== */
 
 .limitation-item {
-    background: var(--bg-secondary, #f8f9fa);
-    border-left: 4px solid var(--accent-primary, #0d6efd);
+    background: var(--bg-secondary, light-dark(#f8f9fa, #1c1f22));
+    border-left: 4px solid var(--accent-primary, light-dark(#0d6efd, #1b77fd));
     padding: 1rem 1.5rem;
     margin: 1.5rem 0;
     border-radius: 0 8px 8px 0;
@@ -611,7 +611,7 @@ footer {
 .limitation-item h4 {
     margin-top: 0;
     margin-bottom: 0.75rem;
-    color: var(--text-primary, #212529);
+    color: var(--text-primary, light-dark(#212529, #dadee1));
     font-size: 1rem;
 }
 
@@ -640,23 +640,23 @@ footer {
 }
 
 .can-box {
-    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
-    border: 1px solid #28a745;
+    background: linear-gradient(135deg, light-dark(#d4edda, #233728) 0%, light-dark(#c3e6cb, #283f2d) 100%);
+    border: 1px solid light-dark(#28a745, #46d366);
 }
 
 .can-box h4 {
-    color: #155724;
+    color: light-dark(#155724, #c2dbc8);
     margin-top: 0;
     margin-bottom: 1rem;
 }
 
 .cannot-box {
-    background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%);
-    border: 1px solid #ffc107;
+    background: linear-gradient(135deg, light-dark(#fff3cd, #342f1f) 0%, light-dark(#ffeeba, #3b3523) 100%);
+    border: 1px solid light-dark(#ffc107, #ffc61a);
 }
 
 .cannot-box h4 {
-    color: #856404;
+    color: light-dark(#856404, #ebd9a2);
     margin-top: 0;
     margin-bottom: 1rem;
 }

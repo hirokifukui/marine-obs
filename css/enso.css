@@ -1,17 +1,17 @@
         :root {
             --header-bg: #1a1f2e;
             --header-text: #ffffff;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8f9fa;
-            --bg-card: #ffffff;
-            --text-primary: #1a202c;
-            --text-secondary: #4a5568;
-            --text-muted: #718096;
+            --bg-primary: light-dark(#ffffff, #1c1c1c);
+            --bg-secondary: light-dark(#f8f9fa, #1c1f22);
+            --bg-card: light-dark(#ffffff, #1c1c1c);
+            --text-primary: light-dark(#1a202c, #d8dde7);
+            --text-secondary: light-dark(#4a5568, #a6afbf);
+            --text-muted: light-dark(#718096, #a7b0be);
             --accent-teal: #2b6cb0;
             --accent-coral: #996060;
             --accent-warm: #c05621;
             --accent-green: #2f855a;
-            --border: #e2e8f0;
+            --border: light-dark(#e2e8f0, #212e3e);
             --shadow: 0 1px 3px rgba(0,0,0,0.08);
             --coral-critical: #d90429;
             --coral-severe: #ef476f;
@@ -232,7 +232,7 @@
             left: 50%;
             transform: translateX(-50%);
             background: rgba(10, 22, 40, 0.95);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid light-dark(rgba(255,255,255,0.2), rgba(28, 28, 28, 0.2));
             border-radius: 8px;
             padding: 0.75rem 1rem;
             min-width: 180px;
@@ -612,8 +612,8 @@
 
         /* Frequency Chart */
         .frequency-note {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
+            background: light-dark(#fef2f2, #281818);
+            border: 1px solid light-dark(#fecaca, #442525);
             border-radius: 8px;
             padding: 1rem 1.25rem;
             margin-top: 1.5rem;
@@ -634,8 +634,8 @@
 
         /* Hope Section */
         .hope-section {
-            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
-            border: 1px solid #a7f3d0;
+            background: linear-gradient(135deg, light-dark(#f0fdf4, #19291e), light-dark(#ecfdf5, #192a22));
+            border: 1px solid light-dark(#a7f3d0, #335f4b);
             border-radius: 8px;
             padding: 1.5rem;
         }
@@ -842,17 +842,17 @@
 
 .oni-status.el-nino {
     background: rgba(239, 68, 68, 0.1);
-    color: #dc2626;
+    color: light-dark(#dc2626, #e17070);
 }
 
 .oni-status.la-nina {
     background: rgba(59, 130, 246, 0.1);
-    color: #2563eb;
+    color: light-dark(#2563eb, #7093e1);
 }
 
 .oni-status.neutral {
     background: rgba(156, 163, 175, 0.1);
-    color: #6b7280;
+    color: light-dark(#6b7280, #acb0b9);
 }
 
 .oni-chart-wrapper {
@@ -922,11 +922,11 @@
 }
 
 .enso-card.el-nino {
-    border-left: 4px solid #ef4444;
+    border-left: 4px solid light-dark(#ef4444, #9b5454);
 }
 
 .enso-card.la-nina {
-    border-left: 4px solid #3b82f6;
+    border-left: 4px solid light-dark(#3b82f6, #3b82f6);
 }
 
 .enso-card h4 {
@@ -939,11 +939,11 @@
 }
 
 .enso-card.el-nino h4 {
-    color: #dc2626;
+    color: light-dark(#dc2626, #e17070);
 }
 
 .enso-card.la-nina h4 {
-    color: #2563eb;
+    color: light-dark(#2563eb, #7093e1);
 }
 
 .enso-card p {
@@ -965,8 +965,8 @@
 
 /* Typhoon Mechanism Section */
 .mechanism-box {
-    background: linear-gradient(135deg, #eff6ff, #dbeafe);
-    border: 1px solid #93c5fd;
+    background: linear-gradient(135deg, light-dark(#eff6ff, #181f28), light-dark(#dbeafe, #1d2530));
+    border: 1px solid light-dark(#93c5fd, #364c65);
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
@@ -975,7 +975,7 @@
 .mechanism-box h4 {
     font-size: 1rem;
     font-weight: 600;
-    color: #1e40af;
+    color: light-dark(#1e40af, #95a9e9);
     margin-bottom: 0.75rem;
 }
 
@@ -1025,9 +1025,9 @@
     border-radius: 2px;
 }
 
-.oni-legend-color.el-nino { background: #ef4444; }
-.oni-legend-color.la-nina { background: #3b82f6; }
-.oni-legend-color.neutral { background: #9ca3af; }
+.oni-legend-color.el-nino { background: light-dark(#ef4444, #5f3a3a); }
+.oni-legend-color.la-nina { background: light-dark(#3b82f6, #3a485f); }
+.oni-legend-color.neutral { background: light-dark(#9ca3af, #444a55); }
 
 /* Loading state */
 .chart-loading {
@@ -1062,22 +1062,22 @@
     backdrop-filter: blur(10px);
     border-radius: 50px;
     padding: 0.6rem 1.25rem;
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid light-dark(rgba(255,255,255,0.15), rgba(28, 28, 28, 0.15));
 }
 
 .hero-enso-content.el-nino {
     background: rgba(239, 68, 68, 0.2);
-    border-color: rgba(239, 68, 68, 0.3);
+    border-color: light-dark(rgba(239, 68, 68, 0.3), rgba(155, 84, 84, 0.3));
 }
 
 .hero-enso-content.la-nina {
     background: rgba(59, 130, 246, 0.2);
-    border-color: rgba(59, 130, 246, 0.3);
+    border-color: light-dark(rgba(59, 130, 246, 0.3), rgba(59, 130, 246, 0.3));
 }
 
 .hero-enso-content.neutral {
     background: rgba(156, 163, 175, 0.2);
-    border-color: rgba(156, 163, 175, 0.3);
+    border-color: light-dark(rgba(156, 163, 175, 0.3), rgba(97, 106, 120, 0.3));
 }
 
 .hero-enso-icon {
@@ -1323,7 +1323,7 @@
     color: rgba(255,255,255,0.9);
     margin-top: 0.5rem;
     padding-top: 0.5rem;
-    border-top: 1px solid rgba(255,255,255,0.15);
+    border-top: 1px solid light-dark(rgba(255,255,255,0.15), rgba(28, 28, 28, 0.15));
 }
 
 @media (max-width: 640px) {
@@ -1517,8 +1517,8 @@
 
 /* PDO Section */
 .pdo-explainer {
-    background: linear-gradient(135deg, #fef3c7, #fef9c3);
-    border: 1px solid #fcd34d;
+    background: linear-gradient(135deg, light-dark(#fef3c7, #373221), light-dark(#fef9c3, #383622));
+    border: 1px solid light-dark(#fcd34d, #8e7f4d);
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
@@ -1527,7 +1527,7 @@
 .pdo-explainer h4 {
     font-size: 1rem;
     font-weight: 600;
-    color: #92400e;
+    color: light-dark(#92400e, #ebbea2);
     margin-bottom: 0.75rem;
 }
 
@@ -1598,8 +1598,8 @@
 
 /* IOD Section */
 .iod-box {
-    background: linear-gradient(135deg, #fae8ff, #f5d0fe);
-    border: 1px solid #e879f9;
+    background: linear-gradient(135deg, light-dark(#fae8ff, #271a2b), light-dark(#f5d0fe, #2f1f33));
+    border: 1px solid light-dark(#e879f9, #6f4076);
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
@@ -1608,7 +1608,7 @@
 .iod-box h4 {
     font-size: 1rem;
     font-weight: 600;
-    color: #86198f;
+    color: light-dark(#86198f, #e6a2eb);
     margin-bottom: 0.75rem;
 }
 
@@ -1701,8 +1701,8 @@
 }
 
 .adaptation-stat {
-    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-    border: 1px solid #6ee7b7;
+    background: linear-gradient(135deg, light-dark(#ecfdf5, #192a22), light-dark(#d1fae5, #20342a));
+    border: 1px solid light-dark(#6ee7b7, #49876f);
     border-radius: 8px;
     padding: 1.25rem;
     text-align: center;
@@ -1798,8 +1798,8 @@
 
 /* Warning callout */
 .warning-callout {
-    background: #fef2f2;
-    border: 1px solid #fecaca;
+    background: light-dark(#fef2f2, #281818);
+    border: 1px solid light-dark(#fecaca, #442525);
     border-left: 4px solid var(--coral-critical);
     border-radius: 0 8px 8px 0;
     padding: 1.25rem;
@@ -1824,8 +1824,8 @@
 
 /* Key insight box */
 .key-insight {
-    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-    border: 1px solid #7dd3fc;
+    background: linear-gradient(135deg, light-dark(#f0f9ff, #182228), light-dark(#e0f2fe, #1c272e));
+    border: 1px solid light-dark(#7dd3fc, #3e6172);
     border-radius: 8px;
     padding: 1.25rem;
     margin: 1rem 0;
@@ -1834,7 +1834,7 @@
 .key-insight h5 {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #0369a1;
+    color: light-dark(#0369a1, #a2d2eb);
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -1882,7 +1882,7 @@
     padding: 1.25rem;
     text-align: center;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid light-dark(rgba(255, 255, 255, 0.1), rgba(28, 28, 28, 0.1));
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -1976,7 +1976,7 @@
     background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     padding: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid light-dark(rgba(255, 255, 255, 0.1), rgba(28, 28, 28, 0.1));
 }
 
 .risk-header {
@@ -2013,12 +2013,12 @@
     background: linear-gradient(to right, 
         #4caf50 0%, 
         #4caf50 30%, 
-        #ffeb3b 30%, 
-        #ffeb3b 50%, 
-        #ff9800 50%, 
-        #ff9800 70%, 
-        #f44336 70%, 
-        #f44336 100%
+        light-dark(#ffeb3b, #5f5c3a) 30%, 
+        light-dark(#ffeb3b, #5f5c3a) 50%, 
+        light-dark(#ff9800, #5f503a) 50%, 
+        light-dark(#ff9800, #5f503a) 70%, 
+        light-dark(#f44336, #5f3c3a) 70%, 
+        light-dark(#f44336, #5f3c3a) 100%
     );
     position: relative;
 }
@@ -2030,7 +2030,7 @@
     left: var(--risk-position, 0%);
     width: 16px;
     height: 16px;
-    background: white;
+    background: light-dark(white, #1c1c1c);
     border-radius: 50%;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     transform: translateX(-50%);
@@ -2065,7 +2065,7 @@
 /* Risk level colors */
 .risk-assessment.low .risk-score-value,
 .risk-assessment.low .risk-score-label {
-    color: #4caf50;
+    color: light-dark(#4caf50, #86ca89);
 }
 
 .risk-assessment.moderate .risk-score-value,
@@ -2075,7 +2075,7 @@
 
 .risk-assessment.elevated .risk-score-value,
 .risk-assessment.elevated .risk-score-label {
-    color: #ff9800;
+    color: light-dark(#ff9800, #e1b370);
 }
 
 .risk-assessment.high .risk-score-value,
@@ -2110,7 +2110,7 @@
     background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     padding: 1.25rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid light-dark(rgba(255, 255, 255, 0.1), rgba(28, 28, 28, 0.1));
 }
 
 .forecast-header {
@@ -2155,15 +2155,15 @@
 }
 
 .forecast-bar-fill.el-nino {
-    background: linear-gradient(90deg, #ff8a65, #ff5722);
+    background: linear-gradient(90deg, light-dark(#ff8a65, #583d35), light-dark(#ff5722, #5f433a));
 }
 
 .forecast-bar-fill.neutral {
-    background: linear-gradient(90deg, #a5d6a7, #66bb6a);
+    background: linear-gradient(90deg, light-dark(#a5d6a7, #334d34), light-dark(#66bb6a, #3c5d3e));
 }
 
 .forecast-bar-fill.la-nina {
-    background: linear-gradient(90deg, #4fc3f7, #03a9f4);
+    background: linear-gradient(90deg, light-dark(#4fc3f7, #3a545f), #03a9f4);
 }
 
 .forecast-bar-value {
@@ -2193,7 +2193,7 @@
     background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     padding: 1.25rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid light-dark(rgba(255, 255, 255, 0.1), rgba(28, 28, 28, 0.1));
 }
 
 .typhoon-header {
@@ -2236,7 +2236,7 @@
 }
 
 .typhoon-cell-value.zero {
-    color: #4caf50;
+    color: light-dark(#4caf50, #86ca89);
 }
 
 .typhoon-cell-value.low {

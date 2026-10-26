@@ -67,12 +67,12 @@
 
 .key-point.warning {
     background: linear-gradient(135deg, rgba(255, 152, 0, 0.08) 0%, rgba(255, 152, 0, 0.04) 100%);
-    border-left-color: #ff9800;
+    border-left-color: light-dark(#ff9800, #ffa21a);
 }
 
 .key-point.positive {
     background: linear-gradient(135deg, rgba(76, 175, 80, 0.08) 0%, rgba(76, 175, 80, 0.04) 100%);
-    border-left-color: #4caf50;
+    border-left-color: light-dark(#4caf50, #5fba63);
 }
 
 /* Figure placeholder */
@@ -158,13 +158,13 @@
 }
 
 .outcome.recovery h3 {
-    color: #4caf50;
-    border-bottom-color: #4caf50;
+    color: light-dark(#4caf50, #86ca89);
+    border-bottom-color: light-dark(#4caf50, #5fba63);
 }
 
 .outcome.death h3 {
     color: #f44336;
-    border-bottom-color: #f44336;
+    border-bottom-color: light-dark(#f44336, #f44336);
 }
 
 .outcome ul {
@@ -190,7 +190,7 @@
 }
 
 .outcome.recovery li::before {
-    color: #4caf50;
+    color: light-dark(#4caf50, #86ca89);
 }
 
 .outcome.death li::before {
@@ -366,7 +366,7 @@
 
 /* Diagram figures */
 .content-figure.diagram {
-    background: #fafafa;
+    background: light-dark(#fafafa, #1f1f1f);
     border-radius: 12px;
     padding: 1rem;
     border: 1px solid var(--border);
@@ -432,7 +432,7 @@
     padding: 1rem 1rem 1rem 1.5rem;
     background: var(--surface);
     border-radius: 8px;
-    border-left: 3px solid #4caf50;
+    border-left: 3px solid light-dark(#4caf50, #5fba63);
     line-height: 1.6;
 }
 
@@ -551,7 +551,7 @@
 }
 
 .content-figure.diagram .placeholder-image {
-    background: #f8f9fa;
+    background: light-dark(#f8f9fa, #1c1f22);
     min-height: 240px;
 }
 

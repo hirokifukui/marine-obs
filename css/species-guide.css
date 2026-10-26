@@ -6,16 +6,16 @@
 :root {
     --header-bg: #1a1f2e;
     --header-text: #ffffff;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --bg-card: #ffffff;
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --text-muted: #718096;
+    --bg-primary: light-dark(#ffffff, #1c1c1c);
+    --bg-secondary: light-dark(#f8f9fa, #1c1f22);
+    --bg-card: light-dark(#ffffff, #1c1c1c);
+    --text-primary: light-dark(#1a202c, #d8dde7);
+    --text-secondary: light-dark(#4a5568, #a6afbf);
+    --text-muted: light-dark(#718096, #a7b0be);
     --accent-teal: #2b6cb0;
     --accent-warm: #c05621;
     --accent-green: #2f855a;
-    --border: #e2e8f0;
+    --border: light-dark(#e2e8f0, #212e3e);
     --shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 
