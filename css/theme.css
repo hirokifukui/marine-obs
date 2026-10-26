@@ -268,3 +268,9 @@ body:not(.ja) .stamp { font-family: var(--serif); font-size: 0.72rem; letter-spa
 .summary-card.hot, .summary-card.cold { background: var(--paper-raised) !important; border: 1px solid var(--rule) !important; }
 .summary-card.hot { border-top: 3px solid var(--coral) !important; }
 .summary-card.cold { border-top: 3px solid var(--ai) !important; }
+
+/* ---------- logo B ---------- */
+.logo-icon { width: 30px; height: 30px; border-radius: 0; overflow: visible; }
+.logo-icon img { width: 100%; height: 100%; display: block; }
+.logo [data-lang="en"] { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; letter-spacing: 0.01em; font-size: 1.08rem; }
+@media (max-width: 480px) { .logo [data-lang="en"] { font-size: 0.95rem; } .logo-icon { width: 26px; height: 26px; } }
