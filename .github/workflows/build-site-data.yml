@@ -23,7 +23,11 @@ jobs:
       - run: python scripts/build_site_data.py
       - run: python scripts/build_onna_outlook.py
       - run: python scripts/build_rounds.py
-      - run: pip install ephem && python scripts/build_spawning_forecast.py
+      - name: Spawning forecast (phases, frozen log, Telegram on phase change)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: pip install ephem && python scripts/build_spawning_forecast.py
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"

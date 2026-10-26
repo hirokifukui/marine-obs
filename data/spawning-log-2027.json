@@ -1,0 +1,53 @@
+{
+  "year": 2027,
+  "base_night": "2027-05-25",
+  "full_moon": "2027-05-20 19:58",
+  "note": "Forecasts frozen on the first day of each phase. Never edited afterwards; see git history.",
+  "snapshots": [
+    {
+      "phase": 1,
+      "site": "manza",
+      "frozen_on": "2026-10-26",
+      "models": {
+        "M1": {
+          "night": "2027-05-25",
+          "time": "21:57"
+        }
+      }
+    },
+    {
+      "phase": 1,
+      "site": "sesoko",
+      "frozen_on": "2026-10-26",
+      "models": {
+        "M1": {
+          "night": "2027-05-25",
+          "time": "21:57"
+        }
+      }
+    },
+    {
+      "phase": 1,
+      "site": "kerama",
+      "frozen_on": "2026-10-26",
+      "models": {
+        "M1": {
+          "night": "2027-05-25",
+          "time": "21:59"
+        }
+      }
+    },
+    {
+      "phase": 1,
+      "site": "amami",
+      "frozen_on": "2026-10-26",
+      "models": {
+        "M1": {
+          "night": "2027-05-25",
+          "time": "21:54"
+        }
+      }
+    }
+  ],
+  "drafts": []
+}

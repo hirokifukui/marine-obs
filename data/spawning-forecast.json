@@ -1,7 +1,17 @@
 {
   "year": 2027,
-  "site": "Onna Village (Manza)",
+  "site": "Onna (Manza)",
   "phase": 1,
+  "phase_name": {
+    "ja": "天文計算",
+    "en": "Astronomy"
+  },
+  "phase_dates": {
+    "2": "2027-04-01",
+    "3": "2027-05-18",
+    "4": "2027-05-24",
+    "5": "2027-05-29"
+  },
   "full_moon": "2027-05-20 19:58",
   "base_night": "2027-05-25",
   "sst_anomaly_30d": null,
@@ -62,6 +72,320 @@
       "moonrise": "00:53",
       "predicted": "21:59",
       "peak": false
+    }
+  ],
+  "sites": [
+    {
+      "code": "manza",
+      "ja": "恩納村（万座）",
+      "en": "Onna (Manza)",
+      "phase": 1,
+      "models": {
+        "M1": {
+          "night": "2027-05-25",
+          "time": "21:57"
+        }
+      },
+      "nights": [
+        {
+          "date": "2027-05-23",
+          "sunset": "19:12",
+          "moonrise": "21:54",
+          "predicted": "21:56",
+          "peak": false
+        },
+        {
+          "date": "2027-05-24",
+          "sunset": "19:13",
+          "moonrise": "22:38",
+          "predicted": "21:57",
+          "peak": false
+        },
+        {
+          "date": "2027-05-25",
+          "sunset": "19:13",
+          "moonrise": "23:17",
+          "predicted": "21:57",
+          "peak": true
+        },
+        {
+          "date": "2027-05-26",
+          "sunset": "19:14",
+          "moonrise": "23:52",
+          "predicted": "21:58",
+          "peak": false
+        },
+        {
+          "date": "2027-05-27",
+          "sunset": "19:14",
+          "moonrise": "00:24",
+          "predicted": "21:58",
+          "peak": false
+        },
+        {
+          "date": "2027-05-28",
+          "sunset": "19:15",
+          "moonrise": "00:53",
+          "predicted": "21:59",
+          "peak": false
+        }
+      ]
+    },
+    {
+      "code": "sesoko",
+      "ja": "瀬底",
+      "en": "Sesoko",
+      "phase": 1,
+      "models": {
+        "M1": {
+          "night": "2027-05-25",
+          "time": "21:57"
+        }
+      },
+      "nights": [
+        {
+          "date": "2027-05-23",
+          "sunset": "19:12",
+          "moonrise": "21:54",
+          "predicted": "21:56",
+          "peak": false
+        },
+        {
+          "date": "2027-05-24",
+          "sunset": "19:13",
+          "moonrise": "22:38",
+          "predicted": "21:57",
+          "peak": false
+        },
+        {
+          "date": "2027-05-25",
+          "sunset": "19:13",
+          "moonrise": "23:17",
+          "predicted": "21:57",
+          "peak": true
+        },
+        {
+          "date": "2027-05-26",
+          "sunset": "19:14",
+          "moonrise": "23:52",
+          "predicted": "21:58",
+          "peak": false
+        },
+        {
+          "date": "2027-05-27",
+          "sunset": "19:14",
+          "moonrise": "00:24",
+          "predicted": "21:58",
+          "peak": false
+        },
+        {
+          "date": "2027-05-28",
+          "sunset": "19:15",
+          "moonrise": "00:54",
+          "predicted": "21:59",
+          "peak": false
+        }
+      ]
+    },
+    {
+      "code": "kerama",
+      "ja": "慶良間",
+      "en": "Kerama",
+      "phase": 1,
+      "models": {
+        "M1": {
+          "night": "2027-05-25",
+          "time": "21:59"
+        }
+      },
+      "nights": [
+        {
+          "date": "2027-05-23",
+          "sunset": "19:14",
+          "moonrise": "21:55",
+          "predicted": "21:58",
+          "peak": false
+        },
+        {
+          "date": "2027-05-24",
+          "sunset": "19:14",
+          "moonrise": "22:39",
+          "predicted": "21:58",
+          "peak": false
+        },
+        {
+          "date": "2027-05-25",
+          "sunset": "19:15",
+          "moonrise": "23:19",
+          "predicted": "21:59",
+          "peak": true
+        },
+        {
+          "date": "2027-05-26",
+          "sunset": "19:15",
+          "moonrise": "23:54",
+          "predicted": "21:59",
+          "peak": false
+        },
+        {
+          "date": "2027-05-27",
+          "sunset": "19:16",
+          "moonrise": "00:25",
+          "predicted": "22:00",
+          "peak": false
+        },
+        {
+          "date": "2027-05-28",
+          "sunset": "19:16",
+          "moonrise": "00:56",
+          "predicted": "22:00",
+          "peak": false
+        }
+      ]
+    },
+    {
+      "code": "amami",
+      "ja": "奄美（大島海峡）",
+      "en": "Amami (Oshima Strait)",
+      "phase": 1,
+      "models": {
+        "M1": {
+          "night": "2027-05-25",
+          "time": "21:54"
+        }
+      },
+      "nights": [
+        {
+          "date": "2027-05-23",
+          "sunset": "19:09",
+          "moonrise": "21:52",
+          "predicted": "21:53",
+          "peak": false
+        },
+        {
+          "date": "2027-05-24",
+          "sunset": "19:10",
+          "moonrise": "22:36",
+          "predicted": "21:54",
+          "peak": false
+        },
+        {
+          "date": "2027-05-25",
+          "sunset": "19:10",
+          "moonrise": "23:14",
+          "predicted": "21:54",
+          "peak": true
+        },
+        {
+          "date": "2027-05-26",
+          "sunset": "19:11",
+          "moonrise": "23:48",
+          "predicted": "21:55",
+          "peak": false
+        },
+        {
+          "date": "2027-05-27",
+          "sunset": "19:12",
+          "moonrise": "00:19",
+          "predicted": "21:56",
+          "peak": false
+        },
+        {
+          "date": "2027-05-28",
+          "sunset": "19:12",
+          "moonrise": "00:48",
+          "predicted": "21:56",
+          "peak": false
+        }
+      ]
+    }
+  ],
+  "models_note": "M1 is the published prediction. M2 (temperature) and M3 (neap tide) are recorded for comparison and not applied until they outperform M1.",
+  "log": "data/spawning-log-2027.json",
+  "scorecard": [],
+  "hindcast": [
+    {
+      "year": 2025,
+      "site": null,
+      "observed": "2025-06-19",
+      "observed_time": null,
+      "source": "Field reports summarised on marine-obs.org/spawning.html (2025)",
+      "models": {
+        "M1": {
+          "night": "2025-06-16",
+          "time": "22:07"
+        },
+        "M2": {
+          "night": "2025-06-15",
+          "time": "22:06",
+          "sst_anomaly_30d": 0.39,
+          "shift": -1
+        }
+      },
+      "scores": {
+        "M1": {
+          "night_error_days": 3
+        },
+        "M2": {
+          "night_error_days": 4
+        }
+      }
+    },
+    {
+      "year": 2026,
+      "site": "kerama",
+      "observed": "2026-06-04",
+      "observed_time": null,
+      "source": "AMSL; Ryukyu Shimpo",
+      "models": {
+        "M1": {
+          "night": "2026-06-05",
+          "time": "22:04"
+        },
+        "M2": {
+          "night": "2026-06-06",
+          "time": "22:05",
+          "sst_anomaly_30d": -0.46,
+          "shift": 1
+        }
+      },
+      "scores": {
+        "M1": {
+          "night_error_days": -1
+        },
+        "M2": {
+          "night_error_days": -2
+        }
+      }
+    },
+    {
+      "year": 2026,
+      "site": "amami",
+      "observed": "2026-06-04",
+      "observed_time": "22:00",
+      "source": "Kyodo News (Kumamoto Nichinichi)",
+      "models": {
+        "M1": {
+          "night": "2026-06-05",
+          "time": "22:00"
+        },
+        "M2": {
+          "night": "2026-06-04",
+          "time": "22:00",
+          "sst_anomaly_30d": 0.32,
+          "shift": -1
+        }
+      },
+      "scores": {
+        "M1": {
+          "night_error_days": -1,
+          "time_error_min": 0
+        },
+        "M2": {
+          "night_error_days": 0,
+          "time_error_min": 0
+        }
+      }
     }
   ],
   "method": "scripts/build_spawning_forecast.py",

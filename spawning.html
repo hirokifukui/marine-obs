@@ -262,29 +262,30 @@
                     </div>
                 </div>
             </div>
-            <!-- Phase Indicator -->
-            <div class="phase-indicator" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 1.25rem; margin-top: 1.5rem;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+            <!-- Phase Indicator (live: data/spawning-forecast.json) -->
+            <div class="phase-indicator" id="phase-indicator" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 1.25rem; margin-top: 1.5rem;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; gap: 1rem;">
                     <span style="font-size: 0.9rem; font-weight: 600;">
-                        <span data-lang="en">Prediction Phase: 1 / 4</span>
-                        <span data-lang="ja">予測フェーズ: 1 / 4</span>
+                        <span data-lang="en">Prediction phase: <span class="pi-n">1</span> / 4</span>
+                        <span data-lang="ja">予測フェーズ: <span class="pi-n">1</span> / 4</span>
                     </span>
                     <span style="font-size: 0.75rem; opacity: 0.8;">
-                        <span data-lang="en">Annual (astronomy)</span>
-                        <span data-lang="ja">年間予測（天文計算）</span>
+                        <span data-lang="en" class="pi-name-en">Astronomy</span>
+                        <span data-lang="ja" class="pi-name-ja">天文計算</span>
                     </span>
                 </div>
                 <div style="background: rgba(255,255,255,0.2); border-radius: 4px; height: 8px; overflow: hidden;">
-                    <div style="background: light-dark(#fbbf24, #5f553a); width: 25%; height: 100%;"></div>
+                    <div class="pi-bar" style="background: #fbbf24; width: 25%; height: 100%;"></div>
                 </div>
                 <div style="font-size: 0.8rem; margin-top: 0.75rem; opacity: 0.85;">
-                    <span data-lang="en">🔄 From April 2027: Manza SST anomaly shown alongside</span>
-                    <span data-lang="ja">🔄 2027年4月から万座の水温偏差を併記</span>
+                    <span data-lang="en" class="pi-next-en"></span>
+                    <span data-lang="ja" class="pi-next-ja"></span>
                 </div>
                 <div style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.7;">
                     <span data-lang="en">Possible second release after the June 19 full moon (June 23–26)</span>
                     <span data-lang="ja">6月19日満月後（6/23〜26）に二度目の放出の可能性</span>
                 </div>
+                <div style="font-size: 0.75rem; margin-top: 0.5rem;"><a href="#forecast-record" style="color: inherit;"><span data-lang="en">Every phase is logged in advance and scored afterwards →</span><span data-lang="ja">各フェーズの予測は事前に記録し、事後に採点します →</span></a></div>
             </div>
 
         </section>
@@ -999,6 +1000,27 @@
             </div>
         </section>
 
+        <!-- ===== SECTION: Forecast record (live) ===== -->
+        <section class="content-section" id="forecast-record">
+            <h2>
+                <span data-lang="en">Forecast record: logged before, scored after</span>
+                <span data-lang="ja">予測の記録：事前に固定し、事後に採点する</span>
+            </h2>
+            <p class="sr-lead">
+                <span data-lang="en">On the first day of each phase the forecast is frozen into a public log (<a class="sr-log-link" href="#">data file</a>; its git history is the timestamp). Three models run side by side: <b>M1</b> astronomy only (the published date), <b>M2</b> sea-temperature shift, <b>M3</b> neap-tide night. After the event, each logged forecast is scored against field reports.</span>
+                <span data-lang="ja">各フェーズの初日に、その時点の予測を公開の記録に固定します（<a class="sr-log-link" href="#">データファイル</a>。git の履歴が日時の証明になります）。3つのモデルを並べて走らせます。<b>M1</b> 天文計算のみ（公表する日付）、<b>M2</b> 水温による前後のずれ、<b>M3</b> 小潮の夜。産卵のあと、記録したすべての予測を実際の観察と照らして採点します。</span>
+            </p>
+            <div class="card"><div class="sr-scroll"><table class="data-table" id="sr-models"></table></div><p class="sr-note" id="sr-models-note"></p></div>
+            <div class="card" id="sr-cond-card" hidden><h3 class="sr-h3"><span data-lang="en">Conditions on each night (Onna)</span><span data-lang="ja">各夜の条件（恩納村）</span></h3><div class="sr-scroll"><table class="data-table" id="sr-cond"></table></div></div>
+            <div class="card"><h3 class="sr-h3"><span data-lang="en">Frozen forecasts</span><span data-lang="ja">固定した予測</span></h3><div class="sr-scroll"><table class="data-table" id="sr-log"></table></div></div>
+            <div class="card"><h3 class="sr-h3"><span data-lang="en">Scorecard</span><span data-lang="ja">採点</span></h3><div class="sr-scroll"><table class="data-table" id="sr-score"></table></div>
+                <p class="sr-note"><span data-lang="en">Error = observed night − predicted night (negative: spawning came earlier). 2025–2026 are hindcasts, computed afterwards; from 2027 every row comes from the frozen log. The 2026 time offset was calibrated on the Amami observation, so its 0-minute error is not independent.</span><span data-lang="ja">誤差＝実際の夜−予測の夜（マイナスは予測より早く産んだ）。2025〜2026年は事後に計算した後ろ向きの検証で、2027年からはすべて固定した記録から採点します。2026年の時刻の補正値は奄美の観察で決めたため、そこでの誤差0分は独立した検証ではありません。</span></p></div>
+            <div class="story-box">
+                <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;"><span data-lang="en">Saw spawning, or a night without it?</span><span data-lang="ja">産卵を見た方、あるいは産まなかった夜を見た方へ</span></h3>
+                <p><span data-lang="en">Field reports are what make the scorecard possible. Please send the place, date and time, and nights when nothing happened too, through the <a href="contact.html">contact page</a>. Sources are credited.</span><span data-lang="ja">採点は、現場からの報告があって初めて成り立ちます。場所、日付、時刻を、産卵がなかった夜も含めて、<a href="contact.html">お問い合わせ</a>から送ってください。出典として明記します。</span></p>
+            </div>
+        </section>
+
         <!-- ===== SECTION: Spawning Calendar 2027 ===== -->
         <section class="content-section">
             <h2>
@@ -1080,33 +1102,33 @@
                             <th><span data-lang="en">Phase</span><span data-lang="ja">フェーズ</span></th>
                             <th><span data-lang="en">Timing</span><span data-lang="ja">時期</span></th>
                             <th><span data-lang="en">Data Source</span><span data-lang="ja">データソース</span></th>
-                            <th><span data-lang="en">Accuracy</span><span data-lang="ja">精度</span></th>
+                            <th><span data-lang="en">Used for the published date?</span><span data-lang="ja">公表する日付への反映</span></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="highlight-row">
                             <td>Phase 1</td>
-                            <td><span data-lang="en">Until April</span><span data-lang="ja">〜4月</span></td>
-                            <td><span data-lang="en">Full moon + Literature</span><span data-lang="ja">満月日＋文献</span></td>
-                            <td>± 3 days</td>
+                            <td><span data-lang="en">Until March</span><span data-lang="ja">〜3月</span></td>
+                            <td><span data-lang="en">Full moon, sunset (astronomy) — model M1</span><span data-lang="ja">満月・日没（天文計算）— モデルM1</span></td>
+                            <td><span data-lang="en">Yes</span><span data-lang="ja">する</span></td>
                         </tr>
                         <tr>
                             <td>Phase 2</td>
-                            <td><span data-lang="en">From April</span><span data-lang="ja">4月〜</span></td>
-                            <td><span data-lang="en">SST observations</span><span data-lang="ja">SST実測値</span></td>
-                            <td>± 2 days</td>
+                            <td><span data-lang="en">From 1 April</span><span data-lang="ja">4月1日〜</span></td>
+                            <td><span data-lang="en">Sea temperature anomaly, 30 days before the full moon — model M2</span><span data-lang="ja">満月前30日の水温の平年差 — モデルM2</span></td>
+                            <td><span data-lang="en">Recorded, not applied</span><span data-lang="ja">記録のみ</span></td>
                         </tr>
                         <tr>
                             <td>Phase 3</td>
-                            <td><span data-lang="en">1 week before</span><span data-lang="ja">1週間前</span></td>
-                            <td><span data-lang="en">Wind and tide forecast</span><span data-lang="ja">風速・潮汐予報</span></td>
-                            <td>± 1 day</td>
+                            <td><span data-lang="en">From 7 days before</span><span data-lang="ja">7日前〜</span></td>
+                            <td><span data-lang="en">Wind, waves and tidal range forecast — model M3 (neap night)</span><span data-lang="ja">風・波・潮位差の予報 — モデルM3（小潮の夜）</span></td>
+                            <td><span data-lang="en">Recorded, not applied</span><span data-lang="ja">記録のみ</span></td>
                         </tr>
                         <tr>
                             <td>Phase 4</td>
-                            <td><span data-lang="en">Just before</span><span data-lang="ja">直前</span></td>
-                            <td><span data-lang="en">Current conditions</span><span data-lang="ja">当日条件</span></td>
-                            <td>± hours</td>
+                            <td><span data-lang="en">From the day before</span><span data-lang="ja">前日〜</span></td>
+                            <td><span data-lang="en">Evening cloud and rain forecast for each night</span><span data-lang="ja">各夜の雲量・雨の予報</span></td>
+                            <td><span data-lang="en">Shown for divers</span><span data-lang="ja">ダイバー向けに表示</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1149,8 +1171,8 @@
                     </li>
                 </ul>
                 <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; font-style: italic;">
-                    <span data-lang="en">These rules may be updated based on additional research.</span>
-                    <span data-lang="ja">このルールは追加研究により更新される可能性があります。</span>
+                    <span data-lang="en">These steps pointed the wrong way in 2025 and 2026 for Onna, so they are logged as model M2 and not applied until they beat the astronomy-only forecast.</span>
+                    <span data-lang="ja">恩納村では2025年・2026年ともに逆方向を指したため、モデルM2として記録するだけにし、天文計算だけの予測を上回るまでは日付に反映しません。</span>
                 </p>
             </div>
         </section>
@@ -1377,6 +1399,74 @@
         } else {
             initNavigation();
         }
+    })();
+    </script>
+
+    <style>
+    #forecast-record .card { margin-bottom: 1.25rem; }
+    .sr-lead { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 1rem; }
+    .sr-scroll { overflow-x: auto; }
+    .sr-h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; }
+    .sr-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.7; }
+    #forecast-record td.ok { color: var(--asagi); font-weight: 600; }
+    #forecast-record td.off { color: var(--coral); font-weight: 600; }
+    #forecast-record td.m1 { font-weight: 600; }
+    </style>
+    <script>
+    (async function () {
+        const ja = () => document.body.classList.contains('ja');
+        const L = (e, j) => `<span data-lang="en">${e}</span><span data-lang="ja">${j}</span>`;
+        const md = d => { if (!d) return '—'; const x = new Date(d + 'T00:00'); return `${x.getMonth()+1}/${x.getDate()}`; };
+        let F, LOG;
+        try { F = await (await fetch('data/spawning-forecast.json', {cache: 'no-cache'})).json(); } catch (e) { return; }
+        try { LOG = await (await fetch(F.log, {cache: 'no-cache'})).json(); } catch (e) { LOG = {snapshots: []}; }
+        // phase indicator
+        const pi = document.getElementById('phase-indicator');
+        if (pi) {
+            const p = Math.min(F.phase, 4);
+            pi.querySelectorAll('.pi-n').forEach(x => x.textContent = F.phase >= 5 ? '4' : p);
+            pi.querySelector('.pi-name-en').textContent = F.phase_name.en;
+            pi.querySelector('.pi-name-ja').textContent = F.phase_name.ja;
+            pi.querySelector('.pi-bar').style.width = (p * 25) + '%';
+            const nx = F.phase_dates[String(F.phase + 1)];
+            const nn = {2: ['sea temperature', '水温の観測'], 3: ['wind, waves and tide forecast', '風・波・潮の予報'], 4: ['conditions on the night', '当夜の条件'], 5: ['scoring', '採点']}[F.phase + 1];
+            if (nx && nn) {
+                pi.querySelector('.pi-next-en').textContent = `Next: phase ${F.phase + 1} (${nn[0]}) from ${md(nx)}`;
+                pi.querySelector('.pi-next-ja').textContent = `次は ${md(nx)} からフェーズ${F.phase + 1}（${nn[1]}）`;
+            }
+        }
+        document.querySelectorAll('.sr-log-link').forEach(a => a.href = F.log);
+        // models table (all sites)
+        const mt = document.getElementById('sr-models');
+        mt.innerHTML = `<thead><tr><th>${L('Site', '地点')}</th><th>M1 ${L('astronomy', '天文')}</th><th>M2 ${L('temperature', '水温')}</th><th>M3 ${L('neap', '小潮')}</th></tr></thead><tbody>` +
+            F.sites.map(s => {
+                const m = s.models, m2 = m.M2 ? `${md(m.M2.night)} <small>(${m.M2.sst_anomaly_30d > 0 ? '+' : ''}${m.M2.sst_anomaly_30d}°C${m.M2.provisional ? L(', provisional', '、暫定') : ''})</small>` : L('from April', '4月から');
+                const m3 = m.M3 ? `${md(m.M3.night)} <small>(${m.M3.tidal_range_m} m)</small>` : L('7 days before', '7日前から');
+                return `<tr><td>${L(s.en, s.ja)}</td><td class="m1">${md(m.M1.night)} ${m.M1.time}</td><td>${m2}</td><td>${m3}</td></tr>`;
+            }).join('') + '</tbody>';
+        document.getElementById('sr-models-note').innerHTML = L(`Year ${F.year}. Full moon ${F.full_moon} JST. Updated ${F.updated}. Only M1 is published as the prediction.`, `${F.year}年。満月 ${F.full_moon}。更新 ${F.updated}。公表する予測はM1のみです。`);
+        // conditions (Onna)
+        const on = F.sites.find(s => s.code === 'manza');
+        if (on && on.nights.some(n => n.conditions)) {
+            document.getElementById('sr-cond-card').hidden = false;
+            const c = n => n.conditions || {};
+            document.getElementById('sr-cond').innerHTML = `<thead><tr><th>${L('Night', '夜')}</th><th>${L('Predicted', '予測時刻')}</th><th>${L('Moonrise', '月の出')}</th><th>${L('Tidal range', '潮位差')}</th><th>${L('Wind', '風')}</th><th>${L('Waves', '波')}</th><th>${L('Cloud', '雲量')}</th><th>${L('Rain', '雨')}</th></tr></thead><tbody>` +
+                on.nights.map(n => `<tr${n.peak ? ' class="highlight-row"' : ''}><td>${md(n.date)}</td><td>${n.predicted}</td><td>${n.moonrise}</td><td>${c(n).tidal_range_m ?? '—'} m</td><td>${c(n).wind_kmh ?? '—'} km/h</td><td>${c(n).wave_max_m ?? '—'} m</td><td>${c(n).cloud_pct ?? '—'}%</td><td>${c(n).rain_mm ?? '—'} mm</td></tr>`).join('') + '</tbody>';
+        }
+        // frozen log
+        const lt = document.getElementById('sr-log');
+        const snaps = (LOG.snapshots || []).filter(s => s.site === 'manza' || F.phase >= 3);
+        lt.innerHTML = `<thead><tr><th>${L('Phase', 'フェーズ')}</th><th>${L('Frozen on', '固定日')}</th><th>${L('Site', '地点')}</th><th>M1</th><th>M2</th><th>M3</th></tr></thead><tbody>` +
+            (snaps.length ? snaps.map(s => { const st = F.sites.find(x => x.code === s.site) || {en: s.site, ja: s.site};
+                return `<tr><td>${s.phase}</td><td>${s.frozen_on}</td><td>${L(st.en, st.ja)}</td><td class="m1">${md(s.models.M1.night)} ${s.models.M1.time}</td><td>${s.models.M2 ? md(s.models.M2.night) : '—'}</td><td>${s.models.M3 ? md(s.models.M3.night) : '—'}</td></tr>`; }).join('')
+             : `<tr><td colspan="6">${L('Nothing frozen yet.', 'まだ固定した予測はありません。')}</td></tr>`) + '</tbody>';
+        // scorecard: logged rows first, then hindcasts
+        const cell = e => e === undefined ? '<td>—</td>' : `<td class="${Math.abs(e.night_error_days) <= 0 ? 'ok' : (Math.abs(e.night_error_days) >= 2 ? 'off' : '')}">${e.night_error_days > 0 ? '+' : ''}${e.night_error_days} ${L('d', '日')}${e.time_error_min !== undefined && e.night_error_days === 0 ? ` / ${e.time_error_min > 0 ? '+' : ''}${e.time_error_min} ${L('min', '分')}` : ''}</td>`;
+        const rows = (F.scorecard || []).map(r => ({...r, kind: L(`logged, phase ${r.phase}`, `記録・フェーズ${r.phase}`)}))
+            .concat((F.hindcast || []).map(r => ({...r, kind: L('hindcast', '後ろ向き')})));
+        const site = c => { const st = F.sites.find(x => x.code === c); return st ? L(st.en, st.ja) : L('Okinawa', '沖縄'); };
+        document.getElementById('sr-score').innerHTML = `<thead><tr><th>${L('Year', '年')}</th><th>${L('Site', '地点')}</th><th>${L('Observed', '実際')}</th><th>${L('Type', '種別')}</th><th>M1</th><th>M2</th><th>M3</th></tr></thead><tbody>` +
+            rows.map(r => `<tr><td>${r.year}</td><td>${site(r.site)}</td><td>${md(r.observed)}${r.observed_time ? ' ' + r.observed_time : ''}</td><td>${r.kind}</td>${cell(r.scores.M1)}${cell(r.scores.M2)}${cell(r.scores.M3)}</tr>`).join('') + '</tbody>';
     })();
     </script>
 </body>

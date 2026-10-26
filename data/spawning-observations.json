@@ -1,0 +1,8 @@
+{
+  "note": "Field reports of Acropora mass spawning, entered by hand with sources. First night of mass spawning per site. Add new reports here; the daily build scores every logged forecast against them.",
+  "observations": [
+    {"date": "2025-06-19", "time": null, "site": null, "region": "Okinawa", "source": "Field reports summarised on marine-obs.org/spawning.html (2025)", "url": "https://marine-obs.org/spawning.html"},
+    {"date": "2026-06-04", "time": null, "site": "kerama", "region": "Aka Island, Kerama", "note": "Also on 5 June", "source": "AMSL; Ryukyu Shimpo", "url": "https://www.amsl.or.jp/news/589/"},
+    {"date": "2026-06-04", "time": "22:00", "site": "amami", "region": "Oshima Strait, Amami", "source": "Kyodo News (Kumamoto Nichinichi)", "url": "https://kumanichi.com/articles/1999269"}
+  ]
+}
