@@ -362,10 +362,12 @@
             document.body.classList.toggle('ja', lang === 'ja');
             document.getElementById('lang-en').classList.toggle('active', lang === 'en');
             document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
-            localStorage.setItem('lang', lang);
+            try { localStorage.setItem('lang_trip', lang); } catch (e) {}
         }
-        const savedLang = localStorage.getItem('lang');
-        if (savedLang) setLang(savedLang);
+        // このページは日本語が既定。?lang=en か、このページでENを押した人だけ英語
+        let tripLang = 'ja';
+        try { tripLang = new URLSearchParams(location.search).get('lang') || localStorage.getItem('lang_trip') || 'ja'; } catch (e) {}
+        setLang(tripLang === 'en' ? 'en' : 'ja');
         document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
         document.getElementById('lang-ja').addEventListener('click', () => setLang('ja'));
     </script>
