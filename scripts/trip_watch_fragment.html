@@ -38,6 +38,16 @@
         .tw-legend { font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.5rem; }
         .tw-legend i { display: inline-block; width: 0.8rem; height: 0.6rem; border-radius: 2px; margin: 0 0.3rem 0 0.9rem; vertical-align: middle; }
         .tw-muted { color: var(--text-secondary); font-size: 0.85rem; }
+        .tw-odds { display: grid; gap: 0.45rem; margin-top: 0.4rem; }
+        .tw-orow { display: grid; grid-template-columns: 6.8rem 1fr 6.6rem; align-items: center; gap: 0.6rem; font-size: 0.84rem; font-variant-numeric: tabular-nums; }
+        .tw-orow.far { opacity: 0.55; }
+        .tw-orow .track { display: flex; height: 1.05rem; border-radius: 5px; overflow: hidden; background: light-dark(#EEF2F4, #22282c); }
+        .tw-orow .track span { display: block; height: 100%; }
+        .tw-orow .ok { text-align: right; }
+        .tw-orow .ok b { font-size: 1rem; }
+        .tw-orow .tag { font-size: 0.7rem; color: var(--text-secondary); margin-left: 0.3rem; }
+        .tw-odds-legend { display: flex; flex-wrap: wrap; gap: 0.2rem 0.2rem; margin-top: 0.7rem; }
+        @media (max-width: 520px) { .tw-orow { grid-template-columns: 5.6rem 1fr 4.6rem; font-size: 0.78rem; } }
         .tw-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.4rem 0 0.7rem; }
         .tw-tabs button { font: inherit; font-size: 0.86rem; padding: 0.35rem 0.8rem; border-radius: 999px; border: 1px solid var(--border); background: var(--bg-card); color: inherit; cursor: pointer; }
         .tw-tabs button.on { background: #0a5c74; color: #fff; border-color: #0a5c74; font-weight: 600; }
@@ -125,18 +135,19 @@
             </section>
 
             <section class="content-section" id="wind">
-                <h2><span data-lang="en">Chance of strong wind (ECMWF ensemble, 51 members)</span><span data-lang="ja">強風の確率（ECMWFアンサンブル・51メンバー）</span></h2>
+                <h2><span data-lang="en">Can we dive? (ECMWF ensemble, 51 runs)</span><span data-lang="ja">潜れそうか（ECMWFアンサンブル・51通り）</span></h2>
                 <div class="card">
-                    <div class="tw-bars" id="tw-bars"></div>
-                    <div id="tw-c-wind"></div>
-                    <div class="tw-legend">
-                        <i style="background:light-dark(#CFE3E6,#2f4a4f)"></i>≥10 m/s
-                        <i style="background:var(--amber)"></i>≥15 m/s
-                        <i style="background:var(--coral)"></i>≥25 m/s
+                    <div class="tw-odds" id="tw-bars"></div>
+                    <div class="tw-legend tw-odds-legend">
+                        <span><i style="background:#4fa3c7"></i><span data-lang="en">Flat calm</span><span data-lang="ja">なぎ</span></span>
+                        <span><i style="background:#8cc9a0"></i><span data-lang="en">Normal</span><span data-lang="ja">普通</span></span>
+                        <span><i style="background:#e9c46a"></i><span data-lang="en">Borderline</span><span data-lang="ja">ぎりぎり</span></span>
+                        <span><i style="background:#e76f51"></i><span data-lang="en">No go</span><span data-lang="ja">だめ</span></span>
                     </div>
+                    <div id="tw-c-wind"></div>
                     <p class="tw-muted" style="margin-top:0.8rem">
-                        <span data-lang="en">Share of the 51 runs whose daily maximum wind at Miyako reaches each level. The grid is about 25 km, so winds near a typhoon centre come out low. When a few runs start showing strong wind before any typhoon exists, read it as a sign.</span>
-                        <span data-lang="ja">51通りの計算のうち、宮古島の日最大風速が各段階に届いた割合。格子が約25kmなので、台風の中心付近の風は弱めに出る。台風がまだなくても、一部のメンバーが強風を出し始めたら気配として読む。</span>
+                        <span data-lang="en">Each of the 51 runs is sorted by its strongest daytime (07–17) wind at Miyako and the direction at that time. Calm: under 5 m/s. Normal: under 10 m/s (12 m/s from N–NE, which the west side of Shimoji-jima shelters from; 8 m/s from S–W). Borderline: up to 15 m/s from N–NE, 10 m/s from S–W, otherwise 15 m/s. No go: anything stronger. On days when the wave models’ median exceeds 2.5 m, swell caps the day at Borderline. Days more than five days away are for reference only. The dive shop decides.</span>
+                        <span data-lang="ja">51通りの計算それぞれについて、宮古島の日中（7〜17時）の最大風速と、その時の風向きで分けています。なぎ＝5m/s未満。普通＝10m/s未満（下地島の西側でかわせる北〜北東の風は12m/s未満、南〜西の風は8m/s未満）。ぎりぎり＝北〜北東は15m/s未満、南〜西は10m/s未満、それ以外は15m/s未満。だめ＝それより強い。波浪モデルの中央値が2.5mを超える日は、うねりがあるので最高でも「ぎりぎり」。5日より先の日は参考。出航を決めるのは現地ショップです。</span>
                     </p>
                 </div>
             </section>

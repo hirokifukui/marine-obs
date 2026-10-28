@@ -287,13 +287,18 @@
                 `<p class="tw-muted" style="margin-top:0.6rem">${bi('⚠ = forecast circle plus storm radius (≈ storm-warning area) includes Miyako. JMA forecasts reach five days.', '⚠＝予報円＋暴風半径（≒暴風警戒域）が宮古島を含む。気象庁の予報は5日先まで。')}</p>`;
         }
 
-        // 強風の確率
-        document.getElementById('tw-bars').innerHTML = (P.ensemble || []).map(r => {
-            const trip = r.day >= '2026-11-05';
-            return `<div class="tw-bar"><span style="${trip ? 'font-weight:600' : ''}">${day(r.day)}</span>
-                <span class="track"><span class="p10" style="width:${r.p10}%"></span><span class="p15" style="width:${r.p15}%"></span><span class="p25" style="width:${r.p25}%"></span></span>
-                <span>${Math.round(r.p15)}%</span></div>`;
-        }).join('') + `<div class="tw-legend" style="margin-top:0.2rem">${bi('right-hand figure = chance of ≥15 m/s', '右の数字＝15m/s以上の確率')}</div>`;
+        // 潜れそうか（なぎ・普通・ぎりぎり・だめ）
+        const OD = P.dive_odds || [];
+        const OC = [['nagi', '#4fa3c7', 'Calm', 'なぎ'], ['futsu', '#8cc9a0', 'Normal', '普通'], ['girigiri', '#e9c46a', 'Borderline', 'ぎりぎり'], ['dame', '#e76f51', 'No go', 'だめ']];
+        const leadD = d => { const t0 = new Date(P.generated_at.slice(0, 10) + 'T00:00:00Z'), t1 = new Date(d + 'T00:00:00Z'); return Math.round((t1 - t0) / 864e5); };
+        document.getElementById('tw-bars').innerHTML = OD.length ? OD.filter(r => r.day >= '2026-11-05').map(r => {
+            const far = leadD(r.day) > 5, ok = (r.nagi || 0) + (r.futsu || 0);
+            const segs = OC.map(([k, c, en, ja]) => r[k] ? `<span style="width:${r[k]}%;background:${c}" title="${ja} ${r[k]}% / ${en}"></span>` : '').join('');
+            return `<div class="tw-orow${far ? ' far' : ''}"><span>${day(r.day)}${far ? `<span class="tag">${bi('ref.', '参考')}</span>` : ''}</span>
+                <span class="track">${segs}</span>
+                <span class="ok">${bi('Diveable ', '潜れそう ')}<b>${ok}%</b>${r.wave_cap ? ' 🌊' : ''}</span></div>`;
+        }).join('') + `<p class="tw-legend" style="margin:0.3rem 0 0">${bi('Diveable = Calm + Normal. 🌊 = swell over 2.5 m caps the day.', '潜れそう＝なぎ＋普通。🌊＝波高2.5m超のため上限「ぎりぎり」。')}</p>`
+            : `<p class="tw-muted">${bi('Ensemble data unavailable this time.', '今回はアンサンブルを取得できませんでした。')}</p>`;
 
         // 波のモデル比較
         const M = P.marine || {}, S = P.stormglass || {};
