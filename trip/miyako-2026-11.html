@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="../css/theme.css">
     <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
     <script src="../js/theme.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
     <header>
@@ -245,6 +247,18 @@
         .tw-legend { font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.5rem; }
         .tw-legend i { display: inline-block; width: 0.8rem; height: 0.6rem; border-radius: 2px; margin: 0 0.3rem 0 0.9rem; vertical-align: middle; }
         .tw-muted { color: var(--text-secondary); font-size: 0.85rem; }
+        .tw-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.4rem 0 0.7rem; }
+        .tw-tabs button { font: inherit; font-size: 0.86rem; padding: 0.35rem 0.8rem; border-radius: 999px; border: 1px solid var(--border); background: var(--bg-card); color: inherit; cursor: pointer; }
+        .tw-tabs button.on { background: #0a5c74; color: #fff; border-color: #0a5c74; font-weight: 600; }
+        .tw-tabs button.far { opacity: 0.6; }
+        .tw-dmap-wrap { position: relative; }
+        .tw-dmap { width: 100%; aspect-ratio: 16 / 11; border-radius: 10px; }
+        .tw-dmap img { max-width: none !important; border: 0 !important; box-shadow: none !important; margin: 0 !important; }
+        .tw-dmap-wrap.far .tw-dmap { filter: saturate(0.35) opacity(0.75); }
+        .tw-ref { position: absolute; top: 0.6rem; right: 0.6rem; z-index: 500; background: rgba(255,255,255,0.88); color: #333; font-size: 0.78rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 6px; border: 1px dashed #888; display: none; }
+        .tw-dmap-wrap.far .tw-ref { display: block; }
+        .tw-scale { display: flex; flex-wrap: wrap; gap: 0.2rem 0.9rem; font-size: 0.76rem; color: var(--text-secondary); margin-top: 0.5rem; }
+        .tw-scale i { display: inline-block; width: 0.9rem; height: 0.6rem; border-radius: 2px; margin-right: 0.3rem; vertical-align: middle; }
         .tw-ai { border: 1px dashed light-dark(#9aa7ad, #55636a); background: light-dark(#F6F8F9, #1c2124); border-radius: 10px; padding: 0.75rem 1rem; margin: 0.9rem 0 0; font-size: 0.9rem; line-height: 1.85; }
         .tw-ai p { margin: 0; }
         .tw-aitag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; color: light-dark(#4d5b62, #aab7bd); border: 1px solid currentColor; border-radius: 999px; padding: 0.05rem 0.5rem; margin-right: 0.5rem; vertical-align: 0.1em; }
@@ -305,6 +319,16 @@
                 <iframe class="tw-windy" loading="lazy" title="Windy"
                     src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=%C2%B0C&metricWind=m%2Fs&zoom=4&overlay=wind&product=ecmwf&level=surface&lat=22.5&lon=132&detailLat=24.79&detailLon=125.13&marker=true&message=true"></iframe>
                 <p class="tw-muted"><span data-lang="en">Map: Windy (ECMWF wind). The table above is the official JMA track.</span><span data-lang="ja">地図：Windy（ECMWFの風）。正式な進路は上の気象庁の表。</span></p>
+            </section>
+
+            <section class="content-section" id="daily-wind">
+                <h2><span data-lang="en">Daily wind, 5–9 Nov</span><span data-lang="ja">日ごとの風（11/5〜11/9）</span></h2>
+                <div class="card">
+                    <div class="tw-tabs" id="tw-dtabs"></div>
+                    <div class="tw-dmap-wrap" id="tw-dwrap"><div class="tw-dmap" id="tw-dmap"></div><span class="tw-ref"><span data-lang="en">For reference only</span><span data-lang="ja">参考</span></span></div>
+                    <div class="tw-scale" id="tw-dscale"></div>
+                    <p class="tw-muted" style="margin-top:0.6rem"><span data-lang="en">Each square is the day’s maximum 10 m wind (ECMWF IFS, 1° grid, via Open-Meteo); arrows show where the wind blows to. The line is the JMA typhoon track and forecast circles, which reach only five days. Days more than five days away are pale: nothing can be confirmed yet.</span><span data-lang="ja">1マスは、その日の最大風速（地上10m、ECMWF IFS、1度格子、Open-Meteo経由）。矢印は風の吹いていく向き。線は気象庁の台風進路と予報円で、5日先まで。5日より先の日は淡く表示しています。まだ確定できるものはありません。</span></p>
+                </div>
             </section>
 
             <section class="content-section" id="wind">
