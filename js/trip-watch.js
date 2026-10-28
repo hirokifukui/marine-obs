@@ -120,11 +120,13 @@
 
         // 飛行機と警報
         document.getElementById('tw-flights').innerHTML = `
-            <p>${bi('Thu 5 Nov', '11/5（木）')}　<strong>ANA87</strong>　${bi('Haneda 12:00 → Miyako 15:15', '羽田 12:00 → 宮古 15:15')}<br>
-               ${bi('Mon 9 Nov', '11/9（月）')}　<strong>ANA88</strong>　${bi('Miyako 16:10 → Haneda 18:45', '宮古 16:10 → 羽田 18:45')}</p>
-            <p><a href="https://www.ana.co.jp/fs/dom/jp/" target="_blank" rel="noopener">${bi('ANA flight status', 'ANA 運航状況')} ↗</a>　·
-               <a href="https://www.jma.go.jp/bosai/warning/#area_type=class20s&area_code=4721400" target="_blank" rel="noopener">${bi('JMA warnings for Miyakojima City', '気象庁 宮古島市の警報・注意報')} ↗</a></p>
-            <p class="tw-muted">${W ? bi('JMA, ' + esc(W.report) + ': ', '気象庁 ' + esc(W.report) + '：') + esc(W.headline || '') : ''}</p>`;
+            <p>${bi('Thu 5 Nov　<strong>ANA87</strong>　Haneda 12:00 → Miyako 15:15', '11/5（木）　<strong>ANA87</strong>　羽田 12:00 → 宮古 15:15')}</p>
+            <p>${bi('Mon 9 Nov　<strong>ANA88</strong>　Miyako 16:10 → Haneda 18:45', '11/9（月）　<strong>ANA88</strong>　宮古 16:10 → 羽田 18:45')}</p>
+            <p>${bi('<a href="https://www.ana.co.jp/fs/dom/jp/" target="_blank" rel="noopener">ANA flight status ↗</a>　·　<a href="https://www.jma.go.jp/bosai/warning/#area_type=class20s&area_code=4721400" target="_blank" rel="noopener">JMA warnings for Miyakojima City ↗</a>',
+                    '<a href="https://www.ana.co.jp/fs/dom/jp/" target="_blank" rel="noopener">ANA 運航状況 ↗</a>　·　<a href="https://www.jma.go.jp/bosai/warning/#area_type=class20s&area_code=4721400" target="_blank" rel="noopener">気象庁 宮古島市の警報・注意報 ↗</a>')}</p>
+            ${W ? `<p class="tw-muted">${W.active && W.active.length
+                ? bi('In force for Miyakojima City: ' + W.active.map(a => esc(a.en)).join(', ') + ' (JMA ' + esc(W.report) + ')', '宮古島市に発表中：' + W.active.map(a => esc(a.ja)).join('、') + '（気象庁 ' + esc(W.report) + '）')
+                : bi('No warnings or advisories in force for Miyakojima City (last JMA bulletin ' + esc(W.report) + ').', '宮古島市に発表中の警報・注意報はありません（気象庁の最終発表 ' + esc(W.report) + '）。')}</p>` : ''}`;
     }
 
     load().catch(e => console.error(e));

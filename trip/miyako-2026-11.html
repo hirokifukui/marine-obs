@@ -245,6 +245,8 @@
         .tw-legend { font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.5rem; }
         .tw-legend i { display: inline-block; width: 0.8rem; height: 0.6rem; border-radius: 2px; margin: 0 0.3rem 0 0.9rem; vertical-align: middle; }
         .tw-muted { color: var(--text-secondary); font-size: 0.85rem; }
+        /* 日英の切替を行内のままにする（main.css は ja を block にするため） */
+        body.ja .tw-wrap span[data-lang="ja"] { display: inline; }
     </style>
 
     <main>
