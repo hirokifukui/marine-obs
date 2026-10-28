@@ -38,6 +38,16 @@
         .tw-legend { font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.5rem; }
         .tw-legend i { display: inline-block; width: 0.8rem; height: 0.6rem; border-radius: 2px; margin: 0 0.3rem 0 0.9rem; vertical-align: middle; }
         .tw-muted { color: var(--text-secondary); font-size: 0.85rem; }
+        .tw-ai { border: 1px dashed light-dark(#9aa7ad, #55636a); background: light-dark(#F6F8F9, #1c2124); border-radius: 10px; padding: 0.75rem 1rem; margin: 0.9rem 0 0; font-size: 0.9rem; line-height: 1.85; }
+        .tw-ai p { margin: 0; }
+        .tw-aitag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; color: light-dark(#4d5b62, #aab7bd); border: 1px solid currentColor; border-radius: 999px; padding: 0.05rem 0.5rem; margin-right: 0.5rem; vertical-align: 0.1em; }
+        .tw-ai .sig { display: block; font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.3rem; }
+        .tw-karte.tw-ai-frame { border: 1px dashed light-dark(#9aa7ad, #55636a); border-left: 3px dashed light-dark(#7d8b92, #6b7a81); background: light-dark(#F6F8F9, #1c2124); }
+        .tw-karte .disclose { font-size: 0.82rem; color: var(--text-secondary); border-bottom: 1px dashed var(--border); padding-bottom: 0.6rem; margin-bottom: 0.8rem; line-height: 1.75; }
+        .tw-farline { font-size: 0.9rem; margin: 0 0 0.75rem; color: var(--text-secondary); }
+        .tw-day.short { min-height: 0; }
+        .tw-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; font-size: 0.86rem; margin-top: 0.6rem; }
+        .tw-sub { font-size: 0.92rem; font-weight: 600; margin: 1.1rem 0 0.4rem; }
         /* 日英の切替を行内のままにする（main.css は ja を block にするため） */
         body.ja .tw-wrap span[data-lang="ja"] { display: inline; }
     </style>
@@ -66,10 +76,11 @@
 
             <section class="content-section">
                 <h2><span data-lang="en">Day by day</span><span data-lang="ja">日ごとの判子</span></h2>
+                <p class="tw-farline" id="tw-farline"></p>
                 <div class="tw-days" id="tw-days"><p class="tw-muted">…</p></div>
                 <p class="tw-muted">
-                    <span data-lang="en">Normal = expect to dive as planned · Monitor = nothing serious yet, keep watching · Watch = site changes or fewer dives possible · Alert = boats unlikely to go, or flights affected · TBD = more than five days out, no usable forecast.</span>
-                    <span data-lang="ja">平常＝予定どおり潜れる見込み／監視＝大きな問題は見えないが変化を見ておく／注意＝ポイント変更や本数減の可能性／警報＝出航困難、または飛行機に影響の見込み／未定＝5日より先で、判断できる予報がない。</span>
+                    <span data-lang="en">Normal = expect to dive as planned · Monitor = nothing serious yet, keep watching · Watch = site changes or fewer dives possible · Alert = boats unlikely to go, or travel affected · TBD = more than five days out, nothing can be confirmed yet.</span>
+                    <span data-lang="ja">平常＝予定どおり潜れる見込み／監視＝大きな問題は見えないが変化を見ておく／注意＝ポイント変更や本数減の可能性／警報＝出航困難、または移動に影響の見込み／未定＝5日より先で、まだ確定できるものがない。</span>
                 </p>
             </section>
 
@@ -83,6 +94,7 @@
             <section class="content-section" id="typhoon">
                 <h2><span data-lang="en">Typhoons (Japan Meteorological Agency)</span><span data-lang="ja">台風（気象庁）</span></h2>
                 <div class="card" id="tw-typhoon"><p class="tw-muted">…</p></div>
+                <div id="tw-c-typhoon"></div>
                 <iframe class="tw-windy" loading="lazy" title="Windy"
                     src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=%C2%B0C&metricWind=m%2Fs&zoom=4&overlay=wind&product=ecmwf&level=surface&lat=22.5&lon=132&detailLat=24.79&detailLon=125.13&marker=true&message=true"></iframe>
                 <p class="tw-muted"><span data-lang="en">Map: Windy (ECMWF wind). The table above is the official JMA track.</span><span data-lang="ja">地図：Windy（ECMWFの風）。正式な進路は上の気象庁の表。</span></p>
@@ -92,6 +104,7 @@
                 <h2><span data-lang="en">Chance of strong wind (ECMWF ensemble, 51 members)</span><span data-lang="ja">強風の確率（ECMWFアンサンブル・51メンバー）</span></h2>
                 <div class="card">
                     <div class="tw-bars" id="tw-bars"></div>
+                    <div id="tw-c-wind"></div>
                     <div class="tw-legend">
                         <i style="background:light-dark(#CFE3E6,#2f4a4f)"></i>≥10 m/s
                         <i style="background:var(--amber)"></i>≥15 m/s
@@ -107,12 +120,13 @@
             <section class="content-section" id="waves">
                 <h2><span data-lang="en">Waves: do the models agree?</span><span data-lang="ja">波：モデルは揃っているか</span></h2>
                 <div class="card"><div class="tw-scroll" id="tw-waves"></div>
+                    <div id="tw-c-waves"></div>
                     <p class="tw-muted" style="margin-top:0.8rem"><span data-lang="en">Daytime (07–17) maximum significant wave height, metres, off western Shimoji-jima. Amber = models more than 1 m apart.</span><span data-lang="ja">日中（7〜17時）の有義波高の最大、メートル。地点は下地島の西沖。黄＝モデル間の差が1m超。</span></p>
                 </div>
             </section>
 
             <section class="content-section" id="flights">
-                <h2><span data-lang="en">Flights and warnings</span><span data-lang="ja">飛行機と警報</span></h2>
+                <h2><span data-lang="en">Getting there and back</span><span data-lang="ja">移動（到着・出発）</span></h2>
                 <div class="card" id="tw-flights"></div>
             </section>
 
