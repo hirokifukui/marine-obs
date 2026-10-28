@@ -36,59 +36,12 @@
     let SIG = '';
     const ai = (en, ja) => (en || ja) ? `<div class="tw-ai"><p><span class="tw-aitag">${bi('AI-GENERATED', 'AI自動生成')}</span>${bi(esc(en), esc(ja))}</p><span class="sig">${SIG}</span></div>` : '';
 
-
-    // 日ごとの風（Leaflet）
-    const WS = [[5, '#dfeef2'], [8, '#a9d6c9'], [10, '#7fc39b'], [12, '#e9c46a'], [15, '#f4a261'], [20, '#e76f51'], [999, '#9b2226']];
-    const wsColor = v => (WS.find(([t]) => v < t) || WS[WS.length - 1])[1];
-    function dailyMap(P) {
-        const M = P.windmap, el = document.getElementById('tw-dmap');
-        if (!M || !el || !window.L) { const s = document.getElementById('daily-wind'); if (s && !M) s.querySelector('.card').innerHTML = `<p class="tw-muted">${bi('Daily wind map unavailable this time.', '今回は日ごとの風の地図を取得できませんでした。')}</p>`; return; }
-        const map = L.map(el, { zoomControl: false, attributionControl: true, scrollWheelZoom: false, dragging: !L.Browser.mobile, tap: false }).fitBounds([[15.5, 117.5], [33.5, 142.5]]);
-        setTimeout(() => { map.invalidateSize(); map.fitBounds([[15.5, 117.5], [33.5, 142.5]]); }, 300);
-        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', { attribution: 'Tiles © Esri · ECMWF via Open-Meteo · JMA', maxZoom: 8 }).addTo(map);
-        const grid = L.layerGroup().addTo(map), over = L.layerGroup().addTo(map);
-        // 台風（全日共通）
-        for (const t of P.typhoons || []) {
-            const ll = t.points.map(p => [p.lat, p.lng]);
-            L.polyline(ll, { color: '#333', weight: 2, dashArray: '4 4' }).addTo(over);
-            for (const p of t.points) {
-                L.circle([p.lat, p.lng], { radius: (p.prob_km || 0) * 1000, color: '#555', weight: 1, fill: false, dashArray: '2 3' }).addTo(over);
-                L.circleMarker([p.lat, p.lng], { radius: 3, color: '#222', fillOpacity: 1 }).bindTooltip(`${esc(t.label)} ${esc(p.time.slice(5))}`).addTo(over);
-            }
-        }
-        L.circleMarker([24.79, 125.13], { radius: 5, color: '#fff', weight: 2, fillColor: '#0a5c74', fillOpacity: 1 }).bindTooltip(bi('Dive site', '潜る場所'), { permanent: false }).addTo(over);
-        const days = Object.keys(M.days).sort();
-        const lead = d => (J0 && J0.days ? (J0.days.find(x => x.date === d) || {}).lead : null);
-        const show = d => {
-            grid.clearLayers();
-            const D = M.days[d]; let k = 0;
-            for (const la of M.lats) for (const lo of M.lons) {
-                const v = D.ws[k], dir = D.wd[k]; k++;
-                if (v == null) continue;
-                L.rectangle([[la - 0.5, lo - 0.5], [la + 0.5, lo + 0.5]], { stroke: false, fillColor: wsColor(v), fillOpacity: 0.55, interactive: false }).addTo(grid);
-                if (dir != null) {
-                    const rot = (dir + 180) % 360;
-                    L.marker([la, lo], { interactive: false, icon: L.divIcon({ className: '', iconSize: [14, 14], html: `<div style="transform:rotate(${rot}deg);font-size:11px;line-height:14px;text-align:center;color:#234">↑</div>` }) }).addTo(grid);
-                }
-            }
-            const l = lead(d);
-            document.getElementById('tw-dwrap').classList.toggle('far', l == null || l > 5);
-            document.querySelectorAll('#tw-dtabs button').forEach(b => b.classList.toggle('on', b.dataset.d === d));
-        };
-        document.getElementById('tw-dtabs').innerHTML = days.map(d => { const l = lead(d); return `<button type="button" data-d="${d}" class="${l == null || l > 5 ? 'far' : ''}">${day(d)}</button>`; }).join('');
-        document.querySelectorAll('#tw-dtabs button').forEach(b => b.addEventListener('click', () => show(b.dataset.d)));
-        document.getElementById('tw-dscale').innerHTML = WS.map(([t, c], i) => `<span><i style="background:${c}"></i>${i === 0 ? '< 5' : i === WS.length - 1 ? '≥ 20' : WS[i - 1][0] + '–' + t} m/s</span>`).join('');
-        show(days[0]);
-    }
-    let J0 = null;
     async function load() {
         const url = `${SUPABASE_URL}/rest/v1/trip_watch?select=created_at,payload&trip_id=eq.${TRIP}&order=created_at.desc&limit=1`;
         const r = await fetch(url, { headers: { apikey: ANON, Authorization: `Bearer ${ANON}` } });
         const rows = await r.json();
         if (!rows.length) return;
-        J0 = rows[0].payload.judgment;
         render(rows[0].payload);
-        try { dailyMap(rows[0].payload); } catch (e) { console.error(e); }
     }
 
     function render(P) {
