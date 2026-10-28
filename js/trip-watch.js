@@ -37,48 +37,161 @@
     const ai = (en, ja) => (en || ja) ? `<div class="tw-ai"><p><span class="tw-aitag">${bi('AI-GENERATED', 'AI自動生成')}</span>${bi(esc(en), esc(ja))}</p><span class="sig">${SIG}</span></div>` : '';
 
 
-    // 日ごとの風（Leaflet）
-    const WS = [[5, '#dfeef2'], [8, '#a9d6c9'], [10, '#7fc39b'], [12, '#e9c46a'], [15, '#f4a261'], [20, '#e76f51'], [999, '#9b2226']];
-    const wsColor = v => (WS.find(([t]) => v < t) || WS[WS.length - 1])[1];
-    function dailyMap(P) {
-        const M = P.windmap, el = document.getElementById('tw-dmap');
-        if (!M || !el || !window.L) { const s = document.getElementById('daily-wind'); if (s && !M) s.querySelector('.card').innerHTML = `<p class="tw-muted">${bi('Daily wind map unavailable this time.', '今回は日ごとの風の地図を取得できませんでした。')}</p>`; return; }
-        const map = L.map(el, { zoomControl: false, attributionControl: true, scrollWheelZoom: false, dragging: !L.Browser.mobile, tap: false }).fitBounds([[15.5, 117.5], [33.5, 142.5]]);
-        setTimeout(() => { map.invalidateSize(); map.fitBounds([[15.5, 117.5], [33.5, 142.5]]); }, 300);
-        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', { attribution: 'Tiles © Esri · ECMWF via Open-Meteo · JMA', maxZoom: 8 }).addTo(map);
-        const grid = L.layerGroup().addTo(map), over = L.layerGroup().addTo(map);
-        // 台風（全日共通）
-        for (const t of P.typhoons || []) {
-            const ll = t.points.map(p => [p.lat, p.lng]);
-            L.polyline(ll, { color: '#333', weight: 2, dashArray: '4 4' }).addTo(over);
-            for (const p of t.points) {
-                L.circle([p.lat, p.lng], { radius: (p.prob_km || 0) * 1000, color: '#555', weight: 1, fill: false, dashArray: '2 3' }).addTo(over);
-                L.circleMarker([p.lat, p.lng], { radius: 3, color: '#222', fillOpacity: 1 }).bindTooltip(`${esc(t.label)} ${esc(p.time.slice(5))}`).addTo(over);
-            }
+    // 日ごとの風（自前キャンバス：Windy風の連続色＋流線）
+    const CMAP = [[0, [98, 113, 183]], [3, [57, 97, 159]], [5, [74, 148, 169]], [7, [77, 141, 123]], [10, [83, 165, 83]], [13, [53, 159, 53]],
+        [15, [167, 157, 81]], [17, [159, 127, 58]], [20, [161, 108, 92]], [25, [129, 58, 78]], [30, [175, 80, 136]], [40, [117, 74, 147]]];
+    const cmap = v => {
+        if (v <= CMAP[0][0]) return CMAP[0][1];
+        for (let i = 1; i < CMAP.length; i++) if (v <= CMAP[i][0]) {
+            const [a, ca] = CMAP[i - 1], [b, cb] = CMAP[i], f = (v - a) / (b - a);
+            return ca.map((c, k) => Math.round(c + (cb[k] - c) * f));
         }
-        L.circleMarker([24.79, 125.13], { radius: 5, color: '#fff', weight: 2, fillColor: '#0a5c74', fillOpacity: 1 }).bindTooltip(bi('Dive site', '潜る場所'), { permanent: false }).addTo(over);
-        const days = Object.keys(M.days).sort();
-        const lead = d => (J0 && J0.days ? (J0.days.find(x => x.date === d) || {}).lead : null);
-        const show = d => {
-            grid.clearLayers();
-            const D = M.days[d]; let k = 0;
-            for (const la of M.lats) for (const lo of M.lons) {
-                const v = D.ws[k], dir = D.wd[k]; k++;
-                if (v == null) continue;
-                L.rectangle([[la - 0.5, lo - 0.5], [la + 0.5, lo + 0.5]], { stroke: false, fillColor: wsColor(v), fillOpacity: 0.55, interactive: false }).addTo(grid);
-                if (dir != null) {
-                    const rot = (dir + 180) % 360;
-                    L.marker([la, lo], { interactive: false, icon: L.divIcon({ className: '', iconSize: [14, 14], html: `<div style="transform:rotate(${rot}deg);font-size:11px;line-height:14px;text-align:center;color:#234">↑</div>` }) }).addTo(grid);
+        return CMAP[CMAP.length - 1][1];
+    };
+    const EXT = { w: 108, e: 151.5, s: 8, n: 39.5 }, KX = Math.cos(24 * Math.PI / 180);
+    const DIR16 = ['北', '北北東', '北東', '東北東', '東', '東南東', '南東', '南南東', '南', '南南西', '南西', '西南西', '西', '西北西', '北西', '北北西'];
+    const DIR16E = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
+    const PLACES = [[24.79, 125.13, '宮古島', 'Miyako', true], [26.21, 127.68, '那覇', 'Naha'], [25.03, 121.56, '台北', 'Taipei'],
+        [35.68, 139.77, '東京', 'Tokyo'], [31.23, 121.47, '上海', 'Shanghai'], [14.6, 120.98, 'マニラ', 'Manila'], [33.59, 130.4, '福岡', 'Fukuoka'], [27.09, 142.19, '父島', 'Chichijima']];
+    let LAND = null;
+    async function loadLand() {
+        if (LAND || !window.topojson) return LAND;
+        try {
+            const t = await (await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/land-50m.json')).json();
+            LAND = topojson.feature(t, t.objects.land);
+        } catch (e) { console.error(e); }
+        return LAND;
+    }
+    async function dailyMap(P) {
+        const M = P.windmap, wrap = document.getElementById('tw-dwrap');
+        if (!wrap) return;
+        if (!M) { wrap.parentElement.innerHTML = `<p class="tw-muted">${bi('Daily wind map unavailable this time.', '今回は日ごとの風の地図を取得できませんでした。')}</p>`; return; }
+        const fc = document.getElementById('tw-dfield'), tc = document.getElementById('tw-dtrail'), rd = document.getElementById('tw-dread');
+        const nx = M.lons.length, ny = M.lats.length, step = M.lons[1] - M.lons[0];
+        document.getElementById('tw-cbar').style.background = 'linear-gradient(to right,' + CMAP.filter(c => c[0] <= 30).map(([v, c]) => `rgb(${c}) ${v / 30 * 100}%`).join(',') + ')';
+        await loadLand();
+        let W = 0, H = 0, k = 1, dpr = Math.min(window.devicePixelRatio || 1, 2), cur = null, U = null, V = null, S = null, anim = null;
+        const px = (lat, lon) => [(lon - EXT.w) * KX * k, (EXT.n - lat) * k];
+        const ll = (x, y) => [EXT.n - y / k, EXT.w + x / (KX * k)];
+        const sample = (A, lat, lon) => {
+            const fx = (lon - M.lons[0]) / step, fy = (lat - M.lats[0]) / step;
+            const x0 = Math.max(0, Math.min(nx - 2, Math.floor(fx))), y0 = Math.max(0, Math.min(ny - 2, Math.floor(fy)));
+            const tx = Math.max(0, Math.min(1, fx - x0)), ty = Math.max(0, Math.min(1, fy - y0));
+            const g = (i, j) => A[(y0 + j) * nx + (x0 + i)];
+            const a = g(0, 0), b = g(1, 0), c = g(0, 1), d = g(1, 1);
+            if ([a, b, c, d].some(v => v == null || Number.isNaN(v))) return [a, b, c, d].find(v => v != null && !Number.isNaN(v)) ?? null;
+            return (a * (1 - tx) + b * tx) * (1 - ty) + (c * (1 - tx) + d * tx) * ty;
+        };
+        const lang = () => document.body.classList.contains('ja') ? 'ja' : 'en';
+        function landPath(ctx) {
+            if (!LAND) return;
+            ctx.beginPath();
+            for (const f of LAND.features) {
+                const polys = f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates;
+                for (const poly of polys) for (const ring of poly) {
+                    let inb = ring.some(([lo, la]) => lo > EXT.w - 5 && lo < EXT.e + 5 && la > EXT.s - 5 && la < EXT.n + 5);
+                    if (!inb) continue;
+                    ring.forEach(([lo, la], i) => { const [x, y] = px(la, lo); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); });
+                    ctx.closePath();
                 }
             }
-            const l = lead(d);
-            document.getElementById('tw-dwrap').classList.toggle('far', l == null || l > 5);
+        }
+        function drawField() {
+            const ctx = fc.getContext('2d');
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            const img = ctx.createImageData(Math.ceil(W * dpr), Math.ceil(H * dpr)), D = img.data, iw = img.width;
+            for (let y = 0; y < img.height; y += 2) for (let x = 0; x < iw; x += 2) {
+                const [la, lo] = ll(x / dpr, y / dpr), v = sample(S, la, lo);
+                const c = v == null ? [60, 70, 90] : cmap(v);
+                for (let dy = 0; dy < 2; dy++) for (let dx = 0; dx < 2; dx++) {
+                    const o = ((y + dy) * iw + (x + dx)) * 4; if (o >= D.length) continue;
+                    D[o] = c[0]; D[o + 1] = c[1]; D[o + 2] = c[2]; D[o + 3] = 255;
+                }
+            }
+            ctx.putImageData(img, 0, 0);
+            // 陸：少し暗く、海岸線を黒く
+            landPath(ctx); ctx.fillStyle = 'rgba(0,0,0,0.18)'; ctx.fill('evenodd');
+            ctx.lineWidth = 0.9; ctx.strokeStyle = 'rgba(15,15,20,0.85)'; ctx.stroke();
+            // 台風
+            for (const t of P.typhoons || []) {
+                ctx.setLineDash([5, 4]); ctx.lineWidth = 1.6; ctx.strokeStyle = 'rgba(255,255,255,0.9)';
+                ctx.beginPath(); t.points.forEach((p, i) => { const [x, y] = px(p.lat, p.lng); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); ctx.stroke();
+                ctx.setLineDash([2, 3]); ctx.lineWidth = 1;
+                for (const p of t.points) {
+                    const [x, y] = px(p.lat, p.lng), r = (p.prob_km || 0) / 111 * k;
+                    if (r > 0) { ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.strokeStyle = 'rgba(255,255,255,0.7)'; ctx.stroke(); }
+                    ctx.beginPath(); ctx.arc(x, y, 2.8, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill();
+                }
+                ctx.setLineDash([]);
+                const last = t.points[t.points.length - 1], [lx, ly] = px(last.lat, last.lng);
+                ctx.font = '600 12px system-ui, sans-serif'; ctx.fillStyle = '#fff'; ctx.shadowColor = 'rgba(0,0,0,0.8)'; ctx.shadowBlur = 3;
+                ctx.fillText((lang() === 'ja' ? t.label : 'TY ' + t.label.replace(/\D/g, '')) + ' ' + last.time.slice(5, 10).replace('-', '/'), lx + 6, ly - 6);
+                ctx.shadowBlur = 0;
+            }
+            // 地名
+            ctx.font = '12px system-ui, sans-serif';
+            for (const [la, lo, ja, en, main] of PLACES) {
+                const [x, y] = px(la, lo); if (x < 0 || x > W || y < 0 || y > H) continue;
+                if (W < 520 && !main && (en === 'Taipei' || en === 'Naha')) continue;
+                ctx.beginPath(); ctx.arc(x, y, main ? 4.5 : 2.5, 0, Math.PI * 2); ctx.fillStyle = main ? '#fff' : 'rgba(255,255,255,0.85)'; ctx.fill();
+                if (main) { ctx.lineWidth = 2; ctx.strokeStyle = '#0a5c74'; ctx.stroke(); }
+                ctx.shadowColor = 'rgba(0,0,0,0.85)'; ctx.shadowBlur = 3; ctx.fillStyle = '#fff';
+                ctx.font = main ? '700 13px system-ui, sans-serif' : '12px system-ui, sans-serif';
+                ctx.fillText(lang() === 'ja' ? ja : en, x + 6, y + 4); ctx.shadowBlur = 0;
+            }
+        }
+        function startParticles() {
+            if (anim) cancelAnimationFrame(anim);
+            const ctx = tc.getContext('2d'); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
+            const N = Math.round(W * H / 700), parts = [];
+            const spawn = p => { p.x = Math.random() * W; p.y = Math.random() * H; p.age = Math.random() * 80; return p; };
+            for (let i = 0; i < N; i++) parts.push(spawn({}));
+            const speed = 0.045 * k / 10;
+            const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const frame = () => {
+                ctx.globalCompositeOperation = 'destination-in'; ctx.fillStyle = 'rgba(0,0,0,0.88)'; ctx.fillRect(0, 0, W, H);
+                ctx.globalCompositeOperation = 'source-over'; ctx.strokeStyle = 'rgba(255,255,255,0.6)'; ctx.lineWidth = 1.1; ctx.beginPath();
+                for (const p of parts) {
+                    const [la, lo] = ll(p.x, p.y), u = sample(U, la, lo), v = sample(V, la, lo);
+                    if (u == null || v == null || p.age++ > 60) { spawn(p); p.age = 0; continue; }
+                    const nx2 = p.x + u * speed * 10 * KX / KX, ny2 = p.y - v * speed * 10;
+                    ctx.moveTo(p.x, p.y); ctx.lineTo(nx2, ny2); p.x = nx2; p.y = ny2;
+                    if (p.x < 0 || p.x > W || p.y < 0 || p.y > H) spawn(p);
+                }
+                ctx.stroke();
+                if (!reduce) anim = requestAnimationFrame(frame);
+            };
+            if (reduce) { for (let i = 0; i < 40; i++) frame(); } else anim = requestAnimationFrame(frame);
+        }
+        function layout() {
+            W = wrap.clientWidth; k = W / ((EXT.e - EXT.w) * KX); H = Math.round((EXT.n - EXT.s) * k);
+            for (const c of [fc, tc]) { c.width = Math.ceil(W * dpr); c.height = Math.ceil(H * dpr); c.style.height = H + 'px'; }
+            tc.style.width = W + 'px';
+        }
+        const days = Object.keys(M.days).sort();
+        const lead = d => (J0 && J0.days ? (J0.days.find(x => x.date === d) || {}).lead : null);
+        function show(d) {
+            cur = d; const D = M.days[d];
+            S = D.ws; U = D.ws.map((s, i) => s == null || D.wd[i] == null ? null : -s * Math.sin(D.wd[i] * Math.PI / 180));
+            V = D.ws.map((s, i) => s == null || D.wd[i] == null ? null : -s * Math.cos(D.wd[i] * Math.PI / 180));
+            const l = lead(d); wrap.classList.toggle('far', l == null || l > 5);
             document.querySelectorAll('#tw-dtabs button').forEach(b => b.classList.toggle('on', b.dataset.d === d));
-        };
+            drawField(); startParticles();
+            const [mx, my] = px(24.79, 125.13); readAt(mx, my);
+        }
+        function readAt(x, y) {
+            const [la, lo] = ll(x, y), s = sample(S, la, lo), u = sample(U, la, lo), v = sample(V, la, lo);
+            if (s == null) { rd.textContent = ''; return; }
+            const from = (Math.atan2(-u, -v) * 180 / Math.PI + 360) % 360, i = Math.round(from / 22.5) % 16;
+            rd.textContent = lang() === 'ja' ? `${s.toFixed(0)} m/s　${DIR16[i]}の風（${la.toFixed(1)}N ${lo.toFixed(1)}E）` : `${s.toFixed(0)} m/s ${DIR16E[i]} (${la.toFixed(1)}N ${lo.toFixed(1)}E)`;
+        }
+        const pointer = e => { const r = wrap.getBoundingClientRect(); readAt(e.clientX - r.left, e.clientY - r.top); };
+        wrap.addEventListener('mousemove', pointer); wrap.addEventListener('click', pointer);
         document.getElementById('tw-dtabs').innerHTML = days.map(d => { const l = lead(d); return `<button type="button" data-d="${d}" class="${l == null || l > 5 ? 'far' : ''}">${day(d)}</button>`; }).join('');
         document.querySelectorAll('#tw-dtabs button').forEach(b => b.addEventListener('click', () => show(b.dataset.d)));
-        document.getElementById('tw-dscale').innerHTML = WS.map(([t, c], i) => `<span><i style="background:${c}"></i>${i === 0 ? '< 5' : i === WS.length - 1 ? '≥ 20' : WS[i - 1][0] + '–' + t} m/s</span>`).join('');
-        show(days[0]);
+        ['lang-en', 'lang-ja'].forEach(id => { const b = document.getElementById(id); if (b) b.addEventListener('click', () => setTimeout(() => cur && show(cur), 0)); });
+        let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { layout(); cur && show(cur); }, 200); });
+        layout(); show(days[0]);
     }
     let J0 = null;
     async function load() {
