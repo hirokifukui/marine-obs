@@ -1,0 +1,126 @@
+    <style>
+        .tw-wrap { max-width: 1120px; margin: 0 auto; }
+        .tw-title { border-bottom: 2px solid var(--ai-deep, var(--ai)); padding-bottom: 0.9rem; margin: 0.5rem 0 1.25rem; display: grid; grid-template-columns: 1fr auto; gap: 0.75rem 2rem; align-items: end; }
+        .tw-title h1 { font-family: var(--serif-ja); font-size: clamp(1.7rem, 4vw, 2.6rem); line-height: 1.15; margin: 0; }
+        .tw-title .tagline { font-family: var(--serif-ja); color: var(--ink-soft, var(--text-secondary)); margin-top: 0.4rem; letter-spacing: 0.04em; }
+        .tw-meta { text-align: right; font-size: 0.85rem; color: var(--ink-faint, var(--text-secondary)); line-height: 1.6; }
+        .tw-meta strong { display: block; font-family: var(--serif); font-size: 1.15rem; color: var(--ink, var(--text-primary)); font-variant-numeric: tabular-nums; }
+        @media (max-width: 640px) { .tw-title { grid-template-columns: 1fr; } .tw-meta { text-align: left; } }
+        .tw-alertbar { border-left: 3px solid var(--coral); background: light-dark(#FBF4F4, #2A1A1D); padding: 0.8rem 1.1rem; border-radius: 0 10px 10px 0; margin-bottom: 1.25rem; font-weight: 600; }
+        .tw-days { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem; }
+        @media (max-width: 900px) { .tw-days { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 480px) { .tw-days { grid-template-columns: 1fr; } }
+        .tw-day { position: relative; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 0.9rem 1rem 1rem; min-height: 9.5rem; box-shadow: var(--shadow); }
+        .tw-day .d { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; }
+        .tw-day .role { font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.15rem; padding-right: 3.6rem; }
+        .tw-day .note { font-size: 0.86rem; line-height: 1.65; margin-top: 0.8rem; }
+        .tw-day .lead { font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.5rem; font-variant-numeric: tabular-nums; }
+        .stamp.undecided { color: var(--text-secondary); border-style: dashed; opacity: 0.7; }
+        .tw-karte { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--ai); border-radius: 0 12px 12px 0; padding: 1.2rem 1.4rem; margin-bottom: 1.75rem; box-shadow: var(--shadow); }
+        .tw-karte h3 { margin: 0 0 0.6rem; font-family: var(--serif-ja); font-size: 1.05rem; }
+        .tw-karte p { line-height: 1.95; margin: 0 0 0.7rem; }
+        .tw-karte .change { border-top: 1px dashed var(--border); padding-top: 0.7rem; font-size: 0.92rem; }
+        .tw-karte .sig { font-size: 0.78rem; color: var(--text-secondary); margin: 0; }
+        .tw-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; font-variant-numeric: tabular-nums; }
+        .tw-table th, .tw-table td { padding: 0.45rem 0.55rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+        .tw-table th { font-weight: 600; color: var(--text-secondary); font-size: 0.78rem; }
+        .tw-table tr.trip td:first-child { font-weight: 600; }
+        .tw-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .tw-hit { color: var(--coral); font-weight: 700; }
+        .tw-split { color: var(--amber); font-weight: 600; }
+        .tw-windy { width: 100%; aspect-ratio: 16 / 10; border: 0; border-radius: 10px; margin-top: 1rem; }
+        .tw-bars { display: grid; gap: 0.35rem; margin-top: 0.75rem; }
+        .tw-bar { display: grid; grid-template-columns: 6.5rem 1fr 3rem; align-items: center; gap: 0.6rem; font-size: 0.82rem; font-variant-numeric: tabular-nums; }
+        .tw-bar .track { position: relative; height: 0.85rem; background: light-dark(#EEF2F4, #22282c); border-radius: 4px; overflow: hidden; }
+        .tw-bar .p10 { position: absolute; inset: 0 auto 0 0; background: light-dark(#CFE3E6, #2f4a4f); }
+        .tw-bar .p15 { position: absolute; inset: 0 auto 0 0; background: var(--amber); }
+        .tw-bar .p25 { position: absolute; inset: 0 auto 0 0; background: var(--coral); }
+        .tw-legend { font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.5rem; }
+        .tw-legend i { display: inline-block; width: 0.8rem; height: 0.6rem; border-radius: 2px; margin: 0 0.3rem 0 0.9rem; vertical-align: middle; }
+        .tw-muted { color: var(--text-secondary); font-size: 0.85rem; }
+    </style>
+
+    <main>
+        <nav class="breadcrumb">
+            <a href="/">Home</a> /
+            <a href="../conditions.html"><span data-lang="en">Sea conditions</span><span data-lang="ja">海況</span></a> /
+            <span data-lang="en">Trip Watch</span><span data-lang="ja">遠征の見立て</span>
+        </nav>
+
+        <div class="tw-wrap">
+            <div class="tw-title">
+                <div>
+                    <h1><span data-lang="en">Trip Watch: Miyako-jima, 5–9 Nov 2026</span><span data-lang="ja">遠征の見立て　宮古島 11月5日〜9日</span></h1>
+                    <div class="tagline"><span data-lang="en">Typhoons, wind and waves for the people diving with us. Updated every three hours.</span><span data-lang="ja">一緒に潜る仲間のための、台風・風・波の見立て。3時間ごとに更新。</span></div>
+                </div>
+                <div class="tw-meta">
+                    <span data-lang="en">Updated</span><span data-lang="ja">更新</span>
+                    <strong id="tw-updated">—</strong>
+                    <span id="tw-model"></span>
+                </div>
+            </div>
+
+            <div id="tw-alertbar"></div>
+
+            <section class="content-section">
+                <h2><span data-lang="en">Day by day</span><span data-lang="ja">日ごとの判子</span></h2>
+                <div class="tw-days" id="tw-days"><p class="tw-muted">…</p></div>
+                <p class="tw-muted">
+                    <span data-lang="en">Normal = expect to dive as planned · Monitor = nothing serious yet, keep watching · Watch = site changes or fewer dives possible · Alert = boats unlikely to go, or flights affected · TBD = more than five days out, no usable forecast.</span>
+                    <span data-lang="ja">平常＝予定どおり潜れる見込み／監視＝大きな問題は見えないが変化を見ておく／注意＝ポイント変更や本数減の可能性／警報＝出航困難、または飛行機に影響の見込み／未定＝5日より先で、判断できる予報がない。</span>
+                </p>
+            </section>
+
+            <section class="content-section">
+                <div class="tw-karte" id="tw-karte">
+                    <h3><span data-lang="en">Reading</span><span data-lang="ja">所見</span></h3>
+                    <p class="tw-muted">…</p>
+                </div>
+            </section>
+
+            <section class="content-section" id="typhoon">
+                <h2><span data-lang="en">Typhoons (Japan Meteorological Agency)</span><span data-lang="ja">台風（気象庁）</span></h2>
+                <div class="card" id="tw-typhoon"><p class="tw-muted">…</p></div>
+                <iframe class="tw-windy" loading="lazy" title="Windy"
+                    src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=%C2%B0C&metricWind=m%2Fs&zoom=4&overlay=wind&product=ecmwf&level=surface&lat=22.5&lon=132&detailLat=24.79&detailLon=125.13&marker=true&message=true"></iframe>
+                <p class="tw-muted"><span data-lang="en">Map: Windy (ECMWF wind). The table above is the official JMA track.</span><span data-lang="ja">地図：Windy（ECMWFの風）。正式な進路は上の気象庁の表。</span></p>
+            </section>
+
+            <section class="content-section" id="wind">
+                <h2><span data-lang="en">Chance of strong wind (ECMWF ensemble, 51 members)</span><span data-lang="ja">強風の確率（ECMWFアンサンブル・51メンバー）</span></h2>
+                <div class="card">
+                    <div class="tw-bars" id="tw-bars"></div>
+                    <div class="tw-legend">
+                        <i style="background:light-dark(#CFE3E6,#2f4a4f)"></i>≥10 m/s
+                        <i style="background:var(--amber)"></i>≥15 m/s
+                        <i style="background:var(--coral)"></i>≥25 m/s
+                    </div>
+                    <p class="tw-muted" style="margin-top:0.8rem">
+                        <span data-lang="en">Share of the 51 runs whose daily maximum wind at Miyako reaches each level. The grid is about 25 km, so winds near a typhoon centre come out low. When a few runs start showing strong wind before any typhoon exists, read it as a sign.</span>
+                        <span data-lang="ja">51通りの計算のうち、宮古島の日最大風速が各段階に届いた割合。格子が約25kmなので、台風の中心付近の風は弱めに出る。台風がまだなくても、一部のメンバーが強風を出し始めたら気配として読む。</span>
+                    </p>
+                </div>
+            </section>
+
+            <section class="content-section" id="waves">
+                <h2><span data-lang="en">Waves: do the models agree?</span><span data-lang="ja">波：モデルは揃っているか</span></h2>
+                <div class="card"><div class="tw-scroll" id="tw-waves"></div>
+                    <p class="tw-muted" style="margin-top:0.8rem"><span data-lang="en">Daytime (07–17) maximum significant wave height, metres, off western Shimoji-jima. Amber = models more than 1 m apart.</span><span data-lang="ja">日中（7〜17時）の有義波高の最大、メートル。地点は下地島の西沖。黄＝モデル間の差が1m超。</span></p>
+                </div>
+            </section>
+
+            <section class="content-section" id="flights">
+                <h2><span data-lang="en">Flights and warnings</span><span data-lang="ja">飛行機と警報</span></h2>
+                <div class="card" id="tw-flights"></div>
+            </section>
+
+            <section class="content-section">
+                <div class="site-rationale" style="background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--accent-teal);border-radius:0 12px 12px 0;padding:1rem 1.25rem;">
+                    <p class="tw-muted" style="margin:0;line-height:1.9">
+                        <span data-lang="en">Data: JMA typhoon and warning bulletins; Open-Meteo Marine (ECMWF WAM, NOAA GFS-Wave, Météo-France); Open-Meteo Ensemble (ECMWF IFS, 51 members); Stormglass. The reading is written by Claude (Anthropic) from these numbers only, under fixed rules: no stamp beyond five days, model disagreement stated, early signs not dismissed. It is a reference. Whether the boat goes is the local dive shop's call.</span>
+                        <span data-lang="ja">データ：気象庁（台風情報・警報）／Open-Meteo Marine（ECMWF WAM・NOAA GFS-Wave・Météo-France）／Open-Meteo Ensemble（ECMWF IFS 51メンバー）／Stormglass。所見は、これらの数値だけをもとにClaude（Anthropic）が決まった規則で書いています。5日より先には判子を付けない、モデルが割れていれば書く、前兆を退けない。あくまで参考で、出航を決めるのは現地のダイビングショップです。</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
