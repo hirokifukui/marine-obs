@@ -239,7 +239,7 @@
                     <div class="note">${note}</div><div class="lead">${lead}</div>
                     <div class="stamp ${d.stamp}" title="${s[0]} / ${s[1]}">${bi(s[1], s[0])}</div></article>`;
             };
-            document.getElementById('tw-days').innerHTML = J.days.filter(d => d.date === '2026-11-05' || d.date === '2026-11-09').map(stampCard).join('');
+            document.getElementById('tw-days').innerHTML = J.days.filter(d => ['2026-11-05', '2026-11-06', '2026-11-09'].includes(d.date)).map(stampCard).join('');
             const K = document.getElementById('tw-karte');
             K.classList.add('tw-ai-frame');
             K.innerHTML = `
