@@ -31,7 +31,8 @@
         ['Shimojishima Airport', '下地島空港', 'https://shimojishima.jp/'],
         ['Naha Airport', '那覇空港', 'https://www.naha-airport.co.jp/']
     ];
-    const minus5 = d => { const [y, m, dd] = d.split('-').map(Number); const t = new Date(Date.UTC(y, m - 1, dd - 5)); return [t.getUTCMonth() + 1, t.getUTCDate()]; };
+    const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const minus5 = d => { const [y, m, dd] = d.split('-').map(Number); const t = new Date(Date.UTC(y, m - 1, dd - 5)); return [t.getUTCMonth() + 1, t.getUTCDate(), MON[t.getUTCMonth()]]; };
     let SIG = '';
     const ai = (en, ja) => (en || ja) ? `<div class="tw-ai"><p><span class="tw-aitag">${bi('AI-GENERATED', 'AI自動生成')}</span>${bi(esc(en), esc(ja))}</p><span class="sig">${SIG}</span></div>` : '';
 
@@ -61,15 +62,15 @@
         // 日ごとの判子
         if (J && J.days) {
             const far = J.days.every(d => d.lead > 5);
-            const [fm, fd] = minus5(J.days[0].date);
+            const [fm, fd, fmo] = minus5(J.days[0].date);
             document.getElementById('tw-farline').innerHTML = far
-                ? bi(`The whole trip is still more than five days away. Stamps will start appearing from ${fd} Nov, one day at a time.`, `旅程はまだ5日より先です。判子は${fm}/${fd}から順に付きます。`) : '';
+                ? bi(`The whole trip is still more than five days away. Stamps will start appearing from ${fd} ${fmo}, one day at a time.`, `旅程はまだ5日より先です。判子は${fm}/${fd}から順に付きます。`) : '';
             document.getElementById('tw-days').innerHTML = J.days.map(d => {
                 const s = STAMP[d.stamp] || STAMP.undecided;
                 const lead = d.lead > 0 ? bi(`${d.lead} days ahead`, `${d.lead}日先`) : d.lead === 0 ? bi('today', '今日') : '';
-                const [m5, d5] = minus5(d.date);
+                const [m5, d5, mo5] = minus5(d.date);
                 const note = d.lead > 5
-                    ? (far ? '' : bi(`Nothing can be confirmed yet. A stamp comes from ${d5} Nov.`, `まだ確定できるものはありません。判子は${m5}/${d5}から付きます。`))
+                    ? (far ? '' : bi(`Nothing can be confirmed yet. A stamp comes from ${d5} ${mo5}.`, `まだ確定できるものはありません。判子は${m5}/${d5}から付きます。`))
                     : bi(esc(d.note_en), esc(d.note_ja));
                 return `<article class="tw-day${far ? ' short' : ''}">
                     <div class="d">${day(d.date)}</div>
