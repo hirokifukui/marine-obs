@@ -48,6 +48,34 @@
         .tw-orow .tag { font-size: 0.7rem; color: var(--text-secondary); margin-left: 0.3rem; }
         .tw-odds-legend { display: flex; flex-wrap: wrap; gap: 0.2rem 0.2rem; margin-top: 0.7rem; }
         @media (max-width: 520px) { .tw-orow { grid-template-columns: 5.6rem 1fr 4.6rem; font-size: 0.78rem; } }
+        .tw-hero { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; margin: 0.4rem 0 0.4rem; }
+        .tw-hcard { position: relative; text-align: left; font: inherit; color: inherit; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1.1rem 0.9rem; box-shadow: var(--shadow); cursor: pointer; }
+        .tw-hcard:hover { border-color: #0a5c74; }
+        .tw-hcard.far .big, .tw-hcard.far .hbar { opacity: 0.55; }
+        .tw-hcard .hd { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; }
+        .tw-hcard .d { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; }
+        .tw-hcard .role { font-size: 0.74rem; color: var(--text-secondary); }
+        .tw-hcard .big { font-family: var(--serif); font-size: clamp(2.2rem, 6vw, 3.2rem); font-weight: 600; line-height: 1.05; margin: 0.5rem 0 0.1rem; font-variant-numeric: tabular-nums; }
+        .tw-hcard .big small { font-size: 0.42em; font-weight: 500; margin-left: 0.2rem; }
+        .tw-hcard .lbl { font-size: 0.78rem; color: var(--text-secondary); }
+        .tw-hcard .hbar { display: flex; height: 0.45rem; border-radius: 3px; overflow: hidden; margin: 0.6rem 0 0.55rem; background: light-dark(#EEF2F4, #22282c); }
+        .tw-hcard .hbar span { display: block; height: 100%; }
+        .tw-hcard .meta { display: flex; flex-wrap: wrap; gap: 0.25rem 0.7rem; font-size: 0.74rem; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+        .tw-hcard .up { color: #2a8a5c; font-weight: 600; } .tw-hcard .down { color: var(--coral); font-weight: 600; }
+        .tw-hcard .stampline { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.55rem; font-size: 0.78rem; line-height: 1.5; }
+        .tw-hcard .chip { flex: 0 0 auto; font-size: 0.7rem; font-weight: 700; border: 1.5px solid currentColor; border-radius: 4px; padding: 0 0.35rem; }
+        .chip.normal { color: #2a8a5c; } .chip.monitor { color: #3a7ca5; } .chip.watch { color: #c58a00; } .chip.alert { color: var(--coral); } .chip.undecided { color: var(--text-secondary); border-style: dashed; }
+        @media (max-width: 640px) { .tw-hero { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.4rem; } .tw-hcard { padding: 0.7rem 0.6rem; } .tw-hcard .role, .tw-hcard .stampline span.n { display: none; } .tw-hcard .d { font-size: 0.92rem; } }
+        details.tw-more { margin-top: 0.8rem; border: 1px solid var(--border); border-radius: 10px; background: var(--bg-card); }
+        details.tw-more > summary { cursor: pointer; padding: 0.65rem 1rem; font-size: 0.9rem; font-weight: 600; list-style: none; }
+        details.tw-more > summary::-webkit-details-marker { display: none; }
+        details.tw-more > summary::before { content: '＋'; display: inline-block; width: 1.3rem; color: var(--text-secondary); }
+        details.tw-more[open] > summary::before { content: '−'; }
+        .tw-more-body { padding: 0 1rem 1rem; }
+        .tw-days-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+        @media (max-width: 480px) { .tw-days-2 { grid-template-columns: 1fr !important; } }
+        .tw-foot { margin-top: 0.8rem; background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent-teal); border-radius: 0 12px 12px 0; padding: 1rem 1.25rem; }
+        .tw-ai .sig { display: none; }
         .tw-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.4rem 0 0.7rem; }
         .tw-tabs button { font: inherit; font-size: 0.86rem; padding: 0.35rem 0.8rem; border-radius: 999px; border: 1px solid var(--border); background: var(--bg-card); color: inherit; cursor: pointer; }
         .tw-tabs button.on { background: #0a5c74; color: #fff; border-color: #0a5c74; font-weight: 600; }
@@ -75,7 +103,6 @@
         /* 日英の切替を行内のままにする（main.css は ja を block にするため） */
         body.ja .tw-wrap span[data-lang="ja"] { display: inline; }
     </style>
-
     <main>
         <nav class="breadcrumb">
             <a href="/">Home</a> /
@@ -98,14 +125,23 @@
 
             <div id="tw-alertbar"></div>
 
-            <section class="content-section">
-                <h2><span data-lang="en">Day by day</span><span data-lang="ja">日ごとの判子</span></h2>
+            <section class="content-section" id="dive">
+                <h2><span data-lang="en">The three dive days: can we dive?</span><span data-lang="ja">潜る3日間：潜れそうか</span></h2>
                 <p class="tw-farline" id="tw-farline"></p>
-                <div class="tw-days" id="tw-days"><p class="tw-muted">…</p></div>
-                <p class="tw-muted">
-                    <span data-lang="en">Normal = expect to dive as planned · Monitor = nothing serious yet, keep watching · Watch = site changes or fewer dives possible · Alert = boats unlikely to go, or travel affected · TBD = more than five days out, nothing can be confirmed yet.</span>
-                    <span data-lang="ja">平常＝予定どおり潜れる見込み／監視＝大きな問題は見えないが変化を見ておく／注意＝ポイント変更や本数減の可能性／警報＝出航困難、または移動に影響の見込み／未定＝5日より先で、まだ確定できるものがない。</span>
-                </p>
+                <div class="tw-hero" id="tw-hero"><p class="tw-muted">…</p></div>
+                <div id="tw-c-wind"></div>
+                <details class="tw-more"><summary><span data-lang="en">All five days, in detail (ECMWF ensemble, 51 runs)</span><span data-lang="ja">5日分の内訳（ECMWFアンサンブル・51通り）</span></summary>
+                    <div class="tw-more-body"><div class="tw-odds" id="tw-bars"></div>
+                    <div class="tw-legend tw-odds-legend">
+                        <span><i style="background:#4fa3c7"></i><span data-lang="en">Calm</span><span data-lang="ja">凪</span></span>
+                        <span><i style="background:#8cc9a0"></i><span data-lang="en">Moderate</span><span data-lang="ja">穏やか</span></span>
+                        <span><i style="background:#e9c46a"></i><span data-lang="en">Choppy</span><span data-lang="ja">波あり</span></span>
+                        <span><i style="background:#e76f51"></i><span data-lang="en">Rough</span><span data-lang="ja">荒れ</span></span>
+                    </div>
+                                        <p class="tw-muted" style="margin-top:0.8rem">
+                        <span data-lang="en">Each of the 51 runs is sorted by its strongest daytime (07–17) wind at Miyako and the direction at that time. Calm: under 5 m/s. Moderate: under 10 m/s (12 m/s from N–NE, which the west side of Shimoji-jima shelters from; 8 m/s from S–W). Choppy: up to 15 m/s from N–NE, 10 m/s from S–W, otherwise 15 m/s. Rough: anything stronger. On days when the wave models’ median exceeds 2.5 m, swell caps the day at Choppy. Days more than five days away are for reference only. The dive shop decides.</span>
+                        <span data-lang="ja">51通りの計算それぞれについて、宮古島の日中（7〜17時）の最大風速と、その時の風向きで分けています。凪＝5m/s未満。穏やか＝10m/s未満（下地島の西側でかわせる北〜北東の風は12m/s未満、南〜西の風は8m/s未満）。波あり＝北〜北東は15m/s未満、南〜西は10m/s未満、それ以外は15m/s未満。荒れ＝それより強い。波浪モデルの中央値が2.5mを超える日は、うねりがあるので最高でも「波あり」。5日より先の日は参考。出航を決めるのは現地ショップです。</span>
+                    </p></div></details>
             </section>
 
             <section class="content-section">
@@ -115,62 +151,45 @@
                 </div>
             </section>
 
-            <section class="content-section" id="typhoon">
-                <h2><span data-lang="en">Typhoons (Japan Meteorological Agency)</span><span data-lang="ja">台風（気象庁）</span></h2>
-                <div class="card" id="tw-typhoon"><p class="tw-muted">…</p></div>
-                <div id="tw-c-typhoon"></div>
-                <iframe class="tw-windy" loading="lazy" title="Windy"
-                    src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=%C2%B0C&metricWind=m%2Fs&zoom=4&overlay=wind&product=ecmwf&level=surface&lat=22.5&lon=132&detailLat=24.79&detailLon=125.13&marker=true&message=true"></iframe>
-                <p class="tw-muted"><span data-lang="en">Map: Windy (ECMWF wind). The table above is the official JMA track.</span><span data-lang="ja">地図：Windy（ECMWFの風）。正式な進路は上の気象庁の表。</span></p>
-            </section>
-
             <section class="content-section" id="daily-wind">
-                <h2><span data-lang="en">Daily wind, 5–9 Nov</span><span data-lang="ja">日ごとの風（11/5〜11/9）</span></h2>
+                <h2><span data-lang="en">Wind and typhoons, day by day</span><span data-lang="ja">日ごとの風と台風</span></h2>
                 <div class="card">
                     <div class="tw-tabs" id="tw-dtabs"></div>
                     <div class="tw-dmap-wrap" id="tw-dwrap"><canvas class="field" id="tw-dfield"></canvas><canvas class="trail" id="tw-dtrail"></canvas><span class="tw-readout" id="tw-dread"></span><span class="tw-ref"><span data-lang="en">For reference only</span><span data-lang="ja">参考</span></span></div>
                     <div class="tw-cbar" id="tw-cbar"></div><div class="tw-cbar-l"><span>0</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30 m/s</span></div>
                     <p class="tw-muted" style="margin-top:0.6rem"><span data-lang="en">Colour is the day’s maximum 10 m wind (ECMWF IFS via Open-Meteo, smoothed from a 1.5° grid); the white streaks move with the day’s prevailing wind. Tap or hover for a value. The line is the JMA typhoon track and forecast circles, which reach only five days. Days more than five days away are pale: nothing can be confirmed yet.</span><span data-lang="ja">色はその日の最大風速（地上10m、ECMWF IFS、Open-Meteo経由。1.5度格子をなめらかに補間）。白い筋は、その日の卓越風向に沿って流れます。触れると値が出ます。線は気象庁の台風進路と予報円で、5日先まで。5日より先の日は淡く表示しています。まだ確定できるものはありません。</span></p>
                 </div>
-            </section>
-
-            <section class="content-section" id="wind">
-                <h2><span data-lang="en">Can we dive? (ECMWF ensemble, 51 runs)</span><span data-lang="ja">潜れそうか（ECMWFアンサンブル・51通り）</span></h2>
-                <div class="card">
-                    <div class="tw-odds" id="tw-bars"></div>
-                    <div class="tw-legend tw-odds-legend">
-                        <span><i style="background:#4fa3c7"></i><span data-lang="en">Calm</span><span data-lang="ja">凪</span></span>
-                        <span><i style="background:#8cc9a0"></i><span data-lang="en">Moderate</span><span data-lang="ja">穏やか</span></span>
-                        <span><i style="background:#e9c46a"></i><span data-lang="en">Choppy</span><span data-lang="ja">波あり</span></span>
-                        <span><i style="background:#e76f51"></i><span data-lang="en">Rough</span><span data-lang="ja">荒れ</span></span>
-                    </div>
-                    <div id="tw-c-wind"></div>
-                    <p class="tw-muted" style="margin-top:0.8rem">
-                        <span data-lang="en">Each of the 51 runs is sorted by its strongest daytime (07–17) wind at Miyako and the direction at that time. Calm: under 5 m/s. Moderate: under 10 m/s (12 m/s from N–NE, which the west side of Shimoji-jima shelters from; 8 m/s from S–W). Choppy: up to 15 m/s from N–NE, 10 m/s from S–W, otherwise 15 m/s. Rough: anything stronger. On days when the wave models’ median exceeds 2.5 m, swell caps the day at Choppy. Days more than five days away are for reference only. The dive shop decides.</span>
-                        <span data-lang="ja">51通りの計算それぞれについて、宮古島の日中（7〜17時）の最大風速と、その時の風向きで分けています。凪＝5m/s未満。穏やか＝10m/s未満（下地島の西側でかわせる北〜北東の風は12m/s未満、南〜西の風は8m/s未満）。波あり＝北〜北東は15m/s未満、南〜西は10m/s未満、それ以外は15m/s未満。荒れ＝それより強い。波浪モデルの中央値が2.5mを超える日は、うねりがあるので最高でも「波あり」。5日より先の日は参考。出航を決めるのは現地ショップです。</span>
-                    </p>
-                </div>
+                <div id="tw-c-typhoon"></div>
+                <details class="tw-more"><summary><span data-lang="en">JMA typhoon track (table)</span><span data-lang="ja">気象庁の台風情報（進路の表）</span></summary>
+                    <div class="tw-more-body"><div id="tw-typhoon"><p class="tw-muted">…</p></div></div></details>
+                <details class="tw-more"><summary><span data-lang="en">Windy: live wind, free to move</span><span data-lang="ja">Windy：いまの風（自由に動かせる地図）</span></summary>
+                    <div class="tw-more-body"><iframe class="tw-windy" loading="lazy" title="Windy"
+                    src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=%C2%B0C&metricWind=m%2Fs&zoom=4&overlay=wind&product=ecmwf&level=surface&lat=22.5&lon=132&detailLat=24.79&detailLon=125.13&marker=true&message=true"></iframe>
+                    <p class="tw-muted"><span data-lang="en">Map: Windy (ECMWF wind). The official track is the JMA table above.</span><span data-lang="ja">地図：Windy（ECMWFの風）。正式な進路は上の気象庁の表。</span></p></div></details>
             </section>
 
             <section class="content-section" id="waves">
                 <h2><span data-lang="en">Waves: do the models agree?</span><span data-lang="ja">波：モデルは揃っているか</span></h2>
-                <div class="card"><div class="tw-scroll" id="tw-waves"></div>
-                    <div id="tw-c-waves"></div>
-                    <p class="tw-muted" style="margin-top:0.8rem"><span data-lang="en">Daytime (07–17) maximum significant wave height, metres, off western Shimoji-jima. Amber = models more than 1 m apart.</span><span data-lang="ja">日中（7〜17時）の有義波高の最大、メートル。地点は下地島の西沖。黄＝モデル間の差が1m超。</span></p>
-                </div>
+                <div id="tw-c-waves"></div>
+                <details class="tw-more"><summary><span data-lang="en">Wave height by model (table)</span><span data-lang="ja">モデル別の波高（表）</span></summary>
+                    <div class="tw-more-body"><div class="tw-scroll" id="tw-waves"></div>
+                    <p class="tw-muted" style="margin-top:0.8rem"><span data-lang="en">Daytime (07–17) maximum significant wave height, metres, off western Shimoji-jima. Amber = models more than 1 m apart.</span><span data-lang="ja">日中（7〜17時）の有義波高の最大、メートル。地点は下地島の西沖。黄＝モデル間の差が1m超。</span></p></div></details>
             </section>
 
             <section class="content-section" id="flights">
                 <h2><span data-lang="en">Getting there and back</span><span data-lang="ja">移動（到着・出発）</span></h2>
+                <div class="tw-days tw-days-2" id="tw-days"></div>
                 <div class="card" id="tw-flights"></div>
             </section>
 
             <section class="content-section">
-                <div class="site-rationale" style="background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--accent-teal);border-radius:0 12px 12px 0;padding:1rem 1.25rem;">
-                    <p class="tw-muted" style="margin:0;line-height:1.9">
-                        <span data-lang="en">Data: JMA typhoon and warning bulletins; Open-Meteo Marine (ECMWF WAM, NOAA GFS-Wave, Météo-France); Open-Meteo Ensemble (ECMWF IFS, 51 members); Stormglass. The reading is written by Claude (Anthropic) from these numbers only, under fixed rules: no stamp beyond five days, model disagreement stated, early signs not dismissed. It is a reference. Whether the boat goes is the local dive shop's call.</span>
-                        <span data-lang="ja">データ：気象庁（台風情報・警報）／Open-Meteo Marine（ECMWF WAM・NOAA GFS-Wave・Météo-France）／Open-Meteo Ensemble（ECMWF IFS 51メンバー）／Stormglass。所見は、これらの数値だけをもとにClaude（Anthropic）が決まった規則で書いています。5日より先には判子を付けない、モデルが割れていれば書く、前兆を退けない。あくまで参考で、出航を決めるのは現地のダイビングショップです。</span>
-                    </p>
+                <details class="tw-more"><summary><span data-lang="en">How the stamps and levels are decided</span><span data-lang="ja">判子と判定の決め方</span></summary>
+                    <div class="tw-more-body"><p class="tw-muted" style="margin:0"><span data-lang="en">Normal = expect to dive as planned · Monitor = nothing serious yet, keep watching · Watch = site changes or fewer dives possible · Alert = boats unlikely to go, or travel affected · TBD = more than five days out, nothing can be confirmed yet.</span>
+                    <span data-lang="ja">平常＝予定どおり潜れる見込み／監視＝大きな問題は見えないが変化を見ておく／注意＝ポイント変更や本数減の可能性／警報＝出航困難、または移動に影響の見込み／未定＝5日より先で、まだ確定できるものがない。</span></p></div></details>
+                <div class="tw-foot">
+                    <p class="tw-muted" style="margin:0;line-height:1.9"><span data-lang="en">Data: JMA typhoon and warning bulletins; Open-Meteo Marine (ECMWF WAM, NOAA GFS-Wave, Météo-France); Open-Meteo Ensemble (ECMWF IFS, 51 members); Stormglass. The reading is written by Claude (Anthropic) from these numbers only, under fixed rules: no stamp beyond five days, model disagreement stated, early signs not dismissed. It is a reference. Whether the boat goes is the local dive shop's call.</span>
+                        <span data-lang="ja">データ：気象庁（台風情報・警報）／Open-Meteo Marine（ECMWF WAM・NOAA GFS-Wave・Météo-France）／Open-Meteo Ensemble（ECMWF IFS 51メンバー）／Stormglass。所見は、これらの数値だけをもとにClaude（Anthropic）が決まった規則で書いています。5日より先には判子を付けない、モデルが割れていれば書く、前兆を退けない。あくまで参考で、出航を決めるのは現地のダイビングショップです。</span></p>
+                    <p class="tw-muted" id="tw-sig" style="margin:0.5rem 0 0"></p>
                 </div>
             </section>
         </div>

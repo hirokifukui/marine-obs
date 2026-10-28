@@ -191,15 +191,19 @@
         document.querySelectorAll('#tw-dtabs button').forEach(b => b.addEventListener('click', () => show(b.dataset.d)));
         ['lang-en', 'lang-ja'].forEach(id => { const b = document.getElementById(id); if (b) b.addEventListener('click', () => setTimeout(() => cur && show(cur), 0)); });
         let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { layout(); cur && show(cur); }, 200); });
+        window.__twShow = d => { if (M.days[d]) show(d); };
         layout(); show(days[0]);
     }
-    let J0 = null;
+    let J0 = null, PREV = null;
     async function load() {
-        const url = `${SUPABASE_URL}/rest/v1/trip_watch?select=created_at,payload&trip_id=eq.${TRIP}&order=created_at.desc&limit=1`;
+        const url = `${SUPABASE_URL}/rest/v1/trip_watch?select=created_at,payload&trip_id=eq.${TRIP}&order=created_at.desc&limit=8`;
         const r = await fetch(url, { headers: { apikey: ANON, Authorization: `Bearer ${ANON}` } });
         const rows = await r.json();
         if (!rows.length) return;
         J0 = rows[0].payload.judgment;
+        const t0 = new Date(rows[0].created_at).getTime();
+        const prevRow = rows.slice(1).find(r => t0 - new Date(r.created_at).getTime() >= 2.5 * 3600e3) || rows[1];
+        PREV = prevRow ? prevRow.payload : null;
         render(rows[0].payload);
         try { dailyMap(rows[0].payload); } catch (e) { console.error(e); }
     }
@@ -209,6 +213,7 @@
         document.getElementById('tw-updated').textContent = P.generated_at + ' JST';
         SIG = J && J.model ? bi(`Written automatically by ${esc(J.model)} at ${esc(P.generated_at)} JST · not reviewed by a person`, `${esc(J.model)} が ${esc(P.generated_at)} に自動で記述・人による確認なし`) : '';
         if (J && J.model) document.getElementById('tw-model').innerHTML = bi('Reading: ', '所見：') + esc(J.model);
+        const SG = document.getElementById('tw-sig'); if (SG) SG.innerHTML = bi('All text tagged AI-GENERATED on this page: ', 'このページの「AI自動生成」の文章はすべて、') + SIG;
 
         // 警報バー
         const W0 = P.warnings || {};
@@ -225,21 +230,16 @@
             const [fm, fd, fmo] = minus5(J.days[0].date);
             document.getElementById('tw-farline').innerHTML = far
                 ? bi(`The whole trip is still more than five days away. Stamps will start appearing from ${fd} ${fmo}, one day at a time.`, `旅程はまだ5日より先です。判子は${fm}/${fd}から順に付きます。`) : '';
-            document.getElementById('tw-days').innerHTML = J.days.map(d => {
+            const stampCard = d => {
                 const s = STAMP[d.stamp] || STAMP.undecided;
                 const lead = d.lead > 0 ? bi(`${d.lead} days ahead`, `${d.lead}日先`) : d.lead === 0 ? bi('today', '今日') : '';
                 const [m5, d5, mo5] = minus5(d.date);
-                const note = d.lead > 5
-                    ? (far ? '' : bi(`Nothing can be confirmed yet. A stamp comes from ${d5} ${mo5}.`, `まだ確定できるものはありません。判子は${m5}/${d5}から付きます。`))
-                    : bi(esc(d.note_en), esc(d.note_ja));
-                return `<article class="tw-day${far ? ' short' : ''}">
-                    <div class="d">${day(d.date)}</div>
-                    <div class="role">${ROLE[d.date] || ''}</div>
-                    <div class="note">${note}</div>
-                    <div class="lead">${lead}</div>
-                    <div class="stamp ${d.stamp}" title="${s[0]} / ${s[1]}">${bi(s[1], s[0])}</div>
-                </article>`;
-            }).join('');
+                const note = d.lead > 5 ? bi(`Nothing can be confirmed yet. A stamp comes from ${d5} ${mo5}.`, `まだ確定できるものはありません。判子は${m5}/${d5}から付きます。`) : bi(esc(d.note_en), esc(d.note_ja));
+                return `<article class="tw-day short"><div class="d">${day(d.date)}</div><div class="role">${ROLE[d.date] || ''}</div>
+                    <div class="note">${note}</div><div class="lead">${lead}</div>
+                    <div class="stamp ${d.stamp}" title="${s[0]} / ${s[1]}">${bi(s[1], s[0])}</div></article>`;
+            };
+            document.getElementById('tw-days').innerHTML = J.days.filter(d => d.date === '2026-11-05' || d.date === '2026-11-09').map(stampCard).join('');
             const K = document.getElementById('tw-karte');
             K.classList.add('tw-ai-frame');
             K.innerHTML = `
@@ -250,7 +250,8 @@
                 <p class="change"><strong>${bi('What would change this: ', '判断が変わるとき：')}</strong>${bi(esc(J.change_en), esc(J.change_ja))}</p>
                 <p class="sig">${SIG}</p>`;
         } else {
-            document.getElementById('tw-days').innerHTML = `<p class="tw-muted">${bi('The reading could not be produced this time. The data below are current.', '今回は所見を作れませんでした。下のデータは最新です。')}</p>`;
+            document.getElementById('tw-days').innerHTML = '';
+            document.getElementById('tw-hero').innerHTML = `<p class="tw-muted">${bi('The reading could not be produced this time. The data below are current.', '今回は所見を作れませんでした。下のデータは最新です。')}</p>`;
             document.getElementById('tw-karte').innerHTML = '';
         }
         const C = (J && J.comments) || {};
@@ -291,6 +292,33 @@
         const OD = P.dive_odds || [];
         const OC = [['nagi', '#4fa3c7', 'Calm', '凪'], ['futsu', '#8cc9a0', 'Moderate', '穏やか'], ['girigiri', '#e9c46a', 'Choppy', '波あり'], ['dame', '#e76f51', 'Rough', '荒れ']];
         const leadD = d => { const t0 = new Date(P.generated_at.slice(0, 10) + 'T00:00:00Z'), t1 = new Date(d + 'T00:00:00Z'); return Math.round((t1 - t0) / 864e5); };
+        const PO = (PREV && PREV.dive_odds) || [];
+        const HERO = ['2026-11-06', '2026-11-07', '2026-11-08'];
+        const hero = document.getElementById('tw-hero');
+        if (OD.length) {
+            hero.innerHTML = HERO.map(dd => {
+                const r = OD.find(x => x.day === dd); if (!r) return '';
+                const ok = (r.nagi || 0) + (r.futsu || 0), l = leadD(dd), far = l > 5;
+                const p = PO.find(x => x.day === dd), pok = p ? (p.nagi || 0) + (p.futsu || 0) : null;
+                const dl = pok == null ? '' : ok - pok;
+                const delta = pok == null ? '' : dl === 0 ? bi('same as 3 h ago', '3時間前と同じ') : `<span class="${dl > 0 ? 'up' : 'down'}">${dl > 0 ? '↑' : '↓'}${Math.abs(dl)}</span> ${bi('vs 3 h ago', '3時間前比')}`;
+                const jd = (J && J.days || []).find(x => x.date === dd) || { stamp: 'undecided' };
+                const s = STAMP[jd.stamp] || STAMP.undecided;
+                const sn = l > 5 ? bi('stamp from ' + minus5(dd)[1] + ' ' + minus5(dd)[2], '判子は' + minus5(dd)[0] + '/' + minus5(dd)[1] + 'から') : bi(esc(jd.note_en || ''), esc(jd.note_ja || ''));
+                const segs = OC.map(([k, c]) => r[k] ? `<span style="width:${r[k]}%;background:${c}"></span>` : '').join('');
+                return `<button type="button" class="tw-hcard${far ? ' far' : ''}" data-d="${dd}">
+                    <div class="hd"><span class="d">${day(dd)}</span><span class="role">${ROLE[dd] || ''}</span></div>
+                    <div class="big">${ok}<small>%</small></div><div class="lbl">${bi('chance of diving', '潜れそう')}${r.wave_cap ? ' 🌊' : ''}</div>
+                    <div class="hbar">${segs}</div>
+                    <div class="meta">${far ? `<span>${bi('ref. · ' + l + ' days ahead', '参考・' + l + '日先')}</span>` : `<span>${bi(l + ' days ahead', l + '日先')}</span>`}${delta ? `<span>${delta}</span>` : ''}</div>
+                    <div class="stampline"><span class="chip ${jd.stamp}">${bi(s[1], s[0])}</span><span class="n">${sn}</span></div>
+                </button>`;
+            }).join('');
+            hero.querySelectorAll('.tw-hcard').forEach(b => b.addEventListener('click', () => {
+                if (window.__twShow) window.__twShow(b.dataset.d);
+                const m = document.getElementById('daily-wind'); if (m) m.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }));
+        } else hero.innerHTML = `<p class="tw-muted">${bi('Ensemble data unavailable this time.', '今回はアンサンブルを取得できませんでした。')}</p>`;
         document.getElementById('tw-bars').innerHTML = OD.length ? OD.filter(r => r.day >= '2026-11-05').map(r => {
             const far = leadD(r.day) > 5, ok = (r.nagi || 0) + (r.futsu || 0);
             const segs = OC.map(([k, c, en, ja]) => r[k] ? `<span style="width:${r[k]}%;background:${c}" title="${ja} ${r[k]}% / ${en}"></span>` : '').join('');
