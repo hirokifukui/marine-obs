@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "直近30日SST",
-    "generated_at": "2026-10-28",
+    "generated_at": "2026-10-29",
     "note": "7地点対応版",
     "generator": "scripts/build_site_data.py"
   },
