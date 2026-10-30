@@ -311,7 +311,7 @@
                 const segs = OC.map(([k, c]) => r[k] ? `<span style="width:${r[k]}%;background:${c}"></span>` : '').join('');
                 return `<button type="button" class="tw-hcard${far ? ' far' : ''}" data-d="${dd}">
                     <div class="hd"><span class="d">${day(dd)}</span><span class="role">${ROLE[dd] || ''}</span></div>
-                    <div class="big">${shown.big}</div><div class="lbl">${bi('chance of diving', '潜れる確率')}　<span class="vdt ${VERDICT(ok)[0]}">${bi(VERDICT(ok)[1], VERDICT(ok)[2])}</span>${r.swell ? ' 🌊' : ''}${r.ne_rely ? `<br><span style="font-size:0.92em">${bi('incl. ' + r.ne_rely + '% relying on N–NE shelter', 'うち北東風でかわす前提 ' + r.ne_rely + '%')}</span>` : ''}</div>
+                    <div class="big">${shown.big}</div><div class="lbl">${bi('chance of calm diving', '穏やかに潜れる確率')}　<span class="vdt ${VERDICT(ok)[0]}">${bi(VERDICT(ok)[1], VERDICT(ok)[2])}</span>${r.swell ? ' 🌊' : ''}${r.ne_rely ? `<br><span style="font-size:0.92em">${bi('incl. ' + r.ne_rely + '% relying on N–NE shelter', 'うち北東風でかわす前提 ' + r.ne_rely + '%')}</span>` : ''}</div>
                     <div class="hbar">${segs}</div>
                     <div class="meta">${far ? `<span>${bi('ref. · ' + l + ' days ahead', '参考・' + l + '日先')}</span>` : `<span>${bi(l + ' days ahead', l + '日先')}</span>`}${delta ? `<span>${delta}</span>` : ''}</div>
                     <div class="stampline"><span class="chip ${jd.stamp}">${bi(s[1], s[0])}</span><span class="n">${sn}</span></div>
@@ -328,7 +328,7 @@
             return `<div class="tw-orow${far ? ' far' : ''}"><span>${day(r.day)}${far ? `<span class="tag">${bi('ref.', '参考')}</span>` : ''}</span>
                 <span class="track">${segs}</span>
                 <span class="ok"><span class="vdt ${VERDICT(ok)[0]}">${bi(VERDICT(ok)[1], VERDICT(ok)[2])}</span> <b>${shown.txt}</b>${r.swell ? ' 🌊' : ''}</span></div>`;
-        }).join('') + `<p class="tw-legend" style="margin:0.3rem 0 0">${bi('Bar = sea state by wind speed. “Chance of diving” is counted separately and includes N–NE winds up to 12 m/s, discounted for swell. 🌊 = swell present.', '帯＝風速だけで決めた海の状態。「潜れる確率」は別の数で、北〜北東の12m/s未満を含み、うねりの強さに応じて割り引く。🌊＝うねりあり。')}</p>`
+        }).join('') + `<p class="tw-legend" style="margin:0.3rem 0 0">${bi('Bar = sea state by wind speed. “Chance of calm diving” is counted separately and includes N–NE winds up to 12 m/s, discounted for swell. Not the chance that the boat goes out. 🌊 = swell present.', '帯＝風速だけで決めた海の状態。「穏やかに潜れる確率」は別の数で、北〜北東の12m/s未満を含み、うねりの強さに応じて割り引く。出航の可否ではない。🌊＝うねりあり。')}</p>`
             : `<p class="tw-muted">${bi('Ensemble data unavailable this time.', '今回はアンサンブルを取得できませんでした。')}</p>`;
 
         // 波のモデル比較
