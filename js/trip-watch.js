@@ -293,7 +293,7 @@
         const OC = [['calm', '#4fa3c7', 'Calm', '凪'], ['moderate', '#8cc9a0', 'Moderate', '穏やか'], ['choppy', '#e9c46a', 'Choppy', '波あり'], ['rough', '#e76f51', 'Rough', '荒れ']];
         const hasNew = r => r && r.dive != null;
         const VERDICT = v => v >= 80 ? ['likely', 'Likely', '見込み高い'] : v >= 50 ? ['even', 'Even chance', '五分五分'] : v >= 30 ? ['doubtful', 'Doubtful', '厳しめ'] : ['unlikely', 'Unlikely', '厳しい'];
-        const fmtPct = (v, far) => far ? (Math.round(v / 10) >= 10 ? { big: '', txt: bi('90% or more', '9割以上') } : { big: `${Math.round(v / 10)}<small>${bi('0% or so', '割前後')}</small>`, txt: bi(`about ${Math.round(v / 10) * 10}%`, `${Math.round(v / 10)}割前後`) }) : { big: `${v}<small>%</small>`, txt: `${v}%` };
+        const fmtPct = (v, far) => far ? (Math.round(v / 10) >= 10 ? { big: `9<small>${bi('0%+', '割以上')}</small>`, txt: bi('90% or more', '9割以上') } : { big: `${Math.round(v / 10)}<small>${bi('0% or so', '割前後')}</small>`, txt: bi(`about ${Math.round(v / 10) * 10}%`, `${Math.round(v / 10)}割前後`) }) : { big: `${v}<small>%</small>`, txt: `${v}%` };
         const leadD = d => { const t0 = new Date(P.generated_at.slice(0, 10) + 'T00:00:00Z'), t1 = new Date(d + 'T00:00:00Z'); return Math.round((t1 - t0) / 864e5); };
         const PO = (PREV && PREV.sea_odds) || [];
         const HERO = ['2026-11-06', '2026-11-07', '2026-11-08'];
@@ -311,7 +311,7 @@
                 const segs = OC.map(([k, c]) => r[k] ? `<span style="width:${r[k]}%;background:${c}"></span>` : '').join('');
                 return `<button type="button" class="tw-hcard${far ? ' far' : ''}" data-d="${dd}">
                     <div class="hd"><span class="d">${day(dd)}</span><span class="role">${ROLE[dd] || ''}</span></div>
-                    <div class="big vd ${VERDICT(ok)[0]}">${bi(VERDICT(ok)[1], VERDICT(ok)[2])}</div><div class="lbl">${bi('Chance of diving ', '潜れる確率 ')}<b>${shown.txt}</b>${r.swell ? ' 🌊' : ''}${r.ne_rely ? `<br><span style="font-size:0.92em">${bi('incl. ' + r.ne_rely + '% relying on N–NE shelter', 'うち北東風でかわす前提 ' + r.ne_rely + '%')}</span>` : ''}</div>
+                    <div class="big">${shown.big}</div><div class="lbl">${bi('chance of diving', '潜れる確率')}　<span class="vdt ${VERDICT(ok)[0]}">${bi(VERDICT(ok)[1], VERDICT(ok)[2])}</span>${r.swell ? ' 🌊' : ''}${r.ne_rely ? `<br><span style="font-size:0.92em">${bi('incl. ' + r.ne_rely + '% relying on N–NE shelter', 'うち北東風でかわす前提 ' + r.ne_rely + '%')}</span>` : ''}</div>
                     <div class="hbar">${segs}</div>
                     <div class="meta">${far ? `<span>${bi('ref. · ' + l + ' days ahead', '参考・' + l + '日先')}</span>` : `<span>${bi(l + ' days ahead', l + '日先')}</span>`}${delta ? `<span>${delta}</span>` : ''}</div>
                     <div class="stampline"><span class="chip ${jd.stamp}">${bi(s[1], s[0])}</span><span class="n">${sn}</span></div>
