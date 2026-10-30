@@ -289,18 +289,20 @@
         }
 
         // 潜れそうか（凪・穏やか・波あり・荒れ）
-        const OD = P.dive_odds || [];
-        const OC = [['nagi', '#4fa3c7', 'Calm', '凪'], ['futsu', '#8cc9a0', 'Moderate', '穏やか'], ['girigiri', '#e9c46a', 'Choppy', '波あり'], ['dame', '#e76f51', 'Rough', '荒れ']];
+        const OD = P.sea_odds || [];
+        const OC = [['calm', '#4fa3c7', 'Calm', '凪'], ['moderate', '#8cc9a0', 'Moderate', '穏やか'], ['choppy', '#e9c46a', 'Choppy', '波あり'], ['rough', '#e76f51', 'Rough', '荒れ']];
+        const hasNew = r => r && r.dive != null;
+        const fmtPct = (v, far) => far ? { big: `${Math.round(v / 10)}<small>${bi('0% or so', '割前後')}</small>`, txt: bi(`about ${Math.round(v / 10) * 10}%`, `${Math.round(v / 10)}割前後`) } : { big: `${v}<small>%</small>`, txt: `${v}%` };
         const leadD = d => { const t0 = new Date(P.generated_at.slice(0, 10) + 'T00:00:00Z'), t1 = new Date(d + 'T00:00:00Z'); return Math.round((t1 - t0) / 864e5); };
-        const PO = (PREV && PREV.dive_odds) || [];
+        const PO = (PREV && PREV.sea_odds) || [];
         const HERO = ['2026-11-06', '2026-11-07', '2026-11-08'];
         const hero = document.getElementById('tw-hero');
         if (OD.length) {
             hero.innerHTML = HERO.map(dd => {
                 const r = OD.find(x => x.day === dd); if (!r) return '';
-                const ok = (r.nagi || 0) + (r.futsu || 0), l = leadD(dd), far = l > 5;
-                const p = PO.find(x => x.day === dd), pok = p ? (p.nagi || 0) + (p.futsu || 0) : null;
-                const dl = pok == null ? '' : ok - pok;
+                if (!hasNew(r)) return ''; const ok = r.dive, l = leadD(dd), far = l > 5;
+                const p = PO.find(x => x.day === dd), pok = hasNew(p) ? p.dive : null;
+                const dl = pok == null ? '' : ok - pok; const shown = fmtPct(ok, far);
                 const delta = pok == null ? '' : dl === 0 ? bi('same as 3 h ago', '3時間前と同じ') : `<span class="${dl > 0 ? 'up' : 'down'}">${dl > 0 ? '↑' : '↓'}${Math.abs(dl)}</span> ${bi('vs 3 h ago', '3時間前比')}`;
                 const jd = (J && J.days || []).find(x => x.date === dd) || { stamp: 'undecided' };
                 const s = STAMP[jd.stamp] || STAMP.undecided;
@@ -308,7 +310,7 @@
                 const segs = OC.map(([k, c]) => r[k] ? `<span style="width:${r[k]}%;background:${c}"></span>` : '').join('');
                 return `<button type="button" class="tw-hcard${far ? ' far' : ''}" data-d="${dd}">
                     <div class="hd"><span class="d">${day(dd)}</span><span class="role">${ROLE[dd] || ''}</span></div>
-                    <div class="big">${ok}<small>%</small></div><div class="lbl">${bi('chance of diving', '潜れそう')}${r.wave_cap ? ' 🌊' : ''}</div>
+                    <div class="big">${shown.big}</div><div class="lbl">${bi('chance of diving', '潜れそう')}${r.swell ? ' 🌊' : ''}${r.ne_rely ? `<br><span style="font-size:0.92em">${bi('incl. ' + r.ne_rely + '% relying on N–NE shelter', 'うち北東風でかわす前提 ' + r.ne_rely + '%')}</span>` : ''}</div>
                     <div class="hbar">${segs}</div>
                     <div class="meta">${far ? `<span>${bi('ref. · ' + l + ' days ahead', '参考・' + l + '日先')}</span>` : `<span>${bi(l + ' days ahead', l + '日先')}</span>`}${delta ? `<span>${delta}</span>` : ''}</div>
                     <div class="stampline"><span class="chip ${jd.stamp}">${bi(s[1], s[0])}</span><span class="n">${sn}</span></div>
@@ -320,12 +322,12 @@
             }));
         } else hero.innerHTML = `<p class="tw-muted">${bi('Ensemble data unavailable this time.', '今回はアンサンブルを取得できませんでした。')}</p>`;
         document.getElementById('tw-bars').innerHTML = OD.length ? OD.filter(r => r.day >= '2026-11-05').map(r => {
-            const far = leadD(r.day) > 5, ok = (r.nagi || 0) + (r.futsu || 0);
+            if (!hasNew(r)) return ''; const far = leadD(r.day) > 5, ok = r.dive, shown = fmtPct(ok, far);
             const segs = OC.map(([k, c, en, ja]) => r[k] ? `<span style="width:${r[k]}%;background:${c}" title="${ja} ${r[k]}% / ${en}"></span>` : '').join('');
             return `<div class="tw-orow${far ? ' far' : ''}"><span>${day(r.day)}${far ? `<span class="tag">${bi('ref.', '参考')}</span>` : ''}</span>
                 <span class="track">${segs}</span>
-                <span class="ok">${bi('Diveable ', '潜れそう ')}<b>${ok}%</b>${r.wave_cap ? ' 🌊' : ''}</span></div>`;
-        }).join('') + `<p class="tw-legend" style="margin:0.3rem 0 0">${bi('Diveable = Calm + Moderate. 🌊 = swell over 2.5 m caps the day.', '潜れそう＝凪＋穏やか。🌊＝波高2.5m超のため上限「波あり」。')}</p>`
+                <span class="ok">${bi('Dive ', '潜れそう ')}<b>${shown.txt}</b>${r.swell ? ' 🌊' : ''}</span></div>`;
+        }).join('') + `<p class="tw-legend" style="margin:0.3rem 0 0">${bi('Bar = sea state by wind speed. “Dive” is counted separately and includes N–NE winds up to 12 m/s. 🌊 = swell day: no N–NE allowance.', '帯＝風速だけで決めた海の状態。「潜れそう」は別の数で、北〜北東の12m/s未満を含む。🌊＝うねりの日のため北〜北東の上乗せなし。')}</p>`
             : `<p class="tw-muted">${bi('Ensemble data unavailable this time.', '今回はアンサンブルを取得できませんでした。')}</p>`;
 
         // 波のモデル比較
