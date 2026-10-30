@@ -247,7 +247,7 @@
         .tw-legend i { display: inline-block; width: 0.8rem; height: 0.6rem; border-radius: 2px; margin: 0 0.3rem 0 0.9rem; vertical-align: middle; }
         .tw-muted { color: var(--text-secondary); font-size: 0.85rem; }
         .tw-odds { display: grid; gap: 0.45rem; margin-top: 0.4rem; }
-        .tw-orow { display: grid; grid-template-columns: 6.8rem 1fr 8.6rem; align-items: center; gap: 0.6rem; font-size: 0.84rem; font-variant-numeric: tabular-nums; }
+        .tw-orow { display: grid; grid-template-columns: 6.8rem 1fr 10rem; align-items: center; gap: 0.6rem; font-size: 0.84rem; font-variant-numeric: tabular-nums; }
         .tw-orow.far { opacity: 0.55; }
         .tw-orow .track { display: flex; height: 1.05rem; border-radius: 5px; overflow: hidden; background: light-dark(#EEF2F4, #22282c); }
         .tw-orow .track span { display: block; height: 100%; }
@@ -284,6 +284,11 @@
         @media (max-width: 480px) { .tw-days-2 { grid-template-columns: 1fr !important; } }
         .tw-foot { margin-top: 0.8rem; background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent-teal); border-radius: 0 12px 12px 0; padding: 1rem 1.25rem; }
         .tw-ai .sig { display: none; }
+        .tw-hcard .big.vd { font-family: var(--sans, inherit); font-size: clamp(1.5rem, 4.2vw, 2.3rem); font-weight: 800; letter-spacing: 0.02em; margin: 0.55rem 0 0.25rem; }
+        .vd.likely, .vdt.likely { color: #2a8a5c; } .vd.even, .vdt.even { color: #c58a00; } .vd.doubtful, .vdt.doubtful { color: #d0613d; } .vd.unlikely, .vdt.unlikely { color: #b3261e; }
+        .tw-hcard .lbl b { font-size: 1.05em; color: var(--text-primary, inherit); }
+        .tw-hcard.far .big.vd { opacity: 0.8; }
+        .vdt { font-weight: 700; font-size: 0.82em; }
         .tw-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.4rem 0 0.7rem; }
         .tw-tabs button { font: inherit; font-size: 0.86rem; padding: 0.35rem 0.8rem; border-radius: 999px; border: 1px solid var(--border); background: var(--bg-card); color: inherit; cursor: pointer; }
         .tw-tabs button.on { background: #0a5c74; color: #fff; border-color: #0a5c74; font-weight: 600; }
@@ -335,11 +340,11 @@
             <div id="tw-alertbar"></div>
 
             <section class="content-section" id="dive">
-                <h2><span data-lang="en">The three dive days: can we dive?</span><span data-lang="ja">潜る3日間：潜れそうか</span></h2>
+                <h2><span data-lang="en">The three dive days: can we dive?</span><span data-lang="ja">潜る3日間：潜れるか</span></h2>
                 <p class="tw-farline" id="tw-farline"></p>
                 <div class="tw-hero" id="tw-hero"><p class="tw-muted">…</p></div>
                 <div id="tw-c-wind"></div>
-                <details class="tw-more"><summary><span data-lang="en">All five days: sea state and chance of diving (ECMWF ensemble, 51 runs)</span><span data-lang="ja">5日分の内訳：海の状態と潜れそう（ECMWFアンサンブル・51通り）</span></summary>
+                <details class="tw-more"><summary><span data-lang="en">All five days: sea state and chance of diving (ECMWF ensemble, 51 runs)</span><span data-lang="ja">5日分の内訳：海の状態と潜れる確率（ECMWFアンサンブル・51通り）</span></summary>
                     <div class="tw-more-body"><div class="tw-odds" id="tw-bars"></div>
                     <div class="tw-legend tw-odds-legend">
                         <span><i style="background:#4fa3c7"></i><span data-lang="en">Calm</span><span data-lang="ja">凪</span></span>
@@ -349,7 +354,7 @@
                     </div>
                                         <p class="tw-muted" style="margin-top:0.8rem">
                         <span data-lang="en">Two separate counts over the same 51 runs, using each run’s strongest daytime (07–17) wind at Miyako. Sea state uses wind speed only: Calm under 5 m/s, Moderate under 8, Choppy under 12, Rough 12 and above. “Chance of diving” is counted separately: under 8 m/s, or under 12 m/s from the N–NE, which the west side of Shimoji-jima shelters from. On swell days (two or more wave models above 2 m, or a long-period swell of 12 s or more) the N–NE allowance is dropped. Days more than five days away are shown rounded, for reference only. The dive shop decides.</span>
-                        <span data-lang="ja">同じ51通りを、二つの物差しで別々に数えています。使うのは各計算の、宮古島の日中（7〜17時）の最大風速です。海の状態は風速だけで決めます：凪＝5m/s未満、穏やか＝8m/s未満、波あり＝12m/s未満、荒れ＝12m/s以上。「潜れそう」は別に数え、8m/s未満か、下地島の西側でかわせる北〜北東の風なら12m/s未満を数えます。うねりのある日（2つ以上の波浪モデルが2m超、または周期12秒以上のうねり）は、北〜北東の上乗せをしません。5日より先の日は丸めた参考値です。出航を決めるのは現地ショップです。</span>
+                        <span data-lang="ja">同じ51通りを、二つの物差しで別々に数えています。使うのは各計算の、宮古島の日中（7〜17時）の最大風速です。海の状態は風速だけで決めます：凪＝5m/s未満、穏やか＝8m/s未満、波あり＝12m/s未満、荒れ＝12m/s以上。「潜れる確率」は別に数え、8m/s未満か、下地島の西側でかわせる北〜北東の風なら12m/s未満を数えます。うねりのある日（2つ以上の波浪モデルが2m超、または周期12秒以上のうねり）は、北〜北東の上乗せをしません。5日より先の日は丸めた参考値です。出航を決めるのは現地ショップです。</span>
                     </p></div></details>
             </section>
 
