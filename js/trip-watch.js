@@ -293,7 +293,7 @@
         const OC = [['calm', '#4fa3c7', 'Calm', '凪'], ['moderate', '#8cc9a0', 'Moderate', '穏やか'], ['choppy', '#e9c46a', 'Choppy', '波あり'], ['rough', '#e76f51', 'Rough', '荒れ']];
         const hasNew = r => r && r.dive != null;
         const VERDICT = v => v >= 80 ? ['likely', 'Likely', '見込み高い'] : v >= 50 ? ['even', 'Even chance', '五分五分'] : v >= 30 ? ['doubtful', 'Doubtful', '厳しめ'] : ['unlikely', 'Unlikely', '厳しい'];
-        const fmtPct = (v, far) => far ? (Math.round(v / 10) >= 10 ? { big: `9<small>${bi('0%+', '割以上')}</small>`, txt: bi('90% or more', '9割以上') } : { big: `${Math.round(v / 10)}<small>${bi('0% or so', '割前後')}</small>`, txt: bi(`about ${Math.round(v / 10) * 10}%`, `${Math.round(v / 10)}割前後`) }) : { big: `${v}<small>%</small>`, txt: `${v}%` };
+        const fmtPct = (v, far) => ({ big: `${v}<small>%</small>`, txt: `${v}%` });
         const leadD = d => { const t0 = new Date(P.generated_at.slice(0, 10) + 'T00:00:00Z'), t1 = new Date(d + 'T00:00:00Z'); return Math.round((t1 - t0) / 864e5); };
         const PO = (PREV && PREV.sea_odds) || [];
         const HERO = ['2026-11-06', '2026-11-07', '2026-11-08'];
