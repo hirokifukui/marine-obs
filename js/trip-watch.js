@@ -328,7 +328,7 @@
             return `<div class="tw-orow${far ? ' far' : ''}"><span>${day(r.day)}${far ? `<span class="tag">${bi('ref.', '参考')}</span>` : ''}</span>
                 <span class="track">${segs}</span>
                 <span class="ok"><span class="vdt ${VERDICT(ok)[0]}">${bi(VERDICT(ok)[1], VERDICT(ok)[2])}</span> <b>${shown.txt}</b>${r.swell ? ' 🌊' : ''}</span></div>`;
-        }).join('') + `<p class="tw-legend" style="margin:0.3rem 0 0">${bi('Bar = sea state by wind speed. “Chance of diving” is counted separately and includes N–NE winds up to 12 m/s. 🌊 = swell day: no N–NE allowance.', '帯＝風速だけで決めた海の状態。「潜れる確率」は別の数で、北〜北東の12m/s未満を含む。🌊＝うねりの日のため北〜北東の上乗せなし。')}</p>`
+        }).join('') + `<p class="tw-legend" style="margin:0.3rem 0 0">${bi('Bar = sea state by wind speed. “Chance of diving” is counted separately and includes N–NE winds up to 12 m/s, discounted for swell. 🌊 = swell present.', '帯＝風速だけで決めた海の状態。「潜れる確率」は別の数で、北〜北東の12m/s未満を含み、うねりの強さに応じて割り引く。🌊＝うねりあり。')}</p>`
             : `<p class="tw-muted">${bi('Ensemble data unavailable this time.', '今回はアンサンブルを取得できませんでした。')}</p>`;
 
         // 波のモデル比較
