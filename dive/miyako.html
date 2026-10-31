@@ -236,6 +236,7 @@
         .dp-list h3 { font-size: 0.95rem; margin: 0 0 0.3rem; display: flex; align-items: center; gap: 0.4rem; }
         .dp-list h3 i { width: 0.65rem; height: 0.65rem; border-radius: 50%; display: inline-block; }
         .dp-list a { display: block; font-size: 0.86rem; padding: 0.1rem 0; cursor: pointer; }
+        .dp-about { border: 1px solid light-dark(#e3c27a, #6b5a2e); background: light-dark(#FFF9EC, #2a2416); border-radius: 10px; padding: 0.8rem 1rem; font-size: 0.88rem; line-height: 1.85; margin: 0 0 0.8rem; }
         .dp-how { font-size: 0.84rem; line-height: 1.8; color: var(--text-secondary); margin: 0 0 0.8rem; }
         .dp-media { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; margin-top: 0.7rem; }
         .dp-media figure { margin: 0; }
@@ -265,6 +266,7 @@
                 <h1><span data-lang="en">Miyako-jima dive sites</span><span data-lang="ja">宮古島のダイビングポイント</span></h1>
                 <div class="tagline"><span data-lang="en">Tap a site for a short note, then “More” for details.</span><span data-lang="ja">ポイントを押すと短い説明、「詳しく」で詳細が出ます。</span> <span id="dp-count"></span></div>
             </div>
+            <div class="dp-about"><span data-lang="en"><b>About this page.</b> This is a reference sheet compiled automatically by a generative AI (Claude) from information that dive shops and guides publish online. Nobody has dived it to check. Many site positions are off, and names, depths and features differ between shops or may be out of date, so expect it to differ quite a lot from what divers who know the area see. Use it as a rough overview, and confirm sites and plans with a local dive shop.</span><span data-lang="ja"><b>このページについて：</b>ショップやガイドが公開している情報をもとに、生成AI（Claude）が自動でまとめた参考資料です。現地で潜って確かめたものではありません。ポイントの位置の多くは実際とずれていて、名前・水深・特徴も、ショップによって違ったり古かったりします。よく潜っている人の感覚とは、かなり違うところがあるはずです。おおまかな見取り図として使い、潜るポイントと計画は現地のショップに確かめてください。</span></div>
             <p class="dp-how"><span data-lang="en"><b>How the sites were chosen:</b> we collected the names listed on nine public pages of Miyako dive shops and guides (each site lists its sources), merged obvious aliases, and ended with 104 sites. Shops name and divide sites differently, so some places may appear twice and others are missing; many Yabiji (Yaebishi) sites are names only.</span><span data-lang="ja"><b>ポイントの選び方：</b>宮古島のダイビングショップ・ガイドが公開しているページ9つ（各ポイントの出典に記載）に載っていた名前を集め、明らかな別名をまとめて104か所にしました。ショップによって呼び名や区切り方が違うため、同じ場所が二重に入っていたり、載っていないポイントがあったりします。八重干瀬の多くは名前しか分かっていません。</span></p>
             <div class="dp-chips" id="dp-chips"></div>
             <div class="dp-grid one">
