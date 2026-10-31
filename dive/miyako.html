@@ -245,6 +245,13 @@
         .dp-ai { border: 1px dashed light-dark(#9aa7ad, #55636a); background: light-dark(#F6F8F9, #1c2124); border-radius: 8px; padding: 0.6rem 0.75rem; font-size: 0.88rem; line-height: 1.85; margin-top: 0.7rem; }
         .dp-ai .tag { display: inline-block; font-size: 0.66rem; font-weight: 700; border: 1px solid currentColor; border-radius: 999px; padding: 0 0.45rem; margin-right: 0.4rem; color: var(--text-secondary); }
         .dp-ai .sig { display: block; font-size: 0.7rem; color: var(--text-secondary); margin-top: 0.25rem; }
+        .dp-grid.one { grid-template-columns: 1fr; }
+        .dp-modal { position: fixed; inset: 0; z-index: 2000; display: none; align-items: flex-start; justify-content: center; background: rgba(10,14,20,0.55); padding: 4vh 1rem; overflow-y: auto; }
+        .dp-modal.open { display: flex; }
+        .dp-modal .dp-detail { position: relative; width: min(760px, 100%); padding: 1.3rem 1.4rem 1.2rem; }
+        .dp-modal .close { position: absolute; top: 0.6rem; right: 0.7rem; font: inherit; font-size: 1.3rem; line-height: 1; border: 0; background: transparent; color: var(--text-secondary); cursor: pointer; padding: 0.3rem 0.5rem; }
+        .dp-modal .dp-media { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+        body.dp-lock { overflow: hidden; }
         .dp-note { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.8; margin-top: 0.8rem; padding-left: 0.7rem; border-left: 2px solid var(--border); }
 </style>
 
@@ -260,12 +267,12 @@
             </div>
             <p class="dp-how"><span data-lang="en"><b>How the sites were chosen:</b> we collected the names listed on nine public pages of Miyako dive shops and guides (each site lists its sources), merged obvious aliases, and ended with 104 sites. Shops name and divide sites differently, so some places may appear twice and others are missing; many Yabiji (Yaebishi) sites are names only.</span><span data-lang="ja"><b>ポイントの選び方：</b>宮古島のダイビングショップ・ガイドが公開しているページ9つ（各ポイントの出典に記載）に載っていた名前を集め、明らかな別名をまとめて104か所にしました。ショップによって呼び名や区切り方が違うため、同じ場所が二重に入っていたり、載っていないポイントがあったりします。八重干瀬の多くは名前しか分かっていません。</span></p>
             <div class="dp-chips" id="dp-chips"></div>
-            <div class="dp-grid">
+            <div class="dp-grid one">
                 <div id="dp-map" class="dp-map"></div>
-                <aside class="dp-detail" id="dp-detail"><p class="tw-muted" style="color:var(--text-secondary)"><span data-lang="en">Choose a site on the map or in the list.</span><span data-lang="ja">地図か一覧からポイントを選んでください。</span></p></aside>
             </div>
             <p class="dp-note"><span data-lang="en">Positions are approximate. Sites marked “near” are placed beside a named landmark; the rest are spread along their area’s coast (or across the Yabiji reefs) and do not show the real spot. Not for navigation or dive planning. Names, features and depths are compiled from the dive-shop and guide pages listed under each site.</span><span data-lang="ja">位置は目安です。「近く」と付いたポイントは名前のある場所のそばに置き、それ以外はエリアの海岸沿い（八重干瀬は礁域の中）に並べただけで、実際の場所ではありません。航行や潜水計画には使えません。名前・特徴・水深は、各ポイントに記した出典（ショップ・ガイドのページ）からまとめています。</span></p>
             <div class="dp-list" id="dp-list"></div>
+            <div class="dp-modal" id="dp-modal" role="dialog" aria-modal="true"><div class="dp-detail" id="dp-detail"></div></div>
         </div>
     </main>
 

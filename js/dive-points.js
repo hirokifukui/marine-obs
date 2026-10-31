@@ -25,7 +25,7 @@
     }
     function detail(p) {
         const near = p.precision === 'near';
-        document.getElementById('dp-detail').innerHTML = `
+        document.getElementById('dp-detail').innerHTML = `<button type="button" class="close" aria-label="close" onclick="window.__dpClose()">×</button>
             <h2>${esc(p.name)}</h2>${p.alias ? `<div class="alias">${bi('also: ', '別名：')}${esc(p.alias)}</div>` : ''}
             <dl>
                 <dt>${bi('Area', 'エリア')}</dt><dd>${esc(p.area)}</dd>
@@ -42,11 +42,14 @@
             <div class="f">${esc(p.features || '')}${p.depth ? ' · ' + esc(p.depth) : ''}</div>
             <button type="button" data-i="${data.points.indexOf(p)}">${bi('More', '詳しく')}</button></div>`;
     }
+    function openDetail(i) {
+        detail(data.points[i]);
+        const m = document.getElementById('dp-modal'); m.classList.add('open'); m.scrollTop = 0; document.body.classList.add('dp-lock');
+    }
+    window.__dpClose = () => { document.getElementById('dp-modal').classList.remove('open'); document.body.classList.remove('dp-lock'); };
     function select(i, fly) {
         const p = data.points[i];
-        detail(p);
-        if (fly) { map.flyTo([p.lat, p.lng], Math.max(map.getZoom(), 13), { duration: 0.6 }); markers[i].openPopup(); }
-        if (window.innerWidth <= 900) document.getElementById('dp-detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (fly) { map.flyTo([p.lat, p.lng], Math.max(map.getZoom(), 13), { duration: 0.6 }); setTimeout(() => markers[i].openPopup(), 650); }
     }
     async function init() {
         data = await (await fetch(`../data/dive-points/${SITE}.json`)).json();
@@ -61,10 +64,11 @@
         data.points.forEach((p, i) => {
             const m = L.circleMarker([p.lat, p.lng], { radius: p.precision === 'near' ? 7 : 6, color: '#fff', weight: 1.5, fillColor: col[p.area], fillOpacity: p.precision === 'near' ? 0.95 : 0.75, dashArray: p.precision === 'near' ? null : '2 2' })
                 .bindPopup(popup(p)).bindTooltip(esc(p.name), { direction: 'top', offset: [0, -6] });
-            m.on('click', () => detail(p));
             m.addTo(layers[p.area]); markers[i] = m;
         });
-        map.on('popupopen', e => { const b = e.popup.getElement().querySelector('button[data-i]'); if (b) b.onclick = () => select(+b.dataset.i, false); });
+        map.on('popupopen', e => { const b = e.popup.getElement().querySelector('button[data-i]'); if (b) b.onclick = () => openDetail(+b.dataset.i); });
+        document.getElementById('dp-modal').addEventListener('click', e => { if (e.target.id === 'dp-modal') window.__dpClose(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') window.__dpClose(); });
         const B = L.latLngBounds(data.points.map(p => [p.lat, p.lng])).pad(0.05);
         map.fitBounds(B);
         setTimeout(() => { map.invalidateSize(); map.fitBounds(B); }, 300);
