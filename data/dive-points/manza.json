@@ -1,0 +1,806 @@
+{
+ "site": "manza",
+ "title": "万座",
+ "center": [
+  26.506,
+  127.865
+ ],
+ "points": [
+  {
+   "name": "万座毛下",
+   "alias": "万座毛／トリプルロック",
+   "area": "万座毛まわり",
+   "features": "断崖の真下・沖へ並ぶ大きな根・潮通しがよく魚影が濃い",
+   "depth": "27-40m",
+   "lat": 26.5072,
+   "lng": 127.8503,
+   "precision": "near",
+   "position_note": "万座毛",
+   "sources": [
+    {
+     "key": "DB",
+     "name": "ディアブルー",
+     "url": "https://www.dearblue.jp/manza/"
+    },
+    {
+     "key": "DO",
+     "name": "ディ・オア・ディ",
+     "url": "https://www.dordokinawa.jp/point"
+    },
+    {
+     "key": "LV",
+     "name": "リヴァイアサン",
+     "url": "https://www.ds-leviathan.com/point05/"
+    },
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [
+    {
+     "type": "photo",
+     "src": "https://live.staticflickr.com/65535/15855318265_b4743ca741_b.jpg",
+     "page": "https://www.flickr.com/photos/127041099@N08/15855318265",
+     "title": "万座毛",
+     "author": "jonathan.leung",
+     "license": "CC BY 2.0",
+     "license_url": "https://creativecommons.org/licenses/by/2.0/",
+     "via": "Flickr",
+     "area": false
+    },
+    {
+     "type": "photo",
+     "src": "https://live.staticflickr.com/8818/17175506920_64b7761676_b.jpg",
+     "page": "https://www.flickr.com/photos/42160904@N08/17175506920",
+     "title": "Shieldon in Onna, Okinawa 3 (Cape Manza)",
+     "author": "Kasadera",
+     "license": "CC BY 2.0",
+     "license_url": "https://creativecommons.org/licenses/by/2.0/",
+     "via": "Flickr",
+     "area": false
+    },
+    {
+     "type": "photo",
+     "src": "https://live.staticflickr.com/8776/17155622187_44fd4cee42_b.jpg",
+     "page": "https://www.flickr.com/photos/42160904@N08/17155622187",
+     "title": "Shieldon in Onna, Okinawa 1 (Cape Manza)",
+     "author": "Kasadera",
+     "license": "CC BY 2.0",
+     "license_url": "https://creativecommons.org/licenses/by/2.0/",
+     "via": "Flickr",
+     "area": false
+    }
+   ],
+   "commentary_ja": "万座毛下は、万座毛の断崖の真下に位置するポイントで、「万座毛」や「トリプルロック」とも呼ばれる。沖へ向かって大きな根が並び、潮通しがよく魚影が濃いとされる。最大水深は27〜40mほど。北西に開けた海域のため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏である。",
+   "commentary_en": "Manzamo-shita, also known as Manzamo or Triple Rock, lies directly beneath the cliffs of Manzamo, with large rock formations lined up heading offshore. The site has good current flow and is described as rich in fish, with a maximum depth of around 27–40 m. Because the area opens to the northwest, swells tend to come in during the northerly winter monsoon, while calm days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "万座ドリームホール",
+   "alias": "ドリームホール",
+   "area": "万座毛まわり",
+   "features": "5mから25mへ降りる縦穴と横穴・出口の青い光とハタンポの群れ",
+   "depth": "25-40m",
+   "lat": 26.50533,
+   "lng": 127.84202,
+   "precision": "area",
+   "position_note": "万座毛 北側の崖",
+   "sources": [
+    {
+     "key": "DB",
+     "name": "ディアブルー",
+     "url": "https://www.dearblue.jp/manza/"
+    },
+    {
+     "key": "BC",
+     "name": "青の洞窟ダイビング",
+     "url": "https://bluecave-okinawa.jp/manza/"
+    },
+    {
+     "key": "DO",
+     "name": "ディ・オア・ディ",
+     "url": "https://www.dordokinawa.jp/point"
+    },
+    {
+     "key": "LV",
+     "name": "リヴァイアサン",
+     "url": "https://www.ds-leviathan.com/point05/"
+    },
+    {
+     "key": "FS",
+     "name": "フリースタイル沖縄",
+     "url": "https://www.freestyle-diving.okinawa/fun/boat/manza/"
+    },
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "万座ドリームホールは万座毛まわりにあるポイントで、「ドリームホール」とも呼ばれる。水深5mから25mへ降りる縦穴と横穴が特徴で、出口には青い光が差し、ハタンポの群れが見られる。最大水深は25〜40mとされる。万座は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏である。",
+   "commentary_en": "Manza Dream Hole, also known simply as Dream Hole, lies around Cape Manzamo and features a vertical shaft that drops from 5 m to 25 m along with a horizontal passage, where blue light shows at the exit and schools of sweepers gather. The maximum depth is given as 25–40 m. Because Manza faces northwest, swell tends to come in during the northerly winter monsoon, while calm days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ミニドリームホール",
+   "alias": "",
+   "area": "万座毛まわり",
+   "features": "小さめの縦穴洞窟・出口は浅め・初心者向き",
+   "depth": "17-30m",
+   "lat": 26.50597,
+   "lng": 127.84625,
+   "precision": "area",
+   "position_note": "万座毛 北側の崖",
+   "sources": [
+    {
+     "key": "DB",
+     "name": "ディアブルー",
+     "url": "https://www.dearblue.jp/manza/"
+    },
+    {
+     "key": "BC",
+     "name": "青の洞窟ダイビング",
+     "url": "https://bluecave-okinawa.jp/manza/"
+    },
+    {
+     "key": "DO",
+     "name": "ディ・オア・ディ",
+     "url": "https://www.dordokinawa.jp/point"
+    },
+    {
+     "key": "LV",
+     "name": "リヴァイアサン",
+     "url": "https://www.ds-leviathan.com/point05/"
+    },
+    {
+     "key": "FS",
+     "name": "フリースタイル沖縄",
+     "url": "https://www.freestyle-diving.okinawa/fun/boat/manza/"
+    },
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ミニドリームホールは、沖縄本島西海岸・恩納村の万座毛まわりにあるポイントです。小さめの縦穴洞窟が特徴で、出口は浅めの位置にあり、初心者向きとされています。水深は17〜30mです。万座周辺はボートで短時間で行けるポイントが多い海域です。北西に開けているため冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Mini Dream Hole is a site near Cape Manzamo in Onna Village, on the west coast of Okinawa's main island, featuring a small vertical cave with a relatively shallow exit and described as suitable for beginners. Depths range from 17 to 30 m, and like many Manza sites it is a short boat ride away. Because the area faces northwest, swells tend to come in during the winter northerly monsoon, while calmer days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ゴジラ",
+   "alias": "",
+   "area": "万座毛まわり",
+   "features": "割れ目の地形・ドリームホールから流して潜る",
+   "depth": "",
+   "lat": 26.5066,
+   "lng": 127.84861,
+   "precision": "area",
+   "position_note": "万座毛 北側の崖",
+   "sources": [
+    {
+     "key": "DO",
+     "name": "ディ・オア・ディ",
+     "url": "https://www.dordokinawa.jp/point"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ゴジラは沖縄本島西海岸、恩納村の万座毛まわりにあるポイントで、割れ目の地形が特徴とされています。ドリームホールから流して潜るかたちで紹介されることがあります。最大水深は公開情報では確認できません。万座は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Godzilla is a dive site around Cape Manzamo in Onna Village, on the west coast of Okinawa's main island, noted for its crevice formations and sometimes dived as a drift starting from Dream Hole. Its maximum depth is not given in public sources. Because Manza faces northwest, swells tend to roll in during the northerly winter monsoon, while calm days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "オーバーヘッドロック",
+   "alias": "",
+   "area": "万座毛まわり",
+   "features": "大きく張り出した岩・横穴にウミガメやホワイトチップ",
+   "depth": "40m",
+   "lat": 26.50672,
+   "lng": 127.85241,
+   "precision": "area",
+   "position_note": "万座毛 北側の崖",
+   "sources": [
+    {
+     "key": "DB",
+     "name": "ディアブルー",
+     "url": "https://www.dearblue.jp/manza/"
+    },
+    {
+     "key": "DO",
+     "name": "ディ・オア・ディ",
+     "url": "https://www.dordokinawa.jp/point"
+    },
+    {
+     "key": "FS",
+     "name": "フリースタイル沖縄",
+     "url": "https://www.freestyle-diving.okinawa/fun/boat/manza/"
+    },
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "オーバーヘッドロックは、沖縄本島西海岸、恩納村の万座毛まわりにあるポイントです。大きく張り出した岩が特徴で、その横穴にはウミガメやホワイトチップが見られることがあります。最大水深は40mです。万座は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Overhead Rock lies in the Manzamo area of Onna Village on Okinawa Island's west coast and is known for a large overhanging rock whose side holes may hold sea turtles and whitetip reef sharks. The maximum depth is 40 m. Because Manza faces northwest, swell tends to build during the northerly winter monsoon, while calmer days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "顔面ホール",
+   "alias": "",
+   "area": "万座毛まわり",
+   "features": "顔のような岩壁の洞窟と光",
+   "depth": "30m",
+   "lat": 26.50791,
+   "lng": 127.85582,
+   "precision": "area",
+   "position_note": "万座毛 北側の崖",
+   "sources": [
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "顔面ホールは、沖縄本島西海岸・恩納村の万座毛まわりにあるポイントです。顔のように見える岩壁の洞窟と、そこに見られる光が特徴とされ、最大水深は30mです。万座は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。万座のポイントの多くはボートで短時間で行けます。",
+   "commentary_en": "Ganmen Hole is a site near Cape Manzamo in Onna Village, on the west coast of Okinawa Island. It is known for a cave in a rock wall that resembles a face and for the light seen there, with a maximum depth of 30 m. Because Manza faces northwest, swells tend to come in during the winter northerly monsoon, and calm days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "万座毛南",
+   "alias": "",
+   "area": "万座毛南〜恩納",
+   "features": "閉じた鍾乳洞に入れるが海況と干満で日が限られる",
+   "depth": "15m",
+   "lat": 26.49448,
+   "lng": 127.83752,
+   "precision": "area",
+   "position_note": "万座毛の南〜恩納",
+   "sources": [
+    {
+     "key": "LV",
+     "name": "リヴァイアサン",
+     "url": "https://www.ds-leviathan.com/point05/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "万座毛南は、万座毛の南側から恩納にかけてのエリアにあるポイントで、最大水深は15mです。閉じた鍾乳洞に入れることが特徴ですが、海況や潮の干満によって入れる日は限られます。万座の海は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Manzamo South lies in the area stretching from just south of Cape Manzamo toward Onna, with a maximum depth of 15 m. Its main feature is an enclosed limestone cave that divers can enter, though sea conditions and the tide limit the days when this is possible. Because the Manza coast opens to the northwest, swell tends to build during the winter northerly monsoon, while calm days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "恩納ポイント",
+   "alias": "",
+   "area": "万座毛南〜恩納",
+   "features": "迷路状のクレバスと水路・沖に砂地・初心者向き",
+   "depth": "20-25m",
+   "lat": 26.50186,
+   "lng": 127.84585,
+   "precision": "area",
+   "position_note": "万座毛の南〜恩納",
+   "sources": [
+    {
+     "key": "DB",
+     "name": "ディアブルー",
+     "url": "https://www.dearblue.jp/manza/"
+    },
+    {
+     "key": "DO",
+     "name": "ディ・オア・ディ",
+     "url": "https://www.dordokinawa.jp/point"
+    },
+    {
+     "key": "LV",
+     "name": "リヴァイアサン",
+     "url": "https://www.ds-leviathan.com/point05/"
+    },
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "恩納ポイントは、万座毛の南から恩納にかけてのエリアにあるダイビングポイントです。迷路のように入り組んだクレバスや水路が続き、沖側には砂地が広がります。初心者向きとされ、最大水深は20〜25mほどです。沖縄本島西海岸の北西に開けた海域にあたるため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Onna Point lies between the area south of Cape Manzamo and Onna, on the west coast of Okinawa's main island, and is generally regarded as suitable for beginners. Its features include a maze-like network of crevices and channels, with a sandy bottom farther offshore, and a maximum depth of around 20–25 m. Because the area faces northwest, swell tends to reach it during the winter northerly monsoon, while calmer days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "トライアングル",
+   "alias": "トライアングルホール",
+   "area": "万座毛南〜恩納",
+   "features": "満潮で穏やかな日だけの洞窟・エアドームと鍾乳石",
+   "depth": "",
+   "lat": 26.50182,
+   "lng": 127.84164,
+   "precision": "area",
+   "position_note": "万座毛の南〜恩納",
+   "sources": [
+    {
+     "key": "DO",
+     "name": "ディ・オア・ディ",
+     "url": "https://www.dordokinawa.jp/point"
+    },
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "トライアングル（別名トライアングルホール）は、万座毛の南から恩納にかけてのエリアにあるポイントです。特徴は洞窟で、内部にはエアドームと鍾乳石があります。潜れるのは満潮で海が穏やかな日に限られます。万座は北西に開けていて冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。最大水深は公開されていません。",
+   "commentary_en": "Triangle, also called Triangle Hole, lies in the area between south of Cape Manzamo and Onna, and is known for a cave with an air dome and stalactites. It can only be dived at high tide on calm days, and because Manza faces northwest, swell tends to come in during the winter northerly monsoon, while calm days are more common in summer. No maximum depth has been published.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "アポガマ",
+   "alias": "",
+   "area": "万座毛南〜恩納",
+   "features": "ドロップオフの壁の穴・流れがあると大物",
+   "depth": "30-40m",
+   "lat": 26.49164,
+   "lng": 127.83982,
+   "precision": "area",
+   "position_note": "万座毛の南〜恩納",
+   "sources": [
+    {
+     "key": "LV",
+     "name": "リヴァイアサン",
+     "url": "https://www.ds-leviathan.com/point05/"
+    },
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "アポガマは、万座毛の南から恩納にかけてのエリアにあるポイントです。ドロップオフの壁にある穴が地形の特徴で、潮の流れがある日には大物が見られることがあるとされています。最大水深は30〜40mほどです。万座の海は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Apogama lies in the area stretching from south of Cape Manzamo toward Onna, and its main feature is a drop-off wall with holes in it. When there is a current, larger fish are said to appear, and the maximum depth is around 30–40 m. Because Manza faces northwest, swell tends to come in during the winter northerly monsoon, while calm days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ホーシュー",
+   "alias": "",
+   "area": "万座岬（ホテル前）",
+   "features": "馬の蹄形の巨岩とドロップオフ・2本のトンネル・回遊魚",
+   "depth": "32-40m",
+   "lat": 26.50714,
+   "lng": 127.85665,
+   "precision": "area",
+   "position_note": "万座岬（ホテルの岬）",
+   "sources": [
+    {
+     "key": "DB",
+     "name": "ディアブルー",
+     "url": "https://www.dearblue.jp/manza/"
+    },
+    {
+     "key": "BC",
+     "name": "青の洞窟ダイビング",
+     "url": "https://bluecave-okinawa.jp/manza/"
+    },
+    {
+     "key": "DO",
+     "name": "ディ・オア・ディ",
+     "url": "https://www.dordokinawa.jp/point"
+    },
+    {
+     "key": "LV",
+     "name": "リヴァイアサン",
+     "url": "https://www.ds-leviathan.com/point05/"
+    },
+    {
+     "key": "FS",
+     "name": "フリースタイル沖縄",
+     "url": "https://www.freestyle-diving.okinawa/fun/boat/manza/"
+    },
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ホーシューは万座岬のホテル前にあるポイントで、名前のとおり馬の蹄のような形をした巨岩とドロップオフが特徴とされる。2本のトンネルがあり、回遊魚が見られることもある。最大水深は32〜40mと幅をもって伝えられている。北西に開けた万座の海に面するため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏である。",
+   "commentary_en": "Horseshoe lies off the hotel at Cape Manza and is known for a large horseshoe-shaped rock, a drop-off, and two tunnels, with pelagic fish sometimes seen. Maximum depth is given as 32–40 m. Because Manza faces northwest, swell tends to build during the winter northerly monsoon, while calm days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ホーシュー北",
+   "alias": "",
+   "area": "万座岬（ホテル前）",
+   "features": "流れが速く深いドロップオフ・イソマグロやサメ",
+   "depth": "40m",
+   "lat": 26.50896,
+   "lng": 127.85375,
+   "precision": "area",
+   "position_note": "万座岬（ホテルの岬）",
+   "sources": [
+    {
+     "key": "DB",
+     "name": "ディアブルー",
+     "url": "https://www.dearblue.jp/manza/"
+    },
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ホーシュー北は、沖縄本島西海岸・恩納村の万座岬、ホテル前のエリアにあるポイントです。流れが速く、深く落ち込むドロップオフが特徴で、イソマグロやサメが見られることがあります。最大水深は40m。万座は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Horseshoe North lies off Cape Manza, in front of the hotel, on the west coast of Okinawa's main island in Onna Village. The site is known for strong currents and a deep drop-off, where dogtooth tuna and sharks may be seen, with a maximum depth of 40 m. Because the Manza area faces northwest, swells tend to arrive during the winter northerly monsoon, while calm days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "コーラル",
+   "alias": "万座コーラル",
+   "area": "万座岬（ホテル前）",
+   "features": "浅場のサンゴと深場の砂地のガーデンイール",
+   "depth": "40m",
+   "lat": 26.50707,
+   "lng": 127.8639,
+   "precision": "area",
+   "position_note": "万座岬（ホテルの岬）",
+   "sources": [
+    {
+     "key": "DB",
+     "name": "ディアブルー",
+     "url": "https://www.dearblue.jp/manza/"
+    },
+    {
+     "key": "DO",
+     "name": "ディ・オア・ディ",
+     "url": "https://www.dordokinawa.jp/point"
+    },
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「コーラル」は万座岬のホテル前に位置するポイントで、「万座コーラル」とも呼ばれる。浅場にはサンゴが広がり、深場の砂地ではガーデンイールが見られる。最大水深は40m。万座は沖縄本島の西海岸にあり北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏とされる。",
+   "commentary_en": "Coral, also known as Manza Coral, lies off Cape Manza in front of the hotel, with coral in the shallows and garden eels on the deeper sandy bottom. The maximum depth is 40 m. Because Manza is on Okinawa's west coast and open to the northwest, swell tends to come in during the northerly winter monsoon, while calm days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ホテルエッジ",
+   "alias": "",
+   "area": "万座岬（ホテル前）",
+   "features": "流れのあるドリフト・割れた大岩・回遊魚",
+   "depth": "40m",
+   "lat": 26.50962,
+   "lng": 127.85973,
+   "precision": "area",
+   "position_note": "万座岬（ホテルの岬）",
+   "sources": [
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ホテルエッジは、沖縄本島西海岸・恩納村の万座岬、ホテル前にあるポイントです。流れに乗って進むドリフトダイビングが特徴とされ、割れた大岩の地形や回遊魚が見どころに挙げられています。最大水深は40m。ボートで短時間で行けるポイントが多い万座ですが、北西に開けているため冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Hotel Edge lies off the hotel at Cape Manza, near Manzamo in Onna on Okinawa's west coast, and is known as a drift dive with current, split boulders, and pelagic fish, reaching a maximum depth of 40 m. Like much of Manza, which faces northwest, it tends to see swell during the winter northerly monsoon, while calmer days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "クロスライン",
+   "alias": "",
+   "area": "万座湾〜瀬良垣",
+   "features": "砂地と古い漁礁のロープ・トウアカクマノミ・ハゼ類",
+   "depth": "20m",
+   "lat": 26.51101,
+   "lng": 127.86535,
+   "precision": "area",
+   "position_note": "万座湾〜瀬良垣",
+   "sources": [
+    {
+     "key": "DB",
+     "name": "ディアブルー",
+     "url": "https://www.dearblue.jp/manza/"
+    },
+    {
+     "key": "BC",
+     "name": "青の洞窟ダイビング",
+     "url": "https://bluecave-okinawa.jp/manza/"
+    },
+    {
+     "key": "DO",
+     "name": "ディ・オア・ディ",
+     "url": "https://www.dordokinawa.jp/point"
+    },
+    {
+     "key": "LV",
+     "name": "リヴァイアサン",
+     "url": "https://www.ds-leviathan.com/point05/"
+    },
+    {
+     "key": "FS",
+     "name": "フリースタイル沖縄",
+     "url": "https://www.freestyle-diving.okinawa/fun/boat/manza/"
+    },
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "クロスラインは、恩納村の万座湾から瀬良垣にかけてのエリアにあるポイントです。砂地に古い漁礁のロープが残り、トウアカクマノミやハゼ類が見られます。最大水深は20m。万座は沖縄本島西海岸の北西に開けた海で、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Cross Line lies between Manza Bay and Seragaki in Onna Village, on the west coast of Okinawa's main island, with a maximum depth of 20 m. The site features sandy bottom with ropes from an old artificial fishing reef, where Clark's anemonefish and various gobies can be seen. Because Manza faces northwest, swell tends to come in during the winter northerly monsoon, while calm days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ナカユクイ",
+   "alias": "なかゆくい",
+   "area": "万座湾〜瀬良垣",
+   "features": "白い砂地とサンゴの根・穏やか",
+   "depth": "25-30m",
+   "lat": 26.5105,
+   "lng": 127.8625,
+   "precision": "area",
+   "position_note": "万座湾〜瀬良垣",
+   "sources": [
+    {
+     "key": "DB",
+     "name": "ディアブルー",
+     "url": "https://www.dearblue.jp/manza/"
+    },
+    {
+     "key": "BC",
+     "name": "青の洞窟ダイビング",
+     "url": "https://bluecave-okinawa.jp/manza/"
+    },
+    {
+     "key": "DO",
+     "name": "ディ・オア・ディ",
+     "url": "https://www.dordokinawa.jp/point"
+    },
+    {
+     "key": "LV",
+     "name": "リヴァイアサン",
+     "url": "https://www.ds-leviathan.com/point05/"
+    },
+    {
+     "key": "FS",
+     "name": "フリースタイル沖縄",
+     "url": "https://www.freestyle-diving.okinawa/fun/boat/manza/"
+    },
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ナカユクイ（なかゆくい）は、万座湾から瀬良垣にかけてのエリアにあるポイントです。白い砂地とサンゴの根が見られ、比較的穏やかな環境とされています。最大水深は25〜30m程度。万座は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。ボートで短時間で行けるポイントが多いエリアでもあります。",
+   "commentary_en": "Nakayukui (also written \"なかゆくい\") is a site in the area between Manza Bay and Seragaki, featuring white sand and coral bommies in generally calm conditions, with a maximum depth of around 25–30 m. Because Manza faces northwest, swell tends to come in during the winter northerly monsoon, while calm days are more common in summer. Many sites in the area are a short boat ride away.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "瀬良垣インリーフ",
+   "alias": "",
+   "area": "万座湾〜瀬良垣",
+   "features": "体験ダイビング向けの浅場",
+   "depth": "4m",
+   "lat": 26.51376,
+   "lng": 127.87133,
+   "precision": "area",
+   "position_note": "万座湾〜瀬良垣",
+   "sources": [
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "瀬良垣インリーフは、沖縄本島西海岸・恩納村の万座湾から瀬良垣にかけてのエリアにあるポイントで、体験ダイビング向けの浅場とされている。最大水深は4m。万座周辺は北西に開けており、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏とされる。これ以外に、地形や見られる生き物についての公開情報はほとんどない。",
+   "commentary_en": "Sera-gaki In-Reef is a shallow site in the Manza Bay to Seragaki area of Onna Village, on the west coast of Okinawa's main island. It is described as suited to introductory dives, with a maximum depth of 4 m. Because Manza faces northwest, swell tends to come in during the winter northerly monsoon and calm days are more common in summer, but little other public information on its terrain or marine life is available.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "瀬良垣アウトリーフ",
+   "alias": "",
+   "area": "万座湾〜瀬良垣",
+   "features": "ビーチから入れる・魚影が濃い・深場にハゼ",
+   "depth": "40m",
+   "lat": 26.50894,
+   "lng": 127.87712,
+   "precision": "area",
+   "position_note": "万座湾〜瀬良垣",
+   "sources": [
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "瀬良垣アウトリーフは、恩納村の万座湾から瀬良垣にかけてのエリアにあるポイントです。ビーチからエントリーでき、魚影が濃いとされています。深場ではハゼが見られ、最大水深は40mです。沖縄本島西海岸の北西に開けた海域にあるため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Sesoko Outreef (Serakaki Outreef) lies in the area between Manza Bay and Serakaki in Onna Village. It can be entered from the beach, is known for abundant fish, and has gobies in its deeper section, with a maximum depth of 40 m. Because this stretch of Okinawa's west coast opens to the northwest, swell tends to come in during the northerly winter monsoon, and calm days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "恋人岬",
+   "alias": "",
+   "area": "安富祖〜名嘉真",
+   "features": "オーバーハング下のハナミノカサゴ・ガレ場のジョーフィッシュ",
+   "depth": "35m",
+   "lat": 26.5085,
+   "lng": 127.88,
+   "precision": "area",
+   "position_note": "安富祖〜名嘉真",
+   "sources": [
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "恋人岬は、恩納村の万座エリアのうち安富祖から名嘉真にかけての沿岸にあるポイントで、最大水深は35m。オーバーハングの下ではハナミノカサゴ、ガレ場ではジョーフィッシュが見られることで知られる。万座の海は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏とされる。",
+   "commentary_en": "Koibito-misaki lies along the coast between Afuso and Nakama in the Manza area of Onna Village, with a maximum depth of 35 m. It is known for spotfin lionfish beneath an overhang and jawfish in the rubble areas. Because Manza faces northwest, swell tends to reach the site during the winter northerly monsoon, while calmer days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "シルジナー",
+   "alias": "",
+   "area": "安富祖〜名嘉真",
+   "features": "変わった形のサンゴと岩の浅場から深場の砂地",
+   "depth": "35m",
+   "lat": 26.51535,
+   "lng": 127.90316,
+   "precision": "area",
+   "position_note": "安富祖〜名嘉真",
+   "sources": [
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "シルジナーは、恩納村の安富祖から名嘉真にかけてのエリアにあるポイントです。浅場には変わった形のサンゴや岩が見られ、そこから深場の砂地へと地形が続いていて、最大水深は35mです。万座は沖縄本島の西海岸にあり北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Shirujinā is a dive site in the Abu to Nakama area of Onna Village, within the Manza region. Unusually shaped coral and rocks in the shallows give way to sandy bottom at depth, with a maximum depth of 35 m. Because Manza lies on Okinawa's west coast and opens to the northwest, swell tends to come in during the northerly winter monsoon, while calm days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ミッションビーチ",
+   "alias": "",
+   "area": "安富祖〜名嘉真",
+   "features": "浅く穏やか・スズメダイ類",
+   "depth": "10m",
+   "lat": 26.5195,
+   "lng": 127.906,
+   "precision": "near",
+   "position_note": "ミッションビーチ",
+   "sources": [
+    {
+     "key": "HY",
+     "name": "HYM",
+     "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ミッションビーチは、沖縄本島西海岸の恩納村、万座エリアのうち安富祖から名嘉真にかけての沿岸にあるポイントです。最大水深は10mと浅く、穏やかな環境で、スズメダイ類が見られます。万座の海は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Mission Beach lies along the stretch between Afuso and Nakama in the Manza area of Onna Village, on Okinawa's west coast. It is a shallow, calm site with a maximum depth of 10 m, where damselfish can be seen. Because Manza faces northwest, swells tend to roll in during the winter northerly monsoon, while calm days are more common in summer.",
+   "commentary_model": "claude-opus-5-5"
+  }
+ ],
+ "area_media": {
+  "万座毛まわり": [
+   {
+    "type": "photo",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Cape_Manzamo_2.JPG/1280px-Cape_Manzamo_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Manzamo_2.JPG",
+    "title": "Cape Manzamo 2.JPG",
+    "author": "そらみみ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "via": "Wikimedia Commons",
+    "area": true,
+    "above_water": true
+   },
+   {
+    "type": "photo",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Cape_Manzamo_3.JPG/1280px-Cape_Manzamo_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Manzamo_3.JPG",
+    "title": "Cape Manzamo 3.JPG",
+    "author": "そらみみ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "via": "Wikimedia Commons",
+    "area": true,
+    "above_water": true
+   },
+   {
+    "type": "photo",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Cape_Manzamo_4.JPG/1280px-Cape_Manzamo_4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Manzamo_4.JPG",
+    "title": "Cape Manzamo 4.JPG",
+    "author": "そらみみ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "via": "Wikimedia Commons",
+    "area": true,
+    "above_water": true
+   },
+   {
+    "type": "photo",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Cape_Manzamo_7.JPG/1280px-Cape_Manzamo_7.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Manzamo_7.JPG",
+    "title": "Cape Manzamo 7.JPG",
+    "author": "そらみみ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "via": "Wikimedia Commons",
+    "area": true,
+    "above_water": true
+   }
+  ],
+  "万座毛南〜恩納": [
+   {
+    "type": "photo",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Cape_Manzamo_2.JPG/1280px-Cape_Manzamo_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Manzamo_2.JPG",
+    "title": "Cape Manzamo 2.JPG",
+    "author": "そらみみ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "via": "Wikimedia Commons",
+    "area": true,
+    "above_water": true
+   },
+   {
+    "type": "photo",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Cape_Manzamo_3.JPG/1280px-Cape_Manzamo_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Manzamo_3.JPG",
+    "title": "Cape Manzamo 3.JPG",
+    "author": "そらみみ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "via": "Wikimedia Commons",
+    "area": true,
+    "above_water": true
+   },
+   {
+    "type": "photo",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Cape_Manzamo_4.JPG/1280px-Cape_Manzamo_4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Manzamo_4.JPG",
+    "title": "Cape Manzamo 4.JPG",
+    "author": "そらみみ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "via": "Wikimedia Commons",
+    "area": true,
+    "above_water": true
+   },
+   {
+    "type": "photo",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Cape_Manzamo_7.JPG/1280px-Cape_Manzamo_7.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Manzamo_7.JPG",
+    "title": "Cape Manzamo 7.JPG",
+    "author": "そらみみ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "via": "Wikimedia Commons",
+    "area": true,
+    "above_water": true
+   }
+  ],
+  "万座岬（ホテル前）": [],
+  "万座湾〜瀬良垣": [],
+  "安富祖〜名嘉真": []
+ }
+}

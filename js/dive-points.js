@@ -16,7 +16,7 @@
         if (own.length) return `<div class="dp-media">${own.map(fig).join('')}</div>`;
         const am = ((data.area_media || {})[AREA_MEDIA_KEY(p.area)] || []).slice(0, 4);
         if (!am.length) return `<p class="dp-media-note">${bi('No openly licensed photos found for this site yet.', 'このポイントの、再利用が許可された写真はまだ見つかっていません。')}</p>`;
-        return `<p class="dp-media-note">${bi('No openly licensed photo of this site was found. Below: underwater photos from the same area — not this site.', 'このポイントの再利用可能な写真は見つかりませんでした。下は同じエリアの水中写真で、このポイントそのものではありません。')}</p><div class="dp-media">${am.map(fig).join('')}</div>`;
+        return `<p class="dp-media-note">${bi('No openly licensed photo of this site was found. Below: photos from the same area (not necessarily underwater) — not this site.', 'このポイントの再利用可能な写真は見つかりませんでした。下は同じエリアの写真（水中とは限りません）で、このポイントそのものではありません。')}</p><div class="dp-media">${am.map(fig).join('')}</div>`;
     }
     function commentaryHtml(p) {
         if (!p.commentary_ja && !p.commentary_en) return `<div class="ph">${bi('Notes by Claude: in preparation.', 'Claude の解説：準備中。')}</div>`;
