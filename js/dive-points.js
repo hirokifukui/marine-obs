@@ -31,7 +31,7 @@
                 <dt>${bi('Area', 'エリア')}</dt><dd>${esc(p.area)}</dd>
                 <dt>${bi('Max depth', '最大水深')}</dt><dd>${esc(p.depth || '–')}</dd>
                 <dt>${bi('Features', '特徴')}</dt><dd>${esc(p.features || '–')}</dd>
-                <dt>${bi('Position', '位置')}</dt><dd>${near ? bi('near ' + esc(p.position_note), esc(p.position_note) + 'の近く（目安）') : bi('approximate, within ' + esc(p.position_note), 'エリア内の目安（' + esc(p.position_note) + '）')}</dd>
+                <dt>${bi('Position', '位置')}</dt><dd>${p.lat == null ? bi('unknown (not on the map)', '不明（地図には置いていません）') : near ? bi('near ' + esc(p.position_note), esc(p.position_note) + 'の近く（目安）') : bi('approximate, within ' + esc(p.position_note), 'エリア内の目安（' + esc(p.position_note) + '）')}</dd>
             </dl>
             ${commentaryHtml(p)}
             ${mediaHtml(p)}
@@ -62,6 +62,7 @@
         window.__dpMap = map;
         areas.forEach(a => layers[a] = L.layerGroup().addTo(map));
         data.points.forEach((p, i) => {
+            if (p.lat == null) return;
             const m = L.circleMarker([p.lat, p.lng], { radius: p.precision === 'near' ? 7 : 6, color: '#fff', weight: 1.5, fillColor: col[p.area], fillOpacity: p.precision === 'near' ? 0.95 : 0.75, dashArray: p.precision === 'near' ? null : '2 2' })
                 .bindPopup(popup(p)).bindTooltip(esc(p.name), { direction: 'top', offset: [0, -6] });
             m.addTo(layers[p.area]); markers[i] = m;
@@ -69,18 +70,18 @@
         map.on('popupopen', e => { const b = e.popup.getElement().querySelector('button[data-i]'); if (b) b.onclick = () => openDetail(+b.dataset.i); });
         document.getElementById('dp-modal').addEventListener('click', e => { if (e.target.id === 'dp-modal') window.__dpClose(); });
         document.addEventListener('keydown', e => { if (e.key === 'Escape') window.__dpClose(); });
-        const B = L.latLngBounds(data.points.map(p => [p.lat, p.lng])).pad(0.05);
+        const B = L.latLngBounds(data.points.filter(p => p.lat != null).map(p => [p.lat, p.lng])).pad(0.05);
         map.fitBounds(B);
         setTimeout(() => { map.invalidateSize(); map.fitBounds(B); }, 300);
         const chips = document.getElementById('dp-chips');
-        chips.innerHTML = areas.map(a => `<button type="button" data-a="${esc(a)}"><i style="background:${col[a]}"></i>${esc(a)}（${data.points.filter(p => p.area === a).length}）</button>`).join('');
+        chips.innerHTML = areas.filter(a => data.points.some(p => p.area === a && p.lat != null)).map(a => `<button type="button" data-a="${esc(a)}"><i style="background:${col[a]}"></i>${esc(a)}（${data.points.filter(p => p.area === a).length}）</button>`).join('');
         chips.querySelectorAll('button').forEach(b => b.onclick = () => {
             const a = b.dataset.a, on = map.hasLayer(layers[a]);
             on ? map.removeLayer(layers[a]) : map.addLayer(layers[a]); b.classList.toggle('off', on);
         });
         document.getElementById('dp-list').innerHTML = areas.map(a => `<section><h3><i style="background:${col[a]}"></i>${esc(a)}</h3>${
             data.points.map((p, i) => p.area === a ? `<a data-i="${i}">${esc(p.name)}</a>` : '').join('')}</section>`).join('');
-        document.querySelectorAll('#dp-list a').forEach(x => x.onclick = () => { document.getElementById('dp-map').scrollIntoView({ behavior: 'smooth' }); select(+x.dataset.i, true); });
+        document.querySelectorAll('#dp-list a').forEach(x => x.onclick = () => { const i = +x.dataset.i; if (data.points[i].lat == null) { openDetail(i); return; } document.getElementById('dp-map').scrollIntoView({ behavior: 'smooth' }); select(i, true); });
     }
     init().catch(e => console.error(e));
 })();

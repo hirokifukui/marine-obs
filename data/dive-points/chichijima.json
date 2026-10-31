@@ -1,0 +1,1824 @@
+{
+ "site": "chichijima",
+ "title": "父島",
+ "center": [
+  27.1,
+  142.2
+ ],
+ "points": [
+  {
+   "name": "日吉丸",
+   "alias": "",
+   "area": "二見湾（湾内・沈船）",
+   "features": "砂地に横たわる大きな沈船・カンパチ・残る魚雷・流れが少ない",
+   "depth": "20-22m",
+   "lat": 27.089,
+   "lng": 142.1885,
+   "precision": "area",
+   "position_note": "二見湾の中",
+   "sources": [
+    {
+     "key": "SY",
+     "name": "シゲノユウタ",
+     "url": "https://shigenoyuta.com/bonin_iland/"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "日吉丸は、父島・二見湾の中にある沈船のポイントです。砂地の上に大きな船体が横たわり、水深はおよそ20〜22m。船には魚雷が残っており、周りではカンパチの姿も見られます。二見湾の中は外側に比べて穏やかなことが多く、このポイントも流れが少ないとされています。二見港からボートで向かうポイントのひとつです。",
+   "commentary_en": "Hiyoshi Maru is a wreck site inside Futami Bay, Chichijima, where a large ship lies on a sandy bottom at about 20–22 m. Torpedoes remain on the wreck, and amberjack (kanpachi) can be seen around it. Conditions inside the bay tend to be calmer than outside, and the current at this site is generally weak.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "駆潜艇",
+   "alias": "",
+   "area": "二見湾（湾内・沈船）",
+   "features": "機関銃などが残る沈船・シロワニやカンパチ・サンゴが豊富",
+   "depth": "30m前後",
+   "lat": 27.0868,
+   "lng": 142.1905,
+   "precision": "area",
+   "position_note": "二見湾の中",
+   "sources": [
+    {
+     "key": "SY",
+     "name": "シゲノユウタ",
+     "url": "https://shigenoyuta.com/bonin_iland/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「駆潜艇」は二見湾の湾内にある沈船のポイントで、船体には機関銃などが今も残っています。周辺ではシロワニやカンパチが見られるほか、サンゴも豊富とされています。最大水深は30m前後です。二見湾の中は外側に比べると比較的穏やかで、ほかの多くのポイントと同じく二見港からボートで向かいます。",
+   "commentary_en": "Kusentei is a wreck dive inside Futami Bay, where machine guns and other fittings remain on the vessel. Sand tiger sharks and amberjack are reported around the site, along with plentiful coral, and the maximum depth is around 30 m. Futami Bay is generally calmer than the open water outside, and like most sites the wreck is reached by boat from Futami Port.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "横倒し",
+   "alias": "",
+   "area": "二見湾（湾内・沈船）",
+   "features": "横倒しの沈船・浅場にサンゴ",
+   "depth": "24m",
+   "lat": 27.085,
+   "lng": 142.188,
+   "precision": "area",
+   "position_note": "二見湾の中",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「横倒し」は二見湾の湾内にある沈船のポイントです。その名のとおり、船体が横倒しの状態で沈んでいるのが特徴で、浅場にはサンゴが見られます。最大水深は24m。二見湾の中は、潮やうねりの影響を受けやすい湾の外側に比べて比較的穏やかです。沈船の来歴など、これ以外の公開情報は多くありません。",
+   "commentary_en": "Yokotaoshi is a wreck site inside Futami Bay, where, as the name suggests, a sunken ship lies on its side, with coral in the shallower areas. The maximum depth is 24 m, and conditions inside the bay are generally calmer than outside it, where currents and swell have more effect. Little other information about the site, such as the wreck's history, is publicly available.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "エビ丸",
+   "alias": "",
+   "area": "二見湾（湾内・沈船）",
+   "features": "砂泥に鎮座する沈船・透明度が落ちることがある",
+   "depth": "30m",
+   "lat": 27.0832,
+   "lng": 142.1905,
+   "precision": "area",
+   "position_note": "二見湾の中",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "エビ丸は父島・二見湾の湾内にある沈船のポイントです。砂泥の海底に船体が鎮座しており、最大水深は30mです。二見湾の中は、潮やうねりの影響を受けやすい湾外に比べて比較的穏やかとされますが、透明度が落ちることがあります。沈船の来歴や周辺で見られる生き物については、公開されている情報がほとんどありません。",
+   "commentary_en": "Ebi Maru is a wreck dive inside Futami Bay on Chichijima, where the hull rests on a sandy-mud bottom at a maximum depth of 30 m. Conditions inside the bay are generally calmer than at sites outside it, though visibility can sometimes drop. Little public information is available about the wreck's history or the marine life around it.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "エダサンゴ",
+   "alias": "",
+   "area": "二見湾（湾内・沈船）",
+   "features": "浅場の枝サンゴ・冬に沈船へシロワニが集まる・透明度は低め",
+   "depth": "30m以上",
+   "lat": 27.0815,
+   "lng": 142.1885,
+   "precision": "area",
+   "position_note": "二見湾の中",
+   "sources": [
+    {
+     "key": "SY",
+     "name": "シゲノユウタ",
+     "url": "https://shigenoyuta.com/bonin_iland/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "エダサンゴは父島・二見湾の湾内にあるポイント。名前のとおり浅場には枝サンゴが見られ、湾内には沈船もある。冬にはこの沈船にシロワニが集まることで知られる。二見湾の中は外側に比べて比較的穏やかとされる一方、透明度は低めといわれる。最大水深は30m以上。浅場のサンゴと冬の沈船という、性格の異なる二つの面をもつポイントである。",
+   "commentary_en": "Edasango is a site inside Futami Bay, Chichijima, named for the branching coral found in its shallows, and it also includes a shipwreck where sand tiger sharks are known to gather in winter. The bay is generally calmer than the open water outside, though visibility here tends to be on the low side. The maximum depth exceeds 30 m.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "青灯台",
+   "alias": "",
+   "area": "二見湾（湾内・沈船）",
+   "features": "講習やナイトに使う・ホワイトチップ・港から近い",
+   "depth": "25m",
+   "lat": 27.09521,
+   "lng": 142.19469,
+   "precision": "near",
+   "position_note": "青灯台",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "青灯台は二見湾の内側にあるポイントで、二見港から近い場所に位置します。湾内は外海に比べて比較的穏やかなことが多く、講習やナイトダイビングにも使われています。エリアには沈船があり、ホワイトチップ（ネムリブカ）が見られることがあります。最大水深は25mです。",
+   "commentary_en": "Ao-todai is a site inside Futami Bay, close to Futami Port, in an area that includes a wreck. Conditions in the bay are generally calmer than in the open water outside, and the site is used for training and night dives. Whitetip reef sharks may be seen, and the maximum depth is 25 m.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "洲崎",
+   "alias": "",
+   "area": "二見湾（湾内・沈船）",
+   "features": "湾内のごく浅いサンゴ礁・撮影向き",
+   "depth": "18m",
+   "lat": 27.07535,
+   "lng": 142.18989,
+   "precision": "near",
+   "position_note": "洲崎",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "洲崎は二見湾内のポイントで、この一覧では「湾内・沈船」のエリアに分類されています。特徴として挙げられているのは湾内のごく浅い場所に広がるサンゴ礁で、撮影に向いたポイントとされています。最大水深は18mです。二見湾の中は、潮やうねりの影響を受けやすい湾の外側に比べて、比較的穏やかな環境です。",
+   "commentary_en": "Susaki is a site inside Futami Bay, listed in this guide under the \"inner bay / wrecks\" area. Its noted feature is a very shallow coral reef within the bay, considered well suited to photography, with a maximum depth of 18 m. Conditions inside Futami Bay are generally calmer than outside it, where currents and swell have more effect.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "海洋センター前",
+   "alias": "",
+   "area": "二見湾（湾内・沈船）",
+   "features": "枝サンゴの群生・ナイト可",
+   "depth": "18m",
+   "lat": 27.08,
+   "lng": 142.196,
+   "precision": "area",
+   "position_note": "二見湾の中",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "海洋センター前は二見湾の湾内にあるポイントで、一覧では沈船のエリアに分類されている。特徴として枝サンゴの群生が挙げられ、ナイトダイビングにも利用される。最大水深は18m。二見湾の中は外側に比べて潮やうねりの影響を受けにくく、比較的穏やかとされる。沈船そのものについては、公開されている情報が限られている。",
+   "commentary_en": "Kaiyo Center-mae is a site inside Futami Bay and is listed in the bay's wreck area, with a maximum depth of 18 m. It is noted for colonies of branching coral and is also used for night dives. Conditions inside the bay are generally calmer than outside, though little public information is available about the wreck itself.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "製氷海岸",
+   "alias": "",
+   "area": "二見湾（湾内・沈船）",
+   "features": "",
+   "depth": "",
+   "lat": 27.09399,
+   "lng": 142.2015,
+   "precision": "near",
+   "position_note": "製氷海岸",
+   "sources": [
+    {
+     "key": "OC",
+     "name": "小笠原チャンネル",
+     "url": "https://www.ogasawara-channel.com/contents/diving.htm"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "製氷海岸は、父島の二見湾の中にあるポイントとして一覧に挙げられており、エリアの区分は湾内の沈船とされている。二見湾の内側は、潮やうねりの影響を受けやすい湾の外側に比べて比較的穏やかとされる。一方で、沈船の名称や規模、見られる生き物、最大水深などについては、名前と区分のほかに公開情報がほとんどなく、ここでは詳しく記していない。",
+   "commentary_en": "Seihyo Kaigan is listed as a site inside Futami Bay on Chichijima, categorized as an in-bay wreck site. Conditions inside the bay are generally calmer than outside it, where currents and swell have more influence. Beyond its name and category, little public information is available, including details of the wreck, marine life, or maximum depth.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "イエロー",
+   "alias": "",
+   "area": "二見湾（湾内・沈船）",
+   "features": "サンゴの傾斜・アカヒメジの群れ",
+   "depth": "20m",
+   "lat": 27.0905,
+   "lng": 142.184,
+   "precision": "area",
+   "position_note": "二見湾の中",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "イエローは父島・二見湾の湾内にあるポイントで、この一覧では沈船のポイントと同じエリアに分けている。サンゴの斜面が特徴で、アカヒメジの群れが見られる。最大水深は20m。二見湾の中は、潮やうねりの影響を受けやすい湾の外側に比べて、比較的穏やかな海域とされる。",
+   "commentary_en": "Yellow is a site inside Futami Bay on Chichijima, listed here in the same area as the bay's wreck sites. Its main features are a coral slope and schools of yellowfin goatfish, with a maximum depth of 20 m. Conditions inside the bay are generally calmer than outside it, where currents and swell have more effect.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "赤ブイ",
+   "alias": "",
+   "area": "二見湾（湾内・沈船）",
+   "features": "水面近くまで立ち上がる地形・ツバメウオ・大型魚",
+   "depth": "25m",
+   "lat": 27.087,
+   "lng": 142.182,
+   "precision": "area",
+   "position_note": "二見湾の中",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "赤ブイは二見湾の湾内にある沈船のポイントです。水面近くまで立ち上がる地形が特徴で、ツバメウオや大型魚が見られることがあります。最大水深は25mです。二見港からボートで向かうポイントのひとつです。湾内に位置するため、潮やうねりの影響を受けやすい湾の外側と比べると、比較的穏やかな環境にあります。",
+   "commentary_en": "Akabui is a wreck site inside Futami Bay, reached by boat from Futami Port, with structure rising close to the surface and a maximum depth of 25 m. Batfish and larger fish are sometimes seen here. Being within the bay, it tends to be calmer than sites on the outer coast, which are more exposed to currents and swell.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "赤岩",
+   "alias": "",
+   "area": "二見湾（湾内・沈船）",
+   "features": "浅いサンゴ礁・ツバメウオの群れ・ウミウシ",
+   "depth": "15m",
+   "lat": 27.079,
+   "lng": 142.185,
+   "precision": "area",
+   "position_note": "二見湾の中",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "赤岩は、父島の二見湾内にあるダイビングポイントで、一覧では「湾内・沈船」のエリアに分類されている。二見湾の中は、潮やうねりの影響を受けやすい湾外に比べて比較的穏やかとされる。浅いサンゴ礁が特徴で、ツバメウオの群れのほか、ウミウシも見られる。最大水深は15mで、全体に浅めのポイントである。",
+   "commentary_en": "Akaiwa is a dive site inside Futami Bay on Chichijima, listed under the bay's inner and wreck area. Conditions inside the bay are generally calmer than outside it, where currents and swell have more influence. The site has shallow coral reef with schools of batfish and nudibranchs, and reaches a maximum depth of 15 m.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "クラゾウ根",
+   "alias": "",
+   "area": "二見湾（湾内・沈船）",
+   "features": "湾口付近・回遊魚・ウメイロモドキ",
+   "depth": "25m",
+   "lat": 27.084,
+   "lng": 142.179,
+   "precision": "area",
+   "position_note": "二見湾の中",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "クラゾウ根は、二見湾（湾内・沈船）のエリアに分類されるポイントで、湾口付近にある根です。最大水深は25m。回遊魚が見られることがあり、ウメイロモドキが特徴として挙げられています。二見湾の中は比較的穏やかですが、湾口に近いため、湾の外側から潮やうねりの影響を受けることもあります。",
+   "commentary_en": "Kurazou-ne is a rock formation near the mouth of Futami Bay, listed under the bay's inner-bay and wreck area, with a maximum depth of 25 m. Pelagic fish may be seen here, and yellow-and-blueback fusiliers (umeiro-modoki) are noted as a feature. Futami Bay is generally calm, but this site's position near the mouth can expose it to currents and swell from outside the bay.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "宮之浜",
+   "alias": "",
+   "area": "父島 北（宮之浜〜長崎）",
+   "features": "遠浅の砂地とサンゴ・ナイト可",
+   "depth": "7m",
+   "lat": 27.10538,
+   "lng": 142.19482,
+   "precision": "near",
+   "position_note": "宮之浜",
+   "sources": [
+    {
+     "key": "OC",
+     "name": "小笠原チャンネル",
+     "url": "https://www.ogasawara-channel.com/contents/diving.htm"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "宮之浜は父島の北、宮之浜から長崎にかけてのエリアにあるポイントです。遠浅の砂地にサンゴが見られ、最大水深は7mと浅めです。ナイトダイビングも可能とされています。父島の北には兄島・弟島があり、このポイントは島の北側に位置します。ここに挙げた特徴のほかには、生き物や地形についての詳しい公開情報は限られています。",
+   "commentary_en": "Miyanohama is a dive site in the northern part of Chichijima, in the area stretching from Miyanohama to Nagasaki. It has a shallow, gently sloping sandy bottom with coral, a maximum depth of 7 m, and is listed as suitable for night dives. Beyond these features, little detailed public information is available about its marine life or topography.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "釣浜",
+   "alias": "釣り浜",
+   "area": "父島 北（宮之浜〜長崎）",
+   "features": "サンゴ礁の傾斜・群れ魚",
+   "depth": "25m",
+   "lat": 27.10498,
+   "lng": 142.20655,
+   "precision": "near",
+   "position_note": "釣浜",
+   "sources": [
+    {
+     "key": "OC",
+     "name": "小笠原チャンネル",
+     "url": "https://www.ogasawara-channel.com/contents/diving.htm"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "釣浜（釣り浜とも表記）は、父島の北側、宮之浜から長崎にかけてのエリアにあるポイントです。サンゴ礁の斜面が広がる地形で、群れをつくる魚が見られることが特徴とされています。最大水深は25m。二見湾の外側に位置するため、湾内に比べると潮やうねりの影響を受けやすい海域にあたります。",
+   "commentary_en": "Tsurihama (also written Tsuri-hama) lies on the northern side of Chichijima, in the area between Miyanohama and Nagasaki, and is known for a sloping coral reef and schooling fish. The maximum depth is 25 m. Because it sits outside Futami Bay, it is more exposed to currents and swell than sites inside the bay.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "長崎",
+   "alias": "",
+   "area": "父島 北（宮之浜〜長崎）",
+   "features": "砂地とサンゴ・テングダイ・春先のネコザメ・ガーデンイール",
+   "depth": "25m",
+   "lat": 27.10095,
+   "lng": 142.22076,
+   "precision": "near",
+   "position_note": "長崎",
+   "sources": [
+    {
+     "key": "PP",
+     "name": "パパスダイビングスタジオ",
+     "url": "https://papasds.com/diving/fundiving/"
+    },
+    {
+     "key": "WT",
+     "name": "WTP",
+     "url": "https://www.wtp.co.jp/area/detail/126/Ogasawara/"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "長崎は父島北部、宮之浜から長崎にかけてのエリアにあるポイントです。最大水深は25mで、砂地とサンゴが広がる地形が特徴です。テングダイやガーデンイールが見られるほか、春先にはネコザメが観察されることもあります。父島の北側、兄島に近い位置にあり、二見湾の外側にあたるため、潮やうねりの影響を受けることがあります。",
+   "commentary_en": "Nagasaki lies on the northern side of Chichijima, in the area stretching from Miyanohama to Nagasaki, with a maximum depth of 25 m over sand and coral. Longnose butterflyfish-like tengudai (Evistias acutirostris) and garden eels can be seen here, and Japanese bullhead sharks are sometimes observed in early spring. As the site sits outside Futami Bay near Anijima to the north, it can be affected by currents and swell.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ハナヒゲポイント",
+   "alias": "",
+   "area": "父島 北（宮之浜〜長崎）",
+   "features": "島の間のサンゴ礁とウォール・ハナヒゲウツボ",
+   "depth": "26m",
+   "lat": 27.1065,
+   "lng": 142.212,
+   "precision": "area",
+   "position_note": "釣浜〜長崎の間",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ハナヒゲポイントは、父島の北側、宮之浜から長崎にかけてのエリアにあります。父島の北には兄島や弟島があり、ここでは島の間に広がるサンゴ礁とウォールが主な地形です。生き物ではハナヒゲウツボが挙げられています。最大水深は26m。二見湾の外側にあたり、潮やうねりの影響を受けやすい海域です。",
+   "commentary_en": "Hanahige Point lies off the north side of Chichijima, in the area between Miyanohama and Nagasaki, with Anijima and Ototojima to the north. Its main features are a coral reef between the islands and a wall, and it is noted for ribbon eels, with a maximum depth of 26 m. Being outside Futami Bay, the site is more exposed to currents and swell.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "バラ沈",
+   "alias": "",
+   "area": "兄島・瀬戸",
+   "features": "滝之浦湾の内湾に散らばる沈船・マクロ生物・チェックダイブに使われる",
+   "depth": "18m",
+   "lat": 27.1206,
+   "lng": 142.19811,
+   "precision": "near",
+   "position_note": "滝之浦湾",
+   "sources": [
+    {
+     "key": "OC",
+     "name": "小笠原チャンネル",
+     "url": "https://www.ogasawara-channel.com/contents/diving.htm"
+    },
+    {
+     "key": "SY",
+     "name": "シゲノユウタ",
+     "url": "https://shigenoyuta.com/bonin_iland/"
+    },
+    {
+     "key": "WT",
+     "name": "WTP",
+     "url": "https://www.wtp.co.jp/area/detail/126/Ogasawara/"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "バラ沈は兄島・瀬戸エリアのポイントで、滝之浦湾の内湾に沈船の残骸が点在している。残骸のまわりではマクロ生物の観察が中心になるが、見られる種類について具体的な公開情報は限られる。最大水深は18mほどで、チェックダイブに使われることもある。父島の多くのポイントと同じく、二見港からボートで向かう。",
+   "commentary_en": "Barachin is a site in the Anijima and strait area, where wreckage lies scattered across the inner part of Takinoura Bay. Dives here centre on macro life around the debris, the maximum depth is about 18 m, and the site is sometimes used for check dives. Like most Chichijima sites, it is reached by boat from Futami Port.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "万作",
+   "alias": "万作の浜",
+   "area": "兄島・瀬戸",
+   "features": "サンゴの斜面と砂地・鳴き岩",
+   "depth": "24m",
+   "lat": 27.10929,
+   "lng": 142.21978,
+   "precision": "near",
+   "position_note": "万作浜",
+   "sources": [
+    {
+     "key": "OC",
+     "name": "小笠原チャンネル",
+     "url": "https://www.ogasawara-channel.com/contents/diving.htm"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "万作は、父島の北にある兄島との間の瀬戸エリアにあるポイントで、「万作の浜」とも呼ばれる。サンゴの見られる斜面と砂地からなる地形で、「鳴き岩」と呼ばれる場所もある。最大水深は24m。二見湾の外側にあたり、潮やうねりの影響を受けやすい海域とされる。父島の多くのポイントと同じく、二見港からボートで向かう。",
+   "commentary_en": "Mansaku, also known as Mansaku-no-hama, lies in the channel between Chichijima and Anijima, the island to its north, and reaches a maximum depth of 24 m. The site features a coral slope and sandy bottom, along with a spot known as the Naki-iwa (\"singing rock\"). Being outside Futami Bay, the area tends to be affected by currents and swell, and like most Chichijima sites it is reached by boat from Futami Port.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "万作の鼻",
+   "alias": "",
+   "area": "兄島・瀬戸",
+   "features": "ゴロタの斜面・流れに乗る回遊魚",
+   "depth": "26m",
+   "lat": 27.109,
+   "lng": 142.22551,
+   "precision": "area",
+   "position_note": "兄島のまわり",
+   "sources": [
+    {
+     "key": "OC",
+     "name": "小笠原チャンネル",
+     "url": "https://www.ogasawara-channel.com/contents/diving.htm"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "万作の鼻は、父島と北側の兄島との間にある「兄島・瀬戸」エリアのポイントです。ゴロタ石の斜面が広がり、最大水深は26mです。流れに乗って回遊する魚が見られることがあります。二見湾の外側にあたるため潮やうねりの影響を受けやすく、海の様子は日によって異なります。二見港からはボートで向かいます。",
+   "commentary_en": "Mansaku-no-Hana is a site in the Anijima Seto area, the strait between Chichijima and Anijima to the north. It features a boulder slope reaching a maximum depth of 26 m, where pelagic fish may be seen riding the current. Lying outside Futami Bay, it is more exposed to currents and swell, and is reached by boat from Futami Port.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "人丸インサイド",
+   "alias": "",
+   "area": "兄島・瀬戸",
+   "features": "なだらかな傾斜・サンゴの窪みにホワイトチップ",
+   "depth": "25m",
+   "lat": 27.11857,
+   "lng": 142.18892,
+   "precision": "near",
+   "position_note": "人丸島",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "人丸インサイドは、父島の北に位置する兄島との間、兄島・瀬戸のエリアにあるポイントです。なだらかな傾斜の地形が続き、サンゴの窪みにホワイトチップが入っている様子が見られることがあります。最大水深は25mです。父島の多くのポイントと同様に二見港からボートで向かう場所で、二見湾の外側にあたるため、潮やうねりの影響を受けやすい海域にあります。",
+   "commentary_en": "Hitomaru Inside is a site in the Anijima Strait area, between Chichijima and Anijima to its north, with a maximum depth of 25 m. The terrain is a gentle slope, and whitetip reef sharks may be seen resting in hollows in the coral. Like most Chichijima sites it is reached by boat from Futami Port, and it lies outside Futami Bay, where conditions are more exposed to currents and swell.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "人丸アウトサイド",
+   "alias": "",
+   "area": "兄島・瀬戸",
+   "features": "巨大なゴロタの斜面・30m付近のアーチ",
+   "depth": "30m",
+   "lat": 27.11604,
+   "lng": 142.18338,
+   "precision": "near",
+   "position_note": "人丸島",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "人丸アウトサイドは、父島の北、兄島との間にある兄島・瀬戸エリアのポイント。巨大なゴロタ石が広がる斜面が続き、水深30m付近にはアーチがある。最大水深は30mで、アーチは最深部近くに位置する。二見港からボートで向かうポイントの一つで、二見湾の外側にあたるため、潮やうねりの影響を受けやすい海域とされる。",
+   "commentary_en": "Hitomaru Outside is a site in the Anijima Seto area, between Chichijima and Anijima to its north, featuring a slope of very large boulders and an arch at around 30 m. The maximum depth is 30 m, placing the arch near the deepest part of the site. It is reached by boat from Futami Port and lies outside Futami Bay, where conditions tend to be more affected by currents and swell.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "立神岩",
+   "alias": "",
+   "area": "兄島・瀬戸",
+   "features": "岬を囲むゴロタ・アジの群れ",
+   "depth": "24m",
+   "lat": 27.13217,
+   "lng": 142.18629,
+   "precision": "near",
+   "position_note": "立神崎",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "立神岩は、父島の北にある兄島との間、兄島・瀬戸エリアのポイント。岬のまわりをゴロタ（転石）が囲む地形で、アジの群れが見られることが特徴として挙げられている。最大水深は24m。二見湾の外側にあたり、潮やうねりの影響を受けやすい海域に位置する。公開されている情報は、地形と群れに関するものが中心である。",
+   "commentary_en": "Tategami-iwa is a site in the Ani-jima Seto area, the strait between Chichi-jima and Ani-jima to its north. It is described as a point ringed with boulders, where schools of jacks are noted, with a maximum depth of 24 m. Lying outside Futami Bay, the area tends to be more exposed to currents and swell.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ひょうたん",
+   "alias": "ひょうたん島",
+   "area": "兄島・瀬戸",
+   "features": "サンゴ礁の斜面・マクロ生物",
+   "depth": "30m",
+   "lat": 27.12788,
+   "lng": 142.18152,
+   "precision": "near",
+   "position_note": "瓢箪島",
+   "sources": [
+    {
+     "key": "OC",
+     "name": "小笠原チャンネル",
+     "url": "https://www.ogasawara-channel.com/contents/diving.htm"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「ひょうたん」は、ひょうたん島とも呼ばれる、兄島・瀬戸のエリアにあるポイントです。兄島は父島の北に位置し、二見港からボートで向かうポイントのひとつです。サンゴ礁の斜面が特徴で、小さな生き物を探すマクロ観察の対象としても挙げられています。最大水深は30m。二見湾の外側にあたるため、潮やうねりの影響を受けることがあります。",
+   "commentary_en": "Hyōtan, also known as Hyōtan-jima, is a site in the Ani-jima/Seto area off Ani-jima, the island to the north of Chichi-jima, and is reached by boat from Futami Port. It features a coral reef slope, is noted for macro life, and has a maximum depth of 30 m. Because it lies outside Futami Bay, conditions can be affected by currents and swell.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "二子岩",
+   "alias": "",
+   "area": "兄島・瀬戸",
+   "features": "浅いサンゴ礁・小さなアーチ",
+   "depth": "16m",
+   "lat": 27.13214,
+   "lng": 142.20369,
+   "precision": "area",
+   "position_note": "兄島のまわり",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "二子岩は、父島の北にある兄島との間、兄島・瀬戸のエリアにあるポイントです。浅いサンゴ礁と小さなアーチが特徴として挙げられており、最大水深は16mです。父島の多くのポイントと同じく二見港からボートで向かう場所で、二見湾の外側にあたるため、潮やうねりの影響を受けることがあります。",
+   "commentary_en": "Futagoiwa is a dive site in the Anijima Seto area, between Chichijima and Anijima to its north. Its noted features are a shallow coral reef and a small arch, with a maximum depth of 16 m. Like most sites around Chichijima, it is reached by boat from Futami Port, and because it lies outside Futami Bay, conditions there can be affected by currents and swell.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "沖二子",
+   "alias": "",
+   "area": "兄島・瀬戸",
+   "features": "大きなゴロタと根・群れ魚・撮影向き",
+   "depth": "25m",
+   "lat": 27.13646,
+   "lng": 142.20225,
+   "precision": "area",
+   "position_note": "兄島のまわり",
+   "sources": [
+    {
+     "key": "PP",
+     "name": "パパスダイビングスタジオ",
+     "url": "https://papasds.com/diving/fundiving/"
+    },
+    {
+     "key": "WT",
+     "name": "WTP",
+     "url": "https://www.wtp.co.jp/area/detail/126/Ogasawara/"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "沖二子は、父島の北、兄島との間の瀬戸エリアにあるポイントです。大きなゴロタ（丸みを帯びた岩）と根からなる地形で、群れる魚が見られることから、撮影向きのポイントとされています。最大水深は25m。二見湾の外側にあたるため、潮やうねりの影響を受けやすい場所です。",
+   "commentary_en": "Oki-Futago lies in the Anijima Seto area, the channel between Chichijima and Anijima to the north. The site has large boulders and rocky outcrops with schooling fish, which makes it a good spot for underwater photography, and reaches a maximum depth of 25 m. Because it sits outside Futami Bay, conditions can be affected by currents and swell.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "西島北",
+   "alias": "",
+   "area": "西島",
+   "features": "礫の斜面・固有種のアカイセエビ・穏やかな日が多い",
+   "depth": "25-30m",
+   "lat": 27.12124,
+   "lng": 142.16556,
+   "precision": "near",
+   "position_note": "西島",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    },
+    {
+     "key": "PD",
+     "name": "PADI",
+     "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1203"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "西島北は、父島の北西に浮かぶ西島の北側にあるポイントで、二見港からボートで向かいます。海底には礫の斜面が広がり、小笠原の固有種であるアカイセエビが特徴として挙げられます。最大水深は25〜30mほどです。二見湾の外側は潮やうねりの影響を受けやすいものの、このポイントは比較的穏やかな日が多いとされています。",
+   "commentary_en": "Nishijima-kita lies on the north side of Nishijima, the island northwest of Chichijima, and is reached by boat from Futami Port. The site features a rubble slope and is noted for the endemic red spiny lobster (akaise-ebi), with a maximum depth of about 25–30 m. Although waters outside Futami Bay are often affected by currents and swell, this site is described as calm on many days.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "西島S/W",
+   "alias": "",
+   "area": "西島",
+   "features": "浅根のトップ18m・ムレハタタテダイ・固有のウミウシ",
+   "depth": "30m",
+   "lat": 27.11531,
+   "lng": 142.16117,
+   "precision": "near",
+   "position_note": "西島",
+   "sources": [
+    {
+     "key": "WT",
+     "name": "WTP",
+     "url": "https://www.wtp.co.jp/area/detail/126/Ogasawara/"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "西島S/Wは、父島の北西に浮かぶ西島エリアのポイントです。トップが水深18mの浅根があり、最大水深は30mです。特徴としてムレハタタテダイや固有のウミウシが挙げられています。二見港からボートで向かうポイントの一つで、二見湾の外側にあたるため、潮やうねりの影響を受けやすい環境といえます。",
+   "commentary_en": "Nishijima S/W is a site in the Nishijima area, northwest of Chichijima, with a pinnacle whose top sits at 18 m and a maximum depth of 30 m. Pennant bannerfish and endemic nudibranchs are listed among its features. It is reached by boat from Futami Port and lies outside Futami Bay, where currents and swell tend to have more influence.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "大岩",
+   "alias": "西島大岩",
+   "area": "西島",
+   "features": "サンゴと砂地の傾斜・ガーデンイール・ノコギリダイ",
+   "depth": "26m",
+   "lat": 27.11715,
+   "lng": 142.17172,
+   "precision": "near",
+   "position_note": "西島の大岩",
+   "sources": [
+    {
+     "key": "WT",
+     "name": "WTP",
+     "url": "https://www.wtp.co.jp/area/detail/126/Ogasawara/"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "大岩（別名・西島大岩）は、父島の北西にある西島のエリアのポイントです。二見港からボートで向かう父島周辺のポイントのひとつで、サンゴと砂地が傾斜をつくる地形が特徴とされています。砂地にはガーデンイールが見られ、ノコギリダイも観察されています。最大水深は26mです。二見湾の外にあたるため、潮やうねりの影響を受けやすい海域とされます。",
+   "commentary_en": "Oiwa, also called Nishijima Oiwa, is a boat dive near Nishijima, northwest of Chichijima, reached from Futami Port. It features a slope of coral and sand, where garden eels and large-eye bream (nokogiridai) are seen, with a maximum depth of 26 m. Lying outside Futami Bay, the area tends to be affected by currents and swell.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "西島東磯",
+   "alias": "",
+   "area": "西島",
+   "features": "カンパチなどの群れ・ユウゼン",
+   "depth": "30m",
+   "lat": 27.11882,
+   "lng": 142.17249,
+   "precision": "near",
+   "position_note": "西島",
+   "sources": [
+    {
+     "key": "PD",
+     "name": "PADI",
+     "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1203"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "西島東磯は、父島の北西にある西島のエリアに位置するポイントです。特徴として、カンパチなどの群れやユウゼンが挙げられています。最大水深は30m。父島の多くのポイントと同様に二見港からボートで向かう場所で、二見湾の外側にあたるため、その日の潮やうねりの影響を受けやすい環境にあります。",
+   "commentary_en": "Nishijima Higashi-iso is a dive site in the Nishijima area, off the northwest of Chichijima, with a maximum depth of 30 m. Its noted features are schools of fish such as amberjack (kampachi) and the Yūzen butterflyfish. Like many Chichijima sites it is reached by boat from Futami Port, and because it lies outside Futami Bay, conditions can be affected by currents and swell.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "イーグルレイロック",
+   "alias": "",
+   "area": "西島",
+   "features": "3本の根とソフトコーラル・マダラトビエイ",
+   "depth": "16m",
+   "lat": 27.124,
+   "lng": 142.172,
+   "precision": "area",
+   "position_note": "西島のまわり",
+   "sources": [
+    {
+     "key": "SY",
+     "name": "シゲノユウタ",
+     "url": "https://shigenoyuta.com/bonin_iland/"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "イーグルレイロックは、父島の北西に浮かぶ西島のエリアにあるポイントです。水中には3本の根があり、ソフトコーラルのほか、名前にも使われているイーグルレイ、つまりマダラトビエイが特徴として知られています。最大水深は16mです。二見港からボートで向かう湾外のポイントで、潮やうねりの影響を受けやすい海域にあります。",
+   "commentary_en": "Eagle Ray Rock is a dive site in the Nishijima area, off the northwest of Chichijima. It is known for three rock pinnacles, soft corals, and the spotted eagle rays that give the site its name, with a maximum depth of 16 m. Reached by boat from Futami Port, it lies outside the bay, where currents and swell tend to have more influence.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "鹿浜",
+   "alias": "",
+   "area": "弟島・孫島",
+   "features": "大きな洞窟・季節によりシロワニ",
+   "depth": "20-26m",
+   "lat": 27.16151,
+   "lng": 142.18331,
+   "precision": "near",
+   "position_note": "弟島",
+   "sources": [
+    {
+     "key": "SY",
+     "name": "シゲノユウタ",
+     "url": "https://shigenoyuta.com/bonin_iland/"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "鹿浜は、父島の北に位置する弟島・孫島エリアのダイビングポイントです。大きな洞窟があることが特徴で、季節によってはシロワニが見られることがあります。最大水深は20〜26mほどです。二見湾の外側にあたるエリアのため、潮やうねりの影響を受けやすい海域です。二見港からボートで向かうポイントのひとつです。",
+   "commentary_en": "Shikahama is a dive site in the Ototojima and Magojima area, north of Chichijima, reached by boat from Futami Port. It is known for a large cave, and sand tiger sharks may be seen in certain seasons. The maximum depth is around 20–26 m, and as the site lies outside Futami Bay, conditions can be affected by currents and swell.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "孫島平根",
+   "alias": "",
+   "area": "弟島・孫島",
+   "features": "深場のソフトコーラル・流れ・回遊魚",
+   "depth": "",
+   "lat": 27.1976,
+   "lng": 142.19695,
+   "precision": "near",
+   "position_note": "孫島",
+   "sources": [
+    {
+     "key": "WT",
+     "name": "WTP",
+     "url": "https://www.wtp.co.jp/area/detail/126/Ogasawara/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "孫島平根は、父島の北にある弟島・孫島エリアのポイントです。深場のソフトコーラルと、流れの中で見られる回遊魚が特徴として挙げられています。二見湾の外側にあたるため、潮やうねりの影響を受けやすい海域です。最大水深については公開情報が見当たらず、この一覧では示していません。二見港からボートで向かいます。",
+   "commentary_en": "Mago-jima Hirane is a site in the Ototo-jima and Mago-jima area, north of Chichi-jima, noted for soft corals at depth, currents, and pelagic fish. Lying outside Futami Bay, it is exposed to tidal currents and ocean swell. No maximum depth is listed here, as we could not find published information on it.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ドブ磯",
+   "alias": "",
+   "area": "父島 東",
+   "features": "深場から立ち上がる2つの根とクレバス・イソマグロ",
+   "depth": "26-30m",
+   "lat": 27.09043,
+   "lng": 142.25018,
+   "precision": "near",
+   "position_note": "東島・東磯",
+   "sources": [
+    {
+     "key": "OC",
+     "name": "小笠原チャンネル",
+     "url": "https://www.ogasawara-channel.com/contents/diving.htm"
+    },
+    {
+     "key": "SY",
+     "name": "シゲノユウタ",
+     "url": "https://shigenoyuta.com/bonin_iland/"
+    },
+    {
+     "key": "PP",
+     "name": "パパスダイビングスタジオ",
+     "url": "https://papasds.com/diving/fundiving/"
+    },
+    {
+     "key": "WT",
+     "name": "WTP",
+     "url": "https://www.wtp.co.jp/area/detail/126/Ogasawara/"
+    },
+    {
+     "key": "PD",
+     "name": "PADI",
+     "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1203"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ドブ磯は、二見港からボートで向かう父島東側のポイントです。深場から立ち上がる2つの根とクレバスのある地形が特徴で、イソマグロが見られることで知られています。最大水深は26〜30mほどです。二見湾の外側にあたるため、潮やうねりの影響を受けやすい海域に位置しています。",
+   "commentary_en": "Dobu-iso is a boat dive site on the east side of Chichijima, known for two pinnacles rising from deep water, crevices in the rock, and dogtooth tuna. The maximum depth is about 26–30 m. Because it lies outside Futami Bay, the site is more exposed to currents and swell than spots inside the bay.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "スターライトパレード",
+   "alias": "SLP",
+   "area": "父島 東",
+   "features": "細い根に囲まれた場所・根魚の群れ",
+   "depth": "26m",
+   "lat": 27.085,
+   "lng": 142.254,
+   "precision": "area",
+   "position_note": "父島の東側",
+   "sources": [
+    {
+     "key": "SY",
+     "name": "シゲノユウタ",
+     "url": "https://shigenoyuta.com/bonin_iland/"
+    },
+    {
+     "key": "PP",
+     "name": "パパスダイビングスタジオ",
+     "url": "https://papasds.com/diving/fundiving/"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「スターライトパレード」は父島の東側にあるポイントで、「SLP」と略して呼ばれることもある。細い根に囲まれた場所で、根魚の群れが見られる。最大水深は26m。二見港からボートで向かうポイントの一つで、比較的穏やかな二見湾の外側にあたるため、潮やうねりの影響を受けやすい。",
+   "commentary_en": "Starlight Parade, often shortened to SLP, is a site on the east side of Chichijima, set in an area surrounded by narrow rock pinnacles where schools of rockfish can be seen. The maximum depth is 26 m. It is reached by boat from Futami Port and, lying outside the relatively calm Futami Bay, can be affected by currents and swell.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "鯨崎",
+   "alias": "",
+   "area": "父島 東",
+   "features": "ゴロタ地形・マンタに出会うことがある",
+   "depth": "24m",
+   "lat": 27.05067,
+   "lng": 142.23855,
+   "precision": "near",
+   "position_note": "鯨崎",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "鯨崎は父島の東側にあるポイントで、最大水深は24m。水中には岩が積み重なるゴロタ地形が広がり、マンタに出会うこともある。二見港からボートで向かう湾外のポイントのため、潮の流れやうねりの影響を受けやすく、その日の海況によって潜れるかどうかが左右されることもある。",
+   "commentary_en": "Kujirazaki is a dive site on the east side of Chichijima, with a maximum depth of 24 m. The bottom is made up of boulder terrain, and manta rays are sometimes seen here. Because it lies outside Futami Bay, the site is exposed to currents and swell, and conditions on the day can determine whether it is dived.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "南バラバラ",
+   "alias": "",
+   "area": "父島 東",
+   "features": "浅根が迷路状に連なる",
+   "depth": "15m",
+   "lat": 27.0608,
+   "lng": 142.23453,
+   "precision": "area",
+   "position_note": "父島の東側",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "南バラバラは父島の東側にあるポイントです。浅根がいくつも迷路状に連なる地形が特徴で、最大水深は15mです。父島のポイントの多くは二見港からボートで10〜40分ほどの範囲にあります。ここは二見湾の外側にあたるため、潮やうねりの影響を受けやすい場所です。地形と水深のほかに公開されている情報は多くありません。",
+   "commentary_en": "Minami Barabara is a dive site on the east side of Chichijima, characterized by shallow reefs that link together in a maze-like pattern, with a maximum depth of 15 m. As it lies outside the sheltered Futami Bay, conditions here can be affected by currents and swell. Beyond its topography and depth, little public information is available about this site.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "HAZAMA",
+   "alias": "閂ロック",
+   "area": "父島 南・南島",
+   "features": "父島と南島の間・流れが速い・イソマグロやトビエイ",
+   "depth": "15-30m",
+   "lat": 27.04463,
+   "lng": 142.17621,
+   "precision": "near",
+   "position_note": "閂島",
+   "sources": [
+    {
+     "key": "OC",
+     "name": "小笠原チャンネル",
+     "url": "https://www.ogasawara-channel.com/contents/diving.htm"
+    },
+    {
+     "key": "SY",
+     "name": "シゲノユウタ",
+     "url": "https://shigenoyuta.com/bonin_iland/"
+    },
+    {
+     "key": "PP",
+     "name": "パパスダイビングスタジオ",
+     "url": "https://papasds.com/diving/fundiving/"
+    },
+    {
+     "key": "WT",
+     "name": "WTP",
+     "url": "https://www.wtp.co.jp/area/detail/126/Ogasawara/"
+    },
+    {
+     "key": "PD",
+     "name": "PADI",
+     "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1203"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "HAZAMA（別名・閂ロック）は、父島の南、父島と南島の間にあるポイント。二つの島に挟まれた場所で、流れが速いことで知られる。水深はおおむね15〜30mで、イソマグロやトビエイが見られる。二見湾の外側にあたるため、潮やうねりの影響を受けやすい。二見港からボートで向かうポイントのひとつ。",
+   "commentary_en": "HAZAMA, also known as Kannuki Rock (閂ロック), lies between Chichijima and Minamijima, south of Chichijima, and is known for its fast currents. Depths range from about 15 to 30 m, and dogtooth tuna and eagle rays can be seen here. Because it sits outside Futami Bay, conditions are readily affected by currents and swell.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "タコ岩",
+   "alias": "",
+   "area": "父島 南・南島",
+   "features": "コの字形の根・回遊魚・ときにマンタ",
+   "depth": "25m",
+   "lat": 27.0728,
+   "lng": 142.17798,
+   "precision": "near",
+   "position_note": "蛸岩",
+   "sources": [
+    {
+     "key": "WT",
+     "name": "WTP",
+     "url": "https://www.wtp.co.jp/area/detail/126/Ogasawara/"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "タコ岩は父島の南、南島周辺のエリアにあるポイントで、最大水深は25mです。コの字形をした根が特徴とされ、その周りでは回遊魚が見られるほか、ときにマンタが現れることもあります。父島のポイントの多くと同じく、二見港からボートで向かいます。二見湾の外側にあたるため、潮やうねりの影響を受けやすい海域です。",
+   "commentary_en": "Tako-iwa is a dive site in the southern Chichijima and Minamijima area, with a maximum depth of 25 m. It is known for a U-shaped rock formation where pelagic fish gather, and manta rays occasionally appear. Like most Chichijima sites, it is reached by boat from Futami Port, and because it lies outside Futami Bay, conditions can be affected by currents and swell.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "北一つ岩",
+   "alias": "",
+   "area": "父島 南・南島",
+   "features": "細長い根のドリフト・カメ・アカイセエビ",
+   "depth": "24m",
+   "lat": 27.06,
+   "lng": 142.17,
+   "precision": "area",
+   "position_note": "父島の南西〜南島",
+   "sources": [
+    {
+     "key": "SY",
+     "name": "シゲノユウタ",
+     "url": "https://shigenoyuta.com/bonin_iland/"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "北一つ岩は、父島の南、南島周辺のエリアにあるポイントです。細長く延びる根に沿って潜るドリフトダイビングが特徴で、カメやアカイセエビが見られることがあります。最大水深は24m。二見湾の外側に位置するため、潮やうねりの影響を受けやすい海域にあり、二見港からボートで向かいます。",
+   "commentary_en": "Kita-Hitotsuiwa is a site in the southern Chichijima and Minamijima area, characterized by drift dives along an elongated rock ridge where turtles and red spiny lobsters may be seen. The maximum depth is 24 m. It lies outside Futami Bay, where conditions are more exposed to currents and swell, and is reached by boat from Futami Port.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "マンゾウ穴",
+   "alias": "",
+   "area": "（位置不明）",
+   "features": "白砂の洞窟・イルカに出会いやすい",
+   "depth": "14m",
+   "lat": null,
+   "lng": null,
+   "precision": "unknown",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "WT",
+     "name": "WTP",
+     "url": "https://www.wtp.co.jp/area/detail/126/Ogasawara/"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "マンゾウ穴は父島のダイビングポイントの一つですが、具体的な位置については公開情報から確認できていません。白い砂地の洞窟が特徴とされ、イルカに出会いやすいポイントとしても挙げられています。最大水深は14mです。父島のポイントの多くは二見港からボートで10〜40分ほどの範囲にあります。",
+   "commentary_en": "Manzō-ana is one of Chichijima's dive sites, though its exact location could not be confirmed from public information. It is described as having a cave with a white sand floor, and it is noted as a site where dolphin encounters are relatively common. The maximum depth is 14 m, and like most Chichijima sites it is presumably reached by boat from Futami Port, which typically takes about 10–40 minutes.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "マルベイ",
+   "alias": "",
+   "area": "（位置不明）",
+   "features": "岩のアーチ・季節によりシロワニやホワイトチップ",
+   "depth": "26m",
+   "lat": null,
+   "lng": null,
+   "precision": "unknown",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "WT",
+     "name": "WTP",
+     "url": "https://www.wtp.co.jp/area/detail/126/Ogasawara/"
+    },
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "マルベイは、父島周辺のダイビングポイントのひとつです。正確な位置は、この一覧では確認できていません。水中には岩のアーチがあり、季節によってはシロワニやホワイトチップが見られることがあるとされています。最大水深は26mです。父島のポイントの多くは二見港からボートで向かいますが、マルベイの所在エリアについては公開情報が限られています。",
+   "commentary_en": "Marubei is a dive site in the Chichijima area, though its exact location is not confirmed in this listing. The site features a rock arch, and sand tiger sharks or whitetip reef sharks may be seen depending on the season. The maximum depth is 26 m.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "スモール",
+   "alias": "",
+   "area": "（位置不明）",
+   "features": "ゴロタ地形・ホワイトチップ・ピグミーシーホース",
+   "depth": "30m",
+   "lat": null,
+   "lng": null,
+   "precision": "unknown",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「スモール」は父島周辺のポイントのひとつですが、位置は公開情報からは確認できていません。伝えられている特徴は、ゴロタ（転石）の地形と、ホワイトチップやピグミーシーホースが見られることです。最大水深は30mとされています。父島の多くのポイントと同じく二見港からボートで向かうと考えられますが、場所が不明なため、所要時間や海況の傾向はわかっていません。",
+   "commentary_en": "\"Small\" is listed among the dive sites around Chichijima, but its exact location could not be confirmed from public sources. The reported features are a boulder-strewn bottom, whitetip reef sharks, and pygmy seahorses, with a maximum depth of about 30 m. Because the location is unknown, travel time from Futami Port and typical sea conditions cannot be described.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "南浮磯",
+   "alias": "",
+   "area": "（位置不明）",
+   "features": "細長い根とクレバス",
+   "depth": "20m",
+   "lat": null,
+   "lng": null,
+   "precision": "unknown",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "南浮磯は、父島周辺のダイビングポイントの一つとして名前が挙がる場所です。正確な位置は、手元の情報からは分かっていません。知られている特徴は細長い根とクレバスのある地形で、最大水深は20mとされています。見られる生き物や潮の傾向など、これ以外の公開情報はほとんどありません。",
+   "commentary_en": "Minami-Ukiiso is listed among the dive sites around Chichijima, though its exact location is not given in the available information. The site is described as an elongated rock formation with crevasses, with a maximum depth of about 20 m. Beyond this, little public information exists about its marine life or conditions.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ネコニコバンネ",
+   "alias": "",
+   "area": "（位置不明）",
+   "features": "30mの根・流れが強い・マクロ",
+   "depth": "30m",
+   "lat": null,
+   "lng": null,
+   "precision": "unknown",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ネコニコバンネは父島のポイントのひとつですが、具体的な位置は公開情報からは確認できていません。特徴として水深30m前後の根があり、流れが強いことが挙げられています。小さな生き物を観察するマクロ向きのポイントとされ、最大水深は30mです。これら以外の地形や生き物の詳しい情報はほとんど公開されていません。",
+   "commentary_en": "Nekonikobanne is one of Chichijima's dive sites, though its exact location is not confirmed in public sources. It is described as a pinnacle at around 30 m with strong currents, known mainly for macro life, and its maximum depth is 30 m. Little else about its terrain or marine life is publicly documented.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ムロ浅根",
+   "alias": "",
+   "area": "（位置不明）",
+   "features": "ピグミーシーホース・潮が強い",
+   "depth": "30m",
+   "lat": null,
+   "lng": null,
+   "precision": "unknown",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ムロ浅根は、父島周辺のダイビングポイントのひとつです。この一覧では詳しい位置を確認できておらず、エリアは不明としています。伝えられている特徴は、ピグミーシーホースが見られることと、潮が強いことです。最大水深は30mです。それ以外の地形や生き物については、公開されている情報がほとんどありません。",
+   "commentary_en": "Muro Asane is one of the dive sites around Chichijima, though its exact location is not listed here. Its reported features are pygmy seahorses and strong currents, with a maximum depth of 30 m. Little other public information is available about its terrain or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "黒根",
+   "alias": "",
+   "area": "（位置不明）",
+   "features": "水中アーチ・回遊魚",
+   "depth": "25m",
+   "lat": null,
+   "lng": null,
+   "precision": "unknown",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "SM",
+     "name": "スキューバモンスターズ",
+     "url": "https://scuba-monsters.com/spot/areas/6/spots/68/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "黒根は父島のダイビングポイントのひとつで、具体的な位置は示されていない。特徴として挙げられているのは水中アーチと回遊魚で、最大水深は25mとされる。父島のポイントの多くは二見港からボートで10〜40分ほどの範囲にあるが、黒根がどのエリアにあるかは公開情報からは確認できない。地形や生き物について、これ以上の詳しい情報はほとんどない。",
+   "commentary_en": "Kurone is a dive site off Chichijima whose exact location is not specified in available information. It is noted for an underwater arch and pelagic fish, with a maximum depth of about 25 m. Most Chichijima sites lie 10–40 minutes by boat from Futami Port, but little else has been published about this one.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "黒岩",
+   "alias": "",
+   "area": "（位置不明）",
+   "features": "外洋側の岩礁・ロウニンアジ・バラクーダ",
+   "depth": "",
+   "lat": null,
+   "lng": null,
+   "precision": "unknown",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "WT",
+     "name": "WTP",
+     "url": "https://www.wtp.co.jp/area/detail/126/Ogasawara/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "黒岩は父島周辺のポイントのひとつですが、正確な位置や最大水深は公開情報からは確認できていません。伝えられている特徴は外洋側の岩礁で、ロウニンアジやバラクーダが見られるとされます。父島では一般に、外洋に面した場所は二見湾の中に比べて潮やうねりの影響を受けやすい傾向があります。地形の詳しい様子などは、まだ情報が少ないポイントです。",
+   "commentary_en": "Kuroiwa is one of the dive sites around Chichijima, though its exact location and maximum depth are not confirmed in publicly available information. It is described as a rocky reef on the open-ocean side, with giant trevally and barracuda reported. As is generally the case around Chichijima, sites facing the open ocean tend to be more affected by currents and swell than those inside Futami Bay.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "四の岩",
+   "alias": "",
+   "area": "（位置不明）",
+   "features": "深場のソフトコーラル・イセエビ",
+   "depth": "",
+   "lat": null,
+   "lng": null,
+   "precision": "unknown",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "WT",
+     "name": "WTP",
+     "url": "https://www.wtp.co.jp/area/detail/126/Ogasawara/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「四の岩」は父島周辺のポイントの一つとして名前が挙がるが、正確な位置や最大水深についてはまとまった公開情報が見当たらない。伝えられている特徴は、深場に見られるソフトコーラルとイセエビである。父島のポイントの多くは二見港からボートで10〜40分ほどの範囲にあるが、四の岩がどのあたりに位置するかは確認できていない。",
+   "commentary_en": "Shi-no-Iwa is listed among the dive sites around Chichijima, but little public information is available on its exact location or maximum depth. The features reported for it are soft corals in deeper water and spiny lobsters. Most Chichijima sites lie roughly 10–40 minutes by boat from Futami Port, though where this one falls has not been confirmed.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "コーラルガーデン",
+   "alias": "",
+   "area": "（位置不明）",
+   "features": "広いサンゴ礁・流れはおだやか",
+   "depth": "",
+   "lat": null,
+   "lng": null,
+   "precision": "unknown",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "WT",
+     "name": "WTP",
+     "url": "https://www.wtp.co.jp/area/detail/126/Ogasawara/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "コーラルガーデンは、広いサンゴ礁があり、流れがおだやかとされるポイントです。父島周辺のどのエリアにあるかは公開情報から確認できておらず、最大水深もわかっていません。父島のポイントの多くは二見港からボートで10〜40分ほどですが、このポイントまでの所要時間も不明です。名前と大まかな特徴のほかに、詳しい情報はほとんどありません。",
+   "commentary_en": "Coral Garden is described as a site with an extensive coral reef and gentle currents. Its location around Chichijima and its maximum depth are not confirmed in available sources. Beyond its name and these general features, little public information exists.",
+   "commentary_model": "claude-opus-5-5"
+  }
+ ],
+ "area_media": {
+  "二見湾（湾内・沈船）": [
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/23/26056070_a3f2d1246b.jpg",
+    "page": "https://www.flickr.com/photos/37996589754@N01/26056070",
+    "title": "the dolphin swim",
+    "author": "fo.ol",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Chichijima underwater"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8255/8666219565_dc447e0992_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666219565",
+    "title": "P1010563",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8257/8666189701_7f710653da_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666189701",
+    "title": "P1010819",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8266/8666193003_2290ab3038_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666193003",
+    "title": "P1010759",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8266/8667294270_9129496d29_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8667294270",
+    "title": "P1010752",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8263/8666201801_959aa0b1b9_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666201801",
+    "title": "P1010673",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   }
+  ],
+  "父島 北（宮之浜〜長崎）": [
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/23/26056070_a3f2d1246b.jpg",
+    "page": "https://www.flickr.com/photos/37996589754@N01/26056070",
+    "title": "the dolphin swim",
+    "author": "fo.ol",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Chichijima underwater"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8255/8666219565_dc447e0992_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666219565",
+    "title": "P1010563",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8257/8666189701_7f710653da_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666189701",
+    "title": "P1010819",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8266/8666193003_2290ab3038_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666193003",
+    "title": "P1010759",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8266/8667294270_9129496d29_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8667294270",
+    "title": "P1010752",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8263/8666201801_959aa0b1b9_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666201801",
+    "title": "P1010673",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   }
+  ],
+  "兄島・瀬戸": [
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/23/26056070_a3f2d1246b.jpg",
+    "page": "https://www.flickr.com/photos/37996589754@N01/26056070",
+    "title": "the dolphin swim",
+    "author": "fo.ol",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Chichijima underwater"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8255/8666219565_dc447e0992_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666219565",
+    "title": "P1010563",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8257/8666189701_7f710653da_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666189701",
+    "title": "P1010819",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8266/8666193003_2290ab3038_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666193003",
+    "title": "P1010759",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8266/8667294270_9129496d29_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8667294270",
+    "title": "P1010752",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8263/8666201801_959aa0b1b9_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666201801",
+    "title": "P1010673",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   }
+  ],
+  "西島": [
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/23/26056070_a3f2d1246b.jpg",
+    "page": "https://www.flickr.com/photos/37996589754@N01/26056070",
+    "title": "the dolphin swim",
+    "author": "fo.ol",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Chichijima underwater"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8255/8666219565_dc447e0992_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666219565",
+    "title": "P1010563",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8257/8666189701_7f710653da_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666189701",
+    "title": "P1010819",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8266/8666193003_2290ab3038_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666193003",
+    "title": "P1010759",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8266/8667294270_9129496d29_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8667294270",
+    "title": "P1010752",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8263/8666201801_959aa0b1b9_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666201801",
+    "title": "P1010673",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   }
+  ],
+  "弟島・孫島": [
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/23/26056070_a3f2d1246b.jpg",
+    "page": "https://www.flickr.com/photos/37996589754@N01/26056070",
+    "title": "the dolphin swim",
+    "author": "fo.ol",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Chichijima underwater"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8255/8666219565_dc447e0992_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666219565",
+    "title": "P1010563",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8257/8666189701_7f710653da_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666189701",
+    "title": "P1010819",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8266/8666193003_2290ab3038_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666193003",
+    "title": "P1010759",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8266/8667294270_9129496d29_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8667294270",
+    "title": "P1010752",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8263/8666201801_959aa0b1b9_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666201801",
+    "title": "P1010673",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   }
+  ],
+  "父島 東": [
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/23/26056070_a3f2d1246b.jpg",
+    "page": "https://www.flickr.com/photos/37996589754@N01/26056070",
+    "title": "the dolphin swim",
+    "author": "fo.ol",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Chichijima underwater"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8255/8666219565_dc447e0992_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666219565",
+    "title": "P1010563",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8257/8666189701_7f710653da_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666189701",
+    "title": "P1010819",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8266/8666193003_2290ab3038_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666193003",
+    "title": "P1010759",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8266/8667294270_9129496d29_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8667294270",
+    "title": "P1010752",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8263/8666201801_959aa0b1b9_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666201801",
+    "title": "P1010673",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   }
+  ],
+  "父島 南・南島": [
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/23/26056070_a3f2d1246b.jpg",
+    "page": "https://www.flickr.com/photos/37996589754@N01/26056070",
+    "title": "the dolphin swim",
+    "author": "fo.ol",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Chichijima underwater"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8255/8666219565_dc447e0992_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666219565",
+    "title": "P1010563",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8257/8666189701_7f710653da_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666189701",
+    "title": "P1010819",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8266/8666193003_2290ab3038_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666193003",
+    "title": "P1010759",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8266/8667294270_9129496d29_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8667294270",
+    "title": "P1010752",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8263/8666201801_959aa0b1b9_b.jpg",
+    "page": "https://www.flickr.com/photos/42782058@N04/8666201801",
+    "title": "P1010673",
+    "author": "yuichi0613",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Ogasawara diving"
+   }
+  ],
+  "（位置不明）": [
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/23/28990015_cf30003045_b.jpg",
+    "page": "https://www.flickr.com/photos/37996589754@N01/28990015",
+    "title": "P7080264",
+    "author": "fo.ol",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "via": "Flickr",
+    "area": true
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/23/26056070_a3f2d1246b.jpg",
+    "page": "https://www.flickr.com/photos/37996589754@N01/26056070",
+    "title": "the dolphin swim",
+    "author": "fo.ol",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "via": "Flickr",
+    "area": true
+   }
+  ]
+ }
+}
