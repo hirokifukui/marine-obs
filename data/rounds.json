@@ -1,5 +1,5 @@
 {
- "observed": "2026-10-27",
+ "observed": "2026-10-28",
  "dhw_method": "site (8 weeks, no 1°C cut-off)",
  "sites": [
   {
@@ -7,21 +7,20 @@
    "ja": "串本",
    "en": "Kushimoto",
    "lat": "33.5°N",
-   "date": "2026-10-27",
-   "sst": 26.2,
-   "anomaly": 1.6,
+   "date": "2026-10-28",
+   "sst": 25.8,
+   "anomaly": 1.3,
    "mmm": 27.7,
-   "dhw": 0.6,
-   "dhw_week_ago": 1.8,
+   "dhw": 0.4,
+   "dhw_week_ago": 1.6,
    "days30": 1,
    "hot_year": 2026,
    "status": "normal",
    "status_ja": "平常",
    "status_en": "Normal",
-   "finding_ja": "平年より1.6℃高い。この1週間で0.1℃上昇。",
-   "finding_en": "1.6°c above normal; up 0.1°c this week.",
+   "finding_ja": "平年より1.3℃高い。この1週間で0.7℃低下。",
+   "finding_en": "1.3°c above normal; down 0.7°c this week.",
    "spark": [
-    28.72,
     28.69,
     28.74,
     28.8,
@@ -79,7 +78,8 @@
     25.55,
     26.52,
     26.37,
-    26.16
+    26.16,
+    25.75
    ]
   },
   {
@@ -87,21 +87,20 @@
    "ja": "小笠原",
    "en": "Ogasawara",
    "lat": "27.1°N",
-   "date": "2026-10-27",
+   "date": "2026-10-28",
    "sst": 26.4,
-   "anomaly": -0.4,
+   "anomaly": -0.3,
    "mmm": 27.9,
-   "dhw": 2.5,
+   "dhw": 2.4,
    "dhw_week_ago": 2.9,
    "days30": 11,
    "hot_year": 2026,
    "status": "normal",
    "status_ja": "平常",
    "status_en": "Normal",
-   "finding_ja": "平年より0.4℃低い。DHWは低下中。",
-   "finding_en": "0.4°c below normal; dhw falling.",
+   "finding_ja": "平年より0.3℃低い。DHWは低下中。",
+   "finding_en": "0.3°c below normal; dhw falling.",
    "spark": [
-    28.34,
     28.42,
     28.53,
     28.32,
@@ -159,7 +158,8 @@
     26.71,
     26.63,
     26.47,
-    26.35
+    26.35,
+    26.42
    ]
   },
   {
@@ -167,21 +167,20 @@
    "ja": "奄美",
    "en": "Amami",
    "lat": "28.2°N",
-   "date": "2026-10-27",
-   "sst": 26.6,
-   "anomaly": 0.3,
+   "date": "2026-10-28",
+   "sst": 26.4,
+   "anomaly": 0.1,
    "mmm": 28.0,
    "dhw": 0.1,
-   "dhw_week_ago": 0.2,
+   "dhw_week_ago": 0.1,
    "days30": 0,
    "hot_year": 2026,
    "status": "normal",
    "status_ja": "平常",
    "status_en": "Normal",
-   "finding_ja": "平年より0.3℃高い。この1週間で0.5℃低下。",
-   "finding_en": "0.3°c above normal; down 0.5°c this week.",
+   "finding_ja": "平年並み。この1週間で0.9℃低下。",
+   "finding_en": "Close to normal; down 0.9°c this week.",
    "spark": [
-    27.47,
     27.37,
     27.32,
     27.4,
@@ -239,7 +238,8 @@
     26.98,
     26.85,
     26.6,
-    26.56
+    26.56,
+    26.37
    ]
   },
   {
@@ -247,9 +247,9 @@
    "ja": "瀬底",
    "en": "Sesoko",
    "lat": "26.6°N",
-   "date": "2026-10-27",
-   "sst": 27.1,
-   "anomaly": 0.5,
+   "date": "2026-10-28",
+   "sst": 27.0,
+   "anomaly": 0.4,
    "mmm": 28.5,
    "dhw": 0.2,
    "dhw_week_ago": 0.2,
@@ -258,10 +258,9 @@
    "status": "normal",
    "status_ja": "平常",
    "status_en": "Normal",
-   "finding_ja": "平年より0.5℃高い。この1週間で0.6℃低下。",
-   "finding_en": "0.5°c above normal; down 0.6°c this week.",
+   "finding_ja": "平年より0.4℃高い。この1週間で0.8℃低下。",
+   "finding_en": "0.4°c above normal; down 0.8°c this week.",
    "spark": [
-    28.39,
     28.43,
     28.4,
     28.23,
@@ -319,7 +318,8 @@
     27.21,
     27.02,
     26.95,
-    27.14
+    27.14,
+    27.0
    ]
   },
   {
@@ -327,9 +327,9 @@
    "ja": "万座",
    "en": "Manza",
    "lat": "26.5°N",
-   "date": "2026-10-27",
-   "sst": 27.1,
-   "anomaly": 0.8,
+   "date": "2026-10-28",
+   "sst": 27.0,
+   "anomaly": 0.7,
    "mmm": 28.5,
    "dhw": 0.6,
    "dhw_week_ago": 0.6,
@@ -338,10 +338,9 @@
    "status": "normal",
    "status_ja": "平常",
    "status_en": "Normal",
-   "finding_ja": "平年より0.8℃高い。この1週間で0.8℃低下。",
-   "finding_en": "0.8°c above normal; down 0.8°c this week.",
+   "finding_ja": "平年より0.7℃高い。この1週間で0.9℃低下。",
+   "finding_en": "0.7°c above normal; down 0.9°c this week.",
    "spark": [
-    28.23,
     28.03,
     27.87,
     27.98,
@@ -399,7 +398,8 @@
     27.27,
     27.02,
     27.01,
-    27.12
+    27.12,
+    26.99
    ]
   },
   {
@@ -407,12 +407,12 @@
    "ja": "慶良間",
    "en": "Kerama",
    "lat": "26.2°N",
-   "date": "2026-10-27",
-   "sst": 27.5,
+   "date": "2026-10-28",
+   "sst": 27.4,
    "anomaly": 0.9,
    "mmm": 28.5,
    "dhw": 1.1,
-   "dhw_week_ago": 1.2,
+   "dhw_week_ago": 1.1,
    "days30": 3,
    "hot_year": 2026,
    "status": "normal",
@@ -421,7 +421,6 @@
    "finding_ja": "平年より0.9℃高い。DHWは横ばい。",
    "finding_en": "0.9°c above normal; dhw steady.",
    "spark": [
-    28.02,
     28.07,
     28.04,
     27.93,
@@ -479,7 +478,8 @@
     27.17,
     27.05,
     27.43,
-    27.52
+    27.52,
+    27.44
    ]
   },
   {
@@ -487,8 +487,8 @@
    "ja": "石西礁湖",
    "en": "Sekisei Lagoon",
    "lat": "24.3°N",
-   "date": "2026-10-27",
-   "sst": 26.7,
+   "date": "2026-10-28",
+   "sst": 26.6,
    "anomaly": -0.2,
    "mmm": 29.1,
    "dhw": 0.4,
@@ -501,7 +501,6 @@
    "finding_ja": "平年より0.2℃低い。この1週間で1.7℃低下。",
    "finding_en": "0.2°c below normal; down 1.7°c this week.",
    "spark": [
-    29.39,
     29.36,
     29.31,
     29.11,
@@ -559,9 +558,10 @@
     27.95,
     27.16,
     26.85,
-    26.68
+    26.68,
+    26.65
    ]
   }
  ],
- "updated": "2026-10-30"
+ "updated": "2026-10-31"
 }
