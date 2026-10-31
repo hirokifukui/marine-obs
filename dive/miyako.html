@@ -232,6 +232,13 @@
         .dp-detail .ph { border: 1px dashed var(--border); border-radius: 8px; padding: 0.7rem; font-size: 0.84rem; color: var(--text-secondary); margin-top: 0.6rem; }
         .dp-detail .src { font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.8rem; line-height: 1.8; }
         .dp-detail .src a { margin-right: 0.6rem; }
+        .dp-detail .src .web { margin-top: 0.3rem; }
+        .dp-detail .lt { font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.15rem; line-height: 1.6; }
+        .dp-cr { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+        .dp-cr span { font-size: 0.8rem; border: 1px solid var(--border); border-radius: 999px; padding: 0.05rem 0.55rem; }
+        .dp-cr i { font-style: normal; color: var(--text-secondary); margin-left: 0.3rem; font-size: 0.72rem; }
+        .dp-cond { display: grid; gap: 0.2rem; font-size: 0.86rem; }
+        .dp-cond b { font-weight: 600; color: var(--text-secondary); margin-right: 0.3rem; font-size: 0.8rem; }
         .dp-pop b { font-size: 1rem; } .dp-pop .f { font-size: 0.85rem; margin: 0.3rem 0; }
         .dp-pop button { font: inherit; font-size: 0.82rem; margin-top: 0.3rem; padding: 0.2rem 0.6rem; border-radius: 6px; border: 1px solid #0a5c74; background: #0a5c74; color: #fff; cursor: pointer; }
         .dp-tag { display: inline-block; font-size: 0.7rem; border: 1px solid currentColor; border-radius: 4px; padding: 0 0.3rem; margin-left: 0.3rem; color: var(--text-secondary); }
@@ -270,13 +277,13 @@
                 <h1><span data-lang="en">Miyako-jima dive sites</span><span data-lang="ja">宮古島のダイビングポイント</span></h1>
                 <div class="tagline"><span data-lang="en">Tap a site for a short note, then “More” for details.</span><span data-lang="ja">ポイントを押すと短い説明、「詳しく」で詳細が出ます。</span> <span id="dp-count"></span></div>
             </div>
-            <div class="dp-about"><span data-lang="en"><b>About this page.</b> An AI (Claude) compiled this from dive shops’ public pages; nothing was checked on site. Many positions are off, and names, depths and features vary between shops or may be dated, so it can differ a lot from reality. Use it as a rough overview and confirm sites and plans with a local shop.</span><span data-lang="ja"><b>このページについて：</b>ショップやガイドの公開情報を生成AI（Claude）が自動でまとめた参考資料で、現地では確かめていません。位置の多くはずれ、名前・水深・特徴もショップで違ったり古かったりして、実際とはかなり違うところがあります。見取り図として使い、ポイントと計画は現地のショップで確かめてください。</span></div>
-            <p class="dp-how"><span data-lang="en"><b>How the sites were chosen:</b> we collected the names listed on nine public pages of Miyako dive shops and guides (each site lists its sources), merged obvious aliases, and ended with 104 sites. Shops name and divide sites differently, so some places may appear twice and others are missing; many Yabiji (Yaebishi) sites are names only.</span><span data-lang="ja"><b>ポイントの選び方：</b>宮古島のダイビングショップ・ガイドが公開しているページ9つ（各ポイントの出典に記載）に載っていた名前を集め、明らかな別名をまとめて104か所にしました。ショップによって呼び名や区切り方が違うため、同じ場所が二重に入っていたり、載っていないポイントがあったりします。八重干瀬の多くは名前しか分かっていません。</span></p>
+            <div class="dp-about"><span data-lang="en"><b>About this page.</b> An AI (Claude) compiled this from dive shops’ public pages and dive logs found by web search; nothing was checked on site. Positions can be off, and names, depths and features vary between shops or may be dated, so it can differ a lot from reality. Use it as a rough overview and confirm sites and plans with a local shop.</span><span data-lang="ja"><b>このページについて：</b>ショップやガイドの公開情報と、Web検索で見つけたダイビングログを、生成AI（Claude）が自動でまとめた参考資料で、現地では確かめていません。位置はずれていることがあり、名前・水深・特徴もショップで違ったり古かったりして、実際とはかなり違うところがあります。見取り図として使い、ポイントと計画は現地のショップで確かめてください。</span></div>
+            <p class="dp-how"><span data-lang="en"><b>How the sites were chosen:</b> we collected the names listed on nine public pages of Miyako dive shops and guides, merged obvious aliases, added 35 sites found on PADI or in logs, and ended with 139 sites. For each site, Meta’s Muse Spark searched the web — mainly shop logs and dive blogs — for its location, the creatures mentioned and the conditions it is dived in; positions also use the coordinates on PADI’s dive-spot page. Sources are listed under each site. Shops name and divide sites differently, so some places may be missing or duplicated; many Yabiji (Yaebishi) sites are still names only.</span><span data-lang="ja"><b>ポイントの選び方：</b>宮古島のダイビングショップ・ガイドが公開しているページ9つに載っていた名前を集め、明らかな別名をまとめて、PADI やログで見つかった35か所を足して、139か所にしました。そのうえで、ポイントごとに Meta の Muse Spark にWeb検索をさせ、ショップのログやダイビングブログから、場所・出てくる生き物・潜る条件を拾いました。位置には PADI のスポット情報の座標も使っています。出典は各ポイントに載せています。ショップによって呼び名や区切り方が違うため、載っていないポイントや二重になっているポイントがあります。八重干瀬の多くは、まだ名前くらいしか分かっていません。</span></p>
             <div class="dp-chips" id="dp-chips"></div>
             <div class="dp-grid one">
                 <div id="dp-map" class="dp-map"></div>
             </div>
-            <p class="dp-note"><span data-lang="en">Positions are approximate. Sites marked “near” are placed beside a named landmark; the rest are spread along their area’s coast (or across the Yabiji reefs) and do not show the real spot. Not for navigation or dive planning. Names, features and depths are compiled from the dive-shop and guide pages listed under each site.</span><span data-lang="ja">位置は目安です。「近く」と付いたポイントは名前のある場所のそばに置き、それ以外はエリアの海岸沿い（八重干瀬は礁域の中）に並べただけで、実際の場所ではありません。航行や潜水計画には使えません。名前・特徴・水深は、各ポイントに記した出典（ショップ・ガイドのページ）からまとめています。</span></p>
+            <p class="dp-note"><span data-lang="en">Positions are approximate. Solid circles use the coordinates on PADI’s dive-spot page or sit beside a named cape, beach or islet; dashed circles are rough positions guessed from shop logs, or simply placed in the area. Even solid ones can be off from the actual spot. Not for navigation or dive planning.</span><span data-lang="ja">位置は目安です。実線の丸は PADI のスポット情報の座標か、名前のある岬・浜・島のそばに置いたもの、点線の丸はショップのログから推測した目安か、エリアの中に置いただけのものです。実線でも実際の場所とはずれることがあります。航行や潜水計画には使えません。</span></p>
             <div class="dp-list" id="dp-list"></div>
             <div class="dp-modal" id="dp-modal" role="dialog" aria-modal="true"><div class="dp-detail" id="dp-detail"></div></div>
         </div>

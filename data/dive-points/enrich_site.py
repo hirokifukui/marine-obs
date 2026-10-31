@@ -125,11 +125,13 @@ def area_media():
 
 SYS = """あなたはダイビングポイント解説の書き手です。marine-obs.org の「{TITLE}のダイビングポイント」に載る短い解説を書きます。
 守ること：
-- 与えた事実（エリア・特徴・最大水深・別名）と、{CONTEXT}だけを使う。
+- 与えた事実（エリア・特徴・最大水深・別名、あれば場所の説明・ログや紹介に出てくる生き物・潜る条件・PADI の情報）と、{CONTEXT}だけを使う。
+- 生き物は「ログや紹介に名前が出てくる」ものとして書き、いつでも見られるとは書かない。季節が付いていればそれも添える。数が多ければ代表的なものを2〜4種に絞る。
+- 潜る条件（風向き・流れ・レベル）は与えられたときだけ、出典どおりに書く。
 - 与えていない生き物・地形・数字を作らない。情報が名前しかないポイントは、そう正直に書く（例：名前のほかに公開情報がほとんどない）。
 - 宣伝の言い回しや断定（「必見」「最高」）を避け、落ち着いた中立の文にする。安全の指示はしない。
 - ショップの文章を写さない。
-出力はタグのみ：<ja>日本語 120〜180字</ja><en>English, 2–3 sentences</en>"""
+出力はタグのみ：<ja>日本語 150〜230字</ja><en>English, 2–3 sentences</en>"""
 
 
 CTX = {"miyako": ("宮古島", "宮古島の一般的な事情（夏は南風で伊良部島の北側、秋〜春は北風で下地島の南〜西側を潜ることが多い、八重干瀬は池間島の北の広い礁域で海況が良い日に行く、など）"),
@@ -140,6 +142,11 @@ SYS = SYS.replace("{TITLE}", CTX[SITE][0]).replace("{CONTEXT}", CTX[SITE][1])
 
 def commentary(p):
     facts = {k: p[k] for k in ("name", "alias", "area", "features", "depth")}
+    for k in ("location_text", "conditions", "padi"):
+        if p.get(k):
+            facts[k] = p[k]
+    if p.get("creatures"):
+        facts["creatures_in_logs"] = [c["name"] + (f"（{c['season']}）" if c.get("season") else "") for c in p["creatures"]]
     for attempt in range(3):
         try:
             r = requests.post("https://api.anthropic.com/v1/messages", timeout=120,
@@ -166,11 +173,16 @@ if __name__ == "__main__":
             print(i, p["name"], len(p["media"]), flush=True)
             json.dump(D, open(P, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     if only in ("all", "text"):
-        for i, p in enumerate(D["points"]):
-            if p.get("commentary_ja"):
-                continue
-            p["commentary_ja"], p["commentary_en"] = commentary(p)
-            p["commentary_model"] = "claude-opus-5-5"
-            print(i, p["name"], len(p["commentary_ja"]), flush=True)
-            json.dump(D, open(P, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        import threading
+        from concurrent.futures import ThreadPoolExecutor
+        lock = threading.Lock()
+        def one(ip):
+            i, p = ip
+            ja, en = commentary(p)
+            with lock:
+                p["commentary_ja"], p["commentary_en"], p["commentary_model"] = ja, en, "claude-opus-5-5"
+                print(i, p["name"], len(ja), flush=True)
+                json.dump(D, open(P, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        with ThreadPoolExecutor(6) as ex:
+            list(ex.map(one, [(i, p) for i, p in enumerate(D["points"]) if not p.get("commentary_ja")]))
     print("done")

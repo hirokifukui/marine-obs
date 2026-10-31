@@ -23,23 +23,53 @@
         return `<div class="dp-ai"><span class="tag">${bi('AI-GENERATED', 'AI自動生成')}</span>${bi(esc(p.commentary_en), esc(p.commentary_ja))}
             <span class="sig">${bi('Written by Claude (Anthropic) from the facts collected from the sources below; not checked on site.', '下の出典から集めた事実をもとに Claude（Anthropic）が書いた解説です。現地で確かめたものではありません。')}</span></div>`;
     }
+    const PREC = {
+        source: ['position from PADI’s dive-spot page', 'PADI のスポット情報の座標', 'PADI'],
+        log: ['placed from shop logs / guides', 'ショップのログ・紹介の記述から置いた位置', 'log'],
+        guess: ['rough guess from logs', 'ログから推測した目安', 'guess'],
+        near: ['near a named landmark', '名前のある場所の近く（目安）', 'near'],
+        area: ['placed somewhere in the area', 'エリアの中に置いた目安', 'area'],
+    };
+    function posText(p) {
+        if (p.lat == null) return bi('unknown (not on the map)', '不明（地図には置いていません）');
+        const t = PREC[p.precision] || PREC.area;
+        const extra = p.precision === 'near' ? esc(p.position_note) + 'の近く' : (p.precision === 'area' ? esc(p.position_note) : '');
+        return bi(t[0], t[1] + (extra && p.precision !== 'source' ? '：' + extra : ''));
+    }
+    function condHtml(c) {
+        if (!c) return '';
+        const rows = [['wind', 'Wind / season', '風・季節'], ['current', 'Current', '流れ'], ['level', 'Level', 'レベル'], ['access', 'Access', 'アクセス']]
+            .filter(r => c[r[0]]).map(r => `<span class="cd"><b>${bi(r[1], r[2])}</b> ${esc(c[r[0]])}</span>`);
+        return rows.length ? `<dt>${bi('Conditions', '潜る条件')}</dt><dd class="dp-cond">${rows.join('')}</dd>` : '';
+    }
+    function crHtml(cr) {
+        if (!cr || !cr.length) return '';
+        return `<dt>${bi('Seen in logs', 'ログに出る生き物')}</dt><dd class="dp-cr">${cr.map(c => `<span>${esc(c.name)}${c.season ? `<i>${esc(c.season)}</i>` : ''}</span>`).join('')}</dd>`;
+    }
     function detail(p) {
-        const near = p.precision === 'near';
+        const aliases = [p.alias, ...(p.aliases_found || [])].filter(Boolean).join('／');
+        const web = p.web_sources || [];
         document.getElementById('dp-detail').innerHTML = `<button type="button" class="close" aria-label="close" onclick="window.__dpClose()">×</button>
-            <h2>${esc(p.name)}</h2>${p.alias ? `<div class="alias">${bi('also: ', '別名：')}${esc(p.alias)}</div>` : ''}
+            <h2>${esc(p.name)}</h2>${aliases ? `<div class="alias">${bi('also: ', '別名：')}${esc(aliases)}</div>` : ''}
             <dl>
                 <dt>${bi('Area', 'エリア')}</dt><dd>${esc(p.area)}</dd>
-                <dt>${bi('Max depth', '最大水深')}</dt><dd>${esc(p.depth || '–')}</dd>
-                <dt>${bi('Features', '特徴')}</dt><dd>${esc(p.features || '–')}</dd>
-                <dt>${bi('Position', '位置')}</dt><dd>${p.lat == null ? bi('unknown (not on the map)', '不明（地図には置いていません）') : near ? bi('near ' + esc(p.position_note), esc(p.position_note) + 'の近く（目安）') : bi('approximate, within ' + esc(p.position_note), 'エリア内の目安（' + esc(p.position_note) + '）')}</dd>
+                <dt>${bi('Depth', '水深')}</dt><dd>${esc(p.depth || (p.padi && p.padi.depth) || '–')}</dd>
+                ${p.features ? `<dt>${bi('Features', '特徴')}</dt><dd>${esc(p.features)}</dd>` : ''}
+                <dt>${bi('Position', '位置')}</dt><dd>${posText(p)}${p.location_text ? `<div class="lt">${esc(p.location_text)}</div>` : ''}</dd>
+                ${crHtml(p.creatures)}
+                ${condHtml(p.conditions)}
             </dl>
             ${commentaryHtml(p)}
             ${mediaHtml(p)}
-            <div class="src">${bi('Sources: ', '出典：')}${p.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)} ↗</a>`).join('')}</div>`;
+            <div class="src">${p.sources.length ? bi('Sources: ', '出典：') + p.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)} ↗</a>`).join('') : ''}
+            ${web.length ? `<div class="web">${bi('Pages found by web search (Muse Spark, Meta): ', 'Web検索（Meta の Muse Spark）で見つけたページ：')}${web.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)} ↗</a>`).join('')}</div>` : ''}</div>`;
     }
     function popup(p) {
-        return `<div class="dp-pop"><b>${esc(p.name)}</b>${p.precision === 'area' ? `<span class="dp-tag">${bi('approx.', '位置は目安')}</span>` : ''}
-            <div class="f">${esc(p.features || '')}${p.depth ? ' · ' + esc(p.depth) : ''}</div>
+        const t = PREC[p.precision];
+        const tag = p.precision === 'source' ? '' : `<span class="dp-tag">${bi('approx.', p.precision === 'guess' ? '位置は推測' : '位置は目安')}</span>`;
+        const f = p.features || (p.creatures || []).slice(0, 3).map(c => c.name).join('・');
+        return `<div class="dp-pop"><b>${esc(p.name)}</b>${tag}
+            <div class="f">${esc(f)}${(p.depth || (p.padi && p.padi.depth)) ? ' · ' + esc(p.depth || p.padi.depth) : ''}</div>
             <button type="button" data-i="${data.points.indexOf(p)}">${bi('More', '詳しく')}</button></div>`;
     }
     function openDetail(i) {
@@ -63,7 +93,8 @@
         areas.forEach(a => layers[a] = L.layerGroup().addTo(map));
         data.points.forEach((p, i) => {
             if (p.lat == null) return;
-            const m = L.circleMarker([p.lat, p.lng], { radius: p.precision === 'near' ? 7 : 6, color: '#fff', weight: 1.5, fillColor: col[p.area], fillOpacity: p.precision === 'near' ? 0.95 : 0.75, dashArray: p.precision === 'near' ? null : '2 2' })
+            const firm = ['source', 'near'].includes(p.precision);
+            const m = L.circleMarker([p.lat, p.lng], { radius: firm ? 7 : 6, color: '#fff', weight: 1.5, fillColor: col[p.area], fillOpacity: firm ? 0.95 : 0.6, dashArray: firm ? null : '2 2' })
                 .bindPopup(popup(p)).bindTooltip(esc(p.name), { direction: 'top', offset: [0, -6] });
             m.addTo(layers[p.area]); markers[i] = m;
         });

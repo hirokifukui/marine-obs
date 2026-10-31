@@ -22,3 +22,9 @@ moni1000_reports/
 CLAUDE.md
 scripts/__pycache__/
 __pycache__/
+data/dive-points/.coast/
+data/dive-points/muse*.json
+data/dive-points/candidates_*.json
+data/dive-points/extras_*.json
+data/dive-points/padi_*.json
+data/dive-points/*.v1.json
