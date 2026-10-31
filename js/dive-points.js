@@ -6,6 +6,23 @@
     const COLORS = ['#0a5c74', '#d0613d', '#2a8a5c', '#7a5cc2', '#c58a00', '#b3261e', '#3a7ca5', '#8a6d3b', '#5b8c85', '#a04a7a'];
     let map, layers = {}, markers = {}, data;
 
+    const AREA_MEDIA_KEY = a => ({ 'ビーチ': '宮古島南・来間', 'ビーチ（東）': '宮古島南・来間', 'ビーチ（池間）': '宮古島北（狩俣）' })[a] || a;
+    function fig(m) {
+        return `<figure><a href="${esc(m.page)}" target="_blank" rel="noopener"><img loading="lazy" src="${esc(m.src)}" alt="${esc(m.title)}"></a>
+            <figcaption>© ${esc(m.author || 'unknown')} · ${m.license_url ? `<a href="${esc(m.license_url)}" target="_blank" rel="noopener">${esc(m.license)}</a>` : esc(m.license)} · ${esc(m.via)}</figcaption></figure>`;
+    }
+    function mediaHtml(p) {
+        const own = (p.media || []).filter(m => !m.area);
+        if (own.length) return `<div class="dp-media">${own.map(fig).join('')}</div>`;
+        const am = ((data.area_media || {})[AREA_MEDIA_KEY(p.area)] || []).slice(0, 4);
+        if (!am.length) return `<p class="dp-media-note">${bi('No openly licensed photos found for this site yet.', 'このポイントの、再利用が許可された写真はまだ見つかっていません。')}</p>`;
+        return `<p class="dp-media-note">${bi('No openly licensed photo of this site was found. Below: underwater photos from the same area — not this site.', 'このポイントの再利用可能な写真は見つかりませんでした。下は同じエリアの水中写真で、このポイントそのものではありません。')}</p><div class="dp-media">${am.map(fig).join('')}</div>`;
+    }
+    function commentaryHtml(p) {
+        if (!p.commentary_ja && !p.commentary_en) return `<div class="ph">${bi('Notes by Claude: in preparation.', 'Claude の解説：準備中。')}</div>`;
+        return `<div class="dp-ai"><span class="tag">${bi('AI-GENERATED', 'AI自動生成')}</span>${bi(esc(p.commentary_en), esc(p.commentary_ja))}
+            <span class="sig">${bi('Written by Claude (Anthropic) from the facts collected from the sources below; not checked on site.', '下の出典から集めた事実をもとに Claude（Anthropic）が書いた解説です。現地で確かめたものではありません。')}</span></div>`;
+    }
     function detail(p) {
         const near = p.precision === 'near';
         document.getElementById('dp-detail').innerHTML = `
@@ -16,8 +33,8 @@
                 <dt>${bi('Features', '特徴')}</dt><dd>${esc(p.features || '–')}</dd>
                 <dt>${bi('Position', '位置')}</dt><dd>${near ? bi('near ' + esc(p.position_note), esc(p.position_note) + 'の近く（目安）') : bi('approximate, within ' + esc(p.position_note), 'エリア内の目安（' + esc(p.position_note) + '）')}</dd>
             </dl>
-            <div class="ph">${bi('Photos and video: in preparation (openly licensed only, with credits).', '写真・動画：準備中（再利用が許可されたものだけを、撮影者の表示つきで載せます）。')}</div>
-            <div class="ph">${bi('Notes by Claude: in preparation.', 'Claude の解説：準備中。')}</div>
+            ${commentaryHtml(p)}
+            ${mediaHtml(p)}
             <div class="src">${bi('Sources: ', '出典：')}${p.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)} ↗</a>`).join('')}</div>`;
     }
     function popup(p) {
