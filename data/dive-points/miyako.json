@@ -1,0 +1,3088 @@
+{
+ "site": "miyako",
+ "title": "宮古島",
+ "center": [
+  24.83,
+  125.26
+ ],
+ "points": [
+  {
+   "name": "魔王の宮殿",
+   "alias": "",
+   "area": "下地島",
+   "features": "縦穴から入るホール・天井からの光",
+   "depth": "25-29m",
+   "lat": 24.80545,
+   "lng": 125.14515,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "R",
+     "name": "リーフ宮古",
+     "url": "https://reefmiyako.com/point-map/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "魔王の宮殿は下地島エリアにあるポイントです。縦穴から入ってホール状の空間へ進む地形で、天井から差し込む光が特徴として知られています。最大水深は25〜29mとされています。宮古島では、北風が吹く秋から春にかけて、下地島の南〜西側の海で潜ることが多くなります。",
+   "commentary_en": "Maou no Kyuden (Devil's Palace) is a site in the Shimojishima area, known for an entry through a vertical shaft that leads into a hall where light filters down from the ceiling. The maximum depth is listed as 25–29 m. In the Miyako Islands, the south and west sides of Shimojishima are commonly dived during the north-wind season from autumn to spring.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "通り池",
+   "alias": "",
+   "area": "下地島",
+   "features": "陸の池とつながる巨大な穴・淡水と海水の境",
+   "depth": "28-30m",
+   "lat": 24.8236,
+   "lng": 125.1326,
+   "precision": "near",
+   "position_note": "通り池（下地島）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "R",
+     "name": "リーフ宮古",
+     "url": "https://reefmiyako.com/point-map/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [
+    {
+     "type": "photo",
+     "src": "https://live.staticflickr.com/65535/51618624539_780f1ac08f_b.jpg",
+     "page": "https://www.flickr.com/photos/7656600@N06/51618624539",
+     "title": "Tooriike Ponds (Miyako Island)",
+     "author": "coniferconifer",
+     "license": "CC BY 2.0",
+     "license_url": "https://creativecommons.org/licenses/by/2.0/",
+     "via": "Flickr",
+     "area": false
+    },
+    {
+     "type": "photo",
+     "src": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Toriike.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+     "page": "https://commons.wikimedia.org/wiki/File:Toriike.jpg",
+     "title": "Toriike.jpg",
+     "author": "Paipateroma",
+     "license": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+     "via": "Wikimedia Commons",
+     "area": false
+    }
+   ],
+   "commentary_ja": "通り池は下地島エリアのポイントで、陸上の池とつながる巨大な穴が特徴です。穴の中には淡水と海水の境があり、その境目もこの地形の特徴のひとつとして挙げられています。最大水深は28〜30mほど。下地島の南〜西側は、秋から春にかけて北風が吹く時期に潜られることの多いエリアです。",
+   "commentary_en": "Toriike is a dive site in the Shimojishima area, characterized by a huge hole that connects to a pond on land, with a boundary between freshwater and seawater inside. The maximum depth is around 28–30 m. The south and west sides of Shimojishima are often dived from autumn through spring, when north winds prevail.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ミニ通り池＆ホワイトロード",
+   "alias": "ミニグロット",
+   "area": "下地島",
+   "features": "池に浮上・クレバス",
+   "depth": "18-22m",
+   "lat": 24.80381,
+   "lng": 125.14988,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ミニ通り池＆ホワイトロードは下地島のポイントで、「ミニグロット」という別名でも呼ばれる。特徴は、水中から池に浮上できることとクレバスで、最大水深は18〜22mとされる。下地島では、北風の吹く秋から春にかけて南〜西側で潜ることが多い。名前と特徴のほかに公開されている情報は多くない。",
+   "commentary_en": "Mini Toriike & White Road, also known as Mini Grotto, is a dive site off Shimojijima whose listed features are a crevasse and a route that surfaces inside a pond, with a maximum depth of about 18–22 m. On Shimojijima, diving tends to concentrate on the south and west sides from autumn to spring, when north winds prevail. Little public information is available beyond these basic details.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "アントニオ・ガウディ",
+   "alias": "",
+   "area": "下地島",
+   "features": "穴だらけのアーチ群",
+   "depth": "35-36m",
+   "lat": 24.80726,
+   "lng": 125.14284,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "R",
+     "name": "リーフ宮古",
+     "url": "https://reefmiyako.com/point-map/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「アントニオ・ガウディ」は下地島エリアのポイントで、穴の多いアーチがいくつも連なる地形が特徴とされる。最大水深は35〜36m。宮古島では秋から春にかけて北風の日が多く、その時期は下地島の南から西側で潜ることが多いため、このエリアのポイントは季節や海況に応じて選ばれる。地形の詳しい配置などについての公開情報は限られている。",
+   "commentary_en": "Antonio Gaudí is a dive site in the Shimojishima area, known for a series of arches riddled with holes, with a maximum depth of 35–36 m. Around Miyako, north winds are common from autumn through spring, and dives in that season often take place on the south to west side of Shimojishima. Little detailed public information is available beyond these basic features.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "本ドロップ",
+   "alias": "GTドロップ／ロウニンドロップオフ",
+   "area": "下地島",
+   "features": "絶壁・ロウニンアジ",
+   "depth": "30-45m",
+   "lat": 24.81382,
+   "lng": 125.14373,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "本ドロップは下地島エリアのポイントで、GTドロップ、ロウニンドロップオフとも呼ばれる。公開されている特徴は絶壁とロウニンアジで、別名にもその名が表れている。最大水深は30〜45mとされる。下地島の南〜西側は、北風の吹く秋〜春に潜ることが多い海域として知られている。",
+   "commentary_en": "Hon Drop, also called GT Drop or Rounin Drop-off, is a dive site in the Shimojishima area, noted for a sheer wall and giant trevally (rounin-aji). Its maximum depth is listed as 30–45 m. The south and west sides of Shimojishima are commonly dived from autumn to spring, when north winds prevail.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "津波岩",
+   "alias": "つなみ岩",
+   "area": "下地島",
+   "features": "アーチ・カメ・コブシメ産卵",
+   "depth": "20-28m",
+   "lat": 24.81628,
+   "lng": 125.13583,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "津波岩（つなみ岩）は下地島エリアのポイントです。下地島周辺は、北風が吹く秋から春にかけて、南〜西側で潜ることが多い場所です。特徴として挙げられているのはアーチのある地形で、カメが見られることや、コブシメの産卵が観察されることでも知られています。最大水深は20〜28mとされています。",
+   "commentary_en": "Tsunami Rock (also written Tsunami-iwa) is a dive site in the Shimojishima area, where diving tends to shift to the south and west sides during the northerly winds of autumn through spring. Its listed features are an arch, sea turtles, and spawning broadfin cuttlefish. The maximum depth is given as 20–28 m.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "津波岩ドロップ",
+   "alias": "",
+   "area": "下地島",
+   "features": "ロウニンアジ・大物",
+   "depth": "18m",
+   "lat": 24.81956,
+   "lng": 125.14071,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "津波岩ドロップは下地島エリアのポイントで、最大水深は18mとされています。特徴としてロウニンアジなどの大物が挙げられています。地形や見られる生き物について、これ以上の詳しい公開情報は多くありません。下地島の周辺は、秋から春にかけて北風が吹く時期に、南〜西側がよく潜られるエリアです。",
+   "commentary_en": "Tsunami Rock Drop is a site in the Shimojishima area with a maximum depth of about 18 m, noted for giant trevally and other large fish. Beyond this, little detailed public information is available about its topography or marine life. The waters around Shimojishima, particularly the south and west sides, are commonly dived from autumn to spring, when northerly winds prevail.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "中の島チャネル",
+   "alias": "",
+   "area": "下地島",
+   "features": "水路状の地形・初心者から",
+   "depth": "20-22m",
+   "lat": 24.8113,
+   "lng": 125.1418,
+   "precision": "near",
+   "position_note": "中の島海岸",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "中の島チャネルは下地島エリアにあるポイントで、名前のとおり水路状の地形が特徴とされています。初心者から潜れるポイントとして紹介されており、最大水深は20〜22m程度です。下地島周辺は、秋から春にかけて北風が吹く時期に、南〜西側を中心に潜られることが多いエリアです。地形の細部や見られる生き物についての公開情報は限られています。",
+   "commentary_en": "Naka-no-shima Channel is a dive site in the Shimojishima area, characterized by channel-like topography and described as suitable for beginners, with a maximum depth of about 20–22 m. Around Shimojishima, diving tends to focus on the south and west sides during the autumn-to-spring north-wind season. Little detailed public information is available on the site's terrain or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "中の島ホール",
+   "alias": "ムーミンホール",
+   "area": "下地島",
+   "features": "縦穴から横穴・砂時計形",
+   "depth": "22-33m",
+   "lat": 24.81024,
+   "lng": 125.14383,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "中の島ホールは下地島エリアのポイントで、ムーミンホールという別名でも呼ばれている。縦穴から横穴へとつながる地形が特徴で、全体の形は砂時計にたとえられる。水深は22〜33mとされている。宮古島では、北風が吹く秋から春にかけて、下地島の南から西側のポイントが潜られることが多い。",
+   "commentary_en": "Naka-no-Shima Hole, also known as Moomin Hole, is a site in the Shimojishima area whose vertical shaft leads into a horizontal passage, forming a shape often likened to an hourglass. Depths range from 22 to 33 m. In Miyako, sites on the south to west side of Shimojishima are commonly dived from autumn to spring, when north winds prevail.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "マリンレイク",
+   "alias": "",
+   "area": "下地島",
+   "features": "洞窟から池に浮上・初心者向き",
+   "depth": "14-18m",
+   "lat": 24.8122,
+   "lng": 125.13883,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "マリンレイクは下地島エリアのポイントで、洞窟を通って池に浮上できる地形が特徴とされています。初心者にも向いているとされ、最大水深は14〜18m程度です。下地島の周辺は、秋から春にかけて北風が吹く時期に潜られることが多いエリアです。地形の特徴のほかに公開されている情報はあまり多くありません。",
+   "commentary_en": "Marine Lake is a site in the Shimojishima area, noted for a route that leads through a cave and surfaces in a pond. It is described as suitable for beginners, with a maximum depth of about 14–18 m. The Shimojishima area is often dived from autumn to spring, when north winds prevail, though little other public information is available about this site.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "35ホール",
+   "alias": "",
+   "area": "下地島",
+   "features": "25mから入る光のホール",
+   "depth": "35m",
+   "lat": 24.82146,
+   "lng": 125.13886,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「35ホール」は下地島エリアのポイントで、水深25mから入る、光の差し込むホールが特徴とされる。最大水深は35m。ホールの内部や周辺の地形、見られる生き物については、ここで紹介できるほどの公開情報は多くない。下地島エリアは、北風が吹く秋から春にかけて潜られることが多い。",
+   "commentary_en": "35 Hole is a dive site in the Shimojishima area, known for a light-filled hole entered from a depth of about 25 m, with a maximum depth of 35 m. Little public information is available about the hole's interior, the surrounding terrain, or the marine life found here. The Shimojishima area is often dived from autumn to spring, when north winds prevail.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "一の瀬ホール",
+   "alias": "",
+   "area": "下地島",
+   "features": "午前の光・うねりに弱い",
+   "depth": "30m",
+   "lat": 24.8229,
+   "lng": 125.14123,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "一の瀬ホールは下地島エリアのポイントで、最大水深は30mとされる。特徴として挙げられているのは午前の光で、午前中の光の入り方が見どころとされる。一方でうねりに弱く、海況によっては潜れない日もある。宮古島では秋から春にかけて北風の日が多く、その時期は下地島の南から西側で潜ることが多い。地形や生き物については公開情報が少ない。",
+   "commentary_en": "Ichinose Hole is a site in the Shimojishima area with a maximum depth of about 30 m, noted for its morning light. It is sensitive to swell, so conditions do not always allow a dive here. Little other public information is available about its terrain or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "一の瀬ドロップ",
+   "alias": "一の瀬ドロップオフ",
+   "area": "下地島",
+   "features": "ピラミッドロック・流れ・大物",
+   "depth": "33-35m",
+   "lat": 24.82527,
+   "lng": 125.1348,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "一の瀬ドロップ（一の瀬ドロップオフとも呼ばれる）は、下地島エリアにあるポイントです。特徴として、ピラミッドロックと呼ばれる地形、流れ、大物が挙げられています。最大水深は33〜35mとされています。宮古島では秋から春の北風の時期に下地島側を潜ることが多く、このポイントもその時期に選ばれやすいエリアに含まれます。",
+   "commentary_en": "Ichinose Drop, also known as Ichinose Drop-off, is a site in the Shimojishima area, noted for a formation called Pyramid Rock, currents, and large marine life. The maximum depth is listed as 33–35 m. Around Miyako, the Shimojishima side is often dived from autumn to spring, when north winds prevail.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "サンゴホール",
+   "alias": "",
+   "area": "下地島",
+   "features": "下地島最大級の洞窟・ハート形入口",
+   "depth": "33-35m",
+   "lat": 24.82667,
+   "lng": 125.13708,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "サンゴホールは下地島エリアのポイントで、下地島でも最大級とされる洞窟が特徴です。入口がハートの形をしていることで知られ、最大水深は33〜35mです。宮古島では、北風の吹く秋から春にかけて下地島の南〜西側で潜ることが多くなります。洞窟内の様子や見られる生き物については、公開されている情報が限られています。",
+   "commentary_en": "Sango Hole is a dive site in the Shimojijima area, featuring one of the largest caves around the island and an entrance shaped like a heart, with a maximum depth of 33–35 m. In Miyako, the south and west sides of Shimojijima are often dived from autumn to spring, when north winds prevail. Little public information is available about the cave's interior or the marine life found there.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "なるほど・ザ・ケーブ",
+   "alias": "",
+   "area": "下地島",
+   "features": "狭く浅い洞窟・ライト必須",
+   "depth": "18m",
+   "lat": 24.82869,
+   "lng": 125.133,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「なるほど・ザ・ケーブ」は下地島エリアのポイントで、狭く浅い洞窟が特徴とされる。ライト必須とされており、最大水深は18m。下地島周辺は、北風が吹く秋から春にかけて南〜西側で潜られることが多いエリアである。洞窟の詳しい形状や見られる生き物については、これ以上の公開情報はほとんどない。",
+   "commentary_en": "Naruhodo the Cave is a site in the Shimojishima area, known for a narrow, shallow cave where a light is considered essential, with a maximum depth of 18 m. Shimojishima's south and west sides are often dived from autumn through spring, when north winds prevail. Little further public information is available about the cave's layout or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "女王の部屋",
+   "alias": "",
+   "area": "下地島",
+   "features": "大ホール・穴の住人（ホシゾラワラエビ等）",
+   "depth": "35-36m",
+   "lat": 24.83048,
+   "lng": 125.13427,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「女王の部屋」は下地島エリアのポイントで、大きなホール状の地形が特徴とされる。穴の中にはホシゾラワラエビなどの住人がいる。最大水深は35〜36mと深めである。下地島周辺は北風が吹く秋から春にかけて潜ることの多いエリアだが、このポイントについてはこれ以上の公開情報が少ない。",
+   "commentary_en": "\"Joō no Heya\" (The Queen's Chamber) is a dive site in the Shimojishima area, noted for a large hall-like space, with residents such as the Hoshizora-waraebi shrimp living in the holes. Its maximum depth is 35–36 m. The Shimojishima area is often dived from autumn to spring when north winds prevail, though little else about this particular site is publicly documented.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ツインケーブ",
+   "alias": "ツインケープ",
+   "area": "下地島",
+   "features": "大きな穴・ホワイトチップ",
+   "depth": "18-25m",
+   "lat": 24.83278,
+   "lng": 125.13419,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ツインケーブは下地島にあるダイビングポイントで、「ツインケープ」と表記されることもある。特徴としては大きな穴があることと、ホワイトチップが見られることが挙げられる。水深は18〜25m程度とされる。下地島は、秋から春にかけて北風が吹く時期に、南〜西側のポイントがよく潜られるエリアである。",
+   "commentary_en": "Twin Cave, also written \"Twin Cape,\" is a dive site at Shimojishima, noted for a large hole and for whitetip reef sharks. The depth is listed at around 18–25 m. Shimojishima's southern and western sides are commonly dived from autumn to spring, when northerly winds prevail.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ウォールケーブ",
+   "alias": "",
+   "area": "下地島",
+   "features": "ドロップ・マクロ",
+   "depth": "33-35m",
+   "lat": 24.83405,
+   "lng": 125.13315,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ウォールケーブは下地島のポイントで、特徴としてドロップオフとマクロが挙げられている。最大水深は33〜35m。名前は壁や洞窟を思わせるが、地形の詳しい様子について公開情報は多くない。宮古島では秋から春の北風の時期に下地島の南〜西側を潜ることが多いが、このポイントが島のどの側にあるかは確認できていない。",
+   "commentary_en": "Wall Cave is a dive site off Shimojishima, listed with a drop-off and macro life as its main features and a maximum depth of 33–35 m. The name suggests a wall or cave, but little public information describes the terrain in detail. Shimojishima's south and west sides are often dived during the north-wind season from autumn to spring, though which side of the island this site lies on is not confirmed.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "だんご岩",
+   "alias": "",
+   "area": "下地島",
+   "features": "巨岩",
+   "depth": "33m",
+   "lat": 24.83538,
+   "lng": 125.14477,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "だんご岩は下地島エリアにあるポイントで、特徴として巨岩が挙げられている。最大水深は33mとされる。宮古島では、北風の吹く秋から春にかけて下地島の南〜西側で潜ることが多い。ただ、このポイントの正確な位置や地形の詳しい様子、見られる生き物については、上記のほかに公開されている情報がほとんどない。",
+   "commentary_en": "Dango-iwa is a dive site in the Shimoji-jima area, noted for its large boulders, with a maximum depth of 33 m. On Miyako, the south and west sides of Shimoji-jima are often dived from autumn to spring when north winds prevail. Beyond these points, little public information is available about the site's exact location, terrain, or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "悪魔の館",
+   "alias": "",
+   "area": "下地島",
+   "features": "暗いエアードーム・ライト必須・難易度高",
+   "depth": "35m",
+   "lat": 24.83748,
+   "lng": 125.13976,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「悪魔の館」は下地島エリアのポイントで、最大水深は35mとされる。特徴は暗いエアードームで、ライトが必要なポイントとして知られ、難易度は高めと紹介されている。下地島の南〜西側は、北風の吹く秋〜春に潜ることが多いエリアである。ドーム以外の地形や見られる生き物については、公開されている情報は限られている。",
+   "commentary_en": "Akuma no Yakata (\"Devil's Mansion\") is a Shimojishima-area site with a reported maximum depth of 35 m, known for a dark air dome where a light is considered necessary, and it is generally described as a more advanced dive. The south-to-west side of Shimojishima is often dived from autumn to spring, when north winds prevail. Beyond the dome, little public information is available about the site's terrain or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "光の迷宮",
+   "alias": "",
+   "area": "下地島",
+   "features": "迷宮状の穴と池",
+   "depth": "18m",
+   "lat": 24.84483,
+   "lng": 125.14108,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「光の迷宮」は下地島エリアのポイントで、最大水深は18mとされる。特徴として、迷宮のように入り組んだ穴と池があることが挙げられている。下地島の周辺は、北風が吹く秋から春にかけて、南〜西側を中心に潜られることが多いエリアである。地形の細かな構成や見られる生き物については、公開されている情報が限られている。",
+   "commentary_en": "Hikari no Meikyu (\"Labyrinth of Light\") is a site in the Shimojishima area with a maximum depth of about 18 m, described as having maze-like holes and a pool. The Shimojishima area is often dived from autumn through spring, when northerly winds tend to favor its southern and western sides. Little public information is available about the site's detailed layout or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "トリプルスリー",
+   "alias": "333",
+   "area": "下地島",
+   "features": "アーチ・大物・激流",
+   "depth": "40m",
+   "lat": 24.79996,
+   "lng": 125.16251,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "トリプルスリーは下地島エリアのポイントで、「333」とも呼ばれる。特徴として挙げられているのはアーチ、大物、激流の三つで、最大水深は40m。宮古島では秋から春の北風の時期に下地島の南〜西側を潜ることが多いが、このポイントの詳しい位置や地形、見られる生き物の種類については、公開されている情報が限られている。",
+   "commentary_en": "Triple Three, also known as \"333,\" is a dive site in the Shimojishima area with a maximum depth of 40 m, and its listed features are an arch, large marine life, and strong currents. On Miyako, the south and west sides of Shimojishima are often dived during the northerly-wind season from autumn to spring. Little further public information is available on the site's exact location, topography, or the species seen there.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "パナタ",
+   "alias": "",
+   "area": "下地島",
+   "features": "ギンガメアジの群れ・激流・潮止まり狙い",
+   "depth": "20-25m",
+   "lat": 24.80161,
+   "lng": 125.15734,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "パナタは下地島エリアのポイントで、水深はおよそ20〜25m。ギンガメアジの群れが見られることで知られる。流れが非常に速くなる場所のため、潜るタイミングは潮止まりに合わせるのが一般的とされる。宮古島では北風の吹く秋〜春に、下地島の南〜西側で潜ることが多い。",
+   "commentary_en": "Panata is a site in the Shimojishima area, with depths of roughly 20–25 m, known for schools of bigeye trevally. Currents here can run very strong, so dives are usually timed around slack tide. Around Miyako, the south and west sides of Shimojishima are often dived from autumn to spring, when north winds prevail.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "クリスタルパーク",
+   "alias": "",
+   "area": "下地島",
+   "features": "白い砂地・初級向き",
+   "depth": "10-11m",
+   "lat": 24.80268,
+   "lng": 125.15467,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "クリスタルパークは下地島エリアのポイントです。白い砂地が特徴で、初級者向きとされています。最大水深は10〜11mほどです。下地島の南〜西側は、秋から春にかけて北風が吹く時期によく潜られるエリアです。見られる生き物や細かな地形については、公開されている情報が多くありません。",
+   "commentary_en": "Crystal Park is a dive site in the Shimojishima area, characterized by white sand and generally regarded as suitable for beginners, with a maximum depth of about 10–11 m. The southern to western side of Shimojishima is often dived from autumn to spring, when north winds prevail. Little public information is available about the marine life or detailed topography here.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ロックビューティー",
+   "alias": "",
+   "area": "下地島",
+   "features": "砂地・チンアナゴ・マクロ",
+   "depth": "13m",
+   "lat": 24.80362,
+   "lng": 125.15847,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ロックビューティーは下地島エリアのダイビングポイントで、最大水深は13mと比較的浅い。特徴として砂地、チンアナゴ、マクロ生物が挙げられており、砂地にすむ小さな生き物を観察するポイントとして紹介されている。宮古島では秋から春の北風の時期に下地島の南〜西側を潜ることが多いが、このポイントの詳しい位置や時期についての公開情報は限られている。",
+   "commentary_en": "Rock Beauty is a dive site in the Shimojishima area with a maximum depth of 13 m. Its listed features are a sandy bottom, garden eels, and macro life. In Miyako, the south and west sides of Shimojishima are often dived during the northerly winds of autumn through spring, though little public information is available on this site's exact location or seasonal use.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "石庭",
+   "alias": "",
+   "area": "下地島",
+   "features": "砂地・マクロ",
+   "depth": "13m",
+   "lat": 24.80448,
+   "lng": 125.16591,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "石庭は下地島エリアにあるポイントで、砂地とマクロ観察が主な特徴として挙げられています。最大水深は13mです。宮古島では秋から春にかけて北風の日が多く、その時期は下地島の南〜西側を潜ることが増えます。名前と基本的な特徴のほかに公開されている情報は少なく、詳しい地形や見られる生き物は公開情報からは分かりません。",
+   "commentary_en": "Sekitei (\"Stone Garden\") is a dive site in the Shimojijima area, noted for its sandy bottom and macro subjects, with a maximum depth of 13 m. In Miyako, the north winds of autumn through spring often bring divers to the south and west sides of Shimojijima. Beyond these basic details, little public information is available about the site's layout or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ウミウシ御殿",
+   "alias": "",
+   "area": "下地島",
+   "features": "砂地・マクロ",
+   "depth": "10m",
+   "lat": 24.80564,
+   "lng": 125.15438,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "下地島エリアにあるポイントで、公開されている特徴は砂地とマクロ、最大水深は10mです。名前はウミウシにちなむと思われますが、実際に見られる生き物についての具体的な情報はほとんど公開されていません。浅めの砂地で、小さな生き物を探すマクロ中心のダイビングになるポイントです。下地島周辺は、北風の吹く秋〜春に潜ることが多いエリアです。",
+   "commentary_en": "Umiushi Goten is a site in the Shimojijima area, listed with sandy bottoms, macro subjects, and a maximum depth of 10 m. Its name appears to refer to nudibranchs, but little specific public information is available about what is actually seen there. The Shimojijima area is often dived from autumn to spring, when northerly winds prevail.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "マッドシティー",
+   "alias": "",
+   "area": "下地島",
+   "features": "泥地・マクロ",
+   "depth": "10m",
+   "lat": 24.80772,
+   "lng": 125.17688,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "マッドシティーは下地島エリアのポイントです。名前のとおり泥地の環境で、小さな生き物を探すマクロ向きのポイントとされています。最大水深は10mと比較的浅めです。下地島周辺は、北風が吹く秋〜春に南〜西側のポイントがよく潜られるエリアです。地形や見られる生き物について、詳しい公開情報は多くありません。",
+   "commentary_en": "Mud City is a dive site in the Shimojishima area, known for its muddy bottom and suited to macro diving, with a maximum depth of about 10 m. Shimojishima's south and west sides are often dived from autumn to spring when north winds blow. Beyond these basics, little detailed public information on the site's terrain or marine life is available.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "フィッシュパーク",
+   "alias": "",
+   "area": "下地島",
+   "features": "岸近くで穏やか・ウミウシ",
+   "depth": "",
+   "lat": 24.80979,
+   "lng": 125.17992,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "フィッシュパークは下地島エリアにあるダイビングポイントです。岸に近く、比較的穏やかな環境とされ、ウミウシが見られることで知られています。最大水深についての公開情報は見当たりません。宮古島では秋から春にかけての北風の時期に下地島の南〜西側で潜ることが多く、下地島周辺のポイントが選ばれる機会が増えます。",
+   "commentary_en": "Fish Park is a dive site in the Shimojijima area, described as a calm spot close to shore and known for nudibranchs. No published information on its maximum depth is available. Around Miyako, dives on the south to west side of Shimojijima are common during the northerly winds from autumn to spring.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "オアシティ",
+   "alias": "",
+   "area": "下地島",
+   "features": "白い砂地と小魚の群れ・初心者",
+   "depth": "12m",
+   "lat": 24.81472,
+   "lng": 125.17768,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "オアシティは下地島エリアにあるダイビングポイントです。白い砂地と小魚の群れが特徴として挙げられています。最大水深は12mで、初心者にも向いたポイントとされています。宮古島では秋から春にかけて北風の日が多く、その時期は下地島の南から西側で潜る機会が増えます。",
+   "commentary_en": "Oa City is a dive site in the Shimojijima area, noted for its white sand bottom and schools of small fish. With a maximum depth of 12 m, it is described as suitable for beginners. From autumn to spring, when north winds prevail around Miyako, diving often shifts to the south and west sides of Shimojijima.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "L字アーチ＆ワープホール",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "大アーチ・狭い洞窟・大物・流れ",
+   "depth": "30-35m",
+   "lat": 24.8584,
+   "lng": 125.18612,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "伊良部島エリアのポイント。大きなアーチと狭い洞窟が主な特徴とされる。大物が見られることがあると紹介されている一方、流れが入ることもある。最大水深は30〜35mほど。地形の詳しい構成や見られる生き物の種類については、公開されている情報が限られている。",
+   "commentary_en": "A dive site in the Irabu Island area, characterized by a large arch and a narrow cave. Larger fish are sometimes reported here, currents can run, and the maximum depth is about 30–35 m. Little detailed public information is available on the site's layout or the specific marine life seen.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "クロスホール",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "十字の光が差す大きなホール",
+   "depth": "20-27m",
+   "lat": 24.8605,
+   "lng": 125.18336,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "クロスホールは伊良部島のポイントで、大きなホールに十字の形をした光が差し込むことで知られる。最大水深はおよそ20〜27mで、ホールの地形と光の差し込み方を見ることが主な目的になるといえる。生き物など、地形以外についての公開情報は限られている。伊良部島は、夏の南風の時期に北側で潜ることが多い島である。",
+   "commentary_en": "Cross Hole is a dive site at Irabu Island, known for a large hole where light filters in to form a cross shape. Depths range from about 20 to 27 m, and the main focus is the hole itself and the way light enters it, with little published information beyond this feature. Irabu is often dived on its north side in summer, when southerly winds prevail.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "Wアーチ",
+   "alias": "ダブルアーチ",
+   "area": "伊良部島",
+   "features": "ハート形の二連アーチ",
+   "depth": "18-20m",
+   "lat": 24.86143,
+   "lng": 125.18258,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "Wアーチ（ダブルアーチ）は伊良部島エリアのポイントです。二つのアーチが連なり、その形がハートのように見えることで知られています。最大水深は18〜20mほどです。宮古島周辺では風向きによって潜るエリアが変わり、南風が吹く夏は伊良部島の北側が選ばれることが多くなります。アーチ以外の見どころについては、公開されている情報は多くありません。",
+   "commentary_en": "W Arch, also called Double Arch, is a dive site in the Irabu Island area, known for a pair of connected arches that together form a heart shape, with a maximum depth of around 18–20 m. Around Miyako, the area dived depends on the wind, and in summer, when southerly winds prevail, sites on the north side of Irabu are often chosen. Beyond the arches themselves, little public information is available about this site.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "Zアーチ",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "アーチ・流れ",
+   "depth": "33m",
+   "lat": 24.86231,
+   "lng": 125.1817,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "Zアーチは伊良部島エリアのポイントで、アーチ状の地形と流れが特徴とされています。最大水深は33mです。伊良部島周辺は、南風の吹く夏に島の北側で潜ることが多いエリアです。ただ、このポイントの正確な位置や地形の細部、見られる生き物については、公開されている情報が限られています。",
+   "commentary_en": "Z Arch is a site in the Irabu Island area, noted for an arch formation and currents, with a maximum depth of 33 m. Irabu's north side is often dived in summer, when southerly winds prevail. Beyond these basics, little public information is available on the site's exact location, terrain details, or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ツインホール",
+   "alias": "青の洞窟",
+   "area": "伊良部島",
+   "features": "浅い洞窟・満潮時に奥まで",
+   "depth": "10-20m",
+   "lat": 24.84051,
+   "lng": 125.21363,
+   "precision": "area",
+   "position_note": "伊良部 東（佐良浜）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ツインホールは伊良部島のエリアにあるポイントで、「青の洞窟」という別名でも呼ばれる。特徴は浅い洞窟で、満潮時には奥まで入れるとされる。最大水深は10〜20mの範囲と案内されている。伊良部島では夏の南風の時期に島の北側を潜ることが多いが、このポイントが島のどの側にあるかは公開情報からは確認できない。",
+   "commentary_en": "Twin Hole, also known as the \"Blue Cave,\" is a dive site in the Irabu Island area featuring a shallow cave that can reportedly be entered all the way to the back at high tide. Its maximum depth is given as 10–20 m. Irabu's north side is commonly dived in summer when southerly winds prevail, though public information does not specify which side of the island this site is on.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "がけ下",
+   "alias": "崖下／青の洞窟",
+   "area": "伊良部島",
+   "features": "エアードーム・初心者向き",
+   "depth": "20m",
+   "lat": 24.85038,
+   "lng": 125.20582,
+   "precision": "area",
+   "position_note": "伊良部 東（佐良浜）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「がけ下」は伊良部島のポイントで、「崖下」や「青の洞窟」とも呼ばれる。特徴として挙げられているのは、水中で空気がたまったエアードームがあることと、初心者向きとされていること。最大水深は20m。地形の細かな様子や見られる生き物については、公開されている情報が少ない。伊良部島周辺は季節の風向きによって潜る側が変わることが多い。",
+   "commentary_en": "Gake-shita, also written 崖下 and known as the \"Blue Cave,\" is a site off Irabu-jima noted for an air dome and described as suitable for beginners, with a maximum depth of 20 m. Little else is publicly documented about its terrain or marine life. Around Irabu, the side that gets dived tends to depend on the seasonal wind direction.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "沈船（カーフェリー）",
+   "alias": "沈船いらぶ",
+   "area": "伊良部島",
+   "features": "漁礁化した旧フェリー・ツバメウオ",
+   "depth": "18m",
+   "lat": 24.8345,
+   "lng": 125.2205,
+   "precision": "near",
+   "position_note": "佐良浜港",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "伊良部島エリアのポイントで、「沈船いらぶ」とも呼ばれる。漁礁となった旧カーフェリーの船体が沈んでおり、その周辺ではツバメウオが見られることで知られる。最大水深は18m。宮古島周辺では季節ごとの風向きによって潜るエリアが変わるため、このポイントに入れるかどうかもその日の海況に左右される。",
+   "commentary_en": "Also known as \"Chinsen Irabu,\" this site in the Irabu Island area is a sunken former car ferry that now serves as an artificial reef, with a maximum depth of 18 m. It is known for batfish around the wreck. As with other sites around Miyako, whether it can be dived depends on the seasonal winds and the day's sea conditions.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "サシバ沖",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "ドロップ・サンゴ・西風時",
+   "depth": "30m",
+   "lat": 24.845,
+   "lng": 125.152,
+   "precision": "near",
+   "position_note": "佐和田の浜の沖",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "サシバ沖は伊良部島エリアにあるポイントで、ドロップオフとサンゴが主な特徴として挙げられています。最大水深は30m。西風のときに潜るポイントとされ、宮古島周辺で多い夏の南風や秋〜春の北風とは異なる風向きの日に使われる場所といえます。地形や見られる生物について、これ以上の詳しい公開情報は多くありません。",
+   "commentary_en": "Sashiba-oki is a dive site in the Irabu Island area, noted mainly for its drop-off and coral, with a maximum depth of 30 m. It is listed as a site for days with a west wind, which sets it apart from the south winds of summer and the north winds of autumn through spring that are more common around Miyako. Little further public information is available about its terrain or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "サバ沖ヒルズ",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "根・魚",
+   "depth": "30m",
+   "lat": 24.86357,
+   "lng": 125.17581,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "サバ沖ヒルズは伊良部島エリアのポイントで、特徴として根と魚が挙げられています。最大水深は30mです。地形の詳しい様子や見られる魚の種類については、公開情報がほとんどありません。宮古島では南風の吹く夏に伊良部島の北側を潜ることが多いものの、このポイントの正確な位置や潜りやすい季節は、案内するショップに確かめるとよいでしょう。",
+   "commentary_en": "Saba-oki Hills is a site in the Irabu Island area, noted for its rock formations and fish, with a maximum depth of 30 m. Little public information is available on the details of its topography or the species seen there. Irabu's north side is often dived in summer when southerly winds prevail, but the site's exact location and best season are worth checking with a local dive shop.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "スネークホール＆ハナダイの根",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "青い光の浮上できる洞窟・アカネハナゴイ",
+   "depth": "15-18m",
+   "lat": 24.86387,
+   "lng": 125.17749,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "伊良部島エリアのポイントで、名前からは「スネークホール」と「ハナダイの根」を組み合わせたポイントとみられる。特徴として、青い光が差し込み中で浮上できる洞窟と、アカネハナゴイが挙げられている。最大水深は15〜18m。伊良部島周辺は夏の南風の時期に北側がよく潜られるが、このポイントの正確な位置や潜れる時期については公開情報が限られる。",
+   "commentary_en": "Snake Hole & Hanadai Rock is a site in the Irabu Island area, and its name suggests it combines a cave with a separate rock. Reported features include a cave lit with blue light where divers can surface inside, as well as red-flushed anthias (Pseudanthias dispar), with a maximum depth of 15–18 m. Irabu's north side is often dived during the summer south-wind season, but little public information is available on this site's exact location or when it is typically visited.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "デンターロック",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "巨岩",
+   "depth": "30m",
+   "lat": 24.86403,
+   "lng": 125.17795,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "デンターロックは伊良部島周辺にあるポイントで、特徴として巨岩が挙げられ、最大水深は30mとされる。巨岩の形や規模、見られる生き物については、名前と特徴のほかに公開情報がほとんどない。伊良部島周辺は夏の南風の時期に島の北側で潜ることが多いが、このポイントがどの季節に使われるかは確認できていない。",
+   "commentary_en": "Denter Rock is a dive site in the Irabu Island area, noted for a large rock formation and a maximum depth of about 30 m. Beyond its name and this feature, little public information is available about the rock's size or shape or the marine life found there. Dives around Irabu often take place on the island's north side during the summer south-wind season, but it is not confirmed when this particular site is usually visited.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "サプライズホール",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "満潮時のみ・透明度が高い",
+   "depth": "15m",
+   "lat": 24.86457,
+   "lng": 125.17426,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "サプライズホールは伊良部島エリアのポイントで、最大水深は15mです。潜れるのは満潮時に限られるとされ、透明度が高いことが特徴として挙げられています。伊良部島周辺では夏の南風の時期に島の北側のポイントを潜ることが多いものの、このポイントの正確な位置や地形の詳細については公開されている情報が多くありません。",
+   "commentary_en": "Surprise Hole is a dive site in the Irabu Island area with a maximum depth of 15 m. It is reported to be diveable only at high tide and is noted for its high water clarity. Irabu's north-side sites are commonly dived during the summer south-wind season, but little public information is available on this site's exact location or underwater terrain.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "白鳥ホール",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "昼の光の筋",
+   "depth": "10m",
+   "lat": 24.8672,
+   "lng": 125.1612,
+   "precision": "near",
+   "position_note": "白鳥岬",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "白鳥ホールは伊良部島エリアのダイビングポイントで、最大水深は10mです。公開されている特徴は、昼間に差し込む光の筋が見られることです。地形や見られる生き物について、このほかの詳しい情報はほとんど公開されていません。宮古島周辺では夏の南風の時期に伊良部島の北側を潜ることが多いですが、このポイントの位置と季節の関係は明らかではありません。",
+   "commentary_en": "Shiratori Hole is a dive site in the Irabu Island area with a maximum depth of 10 m. Its one published feature is the beams of light that filter in during the day, and little else is publicly known about its terrain or marine life. Divers often visit the north side of Irabu in summer when south winds prevail, but how this particular site fits that seasonal pattern is not documented.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "白鳥幼稚園",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "根・マクロ・カメ・初心者向き",
+   "depth": "18-20m",
+   "lat": 24.8678,
+   "lng": 125.164,
+   "precision": "near",
+   "position_note": "白鳥岬",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "白鳥幼稚園は伊良部島のダイビングポイントで、根のある地形が特徴です。マクロ生物の観察やカメとの遭遇が挙げられ、初心者にも向くとされています。最大水深は18〜20mほどです。伊良部島周辺では南風の吹く夏に島の北側が潜られることが多く、実際に潜るポイントは当日の風向きや海況によって決まります。",
+   "commentary_en": "Shiratori Yochien is a dive site off Irabu Island with a reef pinnacle (ne), known for macro life and turtle encounters, and is considered suitable for beginners. The maximum depth is about 18–20 m. Around Irabu, the island's north side is often dived in summer when southerly winds prevail, and site choice on any given day depends on wind and sea conditions.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "タートルタウン",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "ウミガメ",
+   "depth": "10m",
+   "lat": 24.86539,
+   "lng": 125.17239,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "タートルタウンは伊良部島エリアのポイントで、名前のとおりウミガメが特徴として挙げられている。最大水深は10mとされている。地形やほかに見られる生き物については、公開されている情報が多くない。伊良部島周辺は季節の風向きによって潜る場所が変わり、夏の南風の時期には島の北側が選ばれることが多い。",
+   "commentary_en": "Turtle Town is a dive site in the Irabu Island area, noted for sea turtles, with a maximum depth of 10 m. Little public information is available about its terrain or other marine life. Around Irabu, site choice depends on the seasonal wind, and the island's north side is often dived during the southerly winds of summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "オーバーハング",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "えぐれた地形・魚影・ナポレオン",
+   "depth": "25-30m",
+   "lat": 24.86594,
+   "lng": 125.16998,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「オーバーハング」は伊良部島エリアのポイントで、名前のとおりえぐれた地形が特徴です。地形のまわりでは魚影が見られ、ナポレオンに出会えることもあると紹介されています。最大水深は25〜30mほどです。伊良部島周辺は、夏の南風の時期に島の北側で潜ることが多いエリアとして知られています。",
+   "commentary_en": "Overhang is a dive site in the Irabu Island area, named for its undercut terrain. Schools of fish gather around the structure, and Napoleon wrasse are reported here, with a maximum depth of about 25–30 m. Around Irabu, dives are often made on the island's north side during the southerly winds of summer.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "サージョンリーフ",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "ナンヨウハギの群れ・マダラトビエイ",
+   "depth": "",
+   "lat": 24.8665,
+   "lng": 125.16874,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "サージョンリーフは伊良部島エリアのポイントです。公開されている情報では、ナンヨウハギの群れやマダラトビエイが見られる場所として紹介されています。最大水深や地形についての情報は見つかっていません。宮古島周辺では風向きで潜るエリアが変わり、夏の南風の時期には伊良部島の北側が選ばれることが多いですが、このポイントがどの側にあるかは確認できていません。",
+   "commentary_en": "Surgeon Reef is a dive site in the Irabu Island area, described in available information as a place where schools of powder blue surgeonfish and spotted eagle rays can be seen. Details on its maximum depth and topography are not available. Around Miyako, the choice of dive area depends on the wind, with Irabu's north side often used during the summer southerly season, though which side of the island this site lies on has not been confirmed.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "グルクンの根",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "グルクン・イソマグロ",
+   "depth": "",
+   "lat": 24.86707,
+   "lng": 125.16633,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「グルクンの根」は伊良部島エリアのダイビングポイントです。特徴として、名前にもあるグルクンと、イソマグロが挙げられています。最大水深や地形の詳細については、公開されている情報がほとんどありません。伊良部島周辺は季節の風向きによって潜る場所が変わることが多く、実際に入れるかどうかはその日の海況によります。",
+   "commentary_en": "Gurukun no Ne is a dive site in the Irabu Island area, with gurukun (fusiliers) and dogtooth tuna listed as its features. Little public information is available on its maximum depth or topography. As with other sites around Irabu, whether it can be dived tends to depend on the seasonal wind and the day's sea conditions.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "プロビデンスⅠ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "アカネハナゴイの群れ・回遊魚",
+   "depth": "",
+   "lat": 24.995,
+   "lng": 125.26692,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "プロビデンスⅠは、池間島の北に広がる礁域・八重干瀬にあるダイビングポイントです。特徴として、アカネハナゴイの群れや回遊魚が挙げられています。最大水深については、公開されている情報が見当たりません。八重干瀬は広い礁域で、海況の良い日を選んで訪れることが多いエリアです。",
+   "commentary_en": "Providence I is a dive site in Yabiji, the broad reef area north of Ikema Island, noted for schools of Akane hanagoi (an anthias species) and passing pelagic fish. Its maximum depth does not appear in publicly available information. Trips to Yabiji are usually made on days when sea conditions are good.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "プロビデンスⅡ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "イソマグロ・バラクーダ・流れ速い",
+   "depth": "",
+   "lat": 24.99961,
+   "lng": 125.25571,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "プロビデンスⅡは、池間島の北に広がる礁域・八重干瀬にあるポイントです。八重干瀬は海況の良い日に訪れることが多い海域で、このポイントに行けるかどうかもその日の条件に左右されます。流れが速いポイントとされ、イソマグロやバラクーダが見られる場所として紹介されています。最大水深については、公開情報では確認できていません。",
+   "commentary_en": "Providence II is a dive site in Yabiji, the broad reef area north of Ikema Island, which is usually visited only when sea conditions are good. The site is known for strong currents and is described as a place to see dogtooth tuna and barracuda. Its maximum depth is not given in available public information.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ハナダイアーチ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "アーチとサンゴ・回遊魚・流れ",
+   "depth": "20m",
+   "lat": 24.98623,
+   "lng": 125.26296,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ハナダイアーチは、池間島の北に広がる礁域・八重干瀬にあるポイントです。挙げられている特徴は、アーチ状の地形とサンゴ、回遊魚、そして流れで、最大水深は約20mとされます。八重干瀬は海況の良い日に訪れることが多いエリアです。名前の由来やハナダイの様子については、公開情報が見当たりません。",
+   "commentary_en": "Hanadai Arch is a site in Yabiji (Yaebishi), the broad reef area north of Ikema Island, which is usually visited on days with good sea conditions. Its listed features are an arch with coral, pelagic fish, and current, and the maximum depth is about 20 m. No public information was found on the origin of its name or on anthias at the site.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ハナダイコーナー",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "リーフ外側・流れ・ホワイトチップ",
+   "depth": "",
+   "lat": 25.00327,
+   "lng": 125.26993,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ハナダイコーナーは、池間島の北に広がる礁域・八重干瀬にあるポイントです。リーフの外側に位置し、流れがあることが特徴とされ、ホワイトチップが見られるポイントとして挙げられています。最大水深は公開されていません。八重干瀬は海況の良い日に訪れることが多いエリアで、このポイントもそうした日に潜る候補の一つです。",
+   "commentary_en": "Hanadai Corner is a site in Yabiji, the broad reef area north of Ikema Island, on the outer side of the reef where currents are a noted feature and whitetip reef sharks are listed among the sightings. Its maximum depth has not been published. As with the rest of Yabiji, it is usually visited on days when sea conditions are good.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ブルーコーナー",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "バラクーダの群れ・季節によりマンタ",
+   "depth": "20m",
+   "lat": 24.99294,
+   "lng": 125.24745,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ブルーコーナーは、池間島の北に広がる広い礁域、八重干瀬にあるダイビングポイントです。八重干瀬へは海況の良い日を選んで出かけるのが一般的で、訪れる機会は天候次第になります。特徴としてはバラクーダの群れが挙げられ、季節によってはマンタが見られることもあります。最大水深は20mです。",
+   "commentary_en": "Blue Corner is a dive site in Yabiji (Yaebishi), the broad reef area north of Ikema Island, which boats usually visit only on days with good sea conditions. The site is known for schools of barracuda, and manta rays may appear in some seasons. The maximum depth is 20 m.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "アガラガウサ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "テーブルサンゴの広がり・春のコブシメ",
+   "depth": "30m",
+   "lat": 24.98799,
+   "lng": 125.27578,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "アガラガウサは、池間島の北に広がる広い礁域・八重干瀬にあるダイビングポイントです。主な特徴はテーブルサンゴが広がる景観で、春にはコブシメが見られることでも知られています。最大水深は30mです。八重干瀬へは海況の良い日に行くことが多いため、潜れる日は天候や海の状態に左右されます。",
+   "commentary_en": "Agaragausa is a dive site in Yabiji, the broad reef area north of Ikema Island, known for its spreading table corals and for cuttlefish (kobushime) in spring. The maximum depth is 30 m. Trips to Yabiji usually depend on good sea conditions, so access to this site varies with the weather.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ビーマク",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "巨大なコモンシコロサンゴ・アオウミガメ",
+   "depth": "20m",
+   "lat": 25.00872,
+   "lng": 125.25739,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ビーマクは、池間島の北に広がる礁域・八重干瀬にあるポイントです。八重干瀬は範囲が広く、海況の良い日に足を延ばすことが多い場所です。そのため、季節や天候によっては訪れる機会が限られます。特徴として、巨大なコモンシコロサンゴとアオウミガメが挙げられています。最大水深は20mとされています。",
+   "commentary_en": "Bīmaku is a site in Yabiji, the broad reef area north of Ikema Island, which is usually visited only on days with good sea conditions. It is noted for a giant colony of Montipora coral and for green sea turtles. The maximum depth is about 20 m.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ユラビジ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "浅場の枝サンゴ・アカネハナゴイ",
+   "depth": "15m",
+   "lat": 24.98146,
+   "lng": 125.25321,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ユラビジは、池間島の北に広がる礁域・八重干瀬にあるポイントです。浅場には枝サンゴが広がり、アカネハナゴイの姿が見られます。最大水深は15mです。八重干瀬へは海況の良い日に出かけることが多く、潜れる機会はその日の天候や海の状態に左右されます。",
+   "commentary_en": "Yurabiji lies within Yaebishi, the broad reef area north of Ikema Island, with branching coral in the shallows and Pseudanthias dispar (Akane-hanagoi) present; maximum depth is 15 m. Boats usually head to Yaebishi only on days with good sea conditions, so whether you can dive here depends on the weather.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "40'Sロック",
+   "alias": "40'ロック",
+   "area": "八重干瀬",
+   "features": "スカシテンジクダイだらけの大岩",
+   "depth": "15m",
+   "lat": 25.00057,
+   "lng": 125.28107,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "40'Sロック（40'ロックとも呼ばれる）は、池間島の北に広がる礁域・八重干瀬にあるポイントです。特徴は、スカシテンジクダイが数多く集まる大きな岩とされています。最大水深は15mです。八重干瀬は海況の良い日に訪れることが多いエリアで、このポイントに潜れるかどうかも天候や海の状態しだいです。",
+   "commentary_en": "40'S Rock, also called 40' Rock, is a site in Yabiji, the broad reef area north of Ikema Island, and its main feature is a large rock crowded with glassfish (sukashi-tenjikudai). The maximum depth is 15 m. Boats usually head to Yabiji only on days with good sea conditions, so whether this site can be dived depends on the weather.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "コーラルビューティ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "浅場の枝サンゴ畑",
+   "depth": "15m",
+   "lat": 25.00155,
+   "lng": 125.24216,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "コーラルビューティは、池間島の北に広がる礁域・八重干瀬にあるポイントです。浅場に枝サンゴの畑が広がっているのが特徴で、最大水深は15mです。八重干瀬へは海況の良い日を選んで出かけることが多く、季節や天候によっては訪れる機会が限られます。公開されている情報はこのエリア・地形・水深程度で、それ以上の詳細はあまり知られていません。",
+   "commentary_en": "Coral Beauty is a site in Yabiji, the broad reef area north of Ikema Island, known for its shallow fields of branching coral and a maximum depth of 15 m. Boats usually head to Yabiji only on days with good sea conditions, so visits depend on the weather. Beyond its location, terrain and depth, little other public information is available.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ホワイトシティ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "白い砂地・エイ・サメ",
+   "depth": "10m",
+   "lat": 24.97865,
+   "lng": 125.27156,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ホワイトシティは、池間島の北に広がる礁域・八重干瀬にあるポイントです。白い砂地が特徴とされ、エイやサメが見られる場所として紹介されています。最大水深は10mほどです。八重干瀬へは海況が良い日に出かけることが多いため、その日の海の状態によっては行けないこともあります。",
+   "commentary_en": "White City is a dive site in Yabiji, the broad reef area north of Ikema Island. It is described as having white sandy bottom, with rays and sharks among the marine life noted, and a maximum depth of about 10 m. Trips to Yabiji usually depend on good sea conditions, so the site may not be reachable on some days.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "沈船タグボート",
+   "alias": "沈船",
+   "area": "八重干瀬",
+   "features": "小さな沈船・透明度が高い",
+   "depth": "18m",
+   "lat": 25.01302,
+   "lng": 125.26907,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "沈船タグボート（別名「沈船」）は、池間島の北に広がる礁域・八重干瀬にあるポイント。小さな沈船があり、透明度が高いことが特徴として挙げられている。最大水深は18m。八重干瀬は広い礁域で、海況が良い日に訪れることが多く、天候しだいで潜れない日もある。",
+   "commentary_en": "Tugboat Wreck (also called \"Chinsen,\" meaning \"the wreck\") is in Yabiji, the broad reef area north of Ikema Island. It has a small sunken vessel and is noted for clear water, with a maximum depth of 18 m. Boats usually head to Yabiji only when sea conditions are good, so whether you can dive here depends on the weather.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "イフ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "浅場・カメ・砂地",
+   "depth": "浅場",
+   "lat": 24.98512,
+   "lng": 125.2407,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "イフは、池間島の北に広がる礁域・八重干瀬にあるポイントです。浅場が中心で砂地があり、カメが見られることがあります。最大水深の具体的な数字は公表されておらず、浅めのポイントとされています。八重干瀬へは海況の良い日を選んで向かうことが多いため、潜れるかどうかはその日の天候や海の状態に左右されます。",
+   "commentary_en": "Ifu is a dive site in Yabiji, the broad reef area north of Ikema Island, known for its shallow, sandy bottom where turtles may be seen. No specific maximum depth is published beyond its description as a shallow site. Because boats usually head to Yabiji only when sea conditions are good, whether it can be dived depends on the day's weather.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "タンニャビジ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "テーブルサンゴ・コモンシコロ",
+   "depth": "浅場",
+   "lat": 24.99061,
+   "lng": 125.28699,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "タンニャビジは、池間島の北に広がる礁域・八重干瀬にあるポイントです。八重干瀬は海況の良い日に訪れることが多い場所で、ここもその一つです。浅場が中心で、テーブルサンゴやコモンシコロといったサンゴが見られるとされています。公開されている情報はこの程度で、それ以上の地形や生き物の詳細はあまり知られていません。",
+   "commentary_en": "Tannyabiji is a site in Yaebishi, the broad reef area north of Ikema Island that is usually visited when sea conditions are good. It is a shallow site, with table corals and komon-shikoro coral among its noted features. Little else about its terrain or marine life has been published.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "エメラルドガーデン",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "砂地の根・スカシテンジクダイ",
+   "depth": "",
+   "lat": 25.01235,
+   "lng": 125.24675,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "エメラルドガーデンは、池間島の北に広がる広い礁域・八重干瀬にあるポイントです。砂地に根が点在する地形が特徴とされ、スカシテンジクダイが見られるポイントとして紹介されています。八重干瀬へは海況の良い日に向かうことが多いため、潜れる機会は天候に左右されます。最大水深など、そのほかの詳しい情報はあまり公開されていません。",
+   "commentary_en": "Emerald Garden is a site in Yabiji, the broad reef area north of Ikema Island, described as a sandy bottom with scattered coral heads where glassfish (sukashi-tenjikudai) can be seen. Boats usually head to Yabiji only on days with good sea conditions, so opportunities to dive here depend on the weather. Further details, such as maximum depth, are not widely published.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "デベソ1",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "グルクン幼魚・根を回る",
+   "depth": "",
+   "lat": 24.97325,
+   "lng": 125.25848,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "デベソ1は、池間島の北に広がる礁域・八重干瀬にあるポイントです。八重干瀬へは海況の良い日に出かけることが多く、いつでも潜れるとは限りません。公開されている情報では、根を回るように潜るスタイルで、グルクンの幼魚が見られるとされています。最大水深などの詳しいデータは公開されていません。",
+   "commentary_en": "Debeso 1 is a site in Yabiji, the broad reef area north of Ikema Island, which boats usually visit only when sea conditions are good. Available information describes dives that circle a coral head, with juvenile fusiliers (gurukun) noted here. Maximum depth and other details are not publicly listed.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "デベソ2",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "大きな根とトンネル・カメ",
+   "depth": "",
+   "lat": 25.00958,
+   "lng": 125.28363,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "デベソ2は、池間島の北に広がる礁域・八重干瀬にあるポイントです。大きな根とトンネルがあり、カメが見られることがあると紹介されています。八重干瀬は広い礁域で、海況が良い日に訪れることが多い場所です。最大水深などの詳しい数値は、公開情報としては見当たりません。",
+   "commentary_en": "Debeso 2 is a site in Yabiji, the broad reef area north of Ikema Island, known for a large rock formation, a tunnel, and turtles. Because Yabiji is usually visited only on days with good sea conditions, trips here depend on the weather. No published figure for maximum depth is available.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "キジャカ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.99596,
+   "lng": 125.2329,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "キジャカは、池間島の北に広がる礁域・八重干瀬にあるダイビングポイントです。八重干瀬は広い礁域で、海況の良い日に訪れることが多いエリアです。このポイントについては、名前とエリアのほかに公開されている情報がほとんどなく、地形や水深、見られる生き物などの詳細はわかっていません。",
+   "commentary_en": "Kijaka is a dive site in Yabiji, the broad reef area north of Ikema Island, which divers usually visit on days with good sea conditions. Little public information is available beyond the site's name and area, and details such as its terrain, depth, and marine life are not known.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "キジャカパラダイス",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.9781,
+   "lng": 125.28323,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "キジャカパラダイスは、池間島の北に広がる広い礁域「八重干瀬（やびじ）」にあるダイビングポイントです。八重干瀬へは、海況の良い日を選んで向かうのが一般的です。このポイントについては、名前とエリアのほかに、地形や水深、見られる生き物などの公開情報がほとんどありません。詳しい様子は、現地のダイビングサービスで確かめるとよいでしょう。",
+   "commentary_en": "Kijaka Paradise is a dive site in Yabiji, the broad reef area north of Ikema Island, which is usually visited on days with good sea conditions. Beyond its name and area, little public information is available about its topography, depth, or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ジャウキビジ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 25.01957,
+   "lng": 125.26058,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ジャウキビジは、池間島の北に広がる礁域・八重干瀬にあるポイントです。名前とエリアのほかに公開されている情報はほとんどなく、地形や水深、見られる生き物については確かなことがわかっていません。八重干瀬は広い礁域で、海況が良い日に向かうことが多い場所です。そのため、このポイントを潜れるかどうかも当日の海況に左右されると考えられます。",
+   "commentary_en": "Jaukibiji is a dive site in Yaebishi, the broad reef area north of Ikema Island. Apart from its name and location, little public information is available, and its topography, depth, and marine life are not well documented. Like other Yaebishi sites, it is usually visited only on days when sea conditions are good.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "アカズーミジュキ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.97564,
+   "lng": 125.2418,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "アカズーミジュキは、池間島の北に広がる広い礁域・八重干瀬にあるポイントのひとつです。八重干瀬へは海況の良い日に船で向かうことが多く、いつでも潜れる場所ではありません。このポイントについては、名前とエリアのほかに地形や水深、見られる生き物などの公開情報がほとんどなく、詳しい様子は分かっていません。",
+   "commentary_en": "Akazūmijuki is one of the dive sites within Yabiji, the broad reef area north of Ikema Island. Trips to Yabiji are usually made on days when sea conditions are good. Beyond its name and area, little public information is available about this site's topography, depth, or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ナカガウサ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.99844,
+   "lng": 125.294,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ナカガウサは、池間島の北に広がる礁域・八重干瀬にあるポイントです。名前とエリアのほかに公開されている情報はほとんどなく、地形や水深、見られる生き物についての詳しい記述は見当たりません。八重干瀬は広い礁域で、海況が良い日に訪れることが多いため、このポイントも潜れる機会は天候しだいと考えられます。",
+   "commentary_en": "Nakagausa is a site in Yabiji, the broad reef area north of Ikema Island. Beyond its name and location, little public information is available, and there are no detailed descriptions of its topography, depth, or marine life. Because Yabiji is usually visited only on days with good sea conditions, opportunities to dive here likely depend on the weather.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "フゥガウサ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 25.01009,
+   "lng": 125.23489,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "フゥガウサは、池間島の北に広がる礁域・八重干瀬にあるポイントです。名前とエリアのほかに公開されている情報はほとんどなく、地形の様子や見られる生き物、最大水深などはわかっていません。八重干瀬は広い礁域で、海況の良い日に行くことが多いエリアです。このポイントの詳しい特徴については、今後の情報を待つ必要があります。",
+   "commentary_en": "Fuugausa is a dive site in Yabiji, the broad reef area north of Ikema Island. Beyond its name and location, almost no public information is available, so its topography, marine life, and maximum depth are unknown. Yabiji is usually visited only on days when sea conditions are good.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ヒグマラ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.96865,
+   "lng": 125.26941,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ヒグマラは、池間島の北に広がる礁域・八重干瀬にあるポイントです。名前のほかに地形や水深などの公開情報はほとんどなく、詳しい様子はわかっていません。そのため、ここでは名前と所在エリアのみを記しています。八重干瀬は池間島の北に広がる広い礁域で、海況が良い日を選んで出かけることが多いエリアです。",
+   "commentary_en": "Higumara is a dive site in Yabiji, the broad reef area north of Ikema Island. Beyond its name, there is very little public information about its terrain or depth. Yabiji is usually visited on days when sea conditions are good.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "カナマラ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 25.01892,
+   "lng": 125.27914,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "カナマラは八重干瀬にあるダイビングポイントです。八重干瀬は池間島の北に広がる広い礁域で、海況が良い日に訪れることが多いエリアです。このポイントについては、名前とエリアのほかに公開されている情報がほとんどなく、地形や最大水深、見られる生き物などの詳細はここでは紹介できません。",
+   "commentary_en": "Kanamara is a dive site in Yabiji, the broad reef area north of Ikema Island that is usually visited on days with good sea conditions. Apart from its name and area, little public information is available about this site, so details such as its topography, maximum depth, and marine life are not covered here.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ホワイトバレー",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.98645,
+   "lng": 125.2285,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ホワイトバレーは、池間島の北に広がる礁域・八重干瀬にあるポイントです。名前のほかに地形や水深、見られる生き物についての公開情報はほとんどなく、ここでは詳しい特徴を紹介できません。八重干瀬は広い礁域で、海況が良い日に訪れることが多いエリアです。潜る機会があれば、現地のガイドに様子を尋ねてみるとよいでしょう。",
+   "commentary_en": "White Valley is a dive site in Yaebishi, the wide reef area north of Ikema Island. Apart from its name, little public information is available about its topography, depth, or marine life. Yaebishi is usually visited on days when sea conditions are good.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ホワイトロード（八重干瀬）",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.98297,
+   "lng": 125.29454,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ホワイトロードは、池間島の北に広がる礁域・八重干瀬にあるポイントとして名前が挙がっています。ただ、名前のほかに地形や水深、見られる生き物についての公開情報はほとんどなく、どのような場所かを具体的に記すことはできません。八重干瀬は広い礁域で、ダイビングは一般に海況の良い日に行われます。",
+   "commentary_en": "White Road is listed as a dive site within Yabiji (Yaebishi), the broad reef area north of Ikema Island. Beyond its name, little public information is available about its terrain, depth, or marine life. Trips to Yabiji are generally made only on days when sea conditions are good.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "漁礁（パヤオ）",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 25.02195,
+   "lng": 125.2479,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "漁礁（パヤオ）は、池間島の北に広がる八重干瀬の礁域にあるポイントです。名前からは漁礁にちなむと考えられますが、地形や水深、見られる生き物については公開情報がほとんどなく、名前のほかに詳しく紹介できることはありません。八重干瀬は広い礁域で、海況の良い日を選んで訪れることが多いエリアです。",
+   "commentary_en": "Gyosho (Payao) is a dive site within Yabiji, the broad reef area north of Ikema Island. The name suggests a link to a fishing reef, but little public information is available beyond the name, including its topography, depth, or marine life. Yabiji is usually visited only on days when sea conditions are good.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "八重干瀬幼稚園",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.96702,
+   "lng": 125.24942,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「八重干瀬幼稚園」は、池間島の北に広がる広い礁域・八重干瀬にあるポイントです。名前のほかに、地形や生き物、最大水深などの公開情報はほとんどありません。八重干瀬は海況の良い日に出かけることが多い海域のため、このポイントで潜れるかどうかも、その日の海の状態に左右されると考えられます。",
+   "commentary_en": "Yaebishi Yochien is a dive site within Yaebishi, the broad reef area north of Ikema Island. Apart from its name, little public information is available about its terrain, marine life, or maximum depth. Because Yaebishi is usually visited on days with good sea conditions, diving here likely depends on the weather and sea state on the day.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "シャークピット",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 25.00908,
+   "lng": 125.29548,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "シャークピットは、池間島の北に広がる礁域・八重干瀬にあるポイントとして名前が挙がっている。ただ、名前とエリアのほかに公開されている情報はほとんどなく、地形や水深、見られる生き物ははっきりしない。名前から特定の生き物を連想しやすいが、それを裏づける情報は確認できていない。八重干瀬へは海況の良い日に出ることが多い。",
+   "commentary_en": "Shark Pit is listed as a site within Yabiji, the broad reef area north of Ikema Island. Beyond its name and area, little public information is available, so its topography, depth, and marine life remain unclear, and nothing confirms what the name might suggest. Trips to Yabiji are usually made on days when sea conditions are good.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "コモンシコロ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 25.00284,
+   "lng": 125.22482,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "コモンシコロは、池間島の北に広がる礁域・八重干瀬にあるポイントのひとつです。名前とエリアのほかに公開されている情報はほとんどなく、地形や水深、見られる生き物についてはここでは紹介できません。八重干瀬は広い礁域で、海況が良い日に向かうことが多いエリアです。潜る機会があるかどうかは、その日の風や波の状況に左右されます。",
+   "commentary_en": "Komon Shikoro is one of the dive sites in Yabiji (Yaebishi), the broad reef area north of Ikema Island. Beyond its name and location, little public information is available, so its terrain, depth, and marine life are not described here. Boats typically head to Yabiji only on days with good sea conditions, so whether this site can be dived depends on the wind and waves.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "スムトゥ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.9687,
+   "lng": 125.28314,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "スムトゥは、池間島の北に広がる礁域・八重干瀬にあるダイビングポイントです。名前とエリアのほかに公開されている情報はほとんどなく、地形や水深、見られる生き物については確かなことがわかっていません。八重干瀬は広い礁域で、海況が良い日に訪れることが多いエリアです。",
+   "commentary_en": "Sumutu is a dive site in Yabiji, the broad reef area north of Ikema Island. Beyond its name and location, little public information is available, so its topography, depth, and marine life are not well documented. Divers usually visit Yabiji only on days when sea conditions are good.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "アガイヌッサ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 25.0263,
+   "lng": 125.26872,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "アガイヌッサは、八重干瀬にあるポイントの一つとして名前が挙げられています。名前のほかに、地形や水深、見られる生き物についての公開情報はほとんど見当たりません。八重干瀬は池間島の北に広がる広い礁域で、海況の良い日に訪れることが多いエリアです。実際に潜れるかどうかは、その日の天候や海の状態に左右されると考えられます。",
+   "commentary_en": "Againussa is listed as one of the dive sites in Yabiji, but beyond its name there is little public information about its terrain, depth, or marine life. Yabiji is a wide reef area north of Ikema Island that is usually visited on days with good sea conditions, so whether this site can be dived depends largely on the weather and the state of the sea.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "狩俣ツインケーブ＆エイトポールアーチ",
+   "alias": "",
+   "area": "宮古島北（狩俣）",
+   "features": "うねりに強い・洞窟内の魚とイセエビ",
+   "depth": "",
+   "lat": 24.88223,
+   "lng": 125.27042,
+   "precision": "area",
+   "position_note": "狩俣",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "宮古島本島の北部、狩俣エリアにあるポイント。名前のとおり、ツインケーブとエイトポールアーチという二つの地形を巡るポイントとされる。うねりに強いことが特徴として挙げられ、洞窟の中では魚やイセエビが見られるという。最大水深についての公開情報は見当たらない。島の北側に位置するため、南風の吹く夏場に選ばれることが多いと考えられる。",
+   "commentary_en": "This site lies in the Karimata area on the northern side of Miyako Island, and as its name suggests, it combines the Twin Caves and the Eight Pole Arch. It is described as holding up well in swell, and fish and spiny lobsters can be seen inside the caves. No published maximum depth is available, and its north-facing location suggests it is most often dived in summer, when southerly winds prevail.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "狩俣下",
+   "alias": "",
+   "area": "宮古島北（狩俣）",
+   "features": "砂地と根・カクレクマノミ",
+   "depth": "",
+   "lat": 24.90804,
+   "lng": 125.26198,
+   "precision": "area",
+   "position_note": "狩俣",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "狩俣下は宮古島の北部、狩俣エリアにあるポイントです。公開されている情報では、砂地と根からなる地形で、カクレクマノミが見られるとされています。最大水深は公表されておらず、地形や生き物についての詳しい情報はあまり多くありません。島の北側にあるため、南風の時期に候補になることがあると考えられますが、潜れるかどうかはその日の海況によります。",
+   "commentary_en": "Karimata-shita is a dive site in the Karimata area on the northern side of Miyako Island. Published information describes sand and coral heads, with clownfish reported, but the maximum depth isn't listed and few other details are available. Because it lies on the island's north side, it may be an option during the southerly-wind season, depending on conditions on the day.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "七又アーチ",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "ケーブ奥の湧水・青い世界",
+   "depth": "15m",
+   "lat": 24.70997,
+   "lng": 125.30786,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "七又アーチは宮古島の南、来間エリアにあるダイビングポイントです。ケーブの奥に湧く水と、青く見える空間が特徴として挙げられています。最大水深は15mです。名前にあるアーチの形状や、見られる生き物などの詳しい情報は、公開されているものがあまり多くありません。現地の様子は、潜る際の案内で確かめるとよいでしょう。",
+   "commentary_en": "Nanamata Arch is a dive site in the Kurima area off southern Miyako-jima, with a maximum depth of 15 m. It is known for a cave with spring water at its far end and a blue-tinted interior. Little public information is available about the arch itself or the marine life seen here.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ムイガードロップ",
+   "alias": "ムイガー",
+   "area": "宮古島南・来間",
+   "features": "離れ根・イソマグロ・冬のマンタ",
+   "depth": "35m",
+   "lat": 24.76141,
+   "lng": 125.43633,
+   "precision": "area",
+   "position_note": "宮古島 南東（新城〜ムイガー）",
+   "sources": [
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ムイガードロップは、宮古島南部・来間エリアのポイントで、「ムイガー」とも呼ばれる。特徴として離れ根が挙げられ、イソマグロが見られることで知られている。冬にはマンタが見られることもある。最大水深は35m。挙げられている情報はこの程度で、地形の詳しい様子や生き物の傾向については公開されている情報は多くない。",
+   "commentary_en": "Muiga Drop-off, also known as Muiga, is a dive site in the Kurima area off southern Miyako Island. It is known for a detached pinnacle where dogtooth tuna are seen, and manta rays may appear in winter. Maximum depth is about 35 m, and there is little other public information about the site's layout or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "コーラルガーデン",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "ユビエダハマサンゴ・砂地",
+   "depth": "",
+   "lat": 24.73394,
+   "lng": 125.24134,
+   "precision": "area",
+   "position_note": "来間・前浜",
+   "sources": [
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "コーラルガーデンは、宮古島南部の来間島周辺のエリアにあるポイントです。特徴として挙げられているのは、ユビエダハマサンゴと砂地です。最大水深は公表されておらず、地形の詳しい様子やよく見られる生き物についても、公開されている情報はほとんどありません。名前のとおり、サンゴのある景観が中心のポイントと考えられます。",
+   "commentary_en": "Coral Garden is a dive site in the Kurima area off southern Miyakojima, noted for finger coral (Porites cylindrica) and sandy bottom. Its maximum depth is not published, and little other public information is available about its topography or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "うしさんありがとう",
+   "alias": "牛さんありがとう",
+   "area": "宮古島南・来間",
+   "features": "亀裂とドロップ・イソマグロ",
+   "depth": "",
+   "lat": 24.71625,
+   "lng": 125.29597,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "うしさんありがとう（牛さんありがとう）は、宮古島の南、来間島周辺のエリアにあるポイントです。地形の特徴としては亀裂とドロップオフが挙げられ、魚ではイソマグロの名前が見られます。最大水深については公開されている情報が見当たらないため、ここでは記載していません。ポイント名の由来についても、確かな情報は確認できていません。",
+   "commentary_en": "Ushisan Arigatou (also written 牛さんありがとう) is a dive site in the Kurima area off the south of Miyako-jima, noted for cracks in the reef and a drop-off. Dogtooth tuna are mentioned among the fish seen here. Published information on its maximum depth and the origin of its name could not be found.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "うしさんこわいよホール",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "低い入口の暗いホール",
+   "depth": "",
+   "lat": 24.71742,
+   "lng": 125.33278,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「うしさんこわいよホール」は、宮古島の南、来間島周辺のエリアにあるポイントです。特徴として伝えられているのは、低い入口から入る暗いホールがあることです。最大水深や別名は公開されておらず、ホール以外の地形や見られる生き物についても、名前と特徴のほかに確かな公開情報はほとんどありません。名前の由来も確認できていません。",
+   "commentary_en": "\"Ushisan Kowaiyo Hall\" is a dive site in the Kurima area, off the southern side of Miyako Island. Its one documented feature is a dark hall entered through a low opening. Its maximum depth is not published, and little else is publicly documented about its terrain or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ハマパラダイス",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "砂地・クマノミ類",
+   "depth": "7m",
+   "lat": 24.71086,
+   "lng": 125.24998,
+   "precision": "area",
+   "position_note": "来間・前浜",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ハマパラダイスは、宮古島の南、来間島周辺のエリアにあるダイビングポイントです。砂地を中心としたポイントで、クマノミ類が特徴として挙げられています。最大水深は7mと比較的浅めです。公開されている情報はこの程度に限られるため、地形の詳しい様子やその日の海の状況については、現地のガイドに尋ねるとよいでしょう。",
+   "commentary_en": "Hama Paradise is a dive site in the southern Miyako area around Kurima Island, characterized by a sandy bottom and anemonefish. With a maximum depth of 7 m, it is a relatively shallow site. Little other public information is available, so details of the terrain and conditions on the day are best checked with a local guide.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "インガマコーラル",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "サンゴの種類が豊富",
+   "depth": "",
+   "lat": 24.72151,
+   "lng": 125.25939,
+   "precision": "area",
+   "position_note": "来間・前浜",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "インガマコーラルは、宮古島の南側、来間島周辺のエリアにあるダイビングポイントです。公開されている情報では、サンゴの種類が豊富なことが特徴として挙げられています。最大水深や地形の詳しい様子、見られる生き物については公開情報がほとんどないため、ここでは紹介を控えます。実際の様子は、現地のショップで確かめるとよいでしょう。",
+   "commentary_en": "Ingama Coral is a dive site in the southern Miyakojima area, around Kurima Island, noted in available information for its wide variety of coral species. Little else has been published about it, including its maximum depth, topography, or the marine life seen there.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "5番アーチ",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "アーチと沖の岩のケーブ",
+   "depth": "",
+   "lat": 24.71214,
+   "lng": 125.31934,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「5番アーチ」は宮古島の南、来間島周辺のエリアにあるポイントです。名前のとおりアーチがあり、沖にある岩にはケーブもあるとされています。地形が主な特徴として挙げられるポイントです。最大水深については公開情報が見当たらないため、ここでは記載していません。見られる生き物など、そのほかの詳しい情報もあまり公開されていません。",
+   "commentary_en": "\"5-ban Arch\" is a dive site in the southern Miyako area around Kurima Island, known for an arch and a cave in an offshore rock. Its maximum depth is not publicly listed, and little other information, such as typical marine life, is available.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "11番ホール",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "狭い穴と縦穴・テーブルサンゴ",
+   "depth": "",
+   "lat": 24.71452,
+   "lng": 125.30079,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "11番ホールは宮古島の南部、来間島周辺のエリアに位置するポイントです。狭い穴や縦穴といった地形と、テーブルサンゴが見られることが特徴として挙げられています。最大水深や地形の規模については公開されている情報が見当たらず、ほかに詳しい情報も多くありません。",
+   "commentary_en": "11番ホール (No. 11 Hole) is a site in the Kurima area off southern Miyako Island. Its listed features are narrow holes and vertical shafts along with table corals. Maximum depth and other details are not publicly documented.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ラビリンス",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "迷路状のケーブ",
+   "depth": "",
+   "lat": 24.71884,
+   "lng": 125.29139,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "「ラビリンス」は宮古島の南、来間島周辺のエリアにあるポイントです。名前のとおり、迷路状に入り組んだケーブが特徴とされています。最大水深やここで見られる生き物については、確かな情報が見つかっていません。名前と地形の特徴のほかに公開情報は多くないため、詳しい様子は現地のダイビングショップに確かめるとよいでしょう。",
+   "commentary_en": "Labyrinth is a dive site in the southern Miyako area around Kurima Island. As its name suggests, it is known for a maze-like cave system. Beyond its name and this feature, little public information is available, including its maximum depth.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "ガオー",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "浅い・青い光のケーブ",
+   "depth": "浅場",
+   "lat": 24.72209,
+   "lng": 125.29832,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "ガオーは宮古島の南、来間島周辺のエリアにあるポイントです。水深は浅場で、青い光が差し込むケーブがあることが特徴として挙げられています。浅いところで光の入る洞窟地形を見られる点が、このポイントの主な性格といえます。ただし、名前と地形の概要のほかに公開されている情報は多くなく、見られる生き物や細かな地形については詳しく分かっていません。",
+   "commentary_en": "Gao is a dive site in the Kurima area off southern Miyako, known as a shallow site with a cave lit by blue light. Beyond its name and this general description, little public information is available, so details on marine life and the finer topography remain unclear.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "沈船ラビリンス",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "根から沈船へ・カクレクマノミ",
+   "depth": "",
+   "lat": 24.73094,
+   "lng": 125.29649,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "沈船ラビリンスは、宮古島の南、来間島周辺のエリアにあるポイントです。根から沈船へと移りながら潜る構成とされ、カクレクマノミが見られることが紹介されています。最大水深や沈船の規模など、そのほかの詳しい公開情報は多くありません。名前の「ラビリンス」が地形を指すのかどうかも、手元の情報からは確かめられません。",
+   "commentary_en": "Wreck Labyrinth is a site in the southern Miyako area near Kurima Island, where the dive is described as moving from a coral pinnacle to a sunken ship. Clark's anemonefish are noted at the site. Little else is publicly documented, including the maximum depth and the size of the wreck.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "インギャーマリンガーデン",
+   "alias": "",
+   "area": "ビーチ",
+   "features": "魚・サンゴ・マクロ",
+   "depth": "6m",
+   "lat": 24.7222,
+   "lng": 125.356,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "インギャーマリンガーデンは、宮古島のビーチエリアに分類されるポイントです。挙げられている特徴は魚、サンゴ、マクロ生物で、最大水深は6mと浅めです。地形や見られる生き物の具体的な内容については、公開されている情報が限られています。浅い水深で魚やサンゴ、小さな生き物を観察するポイントとして紹介されています。",
+   "commentary_en": "Ingya Marine Garden is listed as a beach-area dive site on Miyako Island, with a maximum depth of 6 m. Its noted features are fish, coral, and macro life. Beyond these points, little detailed public information is available about the site's topography or specific marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "クリマビーチ",
+   "alias": "",
+   "area": "ビーチ",
+   "features": "魚・砂地・マクロ",
+   "depth": "6m",
+   "lat": 24.7178,
+   "lng": 125.248,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "クリマビーチは、宮古島のポイント一覧で「ビーチ」に分類されている場所です。最大水深は6mと浅く、挙げられている特徴は魚、砂地、マクロの三つです。砂地での魚の観察や、小さな生き物を探すダイビングが中心になると考えられます。この分類と水深、特徴のほかに、地形や見られる生き物について公開されている情報は多くありません。",
+   "commentary_en": "Kurima Beach is listed among Miyakojima's dive points as a beach site, with a maximum depth of 6 m. Its noted features are fish, sand, and macro life, which suggests dives focused on the sandy bottom and small subjects. Beyond this classification, depth, and feature list, little public information is available about its terrain or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "来間ビーチ",
+   "alias": "",
+   "area": "ビーチ",
+   "features": "",
+   "depth": "",
+   "lat": 24.7232,
+   "lng": 125.2398,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "来間ビーチは、ビーチエントリーのポイントとして分類されています。名称からは来間島の浜と考えられますが、名前とエリアのほかに公開されている情報はほとんどなく、水深や地形、見られる生き物についてはここでは記載できません。ボートで沖へ出るポイントとは異なり、岸から入る形になります。詳しい様子は現地で得られる情報を参照してください。",
+   "commentary_en": "Kurima Beach is listed as a shore-entry site, and its name suggests it lies on Kurima Island. Apart from its name and category, little public information is available, so its depth, topography and marine life are not described here.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "シギラビーチ",
+   "alias": "",
+   "area": "ビーチ",
+   "features": "",
+   "depth": "",
+   "lat": 24.7193,
+   "lng": 125.341,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "シギラビーチは、宮古島のダイビングポイントのうち「ビーチ」エリアに分類されている地点です。名前とエリアのほかには、水中の地形や見られる生き物、最大水深、別名などの公開情報がほとんどなく、具体的な様子はわかっていません。どの季節に潜られることが多いかについても、ここで示せる情報はありません。",
+   "commentary_en": "Shigira Beach is listed among Miyako Island's dive sites under the \"Beach\" area. Beyond its name and area, there is little public information about its underwater terrain, marine life, or maximum depth. No details are available here on which seasons it is typically dived.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "中ノ島ビーチ",
+   "alias": "カヤッファ",
+   "area": "ビーチ",
+   "features": "",
+   "depth": "",
+   "lat": 24.813,
+   "lng": 125.1449,
+   "precision": "near",
+   "position_note": "中の島海岸",
+   "sources": [
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "中ノ島ビーチは、宮古島のダイビングポイントのうち「ビーチ」エリアに分類されているポイントで、カヤッファという別名でも知られています。名前と別名のほかには、地形や見られる生き物、最大水深などの公開情報はほとんどありません。この一覧では、ボートで向かうポイントとは分けて、ビーチのポイントとして扱っています。",
+   "commentary_en": "Nakanoshima Beach, also known as Kayaffa, is listed in the Beach area of Miyako Island's dive sites. Beyond its name and alias, little public information is available about its terrain, marine life, or maximum depth.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "吉野海岸",
+   "alias": "",
+   "area": "ビーチ（東）",
+   "features": "サンゴ・主にシュノーケル",
+   "depth": "",
+   "lat": 24.7495,
+   "lng": 125.4442,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "S",
+     "name": "観光情報",
+     "url": "https://miyako-tour.com/"
+    }
+   ],
+   "media": [
+    {
+     "type": "photo",
+     "src": "https://live.staticflickr.com/4066/4598570840_c6fc5360d8_b.jpg",
+     "page": "https://www.flickr.com/photos/71552575@N00/4598570840",
+     "title": "CIMG0452",
+     "author": "shishamo72",
+     "license": "CC BY 2.0",
+     "license_url": "https://creativecommons.org/licenses/by/2.0/",
+     "via": "Flickr",
+     "area": false
+    },
+    {
+     "type": "photo",
+     "src": "https://live.staticflickr.com/1429/4598584756_b0a3f1aa61_b.jpg",
+     "page": "https://www.flickr.com/photos/71552575@N00/4598584756",
+     "title": "CIMG0499",
+     "author": "shishamo72",
+     "license": "CC BY 2.0",
+     "license_url": "https://creativecommons.org/licenses/by/2.0/",
+     "via": "Flickr",
+     "area": false
+    },
+    {
+     "type": "photo",
+     "src": "https://live.staticflickr.com/1396/4597967607_9ced781a6a_b.jpg",
+     "page": "https://www.flickr.com/photos/71552575@N00/4597967607",
+     "title": "CIMG0498",
+     "author": "shishamo72",
+     "license": "CC BY 2.0",
+     "license_url": "https://creativecommons.org/licenses/by/2.0/",
+     "via": "Flickr",
+     "area": false
+    }
+   ],
+   "commentary_ja": "吉野海岸は宮古島の東側、ビーチエリアに分類されるポイントです。特徴としてはサンゴが挙げられており、ダイビングよりも主にシュノーケルで利用される場所とされています。最大水深については公開されている情報が見当たらないため、ここでは記載していません。地形や見られる生き物についても、これ以上の詳しい情報は手元にありません。",
+   "commentary_en": "Yoshino Beach is on the east side of Miyakojima and is listed as a beach site known for its coral. It is used mainly for snorkeling rather than diving. No maximum depth or further details about its terrain or marine life are publicly available.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "新城海岸",
+   "alias": "",
+   "area": "ビーチ（東）",
+   "features": "サンゴ・主にシュノーケル",
+   "depth": "",
+   "lat": 24.761,
+   "lng": 125.4252,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "S",
+     "name": "観光情報",
+     "url": "https://miyako-tour.com/"
+    }
+   ],
+   "media": [
+    {
+     "type": "photo",
+     "src": "https://live.staticflickr.com/8326/8137657077_8c5b930d6c_b.jpg",
+     "page": "https://www.flickr.com/photos/64793748@N02/8137657077",
+     "title": "宮古島トリップ",
+     "author": "koni_aiko",
+     "license": "CC BY 2.0",
+     "license_url": "https://creativecommons.org/licenses/by/2.0/",
+     "via": "Flickr",
+     "area": false
+    },
+    {
+     "type": "photo",
+     "src": "https://live.staticflickr.com/8196/8137686878_a7738c6beb_b.jpg",
+     "page": "https://www.flickr.com/photos/64793748@N02/8137686878",
+     "title": "宮古島トリップ",
+     "author": "koni_aiko",
+     "license": "CC BY 2.0",
+     "license_url": "https://creativecommons.org/licenses/by/2.0/",
+     "via": "Flickr",
+     "area": false
+    },
+    {
+     "type": "photo",
+     "src": "https://live.staticflickr.com/8056/8137658219_16f6e44d1a_b.jpg",
+     "page": "https://www.flickr.com/photos/64793748@N02/8137658219",
+     "title": "宮古島トリップ",
+     "author": "koni_aiko",
+     "license": "CC BY 2.0",
+     "license_url": "https://creativecommons.org/licenses/by/2.0/",
+     "via": "Flickr",
+     "area": false
+    }
+   ],
+   "commentary_ja": "新城海岸は宮古島の東側にあるビーチのポイントです。サンゴが見られる場所として知られ、主にシュノーケルで利用されています。最大水深などの詳しい公開情報はほとんどありません。ボートで向かう伊良部島や下地島周辺のダイビングポイントとは異なり、ビーチから海に入るタイプの場所です。",
+   "commentary_en": "Aragusuku Beach is a shore site on the east side of Miyako Island, known for its coral and used mainly for snorkeling. Little public information is available beyond this, including its maximum depth. Unlike the boat sites around Irabu and Shimoji islands, it is entered directly from the beach.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "保良漁港の浜",
+   "alias": "",
+   "area": "ビーチ（東）",
+   "features": "東平安名崎の西側・主にシュノーケル",
+   "depth": "",
+   "lat": 24.7228,
+   "lng": 125.4628,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "S",
+     "name": "観光情報",
+     "url": "https://miyako-tour.com/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "保良漁港の浜は、宮古島の東側にあるビーチポイントです。東平安名崎の西側に位置し、主にシュノーケルで利用されています。最大水深の情報はなく、ここで紹介できるのは場所と利用のされ方に限られます。地形や見られる生き物については、名前と場所のほかに公開情報がほとんど見当たりません。",
+   "commentary_en": "Hora Fishing Port Beach is a shore spot on the east side of Miyako-jima, just west of Cape Higashi-Hennazaki, and is used mainly for snorkeling. No maximum depth is listed, and beyond its name and location there is very little public information about its topography or marine life.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "フナクス",
+   "alias": "ブロックビーチ",
+   "area": "ビーチ（池間）",
+   "features": "サンゴ・主にシュノーケル",
+   "depth": "",
+   "lat": 24.9347,
+   "lng": 125.2433,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "S",
+     "name": "観光情報",
+     "url": "https://miyako-tour.com/"
+    }
+   ],
+   "media": [],
+   "commentary_ja": "フナクスは池間エリアにあるビーチポイントで、「ブロックビーチ」という別名でも呼ばれている。特徴として挙げられるのはサンゴで、ダイビングよりも主にシュノーケルで利用される場所とされる。最大水深は公開されておらず、地形や見られる生き物についても、ここに挙げた以上の情報はほとんど見当たらない。",
+   "commentary_en": "Funakusu, also known as Block Beach, is a beach site in the Ikema area, noted for its coral and used mainly for snorkeling rather than diving. Its maximum depth is not published, and little public information is available about its topography or marine life beyond these basics.",
+   "commentary_model": "claude-opus-5-5"
+  }
+ ],
+ "area_media": {
+  "下地島": [],
+  "伊良部島": [
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/65535/53974641078_3c4d4d0fc5_b.jpg",
+    "page": "https://www.flickr.com/photos/83454366@N00/53974641078",
+    "title": "DSCF1278",
+    "author": "afnos",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Irabu diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/65535/53973517192_06b576e4ea_b.jpg",
+    "page": "https://www.flickr.com/photos/83454366@N00/53973517192",
+    "title": "20230722-DSCF2594",
+    "author": "afnos",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Irabu diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/65535/53974726469_83b0edd719_b.jpg",
+    "page": "https://www.flickr.com/photos/83454366@N00/53974726469",
+    "title": "DSCF0082",
+    "author": "afnos",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Irabu diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/65535/53973517012_99e12e339e_b.jpg",
+    "page": "https://www.flickr.com/photos/83454366@N00/53973517012",
+    "title": "20230812-DSCF2996",
+    "author": "afnos",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Irabu diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/65535/53974725939_03da3a706f_b.jpg",
+    "page": "https://www.flickr.com/photos/83454366@N00/53974725939",
+    "title": "DSCF0526",
+    "author": "afnos",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Irabu diving"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/65535/53974837780_9b0bf34fb3_b.jpg",
+    "page": "https://www.flickr.com/photos/83454366@N00/53974837780",
+    "title": "20230715-DSCF2018",
+    "author": "afnos",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Irabu diving"
+   }
+  ],
+  "八重干瀬": [
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/65535/55147358484_27245d6479_b.jpg",
+    "page": "https://www.flickr.com/photos/37407903@N06/55147358484",
+    "title": "八重干瀬",
+    "author": "nubobo",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "八重干瀬"
+   }
+  ],
+  "宮古島北（狩俣）": [],
+  "宮古島南・来間": [
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8589/28413969534_4454051726_b.jpg",
+    "page": "https://www.flickr.com/photos/85936780@N00/28413969534",
+    "title": "Tropical fish",
+    "author": "pelican",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Miyakojima underwater"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8521/28945902126_1b40262911_b.jpg",
+    "page": "https://www.flickr.com/photos/85936780@N00/28945902126",
+    "title": "Tropical fish",
+    "author": "pelican",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Miyakojima underwater"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8542/28417267003_8039abe3df_b.jpg",
+    "page": "https://www.flickr.com/photos/85936780@N00/28417267003",
+    "title": "Sea turtle",
+    "author": "pelican",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Miyakojima underwater"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8654/28987369125_8392602e77_b.jpg",
+    "page": "https://www.flickr.com/photos/85936780@N00/28987369125",
+    "title": "Tropical fish",
+    "author": "pelican",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Miyakojima underwater"
+   },
+   {
+    "type": "photo",
+    "src": "https://live.staticflickr.com/8807/28916250031_043b4e36f3_b.jpg",
+    "page": "https://www.flickr.com/photos/85936780@N00/28916250031",
+    "title": "Tropical fish",
+    "author": "pelican",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "via": "Flickr",
+    "area": true,
+    "query": "Miyakojima underwater"
+   }
+  ]
+ }
+}
