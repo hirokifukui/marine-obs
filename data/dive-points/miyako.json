@@ -1,0 +1,2427 @@
+{
+ "site": "miyako",
+ "title": "宮古島",
+ "center": [
+  24.83,
+  125.26
+ ],
+ "points": [
+  {
+   "name": "魔王の宮殿",
+   "alias": "",
+   "area": "下地島",
+   "features": "縦穴から入るホール・天井からの光",
+   "depth": "25-29m",
+   "lat": 24.80545,
+   "lng": 125.14515,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "R",
+     "name": "リーフ宮古",
+     "url": "https://reefmiyako.com/point-map/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "通り池",
+   "alias": "",
+   "area": "下地島",
+   "features": "陸の池とつながる巨大な穴・淡水と海水の境",
+   "depth": "28-30m",
+   "lat": 24.8236,
+   "lng": 125.1326,
+   "precision": "near",
+   "position_note": "通り池（下地島）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "R",
+     "name": "リーフ宮古",
+     "url": "https://reefmiyako.com/point-map/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "ミニ通り池＆ホワイトロード",
+   "alias": "ミニグロット",
+   "area": "下地島",
+   "features": "池に浮上・クレバス",
+   "depth": "18-22m",
+   "lat": 24.80381,
+   "lng": 125.14988,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "アントニオ・ガウディ",
+   "alias": "",
+   "area": "下地島",
+   "features": "穴だらけのアーチ群",
+   "depth": "35-36m",
+   "lat": 24.80726,
+   "lng": 125.14284,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "R",
+     "name": "リーフ宮古",
+     "url": "https://reefmiyako.com/point-map/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "本ドロップ",
+   "alias": "GTドロップ／ロウニンドロップオフ",
+   "area": "下地島",
+   "features": "絶壁・ロウニンアジ",
+   "depth": "30-45m",
+   "lat": 24.81382,
+   "lng": 125.14373,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "津波岩",
+   "alias": "つなみ岩",
+   "area": "下地島",
+   "features": "アーチ・カメ・コブシメ産卵",
+   "depth": "20-28m",
+   "lat": 24.81628,
+   "lng": 125.13583,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "津波岩ドロップ",
+   "alias": "",
+   "area": "下地島",
+   "features": "ロウニンアジ・大物",
+   "depth": "18m",
+   "lat": 24.81956,
+   "lng": 125.14071,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ]
+  },
+  {
+   "name": "中の島チャネル",
+   "alias": "",
+   "area": "下地島",
+   "features": "水路状の地形・初心者から",
+   "depth": "20-22m",
+   "lat": 24.8113,
+   "lng": 125.1418,
+   "precision": "near",
+   "position_note": "中の島海岸",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "中の島ホール",
+   "alias": "ムーミンホール",
+   "area": "下地島",
+   "features": "縦穴から横穴・砂時計形",
+   "depth": "22-33m",
+   "lat": 24.81024,
+   "lng": 125.14383,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "マリンレイク",
+   "alias": "",
+   "area": "下地島",
+   "features": "洞窟から池に浮上・初心者向き",
+   "depth": "14-18m",
+   "lat": 24.8122,
+   "lng": 125.13883,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "35ホール",
+   "alias": "",
+   "area": "下地島",
+   "features": "25mから入る光のホール",
+   "depth": "35m",
+   "lat": 24.82146,
+   "lng": 125.13886,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    }
+   ]
+  },
+  {
+   "name": "一の瀬ホール",
+   "alias": "",
+   "area": "下地島",
+   "features": "午前の光・うねりに弱い",
+   "depth": "30m",
+   "lat": 24.8229,
+   "lng": 125.14123,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "一の瀬ドロップ",
+   "alias": "一の瀬ドロップオフ",
+   "area": "下地島",
+   "features": "ピラミッドロック・流れ・大物",
+   "depth": "33-35m",
+   "lat": 24.82527,
+   "lng": 125.1348,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "サンゴホール",
+   "alias": "",
+   "area": "下地島",
+   "features": "下地島最大級の洞窟・ハート形入口",
+   "depth": "33-35m",
+   "lat": 24.82667,
+   "lng": 125.13708,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "なるほど・ザ・ケーブ",
+   "alias": "",
+   "area": "下地島",
+   "features": "狭く浅い洞窟・ライト必須",
+   "depth": "18m",
+   "lat": 24.82869,
+   "lng": 125.133,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "女王の部屋",
+   "alias": "",
+   "area": "下地島",
+   "features": "大ホール・穴の住人（ホシゾラワラエビ等）",
+   "depth": "35-36m",
+   "lat": 24.83048,
+   "lng": 125.13427,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "ツインケーブ",
+   "alias": "ツインケープ",
+   "area": "下地島",
+   "features": "大きな穴・ホワイトチップ",
+   "depth": "18-25m",
+   "lat": 24.83278,
+   "lng": 125.13419,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "ウォールケーブ",
+   "alias": "",
+   "area": "下地島",
+   "features": "ドロップ・マクロ",
+   "depth": "33-35m",
+   "lat": 24.83405,
+   "lng": 125.13315,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "だんご岩",
+   "alias": "",
+   "area": "下地島",
+   "features": "巨岩",
+   "depth": "33m",
+   "lat": 24.83538,
+   "lng": 125.14477,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ]
+  },
+  {
+   "name": "悪魔の館",
+   "alias": "",
+   "area": "下地島",
+   "features": "暗いエアードーム・ライト必須・難易度高",
+   "depth": "35m",
+   "lat": 24.83748,
+   "lng": 125.13976,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "光の迷宮",
+   "alias": "",
+   "area": "下地島",
+   "features": "迷宮状の穴と池",
+   "depth": "18m",
+   "lat": 24.84483,
+   "lng": 125.14108,
+   "precision": "area",
+   "position_note": "下地島 西〜南",
+   "sources": [
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "トリプルスリー",
+   "alias": "333",
+   "area": "下地島",
+   "features": "アーチ・大物・激流",
+   "depth": "40m",
+   "lat": 24.79996,
+   "lng": 125.16251,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "パナタ",
+   "alias": "",
+   "area": "下地島",
+   "features": "ギンガメアジの群れ・激流・潮止まり狙い",
+   "depth": "20-25m",
+   "lat": 24.80161,
+   "lng": 125.15734,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "クリスタルパーク",
+   "alias": "",
+   "area": "下地島",
+   "features": "白い砂地・初級向き",
+   "depth": "10-11m",
+   "lat": 24.80268,
+   "lng": 125.15467,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "ロックビューティー",
+   "alias": "",
+   "area": "下地島",
+   "features": "砂地・チンアナゴ・マクロ",
+   "depth": "13m",
+   "lat": 24.80362,
+   "lng": 125.15847,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "石庭",
+   "alias": "",
+   "area": "下地島",
+   "features": "砂地・マクロ",
+   "depth": "13m",
+   "lat": 24.80448,
+   "lng": 125.16591,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ]
+  },
+  {
+   "name": "ウミウシ御殿",
+   "alias": "",
+   "area": "下地島",
+   "features": "砂地・マクロ",
+   "depth": "10m",
+   "lat": 24.80564,
+   "lng": 125.15438,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ]
+  },
+  {
+   "name": "マッドシティー",
+   "alias": "",
+   "area": "下地島",
+   "features": "泥地・マクロ",
+   "depth": "10m",
+   "lat": 24.80772,
+   "lng": 125.17688,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ]
+  },
+  {
+   "name": "フィッシュパーク",
+   "alias": "",
+   "area": "下地島",
+   "features": "岸近くで穏やか・ウミウシ",
+   "depth": "",
+   "lat": 24.80979,
+   "lng": 125.17992,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "オアシティ",
+   "alias": "",
+   "area": "下地島",
+   "features": "白い砂地と小魚の群れ・初心者",
+   "depth": "12m",
+   "lat": 24.81472,
+   "lng": 125.17768,
+   "precision": "area",
+   "position_note": "下地島・伊良部 南（渡口〜中の島の内側）",
+   "sources": [
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "L字アーチ＆ワープホール",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "大アーチ・狭い洞窟・大物・流れ",
+   "depth": "30-35m",
+   "lat": 24.8584,
+   "lng": 125.18612,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "クロスホール",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "十字の光が差す大きなホール",
+   "depth": "20-27m",
+   "lat": 24.8605,
+   "lng": 125.18336,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "Wアーチ",
+   "alias": "ダブルアーチ",
+   "area": "伊良部島",
+   "features": "ハート形の二連アーチ",
+   "depth": "18-20m",
+   "lat": 24.86143,
+   "lng": 125.18258,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "Zアーチ",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "アーチ・流れ",
+   "depth": "33m",
+   "lat": 24.86231,
+   "lng": 125.1817,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "ツインホール",
+   "alias": "青の洞窟",
+   "area": "伊良部島",
+   "features": "浅い洞窟・満潮時に奥まで",
+   "depth": "10-20m",
+   "lat": 24.84051,
+   "lng": 125.21363,
+   "precision": "area",
+   "position_note": "伊良部 東（佐良浜）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "がけ下",
+   "alias": "崖下／青の洞窟",
+   "area": "伊良部島",
+   "features": "エアードーム・初心者向き",
+   "depth": "20m",
+   "lat": 24.85038,
+   "lng": 125.20582,
+   "precision": "area",
+   "position_note": "伊良部 東（佐良浜）",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "沈船（カーフェリー）",
+   "alias": "沈船いらぶ",
+   "area": "伊良部島",
+   "features": "漁礁化した旧フェリー・ツバメウオ",
+   "depth": "18m",
+   "lat": 24.8345,
+   "lng": 125.2205,
+   "precision": "near",
+   "position_note": "佐良浜港",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "サシバ沖",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "ドロップ・サンゴ・西風時",
+   "depth": "30m",
+   "lat": 24.845,
+   "lng": 125.152,
+   "precision": "near",
+   "position_note": "佐和田の浜の沖",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "サバ沖ヒルズ",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "根・魚",
+   "depth": "30m",
+   "lat": 24.86357,
+   "lng": 125.17581,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ]
+  },
+  {
+   "name": "スネークホール＆ハナダイの根",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "青い光の浮上できる洞窟・アカネハナゴイ",
+   "depth": "15-18m",
+   "lat": 24.86387,
+   "lng": 125.17749,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "デンターロック",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "巨岩",
+   "depth": "30m",
+   "lat": 24.86403,
+   "lng": 125.17795,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ]
+  },
+  {
+   "name": "サプライズホール",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "満潮時のみ・透明度が高い",
+   "depth": "15m",
+   "lat": 24.86457,
+   "lng": 125.17426,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "白鳥ホール",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "昼の光の筋",
+   "depth": "10m",
+   "lat": 24.8672,
+   "lng": 125.1612,
+   "precision": "near",
+   "position_note": "白鳥岬",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "白鳥幼稚園",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "根・マクロ・カメ・初心者向き",
+   "depth": "18-20m",
+   "lat": 24.8678,
+   "lng": 125.164,
+   "precision": "near",
+   "position_note": "白鳥岬",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "タートルタウン",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "ウミガメ",
+   "depth": "10m",
+   "lat": 24.86539,
+   "lng": 125.17239,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ]
+  },
+  {
+   "name": "オーバーハング",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "えぐれた地形・魚影・ナポレオン",
+   "depth": "25-30m",
+   "lat": 24.86594,
+   "lng": 125.16998,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "A",
+     "name": "アクアストーリー",
+     "url": "https://www.aqua-story.com/point.html"
+    }
+   ]
+  },
+  {
+   "name": "サージョンリーフ",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "ナンヨウハギの群れ・マダラトビエイ",
+   "depth": "",
+   "lat": 24.8665,
+   "lng": 125.16874,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "グルクンの根",
+   "alias": "",
+   "area": "伊良部島",
+   "features": "グルクン・イソマグロ",
+   "depth": "",
+   "lat": 24.86707,
+   "lng": 125.16633,
+   "precision": "area",
+   "position_note": "伊良部 北",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "プロビデンスⅠ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "アカネハナゴイの群れ・回遊魚",
+   "depth": "",
+   "lat": 24.995,
+   "lng": 125.26692,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "プロビデンスⅡ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "イソマグロ・バラクーダ・流れ速い",
+   "depth": "",
+   "lat": 24.99961,
+   "lng": 125.25571,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "ハナダイアーチ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "アーチとサンゴ・回遊魚・流れ",
+   "depth": "20m",
+   "lat": 24.98623,
+   "lng": 125.26296,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "ハナダイコーナー",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "リーフ外側・流れ・ホワイトチップ",
+   "depth": "",
+   "lat": 25.00327,
+   "lng": 125.26993,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "ブルーコーナー",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "バラクーダの群れ・季節によりマンタ",
+   "depth": "20m",
+   "lat": 24.99294,
+   "lng": 125.24745,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    }
+   ]
+  },
+  {
+   "name": "アガラガウサ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "テーブルサンゴの広がり・春のコブシメ",
+   "depth": "30m",
+   "lat": 24.98799,
+   "lng": 125.27578,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "ビーマク",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "巨大なコモンシコロサンゴ・アオウミガメ",
+   "depth": "20m",
+   "lat": 25.00872,
+   "lng": 125.25739,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "ユラビジ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "浅場の枝サンゴ・アカネハナゴイ",
+   "depth": "15m",
+   "lat": 24.98146,
+   "lng": 125.25321,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "40'Sロック",
+   "alias": "40'ロック",
+   "area": "八重干瀬",
+   "features": "スカシテンジクダイだらけの大岩",
+   "depth": "15m",
+   "lat": 25.00057,
+   "lng": 125.28107,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "コーラルビューティ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "浅場の枝サンゴ畑",
+   "depth": "15m",
+   "lat": 25.00155,
+   "lng": 125.24216,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    }
+   ]
+  },
+  {
+   "name": "ホワイトシティ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "白い砂地・エイ・サメ",
+   "depth": "10m",
+   "lat": 24.97865,
+   "lng": 125.27156,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "沈船タグボート",
+   "alias": "沈船",
+   "area": "八重干瀬",
+   "features": "小さな沈船・透明度が高い",
+   "depth": "18m",
+   "lat": 25.01302,
+   "lng": 125.26907,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "B",
+     "name": "BIG HOLIDAY",
+     "url": "https://bigholiday-miyakojima.com/diving/point/yabiji"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "イフ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "浅場・カメ・砂地",
+   "depth": "浅場",
+   "lat": 24.98512,
+   "lng": 125.2407,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    },
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "タンニャビジ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "テーブルサンゴ・コモンシコロ",
+   "depth": "浅場",
+   "lat": 24.99061,
+   "lng": 125.28699,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "エメラルドガーデン",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "砂地の根・スカシテンジクダイ",
+   "depth": "",
+   "lat": 25.01235,
+   "lng": 125.24675,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "デベソ1",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "グルクン幼魚・根を回る",
+   "depth": "",
+   "lat": 24.97325,
+   "lng": 125.25848,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "デベソ2",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "大きな根とトンネル・カメ",
+   "depth": "",
+   "lat": 25.00958,
+   "lng": 125.28363,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "キジャカ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.99596,
+   "lng": 125.2329,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "キジャカパラダイス",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.9781,
+   "lng": 125.28323,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "ジャウキビジ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 25.01957,
+   "lng": 125.26058,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "アカズーミジュキ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.97564,
+   "lng": 125.2418,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "ナカガウサ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.99844,
+   "lng": 125.294,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "フゥガウサ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 25.01009,
+   "lng": 125.23489,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "ヒグマラ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.96865,
+   "lng": 125.26941,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "カナマラ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 25.01892,
+   "lng": 125.27914,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "ホワイトバレー",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.98645,
+   "lng": 125.2285,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "ホワイトロード（八重干瀬）",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.98297,
+   "lng": 125.29454,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "漁礁（パヤオ）",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 25.02195,
+   "lng": 125.2479,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "八重干瀬幼稚園",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.96702,
+   "lng": 125.24942,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "シャークピット",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 25.00908,
+   "lng": 125.29548,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "コモンシコロ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 25.00284,
+   "lng": 125.22482,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "スムトゥ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 24.9687,
+   "lng": 125.28314,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "アガイヌッサ",
+   "alias": "",
+   "area": "八重干瀬",
+   "features": "",
+   "depth": "",
+   "lat": 25.0263,
+   "lng": 125.26872,
+   "precision": "area",
+   "position_note": "八重干瀬（礁域の中の目安）",
+   "sources": [
+    {
+     "key": "Y",
+     "name": "碧海",
+     "url": "https://hekikai-okinawa.com/miyakojima/3694/"
+    }
+   ]
+  },
+  {
+   "name": "狩俣ツインケーブ＆エイトポールアーチ",
+   "alias": "",
+   "area": "宮古島北（狩俣）",
+   "features": "うねりに強い・洞窟内の魚とイセエビ",
+   "depth": "",
+   "lat": 24.88223,
+   "lng": 125.27042,
+   "precision": "area",
+   "position_note": "狩俣",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "狩俣下",
+   "alias": "",
+   "area": "宮古島北（狩俣）",
+   "features": "砂地と根・カクレクマノミ",
+   "depth": "",
+   "lat": 24.90804,
+   "lng": 125.26198,
+   "precision": "area",
+   "position_note": "狩俣",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "七又アーチ",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "ケーブ奥の湧水・青い世界",
+   "depth": "15m",
+   "lat": 24.70997,
+   "lng": 125.30786,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "ムイガードロップ",
+   "alias": "ムイガー",
+   "area": "宮古島南・来間",
+   "features": "離れ根・イソマグロ・冬のマンタ",
+   "depth": "35m",
+   "lat": 24.76141,
+   "lng": 125.43633,
+   "precision": "area",
+   "position_note": "宮古島 南東（新城〜ムイガー）",
+   "sources": [
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "コーラルガーデン",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "ユビエダハマサンゴ・砂地",
+   "depth": "",
+   "lat": 24.73394,
+   "lng": 125.24134,
+   "precision": "area",
+   "position_note": "来間・前浜",
+   "sources": [
+    {
+     "key": "O",
+     "name": "おきらく",
+     "url": "https://oki-raku.net/diving/miyako/diving_spot/"
+    },
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "うしさんありがとう",
+   "alias": "牛さんありがとう",
+   "area": "宮古島南・来間",
+   "features": "亀裂とドロップ・イソマグロ",
+   "depth": "",
+   "lat": 24.71625,
+   "lng": 125.29597,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "D",
+     "name": "ダイブナビ",
+     "url": "https://www.divenavi.com/miyakojima/diving/"
+    },
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "うしさんこわいよホール",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "低い入口の暗いホール",
+   "depth": "",
+   "lat": 24.71742,
+   "lng": 125.33278,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "ハマパラダイス",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "砂地・クマノミ類",
+   "depth": "7m",
+   "lat": 24.71086,
+   "lng": 125.24998,
+   "precision": "area",
+   "position_note": "来間・前浜",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "インガマコーラル",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "サンゴの種類が豊富",
+   "depth": "",
+   "lat": 24.72151,
+   "lng": 125.25939,
+   "precision": "area",
+   "position_note": "来間・前浜",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "5番アーチ",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "アーチと沖の岩のケーブ",
+   "depth": "",
+   "lat": 24.71214,
+   "lng": 125.31934,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "11番ホール",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "狭い穴と縦穴・テーブルサンゴ",
+   "depth": "",
+   "lat": 24.71452,
+   "lng": 125.30079,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "ラビリンス",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "迷路状のケーブ",
+   "depth": "",
+   "lat": 24.71884,
+   "lng": 125.29139,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "ガオー",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "浅い・青い光のケーブ",
+   "depth": "浅場",
+   "lat": 24.72209,
+   "lng": 125.29832,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "沈船ラビリンス",
+   "alias": "",
+   "area": "宮古島南・来間",
+   "features": "根から沈船へ・カクレクマノミ",
+   "depth": "",
+   "lat": 24.73094,
+   "lng": 125.29649,
+   "precision": "area",
+   "position_note": "宮古島 南（博愛〜上野）",
+   "sources": [
+    {
+     "key": "K",
+     "name": "KANCHI",
+     "url": "https://kanchi32.com/pointmap"
+    }
+   ]
+  },
+  {
+   "name": "インギャーマリンガーデン",
+   "alias": "",
+   "area": "ビーチ",
+   "features": "魚・サンゴ・マクロ",
+   "depth": "6m",
+   "lat": 24.7222,
+   "lng": 125.356,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    },
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    }
+   ]
+  },
+  {
+   "name": "クリマビーチ",
+   "alias": "",
+   "area": "ビーチ",
+   "features": "魚・砂地・マクロ",
+   "depth": "6m",
+   "lat": 24.7178,
+   "lng": 125.248,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "E",
+     "name": "エミナマリン",
+     "url": "https://eminamarine-diving.net/divingpoint"
+    }
+   ]
+  },
+  {
+   "name": "来間ビーチ",
+   "alias": "",
+   "area": "ビーチ",
+   "features": "",
+   "depth": "",
+   "lat": 24.7232,
+   "lng": 125.2398,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    }
+   ]
+  },
+  {
+   "name": "シギラビーチ",
+   "alias": "",
+   "area": "ビーチ",
+   "features": "",
+   "depth": "",
+   "lat": 24.7193,
+   "lng": 125.341,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    }
+   ]
+  },
+  {
+   "name": "中ノ島ビーチ",
+   "alias": "カヤッファ",
+   "area": "ビーチ",
+   "features": "",
+   "depth": "",
+   "lat": 24.813,
+   "lng": 125.1449,
+   "precision": "near",
+   "position_note": "中の島海岸",
+   "sources": [
+    {
+     "key": "G",
+     "name": "ガイド屋さん",
+     "url": "https://guide-ya-san.com/article/305.html"
+    }
+   ]
+  },
+  {
+   "name": "吉野海岸",
+   "alias": "",
+   "area": "ビーチ（東）",
+   "features": "サンゴ・主にシュノーケル",
+   "depth": "",
+   "lat": 24.7495,
+   "lng": 125.4442,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "S",
+     "name": "観光情報",
+     "url": "https://miyako-tour.com/"
+    }
+   ]
+  },
+  {
+   "name": "新城海岸",
+   "alias": "",
+   "area": "ビーチ（東）",
+   "features": "サンゴ・主にシュノーケル",
+   "depth": "",
+   "lat": 24.761,
+   "lng": 125.4252,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "S",
+     "name": "観光情報",
+     "url": "https://miyako-tour.com/"
+    }
+   ]
+  },
+  {
+   "name": "保良漁港の浜",
+   "alias": "",
+   "area": "ビーチ（東）",
+   "features": "東平安名崎の西側・主にシュノーケル",
+   "depth": "",
+   "lat": 24.7228,
+   "lng": 125.4628,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "S",
+     "name": "観光情報",
+     "url": "https://miyako-tour.com/"
+    }
+   ]
+  },
+  {
+   "name": "フナクス",
+   "alias": "ブロックビーチ",
+   "area": "ビーチ（池間）",
+   "features": "サンゴ・主にシュノーケル",
+   "depth": "",
+   "lat": 24.9347,
+   "lng": 125.2433,
+   "precision": "near",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "S",
+     "name": "観光情報",
+     "url": "https://miyako-tour.com/"
+    }
+   ]
+  }
+ ]
+}
