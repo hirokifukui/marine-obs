@@ -22,10 +22,10 @@
     "level": "elevated",
     "extreme_rate_analog": 1.0,
     "n_analog": 2,
-    "extreme_rate_other": 0.19,
-    "n_other": 21,
-    "extreme_rate_all": 0.26,
-    "n_all": 23,
+    "extreme_rate_other": 0.18,
+    "n_other": 22,
+    "extreme_rate_all": 0.25,
+    "n_all": 24,
     "definition": "extreme summer = peak DHW >= 8 (site method, 8-week, no 1C cut-off)"
   },
   "analog_years": [
@@ -193,6 +193,13 @@
       "peak_dhw": 8.91,
       "prev_jas_oni": -0.07,
       "extreme": true
+    },
+    {
+      "year": 2026,
+      "days30": 0,
+      "peak_dhw": 2.71,
+      "prev_jas_oni": -0.28,
+      "extreme": false
     }
   ],
   "manual": {
@@ -207,5 +214,5 @@
     }
   },
   "method": "scripts/build_onna_outlook.py",
-  "updated": "2026-10-26"
+  "updated": "2026-11-01"
 }
