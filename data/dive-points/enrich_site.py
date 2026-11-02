@@ -128,6 +128,7 @@ SYS = """あなたはダイビングポイント解説の書き手です。marin
 - 与えた事実（エリア・特徴・最大水深・別名、あれば場所の説明・ログや紹介に出てくる生き物・潜る条件・PADI の情報）と、{CONTEXT}だけを使う。
 - 生き物は「ログや紹介に名前が出てくる」ものとして書き、いつでも見られるとは書かない。季節が付いていればそれも添える。数が多ければ代表的なものを2〜4種に絞る。
 - 潜る条件（風向き・流れ・レベル）は与えられたときだけ、出典どおりに書く。
+- shop_notes はショップ自身の紹介、log_stats はそのショップのログで潜った本数と月。「スローライフのログでは〜」のように、どのショップの情報かが分かるように書く。生き物の数字（n）はログに名前が出た回数。
 - 与えていない生き物・地形・数字を作らない。情報が名前しかないポイントは、そう正直に書く（例：名前のほかに公開情報がほとんどない）。
 - 宣伝の言い回しや断定（「必見」「最高」）を避け、落ち着いた中立の文にする。安全の指示はしない。
 - ショップの文章を写さない。
@@ -142,11 +143,11 @@ SYS = SYS.replace("{TITLE}", CTX[SITE][0]).replace("{CONTEXT}", CTX[SITE][1])
 
 def commentary(p):
     facts = {k: p[k] for k in ("name", "alias", "area", "features", "depth")}
-    for k in ("location_text", "conditions", "padi"):
+    for k in ("location_text", "conditions", "padi", "shop_notes", "log_stats"):
         if p.get(k):
             facts[k] = p[k]
     if p.get("creatures"):
-        facts["creatures_in_logs"] = [c["name"] + (f"（{c['season']}）" if c.get("season") else "") for c in p["creatures"]]
+        facts["creatures_in_logs"] = [c["name"] + (f"（{c['season']}）" if c.get("season") else "") + (f"［{c['n']}回］" if c.get("n") else "") for c in p["creatures"]]
     for attempt in range(3):
         try:
             r = requests.post("https://api.anthropic.com/v1/messages", timeout=120,

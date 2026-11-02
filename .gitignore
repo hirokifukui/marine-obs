@@ -28,3 +28,4 @@ data/dive-points/candidates_*.json
 data/dive-points/extras_*.json
 data/dive-points/padi_*.json
 data/dive-points/*.v1.json
+data/dive-points/shops_*.json

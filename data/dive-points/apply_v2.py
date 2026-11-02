@@ -217,6 +217,34 @@ for p in D["points"]:
     p["scope"] = {"in": md.get("in_scope"), "note": md.get("scope_note")}
     pts.append(p)
 
+# ショップの情報（万座：スローライフのログ、ラグーンのポイント紹介）
+SHF = os.path.join(HERE, f"shops_{SITE}.json")
+if os.path.exists(SHF):
+    SH = json.load(open(SHF, encoding="utf-8"))
+    for p in pts:
+        n = p["name"]
+        sl, lg, sln = SH["slowlife"].get(n), SH["lagoon"].get(n), SH["slowlife_notes"].get(n)
+        notes = []
+        if lg:
+            notes.append({"shop": "ラグーン", "text": f"{lg[2]}（{lg[0]}・{lg[1]}）"})
+            if not p.get("depth"):
+                p["depth"] = lg[0]
+            p.setdefault("conditions", {})
+            if not p["conditions"].get("level"):
+                p["conditions"]["level"] = lg[1]
+            if not any(s["url"] == SH["lg_url"] for s in p["sources"]):
+                p["sources"].append({"key": "LG", "name": "ラグーン", "url": SH["lg_url"]})
+        if sln:
+            notes.append({"shop": "スローライフ", "text": sln})
+        if sl or sln:
+            if not any(s["url"] == SH["sl_url"] for s in p["sources"]):
+                p["sources"].append({"key": "SL", "name": "スローライフ（ログ）", "url": SH["sl_url"]})
+        p["shop_notes"] = notes
+        if sl:
+            p["log_stats"] = {"shop": "スローライフ", "dives": sl["dives"], "months": sl["months"]}
+            have = [c["name"] for c in sl["creatures"]]
+            p["creatures"] = [{"name": c["name"], "season": None, "n": c["n"]} for c in sl["creatures"]] + \
+                             [c for c in p.get("creatures") or [] if c["name"] not in have][:6]
 # 追加したポイントのエリアは、いちばん近い既存のポイントのエリアにする
 for p in pts:
     if p["name"] in REVIEW.get("area", {}):

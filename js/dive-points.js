@@ -44,7 +44,15 @@
     }
     function crHtml(cr) {
         if (!cr || !cr.length) return '';
-        return `<dt>${bi('Seen in logs', 'ログに出る生き物')}</dt><dd class="dp-cr">${cr.map(c => `<span>${esc(c.name)}${c.season ? `<i>${esc(c.season)}</i>` : ''}</span>`).join('')}</dd>`;
+        return `<dt>${bi('Seen in logs', 'ログに出る生き物')}</dt><dd class="dp-cr">${cr.map(c => `<span>${esc(c.name)}${c.season ? `<i>${esc(c.season)}</i>` : ''}${c.n ? `<i>${c.n}</i>` : ''}</span>`).join('')}</dd>`;
+    }
+    function shopHtml(p) {
+        const rows = (p.shop_notes || []).map(s => `<div><b>${esc(s.shop)}</b> ${esc(s.text)}</div>`);
+        if (p.log_stats) {
+            const m = p.log_stats.months, mm = m.length ? (m[0] === m[m.length - 1] ? m[0] + '月' : m[0] + '〜' + m[m.length - 1] + '月') : '';
+            rows.push(`<div><b>${esc(p.log_stats.shop)}のログ</b> ${bi(p.log_stats.dives + ' dives' + (mm ? ' (' + mm + ')' : ''), p.log_stats.dives + '本' + (mm ? '（' + mm + '）' : '') + '。生き物の数字は、ログに名前が出た回数')}</div>`);
+        }
+        return rows.length ? `<dt>${bi('From shops', 'ショップの情報')}</dt><dd class="dp-cond">${rows.join('')}</dd>` : '';
     }
     function detail(p) {
         const aliases = [p.alias, ...(p.aliases_found || [])].filter(Boolean).join('／');
@@ -56,6 +64,7 @@
                 <dt>${bi('Depth', '水深')}</dt><dd>${esc(p.depth || (p.padi && p.padi.depth) || '–')}</dd>
                 ${p.features ? `<dt>${bi('Features', '特徴')}</dt><dd>${esc(p.features)}</dd>` : ''}
                 <dt>${bi('Position', '位置')}</dt><dd>${posText(p)}${p.location_text ? `<div class="lt">${esc(p.location_text)}</div>` : ''}</dd>
+                ${shopHtml(p)}
                 ${crHtml(p.creatures)}
                 ${condHtml(p.conditions)}
             </dl>

@@ -41,6 +41,16 @@
      "key": "PADI2",
      "name": "PADI ダイビングスポット情報",
      "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1236"
+    },
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    },
+    {
+     "key": "SL",
+     "name": "スローライフ（ログ）",
+     "url": "https://slowlife-ms.com/blog/category/onnason-fun-diving/manza-diving"
     }
    ],
    "media": [
@@ -81,11 +91,57 @@
    "location_text": "沖縄本島中部西海岸、恩納村中央の東シナ海に面した万座毛断崖の直下の海。万座・瀬良垣エリアで瀬良垣漁港からボートで数～10分程度。",
    "creatures": [
     {
-     "name": "ハマクマノミ",
-     "season": "6月"
+     "name": "アオウミガメ",
+     "season": null,
+     "n": 2
     },
     {
      "name": "カクレクマノミ",
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "アマミスズメダイ群れ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "シコクスズメダイ群れ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "オヤビッチャ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "チギレフシエラガイ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ノドグロベラ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ヒトスジギンポ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ヒョウモンウミウシ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "クロユリハゼ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ハマクマノミ",
      "season": "6月"
     },
     {
@@ -107,30 +163,6 @@
     {
      "name": "ウコンハネガイ",
      "season": "3月"
-    },
-    {
-     "name": "シンデレラウミウシ",
-     "season": "3月"
-    },
-    {
-     "name": "イシガキカエルウオ",
-     "season": "3月"
-    },
-    {
-     "name": "スカシテンジクダイ",
-     "season": null
-    },
-    {
-     "name": "キンメモドキ",
-     "season": null
-    },
-    {
-     "name": "イソマグロ",
-     "season": null
-    },
-    {
-     "name": "ウミウシ類",
-     "season": null
     }
    ],
    "conditions": {
@@ -177,8 +209,21 @@
     "in": true,
     "note": "万座のトリプルロックは万座毛断崖直下の記述があり、万座毛下は本島万座周辺としてドリームホール・ホーシューと並列され、ともに対象範囲内。真栄田岬・青の洞窟や読谷・北部ではない。"
    },
-   "commentary_ja": "万座毛下は恩納村の万座毛断崖の直下にあるポイントで、別名は万座毛、トリプルロック。瀬良垣漁港からボートで数〜10分程度。断崖の真下から沖へ大きな根が並び、潮通しがよく魚影が濃いと紹介されている。最大水深は40m、レベルは初心者〜とされる。ログにはハマクマノミなどのクマノミ類（6月）、オオモンカエルアンコウ（3月）、スカシテンジクダイ、イソマグロの名が出てくる。ベストシーズンは3月中旬〜9月末で、冬は西・北東の風で荒れやすいとされる。",
-   "commentary_en": "Manzamo-shita, also called Manzamo or Triple Rock, lies directly beneath the Manzamo cliffs in central Onna Village, about a few to ten minutes by boat from Serakaki fishing port. Large rock formations run seaward from the base of the cliff, and the site is described as having good water flow and dense fish life, with a maximum depth of 40 m and a listed level of beginner and up. Logs mention anemonefish such as Clark's anemonefish (June), giant frogfish (March), glassfish, and dogtooth tuna; the best season is given as mid-March to late September, as winter west and northeast winds tend to make the sea rough.",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "万座毛の真下から沖の根へ（最大18〜40m・初級〜）"
+    }
+   ],
+   "log_stats": {
+    "shop": "スローライフ",
+    "dives": 1,
+    "months": [
+     8
+    ]
+   },
+   "commentary_ja": "万座毛下（別名：万座毛、トリプルロック）は恩納村・万座毛断崖の真下のポイント。瀬良垣漁港からボートで数〜10分ほど。崖下から沖へ大きな根が並び、潮通しがよく魚影が濃いとされる。最大水深40m、レベルは初心者〜。ラグーンの紹介では、崖下から沖の根へ向かう。ログにはアオウミガメ、カクレクマノミ、アマミスズメダイの群れ、3月のオオモンカエルアンコウなどの名前が出てくる。スローライフのログは8月の1本。3月中旬〜9月末は海況が安定しやすく、冬は西や北東の風で荒れやすい。",
+   "commentary_en": "Manzamo-shita (also called Manzamo or Triple Rock) lies directly beneath the Manzamo cliffs in Onna, a few to about 10 minutes by boat from Seragaki fishing port. Large rocks extend offshore from the cliff base, and the site is described as having good water flow and plenty of fish, with a maximum depth of 40 m and a level of beginner and up. Logs mention green sea turtles, false clown anemonefish, schools of Amami damselfish, and a giant frogfish in March; the season from mid-March to late September tends to be calmer, while west and northeast winds often roughen the sea in winter.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -226,11 +271,91 @@
      "key": "PADI2",
      "name": "PADI ダイビングスポット情報",
      "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1236"
+    },
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    },
+    {
+     "key": "SL",
+     "name": "スローライフ（ログ）",
+     "url": "https://slowlife-ms.com/blog/category/onnason-fun-diving/manza-diving"
     }
    ],
    "media": [],
    "location_text": "沖縄本島中部西海岸、恩納村の万座・瀬良垣エリア沖、万座毛沖合。瀬良垣漁港からボートで5〜10分。",
    "creatures": [
+    {
+     "name": "ホシゾラワラエビ",
+     "season": null,
+     "n": 29
+    },
+    {
+     "name": "キンメモドキ",
+     "season": null,
+     "n": 28
+    },
+    {
+     "name": "ハダカハオコゼ",
+     "season": null,
+     "n": 26
+    },
+    {
+     "name": "スミレナガハナダイ",
+     "season": null,
+     "n": 20
+    },
+    {
+     "name": "アオウミガメ",
+     "season": null,
+     "n": 20
+    },
+    {
+     "name": "ヤマブキスズメダイ",
+     "season": null,
+     "n": 20
+    },
+    {
+     "name": "スカシテンジクダイ",
+     "season": null,
+     "n": 19
+    },
+    {
+     "name": "ベンテンコモンエビ",
+     "season": null,
+     "n": 17
+    },
+    {
+     "name": "カスミチョウチョウウオ",
+     "season": null,
+     "n": 16
+    },
+    {
+     "name": "カクレクマノミ",
+     "season": null,
+     "n": 15
+    },
+    {
+     "name": "ピカチュウのシルエット",
+     "season": null,
+     "n": 11
+    },
+    {
+     "name": "ハタンポ",
+     "season": null,
+     "n": 10
+    },
+    {
+     "name": "カンザシヤドカリ",
+     "season": null,
+     "n": 10
+    },
+    {
+     "name": "ソリハシコモンエビ",
+     "season": null,
+     "n": 8
+    },
     {
      "name": "チンアナゴ",
      "season": null
@@ -244,10 +369,6 @@
      "season": null
     },
     {
-     "name": "アオウミガメ",
-     "season": "10月"
-    },
-    {
      "name": "ホワイトチップシャーク",
      "season": "10月"
     },
@@ -257,26 +378,6 @@
     },
     {
      "name": "アカマツカサ",
-     "season": null
-    },
-    {
-     "name": "イセエビ",
-     "season": null
-    },
-    {
-     "name": "イソマグロ",
-     "season": null
-    },
-    {
-     "name": "カスミチョウチョウウオ",
-     "season": null
-    },
-    {
-     "name": "ウコンハネガイ",
-     "season": null
-    },
-    {
-     "name": "オドリハゼ",
      "season": null
     }
    ],
@@ -323,8 +424,33 @@
     "in": true,
     "note": "恩納村・万座毛まわりの万座・瀬良垣エリア沖で範囲内。真栄田岬・青の洞窟とは別。ミニドリームホールやスネークホールは近隣の別ポイント。"
    },
-   "commentary_ja": "万座ドリームホール（通称ドリームホール）は、万座毛沖合の瀬良垣漁港からボートで5〜10分ほどのポイント。水深5mから25mへ降りる縦穴と横穴があり、出口の青い光やハタンポの群れが特徴とされます。最大水深は40m。ログにはピグミーシーホースやホウセキキントキ、10月のアオウミガメやホワイトチップシャークなどの名前が出てきます。潮の流れが早いことで知られ、中級者以上でAOW以上が推奨されています。ベストは3月中旬〜9月末ごろで、冬場は西・北東の風で荒れやすいとされます。",
-   "commentary_en": "Manza Dream Hole, also called Dream Hole, lies off Cape Manzamo, about 5–10 minutes by boat from Seragaki fishing port. It features vertical and horizontal holes that drop from 5 m to 25 m, with blue light at the exit and schools of sweepers, and reaches a maximum depth of 40 m. Logs mention pygmy seahorses, glasseye, and green turtles and whitetip reef sharks in October. The site is known for strong currents and is recommended for intermediate divers with AOW or higher, with the best season around mid-March to late September.",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "沖縄本島屈指の地形ポイント（最大25〜40m・中級〜・上級者）"
+    },
+    {
+     "shop": "スローライフ",
+     "text": "別名ピカチューホール。港からボートで約10分、水深-5〜-35m、流れがあることが多い。-5mの狭い穴から入り-20mまで縦穴"
+    }
+   ],
+   "log_stats": {
+    "shop": "スローライフ",
+    "dives": 71,
+    "months": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ]
+   },
+   "commentary_ja": "万座毛の沖合、瀬良垣漁港からボートで5〜10分ほどの地形ポイント。水深5mから25mへ降りる縦穴と横穴があり、出口の青い光やハタンポの群れが紹介されている。最大水深は25〜40m。潮の流れが速いことで知られ、AOW以上・中級者以上でブランクのない人向けとされる。冬は西や北東の風で荒れやすく、ベストは3月中旬〜9月末ごろ。スローライフの3〜11月のログ71本では、ホシゾラワラエビ、キンメモドキ、ハダカハオコゼの名前がよく挙がる。",
+   "commentary_en": "Manza Dream Hole is a topography site off Manzamo, about 5–10 minutes by boat from Serakaki port. A vertical shaft drops from 5 m to 25 m and connects with horizontal passages, and descriptions mention blue light at the exit and schools of glassy sweepers. Maximum depth is 25–40 m. The site is known for fast currents and is described as suited to intermediate divers with AOW or higher and recent experience. Winter west and northeast winds often make it rough, and the best season is given as mid-March to late September. Slow Life's logs record 71 dives from March to November, most often naming the Ambon cleaner shrimp, the yellowstripe cardinalfish and the leaf scorpionfish.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -372,11 +498,91 @@
      "key": "PADI2",
      "name": "PADI ダイビングスポット情報",
      "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1236"
+    },
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    },
+    {
+     "key": "SL",
+     "name": "スローライフ（ログ）",
+     "url": "https://slowlife-ms.com/blog/category/onnason-fun-diving/manza-diving"
     }
    ],
    "media": [],
    "location_text": "沖縄本島中部西岸・恩納村の万座・瀬良垣エリア沖、万座毛近辺。瀬良垣漁港からボートで5〜10分程度の範囲。",
    "creatures": [
+    {
+     "name": "ハナヒゲウツボ",
+     "season": null,
+     "n": 15
+    },
+    {
+     "name": "ハナゴンベ",
+     "season": null,
+     "n": 12
+    },
+    {
+     "name": "ゴルゴニアンピグミーシーホース",
+     "season": null,
+     "n": 9
+    },
+    {
+     "name": "アマミスズメダイ",
+     "season": null,
+     "n": 8
+    },
+    {
+     "name": "イチゴミルクボヤ",
+     "season": null,
+     "n": 8
+    },
+    {
+     "name": "ナミスズメダイ",
+     "season": null,
+     "n": 6
+    },
+    {
+     "name": "カンザシヤドカリ",
+     "season": null,
+     "n": 5
+    },
+    {
+     "name": "リングアイジョーフィッシュ",
+     "season": null,
+     "n": 5
+    },
+    {
+     "name": "ネムリブカ",
+     "season": null,
+     "n": 5
+    },
+    {
+     "name": "ウサギのシルエット",
+     "season": null,
+     "n": 4
+    },
+    {
+     "name": "シモフリカメサンウミウシ",
+     "season": null,
+     "n": 4
+    },
+    {
+     "name": "ハマクマノミ",
+     "season": null,
+     "n": 4
+    },
+    {
+     "name": "ハタンポ",
+     "season": null,
+     "n": 3
+    },
+    {
+     "name": "カグヤヒメウミウシ",
+     "season": null,
+     "n": 3
+    },
     {
      "name": "ウルトラマンホヤ",
      "season": "10月末のログで「そろそろシーズン入り」と記載"
@@ -399,34 +605,6 @@
     },
     {
      "name": "ベニゴンベ",
-     "season": null
-    },
-    {
-     "name": "ウコンハネガイ",
-     "season": null
-    },
-    {
-     "name": "ユキヤマウミウシ",
-     "season": null
-    },
-    {
-     "name": "コールマンウミウシ",
-     "season": null
-    },
-    {
-     "name": "ネムリブカ",
-     "season": null
-    },
-    {
-     "name": "ハナゴンベ",
-     "season": null
-    },
-    {
-     "name": "キンチャクダイの仲間",
-     "season": null
-    },
-    {
-     "name": "カエルウオ",
      "season": null
     }
    ],
@@ -481,8 +659,28 @@
     "in": true,
     "note": "万座ドリームホール周辺の初心者向けポイントとして紹介され、同日1本目ドリームホール・2本目ミニドリームと潜るログもある。真栄田岬・青の洞窟や読谷・北部ではない。"
    },
-   "commentary_ja": "ミニドリームホールは、恩納村・万座毛近くの万座〜瀬良垣沖にあるポイントで、瀬良垣漁港からボートで5〜10分ほどの範囲にある。小さめの縦穴洞窟で出口は浅め、水深は17〜30m。万座ドリームホールより浅く、似た地形が見られるとされ、紹介では初心者向け・OWD以上とされる。万座エリアは冬場、西や北東の風で荒れやすいという。ログにはハナゴンベ、ハダカハオコゼ、シンデレラウミウシのほか、ウルトラマンホヤの名前が出てくる。ウルトラマンホヤは10月末のログに「そろそろシーズン入り」と書かれている。",
-   "commentary_en": "Mini Dream Hole lies off the Manza–Serakaki area near Cape Manzamo in Onna, about 5–10 minutes by boat from Serakaki fishing port, and features a small vertical cave with a fairly shallow exit at depths of 17–30 m. Sources describe it as a beginner-level site (OWD and above), shallower than Manza Dream Hole but with similar topography, and note that the Manza area tends to get rough in winter with westerly and northeasterly winds. Dive logs mention species such as the redfin hawkfish (Hana-gonbe), the Ambon scorpionfish (Hadaka-haokoze), the Cinderella nudibranch and Ultraman sea squirts, the last noted in a late-October log as \"coming into season.\"",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "ドリームホールの小型版、出口が18m（最大18〜40m・初級〜）"
+    }
+   ],
+   "log_stats": {
+    "shop": "スローライフ",
+    "dives": 37,
+    "months": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ]
+   },
+   "commentary_ja": "ミニドリームホールは恩納村の万座〜瀬良垣沖、万座毛近くにある小さめの縦穴洞窟のポイントで、瀬良垣漁港からボートで5〜10分ほど。水深は17〜30mで、万座ドリームホールに似た地形をより浅く楽しめ、初心者向きとされる。ラグーンの紹介では出口は水深18m。スローライフのログ（3〜10月に37本）には、ハナヒゲウツボ、ハナゴンベ、ゴルゴニアンピグミーシーホース、イチゴミルクボヤがよく登場する。",
+   "commentary_en": "Mini Dream Hole is a small vertical cave off the Manza–Serakaki area near Cape Manzamo, about 5–10 minutes by boat from Serakaki fishing port, with depths of 17–30 m. It offers terrain similar to Manza Dream Hole at shallower depths and is described as suitable for beginners; Lagoon's description puts the exit at 18 m. Slowlife's logs (37 dives, March–October) frequently mention the bluestripe pipefish's neighbor species such as the ribbon eel, longnose hawkfish, Denise's pygmy seahorse, and the strawberry-milk sea squirt.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -490,7 +688,7 @@
    "alias": "",
    "area": "万座毛〜万座ビーチ",
    "features": "割れ目の地形・ドリームホールから流して潜る",
-   "depth": "",
+   "depth": "最大18〜40m",
    "lat": 26.5066,
    "lng": 127.84861,
    "precision": "area",
@@ -500,14 +698,90 @@
      "key": "DO",
      "name": "ディ・オア・ディ",
      "url": "https://www.dordokinawa.jp/point"
+    },
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    },
+    {
+     "key": "SL",
+     "name": "スローライフ（ログ）",
+     "url": "https://slowlife-ms.com/blog/category/onnason-fun-diving/manza-diving"
     }
    ],
    "media": [],
    "location_text": "沖縄本島・恩納村の万座・瀬良垣エリア沖。万座ドリームホールの隣、ミニドリームに近いブイの海域で、瀬良垣漁港からボートで潜る。",
    "creatures": [
     {
+     "name": "リングアイジョーフィッシュ",
+     "season": null,
+     "n": 4
+    },
+    {
+     "name": "カグヤヒメウミウシ",
+     "season": null,
+     "n": 2
+    },
+    {
      "name": "アオウミガメ",
-     "season": null
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "カンザシヤドカリ",
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "ガラスハゼ",
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "ハナヒゲユキバタ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "カスミチョウチョウウオ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "コガシラベラ求愛",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "アジアコショウダイ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "スミレナガハダイ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ハナビラユキバタ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "タカラガイ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "コガシラベラ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "キクメイシヤドリガニの仲間",
+     "season": null,
+     "n": 1
     },
     {
      "name": "カマスの群れ",
@@ -532,48 +806,12 @@
     {
      "name": "ゼブラウツボ",
      "season": "8月"
-    },
-    {
-     "name": "ヤマブキスズメダイ幼魚",
-     "season": "8月"
-    },
-    {
-     "name": "ナミスズメダイ幼魚",
-     "season": "8月"
-    },
-    {
-     "name": "テングカワハギ",
-     "season": "8月"
-    },
-    {
-     "name": "モザイクウミウシ",
-     "season": "8月"
-    },
-    {
-     "name": "ダルマハゼ",
-     "season": "8月"
-    },
-    {
-     "name": "ガラスハゼと卵",
-     "season": "4月"
-    },
-    {
-     "name": "ゴルゴニアンピグミーシーホース",
-     "season": "4月"
-    },
-    {
-     "name": "ユキヤマウミウシ",
-     "season": "4月"
-    },
-    {
-     "name": "リングアイジョーフィッシュ",
-     "season": null
     }
    ],
    "conditions": {
     "wind": null,
     "current": "まーまーアリの日もあり、見事な流れでキツい日もある",
-    "level": null,
+    "level": "初級〜",
     "access": null
    },
    "aliases_found": [
@@ -617,8 +855,23 @@
     "in": true,
     "note": "恩納村ポイント一覧と万座ボートログに万座ドリームホール・ミニドリーム・クロスライン等と同列で出る万座のポイント"
    },
-   "commentary_ja": "ゴジラは恩納村の万座・瀬良垣エリア沖、万座ドリームホールの隣でミニドリームに近いブイの海域にあるポイントで、瀬良垣漁港からボートで向かう。割れ目の地形が特徴で、ドリームホールから流して潜る形がとられる。流れはほどほどの日もあれば、かなり強い日もあるとされる。ログにはアオウミガメのほか、10月のカマスの群れ、8月のハナゴイの群れ、4月のゴルゴニアンピグミーシーホースなどの名前が出てくる。",
-   "commentary_en": "Godzilla lies off the Manza–Seragaki area of Onna Village, next to Manza Dream Hole and near the Mini Dream buoy, and is reached by boat from Seragaki fishing port. It features crevice terrain and is dived as a drift starting from Dream Hole. Currents can be moderate on some days and quite strong on others, and dive logs mention green sea turtles, schooling barracuda (October), schooling lyretail anthias (August), and Denise pygmy seahorses (April).",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "「ゴジラの割れ目」、竜宮城のような地形（最大18〜40m・初級〜）"
+    }
+   ],
+   "log_stats": {
+    "shop": "スローライフ",
+    "dives": 4,
+    "months": [
+     4,
+     6,
+     7
+    ]
+   },
+   "commentary_ja": "ゴジラは恩納村・万座〜瀬良垣エリア沖、万座ドリームホールの隣にあるポイントで、瀬良垣漁港からボートで潜る。割れ目のある地形が特徴で、ドリームホールから流して入ることもある。最大水深は18〜40m。ラグーンは「ゴジラの割れ目」を竜宮城のような地形と紹介し、初級からとしている。流れはほどほどの日もあれば、かなり強い日もあるという。スローライフのログ（4・6・7月に4本）では、リングアイジョーフィッシュ、カグヤヒメウミウシ、アオウミガメの名前が出てくる。",
+   "commentary_en": "Godzilla lies off the Manza–Serakaki area of Onna Village, next to Manza Dream Hole, and is reached by boat from Serakaki fishing port. It is known for a crevice formation, sometimes dived as a drift from Dream Hole, with a maximum depth of 18–40 m. The shop Lagoon describes \"Godzilla's crevice\" as a palace-like formation suitable from beginner level, and notes that the current can be moderate on some days and strong on others. Slow Life's logs (4 dives in April, June and July) mention ring-eye jawfish, Kaguyahime nudibranchs and green sea turtles.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -656,11 +909,91 @@
      "key": "PADI2",
      "name": "PADI ダイビングスポット情報",
      "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1236"
+    },
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    },
+    {
+     "key": "SL",
+     "name": "スローライフ（ログ）",
+     "url": "https://slowlife-ms.com/blog/category/onnason-fun-diving/manza-diving"
     }
    ],
    "media": [],
    "location_text": "沖縄本島・恩納村の万座（Onna Manza）エリアで、万座毛付近のドロップオフ。Coralの南側記述から万座毛断崖近傍の少し北側の海上とみられる。万座毛近くの港からボートで5〜15分。",
    "creatures": [
+    {
+     "name": "ヤマブキスズメダイ",
+     "season": null,
+     "n": 16
+    },
+    {
+     "name": "ハナゴンベ",
+     "season": null,
+     "n": 15
+    },
+    {
+     "name": "ハリヨウジ",
+     "season": null,
+     "n": 11
+    },
+    {
+     "name": "コダマタツ",
+     "season": null,
+     "n": 10
+    },
+    {
+     "name": "フトスジイレズミハゼ",
+     "season": null,
+     "n": 10
+    },
+    {
+     "name": "コンペイトウウミウシ",
+     "season": null,
+     "n": 9
+    },
+    {
+     "name": "ミゾレウミウシ",
+     "season": null,
+     "n": 9
+    },
+    {
+     "name": "クマドリカエルアンコウ",
+     "season": null,
+     "n": 9
+    },
+    {
+     "name": "カクレクマノミ",
+     "season": null,
+     "n": 8
+    },
+    {
+     "name": "ユキヤマウミウシ",
+     "season": null,
+     "n": 7
+    },
+    {
+     "name": "アマミスズメダイ",
+     "season": null,
+     "n": 7
+    },
+    {
+     "name": "オヤビッチャ",
+     "season": null,
+     "n": 7
+    },
+    {
+     "name": "イガグリウミウシ",
+     "season": null,
+     "n": 6
+    },
+    {
+     "name": "ゾウゲイロウミウシ",
+     "season": null,
+     "n": 6
+    },
     {
      "name": "アオウミガメ",
      "season": null
@@ -682,35 +1015,7 @@
      "season": null
     },
     {
-     "name": "カクレクマノミ",
-     "season": null
-    },
-    {
-     "name": "ハナゴンベ",
-     "season": null
-    },
-    {
      "name": "カノコイセエビ",
-     "season": null
-    },
-    {
-     "name": "ニジハギ",
-     "season": "12月"
-    },
-    {
-     "name": "イソマグロ",
-     "season": null
-    },
-    {
-     "name": "コブシメ",
-     "season": null
-    },
-    {
-     "name": "アカククリ",
-     "season": null
-    },
-    {
-     "name": "オヤビッチャ",
      "season": null
     }
    ],
@@ -760,8 +1065,33 @@
     "in": true,
     "note": "万座毛付近・Onna Manza・恩納村万座方面として複数出典が一致。別海域の同名ポイントとする根拠なし。"
    },
-   "commentary_ja": "オーバーヘッドロックは恩納村・万座毛付近のドロップオフで、断崖の少し北側の海上とみられる。港からボートで5〜15分。大きく張り出した岩が特徴で、横穴にウミガメやホワイトチップがいると紹介されている。最大水深は40m。ログや紹介にはアオウミガメ、ネムリブカ、ロウニンアジ、ピグミーシーホースなどの名前が出てくる。外洋に面した場所で、流れは時に強いとされる。レベルは中級者からとする情報と、PADIの初心者〜とする情報がある。",
-   "commentary_en": "Overhead Rock is a drop-off near Manzamo in Onna, Okinawa, apparently just north of the cliffs and about 5–15 minutes by boat from a nearby port, with a maximum depth of 40 m. It is known for a large overhanging rock and side caves where turtles and whitetip reef sharks are reported, and dive logs and descriptions mention green turtles, whitetip reef sharks, giant trevally and pygmy seahorses. The site faces the open sea and currents are described as sometimes strong; one source lists it as intermediate and above, while the PADI listing says beginner and up.",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "地形・マクロ・ワイド（最大18〜40m・初級〜）"
+    },
+    {
+     "shop": "スローライフ",
+     "text": "流れがあることが多い。アオウミガメ、深場に珍しいハゼやピグミーシーホース"
+    }
+   ],
+   "log_stats": {
+    "shop": "スローライフ",
+    "dives": 48,
+    "months": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ]
+   },
+   "commentary_ja": "オーバーヘッドロックは万座毛〜万座ビーチのエリア、万座毛付近のドロップオフにあるポイントで、最大水深は40m。近くの港からボートで5〜15分とされる。大きく張り出した岩が特徴で、横穴ではウミガメやホワイトチップが紹介されている。流れは時に強いとされ、レベルは資料により「中級者から」「初心者〜」と分かれる。スローライフのログ（48本、3〜11月）では、ハナゴンベ、コダマタツ、クマドリカエルアンコウなどの名前が出てくる。",
+   "commentary_en": "Overhead Rock is a drop-off near Cape Manzamo in the Manzamo–Manza Beach area, with a maximum depth of 40 m and a 5–15 minute boat ride from a nearby harbor. It is known for a large overhanging rock, and sea turtles and whitetip reef sharks are described in its side holes. Currents are noted as sometimes strong, sources differ on the level (intermediate vs. beginner and up), and Slow Life's logs (48 dives, March–November) mention species such as the redfin anthias, Kodama seahorse, and painted frogfish.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -784,6 +1114,11 @@
      "key": "PADI2",
      "name": "PADI ダイビングスポット情報",
      "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1236"
+    },
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
     }
    ],
    "media": [],
@@ -887,8 +1222,14 @@
     "in": true,
     "note": "万座海域でミニドリーム隣、瀬良垣漁港通常運航の万座・瀬良垣エリア内のため範囲内。他海域の同名ポイントの出典なし"
    },
-   "commentary_ja": "顔面ホールは恩納村・万座海域の地形ポイントで、瀬良垣漁港からボートで向かい、ミニドリームの隣にある。ブイはない。顔のような岩壁の洞窟と光が特徴で、最大水深は30m。ログでは北・東・南東・南西の風の日に潜った例があり、流れは少し感じる程度からドリフトになる日まで記されている。閉塞感の少ない一本道の地形とされ、初心者から紹介されている。ログにはアカマツカサ、ツバメタナバタウオ、アオウミガメなどの名前が出てくる。",
-   "commentary_en": "Ganmen Hole (Face Hole) is an unbuoyed terrain site in the Manza area off Onna Village, reached by boat from Serakaki fishing port and located next to Mini Dream. Its main feature is a cave in a rock wall that resembles a face, along with the light inside, and the maximum depth is 30 m. Logs record dives in north, east, southeast and southwest winds, with currents ranging from slight to drift conditions, and the site is described as an open, single-route layout listed for beginners and up, with names such as soldierfish, the Okinawan comet relative Calloplesiops, and green sea turtles appearing in logs.",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "水深10m前後の横穴、天井から光のカーテン（最大18〜30m・初級〜）"
+    }
+   ],
+   "commentary_ja": "顔面ホールは万座沖〜瀬良垣の海域にある地形ポイントで、ミニドリームの隣にありブイはない。瀬良垣漁港からボートで向かう。顔のように見える岩壁の洞窟と差し込む光が特徴で、ラグーンの紹介では水深10m前後の横穴に天井から光が入るとされる。最大水深は30m。風向きの指定はなく、流れは少し感じる程度からドリフトになる日まで記録がある。閉塞感のない一本道でビギナーにも向くとされ、ログにはアカマツカサ、ツバメタナバタウオ、アオウミガメなどの名前が出てくる。",
+   "commentary_en": "Ganmen Hole is a buoy-less topography site off Manza toward Serakaki, next to Mini Dream, reached by boat from Serakaki fishing port, with a maximum depth of 30 m. It is known for a face-like rock wall with a cave and shafts of light, and Lagoon describes a horizontal tunnel around 10 m with light falling from the ceiling. No particular wind direction is specified, current ranges from slight to drift conditions, the open single-route layout is described as suitable for beginners, and dive logs mention species such as soldierfish, Pseudoplesiops-type dottybacks, and green sea turtles.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -945,8 +1286,9 @@
     "in": null,
     "note": "「万座毛南」の名称での出典が無く範囲内外の判定不可。万座毛周辺に閉じた洞窟ポイント（トライアングルホール等）はあるが同一か不明。"
    },
-   "commentary_ja": "万座毛南は恩納〜万座毛エリアのポイントで、最大水深は15mです。閉じた鍾乳洞の中に入れることが特徴とされていますが、海況や干満に左右されるため、入れる日は限られます。万座は沖縄本島西海岸、恩納村の万座毛周辺の海域です。北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。このポイントで見られる生き物については、公開情報がほとんどありません。",
-   "commentary_en": "Manzamo Minami is a site in the Onna–Manzamo area with a maximum depth of 15 m, noted for an enclosed limestone cave that divers can enter, though sea conditions and tides limit the days when this is possible. Manza lies on the west coast of Okinawa's main island and opens to the northwest, so swell tends to come in during the northerly winter monsoon, while calm days are more common in summer. Little public information is available about the marine life seen here.",
+   "shop_notes": [],
+   "commentary_ja": "万座毛南は、恩納村の万座毛まわりにあるポイントで、最大水深は15mです。閉じた鍾乳洞に入れることが特徴とされていますが、海況や潮の干満によって入れる日は限られるようです。見られる生き物や、風向き・流れ・レベルなどの条件については、今のところ公開情報がほとんどありません。万座は沖縄本島の西海岸にあり、北西に開けています。そのため冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Manzamo South lies near Cape Manzamo in Onna, with a maximum depth of 15 m. It is known for an enclosed limestone cave that divers can enter, though sea conditions and tides limit the days when this is possible. Little else has been published about its marine life or diving conditions, and as with much of Manza on Okinawa's northwest-facing west coast, winter northerly winds tend to bring swell, while summer usually offers calmer days.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -984,6 +1326,11 @@
      "key": "PADI2",
      "name": "PADI ダイビングスポット情報",
      "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1236"
+    },
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
     }
    ],
    "media": [],
@@ -1100,8 +1447,14 @@
     "in": true,
     "note": "万座方面・アポガマ沖・恩納漁港から数分と明記され対象範囲内。真栄田岬・青の洞窟や読谷・北部ではない。"
    },
-   "commentary_ja": "恩納村の万座方面、アポガマと呼ばれる洞窟の沖にあるポイント。恩納漁港から船で数分で、ビーチとボートの両方で入れる。迷路状のクレバスと水路が入り組み、沖には砂地が広がる。最大水深は20〜25m。リップカレントが発生しやすく、干潮時に強く満潮時に弱いとの記載がある。レベルは中級者以上とする資料と、ボートなら初心者も可とする資料がある。ログにはキビナゴ、イソマグロ、チンアナゴ、ウミガメなどの名前が出てくる。",
-   "commentary_en": "Onna Point lies off the cave known as Apogama near Manza, a few minutes by boat from Onna fishing port, and can be dived from shore or by boat. It features maze-like crevices and channels with sand further out, reaching a maximum depth of 20–25 m. Rip currents are reported to form readily, stronger at low tide and weaker at high tide. Some sources rate it intermediate, while others say less experienced divers can join by boat. Logs mention species such as bigeye scad, dogtooth tuna, garden eels and sea turtles.",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "クレバスが迷路のように続く地形（最大18〜25m・初級〜）"
+    }
+   ],
+   "commentary_ja": "恩納村の万座方面、アポガマと呼ばれる洞窟の沖にあるポイント。恩納漁港から船で数分で、ビーチとボートの両方から入れる。迷路状に続くクレバスと水路が特徴で、沖には砂地が広がり、最大水深は20〜25m。リップカレントが発生しやすく、干潮時に強く満潮時に弱いとの記載がある。レベルは中級者〜とする記載と、ボートなら初心者も参加可能とする記載がある。ログにはキビナゴ、イソマグロ、ウミガメ、チンアナゴなどの名前が出てくる。",
+   "commentary_en": "Onna Point lies off a cave known as Apogama in the Manza area of Onna Village, a few minutes by boat from Onna fishing port, and can be dived from shore or boat. It features a maze of crevices and channels with a sandy area farther out, reaching a maximum depth of 20–25 m. Sources note that rip currents form readily, stronger at low tide and weaker at high tide. Level ratings vary from intermediate to beginner-friendly by boat, and logs mention species such as bigeye scad's cousin the silver sprat (kibinago), dogtooth tuna, sea turtles, and garden eels.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -1109,7 +1462,7 @@
    "alias": "トライアングルホール",
    "area": "万座毛〜万座ビーチ",
    "features": "満潮で穏やかな日だけの洞窟・エアドームと鍾乳石",
-   "depth": "",
+   "depth": "最大10m",
    "lat": 26.509,
    "lng": 127.848,
    "precision": "guess",
@@ -1124,11 +1477,66 @@
      "key": "HY",
      "name": "HYM",
      "url": "https://hym.jp/okinawa-diving/diving/diving-point/post-1149"
+    },
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    },
+    {
+     "key": "SL",
+     "name": "スローライフ（ログ）",
+     "url": "https://slowlife-ms.com/blog/category/onnason-fun-diving/manza-diving"
     }
    ],
    "media": [],
    "location_text": "沖縄本島・恩納村の万座毛にある水中洞窟・エアドーム。ホーシュー北・釣り小屋下から入り、万座毛洞窟や万座鍾乳洞の隣。瀬良垣漁港や恩納漁港からボートで行く。",
    "creatures": [
+    {
+     "name": "クマノミ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "オキナワベニハゼ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "マルスズメダイ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ナミスズメダイ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ヤマブキスズメダイ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ヤイトヤッコ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "アカククリ若魚",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "キビナゴ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "オキザヨリ",
+     "season": null,
+     "n": 1
+    },
     {
      "name": "ギンユゴイ",
      "season": null
@@ -1151,14 +1559,6 @@
     },
     {
      "name": "イセエビ",
-     "season": null
-    },
-    {
-     "name": "ハタンポ",
-     "season": null
-    },
-    {
-     "name": "ウミヘビ",
      "season": null
     }
    ],
@@ -1210,8 +1610,21 @@
     "in": true,
     "note": "対象範囲内の万座毛ポイント。同名の本島南西沖ドリフトポイント「トライアングル」とは別。"
    },
-   "commentary_ja": "トライアングル（別名トライアングルホール）は、恩納村・万座毛にある水中洞窟で、エアドームと鍾乳石がある。ホーシュー北の釣り小屋下から入り、万座毛洞窟や万座鍾乳洞の隣にあって、瀬良垣漁港や恩納漁港からボートで向かう。風向き表記は南東で、潜るのは満潮時かつ条件の揃った穏やかな日に限られ、道中は時に激流になるとされる。難易度は★5の上級者向け。ログにはアカマツカサ、リュウキュウハタンポ、ソリハシコモンエビ、イセエビなどの名が出てくる。",
-   "commentary_en": "Triangle (also called Triangle Hole) is an underwater cave at Manzamo in Onna Village, with an air dome and stalactites, entered from below the fishing hut north of Horseshoe and reached by boat from Seragaki or Onna fishing ports. Sources list a southeast wind direction and note that it is dived only at high tide on calm days when conditions line up, with occasionally strong currents along the way. It is rated 5/5 for advanced divers, and logs mention species such as soldierfish, Pempheris, shrimp, and spiny lobster.",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "鍾乳洞の水中洞窟、満潮時のみ（最大10m・中級〜・上級者）"
+    }
+   ],
+   "log_stats": {
+    "shop": "スローライフ",
+    "dives": 1,
+    "months": [
+     8
+    ]
+   },
+   "commentary_ja": "トライアングル（別名トライアングルホール）は、万座毛〜万座ビーチにある最大水深10mの水中洞窟・エアドームで、内部には鍾乳石がある。ホーシュー北の釣り小屋下から入り、瀬良垣漁港や恩納漁港からボートで向かう。満潮で穏やかな日だけ潜る場所とされ、風向きの表記は南東、道中は時に激流になる。難易度★5の上級者向けで、100本以上の経験やカバーン講習などが推奨されている。スローライフのログ（8月・1本）には、ギンユゴイやアカマツカサ、イセエビの名前が出てくる。",
+   "commentary_en": "Triangle (also called Triangle Hole) is an underwater cave and air dome with stalactites at Manzamo, reaching a maximum depth of 10m and accessed by boat from Serakaki or Onna fishing ports. It is dived only at high tide on calm days, with a listed wind direction of southeast and occasionally strong currents on the way in. The site is rated 5 out of 5 for difficulty, with 100+ dives and cavern-level training recommended, and Slow Life's single August log mentions species such as the silver flagtail and the spiny lobster.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -1239,11 +1652,51 @@
      "key": "PADI2",
      "name": "PADI ダイビングスポット情報",
      "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1236"
+    },
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    },
+    {
+     "key": "SL",
+     "name": "スローライフ（ログ）",
+     "url": "https://slowlife-ms.com/blog/category/onnason-fun-diving/manza-diving"
     }
    ],
    "media": [],
    "location_text": "沖縄本島中部・恩納村の万座毛と同じ岬にある海岸。万座毛・万座ビーチに近く、ビーチエントリーでリーフまで泳いで行く。港からの方角・時間の記載はなし。",
    "creatures": [
+    {
+     "name": "スミレナガハダイ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ユキヤマウミウシ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ヒオドシユビウミウシ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "オトヒメウミウシ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ビシャモンエビ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "オキナワベニハゼ",
+     "season": null,
+     "n": 1
+    },
     {
      "name": "バラクーダ",
      "season": null
@@ -1319,8 +1772,21 @@
     "in": true,
     "note": "Onna Manza / Cape Manza枠として紹介され万座毛・万座ビーチ近傍。真栄田岬・青の洞窟や読谷・北部ではない"
    },
-   "commentary_ja": "アポガマは恩納村・万座毛と同じ岬にある海岸のポイントで、ビーチから入りリーフまで泳いで向かう。ドロップオフの壁に穴があり、流れがあるときは大物が寄るとされる。水深は30〜40m（PADIの情報では最大40m）。ログや紹介にはバラクーダ、ウミガメ、スミレナガハナダイ、ハナゴンベなどの名前が出てくる。出典では中級〜上級者向けで満潮時のみアクセス可とされ、トイレットボウルからはドリフト扱い。管理されていない浜で、岩と流れについての記載がある。",
-   "commentary_en": "Apogama is a shore site on the same headland as Manzamo in Onna, entered from the beach with a swim out to the reef, where a drop-off wall with holes reaches 30–40 m (PADI lists a 40 m maximum) and larger fish are said to appear when there is current. Barracuda, sea turtles, Pseudanthias pascalus and longnose hawkfish are among the species named in logs and descriptions. Sources describe it as intermediate-to-advanced, accessible only at high tide, treated as a drift dive when done from Toilet Bowl, and note rocks and current at this unmanaged beach.",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "縦穴を20mほど下りる地形（最大25m・中級〜）"
+    }
+   ],
+   "log_stats": {
+    "shop": "スローライフ",
+    "dives": 1,
+    "months": [
+     5
+    ]
+   },
+   "commentary_ja": "恩納村・万座毛と同じ岬の海岸にあるポイントで、ビーチからリーフまで泳いで向かいます。ドロップオフの壁に穴があり、ラグーンの紹介では縦穴を20mほど下りる地形とされています。最大水深は30〜40m（PADIでは最大40m）です。出典では中級者以上向けで満潮時のみアクセス可、トイレットボウルからのドリフトとしても扱われています。スローライフのログは5月の1本で、ユキヤマウミウシやオキナワベニハゼの名が出てきます。流れがあると大物が来るとされ、紹介にはバラクーダの名もあります。",
+   "commentary_en": "Apogama is a shore-entry site on the same cape as Manzamo in Onna, with a swim out to a drop-off wall pierced by holes; Lagoon describes descending a vertical shaft to about 20m, and maximum depths of 30–40m are listed (40m per PADI). Sources describe it as intermediate-to-advanced, reachable only at high tide, and also dived as a drift from Toilet Bowl. Slow Life's log (one dive, in May) names Yukiyama nudibranchs and Okinawa gobies, and sources mention barracuda when the current is running.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -1368,11 +1834,91 @@
      "key": "PADI2",
      "name": "PADI ダイビングスポット情報",
      "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1236"
+    },
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    },
+    {
+     "key": "SL",
+     "name": "スローライフ（ログ）",
+     "url": "https://slowlife-ms.com/blog/category/onnason-fun-diving/manza-diving"
     }
    ],
    "media": [],
    "location_text": "沖縄本島中部西海岸、恩納村の万座毛周囲・万座・瀬良垣エリア沖のポイント。瀬良垣漁港からボートで5～10分程度。万座毛トイレ脇からのビーチエントリーも可能とされる。",
    "creatures": [
+    {
+     "name": "アマミスズメダイ",
+     "season": null,
+     "n": 5
+    },
+    {
+     "name": "イチゴミルクボヤ",
+     "season": null,
+     "n": 3
+    },
+    {
+     "name": "アカテンイロウミウシ",
+     "season": null,
+     "n": 3
+    },
+    {
+     "name": "メレンゲウミウシ",
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "カールオジサンホヤ",
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "ヤイトヤッコ",
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "シンデレラウミウシ",
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "カスミアジ",
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "グルクン",
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "コンペイトウウミウシ",
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "キビナゴ",
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "アカマツカサ",
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "スミレナガハナダイ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "モンジャウミウシ）",
+     "season": null,
+     "n": 1
+    },
     {
      "name": "メジロザメ",
      "season": "夏場"
@@ -1395,46 +1941,6 @@
     },
     {
      "name": "アケボノハゼ",
-     "season": null
-    },
-    {
-     "name": "スジクロユリハゼ",
-     "season": null
-    },
-    {
-     "name": "ピンクダートゴビー",
-     "season": null
-    },
-    {
-     "name": "ズグロダテハゼ",
-     "season": null
-    },
-    {
-     "name": "リュウキュウハタンポ",
-     "season": null
-    },
-    {
-     "name": "ミゾレウミウシ",
-     "season": null
-    },
-    {
-     "name": "アカマツカサ",
-     "season": null
-    },
-    {
-     "name": "ハナミノカサゴ",
-     "season": null
-    },
-    {
-     "name": "カエルアンコウ",
-     "season": null
-    },
-    {
-     "name": "カクレガラスエビ",
-     "season": null
-    },
-    {
-     "name": "キビナゴ",
      "season": null
     }
    ],
@@ -1492,8 +1998,28 @@
     "in": true,
     "note": "万座毛周辺の万座・瀬良垣エリア沖の恩納村ポイントで対象範囲内。ただし隣接するホーシュー北・トライアングルホール側と区別が必要。"
    },
-   "commentary_ja": "ホーシューは恩納村・万座毛周辺の沖にあるポイントで、瀬良垣漁港からボートで5〜10分ほど。万座毛側からのビーチエントリーも可能とされる。馬の蹄形の巨岩とドロップオフ、2本のトンネルが特徴で、最大水深は32〜40m。潮が流れやすく透明度が高いとされる。レベルは中〜上級とされ（PADIの情報では中級者から）、上級者レベルのスキルが必要との記載もある。ログには夏場のロウニンアジやメジロザメのほか、イソマグロ、ピグミーシーホースなどの名前が出てくる。",
-   "commentary_en": "Horseshoe lies off Cape Manzamo in Onna Village, about 5–10 minutes by boat from Seragaki Port, and beach entry from the Manzamo side is also reported to be possible. It features a horseshoe-shaped rock formation, a drop-off and two tunnels, with a maximum depth of 32–40 m. Currents can run here and visibility is described as high. Sources rate it intermediate to advanced, and dive logs mention giant trevally and requiem sharks in summer, along with dogtooth tuna and pygmy seahorses.",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "崖のドロップオフ、万座らしいダブルアーチ（最大20〜40m・初級〜）"
+    },
+    {
+     "shop": "スローライフ",
+     "text": "港からボートで約15分、万座毛のすぐ近く。-5〜-35m、流れがあることが多い。入口近くに2段のらせん状トンネル"
+    }
+   ],
+   "log_stats": {
+    "shop": "スローライフ",
+    "dives": 9,
+    "months": [
+     3,
+     5,
+     6,
+     7
+    ]
+   },
+   "commentary_ja": "恩納村・万座毛周辺の沖にあるポイントで、瀬良垣漁港からボートで5〜10分ほど（スローライフの紹介では約15分）。馬の蹄形の巨岩とドロップオフ、2本のトンネルが特徴で、最大水深は32〜40m。時に流れがあり透明度が高いとされ、レベルは中〜上級との記載がある。スローライフのログ（3・5〜7月の9本）ではアマミスズメダイやイチゴミルクボヤの名前が多く、紹介には夏場のロウニンアジやメジロザメも挙がる。",
+   "commentary_en": "Horseshoe lies off Manzamo in Onna Village, about 5–10 minutes by boat from Seragaki port, and features a horseshoe-shaped rock, a drop-off and two tunnels, with a maximum depth of 32–40 m. Currents sometimes run and visibility is described as high, with sources listing it as intermediate to advanced. Slow Life's logs (9 dives in March and May–July) most often mention Amami damselfish and strawberry-milk sea squirts, while descriptions also name giant trevally and requiem sharks in summer.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -1521,6 +2047,11 @@
      "key": "PADI2",
      "name": "PADI ダイビングスポット情報",
      "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1236"
+    },
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
     }
    ],
    "media": [],
@@ -1645,8 +2176,14 @@
     "in": true,
     "note": "ホーシューが万座方面一覧に含まれ、ホーシュー北～ホーシュを同日に連続潜水したログがあるため別海域の同名ではなく万座の同一帯と判断"
    },
-   "commentary_ja": "ホーシュー北は恩納村・万座毛沖、ホーシュー一帯の北側にあるポイントで、瀬良垣漁港からボートで数分です。流れが速く深いドロップオフが特徴で、最大水深は40m。ログや紹介には、サメのほかにイソマグロ、ピグミーシーホース、アケボノハゼ、5月のカエルアンコウなどの名前が出てきます。レベルは中級者以上とされ、少し流れのある日もあります。万座全般では3月中旬〜9月末がベストとされ、冬は西や北東の風で荒れやすいといわれます。",
-   "commentary_en": "Horseshoe North lies on the northern side of the Horseshoe area off Cape Manzamo in Onna, a few minutes by boat from Seragaki fishing port, and features a deep drop-off with fast currents down to a maximum of 40 m. Dive logs and descriptions mention sharks, dogtooth tuna, pygmy seahorses, blue-and-yellow gobies (Akebono haze), and, in May, frogfish. It is rated for intermediate divers and above, some days have a mild current, and for Manza in general the best period is mid-March to late September, with west and northeast winds often making winter conditions rough.",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "カマストガリザメ狙い（最大20〜40m・中級〜）"
+    }
+   ],
+   "commentary_ja": "ホーシュー北は、恩納村・万座毛沖に広がるホーシュー一帯の北側にあるポイントです。瀬良垣漁港からボートで数分の距離にあります。流れが速く深いドロップオフが特徴で、最大水深は40m、レベルは中級者からとされています。ラグーンの紹介では、カマストガリザメを狙うポイントとして挙げられています。ログにはイソマグロやツムブリのほか、ピグミーシーホース、6月のフリソデエビなどの名前が出てきます。万座全般のベストシーズンは3月中旬〜9月末で、冬は西や北東の風で荒れやすいとされています。",
+   "commentary_en": "Hoshu North lies on the northern side of the Hoshu area off Manzamo in Onna Village, a few minutes by boat from Seragaki fishing port. It is a deep drop-off known for fast currents, with a maximum depth of 40 m, and is rated for intermediate divers and up; Lagoon describes it as a spot for seeking blacktip sharks. Dog-tooth tuna, rainbow runner, pygmy seahorse and, in June, harlequin shrimp appear in dive logs, and the best season for the Manza area is cited as mid-March to the end of September.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -1679,11 +2216,41 @@
      "key": "PADI2",
      "name": "PADI ダイビングスポット情報",
      "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1236"
+    },
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    },
+    {
+     "key": "SL",
+     "name": "スローライフ（ログ）",
+     "url": "https://slowlife-ms.com/blog/category/onnason-fun-diving/manza-diving"
     }
    ],
    "media": [],
    "location_text": "沖縄本島・恩納村万座方面、恩納漁港から船で数分、ANAインターコンチネンタル万座ビーチリゾートの沖。万座ビーチ沖の2つの露出岩が目印。",
    "creatures": [
+    {
+     "name": "ゾウゲイロウミウシ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "チンアナゴ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "オイランヨウジ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "カサイダルマハゼ",
+     "season": null,
+     "n": 1
+    },
     {
      "name": "ホワイトチップ（ネムリブカ）",
      "season": null
@@ -1706,46 +2273,6 @@
     },
     {
      "name": "オヤビッチャ",
-     "season": null
-    },
-    {
-     "name": "メガメゴンベ",
-     "season": null
-    },
-    {
-     "name": "ホシゴンベ",
-     "season": null
-    },
-    {
-     "name": "ヒトスジギンポ",
-     "season": null
-    },
-    {
-     "name": "イシガキカエルウオ",
-     "season": null
-    },
-    {
-     "name": "オオアカホシサンゴガニ",
-     "season": null
-    },
-    {
-     "name": "キンチャクダイ類",
-     "season": null
-    },
-    {
-     "name": "ニシキヤッコ",
-     "season": null
-    },
-    {
-     "name": "巨大サメ",
-     "season": null
-    },
-    {
-     "name": "スズメダイ類",
-     "season": "7月"
-    },
-    {
-     "name": "ベラ",
      "season": null
     }
    ],
@@ -1795,8 +2322,21 @@
     "in": true,
     "note": "恩納村万座毛まわりで範囲内。宜野湾のコーラルガーデンやクロスラインのコーラルキャニオンとは別。"
    },
-   "commentary_ja": "コーラル（別名・万座コーラル）は、恩納漁港から船で数分、ANAインターコンチネンタル万座ビーチリゾート沖にあるポイント。万座ビーチ沖の2つの露出岩が目印とされる。浅場のサンゴと深場の砂地にすむガーデンイールが特徴で、最大水深は40m。ログには、チンアナゴ、ネムリブカ、アカククリ、7月のスズメダイ類などの名前が出てくる。難易度は★★★。アンカーは水深5mで、経験の浅いダイバーも参加できるとの記載がある。西南西4m・うねりありの7月にも潜水記録がある。",
-   "commentary_en": "Coral (also called Manza Coral) is a few minutes by boat from Onna Fishing Port, off the ANA InterContinental Manza Beach Resort, with two exposed rocks off Manza Beach serving as landmarks. It features shallow coral and a deeper sandy area with garden eels, reaching a maximum depth of 40m. Dive logs mention garden eels, whitetip reef sharks, orbicular batfish, and damselfish in July, and sources rate it ★★★ but note that less-experienced divers can join, with the anchor set at 5m.",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "魚影が濃く地形も面白い（最大18〜40m・初級〜）"
+    }
+   ],
+   "log_stats": {
+    "shop": "スローライフ",
+    "dives": 1,
+    "months": [
+     5
+    ]
+   },
+   "commentary_ja": "コーラル（別名・万座コーラル）は恩納漁港から船で数分、ANAインターコンチネンタル万座ビーチリゾート沖にあり、2つの露出岩が目印です。浅場のサンゴと深場の砂地のガーデンイールが特徴で、最大水深は40m。紹介では難易度★★★、アンカーは水深5mとされ、PADIの情報では初心者から、ラグーンは魚影の濃さと地形を挙げています。スローライフのログは5月の1本で、チンアナゴやオイランヨウジの名が出ており、紹介にはホワイトチップやアカククリも挙がっています。",
+   "commentary_en": "Coral, also called Manza Coral, lies a few minutes by boat from Onna fishing port, off the ANA InterContinental Manza Beach Resort, with two exposed rocks as a landmark. It combines shallow coral with deeper sand where garden eels live, reaching a maximum depth of 40 m. One description rates it three stars with an anchor point at 5 m, and PADI lists it from beginner level. Lagoon mentions dense fish and interesting terrain, and a single May dive logged by Slow Life names spotted garden eels and the Pipefish *Corythoichthys haematopterus*, while other descriptions mention whitetip reef sharks and orbicular batfish.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -1819,6 +2359,16 @@
      "key": "PADI2",
      "name": "PADI ダイビングスポット情報",
      "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1236"
+    },
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    },
+    {
+     "key": "SL",
+     "name": "スローライフ（ログ）",
+     "url": "https://slowlife-ms.com/blog/category/onnason-fun-diving/manza-diving"
     }
    ],
    "media": [],
@@ -1827,11 +2377,73 @@
    "creatures": [
     {
      "name": "アオウミガメ",
-     "season": null
+     "season": null,
+     "n": 3
+    },
+    {
+     "name": "カクレクマノミ",
+     "season": null,
+     "n": 2
     },
     {
      "name": "ロウニンアジ",
-     "season": null
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "ハナゴンベ",
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "ヤマブキスズメダイ",
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "フトスジイレズミハゼ",
+     "season": null,
+     "n": 2
+    },
+    {
+     "name": "グルクン",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ゴマモンガラ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ロウニンアジ × 4.",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ホワイトチップ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ニセカンランハギ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "ユキヤマウミウシ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "オヤビッチャ",
+     "season": null,
+     "n": 1
+    },
+    {
+     "name": "コダマタツ",
+     "season": null,
+     "n": 1
     },
     {
      "name": "オオモンカエルアンコウ",
@@ -1839,10 +2451,6 @@
     },
     {
      "name": "セジロクマノミ",
-     "season": null
-    },
-    {
-     "name": "グルクン",
      "season": null
     },
     {
@@ -1907,8 +2515,24 @@
     "in": true,
     "note": "万座ボート（ドリームホール、オーバーヘッドロック、クロスライン等）と同日・同エリアで潜られており、真栄田・読谷・北部ではない。群馬の万座とも無関係。"
    },
-   "commentary_ja": "ホテルエッジは恩納村の万座・瀬良垣エリア沖、万座毛〜万座ビーチにあるボートポイントです。瀬良垣漁港を拠点に、オーバーヘッドロックへ流すコースとして使われます。特徴は割れた大岩と回遊魚で、最大水深は40m。出典では、少しアゲインストが入る流れの中を流して潜るドリフトで、レベルは中級者以上とされています。ログにはロウニンアジ、イソマグロ、アオウミガメのほか、10月のログにカマスの群れの名前が出てきます。",
-   "commentary_en": "Hotel Edge is a boat dive off the Manza and Serakaki area of Onna Village, between Cape Manzamo and Manza Beach. Divers leave from Serakaki fishing port and drift toward Overhead Rock past split boulders, to a maximum depth of 40 m. Sources describe a drift with a slight opposing current and list it as intermediate and above, and dive logs mention giant trevally, dogtooth tuna, green turtles, and a school of barracuda in an October log.",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "大物狙いのドリフト（最大20〜40m・中級〜・上級者）"
+    }
+   ],
+   "log_stats": {
+    "shop": "スローライフ",
+    "dives": 5,
+    "months": [
+     3,
+     4,
+     7,
+     8
+    ]
+   },
+   "commentary_ja": "ホテルエッジは恩納村の万座毛〜万座ビーチ沖にあり、瀬良垣漁港を拠点とするボートポイントです。割れた大岩のまわりを流して潜るドリフトで、オーバーヘッドロックへ流すコースとして使われます。最大水深は40m、少しアゲインストが入る流れがあり、レベルは中級者以上とされています。ラグーンは大物狙いのドリフトとして紹介しています。スローライフのログ（3・4・7・8月の計5本）には、アオウミガメ、ロウニンアジ、ハナゴンベなどの名前が出てきます。",
+   "commentary_en": "Hotel Edge is a boat point off Manzamo and Manza Beach in Onna Village, run from Serakaki fishing port, and is dived as a drift past split boulders toward Overhead Rock. It reaches a maximum depth of 40m, has a current with a slight head-on component, and is listed for intermediate divers and above; Lagoon describes it as a drift for spotting larger fish. Slow Life's logs (5 dives in March, April, July and August) mention green sea turtles, giant trevally and flame hawkfish, among others.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -1956,22 +2580,90 @@
      "key": "PADI2",
      "name": "PADI ダイビングスポット情報",
      "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1236"
+    },
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    },
+    {
+     "key": "SL",
+     "name": "スローライフ（ログ）",
+     "url": "https://slowlife-ms.com/blog/category/onnason-fun-diving/manza-diving"
     }
    ],
    "media": [],
    "location_text": "沖縄本島・恩納村の万座毛沖、ナカユクイのすぐそばの浅い砂地ポイント。瀬良垣漁港を拠点にする万座・瀬良垣エリアのボートポイント。",
    "creatures": [
     {
+     "name": "ナカモトイロワケハゼ",
+     "season": null,
+     "n": 61
+    },
+    {
      "name": "トウアカクマノミ",
-     "season": null
+     "season": null,
+     "n": 43
     },
     {
      "name": "アオウミガメ",
-     "season": null
+     "season": null,
+     "n": 33
+    },
+    {
+     "name": "クサイロモウミウシ",
+     "season": null,
+     "n": 24
     },
     {
      "name": "カエルアンコウ",
-     "season": null
+     "season": null,
+     "n": 22
+    },
+    {
+     "name": "トンガリホタテウミヘビ",
+     "season": null,
+     "n": 20
+    },
+    {
+     "name": "オガサワラカサゴ",
+     "season": null,
+     "n": 18
+    },
+    {
+     "name": "オドリカクレエビ",
+     "season": null,
+     "n": 17
+    },
+    {
+     "name": "アカホシカクレエビ",
+     "season": null,
+     "n": 11
+    },
+    {
+     "name": "ハマクマノミ",
+     "season": null,
+     "n": 10
+    },
+    {
+     "name": "ウサギモウミウシ",
+     "season": null,
+     "n": 10
+    },
+    {
+     "name": "ヤシャハゼ",
+     "season": null,
+     "n": 9
+    },
+    {
+     "name": "ワカヨウジ",
+     "season": null,
+     "n": 8
+    },
+    {
+     "name": "ヒレナガスズメダイ",
+     "season": null,
+     "n": 8
     },
     {
      "name": "トゲチョウチョウウオ",
@@ -1986,10 +2678,6 @@
      "season": null
     },
     {
-     "name": "ナカモトイロワケハゼ",
-     "season": null
-    },
-    {
      "name": "ウミテング幼魚",
      "season": null
     },
@@ -1999,30 +2687,6 @@
     },
     {
      "name": "ハリメダゴーストパイプフィッシュ",
-     "season": null
-    },
-    {
-     "name": "ハリメダ",
-     "season": null
-    },
-    {
-     "name": "ツバメウオ",
-     "season": null
-    },
-    {
-     "name": "アミメブダイ若魚",
-     "season": null
-    },
-    {
-     "name": "イボハタゴイソギンチャク",
-     "season": null
-    },
-    {
-     "name": "クマノミ",
-     "season": null
-    },
-    {
-     "name": "オドリカクレエビ",
      "season": null
     }
    ],
@@ -2077,8 +2741,33 @@
     "in": true,
     "note": "万座・瀬良垣エリアの万座毛沖・ナカユクイそばとして紹介され、万座ログの潜水地に挙がる。真栄田岬・青の洞窟や読谷・北部ではない。"
    },
-   "commentary_ja": "クロスラインは恩納村・万座毛沖、瀬良垣〜安富祖エリアにある砂地のボートポイントで、瀬良垣漁港から向かいます。ナカユクイのすぐそばにあり、最大水深は20m。砂地に古い漁礁のロープが残り、トウアカクマノミやハゼ類が特徴とされます。ログにはナカモトイロワケハゼ、カエルアンコウ、ハリメダゴーストパイプフィッシュなどの名前も出てきます。初心者や体験ダイビング向けとされ、少し沖のほうでは流れを感じることがあるそうです。",
-   "commentary_en": "Cross Line is a sandy boat site off Cape Manzamo in Onna Village, in the Serakaki–Afuso area near Nakayukui, reached from Serakaki fishing port, with a maximum depth of 20 m. Its sand bottom has old fish-reef ropes, and it is known for Clark's anemonefish relatives such as the orange-tipped Tou-aka kumanomi and various gobies, while logs also mention Nakamoto's wrasse-goby, frogfish and Halimeda ghost pipefish. It is listed as suitable for beginners and trial dives, though a slight current may be felt a little farther offshore.",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "砂地のマクロ（最大18〜25m・初級〜）"
+    },
+    {
+     "shop": "スローライフ",
+     "text": "港からボートで約5分。流れはない。砂地のマクロ、アオウミガメの休み場"
+    }
+   ],
+   "log_stats": {
+    "shop": "スローライフ",
+    "dives": 94,
+    "months": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ]
+   },
+   "commentary_ja": "瀬良垣〜安富祖エリア、万座毛沖のナカユクイのすぐそばにある浅い砂地のポイントで、瀬良垣漁港からボートで向かいます。砂地に古い漁礁のロープがあり、最大水深は20m。初心者や体験ダイビング向けとされていますが、少し沖では流れを感じることがあるそうです。スローライフのログ（94本、3〜11月）には、ナカモトイロワケハゼ、トウアカクマノミ、アオウミガメ、カエルアンコウの名前がよく出てきます。",
+   "commentary_en": "Cross Line is a shallow sandy boat site off Manzamo in the Seragaki–Afuso area, right next to Nakayukui, and is reached by boat from Seragaki fishing port. It has sand and the ropes of an old artificial reef, a maximum depth of 20m, and is listed as suitable for beginners and trial dives, though a slight current can sometimes be felt further out. Slow Life's logs (94 dives, March–November) frequently mention Nakamoto's sand goby, Clark's anemonefish relatives such as the Twobar-tailed anemonefish, green turtles and frogfish.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -2126,11 +2815,91 @@
      "key": "PADI2",
      "name": "PADI ダイビングスポット情報",
      "url": "https://www.padi.co.jp/scuba-diving/scuba-vacations/vacation-spotlight/spot.aspx?sptcd=jp_1236"
+    },
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    },
+    {
+     "key": "SL",
+     "name": "スローライフ（ログ）",
+     "url": "https://slowlife-ms.com/blog/category/onnason-fun-diving/manza-diving"
     }
    ],
    "media": [],
    "location_text": "沖縄本島・恩納村、万座毛近くの瀬良垣、御菓子御殿裏のダイヤモンドビーチに面した湾内のポイント。竜宮とクロスラインの間の中央。港からボートで約10〜15分。",
    "creatures": [
+    {
+     "name": "クサイロモウミウシ",
+     "season": null,
+     "n": 21
+    },
+    {
+     "name": "ウサギモウミウシ",
+     "season": null,
+     "n": 13
+    },
+    {
+     "name": "イリオモテモウミウシ",
+     "season": null,
+     "n": 12
+    },
+    {
+     "name": "ウミウシカクレエビ",
+     "season": null,
+     "n": 10
+    },
+    {
+     "name": "バイオレットボクサーシュリンプ",
+     "season": null,
+     "n": 9
+    },
+    {
+     "name": "トウアカクマノミ",
+     "season": null,
+     "n": 9
+    },
+    {
+     "name": "アカシマシラヒゲエビ",
+     "season": null,
+     "n": 7
+    },
+    {
+     "name": "ナカモトイロワケハゼ",
+     "season": null,
+     "n": 5
+    },
+    {
+     "name": "クマノミ",
+     "season": null,
+     "n": 5
+    },
+    {
+     "name": "アオウミガメ",
+     "season": null,
+     "n": 4
+    },
+    {
+     "name": "チンアナゴ",
+     "season": null,
+     "n": 3
+    },
+    {
+     "name": "ウミテング",
+     "season": null,
+     "n": 3
+    },
+    {
+     "name": "センネンダイ",
+     "season": null,
+     "n": 3
+    },
+    {
+     "name": "マダラトビエイ",
+     "season": null,
+     "n": 2
+    },
     {
      "name": "スズメダイ類",
      "season": null
@@ -2148,52 +2917,12 @@
      "season": null
     },
     {
-     "name": "イリオモテモウミウシ",
-     "season": null
-    },
-    {
-     "name": "クサイロモウミウシ",
-     "season": null
-    },
-    {
      "name": "トウアカクマノミ幼魚",
      "season": null
     },
     {
      "name": "カエルアンコウ",
      "season": "6月〜10月頃に見やすい"
-    },
-    {
-     "name": "ヒメヒラタカエルアンコウ",
-     "season": null
-    },
-    {
-     "name": "ナカモトイロワケハゼ",
-     "season": "夏場・深場"
-    },
-    {
-     "name": "ミナミホタテウミヘビ",
-     "season": null
-    },
-    {
-     "name": "カクレクマノミ",
-     "season": null
-    },
-    {
-     "name": "ハマクマノミ",
-     "season": null
-    },
-    {
-     "name": "ハナビラクマノミ",
-     "season": null
-    },
-    {
-     "name": "ダテハゼ",
-     "season": null
-    },
-    {
-     "name": "チンアナゴ",
-     "season": null
     }
    ],
    "conditions": {
@@ -2248,8 +2977,33 @@
     "in": true,
     "note": "万座湾〜瀬良垣・万座毛まわりのポイントとして複数の出典が一致。別海域の同名ポイントの記述はなし。"
    },
-   "commentary_ja": "ナカユクイ（なかゆくい）は恩納村瀬良垣、御菓子御殿裏のダイヤモンドビーチに面した湾内のポイントで、竜宮とクロスラインの中間にあたる。港からボートで約10〜15分。白い砂地にサンゴの根が点在し、最大水深は25〜30m。湾内のため流れは穏やかで、北風で他が荒れる日でも落ち着いていることが多いという。レベルは初心者から上級者まで。ログにはカエルアンコウ（6〜10月頃）、ナカモトイロワケハゼ（夏場・深場）、チンアナゴなどの名が見られる。",
-   "commentary_en": "Nakayukui is a sheltered bay site off Diamond Beach in Seragaki, Onna, between Ryugu and Crossline, about 10–15 minutes from port by boat. Its white sand bottom with scattered coral heads reaches 25–30 m. Sources describe little current and calm water even on north-wind days, and rate it for beginners through advanced divers. Logs mention frogfish (around June–October), Nakamoto's pygmy goby (summer, deeper areas), and garden eels.",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "砂地とサンゴ（最大12〜35m・初級〜）"
+    },
+    {
+     "shop": "スローライフ",
+     "text": "港からボートで約5分（港から一番近い）。水深約6〜30m、流れはない。白い砂地とサンゴ、アオウミガメの休み場"
+    }
+   ],
+   "log_stats": {
+    "shop": "スローライフ",
+    "dives": 40,
+    "months": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ]
+   },
+   "commentary_ja": "ナカユクイ（なかゆくい）は恩納村瀬良垣、ダイヤモンドビーチに面した湾内のポイントで、竜宮とクロスラインの間にある。白い砂地とサンゴの根が広がり、最大水深は25〜30m。北風で周辺の波が高い日でも穏やかなことが多く、流れもないとされ、レベルは初級から上級まで。スローライフの3〜11月のログ40本には、クサイロモウミウシ（21回）、ウミウシカクレエビ、アオウミガメなどの名前が出てくる。カエルアンコウは6〜10月頃に見やすいとされる。",
+   "commentary_en": "Nakayukui is a sheltered bay site off Seragaki in Onna, facing Diamond Beach between Ryugu and Crossline, with white sand and coral heads down to a maximum of 25–30 m. It is described as current-free and often calm even when north winds raise waves elsewhere, and is listed for beginner to advanced divers. Slow Life's 40 logged dives (March–November) mention species such as the nudibranch Elysia marginata (21 times), emperor shrimp, and green sea turtles, while frogfish are said to be easier to find from around June to October.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -2339,8 +3093,9 @@
     "in": true,
     "note": " exact名の出典なし。ただし瀬良垣自体が指定範囲内の地名で、万座・瀬良垣エリア沖として紹介される。別海域の同名ポイントの証拠なし。"
    },
-   "commentary_ja": "瀬良垣インリーフは、万座の沖から瀬良垣にかけてのエリアにある、体験ダイビング向けの浅場です。場所は恩納村瀬良垣の湾内、リーフの内側と推定され、瀬良垣漁港やダイヤモンドビーチの沖が目安です。最大水深は4mで、紹介ではレベルを初心者からとしています。ログにはツマジロオコゼ、ミヤケテグリ、デバスズメの名前が出てきます。万座一帯は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
-   "commentary_en": "Seragaki In-Reef is a shallow site suited to introductory dives, in the area stretching from offshore Manza to Seragaki. It is thought to lie inside the reef in Seragaki Bay, Onna Village, roughly off Seragaki fishing port and Diamond Beach, with a maximum depth of 4 m and a listed level of beginner and up. Dive logs mention species such as the whitefin waspfish, Miyake's dragonet and blue-green chromis.",
+   "shop_notes": [],
+   "commentary_ja": "瀬良垣インリーフは、万座の沖から瀬良垣にかけてのエリアにある、体験ダイビング向けの浅場です。場所は恩納村瀬良垣の湾内、リーフの内側と推定され、瀬良垣漁港やダイヤモンドビーチの沖が目安です。最大水深は4mで、PADIの情報ではレベルは初心者からとされています。ログにはツマジロオコゼ、ミヤケテグリ、デバスズメの名前が出てきます。万座周辺は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Seragaki Inreef is a shallow site suited to introductory dives, in the area from offshore Manza to Seragaki. It is thought to lie inside the reef in Seragaki Bay, Onna Village, roughly off Seragaki fishing port and Diamond Beach, with a maximum depth of 4 m, and PADI lists it as suitable from beginner level. Dive logs mention species such as Tsumajiro-okoze, Miyake-teguri and Debasuzume (blue-green chromis), and as the Manza coast faces northwest, swell is more likely during the winter northerly winds while calmer days are more common in summer.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -2464,8 +3219,9 @@
     "in": true,
     "note": "恩納村・万座毛まわりの一連の沖縄西海岸ポイントの1つで範囲内。ScubaBoardの南→北リストでもManza Dream Hole・Coralと並ぶSeragaki Outer Reef。"
    },
-   "commentary_ja": "瀬良垣アウトリーフは、恩納村の万座沖から瀬良垣にかけてのポイント。瀬良垣の北側からエントリーし、50mほど水面を移動するとリーフエッジに出る。瀬良垣漁港を拠点にすると5〜10分ほどの位置。最大水深は40mで、魚影が濃く、深場にはハゼがいるとされる。ログにはアケボノハゼ、スジクロユリハゼ、ピグミーシーホース、ウミガメなどの名前が出てくる。周辺の水深20〜30mの地形は流れが速いことで知られ、ドリフトになった記録もある。レベルは中級者以上とされている。",
-   "commentary_en": "Seragaki Outer Reef lies off the Manza–Seragaki area of Onna Village. It is entered from the north side of Seragaki with a surface swim of about 50 m to the reef edge, or reached in 5–10 minutes from Seragaki fishing port, and has a maximum depth of 40 m. It is described as having dense fish life and gobies in the deeper sections, with dive logs mentioning species such as the Magnificent Prawn-goby, Ornate Dartfish, pygmy seahorses and sea turtles. The surrounding 20–30 m terrain is known for strong currents (one log records a drift dive), and it is listed for intermediate divers and above.",
+   "shop_notes": [],
+   "commentary_ja": "瀬良垣アウトリーフは、恩納村の万座沖から瀬良垣にかけてのポイント。瀬良垣の北側からエントリーし、50mほど水面移動するとリーフエッジに出る。拠点の瀬良垣漁港からは5〜10分。最大水深は40mで、魚影が濃く、深場にはハゼがいるとされる。ログにはアケボノハゼ、スジクロユリハゼ、ハナゴンベ、ウミガメなどの名前が出てくる。周辺の20〜30mの地形は流れが速いことで知られ、カレントでドリフトになった記録もある。レベルは中級者以上とされる。",
+   "commentary_en": "Seragaki Outer Reef lies off Manza toward Seragaki in Onna Village. Divers can enter from the north side of Seragaki and swim about 50 m on the surface to the reef edge, and Seragaki fishing port, the local base, is 5–10 minutes away. The maximum depth is 40 m, with dense fish life and gobies reported in deeper water. Logs mention species such as the Blue-and-yellow goby (Akebono-haze), Blackfin dartfish (Sujikuro-yurihaze), Longnose hawkfish (Hana-gonbe), and sea turtles. The surrounding 20–30 m terrain is known for strong currents, one recorded dive became a drift, and the site is listed for intermediate divers and above.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -2535,8 +3291,9 @@
     "in": null,
     "note": "恩納村の対象範囲にあるか確認できず。同名の岬は伊豆・グアム・新潟・和歌山等にあり、万座毛周辺の岬として出るのはアポガマ等のみ。"
    },
-   "commentary_ja": "恋人岬は、沖縄本島西海岸・恩納村の万座の沖から瀬良垣にかけてのエリアにあるポイントです。最大水深は35mで、PADIの情報では中級者以上が対象とされています。地形の特徴として、オーバーハングとガレ場が挙げられます。ログや紹介には、オーバーハングの下のハナミノカサゴ、ガレ場のジョーフィッシュのほか、ネムリブカの名前も出てきます。万座の海は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
-   "commentary_en": "Koibito-misaki lies in the area from offshore Manza to Seragaki on the west coast of Okinawa's main island, with a maximum depth of 35 m, and PADI information lists it for intermediate divers and above. Its features include an overhang and a rubble area, and logs and descriptions mention spotfin lionfish under the overhang, jawfish in the rubble, and whitetip reef sharks. Because Manza faces northwest, swell tends to come in during the winter northerly monsoon, while calmer days are more common in summer.",
+   "shop_notes": [],
+   "commentary_ja": "恋人岬は、沖縄本島西海岸・万座の沖から瀬良垣にかけてのエリアにあるポイントです。最大水深は35mで、PADIの情報ではレベルは中級者以上とされています。ログや紹介には、オーバーハングの下のハナミノカサゴ、ガレ場のジョーフィッシュ、ネムリブカの名前が出てきます。万座の周辺は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Koibito-misaki lies off Manza toward Seragaki on Okinawa's west coast, with a maximum depth of 35 m and a level listed by PADI as intermediate and above. Logs and descriptions mention red lionfish under an overhang, jawfish on the rubble, and whitetip reef sharks. Because the Manza area opens to the northwest, swell tends to come in during the northerly winter monsoon, while calm days are more common in summer.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -2629,8 +3386,9 @@
     "in": true,
     "note": "本島中部(恩納村〜嘉手納)に分類され、同日万座ドリームホールと潜水。慶良間のシルとは別登録。安富祖〜名嘉真・地形特徴の文言自体は出典未確認。"
    },
-   "commentary_ja": "シルジナーは万座の瀬良垣〜安富祖エリアにあるポイントで、瀬良垣漁港方面を拠点とするボートポイントと推定される。浅場には変わった形のサンゴと岩があり、深場は砂地へと続く。最大水深は35m。レベルは初級〜（PADIの情報では初心者〜）とされている。ログや紹介にはタイマイ、ガーデンイール、ヤシャハゼ、ネジリンボウなどの名前が出てくる。万座は北西に開けているため冬の季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏。",
-   "commentary_en": "Shirujinā is a site in Manza's Seragaki–Afuso area, likely a boat dive run from the Seragaki fishing port side, with unusually shaped coral and rocks in the shallows giving way to sand deeper down to a maximum of 35 m. It is listed as suitable from beginner level. Hawksbill turtles, garden eels, and shrimp gobies such as the Yasha goby and Randall's shrimp goby appear in logs and descriptions, and since Manza faces northwest, winter's northerly winds tend to bring swell while summer usually offers calmer days.",
+   "shop_notes": [],
+   "commentary_ja": "シルジナーは瀬良垣〜安富祖エリアのポイントで、瀬良垣漁港方面から出るボートポイントとみられます。変わった形のサンゴと岩の浅場から深場の砂地へと続き、最大水深は35m。レベルは初級からで、PADIの情報でも初心者からとされています。ログにはタイマイ、ガーデンイール、ヤシャハゼなどの名前が出てきます。北西に開けた万座では、冬の北寄りの季節風の時期にうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Shirujinā is a dive site in the Seragaki–Afuso area, likely reached by boat from the Seragaki harbor side, with oddly shaped corals and rocks in the shallows giving way to sand at depth (max. 35 m). It is listed as suitable from beginner level, and PADI information also lists it as beginner-friendly. Logs mention species such as hawksbill turtles, garden eels and Yasha gobies, and as with much of Manza, the north-west-facing coast tends to see swell under the northerly winter winds, with calmer days more common in summer.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -2742,8 +3500,9 @@
     "in": true,
     "note": "恩納村安富祖の西海岸で万座・瀬良垣・安富祖・名嘉真の範囲内。オーストラリアの同名スカイダイビング地とは別。"
    },
-   "commentary_ja": "ミッションビーチは、恩納村北部の安富祖にある天然のビーチで、瀬良垣〜安富祖エリアのポイント。遠浅で両側を岩場に囲まれ、最大水深は10m。浅く穏やかな環境が特徴とされ、レベルは「初心者〜」と紹介されている。ログや紹介には、デバスズメやネッタイスズメなどのスズメダイ類のほか、セジロクマノミやハリセンボンの名前が出てくる。万座の西海岸は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏。",
-   "commentary_en": "Mission Beach is a natural beach in Afuso, northern Onna Village, within the Seragaki–Afuso area. The shallow beach is flanked by rocky shores on both sides, reaches a maximum depth of 10 m, and is listed as suitable for beginners and up. Logs and descriptions mention damselfish such as the blue-green chromis and Ternate chromis, as well as the skunk anemonefish and porcupinefish.",
+   "shop_notes": [],
+   "commentary_ja": "ミッションビーチは、恩納村北部の安富祖にある天然のビーチで、瀬良垣〜安富祖エリアのポイント。遠浅で両側を岩場に囲まれ、最大水深は10m。浅く穏やかな場所とされ、PADIの情報ではレベルは初心者からとなっている。ログにはデバスズメ、レモンスズメ、ヒレナガスズメなどのスズメダイ類のほか、セジロクマノミやハリセンボンの名前が出てくる。北西に開けた万座の海は冬の季節風の時期にうねりが入りやすく、穏やかな日が多いのは夏とされる。",
+   "commentary_en": "Mission Beach is a natural beach in Afuso, in the northern part of Onna Village, within the Seragaki–Afuso area. It is a shallow, sheltered spot flanked by rocky shores on both sides, with a maximum depth of 10 m, and PADI lists it as suitable from beginner level. Dive logs mention damselfish such as the blue-green chromis, lemon damsel and the dusky jewel-damsel (Plectroglyphidodon leucozonus), along with the skunk clownfish and porcupinefish. Because the Manza coast opens to the northwest, swells tend to roll in during the winter monsoon, and calm days are more common in summer.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -2751,12 +3510,18 @@
    "alias": "スネイクホール",
    "area": "万座の沖〜瀬良垣",
    "features": "入り口がクネクネと曲がる狭い洞窟で奥行きは短いが底に細かい砂泥が堆積し巻き上がると視界不良になる上級・ケーブ向け",
-   "depth": "",
+   "depth": "最大30〜40m",
    "lat": 26.5126,
    "lng": 127.8588,
    "precision": "guess",
    "position_note": "万座ドリームホールのそば（ログから推測）",
-   "sources": [],
+   "sources": [
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    }
+   ],
    "media": [],
    "added": "web",
    "location_text": "沖縄本島中部の西海岸、恩納村の万座・瀬良垣エリア沖で、万座ビーチの北約800m、万座ドリームホールのそばにある海中洞窟。",
@@ -2827,8 +3592,14 @@
     "in": true,
     "note": "恩納村万座のポイントで範囲内。宮古・伊良部島北側の同名スネークホール（水深7〜10mのエアドーム）とは別。"
    },
-   "commentary_ja": "スネークホール（スネイクホール）は、万座・瀬良垣エリア沖、万座ビーチの北約800mで、万座ドリームホールのそばにある海中洞窟。入り口がクネクネと曲がる狭い洞窟で奥行きは短いが、底に細かい砂泥がたまり、巻き上がると視界が悪くなる。紹介ではケーブダイビングの資格と十分な経験が必要な上級向けとされ、入った入り口から戻る必要がある。ログにはリュウキュウハタンポやキンメモドキ、ウミテングの名が出てくる。周辺の万座エリアは3月中旬〜9月末が比較的安定とされる。",
-   "commentary_en": "Snake Hole (also spelled Snake Hole/Sneik Hole) is an underwater cave off the Manza–Serakaki area, about 800 m north of Manza Beach near Manza Dream Hole, with a narrow, winding entrance, a short interior, and fine silt on the floor that reduces visibility when stirred up. Descriptions call it an advanced site requiring cave diving certification and ample experience, with the exit back through the same entrance. Logs mention fish such as Ryukyu sweepers, cardinalfish, and seamoths, and the wider Manza area is described as most settled from mid-March to the end of September.",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "ドリームホールの沖、アナゴと小魚、穴の中には入らない（最大30〜40m・中級〜・上級者）"
+    }
+   ],
+   "commentary_ja": "スネークホール（別名スネイクホール）は、万座ビーチの北約800m、万座ドリームホールのそばにある海中洞窟で、最大水深は30〜40m。入り口が曲がりくねる狭い洞窟で、奥行きは短い。底には細かい砂泥がたまり、巻き上がると視界が悪くなる。入った入り口から戻る形になり、ケーブダイビングの資格と十分な経験が要る上級向けとされる。ラグーンの紹介では、穴には入らずにアナゴや小魚を見るとある。ログにはキンメモドキ、スカシテンジクダイ、ウミテングなどの名が出てくる。",
+   "commentary_en": "Snake Hole (also written \"Snake Hole/Sneik Hole\") is a short, narrow cave with a winding entrance about 800m north of Manza Beach, next to Manza Dream Hole. It reaches a maximum depth of 30–40m. Fine silt on the floor can reduce visibility when stirred up, and sources describe it as an advanced site where divers exit the way they entered, requiring cave certification and ample experience. Lagoon's description mentions viewing conger eels and small fish without entering the hole, and logs name species such as Ostorhinchus-like cardinalfish (Kinmemodoki), transparent cardinalfish, and seamoth (Umitengu).",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -2836,12 +3607,18 @@
    "alias": "",
    "area": "恩納〜万座毛",
    "features": "青の洞窟よりさらに大きいが深さはない洞窟、内部は青さは弱くアドベンチャラス",
-   "depth": "",
+   "depth": "最大10m",
    "lat": 26.507,
    "lng": 127.845,
    "precision": "guess",
    "position_note": "沖縄本島中部西海岸、恩納村恩納の万座毛周辺にある水中洞窟。トライアングルホールの南側の大きな空洞で、ホーシュー北に隣接する。",
-   "sources": [],
+   "sources": [
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    }
+   ],
    "media": [],
    "added": "web",
    "location_text": "沖縄本島中部西海岸、恩納村恩納の万座毛周辺にある水中洞窟。トライアングルホールの南側の大きな空洞で、ホーシュー北に隣接する。",
@@ -2894,8 +3671,14 @@
     "in": true,
     "note": "恩納村万座毛周辺のポイントで対象範囲内。真栄田岬・青の洞窟とは別の洞窟として比較されているのみ"
    },
-   "commentary_ja": "恩納村恩納、万座毛周辺にある水中洞窟。トライアングルホールの南側に開いた大きな空洞で、ホーシューの北隣にあたる。青の洞窟より規模は大きいとされる一方で深さはなく、内部の青さは控えめで、探検的な雰囲気が特徴。ログにはイセエビ、ハタンポ、ウミヘビの名が見られる。隣接するトライアングルホールの紹介ページには、風向きは南東、道中は時に激しい流れになることがあり、潮や海況の条件が揃わないと入れないと記され、レベルは中上級〜上級者向けとされている。最大水深の記載はない。",
-   "commentary_en": "Manzamo Cave is a large, fairly shallow underwater cavern near Cape Manzamo in Onna, lying just south of Triangle Hole and north of Horseshoe. It is described as bigger than the Blue Cave but less vividly blue inside, with a more exploratory feel, and logs mention spiny lobster, sweepers and sea snakes. The page for neighbouring Triangle Hole lists the wind as southeast and the level as intermediate-to-advanced, noting that currents on the way can be strong at times and that the cave can only be entered when tide and sea conditions line up; no maximum depth is published.",
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "もう一つの「青の洞窟」、満潮時のみ（最大10m・初級〜）"
+    }
+   ],
+   "commentary_ja": "万座毛周辺、トライアングルホール南側の大きな水中洞窟で、ホーシューの北に隣接する。青の洞窟より大きいが深さはなく、最大水深は10m。内部の青さは弱く、探検的な雰囲気がある。隣接するトライアングルホールの頁では、風向きは南東、道中は流れが強まることがある、レベルは中上級〜上級と記され、潮や海況が揃わないと入れないとされる。ラグーンは満潮時のみ・初級からとしている。ログにはイセエビ、ハタンポ、ウミヘビの名前が出てくる。",
+   "commentary_en": "A large underwater cave on the south side of Triangle Hole near Manzamo, just north of Horseshoe. It is bigger than the Blue Cave but no deeper than 10 m, and the interior is less blue and more adventurous. The adjacent Triangle Hole page lists a southeast wind, occasional strong currents en route, an intermediate-to-advanced level, and access only when tide and sea conditions align. Lagoon describes it as high-tide only and open to beginners. Spiny lobster, sweepers and sea snakes appear in logs.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -2977,8 +3760,9 @@
     "in": true,
     "note": "なかゆくいの隣で、同日にミニドリーム等万座系ポイントと並列される万座運航のポイント。真栄田・読谷・北部等の別海域の同名点との記載なし。"
    },
-   "commentary_ja": "デビッド（デビット、デビッドのブイとも呼ばれる）は、恩納村の万座・瀬良垣エリア沖、瀬良垣から安富祖にかけての海域にあるポイントで、「なかゆくい」の隣のブイが目印とされる。最大水深は5mほどで、砂地が広がる。紹介ではブイ下はうねりが少なく安定しているとされ、カクレクマノミを見て回るルートもある。ログにはヤッコエイ、アオウミガメ、タイマイ、カクレクマノミなどの名前が出てくる。",
-   "commentary_en": "David (also written Davit, or called David's Buoy) lies off the Manza and Sesoko-gaki area of Onna Village, between Serakaki and Afuso, at the buoy next to Nakayukui. It is a sandy site with a maximum depth of about 5 m, and descriptions note that the area under the buoy sees little swell and stays fairly stable, with a route for viewing clownfish. Logs mention species such as the bluespotted ribbontail ray relative \"yakko-ei\" (Taeniura), green sea turtle, hawksbill turtle, and false clown anemonefish.",
+   "shop_notes": [],
+   "commentary_ja": "デビッド（デビット、David、デビッドのブイとも呼ばれる）は、恩納村の瀬良垣〜安富祖エリア沖のポイントで、なかゆくいの隣のブイが目印です。最大水深は5mほどの砂地で、ブイの下はうねりが少なく安定しているとされます。カクレクマノミを見て回るルートがあり、ログや紹介にはヤッコエイ、アオウミガメ、タイマイなどの名前も出てきます。万座周辺は北西に開けており、穏やかな日が多いのは夏です。",
+   "commentary_en": "David (also called Debitto, or \"David's buoy\") is a shallow sandy site off the Seragaki–Afuso area of Onna, at the buoy next to Nakayukui, with a maximum depth of about 5 m and conditions under the buoy described as calm with little swell. Logs and descriptions mention a route past anemonefish (Amphiprion ocellaris), along with names such as the bluespotted ribbontail ray, green turtle, and hawksbill turtle. Like much of the Manza coast, which faces northwest, it tends to see calmer days in summer.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -3041,8 +3825,9 @@
     "in": true,
     "note": "万座毛・ホーシューまわりで、万座ビーチ・万座岬・瀬良垣・安富祖・名嘉真の範囲内。真栄田岬・青の洞窟や読谷・北部ではない。"
    },
-   "commentary_ja": "ウドゥイガマは、恩納村・万座毛の岬域、ホーシューの南にあるビーチポイントです。洞窟を抜けた先の小さな自然の浜からエントリーし、遠浅の若いサンゴ帯を進むと、水深40mまで落ち込むドロップオフに出ます。ログや紹介には大型のイソバナやホワイトチップの名前が出てきます。エントリー後、少し深くなった辺りで激しい流れがあったとの報告があり、周辺は離岸流が起きやすいともされます。レベルは中級者から、やや上級者向けとされています。",
-   "commentary_en": "Udui Gama is a shore dive on the Manzamo headland in Onna Village, south of Hoshu, entered from a small natural beach reached through a cave. A shallow area of young coral gives way to a drop-off reaching about 40 m, and logs and descriptions mention large sea fans (isobana) and whitetip reef sharks. Strong currents have been reported just past the entry where it deepens, rip currents are said to be common in the surrounding waters, and the site is described as suited to intermediate to somewhat advanced divers.",
+   "shop_notes": [],
+   "commentary_ja": "ウドゥイガマは恩納村・万座毛の岬域、ホーシューの南にあるビーチポイントで、洞窟を抜けた先の小さな自然の浜から入ります。遠浅の若いサンゴ帯を過ぎると、水深40mまで一気に落ち込むドロップオフに出る地形とされています。紹介や記録には大型のイソバナやホワイトチップの名前が出てきます。少し深くなった辺りから激流になったという報告があり、周辺は離岸流が起きやすいとされます。レベルは中級者から、やや上級者向けとされています。",
+   "commentary_en": "Udui-gama is a beach dive on the Manzamo headland in Onna, south of Hoshu, entered from a small natural beach reached through a cave. A shallow band of young coral gives way to a drop-off reaching about 40 m, and large sea fans (isobana) and whitetip reef sharks are mentioned in descriptions and logs. Strong currents have been reported once the bottom starts to deepen, the surrounding waters are said to be prone to rip currents, and the site is described as suited to intermediate to fairly advanced divers.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -3113,8 +3898,9 @@
     "in": true,
     "note": "恩納村ダイビングポイント3として万座・瀬良垣エリア群と一緒に紹介。真栄田岬・青の洞窟や読谷・北部ではない。"
    },
-   "commentary_ja": "瀬良垣クレパス（セラガキクレパス）は恩納村の万座・瀬良垣エリア沖のポイントで、瀬良垣漁港が拠点とされる。岩盤に走る複数の亀裂をたどって潜るのが特徴で、亀裂にイセエビが集まる様子が「団地」のようだと紹介されている。ログや紹介にはハタタテダイやグルクンの群れ、リーフ上で休む海ガメの名前も出てくる。最大水深は公開情報では確認できない。北西に開けた海域で、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏。",
-   "commentary_en": "Seragaki Crevasse is a site off the Manza and Seragaki area of Onna Village, reportedly accessed from Seragaki fishing port. Dives follow several cracks in the bedrock, where spiny lobsters are described as gathering like an \"apartment block,\" and logs also mention schooling bannerfish and fusiliers (gurukun) as well as sea turtles resting on the reef. No maximum depth is given in public information, and as the area faces northwest, swell tends to come in during the winter northerly monsoon, with calmer days more common in summer.",
+   "shop_notes": [],
+   "commentary_ja": "瀬良垣クレパス（セラガキクレパス）は、恩納村の万座・瀬良垣エリア沖にあるポイントで、拠点は瀬良垣漁港とされています。岩盤に入った複数の亀裂をたどる地形が特徴で、亀裂にイセエビが集まる様子は「団地」のようだと紹介されています。ログや紹介には、ハタタテダイやグルクンの群れ、リーフ上で休むカメの名前も出てきます。最大水深や潜る条件は公開されていません。この一帯は北西に開けているため、冬の季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Seragaki Crevasse lies off the Manza–Seragaki area of Onna Village, and Seragaki fishing port is described as its base. The site is known for several cracks in the bedrock, where spiny lobsters gather in numbers, and logs and descriptions also mention bannerfish, schools of fusiliers (gurukun), and turtles resting on the reef. No maximum depth or diving conditions have been published; because the area faces northwest, the northerly winter winds tend to bring swell, while summer usually has calmer days.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -3200,8 +3986,9 @@
     "in": true,
     "note": "瀬良垣・ダイヤモンドビーチのため範囲内。久米島北側の竜宮や石垣・パナリの竜宮の根とは別。"
    },
-   "commentary_ja": "竜宮は恩納村瀬良垣のダイヤモンドビーチ（お菓子御殿恩納店の裏）に面した3ポイントの1つで、中央にあるナカユクイと並んでいる。ビーチやセルフダイビングで案内されている。ログや紹介にはカクレクマノミ、チンアナゴ、ウミガメ、リュウモンサンゴ属のサンゴなどの名前が出てくる。深場の「RYUGU」は、中性浮力とエア持ちが良く、ディープに慣れた上級者向けとされる。ビーチ側の竜宮については難易度の記載がない。北西に開けた西海岸にあるため、冬はうねりが入りやすい。",
-   "commentary_en": "Ryugu is one of three sites facing Diamond Beach in Serakaki, Onna Village (behind the Okashi Goten Onna store), with Nakayukui as the middle site, and it is offered as a beach or self-guided dive. Dive logs and descriptions mention species such as false clown anemonefish, garden eels, sea turtles and Pachyseris corals. The deeper \"RYUGU\" section is described as suitable only for advanced divers who have good buoyancy control, good air consumption and deep-diving experience, while no difficulty level is listed for the beach site.",
+   "shop_notes": [],
+   "commentary_ja": "竜宮は恩納村瀬良垣、お菓子御殿恩納店裏のダイヤモンドビーチに面して並ぶ3ポイントの1つで、中央にはナカユクイがある。ビーチ・セルフで案内されるポイントとされる。ログや紹介にはカクレクマノミ、ハナビラクマノミ、チンアナゴ、ウミガメなどの名前が出てくる。深場の「RYUGU」は中性浮力とエアもちが良いディープ慣れした上級者のみとの記載があるが、ビーチの竜宮の難易度は示されていない。北西に開けた海岸のため、冬の季節風の時期はうねりが入りやすい。",
+   "commentary_en": "Ryugu is one of three points along Diamond Beach in Seragaki, Onna Village, behind the Okashi Goten Onna store, with Nakayukui in the middle. Logs and descriptions mention species such as false clownfish, pink anemonefish, garden eels and sea turtles. The deeper \"RYUGU\" is described as suitable only for advanced divers with good buoyancy, air consumption and deep-diving experience, but no difficulty level is given for the beach point of the same name.",
    "commentary_model": "claude-opus-5-5"
   },
   {
@@ -3315,8 +4102,172 @@
     "in": true,
     "note": "万座方面・瀬良垣漁港すぐで範囲内。万座ビーチ沖の別ポイント「コーラル/コーラルポイント」(30mドロップオフ)とは別"
    },
-   "commentary_ja": "コーラルキャニオンは恩納村の万座方面、瀬良垣〜安富祖エリアにあり、瀬良垣漁港から船ですぐの沖合いにある砂地ポイント「クロスライン」の船下サンゴ域にあたる。最大水深は8mほどで、水深5〜8mにユビエダハマサンゴやパラオハマサンゴなどのハードコーラルが群生する。紹介では砂地で穏やかなことが多く、難易度は★★とされる。ログにはトウアカクマノミ（夏は産卵の季節）、ニシキフウライウオ、ヤシャハゼ、アオウミガメなどの名前が出てくる。",
-   "commentary_en": "Coral Canyon lies in the Seragaki–Afuso area near Manza, a short boat ride from Seragaki fishing port, and is the coral zone beneath the boat at the sandy site \"Cross Line,\" with hard corals such as finger and Porites coral growing at 5–8 m (maximum depth about 8 m). Sources describe it as often calm with a sandy bottom and rate it two stars in difficulty. Dive logs mention species such as the Clark's anemonefish (summer is its spawning season), ornate ghost pipefish, Steinitz' prawn goby, and green sea turtle.",
+   "shop_notes": [],
+   "commentary_ja": "コーラルキャニオンは恩納村・万座方面、瀬良垣〜安富祖エリアのポイント。瀬良垣漁港から船ですぐの沖合いにある砂地ポイント「クロスライン」の船下のサンゴ域で、水深5〜8m（最大8m）にユビエダハマサンゴやパラオハマサンゴなどのハードコーラルが群生する。紹介では、砂地で穏やかなことが多く、難易度★★で初心者向けとされる。ログには、トウアカクマノミ（夏は産卵期）、ヤシャハゼ、ヒレナガネジリンボウ、アオウミガメなどの名前が出てくる。",
+   "commentary_en": "Coral Canyon is a coral area in the Serakaki–Afuso part of Manza, Onna Village. It lies beneath the boat at the sandy site \"Cross Line,\" a short ride from Serakaki fishing port, and has hard corals such as Porites cylindrica and Porites cf. lobata growing at 5–8 m (max 8 m). Introductions describe it as often calm and rated ★★, suitable for beginners, and logs mention species such as Clark's anemonefish (summer spawning season), Stonogobiops yasha, and green sea turtles.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "サンゴ畑",
+   "alias": "",
+   "area": "万座毛〜万座ビーチ",
+   "features": "恩納らしい浅場のサンゴ",
+   "depth": "最大6m",
+   "lat": null,
+   "lng": null,
+   "precision": "unknown",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    }
+   ],
+   "media": [],
+   "added": "web",
+   "location_text": "沖縄本島中部西海岸の万座沖、ANA万座ビーチリゾート沖合あたり。恩納漁港から船で数分のLagoonオリジナルスポット。",
+   "creatures": [
+    {
+     "name": "天然サンゴ・養殖サンゴ",
+     "season": null
+    },
+    {
+     "name": "カラフルな魚",
+     "season": null
+    },
+    {
+     "name": "大きな海亀（ウミガメ）",
+     "season": null
+    },
+    {
+     "name": "カワイイニモ（クマノミ類）",
+     "season": null
+    }
+   ],
+   "conditions": {
+    "wind": null,
+    "current": null,
+    "level": "水深も浅く初心者でも安心、初めての方・泳ぎが苦手な方・お子様も安心",
+    "access": null
+   },
+   "aliases_found": [
+    "サンゴの養殖畑",
+    "サンゴの海中養殖場「サンゴ畑」"
+   ],
+   "web_sources": [
+    {
+     "kind": "web",
+     "name": "lagoon-diving.com",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    },
+    {
+     "kind": "web",
+     "name": "furusato-tax.jp",
+     "url": "https://www.furusato-tax.jp/product/detail/47311/5402511"
+    },
+    {
+     "kind": "web",
+     "name": "veltra.com",
+     "url": "https://www.veltra.com/jp/japan/okinawa/okinawa_main_island/a/165824"
+    },
+    {
+     "kind": "web",
+     "name": "veltra.com",
+     "url": "https://www.veltra.com/jp/special/japan/onna-greenfins/"
+    },
+    {
+     "kind": "web",
+     "name": "blog.padi.com",
+     "url": "https://blog.padi.com/jp/teamtyurasango_2025_september_3rd/"
+    },
+    {
+     "kind": "web",
+     "name": "activityjapan.com",
+     "url": "https://activityjapan.com/search/category/snorkelling/okinawa/?s=3"
+    }
+   ],
+   "scope": {
+    "in": true,
+    "note": "万座沖・万座ビーチリゾート沖で対象範囲内。読谷村瀬名波の陸上施設サンゴ畑とは別。"
+   },
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "恩納らしい浅場のサンゴ（最大6m・初級〜）"
+    }
+   ],
+   "commentary_ja": "サンゴ畑は万座毛〜万座ビーチのエリアにある、最大水深6mの浅いポイントです。ANA万座ビーチリゾートの沖合あたりにあり、ラグーンのオリジナルスポットで、恩納漁港から船で数分とされています。ラグーンの紹介では初級からで、初めての方や泳ぎが苦手な方、子どもにも向くと説明されています。紹介には天然・養殖のサンゴ、ウミガメ、クマノミ類の名前が出てきます。万座は北西に開けているため、冬は北寄りの季節風でうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Sango Batake (\"Coral Garden\") is a shallow site with a maximum depth of 6 m in the Manzamo–Manza Beach area. It lies off ANA Manza Beach Resort, a few minutes by boat from Onna Port. Lagoon describes it as its own original spot, suitable from beginner level, and its descriptions mention natural and farmed corals, sea turtles, and anemonefish.",
+   "commentary_model": "claude-opus-5-5"
+  },
+  {
+   "name": "リトルグロット",
+   "alias": "",
+   "area": "（位置不明）",
+   "features": "クレバスがトンネルにつながる浅い地形",
+   "depth": "最大18〜25m",
+   "lat": null,
+   "lng": null,
+   "precision": "unknown",
+   "position_note": "",
+   "sources": [
+    {
+     "key": "LG",
+     "name": "ラグーン",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    }
+   ],
+   "media": [],
+   "added": "web",
+   "location_text": null,
+   "creatures": [],
+   "conditions": {
+    "wind": null,
+    "current": null,
+    "level": "初級〜",
+    "access": null
+   },
+   "aliases_found": [],
+   "web_sources": [
+    {
+     "kind": "web",
+     "name": "lagoon-diving.com",
+     "url": "https://www.lagoon-diving.com/diving-spots"
+    },
+    {
+     "kind": "web",
+     "name": "padi.com",
+     "url": "https://www.padi.com/ja/dive-site/british-virgin-islands/little-grotto/"
+    },
+    {
+     "kind": "web",
+     "name": "sunchaserscuba.com",
+     "url": "https://sunchaserscuba.com/diving"
+    },
+    {
+     "kind": "web",
+     "name": "divebooker.com",
+     "url": "https://divebooker.com/british-virgin-islands-north-sound-eaz688"
+    },
+    {
+     "kind": "web",
+     "name": "activityjapan.com",
+     "url": "https://activityjapan.com/feature/manza-dreamhole/"
+    }
+   ],
+   "scope": {
+    "in": false,
+    "note": "対象範囲(万座毛まわり・万座ビーチ・万座岬・瀬良垣・安富祖・名嘉真)の出典なし。同名はBVI・ヴァージンゴルダ島ノースサウンドのMountain Pointの1つ(Big Grotto等と並ぶ)。"
+   },
+   "shop_notes": [
+    {
+     "shop": "ラグーン",
+     "text": "クレバスがトンネルにつながる浅い地形（最大18〜25m・初級〜）"
+    }
+   ],
+   "commentary_ja": "リトルグロットは万座のポイントのひとつですが、詳しい場所は公開されていません。ラグーンの紹介では、クレバスがトンネルへと続く浅めの地形で、最大水深は18〜25m、レベルは初級からとされています。ログや紹介に名前が出てくる生き物の情報はなく、風向きや流れなどの条件も公開されていません。万座一帯は北西に開けているため、冬の北寄りの季節風の時期はうねりが入りやすく、穏やかな日が多いのは夏です。",
+   "commentary_en": "Little Grotto is a Manza dive site whose exact location has not been made public. According to Lagoon's description, it is a fairly shallow site where a crevice leads into a tunnel, with a maximum depth of 18–25 m, and it is rated beginner and up. No marine life records or details on wind and current are available, though the Manza area as a whole tends to get swell during the northerly winter winds and is usually calmer in summer.",
    "commentary_model": "claude-opus-5-5"
   }
  ],
@@ -3472,6 +4423,56 @@
    }
   ],
   "瀬良垣〜安富祖": [
+   {
+    "type": "photo",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Cape_Manzamo_2.JPG/1280px-Cape_Manzamo_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Manzamo_2.JPG",
+    "title": "Cape Manzamo 2.JPG",
+    "author": "そらみみ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "via": "Wikimedia Commons",
+    "area": true,
+    "above_water": true
+   },
+   {
+    "type": "photo",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Cape_Manzamo_3.JPG/1280px-Cape_Manzamo_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Manzamo_3.JPG",
+    "title": "Cape Manzamo 3.JPG",
+    "author": "そらみみ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "via": "Wikimedia Commons",
+    "area": true,
+    "above_water": true
+   },
+   {
+    "type": "photo",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Cape_Manzamo_4.JPG/1280px-Cape_Manzamo_4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Manzamo_4.JPG",
+    "title": "Cape Manzamo 4.JPG",
+    "author": "そらみみ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "via": "Wikimedia Commons",
+    "area": true,
+    "above_water": true
+   },
+   {
+    "type": "photo",
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Cape_Manzamo_7.JPG/1280px-Cape_Manzamo_7.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Cape_Manzamo_7.JPG",
+    "title": "Cape Manzamo 7.JPG",
+    "author": "そらみみ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "via": "Wikimedia Commons",
+    "area": true,
+    "above_water": true
+   }
+  ],
+  "（位置不明）": [
    {
     "type": "photo",
     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Cape_Manzamo_2.JPG/1280px-Cape_Manzamo_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
