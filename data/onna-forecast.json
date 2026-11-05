@@ -14,8 +14,8 @@
     "threshold": 1.0,
     "latest_oni": {
       "year": 2026,
-      "season": "JAS",
-      "value": 2.16
+      "season": "ASO",
+      "value": 2.46
     }
   },
   "outlook": {
@@ -214,5 +214,5 @@
     }
   },
   "method": "scripts/build_onna_outlook.py",
-  "updated": "2026-11-01"
+  "updated": "2026-11-05"
 }
