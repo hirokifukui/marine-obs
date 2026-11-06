@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "SSTカード用データ（月別比較）",
-    "generated_at": "2026-11-05",
+    "generated_at": "2026-11-06",
     "sites": [
       "kushimoto",
       "ogasawara",
@@ -10,11 +10,11 @@
     "generator": "scripts/build_site_data.py"
   },
   "latest": {
-    "kushimoto": 25.1,
-    "ogasawara": 25.8,
+    "kushimoto": 24.0,
+    "ogasawara": 26.2,
     "manza": 26.7,
-    "observed": "2026-11-02",
-    "published": "2026-11-05"
+    "observed": "2026-11-03",
+    "published": "2026-11-06"
   },
   "chart": {
     "labels": [
@@ -61,7 +61,7 @@
         28.7,
         27.5,
         26.4,
-        25.0,
+        24.7,
         null
       ],
       "mmm": 27.5
@@ -92,7 +92,7 @@
         27.7,
         28.3,
         27.3,
-        25.8,
+        25.9,
         null
       ],
       "mmm": 28.0
