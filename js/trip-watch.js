@@ -5,7 +5,7 @@
     const TRIP = document.currentScript.dataset.trip;
     const STAMP = {
         normal: ['平常', 'Normal'], monitor: ['監視', 'Monitor'], watch: ['注意', 'Watch'],
-        alert: ['警報', 'Alert'], undecided: ['未定', 'TBD']
+        alert: ['警報', 'Alert'], undecided: ['未定', 'TBD'], past: ['終了', 'Done']
     };
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     const bi = (en, ja) => `<span data-lang="en">${en}</span><span data-lang="ja">${ja}</span>`;
@@ -232,7 +232,7 @@
                 ? bi(`The whole trip is still more than five days away. Stamps will start appearing from ${fd} ${fmo}, one day at a time.`, `旅程はまだ5日より先です。判子は${fm}/${fd}から順に付きます。`) : '';
             const stampCard = d => {
                 const s = STAMP[d.stamp] || STAMP.undecided;
-                const lead = d.lead > 0 ? bi(`${d.lead} days ahead`, `${d.lead}日先`) : d.lead === 0 ? bi('today', '今日') : '';
+                const lead = d.lead > 0 ? bi(`${d.lead} days ahead`, `${d.lead}日先`) : d.lead === 0 ? bi('today', '今日') : d.lead < 0 ? bi('past', '済み') : '';
                 const [m5, d5, mo5] = minus5(d.date);
                 const note = d.lead > 5 ? bi(`Nothing can be confirmed yet. A stamp comes from ${d5} ${mo5}.`, `まだ確定できるものはありません。判子は${m5}/${d5}から付きます。`) : bi(esc(d.note_en), esc(d.note_ja));
                 return `<article class="tw-day short"><div class="d">${day(d.date)}</div><div class="role">${ROLE[d.date] || ''}</div>

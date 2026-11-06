@@ -229,7 +229,7 @@
         .tw-day .role { font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.15rem; padding-right: 3.6rem; }
         .tw-day .note { font-size: 0.86rem; line-height: 1.65; margin-top: 0.8rem; }
         .tw-day .lead { font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.5rem; font-variant-numeric: tabular-nums; }
-        .stamp.undecided { color: var(--text-secondary); border-style: dashed; opacity: 0.7; }
+        .stamp.undecided, .stamp.past { color: var(--text-secondary); border-style: dashed; opacity: 0.7; }
         .tw-karte { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--ai); border-radius: 0 12px 12px 0; padding: 1.2rem 1.4rem; margin-bottom: 1.75rem; box-shadow: var(--shadow); }
         .tw-karte h3 { margin: 0 0 0.6rem; font-family: var(--serif-ja); font-size: 1.05rem; }
         .tw-karte p { line-height: 1.95; margin: 0 0 0.7rem; }
@@ -278,7 +278,7 @@
         .tw-hcard .up { color: #2a8a5c; font-weight: 600; } .tw-hcard .down { color: var(--coral); font-weight: 600; }
         .tw-hcard .stampline { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.55rem; font-size: 0.78rem; line-height: 1.5; }
         .tw-hcard .chip { flex: 0 0 auto; font-size: 0.7rem; font-weight: 700; border: 1.5px solid currentColor; border-radius: 4px; padding: 0 0.35rem; }
-        .chip.normal { color: #2a8a5c; } .chip.monitor { color: #3a7ca5; } .chip.watch { color: #c58a00; } .chip.alert { color: var(--coral); } .chip.undecided { color: var(--text-secondary); border-style: dashed; }
+        .chip.normal { color: #2a8a5c; } .chip.monitor { color: #3a7ca5; } .chip.watch { color: #c58a00; } .chip.alert { color: var(--coral); } .chip.undecided, .chip.past { color: var(--text-secondary); border-style: dashed; }
         @media (max-width: 640px) { .tw-hero { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.4rem; } .tw-hcard { padding: 0.7rem 0.6rem; } .tw-hcard .role, .tw-hcard .stampline span.n { display: none; } .tw-hcard .d { font-size: 0.92rem; } }
         details.tw-more { margin-top: 0.8rem; border: 1px solid var(--border); border-radius: 10px; background: var(--bg-card); }
         details.tw-more > summary { cursor: pointer; padding: 0.65rem 1rem; font-size: 0.9rem; font-weight: 600; list-style: none; }
