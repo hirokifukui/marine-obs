@@ -1,5 +1,5 @@
 {
- "observed": "2026-11-03",
+ "observed": "2026-11-04",
  "dhw_method": "site (8 weeks, no 1°C cut-off)",
  "sites": [
   {
@@ -7,21 +7,20 @@
    "ja": "串本",
    "en": "Kushimoto",
    "lat": "33.5°N",
-   "date": "2026-11-03",
-   "sst": 24.0,
-   "anomaly": -0.0,
+   "date": "2026-11-04",
+   "sst": 24.6,
+   "anomaly": 0.7,
    "mmm": 27.7,
    "dhw": 0.0,
-   "dhw_week_ago": 0.6,
+   "dhw_week_ago": 0.4,
    "days30": 1,
    "hot_year": 2026,
    "status": "normal",
    "status_ja": "平常",
    "status_en": "Normal",
-   "finding_ja": "平年並み。この1週間で2.2℃低下。",
-   "finding_en": "Close to normal; down 2.2°c this week.",
+   "finding_ja": "平年より0.7℃高い。この1週間で1.1℃低下。",
+   "finding_en": "0.7°c above normal; down 1.1°c this week.",
    "spark": [
-    28.19,
     27.39,
     27.28,
     27.27,
@@ -79,7 +78,8 @@
     24.8,
     24.92,
     25.13,
-    23.96
+    23.96,
+    24.61
    ]
   },
   {
@@ -327,7 +327,7 @@
    "ja": "万座",
    "en": "Manza",
    "lat": "26.5°N",
-   "date": "2026-11-03",
+   "date": "2026-11-04",
    "sst": 26.7,
    "anomaly": 0.8,
    "mmm": 28.5,
@@ -338,10 +338,9 @@
    "status": "normal",
    "status_ja": "平常",
    "status_en": "Normal",
-   "finding_ja": "平年より0.8℃高い。この1週間で0.4℃低下。",
-   "finding_en": "0.8°c above normal; down 0.4°c this week.",
+   "finding_ja": "平年より0.8℃高い。この1週間で0.3℃低下。",
+   "finding_en": "0.8°c above normal; down 0.3°c this week.",
    "spark": [
-    27.84,
     27.78,
     27.65,
     28.06,
@@ -399,7 +398,8 @@
     26.59,
     26.58,
     26.66,
-    26.71
+    26.71,
+    26.72
    ]
   },
   {
@@ -563,5 +563,5 @@
    ]
   }
  ],
- "updated": "2026-11-06"
+ "updated": "2026-11-07"
 }
