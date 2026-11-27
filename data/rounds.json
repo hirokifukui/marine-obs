@@ -1,5 +1,5 @@
 {
- "observed": "2026-11-22",
+ "observed": "2026-11-24",
  "dhw_method": "site (8 weeks, no 1°C cut-off)",
  "sites": [
   {
@@ -247,8 +247,8 @@
    "ja": "瀬底",
    "en": "Sesoko",
    "lat": "26.6°N",
-   "date": "2026-11-22",
-   "sst": 25.1,
+   "date": "2026-11-24",
+   "sst": 25.0,
    "anomaly": -0.4,
    "mmm": 28.5,
    "dhw": 0.1,
@@ -258,11 +258,9 @@
    "status": "normal",
    "status_ja": "平常",
    "status_en": "Normal",
-   "finding_ja": "平年より0.4℃低い。この1週間で0.4℃低下。",
-   "finding_en": "0.4°c below normal; down 0.4°c this week.",
+   "finding_ja": "平年より0.4℃低い。この1週間で0.2℃低下。",
+   "finding_en": "0.4°c below normal; down 0.2°c this week.",
    "spark": [
-    28.34,
-    28.5,
     29.51,
     28.47,
     28.42,
@@ -319,7 +317,9 @@
     25.67,
     25.7,
     25.37,
-    25.1
+    25.1,
+    25.12,
+    25.02
    ]
   },
   {
@@ -327,9 +327,9 @@
    "ja": "万座",
    "en": "Manza",
    "lat": "26.5°N",
-   "date": "2026-11-22",
-   "sst": 25.0,
-   "anomaly": -0.0,
+   "date": "2026-11-24",
+   "sst": 25.1,
+   "anomaly": 0.2,
    "mmm": 28.5,
    "dhw": 0.2,
    "dhw_week_ago": 0.5,
@@ -338,11 +338,9 @@
    "status": "normal",
    "status_ja": "平常",
    "status_en": "Normal",
-   "finding_ja": "平年並み。この1週間で0.4℃低下。",
-   "finding_en": "Close to normal; down 0.4°c this week.",
+   "finding_ja": "平年より0.2℃高い。この1週間で0.2℃低下。",
+   "finding_en": "0.2°c above normal; down 0.2°c this week.",
    "spark": [
-    28.8,
-    29.11,
     29.62,
     28.44,
     28.55,
@@ -399,7 +397,9 @@
     25.61,
     25.39,
     25.14,
-    25.0
+    25.0,
+    25.06,
+    25.07
    ]
   },
   {
@@ -563,5 +563,5 @@
    ]
   }
  ],
- "updated": "2026-11-25"
+ "updated": "2026-11-27"
 }
